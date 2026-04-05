@@ -1,0 +1,1961 @@
+\documentclass[12pt,a4paper]{book}
+
+% Page setup
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+
+% Math support
+\usepackage{amsmath,amssymb,amsthm}
+
+% Hyperlinks (table of contents navigation)
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+% Font setup
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Table of contents style
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftbeforechapskip}{12pt}
+\setlength{\cftbeforesecskip}{3pt}
+\setlength{\cftsecindent}{1.5em}
+\setlength{\cftsecnumwidth}{2.8em}
+\renewcommand{\cftsecpresnum}{\hfill}
+\renewcommand{\cftsecaftersnum}{\hspace*{1em}}
+
+% Chapter numbering format
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+% Part style
+\usepackage{titlesec}
+\titleformat{\part}[display]
+  {\normalfont\Large\centering\scshape}
+  {Part \thepart}{0.5em}{}
+\titlespacing*{\part}{0pt}{40pt}{30pt}
+
+% Chapter style
+\titleformat{\chapter}[display]
+  {\normalfont\Large\centering}
+  {\thechapter}{0.5em}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{40pt}{30pt}
+
+% Section style
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\leftmark}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Axiom environment
+\newcounter{axiomcounter}[chapter]
+\renewcommand{\theaxiomcounter}{\thechapter.\arabic{axiomcounter}}
+\newenvironment{axiom}[1]{%
+  \refstepcounter{axiomcounter}%
+  \par\noindent\textbf{\textsc{Axiom \theaxiomcounter. #1.}}\quad%
+}{\par}
+
+% Definition environment
+\newcounter{definitioncounter}[chapter]
+\renewcommand{\thedefinitioncounter}{\thechapter.\arabic{definitioncounter}}
+\newenvironment{definition}[1]{%
+  \refstepcounter{definitioncounter}%
+  \par\noindent\textbf{DEFINITION \thedefinitioncounter. #1}\quad%
+}{\par}
+
+% Theorem environment
+\newcounter{theoremcounter}[chapter]
+\renewcommand{\thetheoremcounter}{\thechapter.\arabic{theoremcounter}}
+\newenvironment{theorem}[1]{%
+  \refstepcounter{theoremcounter}%
+  \par\noindent\textbf{THEOREM \thetheoremcounter. #1}\quad%
+}{\par}
+
+% Corollary environment
+\newcounter{corollarycounter}[chapter]
+\renewcommand{\thecorollarycounter}{\thechapter.\arabic{corollarycounter}}
+\newenvironment{corollary}[1]{%
+  \refstepcounter{corollarycounter}%
+  \par\noindent\textbf{COROLLARY \thecorollarycounter. #1}\quad%
+}{\par}
+
+% Note environment
+\newenvironment{note}{%
+  \par\noindent\textit{Note:}\quad%
+}{\par}
+
+\begin{document}
+
+% Title page
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge\bfseries LINEAR ALGEBRA\par}
+    \vspace{1cm}
+    {\large Underwood Dudley\par}
+    \vfill
+\end{titlepage}
+
+% Table of contents
+\tableofcontents
+\newpage
+
+\chapter{Vector Spaces}
+
+\section{Definitions}
+
+\begin{definition}{Field}
+A field $K$ is a set with two operations (addition and multiplication) satisfying the following axioms for all elements $x, y, z \in K$:
+\begin{enumerate}
+    \item[(1)] $(x + y) + z = x + (y + z)$ and $(xy)z = x(yz)$ (associativity).
+    \item[(2)] $x + y = y + x$ and $xy = yx$ (commutativity).
+    \item[(3)] $x(y + z) = xy + xz$ (distributivity).
+    \item[(4)] There exist elements $0, 1 \in K$ with $0 \neq 1$ such that $x + 0 = x$ and $1 \cdot x = x$ for all $x$.
+    \item[(5)] For each $x$ there exists an element $-x$ such that $x + (-x) = 0$.
+    \item[(6)] If $x \neq 0$, there exists an element $x^{-1}$ such that $xx^{-1} = 1$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}{Vector Space}
+Let $K$ be a field. A vector space over $K$ is a set $V$ with two operations (addition of vectors and scalar multiplication) satisfying the following axioms (where $u, v, w \in V$ and $a, b \in K$):
+\begin{enumerate}
+    \item[(VS 1)] $(u + v) + w = u + (v + w)$.
+    \item[(VS 2)] $u + v = v + u$.
+    \item[(VS 3)] There exists an element $O \in V$ such that $u + O = u$.
+    \item[(VS 4)] For each $u$ there exists $-u$ such that $u + (-u) = O$.
+    \item[(VS 5)] $a(u + v) = au + av$.
+    \item[(VS 6)] $(a + b)u = au + bu$.
+    \item[(VS 7)] $(ab)u = a(bu)$.
+    \item[(VS 8)] $1u = u$.
+\end{enumerate}
+Elements of $V$ are called vectors, and elements of $K$ are called scalars.
+\end{definition}
+
+\begin{theorem}{Uniqueness of Zero Vector}
+In any vector space, the zero vector is unique.
+\end{theorem}
+
+\textit{Proof.} Suppose $O$ and $O'$ are both zero vectors. Then:
+\[
+O = O + O' = O' + O = O'
+\]
+Thus $O = O'$, proving uniqueness. \qed
+
+\begin{theorem}{Properties of Scalar Multiplication}
+In any vector space over $K$:
+\begin{enumerate}
+    \item[(a)] $0u = O$ for all $u \in V$.
+    \item[(b)] $aO = O$ for all $a \in K$.
+    \item[(c)] $(-1)u = -u$ for all $u \in V$.
+\end{enumerate}
+\end{theorem}
+
+\textit{Proof.} (a) We have $0u = (0+0)u = 0u + 0u$. Adding $-0u$ to both sides gives $O = 0u$.
+
+(b) We have $aO = a(O + O) = aO + aO$. Adding $-aO$ to both sides gives $O = aO$.
+
+(c) We have $u + (-1)u = 1u + (-1)u = (1+(-1))u = 0u = O$. Thus $(-1)u = -u$. \qed
+
+\begin{definition}{Subspace}
+Let $V$ be a vector space over $K$. A subset $W$ of $V$ is called a subspace if:
+\begin{enumerate}
+    \item[(1)] $O \in W$.
+    \item[(2)] If $u, v \in W$, then $u + v \in W$.
+    \item[(3)] If $u \in W$ and $a \in K$, then $au \in W$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}{Linear Combination}
+Let $V$ be a vector space over $K$ and let $v_1, \ldots, v_n \in V$. An expression of the form
+\[
+a_1v_1 + a_2v_2 + \cdots + a_nv_n
+\]
+with $a_i \in K$ is called a linear combination of $v_1, \ldots, v_n$.
+\end{definition}
+
+\begin{definition}{Span}
+Let $v_1, \ldots, v_n \in V$. The set of all linear combinations of $v_1, \ldots, v_n$ is called the span of $\{v_1, \ldots, v_n\}$, denoted by $\operatorname{span}(v_1, \ldots, v_n)$.
+\end{definition}
+
+\begin{theorem}{Span is a Subspace}
+The span of any finite set of vectors in $V$ is a subspace of $V$.
+\end{theorem}
+
+\textit{Proof.} Let $W = \operatorname{span}(v_1, \ldots, v_n)$.
+
+(1) $O = 0v_1 + \cdots + 0v_n \in W$.
+
+(2) If $u = a_1v_1 + \cdots + a_nv_n$ and $w = b_1v_1 + \cdots + b_nv_n$ are in $W$, then:
+\[
+u + w = (a_1+b_1)v_1 + \cdots + (a_n+b_n)v_n \in W
+\]
+
+(3) If $u = a_1v_1 + \cdots + a_nv_n \in W$ and $c \in K$, then:
+\[
+cu = (ca_1)v_1 + \cdots + (ca_n)v_n \in W
+\]
+Thus $W$ is a subspace. \qed
+
+\section{Bases}
+
+\begin{definition}{Linearly Independent}
+Vectors $v_1, \ldots, v_n$ in a vector space $V$ are said to be linearly independent if whenever
+\[
+a_1v_1 + \cdots + a_nv_n = O
+\]
+with $a_i \in K$, then $a_1 = a_2 = \cdots = a_n = 0$. Otherwise, they are linearly dependent.
+\end{definition}
+
+\begin{definition}{Basis}
+A set $\{v_1, \ldots, v_n\}$ of vectors in $V$ is called a basis of $V$ if:
+\begin{enumerate}
+    \item[(1)] $v_1, \ldots, v_n$ are linearly independent.
+    \item[(2)] Every element of $V$ can be expressed as a linear combination of $v_1, \ldots, v_n$.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}{Uniqueness of Representation}
+If $\{v_1, \ldots, v_n\}$ is a basis of $V$, then every element $v \in V$ can be written uniquely as
+\[
+v = a_1v_1 + \cdots + a_nv_n
+\]
+with $a_i \in K$.
+\end{theorem}
+
+\textit{Proof.} Since $\{v_1, \ldots, v_n\}$ is a basis, every $v \in V$ can be written as such a linear combination. Suppose $v$ has two representations:
+\[
+v = a_1v_1 + \cdots + a_nv_n = b_1v_1 + \cdots + b_nv_n
+\]
+Then:
+\[
+(a_1-b_1)v_1 + \cdots + (a_n-b_n)v_n = O
+\]
+By linear independence, $a_i - b_i = 0$ for all $i$, so $a_i = b_i$. \qed
+
+\begin{definition}{Coordinate Vector}
+Let $\{v_1, \ldots, v_n\}$ be a basis of $V$ and let $v \in V$ with $v = a_1v_1 + \cdots + a_nv_n$. The scalars $a_1, \ldots, a_n$ are called the coordinates of $v$ with respect to this basis, and the column vector $(a_1, \ldots, a_n)^T$ is called the coordinate vector of $v$.
+\end{definition}
+
+\begin{theorem}{Extension to a Basis}
+Let $V$ be a vector space and let $v_1, \ldots, v_r$ be linearly independent elements of $V$. If $V$ is generated by $v_1, \ldots, v_r, w_1, \ldots, w_s$, then we can select a subset of $\{w_1, \ldots, w_s\}$ which together with $v_1, \ldots, v_r$ forms a basis of $V$.
+\end{theorem}
+
+\textit{Proof.} We prove this by induction. If $w_1$ is a linear combination of $v_1, \ldots, v_r$, then $V$ is generated by $v_1, \ldots, v_r, w_2, \ldots, w_s$. If $w_1$ is not a linear combination of $v_1, \ldots, v_r$, then $\{v_1, \ldots, v_r, w_1\}$ is linearly independent. We continue this process, adding $w_i$ to our set if it is not a linear combination of the vectors already selected. After at most $s$ steps, we obtain a basis. \qed
+
+\section{Dimension of a Vector Space}
+
+\begin{theorem}{Basis Size Invariance}
+Let $V$ be a vector space having a basis consisting of $n$ elements. Then any set of linearly independent elements of $V$ has at most $n$ elements.
+\end{theorem}
+
+\textit{Proof.} Let $\{v_1, \ldots, v_n\}$ be a basis of $V$. Suppose $\{w_1, \ldots, w_m\}$ is linearly independent with $m > n$. Since $V$ is generated by $\{v_1, \ldots, v_n\}$, by the extension theorem we can extend $\{w_1, \ldots, w_m\}$ to a basis. But any basis has exactly $n$ elements, contradicting $m > n$. \qed
+
+\begin{definition}{Dimension}
+Let $V$ be a vector space having a basis consisting of $n$ elements. We call $n$ the dimension of $V$, denoted $\dim V$. If $V$ consists of $O$ alone, we define $\dim V = 0$.
+\end{definition}
+
+\begin{theorem}{All Bases Have Same Size}
+Any two bases of a finite-dimensional vector space have the same number of elements.
+\end{theorem}
+
+\textit{Proof.} Let $\{v_1, \ldots, v_n\}$ and $\{w_1, \ldots, w_m\}$ be bases of $V$. Since $\{v_1, \ldots, v_n\}$ is a basis and $\{w_1, \ldots, w_m\}$ is linearly independent, we have $m \leq n$. Similarly, $n \leq m$. Thus $m = n$. \qed
+
+\begin{theorem}{Characterization of Basis}
+Let $V$ be a vector space of dimension $n$. A set of $n$ linearly independent vectors in $V$ is a basis.
+\end{theorem}
+
+\textit{Proof.} Let $\{v_1, \ldots, v_n\}$ be linearly independent. If this set does not span $V$, then there exists $v \in V$ not in $\operatorname{span}(v_1, \ldots, v_n)$. Then $\{v_1, \ldots, v_n, v\}$ is linearly independent, contradicting that the maximum size of a linearly independent set is $n$. \qed
+
+\section{Sums and Direct Sums}
+
+\begin{definition}{Sum of Subspaces}
+Let $U, W$ be subspaces of a vector space $V$. The sum $U + W$ is the set of all elements $u + w$ with $u \in U$ and $w \in W$.
+\end{definition}
+
+\begin{theorem}{Sum is a Subspace}
+If $U, W$ are subspaces of $V$, then $U + W$ is a subspace of $V$.
+\end{theorem}
+
+\textit{Proof.} (1) $O = O + O \in U + W$.
+
+(2) If $u_1 + w_1, u_2 + w_2 \in U + W$, then $(u_1 + w_1) + (u_2 + w_2) = (u_1 + u_2) + (w_1 + w_2) \in U + W$.
+
+(3) If $u + w \in U + W$ and $a \in K$, then $a(u + w) = au + aw \in U + W$. \qed
+
+\begin{definition}{Direct Sum}
+Let $U, W$ be subspaces of $V$. We say that $V$ is the direct sum of $U$ and $W$, written $V = U \oplus W$, if every element $v \in V$ can be written uniquely as $v = u + w$ with $u \in U$ and $w \in W$.
+\end{definition}
+
+\begin{theorem}{Criterion for Direct Sum}
+Let $U, W$ be subspaces of $V$. Then $V = U \oplus W$ if and only if $V = U + W$ and $U \cap W = \{O\}$.
+\end{theorem}
+
+\textit{Proof.} ($\Rightarrow$) Suppose $V = U \oplus W$. Clearly $V = U + W$. If $v \in U \cap W$, then $v = v + O = O + v$, so by uniqueness, $v = O$.
+
+($\Leftarrow$) Suppose $V = U + W$ and $U \cap W = \{O\}$. Every $v \in V$ can be written as $v = u + w$. If $v = u_1 + w_1 = u_2 + w_2$, then $u_1 - u_2 = w_2 - w_1 \in U \cap W = \{O\}$. Thus $u_1 = u_2$ and $w_1 = w_2$, proving uniqueness. \qed
+
+\begin{definition}{Direct Product}
+Let $U, W$ be vector spaces over $K$. The direct product $U \times W$ is the set of all pairs $(u, w)$ with $u \in U$ and $w \in W$, with componentwise addition and scalar multiplication.
+\end{definition}
+
+\begin{theorem}{Dimension of Direct Product}
+If $U, W$ are finite-dimensional vector spaces, then:
+\[
+\dim(U \times W) = \dim U + \dim W
+\]
+\end{theorem}
+
+\textit{Proof.} Let $\{u_1, \ldots, u_m\}$ be a basis of $U$ and $\{w_1, \ldots, w_n\}$ be a basis of $W$. Then the set $\{(u_1, O), \ldots, (u_m, O), (O, w_1), \ldots, (O, w_n)\}$ is a basis of $U \times W$. It has $m + n$ elements, so $\dim(U \times W) = m + n = \dim U + \dim W$. \qed
+
+\chapter{Matrices}
+
+\section{The Space of Matrices}
+
+\begin{definition}{Matrix}
+Let $K$ be a field. An $m \times n$ matrix in $K$ is a rectangular array of elements of $K$ with $m$ rows and $n$ columns:
+\[
+A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}
+\]
+We write $A = (a_{ij})$ where $i = 1, \ldots, m$ and $j = 1, \ldots, n$. The element $a_{ij}$ is called the $(i,j)$-entry of $A$.
+\end{definition}
+
+\begin{definition}{Row and Column Vectors}
+The $i$-th row of a matrix $A = (a_{ij})$ is the $1 \times n$ matrix $(a_{i1}, a_{i2}, \ldots, a_{in})$. The $j$-th column is the $m \times 1$ matrix:
+\[
+\begin{pmatrix} a_{1j} \\ a_{2j} \\ \vdots \\ a_{mj} \end{pmatrix}
+\]
+\end{definition}
+
+\begin{definition}{Square Matrix}
+A matrix is called square if $m = n$. A square matrix of size $n \times n$ is said to have order $n$.
+\end{definition}
+
+\begin{definition}{Matrix Addition}
+Let $A = (a_{ij})$ and $B = (b_{ij})$ be $m \times n$ matrices. Their sum $A + B$ is the $m \times n$ matrix with $(i,j)$-entry $a_{ij} + b_{ij}$.
+\end{definition}
+
+\begin{definition}{Scalar Multiplication of Matrices}
+Let $A = (a_{ij})$ be an $m \times n$ matrix and $c \in K$. The product $cA$ is the $m \times n$ matrix with $(i,j)$-entry $ca_{ij}$.
+\end{definition}
+
+\begin{theorem}{Matrix Space is a Vector Space}
+The set of all $m \times n$ matrices with entries in $K$ forms a vector space over $K$ under matrix addition and scalar multiplication.
+\end{theorem}
+
+\textit{Proof.} The vector space axioms VS 1--VS 8 follow directly from the corresponding field axioms for $K$, verified entrywise. \qed
+
+\begin{definition}{Transpose}
+Let $A = (a_{ij})$ be an $m \times n$ matrix. The transpose of $A$, denoted $^tA$ (or $A^T$), is the $n \times m$ matrix whose $(j,i)$-entry is $a_{ij}$.
+\end{definition}
+
+\begin{definition}{Symmetric Matrix}
+A square matrix $A$ is symmetric if $^tA = A$.
+\end{definition}
+
+\begin{definition}{Diagonal Matrix}
+A square matrix $A = (a_{ij})$ is diagonal if $a_{ij} = 0$ for all $i \neq j$.
+\end{definition}
+
+\begin{definition}{Identity Matrix}
+The $n \times n$ identity matrix $I_n$ (or simply $I$) is the diagonal matrix with all diagonal entries equal to $1$:
+\[
+I_n = \begin{pmatrix} 1 & 0 & \cdots & 0 \\ 0 & 1 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & 1 \end{pmatrix}
+\]
+\end{definition}
+
+\section{Linear Equations}
+
+\begin{definition}{System of Linear Equations}
+A system of $m$ linear equations in $n$ unknowns $x_1, \ldots, x_n$ over a field $K$ is:
+\[
+\begin{aligned}
+a_{11}x_1 + \cdots + a_{1n}x_n &= b_1 \\
+a_{21}x_1 + \cdots + a_{2n}x_n &= b_2 \\
+&\vdots \\
+a_{m1}x_1 + \cdots + a_{mn}x_n &= b_m
+\end{aligned}
+\]
+where $a_{ij}, b_i \in K$. The matrix $A = (a_{ij})$ is called the coefficient matrix.
+\end{definition}
+
+\begin{definition}{Homogeneous System}
+A system of linear equations is homogeneous if $b_1 = b_2 = \cdots = b_m = 0$.
+\end{definition}
+
+\begin{definition}{Trivial Solution}
+The trivial solution of a homogeneous system is $x_1 = x_2 = \cdots = x_n = 0$.
+\end{definition}
+
+\begin{theorem}{Existence of Nontrivial Solutions}
+Let $A$ be an $m \times n$ matrix over $K$. If $n > m$, then the homogeneous system $AX = O$ has a nontrivial solution.
+\end{theorem}
+
+\textit{Proof.} The column vectors $A^1, \ldots, A^n$ of $A$ are elements of $K^m$, which has dimension $m$. Since $n > m$, these $n$ vectors are linearly dependent. Thus there exist $x_1, \ldots, x_n$ not all zero such that $x_1A^1 + \cdots + x_nA^n = O$, giving a nontrivial solution. \qed
+
+\begin{theorem}{Uniqueness of Solution}
+Let $AX = B$ be a system of linear equations. Assume that the column vectors $A^1, \ldots, A^n$ of $A$ are linearly independent. Then the system has at most one solution.
+\end{theorem}
+
+\textit{Proof.} Suppose $X$ and $Y$ are both solutions. Then $AX = B = AY$, so $A(X - Y) = O$. Writing $X - Y = (z_1, \ldots, z_n)^T$, we have $z_1A^1 + \cdots + z_nA^n = O$. By linear independence, $z_1 = \cdots = z_n = 0$, so $X = Y$. \qed
+
+\section{Multiplication of Matrices}
+
+\begin{definition}{Matrix Multiplication}
+Let $A = (a_{ij})$ be an $m \times n$ matrix and $B = (b_{jk})$ be an $n \times p$ matrix. Their product $AB$ is the $m \times p$ matrix with $(i,k)$-entry:
+\[
+c_{ik} = \sum_{j=1}^{n} a_{ij}b_{jk}
+\]
+\end{definition}
+
+\begin{theorem}{Associativity of Matrix Multiplication}
+Let $A, B, C$ be matrices such that the products $AB$ and $BC$ can be formed. Then $(AB)C = A(BC)$.
+\end{theorem}
+
+\textit{Proof.} Let $A$ be $m \times n$, $B$ be $n \times p$, and $C$ be $p \times q$. The $(i,l)$-entry of $(AB)C$ is:
+\[
+\sum_{k=1}^{p} \left(\sum_{j=1}^{n} a_{ij}b_{jk}\right) c_{kl} = \sum_{j=1}^{n} a_{ij} \left(\sum_{k=1}^{p} b_{jk}c_{kl}\right)
+\]
+which equals the $(i,l)$-entry of $A(BC)$. \qed
+
+\begin{theorem}{Distributivity of Matrix Multiplication}
+Let $A, B, C$ be matrices such that the operations are defined. Then:
+\[
+A(B + C) = AB + AC \quad \text{and} \quad (A + B)C = AC + BC
+\]
+\end{theorem}
+
+\textit{Proof.} Verified entrywise using the distributive law in $K$. \qed
+
+\begin{definition}{Invertible Matrix}
+An $n \times n$ matrix $A$ is invertible (or non-singular) if there exists an $n \times n$ matrix $B$ such that $AB = BA = I_n$. The matrix $B$ is called the inverse of $A$, denoted $A^{-1}$.
+\end{definition}
+
+\begin{theorem}{Uniqueness of Inverse}
+If $A$ is invertible, then its inverse is unique.
+\end{theorem}
+
+\textit{Proof.} Suppose $B$ and $C$ are both inverses of $A$. Then $B = BI = B(AC) = (BA)C = IC = C$. \qed
+
+\begin{theorem}{Transpose of Product}
+Let $A, B$ be matrices such that $AB$ is defined. Then $^t(AB) = {}^tB \cdot {}^tA$.
+\end{theorem}
+
+\textit{Proof.} The $(k,i)$-entry of $^t(AB)$ is the $(i,k)$-entry of $AB$, which is $\sum_j a_{ij}b_{jk}$. The $(k,i)$-entry of ${}^tB \cdot {}^tA$ is $\sum_j b_{jk}a_{ij} = \sum_j a_{ij}b_{jk}$. \qed
+
+\chapter{Linear Mappings}
+
+\section{Mappings}
+
+\begin{definition}{Mapping}
+Let $S, S'$ be two sets. A mapping $F: S \to S'$ is an association which to each element $x$ of $S$ associates an element of $S'$, denoted by $F(x)$. The element $F(x)$ is called the image of $x$ under $F$.
+\end{definition}
+
+\begin{definition}{Image of a Subset}
+If $T$ is a subset of $S$, the set of all elements $F(x)$ with $x \in T$ is called the image of $T$ under $F$, denoted by $F(T)$.
+\end{definition}
+
+\begin{definition}{Composition of Mappings}
+Let $F: S \to S'$ and $G: S' \to S''$ be mappings. The composite mapping $G \circ F: S \to S''$ is defined by $(G \circ F)(x) = G(F(x))$ for all $x \in S$.
+\end{definition}
+
+\begin{theorem}{Associativity of Composition}
+Let $U, V, W, S$ be sets and let $F: U \to V$, $G: V \to W$, $H: W \to S$ be mappings. Then:
+\[
+H \circ (G \circ F) = (H \circ G) \circ F
+\]
+\end{theorem}
+
+\textit{Proof.} For any $x \in U$:
+\[
+(H \circ (G \circ F))(x) = H((G \circ F)(x)) = H(G(F(x)))
+\]
+and:
+\[
+((H \circ G) \circ F)(x) = (H \circ G)(F(x)) = H(G(F(x)))
+\]
+Thus $H \circ (G \circ F) = (H \circ G) \circ F$. \qed
+
+\begin{definition}{Injective Mapping}
+A mapping $f: S \to S'$ is injective (or one-to-one) if for all $x, y \in S$, $x \neq y$ implies $f(x) \neq f(y)$. Equivalently, $f(x) = f(y)$ implies $x = y$.
+\end{definition}
+
+\begin{definition}{Surjective Mapping}
+A mapping $f: S \to S'$ is surjective (or onto) if for every $y \in S'$ there exists $x \in S$ such that $f(x) = y$.
+\end{definition}
+
+\begin{definition}{Bijective Mapping}
+A mapping is bijective if it is both injective and surjective.
+\end{definition}
+
+\begin{definition}{Identity Mapping}
+The identity mapping $I_S: S \to S$ is defined by $I_S(x) = x$ for all $x \in S$.
+\end{definition}
+
+\begin{definition}{Inverse Mapping}
+Let $F: S \to S'$ be a mapping. An inverse mapping for $F$ is a mapping $G: S' \to S$ such that:
+\[
+G \circ F = I_S \quad \text{and} \quad F \circ G = I_{S'}
+\]
+\end{definition}
+
+\begin{theorem}{Inverse Exists iff Bijective}
+A mapping $F: S \to S'$ has an inverse if and only if $F$ is bijective.
+\end{theorem}
+
+\textit{Proof.} ($\Rightarrow$) Suppose $F$ has an inverse $G$. If $F(x) = F(y)$, then $x = G(F(x)) = G(F(y)) = y$, so $F$ is injective. For any $z \in S'$, $z = F(G(z))$, so $F$ is surjective.
+
+($\Leftarrow$) Suppose $F$ is bijective. For each $z \in S'$, there exists a unique $x \in S$ with $F(x) = z$. Define $G(z) = x$. Then $G$ is an inverse for $F$. \qed
+
+\section{Linear Mappings}
+
+\begin{definition}{Linear Mapping}
+Let $V, W$ be vector spaces over a field $K$. A mapping $F: V \to W$ is a linear mapping (or linear transformation) if for all $u, v \in V$ and all $c \in K$:
+\begin{enumerate}
+    \item[(LM 1)] $F(u + v) = F(u) + F(v)$
+    \item[(LM 2)] $F(cu) = cF(u)$
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}{Linear Map Determined by Basis}
+Let $V, W$ be vector spaces over $K$. Let $\{v_1, \ldots, v_n\}$ be a basis of $V$, and let $w_1, \ldots, w_n$ be arbitrary elements of $W$. Then there exists a unique linear mapping $F: V \to W$ such that $F(v_i) = w_i$ for all $i = 1, \ldots, n$.
+\end{theorem}
+
+\textit{Proof.} For any $v \in V$, write $v = x_1v_1 + \cdots + x_nv_n$ uniquely. Define:
+\[
+F(v) = x_1w_1 + \cdots + x_nw_n
+\]
+This is well-defined by uniqueness of coordinates. We verify linearity:
+
+For $v = \sum x_iv_i$ and $v' = \sum y_iv_i$:
+\[
+F(v + v') = F\left(\sum (x_i + y_i)v_i\right) = \sum (x_i + y_i)w_i = \sum x_iw_i + \sum y_iw_i = F(v) + F(v')
+\]
+
+For $c \in K$:
+\[
+F(cv) = F\left(\sum cx_iv_i\right) = \sum cx_iw_i = c\sum x_iw_i = cF(v)
+\]
+Uniqueness: If $G$ is another linear map with $G(v_i) = w_i$, then for $v = \sum x_iv_i$:
+\[
+G(v) = \sum x_iG(v_i) = \sum x_iw_i = F(v)
+\]
+Thus $G = F$. \qed
+
+\begin{definition}{Space of Linear Maps}
+The set of all linear mappings from $V$ to $W$ is denoted by $\mathcal{L}(V, W)$.
+\end{definition}
+
+\section{The Kernel and Image of a Linear Map}
+
+\begin{definition}{Kernel}
+Let $F: V \to W$ be a linear mapping. The kernel of $F$, denoted $\operatorname{Ker} F$, is the set of all $v \in V$ such that $F(v) = O$.
+\end{definition}
+
+\begin{definition}{Image}
+The image of $F$, denoted $\operatorname{Im} F$, is the set of all elements of $W$ of the form $F(v)$ for some $v \in V$.
+\end{definition}
+
+\begin{theorem}{Kernel is a Subspace}
+The kernel of a linear map $F: V \to W$ is a subspace of $V$.
+\end{theorem}
+
+\textit{Proof.} (1) $F(O) = O$, so $O \in \operatorname{Ker} F$.
+(2) If $u, v \in \operatorname{Ker} F$, then $F(u + v) = F(u) + F(v) = O + O = O$, so $u + v \in \operatorname{Ker} F$.
+(3) If $v \in \operatorname{Ker} F$ and $c \in K$, then $F(cv) = cF(v) = cO = O$, so $cv \in \operatorname{Ker} F$. \qed
+
+\begin{theorem}{Image is a Subspace}
+The image of a linear map $F: V \to W$ is a subspace of $W$.
+\end{theorem}
+
+\textit{Proof.} (1) $F(O) = O \in \operatorname{Im} F$.
+(2) If $w_1, w_2 \in \operatorname{Im} F$, there exist $v_1, v_2 \in V$ with $F(v_1) = w_1$ and $F(v_2) = w_2$. Then $w_1 + w_2 = F(v_1) + F(v_2) = F(v_1 + v_2) \in \operatorname{Im} F$.
+(3) If $w \in \operatorname{Im} F$ and $c \in K$, then $w = F(v)$ for some $v \in V$, so $cw = cF(v) = F(cv) \in \operatorname{Im} F$. \qed
+
+\begin{theorem}{Rank-Nullity Theorem}
+Let $V, W$ be vector spaces over $K$ with $V$ finite-dimensional, and let $F: V \to W$ be a linear map. Then:
+\[
+\dim V = \dim \operatorname{Ker} F + \dim \operatorname{Im} F
+\]
+\end{theorem}
+
+\textit{Proof.} Let $\{u_1, \ldots, u_m\}$ be a basis of $\operatorname{Ker} F$. Extend it to a basis $\{u_1, \ldots, u_m, v_1, \ldots, v_r\}$ of $V$. We claim $\{F(v_1), \ldots, F(v_r)\}$ is a basis of $\operatorname{Im} F$.
+
+Span: For any $v \in V$, write $v = \sum a_iu_i + \sum b_jv_j$. Then:
+\[
+F(v) = \sum a_iF(u_i) + \sum b_jF(v_j) = \sum b_jF(v_j)
+\]
+
+Independence: Suppose $\sum c_jF(v_j) = O$. Then $F(\sum c_jv_j) = O$, so $\sum c_jv_j \in \operatorname{Ker} F$. Thus $\sum c_jv_j = \sum d_iu_i$ for some $d_i$. Rearranging: $\sum c_jv_j - \sum d_iu_i = O$. By linear independence, all $c_j = 0$ and all $d_i = 0$.
+
+Therefore $\dim \operatorname{Im} F = r$, and $\dim V = m + r = \dim \operatorname{Ker} F + \dim \operatorname{Im} F$. \qed
+
+\begin{theorem}{Injectivity Criterion}
+Let $F: V \to W$ be a linear map with $V$ finite-dimensional. Then $F$ is injective if and only if $\operatorname{Ker} F = \{O\}$.
+\end{theorem}
+
+\textit{Proof.} ($\Rightarrow$) If $F$ is injective and $v \in \operatorname{Ker} F$, then $F(v) = O = F(O)$, so $v = O$.
+
+($\Leftarrow$) If $\operatorname{Ker} F = \{O\}$ and $F(u) = F(v)$, then $F(u - v) = O$, so $u - v \in \operatorname{Ker} F = \{O\}$. Thus $u = v$. \qed
+
+\section{Composition and Inverse of Linear Mappings}
+
+\begin{theorem}{Composition of Linear Maps}
+Let $U, V, W$ be vector spaces over $K$. Let $F: U \to V$ and $G: V \to W$ be linear maps. Then $G \circ F: U \to W$ is linear.
+\end{theorem}
+
+\textit{Proof.} For $u_1, u_2 \in U$:
+\[
+(G \circ F)(u_1 + u_2) = G(F(u_1 + u_2)) = G(F(u_1) + F(u_2)) = G(F(u_1)) + G(F(u_2)) = (G \circ F)(u_1) + (G \circ F)(u_2)
+\]
+For $c \in K$ and $u \in U$:
+\[
+(G \circ F)(cu) = G(F(cu)) = G(cF(u)) = cG(F(u)) = c(G \circ F)(u)
+\]
+Thus $G \circ F$ is linear. \qed
+
+\begin{theorem}{Inverse of Linear Map}
+Let $F: V \to W$ be a linear map. If $F$ has an inverse mapping $G: W \to V$, then $G$ is linear.
+\end{theorem}
+
+\textit{Proof.} Let $w_1, w_2 \in W$. Then $w_1 = F(v_1)$ and $w_2 = F(v_2)$ for unique $v_1, v_2 \in V$. We have:
+\[
+G(w_1 + w_2) = G(F(v_1) + F(v_2)) = G(F(v_1 + v_2)) = v_1 + v_2 = G(w_1) + G(w_2)
+\]
+Similarly, $G(cw) = cG(w)$ for $c \in K$ and $w \in W$. \qed
+
+\begin{definition}{Isomorphism}
+A linear map $F: V \to W$ is an isomorphism if there exists a linear map $G: W \to V$ such that $G \circ F = I_V$ and $F \circ G = I_W$.
+\end{definition}
+
+\begin{theorem}{Isomorphism Criterion}
+Let $F: V \to W$ be a linear map with $V, W$ finite-dimensional and $\dim V = \dim W$. Then $F$ is an isomorphism if and only if $\operatorname{Ker} F = \{O\}$ (equivalently, $F$ is injective).
+\end{theorem}
+
+\textit{Proof.} By the rank-nullity theorem, $\dim V = \dim \operatorname{Ker} F + \dim \operatorname{Im} F$. If $\operatorname{Ker} F = \{O\}$, then $\dim \operatorname{Im} F = \dim V = \dim W$, so $\operatorname{Im} F = W$. Thus $F$ is bijective, hence an isomorphism. The converse follows from injectivity. \qed
+
+\section{Geometric Applications}
+
+\begin{definition}{Line Segment}
+Let $V$ be a vector space and let $v_1, v_2 \in V$. The line segment between $v_1$ and $v_2$ is the set of all points $v_1 + t(v_2 - v_1)$ where $0 \leq t \leq 1$.
+\end{definition}
+
+\begin{definition}{Parallelogram}
+Let $V$ be a vector space and let $v_1, v_2 \in V$ be linearly independent. The parallelogram spanned by $v_1, v_2$ is the set of all points $t_1v_1 + t_2v_2$ where $0 \leq t_1 \leq 1$ and $0 \leq t_2 \leq 1$.
+\end{definition}
+
+\begin{definition}{Triangle}
+Let $V$ be a vector space and let $v_1, v_2 \in V$ be linearly independent. The triangle spanned by $O, v_1, v_2$ is the set of all points $t_1v_1 + t_2v_2$ where $t_1 \geq 0$, $t_2 \geq 0$, and $t_1 + t_2 \leq 1$.
+\end{definition}
+
+\begin{definition}{Convex Set}
+A subset $S$ of a vector space $V$ is convex if for all $P, Q \in S$, the line segment between $P$ and $Q$ is contained in $S$.
+\end{definition}
+
+\begin{theorem}{Image of Convex Set}
+Let $F: V \to W$ be a linear map and let $S$ be a convex subset of $V$. Then $F(S)$ is a convex subset of $W$.
+\end{theorem}
+
+\textit{Proof.} Let $P', Q' \in F(S)$. Then $P' = F(P)$ and $Q' = F(Q)$ for some $P, Q \in S$. For any $t$ with $0 \leq t \leq 1$:
+\[
+tP' + (1-t)Q' = tF(P) + (1-t)F(Q) = F(tP + (1-t)Q)
+\]
+Since $S$ is convex, $tP + (1-t)Q \in S$, so $F(tP + (1-t)Q) \in F(S)$. Thus $F(S)$ is convex. \qed
+
+\chapter{Linear Maps and Matrices}
+
+\section{The Linear Map Associated with a Matrix}
+
+\begin{definition}{Linear Map Associated with a Matrix}
+Let $A = (a_{ij})$ be an $m \times n$ matrix in a field $K$. The linear map $L_A: K^n \to K^m$ associated with $A$ is defined by:
+\[
+L_A(X) = AX
+\]
+for every column vector $X \in K^n$.
+\end{definition}
+
+\begin{theorem}{Matrix-Linear Map Correspondence}
+Let $A, B$ be $m \times n$ matrices. If $L_A = L_B$, then $A = B$.
+\end{theorem}
+
+\textit{Proof.} For the standard basis vector $E^j$ (with $1$ in the $j$-th position and $0$ elsewhere), $L_A(E^j) = AE^j$ is the $j$-th column of $A$. If $L_A = L_B$, then the $j$-th columns of $A$ and $B$ are equal for all $j$, so $A = B$. \qed
+
+\section{The Matrix Associated with a Linear Map}
+
+\begin{theorem}{Matrix Representation of Linear Map}
+Let $L: K^n \to K^m$ be a linear map. There exists a unique $m \times n$ matrix $A$ such that $L = L_A$, i.e., $L(X) = AX$ for all $X \in K^n$.
+\end{theorem}
+
+\textit{Proof.} Let $E^1, \ldots, E^n$ be the standard basis vectors of $K^n$. Define $A$ to be the matrix whose $j$-th column is $L(E^j)$. Then for $X = x_1E^1 + \cdots + x_nE^n$:
+\[
+L(X) = x_1L(E^1) + \cdots + x_nL(E^n) = x_1A^1 + \cdots + x_nA^n = AX
+\]
+where $A^j$ denotes the $j$-th column of $A$. Thus $L = L_A$. \qed
+
+\begin{theorem}{Matrix of Composition}
+Let $A$ be an $m \times n$ matrix and $B$ be a $p \times m$ matrix. Then:
+\[
+L_{BA} = L_B \circ L_A
+\]
+\end{theorem}
+
+\textit{Proof.} For any $X \in K^n$:
+\[
+L_{BA}(X) = (BA)X = B(AX) = L_B(AX) = L_B(L_A(X)) = (L_B \circ L_A)(X)
+\]
+Thus $L_{BA} = L_B \circ L_A$. \qed
+
+\section{Bases, Matrices, and Linear Maps}
+
+\begin{definition}{Matrix Associated with a Linear Map Relative to Bases}
+Let $V, W$ be vector spaces over $K$ with $\dim V = n$ and $\dim W = m$. Let $\mathcal{B} = \{v_1, \ldots, v_n\}$ be a basis of $V$ and $\mathcal{B}' = \{w_1, \ldots, w_m\}$ be a basis of $W$. Let $F: V \to W$ be a linear map. The matrix associated with $F$ relative to the bases $\mathcal{B}$ and $\mathcal{B}'$, denoted $M_{\mathcal{B}'}^{\mathcal{B}}(F)$, is the unique $m \times n$ matrix $A = (a_{ij})$ such that:
+\[
+F(v_j) = \sum_{i=1}^{m} a_{ij}w_i \quad \text{for } j = 1, \ldots, n
+\]
+\end{definition}
+
+\begin{theorem}{Coordinate Transformation}
+Let $F: V \to W$ be a linear map. Let $\mathcal{B}$ be a basis of $V$ and $\mathcal{B}'$ be a basis of $W$. If $v \in V$ has coordinate vector $X_{\mathcal{B}}(v)$ relative to $\mathcal{B}$, then the coordinate vector of $F(v)$ relative to $\mathcal{B}'$ is:
+\[
+X_{\mathcal{B}'}(F(v)) = M_{\mathcal{B}'}^{\mathcal{B}}(F) \cdot X_{\mathcal{B}}(v)
+\]
+\end{theorem}
+
+\textit{Proof.} Let $\mathcal{B} = \{v_1, \ldots, v_n\}$ and $\mathcal{B}' = \{w_1, \ldots, w_m\}$. Let $A = M_{\mathcal{B}'}^{\mathcal{B}}(F) = (a_{ij})$. If $v = \sum_{j=1}^{n} x_jv_j$, then:
+\[
+F(v) = F\left(\sum_{j=1}^{n} x_jv_j\right) = \sum_{j=1}^{n} x_jF(v_j) = \sum_{j=1}^{n} x_j\sum_{i=1}^{m} a_{ij}w_i = \sum_{i=1}^{m}\left(\sum_{j=1}^{n} a_{ij}x_j\right)w_i
+\]
+Thus the $i$-th coordinate of $F(v)$ relative to $\mathcal{B}'$ is $\sum_{j=1}^{n} a_{ij}x_j$, which is the $i$-th entry of $AX$. \qed
+
+\begin{theorem}{Matrix Representation of Composition}
+Let $U, V, W$ be vector spaces with bases $\mathcal{B}, \mathcal{B}', \mathcal{B}''$ respectively. Let $F: U \to V$ and $G: V \to W$ be linear maps. Then:
+\[
+M_{\mathcal{B}''}^{\mathcal{B}}(G \circ F) = M_{\mathcal{B}''}^{\mathcal{B}'}(G) \cdot M_{\mathcal{B}'}^{\mathcal{B}}(F)
+\]
+\end{theorem}
+
+\textit{Proof.} Let $A = M_{\mathcal{B}'}^{\mathcal{B}}(F)$ and $B = M_{\mathcal{B}''}^{\mathcal{B}'}(G)$. For $u \in U$ with coordinate vector $X$ relative to $\mathcal{B}$:
+\[
+X_{\mathcal{B}''}((G \circ F)(u)) = X_{\mathcal{B}''}(G(F(u))) = B \cdot X_{\mathcal{B}'}(F(u)) = B(AX) = (BA)X
+\]
+Thus $M_{\mathcal{B}''}^{\mathcal{B}}(G \circ F) = BA = M_{\mathcal{B}''}^{\mathcal{B}'}(G) \cdot M_{\mathcal{B}'}^{\mathcal{B}}(F)$. \qed
+
+\begin{definition}{Similar Matrices}
+Two $n \times n$ matrices $M, M'$ over a field $K$ are called similar if there exists an invertible matrix $N$ such that $M' = N^{-1}MN$.
+\end{definition}
+
+\begin{theorem}{Change of Basis}
+Let $F: V \to V$ be a linear map, and let $\mathcal{B}, \mathcal{B}'$ be bases of $V$. Then:
+\[
+M_{\mathcal{B}'}^{\mathcal{B}'}(F) = N^{-1}M_{\mathcal{B}}^{\mathcal{B}}(F)N
+\]
+where $N = M_{\mathcal{B}}^{\mathcal{B}'}(\operatorname{id})$ is the change of basis matrix.
+\end{theorem}
+
+\textit{Proof.} Applying the composition theorem:
+\[
+M_{\mathcal{B}'}^{\mathcal{B}'}(F) = M_{\mathcal{B}'}^{\mathcal{B}}(\operatorname{id})M_{\mathcal{B}}^{\mathcal{B}}(F)M_{\mathcal{B}}^{\mathcal{B}'}(\operatorname{id})
+\]
+Since $M_{\mathcal{B}'}^{\mathcal{B}}(\operatorname{id}) = (M_{\mathcal{B}}^{\mathcal{B}'}(\operatorname{id}))^{-1}$, the result follows with $N = M_{\mathcal{B}}^{\mathcal{B}'}(\operatorname{id})$. \qed
+
+\begin{definition}{Diagonalizable}
+A linear map $F: V \to V$ is diagonalizable if there exists a basis $\mathcal{B}$ of $V$ such that $M_{\mathcal{B}}^{\mathcal{B}}(F)$ is a diagonal matrix. A square matrix $A$ is diagonalizable if the linear map $L_A$ is diagonalizable.
+\end{definition}
+
+\begin{theorem}{Diagonalization Criterion}
+Let $F: V \to V$ be a linear map and let $M$ be its associated matrix relative to a basis $\mathcal{B}$. Then $F$ is diagonalizable if and only if there exists an invertible matrix $N$ such that $N^{-1}MN$ is a diagonal matrix.
+\end{theorem}
+
+\textit{Proof.} If $F$ is diagonalizable, there exists a basis $\mathcal{B}'$ such that $M_{\mathcal{B}'}^{\mathcal{B}'}(F)$ is diagonal. By the change of basis theorem, $M_{\mathcal{B}'}^{\mathcal{B}'}(F) = N^{-1}MN$ where $N = M_{\mathcal{B}}^{\mathcal{B}'}(\operatorname{id})$.
+
+Conversely, if $N^{-1}MN = D$ is diagonal, let $\mathcal{B}'$ be the basis such that $N = M_{\mathcal{B}}^{\mathcal{B}'}(\operatorname{id})$. Then $M_{\mathcal{B}'}^{\mathcal{B}'}(F) = D$ is diagonal. \qed
+
+\chapter{Scalar Products and Orthogonality}
+
+\section{Scalar Products}
+
+\begin{definition}{Scalar Product}
+Let $V$ be a vector space over a field $K$. A scalar product on $V$ is an association which to any pair of elements $v, w$ of $V$ associates a scalar, denoted by $\langle v, w \rangle$, satisfying the following properties:
+\begin{enumerate}
+    \item[(SP 1)] $\langle v, w \rangle = \langle w, v \rangle$ for all $v, w \in V$.
+    \item[(SP 2)] If $u, v, w$ are elements of $V$, then $\langle u, v + w \rangle = \langle u, v \rangle + \langle u, w \rangle$.
+    \item[(SP 3)] If $x \in K$, then $\langle xv, w \rangle = x\langle v, w \rangle$ and $\langle v, xw \rangle = x\langle v, w \rangle$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}{Non-degenerate Scalar Product}
+A scalar product is said to be non-degenerate if it also satisfies the condition: if $v \in V$ and $\langle v, w \rangle = 0$ for all $w \in V$, then $v = O$.
+\end{definition}
+
+\begin{definition}{Orthogonal}
+Let $V$ be a vector space with a scalar product. Elements $v, w$ of $V$ are orthogonal or perpendicular if $\langle v, w \rangle = 0$. We write $v \perp w$.
+\end{definition}
+
+\begin{definition}{Orthogonal Complement}
+If $S$ is a subset of $V$, we denote by $S^\perp$ the set of all elements of $V$ which are perpendicular to all elements of $S$, i.e., $\langle w, v \rangle = 0$ for all $v \in S$. Then $S^\perp$ is a subspace of $V$ called the orthogonal space of $S$.
+\end{definition}
+
+\begin{definition}{Positive Definite Scalar Product}
+Let $V$ be a vector space over $\mathbb{R}$ with a scalar product. The scalar product is positive definite if $\langle v, v \rangle \geq 0$ for all $v \in V$, and $\langle v, v \rangle > 0$ if $v \neq O$.
+\end{definition}
+
+\begin{definition}{Norm}
+Let $V$ be a vector space over $\mathbb{R}$ with a positive definite scalar product. The norm of an element $v \in V$ is defined by:
+\[
+\|v\| = \sqrt{\langle v, v \rangle}
+\]
+\end{definition}
+
+\begin{definition}{Distance}
+The distance between two elements $v, w$ of $V$ is defined to be:
+\[
+d(v, w) = \|v - w\|
+\]
+\end{definition}
+
+\begin{theorem}{Pythagorean Theorem}
+If $v, w$ are perpendicular, then:
+\[
+\|v + w\|^2 = \|v\|^2 + \|w\|^2
+\]
+\end{theorem}
+
+\textit{Proof.} We have:
+\[
+\|v + w\|^2 = \langle v + w, v + w \rangle = \langle v, v \rangle + 2\langle v, w \rangle + \langle w, w \rangle = \|v\|^2 + \|w\|^2
+\]
+because $v \perp w$ implies $\langle v, w \rangle = 0$. \qed
+
+\begin{theorem}{Parallelogram Law}
+For any $v, w$ we have:
+\[
+\|v + w\|^2 + \|v - w\|^2 = 2\|v\|^2 + 2\|w\|^2
+\]
+\end{theorem}
+
+\textit{Proof.} Expanding both norms:
+\[
+\|v + w\|^2 = \|v\|^2 + 2\langle v, w \rangle + \|w\|^2
+\]
+\[
+\|v - w\|^2 = \|v\|^2 - 2\langle v, w \rangle + \|w\|^2
+\]
+Adding gives the result. \qed
+
+\begin{theorem}{Schwarz Inequality}
+For all $v, w \in V$ we have:
+\[
+|\langle v, w \rangle| \leq \|v\| \|w\|
+\]
+\end{theorem}
+
+\textit{Proof.} If $v = O$ or $w = O$, the inequality is obvious. Assume $v \neq O$ and $w \neq O$. Let $c = \frac{\langle v, w \rangle}{\langle w, w \rangle}$ so that $v - cw$ is perpendicular to $w$. By Pythagoras:
+\[
+\|v\|^2 = \|v - cw\|^2 + \|cw\|^2 \geq \|cw\|^2 = c^2\|w\|^2 = \frac{\langle v, w \rangle^2}{\|w\|^2}
+\]
+Thus $\langle v, w \rangle^2 \leq \|v\|^2 \|w\|^2$, giving the result. \qed
+
+\begin{theorem}{Triangle Inequality}
+For all $v, w \in V$:
+\[
+\|v + w\| \leq \|v\| + \|w\|
+\]
+\end{theorem}
+
+\textit{Proof.} We have:
+\[
+\|v + w\|^2 = \langle v + w, v + w \rangle = \|v\|^2 + 2\langle v, w \rangle + \|w\|^2
+\]
+By Schwarz, $\langle v, w \rangle \leq \|v\| \|w\|$, so:
+\[
+\|v + w\|^2 \leq \|v\|^2 + 2\|v\|\|w\| + \|w\|^2 = (\|v\| + \|w\|)^2
+\]
+Taking square roots gives the result. \qed
+
+\section{Orthogonal Bases, Positive Definite Case}
+
+\begin{definition}{Orthogonal Basis}
+Let $V$ be a vector space with a scalar product. A basis $\{v_1, \ldots, v_n\}$ of $V$ is an orthogonal basis if $\langle v_i, v_j \rangle = 0$ for all $i \neq j$.
+\end{definition}
+
+\begin{definition}{Orthonormal Basis}
+An orthogonal basis is orthonormal if in addition $\langle v_i, v_i \rangle = 1$ for all $i$.
+\end{definition}
+
+\begin{theorem}{Existence of Orthogonal Basis}
+Let $V$ be a finite-dimensional vector space over $\mathbb{R}$, with a positive definite scalar product. Then $V$ has an orthogonal basis.
+\end{theorem}
+
+\textit{Proof.} We prove by induction on $\dim V$. If $\dim V = 1$, any nonzero vector forms an orthogonal basis. Assume the result for spaces of dimension $< n$. Let $\dim V = n$ and let $v_1 \neq O$ be in $V$. Let $W = v_1^\perp$ be the orthogonal complement of the space generated by $v_1$. Then $V = \operatorname{span}(v_1) \oplus W$. By induction, $W$ has an orthogonal basis $\{v_2, \ldots, v_n\}$. Then $\{v_1, v_2, \ldots, v_n\}$ is an orthogonal basis of $V$. \qed
+
+\begin{theorem}{Dimension of Orthogonal Complement}
+Let $V$ be a vector space over $\mathbb{R}$ with a positive definite scalar product. Let $W$ be a subspace. Then:
+\[
+\dim W + \dim W^\perp = \dim V
+\]
+and $V = W \oplus W^\perp$.
+\end{theorem}
+
+\textit{Proof.} Let $\{w_1, \ldots, w_r\}$ be an orthogonal basis of $W$. Extend it to an orthogonal basis $\{w_1, \ldots, w_r, u_1, \ldots, u_s\}$ of $V$. Then $\{u_1, \ldots, u_s\}$ is a basis of $W^\perp$. Thus $\dim W^\perp = s$ and $\dim V = r + s = \dim W + \dim W^\perp$. Since $W \cap W^\perp = \{O\}$, we have $V = W \oplus W^\perp$. \qed
+
+\section{Application to Linear Equations; The Rank}
+
+\begin{definition}{Row Rank and Column Rank}
+Let $A$ be an $m \times n$ matrix. The row rank of $A$ is the dimension of the subspace of $K^n$ generated by the row vectors of $A$. The column rank is the dimension of the subspace of $K^m$ generated by the column vectors.
+\end{definition}
+
+\begin{theorem}{Row Rank Equals Column Rank}
+Let $A$ be an $m \times n$ matrix. Then the row rank of $A$ equals the column rank of $A$. This common value is called the rank of $A$.
+\end{theorem}
+
+\textit{Proof.} Consider the linear map $L_A: K^n \to K^m$ given by $L_A(X) = AX$. The image of $L_A$ is the space generated by the column vectors of $A$, so $\dim \operatorname{Im} L_A$ equals the column rank. The kernel of $L_A$ is the solution space of $AX = O$. By the rank-nullity theorem, $n = \dim \operatorname{Ker} L_A + \dim \operatorname{Im} L_A$. The solution space of $AX = O$ is the orthogonal complement (in $K^n$ with the dot product) of the row space. Thus $\dim \operatorname{Ker} L_A = n - \text{(row rank)}$. Therefore $n - \text{(row rank)} + \text{(column rank)} = n$, giving row rank = column rank. \qed
+
+\begin{theorem}{Rank and Dimension of Solution Space}
+Let $A$ be an $m \times n$ matrix. Then:
+\[
+\text{rank}(A) + \dim(\text{solution space of } AX = O) = n
+\]
+\end{theorem}
+
+\textit{Proof.} The solution space of $AX = O$ is $\operatorname{Ker} L_A$. By the rank-nullity theorem and the fact that $\dim \operatorname{Im} L_A = \text{rank}(A)$, the result follows. \qed
+
+\section{Bilinear Maps and Matrices}
+
+\begin{definition}{Bilinear Map}
+Let $U, V, W$ be vector spaces over $K$. A map $g: U \times V \to W$ is bilinear if for each fixed $u \in U$, the map $v \mapsto g(u, v)$ is linear, and for each fixed $v \in V$, the map $u \mapsto g(u, v)$ is linear.
+\end{definition}
+
+\begin{theorem}{Matrix Representation of Bilinear Form}
+Let $g: K^n \times K^n \to K$ be a bilinear form. Then there exists a unique $n \times n$ matrix $A$ such that:
+\[
+g(X, Y) = {}^tXAY
+\]
+for all column vectors $X, Y \in K^n$.
+\end{theorem}
+
+\textit{Proof.} Let $E^1, \ldots, E^n$ be the standard basis vectors. Define $a_{ij} = g(E^i, E^j)$. Then for $X = \sum x_iE^i$ and $Y = \sum y_jE^j$:
+\[
+g(X, Y) = g\left(\sum_i x_iE^i, \sum_j y_jE^j\right) = \sum_{i,j} x_iy_jg(E^i, E^j) = \sum_{i,j} x_ia_{ij}y_j = {}^tXAY
+\]
+where $A = (a_{ij})$. Uniqueness follows by evaluating on basis vectors. \qed
+
+\section{General Orthogonal Bases}
+
+\begin{theorem}{Existence of Orthogonal Basis (General)}
+Let $V$ be a finite-dimensional vector space over the field $K$ with a non-degenerate scalar product. Assume that $V \neq \{O\}$. Then $V$ has an orthogonal basis.
+\end{theorem}
+
+\textit{Proof.} We prove by induction on $\dim V$. If $\dim V = 1$, any nonzero vector forms an orthogonal basis. For $\dim V = n > 1$, we first show there exists $v_1 \in V$ with $\langle v_1, v_1 \rangle \neq 0$. If not, then $\langle v, v \rangle = 0$ for all $v$, which implies $\langle v, w \rangle = 0$ for all $v, w$ (by expanding $\langle v + w, v + w \rangle$), contradicting non-degeneracy. With such $v_1$, let $W = v_1^\perp$. Then $V = \operatorname{span}(v_1) \oplus W$. By induction, $W$ has an orthogonal basis, giving an orthogonal basis for $V$. \qed
+
+\section{The Dual Space and Scalar Products}
+
+\begin{definition}{Dual Space}
+Let $V$ be a vector space over the field $K$. The dual space $V^*$ is defined to be $\mathcal{L}(V, K)$, the space of linear maps from $V$ to $K$ (called linear functionals).
+\end{definition}
+
+\begin{theorem}{Isomorphism with Dual Space}
+Let $V$ be a finite-dimensional vector space over $K$ with a non-degenerate scalar product. Then the map $v \mapsto L_v$ where $L_v(w) = \langle v, w \rangle$ is an isomorphism of $V$ with $V^*$.
+\end{theorem}
+
+\textit{Proof.} The map $v \mapsto L_v$ is linear. If $L_v = 0$, then $\langle v, w \rangle = 0$ for all $w$, so $v = O$ by non-degeneracy. Thus the map is injective. Since $\dim V = \dim V^*$, it is an isomorphism. \qed
+
+\begin{theorem}{Dimension of Orthogonal Complement (General)}
+Let $V$ be a finite-dimensional vector space with a non-degenerate scalar product. Let $W$ be a subspace. Then:
+\[
+\dim W + \dim W^\perp = \dim V
+\]
+\end{theorem}
+
+\textit{Proof.} Consider the restriction map $V^* \to W^*$ given by $\varphi \mapsto \varphi|_W$. The kernel consists of functionals vanishing on $W$, which corresponds to $W^\perp$ under the isomorphism $V \cong V^*$. By rank-nullity, $\dim V^* = \dim W^* + \dim W^\perp$. Since $\dim V^* = \dim V$ and $\dim W^* = \dim W$, the result follows. \qed
+
+\section{Quadratic Forms}
+
+\begin{definition}{Quadratic Form}
+Let $V$ be a finite-dimensional vector space over the field $K$. Let $g = \langle \cdot, \cdot \rangle$ be a scalar product on $V$. The quadratic form determined by $g$ is the function $f: V \to K$ given by $f(v) = g(v, v) = \langle v, v \rangle$.
+\end{definition}
+
+\begin{theorem}{Polarization Identity}
+Let $g$ be a symmetric bilinear form and $f$ the associated quadratic form. Then we can recover $g$ from $f$ by:
+\[
+g(v, w) = \frac{1}{2}\left[f(v + w) - f(v) - f(w)\right] = \frac{1}{4}\left[f(v + w) - f(v - w)\right]
+\]
+\end{theorem}
+
+\textit{Proof.} Expanding $f(v + w) = \langle v + w, v + w \rangle = \langle v, v \rangle + 2\langle v, w \rangle + \langle w, w \rangle = f(v) + 2g(v, w) + f(w)$. Solving for $g(v, w)$ gives the first formula. Similarly for the second. \qed
+
+\section{Sylvester's Theorem}
+
+\begin{theorem}{Sylvester's Theorem (Law of Inertia)}
+Let $V$ be a finite-dimensional vector space over $\mathbb{R}$ with a scalar product. Then there exists an integer $r \geq 0$ such that if $\{v_1, \ldots, v_n\}$ is an orthogonal basis of $V$, then exactly $r$ of the values $\langle v_i, v_i \rangle$ are positive, $s$ are negative, and $t$ are zero, where $r + s + t = n$. The numbers $r, s, t$ do not depend on the choice of orthogonal basis.
+\end{theorem}
+
+\textit{Proof.} Let $\{v_1, \ldots, v_n\}$ and $\{w_1, \ldots, w_n\}$ be orthogonal bases. Suppose ordered so that $\langle v_i, v_i \rangle > 0$ for $i \leq r$, $\langle v_i, v_i \rangle < 0$ for $r < i \leq r + s$, and $\langle v_i, v_i \rangle = 0$ for $i > r + s$. Similarly for $\{w_j\}$ with $r', s', t'$.
+
+Let $V^+$ be the space generated by $\{v_1, \ldots, v_r\}$ and $V'^+$ by $\{w_1, \ldots, w_{r'}\}$. On $V^+$, the form is positive definite; on the space generated by $\{v_{r+1}, \ldots, v_n\}$, the form is negative semidefinite. Thus $V^+ \cap \operatorname{span}(v_{r+1}, \ldots, v_n) = \{O\}$, so $V^+ + \operatorname{span}(v_{r+1}, \ldots, v_n)$ is a direct sum. Similarly for $V'^+$.
+
+If $r' > r$, then by dimension counting, $V'^+ \cap \operatorname{span}(v_{r+1}, \ldots, v_n) \neq \{O\}$. But any nonzero vector in this intersection has $\langle v, v \rangle > 0$ (being in $V'^+$) and $\langle v, v \rangle \leq 0$ (being in $\operatorname{span}(v_{r+1}, \ldots, v_n)$), a contradiction. Thus $r' \leq r$. By symmetry, $r \leq r'$, so $r = r'$. Similarly $s = s'$, and thus $t = t'$. \qed
+
+\begin{definition}{Index of Positivity and Nullity}
+The integer $r$ of Sylvester's theorem is called the index of positivity. The integer $t$ (the number of zero values) is called the index of nullity. The form is non-degenerate if and only if its index of nullity is $0$.
+\end{definition}
+
+\chapter{Determinants}
+
+\section{Determinants of Order 2}
+
+\begin{definition}{Determinant of Order 2}
+Let $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$ be a $2 \times 2$ matrix in a field $K$. The determinant of $A$ is defined to be $ad - bc$. We denote it by:
+\[
+\det(A) = ad - bc \quad \text{or} \quad \begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc
+\]
+\end{definition}
+
+\begin{theorem}{Properties of 2x2 Determinants}
+The determinant satisfies the following properties:
+\begin{enumerate}
+    \item[(1)] As a function of the column vectors, the determinant is linear. That is, if $C, C'$ are column vectors and $C'' = C + C'$, then:
+    \[
+    \det(C'', C^2) = \det(C, C^2) + \det(C', C^2)
+    \]
+    Similarly for the second column.
+    \item[(2)] If two columns are equal, then the determinant is $0$.
+    \item[(3)] The determinant of the identity matrix $I$ is $1$: $\det(I) = 1$.
+    \item[(4)] If two columns are interchanged, the determinant changes by a sign.
+    \item[(5)] If one adds a scalar multiple of one column to another, the value of the determinant does not change.
+    \item[(6)] $\det({}^tA) = \det(A)$ for any $2 \times 2$ matrix $A$.
+\end{enumerate}
+\end{theorem}
+
+\textit{Proof.} Properties (1)-(3) follow by direct computation. Property (4) follows from (1) and (2): if $C^1, C^2$ are columns, then:
+\[
+0 = \det(C^1 + C^2, C^1 + C^2) = \det(C^1, C^1) + \det(C^1, C^2) + \det(C^2, C^1) + \det(C^2, C^2) = \det(C^1, C^2) + \det(C^2, C^1)
+\]
+Thus $\det(C^2, C^1) = -\det(C^1, C^2)$. Property (5) follows from (1) and (2). Property (6) is verified directly. \qed
+
+\section{Existence of Determinants}
+
+\begin{definition}{Determinant of Order n}
+Let $A = (a_{ij})$ be an $n \times n$ matrix. We define the determinant by expansion according to the first row:
+\[
+\det(A) = \sum_{j=1}^{n} (-1)^{1+j} a_{1j} \det(A_{1j})
+\]
+where $A_{1j}$ is the $(n-1) \times (n-1)$ matrix obtained by deleting the first row and $j$-th column of $A$.
+\end{definition}
+
+\begin{theorem}{Uniqueness of Determinants}
+There exists a unique function $D: \text{Mat}_{n \times n}(K) \to K$ satisfying the following properties:
+\begin{enumerate}
+    \item[(D1)] $D$ is linear in each column when the other columns are fixed.
+    \item[(D2)] If two adjacent columns are equal, then $D(A) = 0$.
+    \item[(D3)] $D(I) = 1$.
+\end{enumerate}
+This function is the determinant.
+\end{theorem}
+
+\textit{Proof.} The existence is proved by induction using the expansion formula. For uniqueness, any function satisfying (D1)-(D3) must satisfy all the properties of determinants, including the alternating property and the expansion formula, which determines $D$ uniquely. \qed
+
+\begin{theorem}{Properties of Determinants}
+The determinant satisfies:
+\begin{enumerate}
+    \item[(1)] If $A$ has a column of zeros, then $\det(A) = 0$.
+    \item[(2)] If two columns are interchanged, the determinant changes by a sign.
+    \item[(3)] If two columns are equal, then $\det(A) = 0$.
+    \item[(4)] $\det(AB) = \det(A)\det(B)$.
+    \item[(5)] $\det({}^tA) = \det(A)$.
+    \item[(6)] If $A$ is invertible, then $\det(A) \neq 0$ and $\det(A^{-1}) = \det(A)^{-1}$.
+\end{enumerate}
+\end{theorem}
+
+\textit{Proof.} Properties (1)-(3) follow from the characterizing properties. For (4), the map $B \mapsto \det(AB)/\det(A)$ satisfies (D1)-(D3), so equals $\det(B)$. Property (5) is proved by showing $\det({}^tA)$ satisfies the same characterizing properties as $\det(A)$. Property (6) follows from $\det(AA^{-1}) = \det(I) = 1$. \qed
+
+\section{Additional Properties of Determinants}
+
+\begin{theorem}{Effect of Column Operations}
+\begin{enumerate}
+    \item[(1)] If $B$ is obtained from $A$ by multiplying one column by a scalar $c$, then $\det(B) = c\det(A)$.
+    \item[(2)] If $B$ is obtained from $A$ by interchanging two columns, then $\det(B) = -\det(A)$.
+    \item[(3)] If $B$ is obtained from $A$ by adding a multiple of one column to another, then $\det(B) = \det(A)$.
+\end{enumerate}
+\end{theorem}
+
+\textit{Proof.} These follow from linearity and the alternating property. \qed
+
+\begin{theorem}{Triangular Matrices}
+If $A$ is an upper or lower triangular matrix, then $\det(A)$ equals the product of the diagonal entries.
+\end{theorem}
+
+\textit{Proof.} By induction on $n$, using the expansion formula. \qed
+
+\section{Cramer's Rule}
+
+\begin{theorem}{Cramer's Rule}
+Let $A^1, \ldots, A^n$ be column vectors in $K^n$ such that $\det(A^1, \ldots, A^n) \neq 0$. Let $B \in K^n$. Then the unique solution of the system:
+\[
+x_1A^1 + \cdots + x_nA^n = B
+\]
+is given by:
+\[
+x_j = \frac{\det(A^1, \ldots, B, \ldots, A^n)}{\det(A^1, \ldots, A^n)}
+\]
+where $B$ occurs in the $j$-th place instead of $A^j$.
+\end{theorem}
+
+\textit{Proof.} Replace the $j$-th column of $A$ by $B$ to get matrix $A_j$. Then:
+\[
+\det(A_j) = \det(A^1, \ldots, \sum_i x_iA^i, \ldots, A^n) = \sum_i x_i \det(A^1, \ldots, A^i, \ldots, A^n) = x_j \det(A)
+\]
+since all terms with $i \neq j$ have two equal columns. Thus $x_j = \det(A_j)/\det(A)$. \qed
+
+\begin{theorem}{Linear Independence Criterion}
+The column vectors $A^1, \ldots, A^n$ of an $n \times n$ matrix $A$ are linearly independent if and only if $\det(A) \neq 0$.
+\end{theorem}
+
+\textit{Proof.} If $\det(A) \neq 0$ and $\sum x_iA^i = O$, Cramer's rule gives $x_j = 0$ for all $j$. Conversely, if columns are linearly independent, $A$ is invertible, so $\det(A) \neq 0$. \qed
+
+\section{Permutations}
+
+\begin{definition}{Permutation}
+A permutation of $J_n = \{1, \ldots, n\}$ is a bijection $\sigma: J_n \to J_n$.
+\end{definition}
+
+\begin{definition}{Sign of a Permutation}
+For a permutation $\sigma$, the sign $\epsilon(\sigma)$ is defined by:
+\[
+\epsilon(\sigma) = \frac{\det(E^{\sigma(1)}, \ldots, E^{\sigma(n)})}{\det(E^1, \ldots, E^n)} = \det(E^{\sigma(1)}, \ldots, E^{\sigma(n)})
+\]
+where $E^i$ are the standard basis column vectors.
+\end{definition}
+
+\begin{theorem}{Properties of Sign}
+\begin{enumerate}
+    \item[(1)] $\epsilon(\sigma) = \pm 1$.
+    \item[(2)] If $\sigma, \tau$ are permutations, then $\epsilon(\sigma \circ \tau) = \epsilon(\sigma)\epsilon(\tau)$.
+    \item[(3)] If $\sigma$ is a transposition (interchange of two elements), then $\epsilon(\sigma) = -1$.
+\end{enumerate}
+\end{theorem}
+
+\textit{Proof.} (1) follows since applying a permutation to the identity matrix gives a matrix with determinant $\pm 1$. (2) follows from $\det(AB) = \det(A)\det(B)$. (3) follows since interchanging two columns changes the sign of the determinant. \qed
+
+\section{Expansion Formula and Uniqueness of Determinants}
+
+\begin{theorem}{General Expansion Formula}
+Let $A = (a_{ij})$ be an $n \times n$ matrix. Then:
+\[
+\det(A) = \sum_{\sigma} \epsilon(\sigma) a_{\sigma(1),1} a_{\sigma(2),2} \cdots a_{\sigma(n),n}
+\]
+where the sum is taken over all permutations $\sigma$ of $\{1, \ldots, n\}$.
+\end{theorem}
+
+\textit{Proof.} Write each column $A^j = \sum_i a_{ij}E^i$. By multilinearity:
+\[
+\det(A^1, \ldots, A^n) = \sum_{i_1, \ldots, i_n} a_{i_1,1} \cdots a_{i_n,n} \det(E^{i_1}, \ldots, E^{i_n})
+\]
+The determinant on the right is zero unless $(i_1, \ldots, i_n)$ is a permutation of $(1, \ldots, n)$, in which case it equals $\epsilon(\sigma)$. \qed
+
+\begin{theorem}{Uniqueness}
+The determinant is the unique alternating multilinear function on the columns of $n \times n$ matrices taking value $1$ on the identity matrix.
+\end{theorem}
+
+\textit{Proof.} The expansion formula shows any such function must equal the determinant. \qed
+
+\section{Inverse of a Matrix}
+
+\begin{theorem}{Formula for Inverse}
+Let $A$ be an invertible $n \times n$ matrix. Then:
+\[
+A^{-1} = \frac{1}{\det(A)} (b_{ij})^t
+\]
+where $b_{ij} = (-1)^{i+j} \det(A_{ji})$ and $A_{ji}$ is the matrix obtained by deleting the $j$-th row and $i$-th column.
+\end{theorem}
+
+\textit{Proof.} Let $B = (b_{ij})$. We verify $AB = \det(A)I$. The $(i,i)$ entry of $AB$ is $\sum_j a_{ij}b_{ji} = \sum_j (-1)^{i+j} a_{ij} \det(A_{ij}) = \det(A)$ by expansion along row $i$. The $(i,k)$ entry for $i \neq k$ is $\sum_j (-1)^{k+j} a_{ij} \det(A_{kj})$, which is the determinant of a matrix with rows $i$ and $k$ equal, hence $0$. \qed
+
+\section{The Rank of a Matrix and Subdeterminants}
+
+\begin{theorem}{Rank and Subdeterminants}
+Let $A$ be an $m \times n$ matrix. The rank of $A$ is $r$ if and only if there exists an $r \times r$ submatrix with nonzero determinant, and every $(r+1) \times (r+1)$ submatrix has determinant $0$.
+\end{theorem}
+
+\textit{Proof.} The rank equals the dimension of the column space, which is the maximum number of linearly independent columns. A set of $k$ columns is linearly independent if and only if some $k \times k$ submatrix has nonzero determinant (considering the rows spanning the same space). \qed
+
+\chapter{Symmetric, Hermitian, and Unitary Operators}
+
+\section{Symmetric Operators}
+
+\begin{definition}{Symmetric Operator}
+Let $V$ be a finite-dimensional vector space over the field $K$. Let $A: V \to V$ be a linear map. An operator $A$ is symmetric (with respect to a scalar product) if:
+\[
+\langle Av, w \rangle = \langle v, Aw \rangle
+\]
+for all $v, w \in V$.
+\end{definition}
+
+\begin{theorem}{Existence of Transpose}
+Let $V$ be a finite-dimensional vector space over $K$ with a non-degenerate scalar product. Let $A: V \to V$ be a linear operator. Then there exists a unique linear operator $B: V \to V$ such that:
+\[
+\langle Av, w \rangle = \langle v, Bw \rangle
+\]
+for all $v, w \in V$.
+\end{theorem}
+
+\textit{Proof.} Given $w \in V$, the map $v \mapsto \langle Av, w \rangle$ is a linear functional. Since the scalar product is non-degenerate, there exists a unique element $Bw \in V$ such that $\langle Av, w \rangle = \langle v, Bw \rangle$ for all $v$. The map $w \mapsto Bw$ is linear, as can be verified directly. Uniqueness follows from the non-degeneracy of the scalar product. \qed
+
+\begin{definition}{Transpose}
+The operator $B$ in the above theorem is called the transpose of $A$, denoted by ${}^tA$.
+\end{definition}
+
+\begin{theorem}{Properties of Transpose}
+Let $V$ be a finite-dimensional vector space over $K$ with a non-degenerate scalar product. Then:
+\begin{enumerate}
+    \item[(1)] ${}^t(A + B) = {}^tA + {}^tB$
+    \item[(2)] ${}^t(cA) = c \cdot {}^tA$ for $c \in K$
+    \item[(3)] ${}^t(AB) = {}^tB \cdot {}^tA$
+    \item[(4)] ${}^t({}^tA) = A$
+\end{enumerate}
+\end{theorem}
+
+\textit{Proof.} These follow from the defining property of the transpose and the uniqueness in the existence theorem. \qed
+
+\section{Hermitian Operators}
+
+\begin{definition}{Hermitian Product}
+Let $V$ be a vector space over $\mathbb{C}$. A hermitian product on $V$ is an association which to any pair of elements $v, w$ of $V$ associates a complex number, denoted by $\langle v, w \rangle$, satisfying the following properties:
+\begin{enumerate}
+    \item[(HP 1)] $\langle v, w \rangle = \overline{\langle w, v \rangle}$ for all $v, w \in V$.
+    \item[(HP 2)] $\langle u, v + w \rangle = \langle u, v \rangle + \langle u, w \rangle$.
+    \item[(HP 3)] If $c \in \mathbb{C}$, then $\langle cv, w \rangle = c\langle v, w \rangle$ and $\langle v, cw \rangle = \bar{c}\langle v, w \rangle$.
+\end{enumerate}
+The product is positive definite if $\langle v, v \rangle > 0$ for $v \neq O$.
+\end{definition}
+
+\begin{theorem}{Existence of Adjoint}
+Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ with a positive definite hermitian product. Let $A: V \to V$ be a linear operator. Then there exists a unique linear operator $A^*: V \to V$ such that:
+\[
+\langle Av, w \rangle = \langle v, A^*w \rangle
+\]
+for all $v, w \in V$.
+\end{theorem}
+
+\textit{Proof.} Similar to the existence of transpose, using the Riesz representation theorem for hermitian products. \qed
+
+\begin{definition}{Adjoint}
+The operator $A^*$ is called the adjoint of $A$.
+\end{definition}
+
+\begin{theorem}{Properties of Adjoint}
+Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ with a positive definite hermitian product. Then:
+\begin{enumerate}
+    \item[(1)] $(A + B)^* = A^* + B^*$
+    \item[(2)] $(cA)^* = \bar{c}A^*$ for $c \in \mathbb{C}$
+    \item[(3)] $(AB)^* = B^*A^*$
+    \item[(4)] $A^{**} = A$
+\end{enumerate}
+\end{theorem}
+
+\textit{Proof.} These follow from the defining property and uniqueness. For (2), note that $\langle cAv, w \rangle = c\langle Av, w \rangle = c\langle v, A^*w \rangle = \langle v, \bar{c}A^*w \rangle$. \qed
+
+\begin{definition}{Hermitian Operator}
+An operator $A$ is hermitian if $A = A^*$.
+\end{definition}
+
+\begin{theorem}{Characterization of Hermitian Operators}
+Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ with a positive definite hermitian product. An operator $A$ is hermitian if and only if $\langle Av, v \rangle$ is real for all $v \in V$.
+\end{theorem}
+
+\textit{Proof.} If $A = A^*$, then $\langle Av, v \rangle = \langle v, Av \rangle = \overline{\langle Av, v \rangle}$, so $\langle Av, v \rangle$ is real. Conversely, if $\langle Av, v \rangle$ is real for all $v$, then using the polarization identity, one shows $\langle Av, w \rangle = \langle v, Aw \rangle$ for all $v, w$, so $A = A^*$. \qed
+
+\section{Unitary Operators}
+
+\begin{definition}{Unitary Operator}
+Let $V$ be a finite-dimensional vector space over $\mathbb{R}$ (resp. $\mathbb{C}$) with a positive definite scalar (resp. hermitian) product. A linear map $A: V \to V$ is unitary (resp. real unitary, also called orthogonal) if:
+\[
+\langle Av, Aw \rangle = \langle v, w \rangle
+\]
+for all $v, w \in V$.
+\end{definition}
+
+\begin{theorem}{Characterization of Unitary Operators}
+Let $V$ be as above. The following conditions on an operator $A$ are equivalent:
+\begin{enumerate}
+    \item[(1)] $A$ is unitary.
+    \item[(2)] $A$ preserves norms: $\|Av\| = \|v\|$ for all $v \in V$.
+    \item[(3)] $A$ preserves unit vectors: if $\|v\| = 1$ then $\|Av\| = 1$.
+    \item[(4)] $A^*A = I$ (equivalently, ${}^tAA = I$ in the real case, or ${}^t\bar{A}A = I$ in the complex case).
+\end{enumerate}
+\end{theorem}
+
+\textit{Proof.} (1) $\Rightarrow$ (2): $\|Av\|^2 = \langle Av, Av \rangle = \langle v, v \rangle = \|v\|^2$.
+
+(2) $\Rightarrow$ (3): Immediate.
+
+(2) $\Rightarrow$ (1): Using the polarization identity in the real case $\langle v, w \rangle = \frac{1}{4}(\|v+w\|^2 - \|v-w\|^2)$ and the complex case, we obtain $\langle Av, Aw \rangle = \langle v, w \rangle$.
+
+(1) $\Leftrightarrow$ (4): $\langle Av, Aw \rangle = \langle v, w \rangle$ for all $v, w$ is equivalent to $\langle A^*Av, w \rangle = \langle v, w \rangle$ for all $v, w$, which is equivalent to $A^*A = I$. \qed
+
+\begin{theorem}{Unitary Maps and Orthonormal Bases}
+Let $V$ be a finite-dimensional vector space with a positive definite scalar or hermitian product. Let $\{v_1, \ldots, v_n\}$ be an orthonormal basis of $V$.
+\begin{enumerate}
+    \item[(a)] If $A$ is unitary, then $\{Av_1, \ldots, Av_n\}$ is an orthonormal basis.
+    \item[(b)] Conversely, if $\{w_1, \ldots, w_n\}$ is another orthonormal basis and $Av_i = w_i$ for all $i$, then $A$ is unitary.
+\end{enumerate}
+\end{theorem}
+
+\textit{Proof.} (a) $\langle Av_i, Av_j \rangle = \langle v_i, v_j \rangle = \delta_{ij}$, so $\{Av_i\}$ is orthonormal, hence a basis.
+
+(b) For $v = \sum c_iv_i$, $Av = \sum c_iw_i$. Then $\|Av\|^2 = \sum |c_i|^2 = \|v\|^2$, so $A$ preserves norms, hence is unitary. \qed
+
+\chapter{Eigenvectors and Eigenvalues}
+
+\section{The Characteristic Polynomial}
+
+\begin{definition}{Characteristic Polynomial}
+Let $A$ be an $n \times n$ matrix over a field $K$. The characteristic polynomial of $A$ is defined to be:
+\[
+P_A(t) = \det(tI - A)
+\]
+where $t$ is an indeterminate, $I$ is the $n \times n$ identity matrix, and $tI - A$ is the matrix with entries $t\delta_{ij} - a_{ij}$.
+\end{definition}
+
+\begin{theorem}{Eigenvalue Criterion}
+A number $\lambda$ is an eigenvalue of $A$ if and only if $P_A(\lambda) = 0$, i.e., $\lambda$ is a root of the characteristic polynomial.
+\end{theorem}
+
+\textit{Proof.} The number $\lambda$ is an eigenvalue of $A$ if and only if there exists a nonzero vector $v$ such that $Av = \lambda v$, equivalently $(\lambda I - A)v = O$. This happens if and only if $\lambda I - A$ is not invertible, which is equivalent to $\det(\lambda I - A) = 0$. \qed
+
+\begin{theorem}{Similar Matrices Have Same Characteristic Polynomial}
+If $A$ and $B$ are similar $n \times n$ matrices, then $P_A(t) = P_B(t)$.
+\end{theorem}
+
+\textit{Proof.} Let $B = M^{-1}AM$ for some invertible $M$. Then:
+\[
+P_B(t) = \det(tI - B) = \det(tI - M^{-1}AM) = \det(M^{-1}(tI - A)M) = \det(M^{-1})\det(tI - A)\det(M) = P_A(t)
+\]
+\qed
+
+\section{Eigenvectors and Eigenvalues}
+
+\begin{definition}{Eigenvalue and Eigenvector}
+Let $A: V \to V$ be a linear operator on a vector space $V$ over $K$. An element $\lambda \in K$ is called an eigenvalue of $A$ if there exists a nonzero vector $v \in V$ such that $Av = \lambda v$. The vector $v$ is called an eigenvector of $A$ with eigenvalue $\lambda$.
+\end{definition}
+
+\begin{definition}{Eigenspace}
+For an eigenvalue $\lambda$ of $A$, the set of all vectors $v \in V$ such that $Av = \lambda v$ (including the zero vector) is called the eigenspace of $\lambda$, denoted $V_\lambda$.
+\end{definition}
+
+\begin{theorem}{Eigenspace is a Subspace}
+The eigenspace $V_\lambda$ is a subspace of $V$.
+\end{theorem}
+
+\textit{Proof.} If $v, w \in V_\lambda$ and $c \in K$, then $A(v + w) = Av + Aw = \lambda v + \lambda w = \lambda(v + w)$ and $A(cv) = cAv = c\lambda v = \lambda(cv)$. \qed
+
+\section{Eigenvalues and Eigenvectors of Symmetric Matrices}
+
+\begin{theorem}{Real Eigenvalues of Symmetric Matrices}
+Let $A$ be a real symmetric $n \times n$ matrix. Then all eigenvalues of $A$ are real.
+\end{theorem}
+
+\textit{Proof.} Let $\lambda$ be an eigenvalue of $A$ with eigenvector $Z \in \mathbb{C}^n$. Write $Z = X + iY$ where $X, Y \in \mathbb{R}^n$. Since $A$ is real and symmetric, $\bar{Z} = X - iY$ is also an eigenvector with eigenvalue $\bar{\lambda}$. Then:
+\[
+\langle AZ, Z \rangle = \lambda \langle Z, Z \rangle = \lambda \sum |z_i|^2
+\]
+Also $\langle AZ, Z \rangle = \langle Z, AZ \rangle = \bar{\lambda} \langle Z, Z \rangle$. Thus $\lambda = \bar{\lambda}$, so $\lambda$ is real. \qed
+
+\begin{theorem}{Orthogonality of Eigenvectors}
+Let $A$ be a real symmetric matrix. Eigenvectors corresponding to distinct eigenvalues are orthogonal.
+\end{theorem}
+
+\textit{Proof.} Let $Av = \lambda v$ and $Aw = \mu w$ with $\lambda \neq \mu$. Then:
+\[
+\lambda \langle v, w \rangle = \langle Av, w \rangle = \langle v, Aw \rangle = \mu \langle v, w \rangle
+\]
+Since $\lambda \neq \mu$, we have $\langle v, w \rangle = 0$. \qed
+
+\section{Diagonalization of a Symmetric Linear Map}
+
+\begin{theorem}{Spectral Theorem for Symmetric Operators}
+Let $V$ be a finite-dimensional vector space over $\mathbb{R}$ with a positive definite scalar product. Let $A: V \to V$ be a symmetric linear map. Then $V$ has an orthonormal basis consisting of eigenvectors of $A$.
+\end{theorem}
+
+\textit{Proof.} By induction on $\dim V$. The base case $\dim V = 1$ is trivial. Assume true for dimensions less than $n$. Since $A$ is symmetric, it has a real eigenvalue $\lambda$ with eigenvector $v$. Let $W = v^\perp$. For $w \in W$:
+\[
+\langle Aw, v \rangle = \langle w, Av \rangle = \lambda \langle w, v \rangle = 0
+\]
+So $W$ is invariant under $A$. By induction, $W$ has an orthonormal basis of eigenvectors. Adding $v/\|v\|$ gives an orthonormal basis for $V$. \qed
+
+\begin{theorem}{Diagonalization of Symmetric Matrices}
+Let $A$ be a real symmetric $n \times n$ matrix. Then there exists an orthogonal matrix $U$ such that ${}^tU AU$ is diagonal.
+\end{theorem}
+
+\textit{Proof.} By the spectral theorem, $A$ has an orthonormal basis of eigenvectors $\{v_1, \ldots, v_n\}$. Let $U$ be the matrix with columns $v_1, \ldots, v_n$. Then $U$ is orthogonal and ${}^tU AU$ is diagonal with eigenvalues on the diagonal. \qed
+
+\section{The Hermitian Case}
+
+\begin{theorem}{Spectral Theorem for Hermitian Operators}
+Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ with a positive definite hermitian product. Let $A: V \to V$ be a hermitian operator. Then $V$ has an orthonormal basis consisting of eigenvectors of $A$.
+\end{theorem}
+
+\textit{Proof.} Similar to the real case, using that hermitian operators have real eigenvalues. \qed
+
+\begin{theorem}{Diagonalization of Hermitian Matrices}
+Let $A$ be a hermitian $n \times n$ matrix. Then there exists a unitary matrix $U$ such that $U^*AU$ is diagonal.
+\end{theorem}
+
+\textit{Proof.} Analogous to the symmetric case, using an orthonormal basis of eigenvectors with respect to the hermitian product. \qed
+
+\section{Unitary Operators}
+
+\begin{theorem}{Spectral Theorem for Unitary Operators}
+Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ with a positive definite hermitian product. Let $U: V \to V$ be a unitary operator. Then $V$ has an orthonormal basis consisting of eigenvectors of $U$.
+\end{theorem}
+
+\textit{Proof.} First note that if $W$ is a $U$-invariant subspace, then $W^\perp$ is also $U$-invariant. For $v \in W^\perp$ and $w \in W$: $\langle Uv, w \rangle = \langle v, U^*w \rangle = \langle v, U^{-1}w \rangle$. Since $W$ is invariant, $U^{-1}w \in W$, so $\langle v, U^{-1}w \rangle = 0$. Thus $Uv \in W^\perp$. The result follows by induction, using that eigenvalues of unitary operators have absolute value $1$. \qed
+
+\chapter{Polynomials and Matrices}
+
+\section{Polynomials}
+
+\begin{definition}{Polynomial}
+Let $K$ be a field. A polynomial over $K$ is a formal expression:
+\[
+f(t) = a_nt^n + \cdots + a_0
+\]
+where $a_i \in K$ and $t$ is a variable. The coefficients $a_0, \ldots, a_n$ are elements of $K$. If $a_n \neq 0$, then $n$ is called the degree of $f$, denoted $\deg f$, and $a_n$ is called the leading coefficient.
+\end{definition}
+
+\begin{definition}{Degree Convention}
+We agree to the convention that $\deg 0 = -\infty$, with the rules:
+\[
+-\infty + (-\infty) = -\infty, \quad -\infty + a = -\infty \text{ for every integer } a, \quad -\infty < a
+\]
+\end{definition}
+
+\begin{theorem}{Degree of Product}
+Let $f, g$ be polynomials with coefficients in $K$. Then:
+\[
+\deg(fg) = \deg f + \deg g
+\]
+\end{theorem}
+
+\textit{Proof.} Let $f(t) = a_nt^n + \cdots + a_0$ with $a_n \neq 0$ and $g(t) = b_mt^m + \cdots + b_0$ with $b_m \neq 0$. Then:
+\[
+(fg)(t) = a_nb_mt^{n+m} + \text{terms of lower degree}
+\]
+Since $a_nb_m \neq 0$, we have $\deg(fg) = n + m = \deg f + \deg g$. If either $f$ or $g$ is $0$, the convention about $-\infty$ makes the assertion hold. \qed
+
+\begin{definition}{Root}
+Let $f$ be a polynomial over $K$. A root (or zero) of $f$ in $K$ is an element $\alpha \in K$ such that $f(\alpha) = 0$.
+\end{definition}
+
+\begin{theorem}{Factorization of Polynomials}
+Let $f$ be a polynomial with complex coefficients, leading coefficient $1$, and $\deg f = n \geq 1$. Then there exist complex numbers $\alpha_1, \ldots, \alpha_n$ such that:
+\[
+f(t) = (t - \alpha_1)\cdots(t - \alpha_n)
+\]
+The numbers $\alpha_1, \ldots, \alpha_n$ are uniquely determined up to a permutation.
+\end{theorem}
+
+\section{Polynomials of Matrices and Linear Maps}
+
+\begin{definition}{Polynomial of a Matrix}
+Let $A$ be a square matrix with coefficients in $K$. Let $f \in K[t]$ with $f(t) = a_nt^n + \cdots + a_0$. We define:
+\[
+f(A) = a_nA^n + \cdots + a_1A + a_0I
+\]
+where $I$ is the identity matrix and $A^k$ denotes the $k$-th power of $A$.
+\end{definition}
+
+\begin{theorem}{Polynomial Evaluation Properties}
+Let $f, g \in K[t]$. Let $A$ be a square matrix with coefficients in $K$. Then:
+\begin{enumerate}
+    \item[(1)] $(f + g)(A) = f(A) + g(A)$
+    \item[(2)] $(fg)(A) = f(A)g(A)$
+    \item[(3)] If $c \in K$, then $(cf)(A) = cf(A)$
+\end{enumerate}
+\end{theorem}
+
+\textit{Proof.} Let $f(t) = a_nt^n + \cdots + a_0$ and $g(t) = b_mt^m + \cdots + b_0$.
+
+(1) Without loss of generality, assume $n \geq m$ and set $b_j = 0$ for $j > m$. Then:
+\[
+(f + g)(A) = (a_n + b_n)A^n + \cdots + (a_0 + b_0)I = f(A) + g(A)
+\]
+
+(2) Let $(fg)(t) = c_{n+m}t^{n+m} + \cdots + c_0$ where $c_k = \sum_{i=0}^{k} a_ib_{k-i}$. Then:
+\[
+f(A)g(A) = \left(\sum_{i=0}^{n} a_iA^i\right)\left(\sum_{j=0}^{m} b_jA^j\right) = \sum_{i,j} a_ib_jA^{i+j} = \sum_{k=0}^{n+m} c_kA^k = (fg)(A)
+\]
+
+(3) Immediate from the definition. \qed
+
+\begin{theorem}{Existence of Annihilating Polynomial}
+Let $A$ be an $n \times n$ matrix in a field $K$. Then there exists a non-zero polynomial $f \in K[t]$ such that $f(A) = O$.
+\end{theorem}
+
+\textit{Proof.} The vector space of $n \times n$ matrices over $K$ has dimension $n^2$. Hence the $n^2 + 1$ matrices $I, A, A^2, \ldots, A^{n^2}$ are linearly dependent. Therefore, there exist scalars $a_0, \ldots, a_{n^2}$, not all zero, such that:
+\[
+a_{n^2}A^{n^2} + \cdots + a_1A + a_0I = O
+\]
+Let $f(t) = a_{n^2}t^{n^2} + \cdots + a_0$. Then $f(A) = O$. \qed
+
+\begin{definition}{Polynomial of a Linear Map}
+Let $V$ be a vector space over $K$ and $A: V \to V$ be a linear operator. For a polynomial $f \in K[t]$, we define $f(A)$ in the same way as for matrices, using the rules of composition of linear maps.
+\end{definition}
+
+\begin{theorem}{Existence of Annihilating Polynomial for Linear Maps}
+Let $V$ be a finite-dimensional vector space over $K$ and $A: V \to V$ be a linear map. Then there exists a non-zero polynomial $f \in K[t]$ such that $f(A) = 0$ (the zero map).
+\end{theorem}
+
+\textit{Proof.} The space $\mathcal{L}(V, V)$ is finite-dimensional. The operators $I, A, A^2, \ldots$ cannot all be linearly independent. Hence some non-trivial linear combination equals zero. \qed
+
+\chapter{Triangulation of Matrices and Linear Maps}
+
+\section{Existence of Triangulation}
+
+\begin{definition}{Invariant Subspace}
+Let $V$ be a vector space and $A: V \to V$ a linear map. A subspace $W$ of $V$ is called $A$-invariant (or invariant under $A$) if $A$ maps $W$ into itself, i.e., $AW \subseteq W$.
+\end{definition}
+
+\begin{definition}{Fan}
+A fan for $A$ (in $V$) is a sequence of subspaces $\{V_1, \ldots, V_n\}$ such that $V_i$ is contained in $V_{i+1}$ for each $i = 1, \ldots, n-1$, such that $\dim V_i = i$, and such that each $V_i$ is $A$-invariant. Furthermore, $V = V_n$.
+\end{definition}
+
+\begin{definition}{Fan Basis}
+Let $\{V_1, \ldots, V_n\}$ be a fan for $A$. A fan basis is a basis $\{v_1, \ldots, v_n\}$ of $V$ such that $\{v_1, \ldots, v_i\}$ is a basis for $V_i$ for each $i$.
+\end{definition}
+
+\begin{theorem}{Fan Basis Gives Triangular Matrix}
+Let $\{v_1, \ldots, v_n\}$ be a fan basis for $A$. Then the matrix associated with $A$ relative to this basis is an upper triangular matrix.
+\end{theorem}
+
+\textit{Proof.} Since $AV_i \subseteq V_i$ for each $i$, there exist numbers $a_{ij}$ such that:
+\[
+\begin{aligned}
+Av_1 &= a_{11}v_1 \\
+Av_2 &= a_{12}v_1 + a_{22}v_2 \\
+&\vdots \\
+Av_i &= a_{1i}v_1 + a_{2i}v_2 + \cdots + a_{ii}v_i \\
+&\vdots \\
+Av_n &= a_{1n}v_1 + a_{2n}v_2 + \cdots + a_{nn}v_n
+\end{aligned}
+\]
+This means the matrix of $A$ with respect to this basis is upper triangular with entries $a_{ij}$. \qed
+
+\begin{definition}{Triangulable}
+A linear map $A: V \to V$ is triangulable over $K$ if there exists a basis of $V$ for which the associated matrix of $A$ is triangular. An $n \times n$ matrix over $K$ is triangulable if it is triangulable as a linear map of $K^n$ into itself.
+\end{definition}
+
+\begin{theorem}{Existence of Fan (Complex Case)}
+Let $V$ be a finite-dimensional vector space over the complex numbers, with $\dim V \geq 1$. Let $A: V \to V$ be a linear map. Then there exists a fan of $A$ in $V$.
+\end{theorem}
+
+\textit{Proof.} By induction on $\dim V$. If $\dim V = 1$, the result is trivial. Assume true for dimension $n-1$. For $\dim V = n$, by the fundamental theorem of algebra, $A$ has a nonzero eigenvector $v_1$. Let $V_1 = \operatorname{span}(v_1)$. Write $V = V_1 \oplus W$. Let $P_1$ be the projection on $V_1$ and $P_2$ the projection on $W$. Then $P_2A$ is a linear map of $V$ into $V$ which maps $W$ into $W$. By induction, there exists a fan $\{W_1, \ldots, W_{n-1}\}$ of $P_2A$ in $W$. Let $V_i = V_1 + W_{i-1}$ for $i = 2, \ldots, n$. Then $\{V_1, \ldots, V_n\}$ is a fan for $A$. \qed
+
+\begin{corollary}{Triangulation Over Complex Numbers}
+Let $V$ be a finite-dimensional vector space over the complex numbers, with $\dim V \geq 1$. Let $A: V \to V$ be a linear map. Then there exists a basis of $V$ such that the matrix of $A$ with respect to this basis is a triangular matrix.
+\end{corollary}
+
+\begin{corollary}{Similarity to Triangular Matrix}
+Let $M$ be a matrix of complex numbers. There exists a non-singular matrix $B$ such that $B^{-1}MB$ is a triangular matrix.
+\end{corollary}
+
+\begin{definition}{Markov Matrix}
+Let $A = (a_{ij})$ be an $n \times n$ complex matrix. If the sum of the elements of each column is $1$, i.e., $\sum_i a_{ij} = 1$ for each $j$, then $A$ is called a Markov matrix.
+\end{definition}
+
+\begin{theorem}{Eigenvalue Bound for Markov Matrices}
+Let $A$ be a Markov matrix such that $|a_{ij}| \leq 1$ for all $i,j$. Then every eigenvalue of $A$ has absolute value $\leq 1$.
+\end{theorem}
+
+\section{Theorem of Hamilton-Cayley}
+
+\begin{theorem}{Hamilton-Cayley Theorem}
+Let $V$ be a finite-dimensional vector space over the complex numbers, of dimension $\geq 1$, and let $A: V \to V$ be a linear map. Let $P$ be its characteristic polynomial. Then $P(A) = O$.
+\end{theorem}
+
+\textit{Proof.} By Theorem 1.2, we can find a fan for $A$, say $\{V_1, \ldots, V_n\}$. Let $\{v_1, \ldots, v_n\}$ be a fan basis. The matrix of $A$ is upper triangular with diagonal entries $a_{11}, \ldots, a_{nn}$, and the characteristic polynomial is $P(t) = (t - a_{11})\cdots(t - a_{nn})$.
+
+We prove by induction that $(A - a_{11}I)\cdots(A - a_{ii}I)v = O$ for all $v \in V_i$. For $i = 1$, $(A - a_{11}I)v_1 = Av_1 - a_{11}v_1 = O$. For $i > 1$, any element of $V_i$ can be written as $v' + cv_i$ with $v' \in V_{i-1}$. By induction hypothesis, $(A - a_{11}I)\cdots(A - a_{i-1,i-1}I)v' = O$. Also, $(A - a_{ii}I)v_i \in V_{i-1}$, so applying the product gives $O$. Thus $P(A)v = O$ for all $v \in V_n = V$. \qed
+
+\begin{corollary}{Hamilton-Cayley for Complex Matrices}
+Let $A$ be an $n \times n$ matrix of complex numbers, and let $P$ be its characteristic polynomial. Then $P(A) = O$.
+\end{corollary}
+
+\begin{corollary}{Hamilton-Cayley for Any Field}
+Let $V$ be a finite-dimensional vector space over the field $K$, and let $A: V \to V$ be a linear map. Let $P$ be the characteristic polynomial of $A$. Then $P(A) = O$.
+\end{corollary}
+
+\textit{Proof.} Take a basis of $V$ and let $M$ be the matrix representing $A$. Then $P_M = P_A$, and it suffices to prove $P_M(M) = O$. This follows from the complex case by viewing $K$ as embedded in its algebraic closure. \qed
+
+\section{Diagonalization of Unitary Maps}
+
+\begin{theorem}{Spectral Theorem for Unitary Operators (Alternative Proof)}
+Let $V$ be a finite-dimensional vector space over the complex numbers, with $\dim V \geq 1$. Assume a positive definite hermitian product on $V$. Let $A: V \to V$ be a unitary map. Then there exists an orthogonal basis of $V$ consisting of eigenvectors of $A$.
+\end{theorem}
+
+\textit{Proof.} First observe that if $w$ is an eigenvector for $A$ with eigenvalue $\lambda$, then $Aw = \lambda w$ and $\lambda \neq 0$ because $A$ preserves length.
+
+By Theorem 1.2, we can find a fan for $A$, say $\{V_1, \ldots, V_n\}$. Let $\{v_1, \ldots, v_n\}$ be a fan basis. We can use the Gram-Schmidt orthogonalization process to orthogonalize it to obtain an orthonormal fan basis $\{w_1, \ldots, w_n\}$. We prove by induction that each $w_i$ is an eigenvector for $A$.
+
+Since $Aw_1$ is contained in $V_1$, there exists $\lambda_1$ such that $Aw_1 = \lambda_1 w_1$, so $w_1$ is an eigenvector. Assume $w_1, \ldots, w_{i-1}$ are eigenvectors with nonzero eigenvalues. There exist scalars $c_1, \ldots, c_i$ such that $Aw_i = c_1w_1 + \cdots + c_iw_i$. Since $A$ preserves perpendicularity, $Aw_i$ is perpendicular to $Aw_k$ for every $k < i$. But $Aw_k = \lambda_kw_k$, hence $Aw_i$ is perpendicular to $w_k$. Thus $c_k = 0$ for $k < i$. Hence $Aw_i = c_iw_i$ with $c_i \neq 0$ because $A$ preserves length. \qed
+
+\begin{corollary}{Unitary Diagonalization}
+Let $A$ be a complex unitary matrix. Then there exists a unitary matrix $U$ such that $U^{-1}AU$ is a diagonal matrix.
+\end{corollary}
+
+\chapter{Polynomials and Primary Decomposition}
+
+\section{The Euclidean Algorithm}
+
+\begin{theorem}{Euclidean Division}
+Let $f, g$ be polynomials over the field $K$, i.e., polynomials in $K[t]$, and assume $\deg g \geq 0$. Then there exist polynomials $q, r$ in $K[t]$ such that:
+\[
+f(t) = q(t)g(t) + r(t)
+\]
+and $\deg r < \deg g$. The polynomials $q, r$ are uniquely determined by these conditions.
+\end{theorem}
+
+\textit{Proof.} Let $m = \deg g$. Write $f(t) = a_nt^n + \cdots + a_0$ and $g(t) = b_mt^m + \cdots + b_0$ with $b_m \neq 0$. If $n < m$, let $q = 0$, $r = f$. If $n \geq m$, let:
+\[
+f_1(t) = f(t) - a_nb_m^{-1}t^{n-m}g(t)
+\]
+Then $\deg f_1 < \deg f$. By induction on $n$, we can find polynomials $q_1, r$ such that $f_1 = q_1g + r$ with $\deg r < \deg g$. Then:
+\[
+f = (a_nb_m^{-1}t^{n-m} + q_1)g + r
+\]
+giving the desired form. For uniqueness, if $f = q_1g + r_1 = q_2g + r_2$, then $(q_1 - q_2)g = r_2 - r_1$. The left side has degree $\geq \deg g$ or is $0$, while the right side has degree $< \deg g$. Hence both sides are $0$, so $q_1 = q_2$ and $r_1 = r_2$. \qed
+
+\begin{corollary}{Root Factor}
+Let $f$ be a non-zero polynomial in $K[t]$. Let $\alpha \in K$ be such that $f(\alpha) = 0$. Then there exists a polynomial $q(t)$ in $K[t]$ such that $f(t) = (t - \alpha)q(t)$.
+\end{corollary}
+
+\textit{Proof.} By the Euclidean algorithm, write $f(t) = q(t)(t - \alpha) + r(t)$ where $\deg r < \deg(t - \alpha) = 1$. Hence $r$ is constant. Since $0 = f(\alpha) = q(\alpha)(\alpha - \alpha) + r = r$, we have $r = 0$. \qed
+
+\begin{corollary}{Number of Roots}
+Let $f$ be a polynomial of degree $n$ in $K[t]$. There are at most $n$ roots of $f$ in $K$.
+\end{corollary}
+
+\textit{Proof.} Otherwise, if $m > n$ and $\alpha_1, \ldots, \alpha_m$ are distinct roots, then $f(t) = (t - \alpha_1)\cdots(t - \alpha_m)g(t)$ for some polynomial $g$, whence $\deg f \geq m$, contradiction. \qed
+
+\section{Greatest Common Divisor}
+
+\begin{definition}{Ideal of Polynomials}
+A subset $J$ of $K[t]$ is called an ideal if:
+\begin{enumerate}
+    \item[(1)] The zero polynomial is in $J$.
+    \item[(2)] If $f, g$ are in $J$, then $f + g$ is in $J$.
+    \item[(3)] If $f$ is in $J$ and $g$ is an arbitrary polynomial, then $gf$ is in $J$.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}{Principal Ideal}
+Let $J$ be an ideal of $K[t]$. Then there exists a polynomial $g$ which is a generator of $J$, i.e., $J = \{qg : q \in K[t]\}$.
+\end{theorem}
+
+\textit{Proof.} If $J = \{0\}$, take $g = 0$. Otherwise, let $g$ be a polynomial in $J$ of smallest degree. We assert $g$ is a generator. Let $f$ be any element of $J$. By the Euclidean algorithm, $f = qg + r$ with $\deg r < \deg g$. Then $r = f - qg \in J$. Since $\deg r < \deg g$, we must have $r = 0$. Hence $f = qg$, and $g$ is a generator. \qed
+
+\begin{definition}{Greatest Common Divisor}
+Let $f_1, f_2$ be non-zero polynomials in $K[t]$. By a greatest common divisor of $f_1, f_2$ we shall mean a polynomial $g$ such that $g$ divides $f_1$ and $f_2$, and furthermore, if $h$ divides both $f_1$ and $f_2$, then $h$ divides $g$.
+\end{definition}
+
+\begin{theorem}{GCD as Generator}
+Let $f_1, f_2$ be non-zero polynomials in $K[t]$. Let $g$ be a generator for the ideal generated by $f_1, f_2$. Then $g$ is a greatest common divisor of $f_1$ and $f_2$.
+\end{theorem}
+
+\textit{Proof.} Since $f_1$ lies in the ideal generated by $f_1, f_2$, there exists $q_1$ such that $f_1 = q_1g$, whence $g$ divides $f_1$. Similarly, $g$ divides $f_2$. Let $h$ be a polynomial dividing both $f_1$ and $f_2$. Write $f_1 = h_1h$ and $f_2 = h_2h$. Since $g$ is in the ideal generated by $f_1, f_2$, there are polynomials $g_1, g_2$ such that $g = g_1f_1 + g_2f_2$, whence $g = (g_1h_1 + g_2h_2)h$. Consequently $h$ divides $g$. \qed
+
+\section{Unique Factorization}
+
+\begin{definition}{Irreducible Polynomial}
+A polynomial $p$ in $K[t]$ is called irreducible (over $K$) if it is of degree $\geq 1$ and if, given a factorization $p = fg$ with $f, g \in K[t]$, then $\deg f = 0$ or $\deg g = 0$.
+\end{definition}
+
+\begin{theorem}{Unique Factorization of Polynomials}
+Let $f$ be a polynomial in $K[t]$ of degree $\geq 1$. Then $f$ can be expressed as a product $f = p_1^{m_1} \cdots p_s^{m_s}$ where $p_1, \ldots, p_s$ are irreducible polynomials with leading coefficient $1$, uniquely determined up to a permutation.
+\end{theorem}
+
+\textit{Proof.} (Existence) By induction on $\deg f$. If $f$ is irreducible, write $f = cp$ with $p$ monic irreducible. Otherwise, $f = gh$ with lower degree factors.
+
+(Uniqueness) If $p_1^{m_1} \cdots p_s^{m_s} = q_1^{n_1} \cdots q_t^{n_t}$, then $p_1$ divides some $q_j$, so $p_1 = q_j$ since both are monic irreducible. Cancel and continue inductively. \qed
+
+\begin{theorem}{Factorization Over Complex Numbers}
+Let $f$ be a polynomial in $\mathbb{C}[t]$ of degree $\geq 1$. Then $f$ has a factorization:
+\[
+f(t) = c(t - \alpha_1)^{m_1} \cdots (t - \alpha_r)^{m_r}
+\]
+with $\alpha_i \in \mathbb{C}$ and $c \in \mathbb{C}$. The factors $(t - \alpha_i)$ are uniquely determined.
+\end{theorem}
+
+\section{Application to the Decomposition of a Vector Space}
+
+\begin{definition}{$A$-invariant Subspace}
+Let $V$ be a vector space over $K$ and $A: V \to V$ an operator. A subspace $W$ of $V$ is called invariant under $A$ (or $A$-invariant) if $AW \subseteq W$.
+\end{definition}
+
+\begin{theorem}{Decomposition by Coprime Polynomials}
+Let $f = gh \in K[t]$ where $f, g, h$ are polynomials of degree $\geq 1$, and assume $g, h$ are relatively prime. Let $A: V \to V$ be an operator such that $f(A) = O$. Let $W_1 = \ker g(A)$ and $W_2 = \ker h(A)$. Then $V = W_1 \oplus W_2$.
+\end{theorem}
+
+\textit{Proof.} Since $g, h$ are relatively prime, there exist $r, s$ such that $rg + sh = 1$. For any $v \in V$: $v = r(A)g(A)v + s(A)h(A)v$. The first term is in $W_2$ because $h(A)r(A)g(A)v = r(A)f(A)v = O$. Similarly, the second term is in $W_1$. For directness, if $w \in W_1 \cap W_2$, then $w = r(A)g(A)w + s(A)h(A)w = O$. \qed
+
+\begin{theorem}{Primary Decomposition Theorem}
+Let $V$ be a vector space over $K$ and $A: V \to V$ an operator. Let $P(t)$ be a polynomial such that $P(A) = O$. Let $P(t) = (t - \alpha_1)^{m_1} \cdots (t - \alpha_r)^{m_r}$ with distinct $\alpha_i$. For each $i$, let $W_i = \ker(A - \alpha_i I)^{m_i}$. Then $V = W_1 \oplus \cdots \oplus W_r$.
+\end{theorem}
+
+\textit{Proof.} Apply the previous theorem repeatedly. \qed
+
+\section{Schur's Lemma}
+
+\begin{theorem}{Schur's Lemma}
+Let $V$ be a vector space over $K$, and let $S$ be a set of operators of $V$. Assume that $V$ is a simple $S$-space (no nontrivial invariant subspaces). Let $A: V \to V$ be a linear map such that $AB = BA$ for all $B \in S$. Then either $A$ is invertible or $A = O$.
+\end{theorem}
+
+\textit{Proof.} The kernel of $A$ is $S$-invariant: if $v \in \ker A$ and $B \in S$, then $A(Bv) = B(Av) = O$, so $Bv \in \ker A$. Since $V$ is simple, either $\ker A = V$ (so $A = O$) or $\ker A = \{O\}$ and $\operatorname{Im} A = V$ (so $A$ is invertible). \qed
+
+\section{The Jordan Normal Form}
+
+\begin{definition}{$(A - \alpha I)$-cyclic}
+Let $V$ be a vector space over $\mathbb{C}$ and $A: V \to V$ a linear map. Let $\alpha \in \mathbb{C}$. An element $v \in V$, $v \neq O$, is called $(A - \alpha I)$-cyclic with period $r$ if $(A - \alpha I)^r v = O$ and $r$ is the smallest positive integer with this property.
+\end{definition}
+
+\begin{theorem}{Jordan Normal Form}
+Let $V$ be a finite-dimensional vector space over $\mathbb{C}$, $V \neq \{O\}$. Let $A: V \to V$ be an operator. Then $V$ can be expressed as a direct sum of $A$-invariant cyclic subspaces. Equivalently, there exists a Jordan basis such that the matrix of $A$ consists of Jordan blocks $J_i$ with eigenvalue $\alpha_i$ on the diagonal and $1$'s on the superdiagonal.
+\end{theorem}
+
+\textit{Proof.} By the primary decomposition theorem, assume $A$ has only one eigenvalue $\alpha$. Let $B = A - \alpha I$, nilpotent with $B^r = O$ but $B^{r-1} \neq O$. Let $v \in V$ with $B^{r-1}v \neq O$. Then $v$ is cyclic of period $r$. The subspace $W = \operatorname{span}\{v, Bv, \ldots, B^{r-1}v\}$ is $B$-invariant. Using $\dim BV + \dim \ker B = \dim V$, by induction decompose $BV$ into cyclic subspaces and lift to $V$. \qed
+
+\chapter{Convex Sets}
+
+\section{Definitions}
+
+\begin{definition}{Convex Set}
+Let $S$ be a subset of $\mathbb{R}^m$. We say that $S$ is convex if given points $P, Q$ in $S$, the line segment joining $P$ to $Q$ is also contained in $S$.
+\end{definition}
+
+\begin{definition}{Line Segment}
+The line segment joining $P$ to $Q$ is the set of all points $P + t(Q - P)$ with $0 \leq t \leq 1$, or equivalently $(1-t)P + tQ$ with $0 \leq t \leq 1$.
+\end{definition}
+
+\begin{theorem}{Convexity of Linear Combinations}
+Let $P_1, \ldots, P_n$ be points of $\mathbb{R}^m$. The set of all linear combinations $x_1P_1 + \cdots + x_nP_n$ with $0 \leq x_i \leq 1$ and $x_1 + \cdots + x_n = 1$, is a convex set.
+\end{theorem}
+
+\textit{Proof.} Let $P = \sum x_iP_i$ and $Q = \sum y_iP_i$ be two such combinations. For $0 \leq t \leq 1$:
+\[
+(1-t)P + tQ = \sum ((1-t)x_i + ty_i)P_i
+\]
+where $0 \leq (1-t)x_i + ty_i \leq 1$ and $\sum ((1-t)x_i + ty_i) = (1-t)\sum x_i + t\sum y_i = (1-t) + t = 1$. \qed
+
+\begin{theorem}{Smallest Convex Set}
+Let $P_1, \ldots, P_n$ be points of $\mathbb{R}^m$. Any convex set which contains $P_1, \ldots, P_n$ also contains all linear combinations $\sum x_iP_i$ with $0 \leq x_i \leq 1$ and $\sum x_i = 1$.
+\end{theorem}
+
+\begin{definition}{Hyperplane and Half Spaces}
+Let $A$ be a non-zero vector in $\mathbb{R}^n$ and $c \in \mathbb{R}$. The hyperplane $H$ defined by $A \cdot X = c$ is the set of all $X$ such that $A \cdot X = c$. The set of all $X$ with $A \cdot X > c$ is called an open half space. The set of all $X$ with $A \cdot X \geq c$ is called a closed half space.
+\end{definition}
+
+\begin{theorem}{Hyperplane and Half Spaces are Convex}
+A hyperplane is convex. Open and closed half spaces are convex.
+\end{theorem}
+
+\textit{Proof.} If $A \cdot P = c$ and $A \cdot Q = c$, then $A \cdot ((1-t)P + tQ) = (1-t)A \cdot P + tA \cdot Q = c$. Similar arguments work for half spaces. \qed
+
+\section{Separating Hyperplanes}
+
+\begin{theorem}{Separating Hyperplane Theorem}
+Let $S$ be a closed convex set in $\mathbb{R}^n$. Let $P$ be a point of $\mathbb{R}^n$. Then either $P$ belongs to $S$, or there exists a hyperplane $H$ which contains $P$, and such that $S$ is contained in one of the open half spaces determined by $H$.
+\end{theorem}
+
+\textit{Proof.} Suppose $P \notin S$. Consider the continuous function $f(X) = \|X - P\|$ on the closed set $S$. This function has a minimum on $S$; let $Q$ be a point of $S$ such that $\|Q - P\| \leq \|X - P\|$ for all $X \in S$. Let $N = Q - P \neq O$.
+
+We contend the hyperplane through $P$ perpendicular to $N$ separates $P$ from $S$. For any $Q' \in S$ and $0 < t \leq 1$, by minimality:
+\[
+\|Q - P\|^2 \leq \|Q + t(Q' - Q) - P\|^2 = \|(Q - P) + t(Q' - Q)\|^2
+\]
+Expanding and letting $t \to 0$ gives $0 \leq (Q - P) \cdot (Q' - Q) = N \cdot (Q' - Q)$, so $Q' \cdot N \geq Q \cdot N = (P + N) \cdot N = P \cdot N + N \cdot N > P \cdot N$. Thus $S$ is contained in the half space $X \cdot N > P \cdot N$. \qed
+
+\begin{theorem}{Supporting Hyperplane}
+Let $S$ be a convex set in $\mathbb{R}^n$, and let $P$ be a boundary point of $S$. Then there exists a supporting hyperplane of $S$ at $P$.
+\end{theorem}
+
+\textit{Proof.} Let $\bar{S}$ be the closure of $S$. Then $\bar{S}$ is convex and $P$ is a boundary point of $\bar{S}$. Apply Theorem 2.1. \qed
+
+\section{Extreme Points and Supporting Hyperplanes}
+
+\begin{definition}{Extreme Point}
+Let $S$ be a convex set and let $P$ be a point of $S$. We say that $P$ is an extreme point of $S$ if there do not exist points $Q_1, Q_2$ of $S$ with $Q_1 \neq Q_2$ such that $P$ can be written in the form $P = tQ_1 + (1-t)Q_2$ with $0 < t < 1$.
+\end{definition}
+
+\begin{theorem}{Supporting Hyperplanes Contain Extreme Points}
+Let $S$ be a closed convex set which is bounded. Then every supporting hyperplane of $S$ contains an extreme point.
+\end{theorem}
+
+\textit{Proof.} Let $H$ be a supporting hyperplane at a boundary point $P_0$. Let $T = H \cap S$. Then $T$ is convex, closed, and bounded. We claim an extreme point of $T$ is also an extreme point of $S$.
+
+To find an extreme point of $T$: Among all points of $T$, there is at least one whose first coordinate is smallest (since $T$ is compact). Let $T_1$ be the subset of $T$ consisting of all points whose first coordinate equals this smallest one. Then $T_1$ is closed and bounded. Find a point of $T_1$ whose second coordinate is smallest, etc. Continuing, we obtain a point $P = (p_1, \ldots, p_n)$. If $P = tX + (1-t)Y$ with $0 < t < 1$, then by minimality of coordinates, $X = Y = P$. Thus $P$ is an extreme point. \qed
+
+\section{The Krein-Milman Theorem}
+
+\begin{definition}{Convex Closure}
+Let $E$ be a set of points in $\mathbb{R}^n$. The convex closure of $E$ is the intersection of all convex sets containing $E$, or equivalently the set of all convex combinations of points in $E$.
+\end{definition}
+
+\begin{theorem}{Krein-Milman Theorem}
+Let $S$ be a closed, bounded, convex set in $\mathbb{R}^n$. Then $S$ is the smallest closed convex set containing the extreme points of $S$. In other words, $S$ is the convex closure of its extreme points.
+\end{theorem}
+
+\textit{Proof.} Let $S'$ be the intersection of all closed convex sets containing the extreme points of $S$. Then $S' \subseteq S$. We must show $S \subseteq S'$.
+
+Suppose $P \in S$ and $P \notin S'$. By the separating hyperplane theorem, there exists a hyperplane $H$ passing through $P$, defined by $X \cdot N = c$, such that $X \cdot N > c$ for all $X \in S'$. Let $L(X) = X \cdot N$. Since $S$ is closed and bounded, $L(S)$ is a closed interval $[a, b]$ containing $c$. Let $H_a$ be the hyperplane $X \cdot N = a$. By the supporting hyperplane theorem, $H_a$ contains an extreme point of $S$. This extreme point is in $S'$, so $a > c$, contradicting $c \in [a, b]$. Thus $S \subseteq S'$. \qed
+
+\appendix
+
+\chapter{Complex Numbers}
+
+\begin{definition}{Complex Numbers}
+The complex numbers are a set of objects which can be added and multiplied, satisfying the following conditions:
+\begin{enumerate}
+    \item[(1)] Every real number is a complex number, and if $\alpha, \beta$ are real numbers, then their sum and product as complex numbers are the same as their sum and product as real numbers.
+    \item[(2)] There is a complex number denoted by $i$ such that $i^2 = -1$.
+    \item[(3)] Every complex number can be written uniquely in the form $a + bi$ where $a, b$ are real numbers.
+    \item[(4)] The ordinary laws of arithmetic concerning addition and multiplication are satisfied.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}{Conjugate}
+Let $\alpha = a + bi$ be a complex number. The conjugate of $\alpha$, denoted $\bar{\alpha}$, is defined to be $a - bi$.
+\end{definition}
+
+\begin{theorem}{Product with Conjugate}
+For any complex number $\alpha = a + bi$:
+\[
+\alpha\bar{\alpha} = a^2 + b^2
+\]
+\end{theorem}
+
+\textit{Proof.} $(a + bi)(a - bi) = a^2 - (bi)^2 = a^2 - b^2i^2 = a^2 + b^2$. \qed
+
+\begin{theorem}{Inverse of Complex Number}
+If $\alpha = a + bi \neq 0$, then the inverse of $\alpha$ is:
+\[
+\alpha^{-1} = \frac{\bar{\alpha}}{a^2 + b^2} = \frac{\bar{\alpha}}{|\alpha|^2}
+\]
+\end{theorem}
+
+\textit{Proof.} $\alpha \cdot \frac{\bar{\alpha}}{a^2 + b^2} = \frac{\alpha\bar{\alpha}}{a^2 + b^2} = \frac{a^2 + b^2}{a^2 + b^2} = 1$. \qed
+
+\begin{definition}{Absolute Value}
+The absolute value (or modulus) of a complex number $\alpha = a_1 + ia_2$ is defined as:
+\[
+|\alpha| = \sqrt{a_1^2 + a_2^2}
+\]
+\end{definition}
+
+\begin{theorem}{Triangle Inequality for Complex Numbers}
+If $\alpha, \beta$ are complex numbers, then:
+\[
+|\alpha + \beta| \leq |\alpha| + |\beta|
+\]
+\end{theorem}
+
+\textit{Proof.} This follows from the triangle inequality for the norm of vectors in $\mathbb{R}^2$, using the vector interpretation of complex numbers. \qed
+
+\begin{theorem}{Fundamental Theorem of Algebra}
+The complex numbers are algebraically closed. In other words, every polynomial $f \in \mathbb{C}[t]$ of degree $\geq 1$ has a root in $\mathbb{C}$.
+\end{theorem}
+
+\textit{Proof.} Let $f(t) = a_nt^n + a_{n-1}t^{n-1} + \cdots + a_0$ with $a_n \neq 0$. For every real $R > 0$, the function $|f|$ is continuous on the closed disc of radius $R$, hence has a minimum. When $|t|$ becomes large, $|f(t)|$ also becomes large, so there exists $R_0 > 0$ such that if $|t| > R_0$ then $|f(t)| > C$ for any given $C > 0$.
+
+Consequently, $|f|$ has an absolute minimum at some point $z_0$ in the closed disc of radius $R_0$. We prove $f(z_0) = 0$.
+
+Express $f$ in the form $f(t) = c_0 + c_1(t - z_0) + \cdots + c_n(t - z_0)^n$. If $f(z_0) = c_0 \neq 0$, let $m$ be the smallest integer $> 0$ with $c_m \neq 0$. Then:
+\[
+f(t) = c_0 + c_m z^m + z^{m+1}g(z)
+\]
+where $z = t - z_0$. Choose $z_1$ with $z_1^m = -c_0/c_m$ and consider $z = \lambda z_1$ with $0 < \lambda < 1$. For sufficiently small $\lambda$, we get $|f(\lambda z_1)| < |c_0|$, contradicting the minimality of $|f(z_0)|$. Thus $f(z_0) = 0$. \qed
+
+\chapter{Iwasawa Decomposition and Others}
+
+\begin{definition}{Group}
+A group $G$ is a set together with a mapping (called the product) from $G \times G$ to $G$, associating to each pair $(x, y) \in G$ an element $xy \in G$, satisfying the following axioms:
+\begin{enumerate}
+    \item[(GR 1)] The product is associative: $(xy)z = x(yz)$ for all $x, y, z \in G$.
+    \item[(GR 2)] There is an element $e \in G$ such that $ex = xe = x$ for all $x \in G$ (called the unit element).
+    \item[(GR 3)] Given $x \in G$, there exists $x^{-1} \in G$ such that $xx^{-1} = x^{-1}x = e$ (called the inverse).
+\end{enumerate}
+\end{definition}
+
+\begin{definition}{Subgroup}
+Let $G$ be a group and $H$ a subset of $G$. Then $H$ is a subgroup if it contains the unit element, is closed under taking products and inverses, i.e., if $x, y \in H$ then $xy \in H$ and $x^{-1} \in H$.
+\end{definition}
+
+\begin{definition}{Special Linear Group}
+Let $SL_n(\mathbb{R})$ denote the set of matrices with determinant 1. This forms a group under matrix multiplication, called the special linear group.
+\end{definition}
+
+\section{Iwasawa Decomposition}
+
+\begin{definition}{Iwasawa Subgroups}
+Let $G = SL_n(\mathbb{R})$. We define:
+\begin{enumerate}
+    \item[$U$] = subgroup of upper triangular matrices with 1's on the diagonal (called unipotent):
+    \[
+    u(x) = \begin{pmatrix} 1 & x_{12} & \cdots & x_{1n} \\ 0 & 1 & \cdots & x_{2n} \\ \vdots & & \ddots & \vdots \\ 0 & 0 & \cdots & 1 \end{pmatrix}
+    \]
+    \item[$A$] = subgroup of positive diagonal elements:
+    \[
+    a = \begin{pmatrix} a_1 & & \\ & \ddots & \\ & & a_n \end{pmatrix} \text{ with } a_i > 0 \text{ for all } i
+    \]
+    \item[$K$] = subgroup of real unitary matrices $k$ satisfying ${}^tk = k^{-1}$.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}{Iwasawa Decomposition}
+The product map $U \times A \times K \to G$ given by $(u, a, k) \mapsto uak$ is a bijection.
+\end{theorem}
+
+\textit{Proof.} Let $e_1, \ldots, e_n$ be the standard unit vectors. For $g = (g_{ij}) \in G$, apply the Gram-Schmidt orthogonalization process to the vectors $ge_1, \ldots, ge_n$. This yields an orthonormal basis, giving the decomposition. The upper triangular structure comes from the orthogonalization process, the diagonal elements give $A$, and the orthogonal transformation gives $K$. \qed
+
+\section{Polar Decompositions}
+
+\begin{definition}{Hermitian Positive Definite Matrices}
+We denote by $\text{SPos}_n(\mathbb{C})$ the set of all hermitian positive definite $n \times n$ matrices with determinant 1.
+\end{definition}
+
+\begin{theorem}{Square Root in SPos}
+Let $p \in \text{SPos}_n(\mathbb{C})$. Then $p$ has a unique square root in $\text{SPos}_n(\mathbb{C})$.
+\end{theorem}
+
+\begin{theorem}{Quadratic Map Bijection}
+Let $G = SL_n(\mathbb{C})$ and $K$ be the complex unitary subgroup. The quadratic map $g \mapsto gg^*$ (where $g^* = {}^t\bar{g}$) induces a bijection:
+\[
+G/K \to \text{SPos}_n(\mathbb{C})
+\]
+\end{theorem}
+
+\begin{theorem}{$KAK$ Decomposition}
+The group $G = SL_n(\mathbb{C})$ has the decomposition (non-unique):
+\[
+G = KAK
+\]
+If $g \in G$ is written as $g = k_1bk_2$ with $k_1, k_2 \in K$ and $b \in A$, then $b$ is uniquely determined up to a permutation of the diagonal elements.
+\end{theorem}
+
+\textit{Proof.} Given $g \in G$, there exists $k_1 \in K$ and $b \in A$ such that $gg^* = k_1b^2k_1^{-1}$ by the spectral theorem. By the bijection of the quadratic map, there exists $k_2 \in K$ such that $g = k_1bk_2$. The uniqueness follows since $b^2$ is the diagonal matrix of eigenvalues of $gg^*$, which are uniquely determined up to permutation. \qed
+
+\begin{theorem}{Polar Decomposition}
+Let $G = SL_n(\mathbb{C})$ and $\mathbf{P} = \text{SPos}_n(\mathbb{C})$. Then $G = \mathbf{P}K$, and the decomposition of an element $g = pk$ with $p \in \mathbf{P}$, $k \in K$ is unique.
+\end{theorem}
+
+\textit{Proof.} The existence follows from the $KAK$ decomposition. For uniqueness, suppose $g = pk$. Then $gg^* = pp^* = p^2$. The uniqueness of the square root shows that $p$ is uniquely determined by $g$, whence so is $k$. \qed
+
+\end{document}

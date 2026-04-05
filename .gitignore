@@ -1,0 +1,14 @@
+﻿# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.toc
+
+# PDF output (optional)
+*.pdf
+
+# VS Code settings (optional)
+.vscode/
