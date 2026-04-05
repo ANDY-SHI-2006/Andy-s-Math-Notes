@@ -7,8 +7,5 @@
 *.fls
 *.toc
 
-# PDF output (optional)
-*.pdf
-
 # VS Code settings (optional)
 .vscode/
