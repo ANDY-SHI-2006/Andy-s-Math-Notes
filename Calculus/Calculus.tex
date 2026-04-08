@@ -1667,13 +1667,19 @@ Then $P = P_n$, the $n$th Taylor polynomial of $f$ at $a$.
 \section{Calculus of Taylor Polynomials}
 
 \begin{theorem}{Linearity Property}
-If $P_n$ and $Q_n$ are the $n$th Taylor polynomials of $f$ and $g$ at $a$, then the $n$th Taylor polynomial of $\alpha f + \beta g$ is $\alpha P_n + \beta Q_n$.
+If $P_n$ and $Q_n$ are the $n$th Taylor polynomials of $f$ and $g$ at $a$, then the $n$th Taylor polynomial of $\alpha f + \beta g$ is $\alpha P_n + \beta Q_n$. In operator notation:
+\[
+T_n(c_1 f + c_2 g) = c_1 T_n(f) + c_2 T_n(g)
+\]
 \end{theorem}
 
 \textit{Proof.} By the uniqueness theorem, since $\alpha P_n + \beta Q_n$ matches the derivatives of $\alpha f + \beta g$ up to order $n$ at $a$, it is the Taylor polynomial. \qed
 
 \begin{theorem}{Differentiation Property}
-The derivative of the $n$th Taylor polynomial of $f$ at $a$ is the $(n-1)$st Taylor polynomial of $f'$ at $a$.
+The derivative of the $n$th Taylor polynomial of $f$ at $a$ is the $(n-1)$st Taylor polynomial of $f'$ at $a$. In operator notation:
+\[
+(T_n f)' = T_{n-1}(f')
+\]
 \end{theorem}
 
 \textit{Proof.} Differentiating $P_n(x)$ gives:
@@ -1683,7 +1689,10 @@ P_n'(x) = f'(a) + \frac{f''(a)}{1!}(x-a) + \cdots + \frac{f^{(n)}(a)}{(n-1)!}(x-
 which is precisely the $(n-1)$st Taylor polynomial of $f'$ at $a$. \qed
 
 \begin{theorem}{Integration Property}
-If $f$ has $n+1$ derivatives at $a$, the $(n+1)$st Taylor polynomial of $P(x) = \int_a^x f(t)\, dt$ is $\int_a^x P_n(t)\, dt$.
+If $f$ has $n+1$ derivatives at $a$, the $(n+1)$st Taylor polynomial of $g(x) = \int_a^x f(t)\, dt$ is $\int_a^x T_n f(t)\, dt$. In operator notation:
+\[
+T_{n+1}g(x) = \int_a^x T_n f(t)\, dt
+\]
 \end{theorem}
 
 \textit{Proof.} Let $Q(x) = \int_a^x P_n(t)\, dt$. Then $Q(a) = 0$ and $Q'(x) = P_n(x)$. By the differentiation property, $Q^{(k+1)}(a) = P_n^{(k)}(a) = f^{(k)}(a)$ for $0 \leq k \leq n$, so $Q^{(k+1)}(a) = f^{(k)}(a) = P^{(k+1)}(a)$. Since $P(a) = 0 = Q(a)$, we have $Q^{(k)}(a) = P^{(k)}(a)$ for $0 \leq k \leq n+1$, proving $Q$ is the Taylor polynomial of $P$. \qed
