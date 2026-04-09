@@ -1756,14 +1756,15 @@ since $u = 0$ when $t = a$, and $v = 0$ when $t = x$. \qed
 The corresponding result for a polynomial approximation of degree $n$ is given by the following.
 
 \begin{theorem}{Taylor's Formula with Lagrange Remainder}
-Let $f$ have derivatives of order $n+1$ in some interval containing $a$. Then for each $x$ in this interval, there exists a point $c$ between $a$ and $x$ such that:
+Assume $f$ has a continuous derivative of order $n+1$ in some interval containing $a$. Then, for every $x$ in this interval, we have the Taylor formula:
 \[
-f(x) = P_n(x) + R_n(x)
+f(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^k + E_n(x),
 \]
-where $P_n$ is the $n$th Taylor polynomial and:
+where
 \[
-R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}
+E_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}
 \]
+for some point $c$ between $a$ and $x$.
 \end{theorem}
 
 \textit{Proof.} Fix $x \neq a$ and define for $t$ between $a$ and $x$:
