@@ -1796,16 +1796,30 @@ for all $x \in I$.
 \section{Other Forms of the Remainder in Taylor's Formula}
 
 \begin{theorem}{Taylor's Formula with Integral Remainder}
-If $f$ has continuous derivative of order $n+1$ in an interval $I$ containing $a$, then for all $x \in I$:
+Assume $f$ has a continuous derivative of order $n+1$ in some interval containing $a$. Then, for every $x$ in this interval, we have the Taylor formula:
 \[
-R_n(x) = \frac{1}{n!}\int_a^x (x-t)^n f^{(n+1)}(t)\, dt
+f(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^k + E_n(x)
+\]
+where:
+\[
+E_n(x) = \frac{1}{n!}\int_a^x (x-t)^n f^{(n+1)}(t)\, dt
 \]
 \end{theorem}
 
-\textit{Proof.} Starting from $R_n(a) = 0$ and $R_n'(x) = f'(x) - P_n'(x)$, with $R_n'(a) = 0$ for the $(n-1)$st Taylor polynomial of $f'$, successive integration by parts yields the integral form. Specifically, with $R_n^{(n+1)}(x) = f^{(n+1)}(x)$ and $R_n^{(k)}(a) = 0$ for $0 \leq k \leq n$:
+\textit{Proof.} The theorem is proved by induction on $n$. We have already proved it for $n=1$. Now we assume it is true for some $n$ and prove it for $n+1$. We write Taylor's formula with $n+1$ and with $n$ and subtract to get:
 \[
-R_n(x) = \int_a^x R_n'(t)\, dt = \int_a^x \int_a^t R_n''(s)\, ds\, dt = \cdots = \frac{1}{n!}\int_a^x (x-t)^n f^{(n+1)}(t)\, dt
-\] \qed
+E_{n+1}(x) = E_n(x) - \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1}
+\]
+Now we use the integral for $E_n(x)$ and note that $(x-a)^{n+1}/(n+1) = \int_a^x (x-t)^n\,dt$ to obtain:
+\begin{align*}
+E_{n+1}(x) &= \frac{1}{n!}\int_a^x (x-t)^n f^{(n+1)}(t)\,dt - \frac{f^{(n+1)}(a)}{n!}\int_a^x (x-t)^n\,dt \\
+&= \frac{1}{n!}\int_a^x (x-t)^n[f^{(n+1)}(t) - f^{(n+1)}(a)]\,dt
+\end{align*}
+The last integral may be written in the form $\int_a^x u\,dv$, where $u = f^{(n+1)}(t) - f^{(n+1)}(a)$ and $v = -(x-t)^{n+1}/(n+1)$. Integrating by parts and noting that $u=0$ when $t=a$, and that $v=0$ when $t=x$, we find that:
+\[
+E_{n+1}(x) = \frac{1}{n!}\int_a^x u\,dv = -\frac{1}{n!}\int_a^x v\,du = \frac{1}{(n+1)!}\int_a^x (x-t)^{n+1}f^{(n+2)}(t)\,dt
+\]
+This completes the inductive step from $n$ to $n+1$, so the theorem is true for all $n \geq 1$. \qed
 
 \begin{theorem}{Taylor's Formula with Cauchy Remainder}
 Under the same hypotheses as the integral form, for each $x \in I$, there exists $c$ between $a$ and $x$ such that:
