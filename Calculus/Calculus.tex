@@ -1722,6 +1722,39 @@ where $g(x) \to 0$ as $x \to 0$. Then $P_n$ is the Taylor polynomial generated b
 
 \section{Taylor's Formula with Remainder}
 
+We turn now to a discussion of the error in the approximation of a function $f$ by its Taylor polynomial $T_n f$ at a point $a$. The error is defined to be the difference:
+\[
+E_n(x) = f(x) - T_n f(x)
+\]
+Thus, if $f$ has a derivative of order $n$ at $a$, we may write:
+\[
+f(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^k + E_n(x)
+\]
+This is known as \textbf{Taylor's formula with remainder} $E_n(x)$; it is useful whenever we can estimate the size of $E_n(x)$. We shall express the error as an integral and then estimate the size of the integral. To illustrate the principal ideas, we consider first the error arising from a linear approximation.
+
+\begin{theorem}{Taylor's Formula with Integral Remainder (First Order)}
+Assume $f$ has a continuous second derivative $f''$ in some neighborhood of $a$. Then, for every $x$ in this neighborhood, we have:
+\[
+f(x) = f(a) + f'(a)(x-a) + E_1(x)
+\]
+where:
+\[
+E_1(x) = \int_a^x (x-t)f''(t)\, dt
+\]
+\end{theorem}
+
+\textit{Proof.} From the definition of the error we may write:
+\[
+E_1(x) = f(x) - f(a) - f'(a)(x-a) = \int_a^x f'(t)\, dt - f'(a)\int_a^x dt = \int_a^x [f'(t) - f'(a)]\, dt
+\]
+The last integral may be written as $\int_a^x u\, dv$, where $u = f'(t) - f'(a)$ and $v = t - x$. Now $du/dt = f''(t)$ and $dv/dt = 1$, so integration by parts gives:
+\[
+E_1(x) = \int_a^x u\, dv = uv\big|_a^x - \int_a^x (t-x)f''(t)\, dt = \int_a^x (x-t)f''(t)\, dt
+\]
+since $u = 0$ when $t = a$, and $v = 0$ when $t = x$. \qed
+
+The corresponding result for a polynomial approximation of degree $n$ is given by the following.
+
 \begin{theorem}{Taylor's Formula with Lagrange Remainder}
 Let $f$ have derivatives of order $n+1$ in some interval containing $a$. Then for each $x$ in this interval, there exists a point $c$ between $a$ and $x$ such that:
 \[
