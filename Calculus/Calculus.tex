@@ -1755,6 +1755,34 @@ since $u = 0$ when $t = a$, and $v = 0$ when $t = x$. \qed
 
 The corresponding result for a polynomial approximation of degree $n$ is given by the following.
 
+\begin{theorem}{Taylor's Formula with Integral Remainder}
+Assume $f$ has a continuous derivative of order $n+1$ in some interval containing $a$. Then, for every $x$ in this interval, we have the Taylor formula:
+\[
+f(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^k + E_n(x)
+\]
+where:
+\[
+E_n(x) = \frac{1}{n!}\int_a^x (x-t)^n f^{(n+1)}(t)\, dt
+\]
+\end{theorem}
+
+\textit{Proof.} The theorem is proved by induction on $n$. We have already proved it for $n=1$. Now we assume it is true for some $n$ and prove it for $n+1$. We write Taylor's formula with $n+1$ and with $n$ and subtract to get:
+\[
+E_{n+1}(x) = E_n(x) - \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1}
+\]
+Now we use the integral for $E_n(x)$ and note that $(x-a)^{n+1}/(n+1) = \int_a^x (x-t)^n\,dt$ to obtain:
+\begin{align*}
+E_{n+1}(x) &= \frac{1}{n!}\int_a^x (x-t)^n f^{(n+1)}(t)\,dt - \frac{f^{(n+1)}(a)}{n!}\int_a^x (x-t)^n\,dt \\
+&= \frac{1}{n!}\int_a^x (x-t)^n[f^{(n+1)}(t) - f^{(n+1)}(a)]\,dt
+\end{align*}
+The last integral may be written in the form $\int_a^x u\,dv$, where $u = f^{(n+1)}(t) - f^{(n+1)}(a)$ and $v = -(x-t)^{n+1}/(n+1)$. Integrating by parts and noting that $u=0$ when $t=a$, and that $v=0$ when $t=x$, we find that:
+\[
+E_{n+1}(x) = \frac{1}{n!}\int_a^x u\,dv = -\frac{1}{n!}\int_a^x v\,du = \frac{1}{(n+1)!}\int_a^x (x-t)^{n+1}f^{(n+2)}(t)\,dt
+\]
+This completes the inductive step from $n$ to $n+1$, so the theorem is true for all $n \geq 1$. \qed
+
+\section{Other Forms of the Remainder in Taylor's Formula}
+
 \begin{theorem}{Taylor's Formula with Lagrange Remainder}
 Assume $f$ has a continuous derivative of order $n+1$ in some interval containing $a$. Then, for every $x$ in this interval, we have the Taylor formula:
 \[
@@ -1781,6 +1809,37 @@ By the mean-value theorem, there exists $c$ between $a$ and $x$ such that:
 \]
 Since $F(x) - F(a) = -R_n(x)$, we get $R_n(x) = \frac{f^{(n+1)}(c)}{n!}(x-c)^n(x-a)$. A more careful analysis (using Cauchy's mean-value theorem) gives the stated form. \qed
 
+\begin{theorem}{Estimates for the Error in Taylor's Formula}
+If the $(n+1)$st derivative of $f$ satisfies the inequalities
+\[
+m \leq f^{(n+1)}(t) \leq M
+\]
+for all $t$ in some interval containing $a$, then for every $x$ in this interval we have the following estimates:
+\[
+m\frac{(x-a)^{n+1}}{(n+1)!} \leq E_n(x) \leq M\frac{(x-a)^{n+1}}{(n+1)!} \quad \text{if } x > a,
+\]
+and
+\[
+m\frac{(a-x)^{n+1}}{(n+1)!} \leq (-1)^{n+1}E_n(x) \leq M\frac{(a-x)^{n+1}}{(n+1)!} \quad \text{if } x < a.
+\]
+\end{theorem}
+
+\textit{Proof.} Assume first that $x > a$. Then the integral for $E_n(x)$ is extended over the interval $[a, x]$. For each $t$ in this interval we have $(x-t)^n \geq 0$, so the inequalities give us
+\[
+m\frac{(x-t)^n}{n!} \leq \frac{(x-t)^n}{n!}f^{(n+1)}(t) \leq M\frac{(x-t)^n}{n!}.
+\]
+Integrating from $a$ to $x$, we find that
+\[
+\frac{m}{n!}\int_a^x (x-t)^n\, dt \leq E_n(x) \leq \frac{M}{n!}\int_a^x (x-t)^n\, dt.
+\]
+The substitution $u = x-t$, $du = -dt$ gives us
+\[
+\int_a^x (x-t)^n\, dt = \int_0^{x-a} u^n\, du = \frac{(x-a)^{n+1}}{n+1},
+\]
+so the inequalities reduce to the stated form for $x > a$.
+
+If $x < a$, the integration takes place over the interval $[x, a]$. For each $t$ in this interval we have $t \geq x$, so $(-1)^n(x-t)^n = (t-x)^n \geq 0$. Therefore, we may multiply the inequalities by the nonnegative factor $(-1)^n(x-t)^n/n!$ and integrate from $x$ to $a$ to obtain the second set of inequalities. \qed
+
 \begin{theorem}{Estimate of the Remainder}
 If $f$ has derivatives of order $n+1$ in an interval $I$ containing $a$, and if $|f^{(n+1)}(x)| \leq M$ for all $x \in I$, then:
 \[
@@ -1793,34 +1852,6 @@ for all $x \in I$.
 \[
 |R_n(x)| = \left|\frac{f^{(n+1)}(c)}{(n+1)!}\right||x-a|^{n+1} \leq \frac{M}{(n+1)!}|x-a|^{n+1}
 \] \qed
-
-\section{Other Forms of the Remainder in Taylor's Formula}
-
-\begin{theorem}{Taylor's Formula with Integral Remainder}
-Assume $f$ has a continuous derivative of order $n+1$ in some interval containing $a$. Then, for every $x$ in this interval, we have the Taylor formula:
-\[
-f(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^k + E_n(x)
-\]
-where:
-\[
-E_n(x) = \frac{1}{n!}\int_a^x (x-t)^n f^{(n+1)}(t)\, dt
-\]
-\end{theorem}
-
-\textit{Proof.} The theorem is proved by induction on $n$. We have already proved it for $n=1$. Now we assume it is true for some $n$ and prove it for $n+1$. We write Taylor's formula with $n+1$ and with $n$ and subtract to get:
-\[
-E_{n+1}(x) = E_n(x) - \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1}
-\]
-Now we use the integral for $E_n(x)$ and note that $(x-a)^{n+1}/(n+1) = \int_a^x (x-t)^n\,dt$ to obtain:
-\begin{align*}
-E_{n+1}(x) &= \frac{1}{n!}\int_a^x (x-t)^n f^{(n+1)}(t)\,dt - \frac{f^{(n+1)}(a)}{n!}\int_a^x (x-t)^n\,dt \\
-&= \frac{1}{n!}\int_a^x (x-t)^n[f^{(n+1)}(t) - f^{(n+1)}(a)]\,dt
-\end{align*}
-The last integral may be written in the form $\int_a^x u\,dv$, where $u = f^{(n+1)}(t) - f^{(n+1)}(a)$ and $v = -(x-t)^{n+1}/(n+1)$. Integrating by parts and noting that $u=0$ when $t=a$, and that $v=0$ when $t=x$, we find that:
-\[
-E_{n+1}(x) = \frac{1}{n!}\int_a^x u\,dv = -\frac{1}{n!}\int_a^x v\,du = \frac{1}{(n+1)!}\int_a^x (x-t)^{n+1}f^{(n+2)}(t)\,dt
-\]
-This completes the inductive step from $n$ to $n+1$, so the theorem is true for all $n \geq 1$. \qed
 
 \begin{theorem}{Taylor's Formula with Cauchy Remainder}
 Under the same hypotheses as the integral form, for each $x \in I$, there exists $c$ between $a$ and $x$ such that:
