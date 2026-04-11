@@ -1,11 +1,14 @@
 # 1 Basic Logic
 
-The purpose of this chapter is to introduce the mathematical logic language used throughout the book, including the fundamentals of propositional logic and predicate logic. By studying this chapter, students will master the basic methods of mathematical reasoning, laying a solid foundation for learning algebra and analysis.
-
 ## 1.1 Mathematical statements
 
-### 1.1.1 Definition
-We call **statement** a declarative sentence without free variable in a given mathematical theory, whose truth value (that is, true or false) can in principle be determined. In a consistent mathematical theory, any statement is either true or false, but cannot be true and false in the same time.
+### 1.1.1 Definition of Statement
+A **statement** (or **proposition**) is a declarative sentence in a given mathematical theory that satisfies the following conditions:
+
+- **No free variables**: The sentence does not contain any free variable
+- **Determinate truth value**: Its truth value (true or false) can in principle be determined
+- **Law of excluded middle**: In a consistent mathematical theory, any statement is either true or false
+- **Law of non-contradiction**: A statement cannot be both true and false at the same time
 
 ### 1.1.2 Example
 - "2 is an even number" is a **true** statement
