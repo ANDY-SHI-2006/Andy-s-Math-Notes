@@ -22,3 +22,14 @@ Calculus/Calculus.out
 Calculus/Calculus.pdf
 Calculus/Calculus.tex
 Calculus/Calculus.toc
+
+# Linear Algebra LaTeX files (migrating to Markdown)
+linear\ algebra/linear\ algebra.aux
+linear\ algebra/linear\ algebra.fdb_latexmk
+linear\ algebra/linear\ algebra.fls
+linear\ algebra/linear\ algebra.log
+linear\ algebra/linear\ algebra.out
+linear\ algebra/linear\ algebra.pdf
+linear\ algebra/linear\ algebra.synctex.gz
+linear\ algebra/linear\ algebra.tex
+linear\ algebra/linear\ algebra.toc
