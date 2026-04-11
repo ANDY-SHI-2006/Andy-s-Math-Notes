@@ -12,3 +12,13 @@
 
 # Lecture folders
 Calculus/Calculus lecture/
+
+# Calculus LaTeX files (migrating to Markdown)
+Calculus/Calculus.aux
+Calculus/Calculus.fdb_latexmk
+Calculus/Calculus.fls
+Calculus/Calculus.log
+Calculus/Calculus.out
+Calculus/Calculus.pdf
+Calculus/Calculus.tex
+Calculus/Calculus.toc
