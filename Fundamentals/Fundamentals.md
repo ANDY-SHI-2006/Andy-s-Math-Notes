@@ -44,15 +44,14 @@ A **proposition** is:
 - In this book specifically: used to label **theorems that are relatively simple** or **not repeatedly applied** in the text
 - A **less prominent** result compared to a theorem
 
-### 1.1.8 Remark
-Some mathematical conjectures have neither been proved nor disproved. However, these conjectures have similar forms with the statements the truth values of which have been determined. In principle the truth values of these conjectures could be determined in the future. They should be classified as statements. Furthermore, there exist declarative sentences that are neither provable nor disprovable within a certain mathematical theory. However, in an enriched axiomatic mathematical theory, their truth values can be in principle determined. Such declarative sentences should also be recognised as statements in the enriched mathematical theory.
-
 ## 1.2 Negation
 
-Starting from given statements, compound statements can be constructed through the syntax of construction. This section introduces the negation of statements.
+### 1.2.1 Definition of Negation
+Let $P$ be a statement. The **negation** of $P$, denoted $\neg P$ (read as "not $P$"), is a statement that satisfies:
 
-### 1.2.1 Definition
-Let $P$ be a statement. Then the sentence "not $P$" is also a statement, called the **negation** of $P$. It has the opposite true value of that of $P$. Sometimes we denote the statement "not $P$" as $\neg P$.
+- **Opposite truth value**: If $P$ is true, then $\neg P$ is false; if $P$ is false, then $\neg P$ is true
+- **Logical inversion**: The negation completely reverses the truth value of the original statement
+- **Notation**: The symbol $\neg$ is called the **negation operator** or **logical NOT**
 
 ### 1.2.2 Notation
 When a statement is expressed by a linking verb of judgement, its negation can be expressed by negating the linking verb. For example, the negation of the statement "2 is an even number" can be expressed as "2 is not an even number".
