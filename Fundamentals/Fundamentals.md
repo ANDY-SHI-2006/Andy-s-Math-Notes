@@ -53,13 +53,7 @@ Let $P$ be a statement. The **negation** of $P$, denoted $\neg P$ (read as "not 
 - **Logical inversion**: The negation completely reverses the truth value of the original statement
 - **Notation**: The symbol $\neg$ is called the **negation operator** or **logical NOT**
 
-### 1.2.2 Notation
-When a statement is expressed by a linking verb of judgement, its negation can be expressed by negating the linking verb. For example, the negation of the statement "2 is an even number" can be expressed as "2 is not an even number".
-
-If a statement is expressed as a relation linked by a relation symbol, its negation could be expressed by overlaying the relation symbol with a diagonal line from the upper right to the lower left. For example, the negation of "$1 > 2$" can be expressed as "$1 \not> 2$".
-
 ### 1.2.3 Remark
-The double negation of a statement $P$ has the same truth value as that of the statement $P$. This point can be seen by the table of truth values as follows, where T stands for "true" and F stands for "false".
 
 | $P$ | $\neg P$ | $\neg\neg P$ |
 |:---:|:---------:|:------------:|
@@ -68,12 +62,24 @@ The double negation of a statement $P$ has the same truth value as that of the s
 
 ## 1.3 Conjunction and disjunction
 
-### 1.3.1 Definition
-Let $P$ and $Q$ be statements. Then "$P$ and $Q$" is a statement, called the **conjunction** of $P$ and $Q$, often denoted as $P \wedge Q$. When both $P$ and $Q$ are true, the statement $P \wedge Q$ is true, otherwise it is false.
+### 1.3.1 Definition of Conjunction
+Let $P$ and $Q$ be statements. The **conjunction** of $P$ and $Q$, denoted $P \wedge Q$ (read as "$P$ and $Q$"), is a compound statement that satisfies:
 
-Similarly, the sentence "$P$ or $Q$" is a statement, called the **disjunction** of $P$ and $Q$, often denoted as $P \vee Q$. When both $P$ and $Q$ are false, the statement $P \vee Q$ is false, otherwise it is true.
+- **True only when both are true**: $P \wedge Q$ is true if and only if both $P$ is true and $Q$ is true
+- **False otherwise**: If either $P$ or $Q$ (or both) is false, then $P \wedge Q$ is false
+- **Notation**: The symbol $\wedge$ is called the **conjunction operator** or **logical AND**
+- **Alternative names**: Also called the **logical product** of $P$ and $Q$
 
-### 1.3.2 Remark
+### 1.3.2 Definition of Disjunction
+Let $P$ and $Q$ be statements. The **disjunction** of $P$ and $Q$, denoted $P \vee Q$ (read as "$P$ or $Q$"), is a compound statement that satisfies:
+
+- **False only when both are false**: $P \vee Q$ is false if and only if both $P$ is false and $Q$ is false
+- **True otherwise**: If either $P$ or $Q$ (or both) is true, then $P \vee Q$ is true
+- **Notation**: The symbol $\vee$ is called the **disjunction operator** or **logical OR**
+- **Alternative names**: Also called the **logical sum** of $P$ and $Q$
+
+### 1.3.3 Remark
+
 We describe the truth values of conjunction and disjunction in the following table.
 
 | $P$ | $Q$ | $P \wedge Q$ | $P \vee Q$ | $Q \wedge P$ | $Q \vee P$ |
@@ -85,7 +91,7 @@ We describe the truth values of conjunction and disjunction in the following tab
 
 We observe from the table that $P \wedge Q$ and $Q \wedge P$ have the same truth value, and $P \vee Q$ and $Q \vee P$ have the same truth value.
 
-### 1.3.3 Proposition (De Morgan's Laws)
+### 1.3.4 Proposition (De Morgan's Laws)
 Let $P$ and $Q$ be statements. The statements $\neg(P \wedge Q)$ and $(\neg P) \vee (\neg Q)$ have the same truth value, and $\neg(P \vee Q)$ and $(\neg P) \wedge (\neg Q)$ have the same truth value.
 
 *Proof.* This can be observed from the following tables.
