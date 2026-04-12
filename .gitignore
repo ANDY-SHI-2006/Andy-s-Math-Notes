@@ -10,6 +10,9 @@
 # VS Code settings (optional)
 .vscode/
 
+# Obsidian settings
+.obsidian/
+
 # Lecture folders
 Calculus/Calculus lecture/
 
