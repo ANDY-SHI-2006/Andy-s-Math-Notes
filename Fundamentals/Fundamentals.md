@@ -80,8 +80,6 @@ Let $P$ and $Q$ be statements. The **disjunction** of $P$ and $Q$, denoted $P \v
 
 ### 1.3.3 Remark
 
-We describe the truth values of conjunction and disjunction in the following table.
-
 | $P$ | $Q$ | $P \wedge Q$ | $P \vee Q$ | $Q \wedge P$ | $Q \vee P$ |
 |:---:|:---:|:------------:|:-----------:|:------------:|:-----------:|
 |  T  |  T  |       T      |      T      |       T      |      T      |
@@ -116,8 +114,16 @@ Let $P$ and $Q$ be statements. The statements $\neg(P \wedge Q)$ and $(\neg P) \
 
 ## 1.4 Conditional statement
 
-### 1.4.1 Definition
-Let $P$ and $Q$ be statements. The sentence "if $P$, then $Q$" is a statement, often denoted as $P \Rightarrow Q$. It has the same truth value as that of $(\neg P) \vee Q$. A statement of this form is called a **conditional statement**. We describe its true value in the following table.
+### 1.4.1 Definition of Conditional Statement
+Let $P$ and $Q$ be statements. The **conditional statement** (or **implication**), denoted $P \Rightarrow Q$ (read as "if $P$, then $Q$"), is a compound statement that satisfies:
+
+- **Equivalent form**: $P \Rightarrow Q$ has the same truth value as $(\neg P) \vee Q$
+- **False only in one case**: $P \Rightarrow Q$ is false if and only if $P$ is true and $Q$ is false
+- **True otherwise**: If $P$ is false, or if both $P$ and $Q$ are true, then $P \Rightarrow Q$ is true
+- **Terminology**: 
+  - $P$ is called the **hypothesis** (or **antecedent**)
+  - $Q$ is called the **conclusion** (or **consequent**)
+- **Notation**: The symbol $\Rightarrow$ is called the **implication operator**
 
 | $P$ | $Q$ | $\neg P$ | $P \Rightarrow Q$ |
 |:---:|:---:|:---------:|:-----------------:|
