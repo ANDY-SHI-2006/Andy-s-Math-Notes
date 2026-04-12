@@ -20,12 +20,31 @@ A **statement** is a declarative sentence in a given mathematical theory that sa
 
 In this book, we use the symbol $:=$ to interpret the notation on the left hand side of the symbol as the expression on the right hand side. For example, "$a := 3+5$" means that we denote by $a$ the value of $3+5$. This expression is not a statement.
 
-### 1.1.4 Definition
-In a mathematical theory, statements admitted as true without justification are called the **axioms**. All statements that can be rigorously deduced from axioms are true. A statement that is confirmed to be true through rigorous mathematical proof is called a **theorem**. A statement that can be deduced from a theorem via straightforward reasoning is usually referred to as a **corollary** of that theorem.
+### 1.1.4 Definition of Axiom
+An **axiom** is a statement that is:
+- **Admitted as true without justification** in a mathematical theory
+- **Self-evident** or **assumed as a starting point** for reasoning
+- The **foundation** upon which a mathematical theory is built
 
-In mathematical literature, a statement is often called a **proposition**. In this book, the term "proposition" is rather used to label theorems that are relatively simple or not repeatedly applied in the book.
+### 1.1.5 Definition of Theorem
+A **theorem** is a statement that is:
+- **Confirmed to be true** through rigorous mathematical proof
+- **Logically deduced** from axioms or other theorems
+- **Important** enough to be explicitly stated and proved
 
-### 1.1.5 Remark
+### 1.1.6 Definition of Corollary
+A **corollary** is a statement that is:
+- **Deduced from a theorem** via straightforward reasoning
+- **A direct consequence** of a previously proved theorem
+- **Usually simpler** than the theorem from which it follows
+
+### 1.1.7 Definition of Proposition
+A **proposition** is:
+- In general mathematical literature: synonymous with **statement** (any declarative sentence that is either true or false)
+- In this book specifically: used to label **theorems that are relatively simple** or **not repeatedly applied** in the text
+- A **less prominent** result compared to a theorem
+
+### 1.1.8 Remark
 Some mathematical conjectures have neither been proved nor disproved. However, these conjectures have similar forms with the statements the truth values of which have been determined. In principle the truth values of these conjectures could be determined in the future. They should be classified as statements. Furthermore, there exist declarative sentences that are neither provable nor disprovable within a certain mathematical theory. However, in an enriched axiomatic mathematical theory, their truth values can be in principle determined. Such declarative sentences should also be recognised as statements in the enriched mathematical theory.
 
 ## 1.2 Negation
