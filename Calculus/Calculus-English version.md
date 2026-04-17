@@ -23,7 +23,6 @@ $$
 X(t) = P + tA \quad \text{for all real } t
 $$
 
----
 
 ## 14.2 Algebraic Operations and Components
 
@@ -56,7 +55,6 @@ $$
 
 We write $F = (f_1, \dots, f_n)$, where $f_k$ is the **$k$th component** of $F$.
 
----
 
 ## 14.3 Limits, Derivatives, and Integrals
 
@@ -85,7 +83,6 @@ $$
 
 $F$ is **continuous**, **differentiable**, or **integrable** on an interval if and only if **each component** of $F$ has the corresponding property on that interval.
 
----
 
 ## 14.4 Differentiation Rules
 
@@ -129,7 +126,6 @@ $$
 G'(t) = F'[u(t)] \, u'(t)
 $$
 
----
 
 ## 14.5 Integration of Vector-Valued Functions
 
@@ -210,7 +206,6 @@ $$
 
 Dividing by $\|C\| > 0$ gives the result.
 
----
 
 ## 14.6 Summary Table
 
@@ -225,7 +220,6 @@ Dividing by $\|C\| > 0$ gives the result.
 | **14.7** | $C \cdot \int_a^b F = \int_a^b C \cdot F$ |
 | **14.8** | $\bigl\| \int_a^b F \bigr\| \le \int_a^b \|F\|$ |
 
----
 
 ## 14.7 Key Takeaways
 
