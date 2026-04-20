@@ -2441,6 +2441,56 @@ $$
   $$
   provided the limit exists.
 
+## 4.3 The Derivative of a Function
+
+### 4.3.1 Definition of the Derivative
+
+- Let $f$ be defined on an open interval $(a,b)$.
+- For a fixed $x$ in $(a,b)$ and $h \neq 0$, the **difference quotient** is:
+  $$
+  \frac{f(x+h)-f(x)}{h}.
+  $$
+- This measures the **average rate of change** of $f$ over $[x, x+h]$.
+- The **derivative of $f$ at $x$** is the limit:
+  $$
+  f'(x) = \lim_{h\to 0}\frac{f(x+h)-f(x)}{h},
+  $$
+  provided the limit exists.
+- If the limit exists, $f$ is **differentiable at $x$**.
+- If $f$ is differentiable at every $x$ in $(a,b)$, then $f$ is **differentiable on $(a,b)$**.
+
+### 4.3.2 The Derived Function and Notations
+
+- The function $f'$ assigns to each $x$ the value $f'(x)$; it is called the **derived function** or **derivative** of $f$.
+- Domain of $f'$: the set of $x$ in $(a,b)$ where the limit exists.
+- **Notations**:
+  - $f'(x)$, $y'$ (Lagrange)
+  - $Df(x)$, $Dy$ (Cauchy)
+  - $\dfrac{df(x)}{dx}$, $\dfrac{dy}{dx}$ (Leibniz)
+- **Leibniz notation**: Write $\Delta y = f(x+h)-f(x)$ and $\Delta x = h$, so the difference quotient is $\dfrac{\Delta y}{\Delta x}$. As $\Delta x \to 0$, this approaches $f'(x)$, denoted $\dfrac{dy}{dx}$.
+- **Caution**: $\dfrac{dy}{dx}$ is a single symbol, not a quotient of $dy$ and $dx$.
+
+### 4.3.3 Differentiation and Higher-Order Derivatives
+
+- The limit process producing $f'(x)$ from $f(x)$ is called **differentiation**.
+- $f'$ is the **first derivative** of $f$.
+- If $f'$ is differentiable, its derivative is the **second derivative**, denoted $f''$.
+- Inductively, the **$n$th derivative** $f^{(n)}$ is the first derivative of $f^{(n-1)}$.
+- Convention: $f^{(0)} = f$ (the zeroth derivative is the function itself).
+
+### 4.3.4 Velocity and Acceleration
+
+- For rectilinear motion with position function $f$:
+  - **Velocity**: $v(t) = f'(t)$
+  - **Acceleration**: $a(t) = v'(t) = f''(t)$
+- **Example** (projectile from Section 4.2): $f(t) = 144t - 16t^2$, $v(t) = 144 - 32t$.
+  $$
+  \frac{v(t+h)-v(t)}{h} = \frac{-32h}{h} = -32.
+  $$
+  Hence $a(t) = -32\ \text{ft/s}^2$ (constant).
+  - Velocity decreases by $32\ \text{ft/s}$ each second.
+  - In 9 seconds the total decrease is $288\ \text{ft/s}$, matching $v(0)=144$ to $v(9)=-144$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
