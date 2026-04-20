@@ -313,6 +313,65 @@ $$
 \int_b^a f(x) \, dx = -\int_a^b f(x) \, dx \quad (a < b), \qquad \int_a^a f(x) \, dx = 0.
 $$
 
+
+## 1.9 Upper and Lower Integrals
+
+### 1.9.1 Definitions
+
+Let $f$ be bounded on $[a, b]$. Define:
+
+- **Lower integral**: $
+  \displaystyle I(f) = \sup\left\{\int_a^b s(x)\,dx \;\bigg|\; s \le f\right\}
+  $
+- **Upper integral**: $
+  \displaystyle \bar{I}(f) = \inf\left\{\int_a^b t(x)\,dx \;\bigg|\; f \le t\right\}
+  $
+
+Both exist (since $f$ is bounded), and for all step functions $s \le f \le t$:
+
+$$
+\int_a^b s(x)\,dx \le I(f) \le \bar{I}(f) \le \int_a^b t(x)\,dx.
+$$
+
+### 1.9.2 Integrability Criterion
+
+**Theorem 1.9.** A bounded function $f$ is integrable on $[a, b]$ **if and only if** its upper and lower integrals are equal. In that case:
+
+$$
+\int_a^b f(x)\,dx = I(f) = \bar{I}(f).
+$$
+
+## 1.10 The Area of an Ordinate Set Expressed as an Integral
+
+### 1.10.1 Theorem 1.10 — Area Equals Integral
+
+Let $f$ be a nonnegative function, integrable on $[a, b]$, and let $Q$ be its ordinate set. Then $Q$ is **measurable** and its area is:
+
+$$
+a(Q) = \int_a^b f(x)\,dx.
+$$
+
+### 1.10.2 Theorem 1.11 — Graph Has Zero Area
+
+Let $f$ be a nonnegative function, integrable on $[a, b]$. Then the **graph** of $f$:
+
+$$
+\{(x, y) \mid a \le x \le b, \; y = f(x)\}
+$$
+
+is measurable and has **area equal to 0**.
+
+## 1.11 Informal Remarks on the Theory and Technique of Integration
+
+Two fundamental questions arise at this stage:
+
+1. **Theory**: Which bounded functions are integrable?
+2. **Technique**: Given that $f$ is integrable, how do we compute $\int_a^b f(x)\,dx$?
+
+A complete answer to (1) lies beyond an introductory course. Instead, we introduce an important class of functions — **monotonic functions** — and prove that all bounded monotonic functions are integrable. Since most functions encountered in practice are monotonic or sums of monotonic functions, this provides a useful partial theory.
+
+The discussion of technique begins in Section 1.23, where we compute $\int_0^b x^p\,dx$ for positive integers $p$, and then develop general properties (linearity, additivity) to extend our knowledge.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
