@@ -2149,6 +2149,42 @@ Assume $f$ is strictly increasing and continuous on $[a, b]$. Let $c = f(a)$, $d
 - Since products of continuous functions are continuous, the $r$th-power function $h(y) = y^r$ ($r = m/n$ positive rational, $y \ge 0$) is also continuous.
 
 
+## 3.11 Inverses of Piecewise Monotonic Functions
+
+### 3.11.1 The Problem
+
+- Inversion requires each $y$ in the range to come from **exactly one** $x$.
+- What if $f$ is **not monotonic** on $[a, b]$?
+- Example: $f(x) = x^2$ on $[-c, c]$ maps to $[0, c^2]$.
+  - Each $y \in (0, c^2]$ comes from **two** values: $x = \sqrt{y}$ and $x = -\sqrt{y}$.
+
+### 3.11.2 Modern View: Multiple Single-Valued Inverses
+
+- Older view: $g(y) = \pm\sqrt{y}$ as a "double-valued function."
+- Modern view: inversion produces **two separate functions** (Equation 3.24):
+  $$
+  g_1(y) = \sqrt{y}, \qquad g_2(y) = -\sqrt{y} \quad \text{for } y \in [0, c^2]
+  $$
+
+### 3.11.3 Decomposing into Monotonic Pieces
+
+- View $y = x^2$ as defining **two distinct functions** with different domains:
+  $$
+  f_1(x) = x^2 \quad \text{for } 0 \le x \le c, \qquad f_2(x) = x^2 \quad \text{for } -c \le x \le 0
+  $$
+- Each $f_i$ is monotonic on its domain and has an inverse:
+  - $f_1^{-1} = g_1$ (positive square root)
+  - $f_2^{-1} = g_2$ (negative square root)
+
+### 3.11.4 General Principle
+
+- For a **piecewise monotonic** function:
+  - Decompose it into a union of monotonic pieces.
+  - Invert each piece separately.
+  - Each piece yields a single-valued inverse function.
+- This technique will be used extensively in Chapter 6.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
