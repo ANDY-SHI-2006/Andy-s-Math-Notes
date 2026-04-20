@@ -1550,6 +1550,9 @@ $$
 - The indefinite integral "smooths out" jumps — $A(x)$ is always continuous (proved in next chapter).
 
 
+# 3. Continuous Functions
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
