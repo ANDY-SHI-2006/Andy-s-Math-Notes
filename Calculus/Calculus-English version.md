@@ -1250,6 +1250,80 @@ $$
   $$
 
 
+## 2.12 Application of Integration to the Calculation of Volume
+
+### 2.12.1 Measurable Sets and Volume Function
+
+- We assume a class $\mathscr{A}$ of **measurable sets** (solids) in 3D space and a **volume function** $v$ assigning each $S \in \mathscr{A}$ a number $v(S)$.
+- The axioms for volume parallel those for area, with one key difference: **Cavalieri's principle** replaces congruence invariance.
+
+### 2.12.2 Axioms for Volume
+
+| Axiom | Statement |
+|-------|-----------|
+| **1. Nonnegative** | $v(S) \ge 0$ for all $S \in \mathscr{A}$ |
+| **2. Additive** | $v(S \cup T) = v(S) + v(T) - v(S \cap T)$ |
+| **3. Difference** | If $S \subseteq T$, then $v(T - S) = v(T) - v(S)$ |
+| **4. Cavalieri's principle** | If $S, T$ are Cavalieri solids and $a(S \cap F) \le a(T \cap F)$ for every plane $F \perp L$, then $v(S) \le v(T)$ |
+| **5. Scale (box)** | A box with edges $a, b, c$ has volume $abc$ |
+| **6. Convexity** | Every convex set is in $\mathscr{A}$ |
+
+- **Cavalieri solid**: A solid whose cross-sections perpendicular to a given line $L$ are all measurable plane sets.
+- **Intuition**: A Cavalieri solid is like a stack of thin sheets; sliding sheets in their own planes changes shape but not volume.
+
+### 2.12.3 Consequences of the Axioms
+
+- **Monotone property**: $S \subseteq T \implies v(S) \le v(T)$ (follows from Axioms 1 and 3).
+- **Bounded plane sets have zero volume**: Any bounded plane set $S$ lies inside a box of arbitrarily small altitude, so $v(S) = 0$.
+- If $a(S \cap F) = a(T \cap F)$ for all $F \perp L$, then $v(S) = v(T)$.
+
+### 2.12.4 Volume of a Right Cylindrical Solid
+
+- A **right cylindrical solid** with base area $a(B)$ and altitude $(b - a)$:
+  $$
+  v(S) = a(B)(b - a) = \int_a^b a_S(z) \, dz
+  $$
+  where $a_S(z)$ is the cross-sectional area function (constant $= a(B)$ on $[a, b]$).
+
+### 2.12.5 Theorem 2.7 — General Cavalieri Solid
+
+Let $R$ be a Cavalieri solid with cross-sectional area function $a_R$ integrable on $[a, b]$ (zero outside). Then:
+
+$$
+v(R) = \int_a^b a_R(u) \, du
+$$
+
+**Proof Sketch:**
+
+1. Choose step functions $s \le a_R \le t$ on $[a, b]$.
+2. Construct cylindrical solids $S$ (from $s$) and $T$ (from $t$) with $v(S) = \int_a^b s$ and $v(T) = \int_a^b t$.
+3. By Cavalieri's principle: $v(S) \le v(R) \le v(T)$.
+4. Hence $\int_a^b s \le v(R) \le \int_a^b t$ for all such $s, t$.
+5. Since $a_R$ is integrable, $v(R) = \int_a^b a_R(u) \, du$.
+
+### 2.12.6 Example — Solid of Revolution (Disk Method)
+
+- Let $f \ge 0$ and integrable on $[a, b]$. Revolve the ordinate set about the $x$-axis.
+- Cross section at $x$ is a circular disk of radius $f(x)$, area $\pi f^2(x)$.
+- Volume:
+  $$
+  v = \int_a^b \pi f^2(x) \, dx
+  $$
+
+**Sphere of radius $r$:**
+- $f(x) = \sqrt{r^2 - x^2}$ on $[-r, r]$
+- $v = \pi \int_{-r}^{r} (r^2 - x^2) \, dx = 2\pi \int_0^r (r^2 - x^2) \, dx = \frac{4}{3}\pi r^3$
+
+### 2.12.7 Washer Method
+
+- For two functions $0 \le f \le g$ on $[a, b]$, revolve the region between their graphs about the $x$-axis.
+- Cross section at $x$ is an **annulus** with area $\pi[g^2(x) - f^2(x)]$.
+- Volume:
+  $$
+  v = \int_a^b \pi\bigl[g^2(x) - f^2(x)\bigr] \, dx
+  $$
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
