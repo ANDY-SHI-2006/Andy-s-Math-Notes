@@ -1685,3 +1685,122 @@ $$
 $$
 \|v\|^2 = \left\|v - \sum c_i v_i\right\|^2 + \left\|\sum c_i v_i\right\|^2 \ge \sum c_i^2.
 $$
+
+
+## 5.2 Orthogonal Bases, Positive Definite Case
+
+### 5.2.1 Orthogonal and Orthonormal Bases
+
+Let $V$ have a positive definite scalar product. A basis $\{v_1, \dots, v_n\}$ is:
+- **Orthogonal** if $\langle v_i, v_j \rangle = 0$ for $i \neq j$
+- **Orthonormal** if orthogonal and $\|v_i\| = 1$ for all $i$
+
+The standard unit vectors of $\mathbf{R}^n$ form an orthonormal basis.
+
+### 5.2.2 Theorem 2.1 — Gram-Schmidt Process
+
+**Theorem 2.1.** Let $W$ be a subspace of $V$ with orthogonal basis $\{w_1, \dots, w_m\}$. If $W \neq V$, there exist $w_{m+1}, \dots, w_n$ such that $\{w_1, \dots, w_n\}$ is an orthogonal basis of $V$.
+
+**Proof (Gram-Schmidt):** Extend to a basis $\{w_1, \dots, w_m, v_{m+1}, \dots, v_n\}$. For each $v_{m+1}$:
+
+$$
+c_i = \frac{\langle v_{m+1}, w_i \rangle}{\langle w_i, w_i \rangle}, \quad w_{m+1} = v_{m+1} - c_1 w_1 - \cdots - c_m w_m.
+$$
+
+Then $w_{m+1} \perp w_1, \dots, w_m$ and $w_{m+1} \neq O$. Proceed by induction.
+
+**Corollary 2.2.** Any finite dimensional $V \neq \{O\}$ with positive definite scalar product has an orthogonal basis.
+
+### 5.2.3 Gram-Schmidt Procedure
+
+Given basis $\{v_1, \dots, v_n\}$:
+
+$$
+\begin{aligned}
+v_1' &= v_1, \\
+v_2' &= v_2 - \frac{\langle v_2, v_1' \rangle}{\langle v_1', v_1' \rangle} v_1', \\
+v_3' &= v_3 - \frac{\langle v_3, v_2' \rangle}{\langle v_2', v_2' \rangle} v_2' - \frac{\langle v_3, v_1' \rangle}{\langle v_1', v_1' \rangle} v_1', \\
+&\vdots \\
+v_n' &= v_n - \sum_{k=1}^{n-1} \frac{\langle v_n, v_k' \rangle}{\langle v_k', v_k' \rangle} v_k'.
+\end{aligned}
+$$
+
+Then $\{v_1', \dots, v_n'\}$ is orthogonal. Normalize to get orthonormal.
+
+**Example 1:** Find orthonormal basis for span of $A = (1,1,0,1)$, $B = (1,-2,0,0)$, $C = (1,0,-1,2)$.
+
+- $A' = A$
+- $B' = B - \frac{B \cdot A}{A \cdot A} A = \frac{1}{3}(4, -5, 0, 1)$
+- $C' = C - \frac{C \cdot A}{A \cdot A} A - \frac{C \cdot B'}{B' \cdot B'} B' = \frac{1}{7}(-4, -2, -7, 6)$
+
+Normalize: $\frac{A}{\|A\|}$, $\frac{B'}{\|B'\|}$, $\frac{C'}{\|C'\|}$.
+
+### 5.2.4 Theorem 2.3 — Orthogonal Complement
+
+**Theorem 2.3.** Let $W$ be a subspace of $V$ with $\dim W = r$, $\dim V = n$. Then:
+
+$$
+V = W \oplus W^\perp, \qquad \dim W^\perp = n - r.
+$$
+
+**Proof:** Take orthonormal basis $\{w_1, \dots, w_r\}$ of $W$, extend to $\{w_1, \dots, w_r, u_{r+1}, \dots, u_n\}$ of $V$. Then $\{u_{r+1}, \dots, u_n\}$ is an orthonormal basis of $W^\perp$.
+
+**Example 2:** In $\mathbf{R}^3$, vectors perpendicular to two linearly independent vectors form a 1-dimensional space. Vectors perpendicular to a non-zero vector $N$ form a 2-dimensional plane.
+
+### 5.2.5 Scalar Product in Coordinates
+
+For orthonormal basis $\{e_1, \dots, e_n\}$:
+
+$$
+\langle v, w \rangle = x_1 y_1 + \cdots + x_n y_n = X \cdot Y.
+$$
+
+For general basis $\{v_1, \dots, v_n\}$:
+
+$$
+\langle v, w \rangle = \sum_{i,j} a_{ij} x_i y_j \quad \text{where } a_{ij} = \langle v_i, v_j \rangle.
+$$
+
+### 5.2.6 Hermitian Products
+
+For complex vector spaces, a **hermitian product** satisfies:
+
+| Axiom | Statement |
+|-------|-----------|
+| **HP 1.** | $\langle v, w \rangle = \overline{\langle w, v \rangle}$ |
+| **HP 2.** | $\langle u, v + w \rangle = \langle u, v \rangle + \langle u, w \rangle$ |
+| **HP 3.** | $\langle \alpha u, v \rangle = \alpha \langle u, v \rangle$ and $\langle u, \alpha v \rangle = \bar{\alpha} \langle u, v \rangle$ |
+
+**Positive definite:** $\langle v, v \rangle \ge 0$, and $> 0$ if $v \neq O$.
+
+**Example 3:** On $\mathbf{C}^n$: $\langle X, Y \rangle = x_1 \bar{y}_1 + \cdots + x_n \bar{y}_n$.
+
+**Example 4:** On continuous complex functions on $[-\pi, \pi]$:
+
+$$
+\langle f, g \rangle = \int_{-\pi}^{\pi} f(t) \overline{g(t)} \, dt.
+$$
+
+For $f_n(t) = e^{int}$, $\langle f_n, f_m \rangle = 0$ if $n \neq m$, and $\langle f_n, f_n \rangle = 2\pi$. The Fourier coefficient:
+
+$$
+\frac{\langle f, f_n \rangle}{\langle f_n, f_n \rangle} = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(t) e^{-int} \, dt.
+$$
+
+### 5.2.7 Theorems for Hermitian Products
+
+**Theorem 2.4.** Same as Theorem 2.1 for complex vector spaces with positive definite hermitian product.
+
+**Corollary 2.5.** Any finite dimensional complex $V \neq \{O\}$ has an orthogonal basis.
+
+**Norm:** $\|v\| = \sqrt{\langle v, v \rangle}$. Schwarz and triangle inequalities hold.
+
+For orthonormal basis $\{e_1, \dots, e_n\}$:
+
+$$
+\langle v, w \rangle = \alpha_1 \bar{\beta}_1 + \cdots + \alpha_n \bar{\beta}_n.
+$$
+
+**Theorem 2.6.** $\dim W + \dim W^\perp = \dim V$ (real or complex case).
+
+**Theorem 2.7.** $V = W \oplus W^\perp$ (real or complex case).
