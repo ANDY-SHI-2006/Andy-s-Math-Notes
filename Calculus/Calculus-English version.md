@@ -35,6 +35,34 @@ We assume a class $\mathscr{M}$ and a set function $a$ satisfying:
 - **Empty set**: $\varnothing \in \mathscr{M}$ and $a(\varnothing) = 0$.
 - Axiom 5 excludes the trivial case $a \equiv 0$.
 - Axiom 6 (exhaustion) extends measurability from step regions to general ordinate sets.
+
+## 1.2 Intervals and Ordinate Sets
+
+### 1.2.1 Intervals
+
+Let $a < b$. We define:
+
+| Interval | Notation | Inequalities | Endpoints |
+|----------|----------|--------------|-----------|
+| **Closed** | $[a, b]$ | $a \le x \le b$ | both included |
+| **Open** | $(a, b)$ | $a < x < b$ | neither included |
+| **Half-open** | $(a, b]$ | $a < x \le b$ | right included |
+| **Half-open** | $[a, b)$ | $a \le x < b$ | left included |
+
+The open interval $(a, b)$ is also called the **interior** of $[a, b]$.
+
+### 1.2.2 Ordinate Sets
+
+Let $f$ be a nonnegative function whose domain is a closed interval $[a, b]$. The **ordinate set of $f$** is the region in the plane between the graph of $f$ and the $x$-axis, i.e. the collection of all points $(x, y)$ satisfying:
+
+$$
+a \le x \le b, \quad 0 \le y \le f(x).
+$$
+
+### 1.2.3 Role in Integration
+
+Ordinate sets are the geometric objects whose areas we compute by means of integral calculus. We shall define the integral first for **step functions** and then use the integral of a step function to formulate the definition of integral for more general functions.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
