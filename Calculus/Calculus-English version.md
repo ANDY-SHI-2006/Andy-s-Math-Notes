@@ -844,6 +844,41 @@ $$
 
 In Section 1.18 we expressed the area of the ordinate set of a nonnegative function as an integral. In this chapter we will show that areas of more general regions can also be expressed as integrals. We will also discuss further applications of the integral to concepts such as **volume**, **work**, and **averages**. Then, at the end of the chapter, we will study properties of functions defined by integrals.
 
+
+## 2.2 The Area of a Region Between Two Graphs Expressed as an Integral
+
+### 2.2.1 Definition
+
+If $f \le g$ on $[a, b]$, the **region between the graphs** of $f$ and $g$ is the set $S$ of all points $(x, y)$ satisfying:
+
+$$
+f(x) \le y \le g(x), \quad a \le x \le b.
+$$
+
+### 2.2.2 Theorem 2.1 — Area Formula
+
+Assume $f$ and $g$ are integrable and $f \le g$ on $[a, b]$. Then the region $S$ between their graphs is **measurable**, and its area is:
+
+$$
+a(S) = \int_a^b \bigl[g(x) - f(x)\bigr] \, dx. \tag{2.1}
+$$
+
+### 2.2.3 Proof Sketch
+
+**Case 1:** $f, g \ge 0$. Let $G$ be the ordinate set of $g$ and $F$ the ordinate set of $f$ (minus its graph). Then $S = G - F$. By Theorems 1.10 and 1.11, both $F$ and $G$ are measurable, so:
+
+$$
+a(S) = a(G) - a(F) = \int_a^b g(x)\,dx - \int_a^b f(x)\,dx = \int_a^b \bigl[g(x) - f(x)\bigr]\,dx.
+$$
+
+**Case 2:** General $f \le g$. Choose $c > 0$ large enough so that $f + c \ge 0$ and $g + c \ge 0$. The region $T$ between $f+c$ and $g+c$ has area:
+
+$$
+a(T) = \int_a^b \bigl[(g(x)+c) - (f(x)+c)\bigr]\,dx = \int_a^b \bigl[g(x) - f(x)\bigr]\,dx.
+$$
+
+Since $T$ is congruent to $S$ (translation by $c$), $S$ is also measurable with the same area.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
