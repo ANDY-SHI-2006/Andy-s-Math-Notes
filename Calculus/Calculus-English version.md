@@ -1834,6 +1834,73 @@ $$
 - At $x = 0$: right-hand continuity.
 
 
+## 3.5 Proofs of the Basic Limit Theorems
+
+### 3.5.1 Algebraic Tools
+
+Two key properties of absolute values:
+1. **Triangle inequality**: $|a + b| \le |a| + |b|$
+2. **Product rule**: $|ab| = |a|\,|b|$
+
+### 3.5.2 Proof of (i) and (ii) — Sum and Difference
+
+**Reduction to zero limits:**
+- Since $\lim_{x \to p} f(x) = A \iff \lim_{x \to p} [f(x) - A] = 0$, it suffices to prove (i) when $A = B = 0$.
+- Note: $f(x) + g(x) - (A + B) = [f(x) - A] + [g(x) - B]$.
+
+**Proof of (i) with $A = B = 0$:**
+- Given $\epsilon > 0$:
+  - Since $f(x) \to 0$, $\exists \delta_1 > 0$ such that $|f(x)| < \epsilon/2$ when $0 < |x - p| < \delta_1$.
+  - Since $g(x) \to 0$, $\exists \delta_2 > 0$ such that $|g(x)| < \epsilon/2$ when $0 < |x - p| < \delta_2$.
+- Let $\delta = \min(\delta_1, \delta_2)$. Then for $0 < |x - p| < \delta$:
+  $$
+  |f(x) + g(x)| \le |f(x)| + |g(x)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+  $$
+- (Equation 3.7)
+
+**Proof of (ii):** Entirely similar, using $|f(x) - g(x)| \le |f(x)| + |g(x)|$.
+
+### 3.5.3 Proof of (iii) — Product
+
+**Reduction to special case:**
+- Write: $f(x)g(x) - AB = f(x)[g(x) - B] + B[f(x) - A]$.
+- If (iii) holds when one limit is 0, each term on the right approaches 0, and by (i) the sum approaches 0.
+- Thus it suffices to prove: if $f(x) \to A$ and $g(x) \to 0$, then $f(x)g(x) \to 0$.
+
+**Proof of special case:**
+- Given $\epsilon > 0$:
+  - Since $f(x) \to A$, $\exists \delta_1 > 0$ such that $|f(x) - A| < 1$ when $0 < |x - p| < \delta_1$.
+  - For such $x$: $|f(x)| = |f(x) - A + A| \le |f(x) - A| + |A| < 1 + |A|$.
+  - Hence: $|f(x)g(x)| = |f(x)|\,|g(x)| < (1 + |A|)|g(x)|$.
+    (Equations 3.11, 3.12)
+  - Since $g(x) \to 0$, $\exists \delta_2 > 0$ such that $|g(x)| < \frac{\epsilon}{1 + |A|}$ when $0 < |x - p| < \delta_2$.
+    (Equation 3.13)
+- Let $\delta = \min(\delta_1, \delta_2)$. Then for $0 < |x - p| < \delta$:
+  $$|f(x)g(x)| < (1 + |A|) \cdot \frac{\epsilon}{1 + |A|} = \epsilon$$
+- (Equation 3.10)
+
+### 3.5.4 Proof of (iv) — Quotient
+
+**Reduction:**
+- Write $\frac{f(x)}{g(x)} = \frac{f(x)}{B} \cdot \frac{B}{g(x)}$.
+- By (iii), it suffices to prove $\frac{B}{g(x)} \to 1$, i.e., $\frac{1}{h(x)} \to 1$ where $h(x) = g(x)/B \to 1$.
+
+**Proof that $1/h(x) \to 1$:**
+- Given $\epsilon > 0$, we need $\delta > 0$ such that:
+  $$\left|\frac{1}{h(x)} - 1\right| < \epsilon \quad \text{whenever} \quad 0 < |x - p| < \delta$$
+  (Equation 3.14)
+- Rewrite:
+  $$\left|\frac{1}{h(x)} - 1\right| = \frac{|h(x) - 1|}{|h(x)|}$$
+  (Equation 3.15)
+- Since $h(x) \to 1$, choose $\delta > 0$ such that both hold when $0 < |x - p| < \delta$:
+  $$|h(x) - 1| < \frac{\epsilon}{2} \quad \text{and} \quad |h(x) - 1| < \frac{1}{2}$$
+  (Equation 3.16)
+- The second inequality gives $h(x) > 1/2$, so $1/|h(x)| < 2$.
+- Therefore:
+  $$\frac{|h(x) - 1|}{|h(x)|} < 2 \cdot \frac{\epsilon}{2} = \epsilon$$
+- This proves (3.14), completing the proof of (iv).
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
