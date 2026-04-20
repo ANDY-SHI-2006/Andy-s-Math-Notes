@@ -2299,3 +2299,50 @@ Since $\dim V = n$, we have $r + n - r' \le n$, so $r \le r'$. By symmetry, $r' 
 The integer $r$ is the **index of positivity** of the scalar product.
 
 ## 6. Determinants
+
+## 6.1 Determinants of Order 2
+
+### 6.1.1 Definition
+
+For a $2 \times 2$ matrix over a field $K$:
+$$
+A = \begin{pmatrix} a & b \\ c & d \end{pmatrix},
+$$
+its **determinant** is:
+$$
+\begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc.
+$$
+
+Notation: $D(A)$, $\operatorname{Det}(A)$, or $D(A^1, A^2)$ (viewed as a function of the two columns).
+
+**Examples:**
+- $\operatorname{Det}\begin{pmatrix} 2 & 1 \\ 1 & 4 \end{pmatrix} = 2 \cdot 4 - 1 \cdot 1 = 7$
+- $\operatorname{Det}\begin{pmatrix} -2 & -3 \\ 4 & 5 \end{pmatrix} = (-2) \cdot 5 - (-3) \cdot 4 = 2$
+
+### 6.1.2 Properties
+
+As a function of the column vectors, the determinant is **bilinear**:
+
+$$
+\operatorname{Det}\begin{pmatrix} a & b + b' \\ c & d + d' \end{pmatrix} = \operatorname{Det}\begin{pmatrix} a & b \\ c & d \end{pmatrix} + \operatorname{Det}\begin{pmatrix} a & b' \\ c & d' \end{pmatrix},
+\qquad
+\operatorname{Det}\begin{pmatrix} a & tb \\ c & td \end{pmatrix} = t \, \operatorname{Det}\begin{pmatrix} a & b \\ c & d \end{pmatrix}.
+$$
+
+(Analogous properties hold for the first column.)
+
+| Property | Statement |
+|----------|-----------|
+| Equal columns | If two columns are equal, $\operatorname{Det}(A) = 0$. |
+| Unit matrix | $\operatorname{Det}(I) = \operatorname{Det}\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = 1$. |
+| Column addition | Adding a multiple of one column to the other does not change $\operatorname{Det}(A)$. |
+| Column swap | Interchanging two columns changes the sign: $\operatorname{Det}\begin{pmatrix} a & b \\ c & d \end{pmatrix} = -\operatorname{Det}\begin{pmatrix} b & a \\ d & c \end{pmatrix}$. |
+| Transpose | $\operatorname{Det}(A) = \operatorname{Det}({}^tA)$, i.e. $\begin{vmatrix} a & b \\ c & d \end{vmatrix} = \begin{vmatrix} a & c \\ b & d \end{vmatrix}$. |
+
+### 6.1.3 Linear Dependence
+
+The vectors $\begin{pmatrix} a \\ c \end{pmatrix}$ and $\begin{pmatrix} b \\ d \end{pmatrix}$ are linearly dependent **iff** $ad - bc = 0$.
+
+**Proof.** If $x a + y b = 0$ and $x c + y d = 0$ with $x, y$ not both $0$:
+- Multiply the first by $d$, the second by $b$, and subtract: $x(ad - bc) = 0$. Since $x \neq 0$, we get $ad - bc = 0$.
+- Conversely, if $ad - bc = 0$ and not both vectors are zero, say $a \neq 0$. Let $y = -a$ and $x = b$. Then $x a + y b = b a - a b = 0$ and $x c + y d = b c - a d = -(ad - bc) = 0$. Hence the columns are dependent.
