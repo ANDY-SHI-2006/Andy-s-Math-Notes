@@ -2280,6 +2280,60 @@ Let $f$ be continuous on a closed interval $[a, b]$. Then for every $\epsilon > 
 8. **Contradiction**: the span in $[a_n, b_n]$ was chosen to be at least $\epsilon_0$.
 
 
+## 3.14 The Integrability Theorem for Continuous Functions
+
+### 3.14.1 Theorem 3.14 — Integrability of Continuous Functions
+
+If $f$ is continuous at each point of a closed interval $[a, b]$, then $f$ is **integrable** on $[a, b]$.
+
+**Proof:**
+1. By Theorem 3.11, $f$ is bounded on $[a, b]$, so the upper integral $\bar{I}(f)$ and lower integral $\underline{I}(f)$ exist.
+2. We shall prove $\bar{I}(f) = \underline{I}(f)$.
+
+**Constructing step functions:**
+3. Choose $N \ge 1$ and let $\epsilon = 1/N$.
+4. By the small-span theorem, there is a partition $P = \{x_0, x_1, \dots, x_n\}$ of $[a, b]$ such that the span of $f$ in each subinterval is less than $\epsilon$.
+5. Let $M_k(f)$ and $m_k(f)$ be the max and min of $f$ on $[x_{k-1}, x_k]$. Then:
+   $$M_k(f) - m_k(f) < \epsilon$$
+
+**Defining step functions:**
+6. Define step functions $s_n$ and $t_n$ on $[a, b]$:
+   $$
+   s_n(x) = m_k(f) \text{ for } x_{k-1} < x \le x_k, \quad s_n(a) = m_1(f)
+   $$
+   $$
+   t_n(x) = M_k(f) \text{ for } x_{k-1} \le x < x_k, \quad t_n(b) = M_n(f)
+   $$
+7. Then $s_n(x) \le f(x) \le t_n(x)$ for all $x \in [a, b]$.
+
+**Comparing integrals:**
+8. The integrals of the step functions:
+   $$
+   \int_a^b s_n = \sum_{k=1}^n m_k(f)(x_k - x_{k-1}), \qquad \int_a^b t_n = \sum_{k=1}^n M_k(f)(x_k - x_{k-1})
+   $$
+9. Their difference:
+   $$
+   \int_a^b t_n - \int_a^b s_n = \sum_{k=1}^n [M_k(f) - m_k(f)](x_k - x_{k-1}) < \epsilon \sum_{k=1}^n (x_k - x_{k-1}) = \epsilon(b - a)
+   $$
+10. With $\epsilon = 1/N$:
+    $$
+    \int_a^b t_n - \int_a^b s_n < \frac{b - a}{N}
+    $$
+    (Equation 3.26)
+
+**Conclusion:**
+11. The upper and lower integrals satisfy:
+    $$
+    \int_a^b s_n \le \underline{I}(f) \le \bar{I}(f) \le \int_a^b t_n
+    $$
+12. Hence:
+    $$
+    0 \le \bar{I}(f) - \underline{I}(f) \le \int_a^b t_n - \int_a^b s_n < \frac{b - a}{N}
+    $$
+13. Since this holds for every $N \ge 1$, we must have $\bar{I}(f) = \underline{I}(f)$.
+14. Therefore $f$ is integrable on $[a, b]$.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
