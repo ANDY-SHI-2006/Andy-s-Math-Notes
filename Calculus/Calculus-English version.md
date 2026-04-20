@@ -2921,6 +2921,43 @@ $$
 - **Proof of (a)**: By Theorem 4.7(a), $f$ is strictly increasing on $[a,c]$ and strictly decreasing on $[c,b]$. Hence $f(x)<f(c)$ for all $x\neq c$ in $(a,b)$.
 - **Geometric meaning**: An extremum occurs whenever the derivative changes sign (Figure 4.12).
 
+## 4.13 Second-Derivative Test for Extrema
+
+### 4.13.1 Critical Points
+
+- By the extreme-value theorem, a continuous function on $[a,b]$ attains its absolute max and min somewhere in $[a,b]$.
+- If $f$ is differentiable at each interior point, extrema can occur only at:
+  1. The **endpoints** $a$ and $b$;
+  2. **Interior points** where $f'(x)=0$.
+- Points of type (2) are called **critical points** of $f$.
+- To decide whether a critical point is a max, min, or neither, study the sign of $f'$ near $c$, or use the second derivative.
+
+### 4.13.2 Second-Derivative Test (Theorem 4.9)
+
+- Let $c$ be a critical point of $f$ in $(a,b)$, so $f'(c)=0$.
+- Assume $f''$ exists in $(a,b)$.
+- **(a)** If $f''(x)<0$ in $(a,b)$, then $f$ has a **relative maximum** at $c$.
+- **(b)** If $f''(x)>0$ in $(a,b)$, then $f$ has a **relative minimum** at $c$.
+- **Proof of (a)**: If $f''<0$ in $(a,b)$, then by Theorem 4.7 applied to $f'$, the derivative $f'$ is strictly decreasing on $(a,b)$. Since $f'(c)=0$, $f'$ changes from positive to negative at $c$. By Theorem 4.8, $f$ has a relative maximum at $c$.
+- **Practical version**: If $f''$ is continuous at $c$ and $f''(c)\neq 0$, then $f''$ has the same sign as $f''(c)$ in a neighborhood of $c$. Thus:
+  - $f''(c)<0$ and $f'(c)=0$ $\Rightarrow$ relative maximum at $c$.
+  - $f''(c)>0$ and $f'(c)=0$ $\Rightarrow$ relative minimum at $c$.
+
+### 4.13.3 Convexity (Theorem 4.10)
+
+- The sign of $f''$ also governs the **convexity** or **concavity** of $f$.
+- **Theorem 4.10**: Assume $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$.
+  - If $f'$ is increasing on $(a,b)$, then $f$ is **convex** on $[a,b]$.
+  - In particular, if $f''$ exists and is **nonnegative** in $(a,b)$, then $f$ is convex.
+- **Proof sketch**: Take $x<y$ in $[a,b]$ and let $z=\alpha y+(1-\alpha)x$ with $0<\alpha<1$. Apply the mean-value theorem twice on $[x,z]$ and $[z,y]$ to get
+  $$
+  f(z)-f(x)=f'(c)(z-x),\quad f(y)-f(z)=f'(d)(y-z),
+  $$
+  with $x<c<z<d<y$. Since $f'$ is increasing, $f'(c)\le f'(d)$. Using $(1-\alpha)(z-x)=\alpha(y-z)$, this yields the convexity inequality
+  $$
+  f(z)\le\alpha f(y)+(1-\alpha)f(x).
+  $$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
