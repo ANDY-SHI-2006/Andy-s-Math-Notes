@@ -2496,3 +2496,65 @@ Expand along column 3:
 $$
 (-1)^{2+3} \cdot 5 \begin{vmatrix} -2 & -7 \\ -1 & -15 \end{vmatrix} = -5(30 - 7) = -115.
 $$
+
+## 6.4 Cramer's Rule
+
+### 6.4.1 Theorem 4.1
+
+**Theorem 4.1 (Cramer's rule).** Let $A^1, \dots, A^n$ be column vectors with $D(A^1, \dots, A^n) \neq 0$. Let $B$ be a column vector. If $x_1 A^1 + \cdots + x_n A^n = B$, then for each $j$:
+$$
+x_j = \frac{D(A^1, \dots, B, \dots, A^n)}{D(A^1, \dots, A^n)},
+$$
+where $B$ occurs in the $j$-th column.
+
+**Proof.** Replace the $j$-th column of $A$ by $B$:
+$$
+D(A^1, \dots, B, \dots, A^n) = D(A^1, \dots, x_1 A^1 + \cdots + x_n A^n, \dots, A^n).
+$$
+By multilinearity (property 1), this equals:
+$$
+x_1 D(A^1, \dots, A^1, \dots, A^n) + \cdots + x_j D(A^1, \dots, A^n) + \cdots + x_n D(A^1, \dots, A^n, \dots, A^n).
+$$
+Every term except the $j$-th has two equal columns, so equals 0 by property 5. The $j$-th term is $x_j D(A^1, \dots, A^n)$. Hence:
+$$
+D(A^1, \dots, B, \dots, A^n) = x_j D(A^1, \dots, A^n).
+$$
+
+### 6.4.2 Example
+
+Solve:
+$$
+\begin{cases} 3x + 2y + 4z = 1 \\ 2x - y + z = 0 \\ x + 2y + 3z = 1 \end{cases}
+$$
+
+Then:
+$$
+x = \frac{\begin{vmatrix} 1 \u0026 2 \u0026 4 \\ 0 \u0026 -1 \u0026 1 \\ 1 \u0026 2 \u0026 3 \end{vmatrix}}{\begin{vmatrix} 3 \u0026 2 \u0026 4 \\ 2 \u0026 -1 \u0026 1 \\ 1 \u0026 2 \u0026 3 \end{vmatrix}}, \quad
+y = \frac{\begin{vmatrix} 3 \u0026 1 \u0026 4 \\ 2 \u0026 0 \u0026 1 \\ 1 \u0026 1 \u0026 3 \end{vmatrix}}{\begin{vmatrix} 3 \u0026 2 \u0026 4 \\ 2 \u0026 -1 \u0026 1 \\ 1 \u0026 2 \u0026 3 \end{vmatrix}}, \quad
+z = \frac{\begin{vmatrix} 3 \u0026 2 \u0026 1 \\ 2 \u0026 -1 \u0026 0 \\ 1 \u0026 2 \u0026 1 \end{vmatrix}}{\begin{vmatrix} 3 \u0026 2 \u0026 4 \\ 2 \u0026 -1 \u0026 1 \\ 1 \u0026 2 \u0026 3 \end{vmatrix}}.
+$$
+
+The column $B = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}$ shifts from the first column (for $x$) to the second (for $y$) to the third (for $z$). Computing gives:
+$$
+x = -\tfrac{1}{5}, \qquad y = 0, \qquad z = \tfrac{2}{5}.
+$$
+
+### 6.4.3 Linear Independence Criterion
+
+**Theorem 4.2.** Let $A^1, \dots, A^n$ be column vectors in $K^n$.
+- If they are linearly dependent, then $D(A^1, \dots, A^n) = 0$.
+- If $D(A^1, \dots, A^n) \neq 0$, then they are linearly independent.
+
+**Proof.** If dependent, there exist $x_1, \dots, x_n$ not all $0$ with $\sum x_k A^k = O$. Suppose $x_j \neq 0$. Then $A^j = \sum_{k \neq j} y_k A^k$. By multilinearity:
+$$
+D(A^1, \dots, A^n) = \sum_{k \neq j} y_k D(A^1, \dots, A^k, \dots, A^n) = 0,
+$$
+since each determinant has the $k$-th column equal to the $j$-th column.
+
+**Corollary 4.3.** If $D(A^1, \dots, A^n) \neq 0$, then for any $B \in K^n$ there exist $x_1, \dots, x_n$ such that $x_1 A^1 + \cdots + x_n A^n = B$.
+
+**Proof.** The columns are linearly independent, hence form a basis of $K^n$.
+
+> In terms of linear equations: if a system of $n$ equations in $n$ unknowns has coefficient matrix with non-zero determinant, then it has a unique solution, given by Cramer's rule.
+
+**Theorem 4.4.** $D(A^1, \dots, A^n) = 0$ if and only if $A^1, \dots, A^n$ are linearly dependent.
