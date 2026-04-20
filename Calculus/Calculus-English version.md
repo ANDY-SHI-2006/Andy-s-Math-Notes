@@ -541,6 +541,53 @@ $$
 $$
 
 which proves that $f$ is integrable on $[a, b]$.
+
+## 1.14 Calculation of the Integral of a Bounded Monotonic Function
+
+### 1.14.1 Theorem 1.13 — Increasing Functions
+
+**Theorem 1.13.** Assume $f$ is increasing on $[a, b]$. Let $x_k = a + k\,\dfrac{b-a}{n}$ for $k = 0, 1, \dots, n$. If $I$ is any number satisfying:
+
+$$
+\frac{b-a}{n} \sum_{k=0}^{n-1} f(x_k) \le I \le \frac{b-a}{n} \sum_{k=1}^{n} f(x_k)
+$$
+
+for every integer $n \ge 1$, then:
+
+$$
+I = \int_a^b f(x)\,dx.
+$$
+
+### 1.14.2 Proof Sketch
+
+Let $s_n$ and $t_n$ be the special approximating step functions from the proof of Theorem 1.12 (uniform partition into $n$ equal parts). Then:
+
+$$
+\int_a^b s_n(x)\,dx \le I \le \int_a^b t_n(x)\,dx
+$$
+
+for every $n \ge 1$. But $\int_a^b f(x)\,dx$ satisfies the same inequalities. Using Equation (1.8):
+
+$$
+0 \le \Bigl|I - \int_a^b f(x)\,dx\Bigr| \le \frac{C}{n}
+$$
+
+for every $n \ge 1$. Letting $n \to \infty$ gives $I = \int_a^b f(x)\,dx$.
+
+### 1.14.3 Theorem 1.14 — Decreasing Functions
+
+**Theorem 1.14.** Assume $f$ is decreasing on $[a, b]$. Let $x_k = a + k\,\dfrac{b-a}{n}$ for $k = 0, 1, \dots, n$. If $I$ is any number satisfying:
+
+$$
+\frac{b-a}{n} \sum_{k=1}^{n} f(x_k) \le I \le \frac{b-a}{n} \sum_{k=0}^{n-1} f(x_k)
+$$
+
+for every integer $n \ge 1$, then:
+
+$$
+I = \int_a^b f(x)\,dx.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
