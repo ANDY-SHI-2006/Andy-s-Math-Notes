@@ -453,6 +453,41 @@ Fortunately, most of the functions that occur in practice are monotonic or sums 
 
 The discussion of "Technique of Integration" begins in Section 1.23, where we calculate the integral $\int_0^b x^p\,dx$ when $p$ is a positive integer. Then we develop general properties of the integral, such as **linearity** and **additivity**, and show how these properties help us to extend our knowledge of integrals of specific functions.
 
+
+## 1.12 Monotonic and Piecewise Monotonic Functions
+
+### 1.12.1 Definitions
+
+Let $f$ be defined on a set $S$.
+
+| Term | Condition for all $x < y$ in $S$ |
+|------|--------------------------------------|
+| **Increasing** | $f(x) \le f(y)$ |
+| **Strictly increasing** | $f(x) < f(y)$ |
+| **Decreasing** | $f(x) \ge f(y)$ |
+| **Strictly decreasing** | $f(x) > f(y)$ |
+
+A function is **monotonic** on $S$ if it is either increasing or decreasing on $S$.
+A function is **strictly monotonic** if it is strictly increasing or strictly decreasing.
+
+### 1.12.2 Piecewise Monotonic Functions
+
+A function $f$ is **piecewise monotonic** on $[a, b]$ if there exists a partition $P$ of $[a, b]$ such that $f$ is monotonic on each open subinterval of $P$.
+
+In particular, step functions are piecewise monotonic.
+
+### 1.12.3 Examples
+
+**Example 1 — The power functions.** Let $p$ be a positive integer and $f(x) = x^p$. Then $f$ is **strictly increasing** on the nonnegative real axis (since $0 \le x < y \implies x^p < y^p$). It is piecewise monotonic on every finite interval.
+
+**Example 2 — The square-root function.** Let $f(x) = \sqrt{x}$ for $x \ge 0$. Then $f$ is **strictly increasing** on the nonnegative real axis, since for $0 \le x < y$:
+
+$$
+\sqrt{y} - \sqrt{x} = \frac{y - x}{\sqrt{y} + \sqrt{x}} > 0.
+$$
+
+**Example 3 — The semicircle function.** Let $g(x) = \sqrt{r^2 - x^2}$ for $-r \le x \le r$. Then $g$ is **strictly increasing** on $[-r, 0]$ and **strictly decreasing** on $[0, r]$. Hence $g$ is piecewise monotonic on $[-r, r]$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
