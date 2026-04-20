@@ -1290,3 +1290,42 @@ $$
 
 
 # 4. Linear Maps and Matrices
+
+
+## 4.1 The Linear Map Associated with a Matrix
+
+### 4.1.1 Definition
+
+Let $A$ be an $m \times n$ matrix. The **linear map associated with $A$** is:
+
+$$
+L_A: K^n \to K^m, \quad L_A(X) = AX
+$$
+
+for every column vector $X \in K^n$.
+
+$L_A$ is linear by properties of matrix multiplication:
+
+$$
+A(X + Y) = AX + AY, \qquad A(cX) = cAX.
+$$
+
+**Example:** If $A = \begin{pmatrix} 2 & 1 \\ -1 & 5 \end{pmatrix}$ and $X = \begin{pmatrix} 3 \\ 7 \end{pmatrix}$, then:
+
+$$
+L_A(X) = \begin{pmatrix} 2 & 1 \\ -1 & 5 \end{pmatrix} \begin{pmatrix} 3 \\ 7 \end{pmatrix} = \begin{pmatrix} 6 + 7 \\ -3 + 35 \end{pmatrix} = \begin{pmatrix} 13 \\ 32 \end{pmatrix}.
+$$
+
+### 4.1.2 Theorem 1.1 — Uniqueness
+
+**Theorem 1.1.** If $A, B$ are $m \times n$ matrices and $L_A = L_B$, then $A = B$.
+
+**Proof:** $A_i \cdot X = B_i \cdot X$ for all $X$ and all rows $i$. Hence $(A_i - B_i) \cdot X = 0$ for all $X$. By non-degeneracy of the dot product, $A_i - B_i = O$, so $A_i = B_i$ for all $i$. Thus $A = B$.
+
+### 4.1.3 Kernel Interpretation
+
+A homogeneous system $AX = O$ can be interpreted as:
+
+$$
+\text{Set of solutions} = \operatorname{Ker} L_A.
+$$
