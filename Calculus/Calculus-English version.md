@@ -588,6 +588,47 @@ $$
 I = \int_a^b f(x)\,dx.
 $$
 
+
+## 1.15 Calculation of the Integral $\int_0^b x^p \, dx$
+
+### 1.15.1 Theorem 1.15
+
+If $p$ is a positive integer and $b > 0$, we have:
+
+$$
+\int_0^b x^p \, dx = \frac{b^{p+1}}{p+1}.
+$$
+
+The integral exists because the integrand $x^p$ is bounded and increasing on $[0, b]$.
+
+### 1.15.2 Proof
+
+We use the inequalities:
+
+$$
+\sum_{k=1}^{n-1} k^p < \frac{n^{p+1}}{p+1} < \sum_{k=1}^{n} k^p,
+$$
+
+valid for every integer $n \ge 1$ and $p \ge 1$ (provable by mathematical induction).
+
+Multiplying by $\dfrac{b^{p+1}}{n^{p+1}}$:
+
+$$
+\frac{b}{n} \sum_{k=1}^{n-1} \left(\frac{kb}{n}\right)^p < \frac{b^{p+1}}{p+1} < \frac{b}{n} \sum_{k=1}^{n} \left(\frac{kb}{n}\right)^p.
+$$
+
+Let $f(x) = x^p$ and $x_k = \dfrac{kb}{n}$ for $k = 0, 1, \dots, n$. Then:
+
+$$
+\frac{b}{n} \sum_{k=0}^{n-1} f(x_k) < \frac{b^{p+1}}{p+1} < \frac{b}{n} \sum_{k=1}^{n} f(x_k).
+$$
+
+These are exactly the inequalities (1.9) of **Theorem 1.13** with $a = 0$ and $I = \dfrac{b^{p+1}}{p+1}$. Therefore:
+
+$$
+\int_0^b x^p \, dx = \frac{b^{p+1}}{p+1}.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
