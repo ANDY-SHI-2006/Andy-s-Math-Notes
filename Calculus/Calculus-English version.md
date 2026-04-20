@@ -2027,6 +2027,37 @@ Let $f$ be continuous at $c$ and $f(c) \neq 0$. Then there exists an interval $(
 - Also $a < c < b$ because $f(a) < 0$ and $f(b) > 0$.
 
 
+## 3.8 The Intermediate-Value Theorem for Continuous Functions
+
+### 3.8.1 Theorem 3.8 — Intermediate-Value Theorem
+
+Let $f$ be continuous at each point of a closed interval $[a, b]$. Choose $x_1 < x_2$ in $[a, b]$ with $f(x_1) \neq f(x_2)$. Then $f$ takes on **every value between $f(x_1)$ and $f(x_2)$** somewhere in $(x_1, x_2)$.
+
+**Proof:**
+- Suppose $f(x_1) < f(x_2)$ and let $k$ be any value between them.
+- Define $g(x) = f(x) - k$ on $[x_1, x_2]$.
+- Then $g$ is continuous, $g(x_1) = f(x_1) - k < 0$, and $g(x_2) = f(x_2) - k > 0$.
+- By Bolzano's theorem, $g(c) = 0$ for some $c \in (x_1, x_2)$.
+- Hence $f(c) = k$.
+
+> **Note:** In both Bolzano's theorem and the intermediate-value theorem, $f$ must be continuous at **every point** of $[a, b]$, including the endpoints. Figure 3.9 shows a function continuous everywhere in $[a, b]$ except at $a$; although $f(a) < 0$ and $f(b) > 0$, there is no $x$ with $f(x) = 0$.
+
+### 3.8.2 Theorem 3.9 — Existence of $n$th Roots
+
+If $n$ is a positive integer and $a > 0$, then there is **exactly one** positive $b$ such that:
+
+$$
+b^n = a
+$$
+
+**Proof:**
+1. Choose $c > 1$ such that $0 < a < c$, and let $f(x) = x^n$ on $[0, c]$.
+2. $f$ is continuous on $[0, c]$, with $f(0) = 0$ and $f(c) = c^n$.
+3. Since $0 < a < c < c^n$, the value $a$ lies between $f(0)$ and $f(c)$.
+4. By the intermediate-value theorem, $f(x) = a$ for some $x \in (0, c)$; call it $b$.
+5. **Uniqueness**: $f(x) = x^n$ is strictly increasing on $[0, c]$, so there cannot be more than one such $b$.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
