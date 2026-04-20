@@ -2723,6 +2723,51 @@ $$
   - This view was later replaced by the rigorous limit definition (Cauchy).
   - **Non-standard analysis** (Robinson, 1966) gave a consistent foundation for infinitesimals.
 
+## 4.8 The Chain Rule for Differentiating Composite Functions
+
+### 4.8.1 Composite Functions
+
+- If $u$ and $v$ are functions with the domain of $u$ containing the range of $v$, the **composite function** $f=u\circ v$ is defined by:
+  $$
+  f(x) = u[v(x)].
+  $$
+
+### 4.8.2 The Chain Rule (Theorem 4.2)
+
+- Let $f=u\circ v$. Suppose $v'(x)$ and $u'(y)$ exist, where $y=v(x)$.
+- Then $f'(x)$ exists and:
+  $$
+  f'(x) = u'(y)\cdot v'(x) = u'[v(x)]\cdot v'(x).
+  $$
+- In function notation:
+  $$
+  (u\circ v)' = (u'\circ v)\cdot v'.
+  $$
+- In $u(v)$-notation:
+  $$
+  u(v)' = u'(v)\cdot v'.
+  $$
+
+### 4.8.3 Proof Sketch
+
+- Let $y=v(x)$ and $k=v(x+h)-v(x)$. Then $v(x+h)=y+k$ and:
+  $$
+  \frac{f(x+h)-f(x)}{h} = \frac{u(y+k)-u(y)}{h}.
+  $$
+- **Naive approach** (valid when $k\neq 0$): multiply and divide by $k$:
+  $$
+  \frac{u(y+k)-u(y)}{k}\cdot\frac{k}{h} \to u'(y)\cdot v'(x) \quad (h\to 0).
+  $$
+- **Rigorous fix** (when $k$ may be $0$): define
+  $$
+  g(t) = \frac{u(y+t)-u(y)}{t} - u'(y) \quad (t\neq 0),
+  $$
+  with $g(0)=0$ so that $g$ is continuous at $0$. Then
+  $$
+  u(y+t)-u(y) = t[g(t)+u'(y)].
+  $$
+  Setting $t=k$ and substituting gives a formula valid even when $k=0$, yielding the same limit $u'(y)\cdot v'(x)$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
