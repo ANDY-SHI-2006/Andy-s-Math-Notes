@@ -2558,6 +2558,34 @@ $$
   $$
   (x^n)' = nx^{n-1}, \qquad n\in\mathbb{Z}^+.
   $$
+
+## 4.5 The Algebra of Derivatives
+
+### 4.5.1 Linearity
+
+- Computing derivatives directly from the definition can be tedious.
+- **Theorem 4.1** (Linearity): If $f$ and $g$ are differentiable at $x$ and $c$ is a constant, then:
+  1. $(f+g)'(x) = f'(x) + g'(x)$
+  2. $(cf)'(x) = c\,f'(x)$
+
+### 4.5.2 Product Rule
+
+- **Theorem 4.2** (Product rule): If $f$ and $g$ are differentiable at $x$, then:
+  $$
+  (fg)'(x) = f(x)g'(x) + f'(x)g(x).
+  $$
+- **Corollary**: If $f$ is differentiable and $c$ is constant, then $(cf)' = c f'$.
+
+### 4.5.3 Quotient Rule
+
+- **Theorem 4.3** (Quotient rule): If $f$ and $g$ are differentiable at $x$ and $g(x)\neq 0$, then:
+  $$
+  \left(\frac{f}{g}\right)'(x) = \frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}.
+  $$
+- **Corollary**: If $f$ is differentiable at $x$ and $f(x)\neq 0$, then:
+  $$
+  \left(\frac{1}{f}\right)'(x) = -\frac{f'(x)}{[f(x)]^2}.
+  $$
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
