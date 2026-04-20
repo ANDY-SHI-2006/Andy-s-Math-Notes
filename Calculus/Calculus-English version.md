@@ -144,6 +144,75 @@ For a nonnegative step function, the integral equals the **area of its ordinate 
 
 The value of the integral is independent of the choice of partition, as long as $s$ is constant on its open subintervals. Inserting additional subdivision points splits one term $s_k(x_k - x_{k-1})$ into two terms whose sum is unchanged; by repeated insertion, the integral is the same for every refinement of $P$.
 
+
+## 1.6 Properties of the Integral of a Step Function
+
+### 1.6.1 Additive Property
+
+$$
+\int_a^b \bigl[s(x) + t(x)\bigr] \, dx = \int_a^b s(x) \, dx + \int_a^b t(x) \, dx.
+$$
+
+### 1.6.2 Homogeneous Property
+
+For every real $c$:
+
+$$
+\int_a^b c \cdot s(x) \, dx = c \int_a^b s(x) \, dx.
+$$
+
+### 1.6.3 Linearity Property
+
+Combining the above two properties, for every real $c_1, c_2$:
+
+$$
+\int_a^b \bigl[c_1 s(x) + c_2 t(x)\bigr] \, dx = c_1 \int_a^b s(x) \, dx + c_2 \int_a^b t(x) \, dx.
+$$
+
+### 1.6.4 Comparison Theorem
+
+If $s(x) < t(x)$ for every $x$ in $[a, b]$, then:
+
+$$
+\int_a^b s(x) \, dx < \int_a^b t(x) \, dx.
+$$
+
+### 1.6.5 Additivity with Respect to the Interval
+
+If $a < c < b$:
+
+$$
+\int_a^c s(x) \, dx + \int_c^b s(x) \, dx = \int_a^b s(x) \, dx.
+$$
+
+### 1.6.6 Invariance under Translation
+
+For every real $c$:
+
+$$
+\int_a^b s(x) \, dx = \int_{a+c}^{b+c} s(x - c) \, dx.
+$$
+
+### 1.6.7 Expansion or Contraction of the Interval
+
+For every $k > 0$:
+
+$$
+\int_{ka}^{kb} s\!\left(\frac{x}{k}\right) dx = k \int_a^b s(x) \, dx.
+$$
+
+### 1.6.8 Reversed Limits and Reflection
+
+$$
+\int_b^a s(x) \, dx = -\int_a^b s(x) \, dx \quad (a < b), \qquad \int_a^a s(x) \, dx = 0.
+$$
+
+By combining with expansion for $k = -1$, we obtain the **reflection property**:
+
+$$
+\int_a^b s(x) \, dx = \int_{-b}^{-a} s(-x) \, dx.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
