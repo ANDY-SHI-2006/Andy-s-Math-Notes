@@ -2899,6 +2899,28 @@ $$
   $$
 - The ordinary mean-value theorem is the special case with $g(x)=x$.
 
+## 4.12 Applications of the Mean-Value Theorem to Geometric Properties
+
+### 4.12.1 Monotonicity (Theorem 4.7)
+
+- Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$.
+- **(a)** If $f'(x)>0$ for all $x\in(a,b)$, then $f$ is **strictly increasing** on $[a,b]$.
+- **(b)** If $f'(x)<0$ for all $x\in(a,b)$, then $f$ is **strictly decreasing** on $[a,b]$.
+- **(c)** If $f'(x)=0$ for all $x\in(a,b)$, then $f$ is **constant** on $[a,b]$.
+- **Proof of (a)**: For $x<y$ in $[a,b]$, apply the mean-value theorem on $[x,y]$:
+  $$
+  f(y)-f(x)=f'(c)(y-x),\quad x<c<y.
+  $$
+  Since $f'(c)>0$ and $y-x>0$, we get $f(y)>f(x)$. Parts (b) and (c) are similar.
+
+### 4.12.2 First-Derivative Test for Extrema (Theorem 4.8)
+
+- Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$ except possibly at $c$.
+- **(a)** If $f'(x)>0$ for $x<c$ and $f'(x)<0$ for $x>c$ (sign changes from $+$ to $-$), then $f$ has a **relative maximum** at $c$.
+- **(b)** If $f'(x)<0$ for $x<c$ and $f'(x)>0$ for $x>c$ (sign changes from $-$ to $+$), then $f$ has a **relative minimum** at $c$.
+- **Proof of (a)**: By Theorem 4.7(a), $f$ is strictly increasing on $[a,c]$ and strictly decreasing on $[c,b]$. Hence $f(x)<f(c)$ for all $x\neq c$ in $(a,b)$.
+- **Geometric meaning**: An extremum occurs whenever the derivative changes sign (Figure 4.12).
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
