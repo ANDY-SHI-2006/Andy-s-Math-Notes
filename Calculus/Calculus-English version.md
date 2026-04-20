@@ -1197,6 +1197,59 @@ $$
 - Polar: $r = 2$ (much simpler)
 
 
+
+## 2.10 The Integral for Area in Polar Coordinates
+
+### 2.10.1 Radial Set
+
+- Let $f \ge 0$ on $[a, b]$ with $0 \le b - a \le 2\pi$.
+- The **radial set** of $f$ over $[a, b]$:
+  $$
+  R = \{(r, \theta) \mid 0 \le r \le f(\theta), \ a \le \theta \le b\}
+  $$
+- If $f$ is constant, $R$ is a circular sector.
+
+### 2.10.2 Area of a Step Function's Radial Set
+
+- For a step function $s$ with values $s_k$ on subintervals $(\theta_{k-1}, \theta_k)$:
+  - Each piece is a circular sector of radius $s_k$ and angle $(\theta_k - \theta_{k-1})$.
+  - Area of one sector: $\frac{1}{2}(\theta_k - \theta_{k-1})s_k^2$.
+  - Total area (non-overlapping since $b - a \le 2\pi$):
+    $$
+    a(S) = \frac{1}{2} \sum_{k=1}^{n} s_k^2 (\theta_k - \theta_{k-1}) = \frac{1}{2} \int_a^b s^2(\theta) \, d\theta
+    $$
+
+### 2.10.3 Theorem 2.6 — Area Formula
+
+Let $R$ be the radial set of a nonnegative function $f$ over $[a, b]$ ($0 \le b - a \le 2\pi$), and assume $R$ is measurable. If $f^2$ is integrable on $[a, b]$, then:
+
+$$
+a(R) = \frac{1}{2} \int_a^b f^2(\theta) \, d\theta
+$$
+
+**Proof Sketch:**
+
+1. Choose step functions $s, t$ with $0 \le s \le f \le t$ on $[a, b]$.
+2. Their radial sets satisfy $S \subseteq R \subseteq T$.
+3. By monotonicity of area: $a(S) \le a(R) \le a(T)$.
+4. Using the step-function area formula:
+   $$
+   \frac{1}{2}\int_a^b s^2 \le a(R) \le \frac{1}{2}\int_a^b t^2
+   $$
+5. Since $f^2$ is integrable and $s^2 \le f^2 \le t^2$, the squeeze principle gives:
+   $$
+   2a(R) = \int_a^b f^2(\theta) \, d\theta
+   $$
+
+### 2.10.4 Example — Area of the Figure-Eight Curve
+
+- For $r = \sqrt{|\sin \theta|}$, we have $f^2(\theta) = |\sin \theta|$.
+- By symmetry, compute the first-quadrant portion and multiply by 4:
+  $$
+  a(R) = 4 \cdot \frac{1}{2} \int_0^{\pi/2} \sin \theta \, d\theta = 2\Bigl[-\cos \theta\Bigr]_0^{\pi/2} = 2(1 - 0) = 2
+  $$
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
