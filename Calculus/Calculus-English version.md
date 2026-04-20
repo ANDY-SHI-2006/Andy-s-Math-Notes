@@ -2852,6 +2852,53 @@ $$
    - **Example**: $f(x)=|x|$ has a relative minimum at $0$, but $f'(0)$ does not exist (sharp corner).
 3. **Theorem 4.3 requires the derivative to exist** at the interior extremum. In the absence of sharp corners, the derivative must vanish at an interior extremum.
 
+## 4.11 The Mean-Value Theorem for Derivatives
+
+### 4.11.1 Rolle's Theorem (Theorem 4.4)
+
+- Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$.
+- If $f(a)=f(b)$, then there exists at least one $c\in(a,b)$ such that
+  $$
+  f'(c)=0.
+  $$
+- **Geometric meaning**: If the endpoints have the same height, the curve has a horizontal tangent somewhere between them.
+- **Proof sketch**: If $f'(x)\neq 0$ everywhere in $(a,b)$, then by the extreme-value theorem both extrema must occur at the endpoints. Since $f(a)=f(b)$, this forces $f$ to be constant, contradicting $f'(x)\neq 0$.
+
+### 4.11.2 Mean-Value Theorem (Theorem 4.5)
+
+- Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$.
+- Then there exists at least one $c\in(a,b)$ such that
+  $$
+  f(b)-f(a)=f'(c)(b-a),
+  $$
+  or equivalently
+  $$
+  \frac{f(b)-f(a)}{b-a}=f'(c).
+  $$
+- **Geometric meaning**: There is at least one point where the tangent line is parallel to the chord joining $(a,f(a))$ and $(b,f(b))$.
+- **Physical interpretation**: The instantaneous speed at some moment equals the average speed over the interval.
+- **Proof**: Apply Rolle's theorem to
+  $$
+  h(x)=f(x)(b-a)-x[f(b)-f(a)].
+  $$
+  Then $h(a)=h(b)$ and $h'(x)=f'(x)(b-a)-[f(b)-f(a)]$. Setting $h'(c)=0$ yields the result.
+- **Note**: The theorem makes no assertion about the exact location of $c$, only that at least one such point exists somewhere in $(a,b)$.
+- **Caution**: The conclusion may fail if $f$ is not differentiable at even one interior point.
+  - **Example**: $f(x)=|x|$ on $[-1,2]$ is continuous and has derivative everywhere except $0$. The slope of the chord is $\frac{1}{3}$, but $f'(x)$ is never $\frac{1}{3}$.
+
+### 4.11.3 Cauchy's Mean-Value Formula (Theorem 4.6)
+
+- Let $f$ and $g$ be continuous on $[a,b]$ and differentiable on $(a,b)$.
+- Then there exists $c\in(a,b)$ such that
+  $$
+  f'(c)[g(b)-g(a)] = g'(c)[f(b)-f(a)].
+  $$
+- **Proof**: Apply Rolle's theorem to
+  $$
+  h(x)=f(x)[g(b)-g(a)]-g(x)[f(b)-f(a)].
+  $$
+- The ordinary mean-value theorem is the special case with $g(x)=x$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
