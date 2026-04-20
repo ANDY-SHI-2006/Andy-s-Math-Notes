@@ -836,6 +836,10 @@ $$
 \int_a^b g = \sup\left\{\int_a^b s \;\bigg|\; s \le g\right\} \le \inf\left\{\int_a^b t \;\bigg|\; f \le t\right\} = \int_a^b f.
 $$
 
+
+# 2. Some Applications of Integration
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
