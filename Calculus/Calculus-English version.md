@@ -1030,6 +1030,81 @@ $$
 
 By the Pythagorean identity, $|\sin x| \le 1$ and $|\cos x| \le 1$ for all $x$.
 
+
+## 2.6 Integration Formulas for the Sine and Cosine
+
+### 2.6.1 Integrability
+
+By Theorem 2.3(h), $\sin$ and $\cos$ are strictly monotonic on each quarter-period. Hence they are **piecewise monotonic** and therefore **integrable** on every finite interval.
+
+### 2.6.2 Theorem 2.4 — Approximation Inequalities
+
+If $0 < a \le \frac{\pi}{2}$ and $n \ge 1$, then:
+
+$$
+\frac{a}{n} \sum_{k=1}^{n} \cos\frac{ka}{n} < \sin a < \frac{a}{n} \sum_{k=0}^{n-1} \cos\frac{ka}{n}. \tag{2.6}
+$$
+
+### 2.6.3 Proof Sketch
+
+Use the trigonometric identity (provable by difference formulas and telescoping):
+
+$$
+2\sin\frac{x}{2} \sum_{k=1}^{n} \cos kx = \sin\left(n+\frac{1}{2}\right)x - \sin\frac{x}{2}. \tag{2.7}
+$$
+
+Dividing by $2\sin\frac{x}{2}$ (for $x \neq 2m\pi$) gives closed forms for $\sum\cos kx$ and $\sum_{k=0}^{n-1}\cos kx$. Substituting $x = a/n$ and using the fundamental inequality $\cos\theta < \frac{\sin\theta}{\theta}$ yields (2.6).
+
+### 2.6.4 Theorem 2.5 — Basic Integrals
+
+For every real $a$:
+
+$$
+\int_0^a \cos x \, dx = \sin a, \qquad \int_0^a \sin x \, dx = 1 - \cos a. \tag{2.13, 2.14}
+$$
+
+### 2.6.5 Proof Sketch
+
+**Step 1.** For $0 < a \le \frac{\pi}{2}$, apply **Theorem 1.14** (calculation formula for monotonic functions) together with the inequalities (2.6) of Theorem 2.4. This gives (2.13) directly.
+
+**Step 2.** Extend to all real $a$ using:
+- Reflection property: $\int_0^{-a} \cos x\,dx = -\int_0^{a} \cos x\,dx$
+- Translation and periodicity: $\cos(x+\pi) = -\cos x$
+- Periodicity with period $2\pi$
+
+**Step 3.** Deduce (2.14) from (2.13) via the co-relation $\sin x = \cos(x - \frac{\pi}{2})$ and translation:
+
+$$
+\int_0^a \sin x\,dx = \int_{-\pi/2}^{a-\pi/2} \cos x\,dx = 1 - \cos a.
+$$
+
+### 2.6.6 Example 1 — General Interval Formulas
+
+For any real $a, b$:
+
+$$
+\int_a^b \cos x\,dx = \sin b - \sin a = \sin x\,\Big|_a^b, \qquad
+\int_a^b \sin x\,dx = -(\cos b - \cos a) = -\cos x\,\Big|_a^b.
+$$
+
+### 2.6.7 Example 2 — Scaling the Argument
+
+For $c \neq 0$:
+
+$$
+\int_a^b \cos cx\,dx = \frac{1}{c}(\sin cb - \sin ca), \qquad
+\int_a^b \sin cx\,dx = -\frac{1}{c}(\cos cb - \cos ca).
+$$
+
+### 2.6.8 Example 3 — Powers of Sine and Cosine
+
+Using $\sin^2 x = \frac{1}{2}(1 - \cos 2x)$:
+
+$$
+\int_0^a \sin^2 x\,dx = \frac{a}{2} - \frac{1}{4}\sin 2a, \qquad
+\int_0^a \cos^2 x\,dx = \frac{a}{2} + \frac{1}{4}\sin 2a.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
