@@ -1,13 +1,12 @@
 # 1. The Concepts of Integral Calculus
 
+## 1.1 The Concept of Area as a Set Function
 
-## 1.6 The Concept of Area as a Set Function
-
-### 1.6.1 Introduction
+### 1.1.1 Introduction
 
 Area is defined axiomatically: we postulate a set of fundamental properties and build the theory from them, just as Euclid did for geometry.
 
-### 1.6.2 Set Functions and Measurable Sets
+### 1.1.2 Set Functions and Measurable Sets
 
 An **area function** $a$ assigns a real number $a(S)$ to each set $S$ in a collection of plane sets. Such a function (domain = sets, range = real numbers) is called a **set function**.
 
@@ -17,7 +16,7 @@ Sets to which an area can be assigned are called **measurable sets**; their coll
 - **Step region**: finite union of adjacent rectangles on the $x$-axis.
 - **Ordinate set**: region under the graph of a nonnegative function (approximated by inner/outer step regions).
 
-### 1.6.3 Axioms of Area
+### 1.1.3 Axioms of Area
 
 We assume a class $\mathscr{M}$ and a set function $a$ satisfying:
 
@@ -30,7 +29,7 @@ We assume a class $\mathscr{M}$ and a set function $a$ satisfying:
 | **5. Scale** | Every rectangle $R \in \mathscr{M}$ with edge lengths $h, k$ has $a(R) = hk$. |
 | **6. Exhaustion** | If $S \subseteq Q \subseteq T$ for step regions $S, T$ and **only one** number $c$ satisfies $a(S) \le c \le a(T)$ for all such pairs, then $Q \in \mathscr{M}$ and $a(Q) = c$. |
 
-### 1.6.4 Consequences
+### 1.1.4 Consequences
 
 - **Monotone property**: $S \subseteq T \implies a(S) \le a(T)$.
 - **Empty set**: $\varnothing \in \mathscr{M}$ and $a(\varnothing) = 0$.
