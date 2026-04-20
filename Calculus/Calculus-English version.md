@@ -2334,6 +2334,48 @@ If $f$ is continuous at each point of a closed interval $[a, b]$, then $f$ is **
 14. Therefore $f$ is integrable on $[a, b]$.
 
 
+## 3.15 Mean-Value Theorems for Integrals of Continuous Functions
+
+### 3.15.1 Theorem 3.15 — Mean-Value Theorem for Integrals
+
+If $f$ is continuous on $[a, b]$, then for some $c \in [a, b]$:
+
+$$
+\int_a^b f(x) \, dx = f(c)(b - a)
+$$
+
+**Proof:**
+1. Let $m$ and $M$ be the minimum and maximum values of $f$ on $[a, b]$.
+2. Then $m \le f(x) \le M$ for all $x \in [a, b]$.
+3. Integrating: $m(b - a) \le \int_a^b f(x) \, dx \le M(b - a)$.
+4. Dividing by $b - a$: $m \le A(f) \le M$, where $A(f) = \frac{1}{b-a}\int_a^b f(x) \, dx$ is the average value.
+5. By the intermediate-value theorem, $A(f) = f(c)$ for some $c \in [a, b]$.
+6. Hence $\int_a^b f(x) \, dx = f(c)(b - a)$.
+
+### 3.15.2 Theorem 3.16 — Weighted Mean-Value Theorem
+
+Assume $f$ and $g$ are continuous on $[a, b]$. If $g$ never changes sign on $[a, b]$, then for some $c \in [a, b]$:
+
+$$
+\int_a^b f(x)g(x) \, dx = f(c) \int_a^b g(x) \, dx
+$$
+(Equation 3.27)
+
+**Proof:**
+1. Assume $g \ge 0$ on $[a, b]$ (the case $g \le 0$ follows by applying to $-g$).
+2. Since $m \le f(x) \le M$:
+   $$mg(x) \le f(x)g(x) \le Mg(x)$$
+3. Integrating:
+   $$m\int_a^b g(x) \, dx \le \int_a^b f(x)g(x) \, dx \le M\int_a^b g(x) \, dx$$
+   (Equation 3.28)
+4. **Case 1**: If $\int_a^b g(x) \, dx = 0$, then $\int_a^b f(x)g(x) \, dx = 0$ as well, so (3.27) holds trivially for any $c$.
+5. **Case 2**: If $\int_a^b g(x) \, dx > 0$, divide (3.28) by this integral:
+   $$m \le \frac{\int_a^b f(x)g(x) \, dx}{\int_a^b g(x) \, dx} \le M$$
+6. By the intermediate-value theorem, this quotient equals $f(c)$ for some $c \in [a, b]$.
+
+> **Use**: The weighted mean-value theorem provides useful estimates for integrals of products, especially when one factor's integral is easy to compute.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
