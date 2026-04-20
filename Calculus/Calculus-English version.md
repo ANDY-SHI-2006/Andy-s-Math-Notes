@@ -2958,6 +2958,52 @@ $$
   f(z)\le\alpha f(y)+(1-\alpha)f(x).
   $$
 
+## 4.14 Curve Sketching
+
+### 4.14.1 General Procedure
+
+1. Determine the **domain** and (if easy) the **range**.
+2. Find **intercepts**:
+   - $y$-intercept: $(0, f(0))$ (if $0$ is in the domain)
+   - $x$-intercepts: solutions of $f(x)=0$
+3. Determine **monotonicity** by the sign of $f'$.
+4. Determine **convexity/concavity** by the sign of $f''$.
+5. Locate points with **horizontal tangents** ($f'=0$).
+6. Identify **asymptotes**.
+
+### 4.14.2 Asymptotes
+
+- A nonvertical line $y=mx+b$ is an **asymptote** if
+  $$
+  f(x)-(mx+b)\to 0 \quad \text{as } x\to\pm\infty.
+  $$
+- A vertical line $x=a$ is a **vertical asymptote** if $|f(x)|\to\infty$ as $x\to a$ from either side.
+
+### 4.14.3 Example 1: $f(x)=x+\dfrac{1}{x}$ ($x\neq 0$)
+
+- No intercepts on either axis.
+- Derivatives:
+  $$
+  f'(x)=1-\frac{1}{x^2}, \qquad f''(x)=\frac{2}{x^3}.
+  $$
+- $f'(x)=0$ at $x=\pm 1$: relative **minimum** at $x=1$, relative **maximum** at $x=-1$.
+- $f''(x)>0$ for $x>0$ (convex); $f''(x)<0$ for $x<0$ (concave).
+- As $x\to 0$, behaves like $y=1/x$; the $y$-axis is a **vertical asymptote**.
+- As $|x|\to\infty$, behaves like $y=x$; the line $y=x$ is an **asymptote**.
+- $f$ is odd: $f(-x)=-f(x)$, so the graph is symmetric about the origin.
+
+### 4.14.4 Example 2: $f(x)=\dfrac{1}{x^2+1}$
+
+- Even function, positive for all $x$; the $x$-axis is a **horizontal asymptote**.
+- Derivatives:
+  $$
+  f'(x)=\frac{-2x}{(x^2+1)^2}, \qquad
+  f''(x)=\frac{2(3x^2-1)}{(x^2+1)^3}.
+  $$
+- $f'(x)<0$ for $x>0$, $f'(x)>0$ for $x<0$, $f'(0)=0$: **relative maximum** at $x=0$.
+- $f''(x)>0$ if $3x^2>1$ (convex); $f''(x)<0$ if $3x^2<1$ (concave).
+- **Points of inflection** at $x^2=\dfrac{1}{3}$, i.e. $x=\pm\dfrac{1}{\sqrt{3}}$, where $f''$ changes sign.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
