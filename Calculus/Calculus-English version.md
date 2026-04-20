@@ -213,6 +213,35 @@ $$
 \int_a^b s(x) \, dx = \int_{-b}^{-a} s(-x) \, dx.
 $$
 
+
+## 1.7 Other Notations for Integrals
+
+### 1.7.1 Dummy Variables
+
+The integration variable is a **dummy variable** — it plays no essential role. Any letter will do:
+
+$$
+\int_a^b s(x)\,dx = \int_a^b s(t)\,dt = \int_a^b s(u)\,du.
+$$
+
+### 1.7.2 Abbreviated Notation
+
+Some authors omit the dummy variable and write simply:
+
+$$
+\int_a^b s.
+$$
+
+This makes clearer that the integral depends only on the **function $s$** and the **interval $[a,b]$**.
+
+| Pros | Cons |
+|------|------|
+| Simpler formulas (e.g. $\int_a^b (s+t) = \int_a^b s + \int_a^b t$) | Awkward for substitution theorems |
+
+### 1.7.3 Leibniz Notation
+
+The symbol $dx$ may seem superfluous now, but it becomes an extremely useful computational device for routine integral calculations.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
