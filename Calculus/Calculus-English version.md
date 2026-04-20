@@ -431,16 +431,27 @@ $$
 
 is measurable and has **area equal to 0**.
 
+
 ## 1.11 Informal Remarks on the Theory and Technique of Integration
+
+### 1.11.1 Two Fundamental Questions
 
 Two fundamental questions arise at this stage:
 
-1. **Theory**: Which bounded functions are integrable?
-2. **Technique**: Given that $f$ is integrable, how do we compute $\int_a^b f(x)\,dx$?
+1. **Theory of Integration**: Which bounded functions are integrable?
+2. **Technique of Integration**: Given that a function $f$ is integrable, how do we compute $\int_a^b f(x)\,dx$?
 
-A complete answer to (1) lies beyond an introductory course. Instead, we introduce an important class of functions — **monotonic functions** — and prove that all bounded monotonic functions are integrable. Since most functions encountered in practice are monotonic or sums of monotonic functions, this provides a useful partial theory.
+A complete answer to question (1) lies beyond the scope of an introductory course. Instead, we shall give partial answers which require only elementary ideas.
 
-The discussion of technique begins in Section 1.23, where we compute $\int_0^b x^p\,dx$ for positive integers $p$, and then develop general properties (linearity, additivity) to extend our knowledge.
+### 1.11.2 Monotonic Functions
+
+First we introduce an important class of functions known as **monotonic functions**. In the following section we define these functions and give a number of examples. Then we prove that **all bounded monotonic functions are integrable**.
+
+Fortunately, most of the functions that occur in practice are monotonic or sums of monotonic functions, so the results of this miniature theory of integration are quite comprehensive.
+
+### 1.11.3 Technique of Integration
+
+The discussion of "Technique of Integration" begins in Section 1.23, where we calculate the integral $\int_0^b x^p\,dx$ when $p$ is a positive integer. Then we develop general properties of the integral, such as **linearity** and **additivity**, and show how these properties help us to extend our knowledge of integrals of specific functions.
 
 # 14. Calculus of Vector-Valued Functions
 
