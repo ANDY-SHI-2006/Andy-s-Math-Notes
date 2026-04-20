@@ -1676,6 +1676,63 @@ $$
 - **Existence of limit**: $\displaystyle\lim_{x \to p} f(x) = A$ exists iff both one-sided limits exist and equal $A$.
 
 
+## 3.3 The Definition of Continuity of a Function
+
+### 3.3.1 Definition — Continuity at a Point
+
+A function $f$ is **continuous at $p$** if:
+
+1. $f$ is defined at $p$; and
+2. $\displaystyle\lim_{x \to p} f(x) = f(p)$.
+
+**Neighborhood formulation:**
+- For every neighborhood $N_1[f(p)]$, there exists $N_2(p)$ such that:
+  $$
+  f(x) \in N_1[f(p)] \quad \text{whenever} \quad x \in N_2(p)
+  $$
+  (Equation 3.4)
+- Note: $x \neq p$ is **not** required, since $f(p) \in N_1[f(p)]$ always.
+
+**$\epsilon$-$\delta$ formulation:**
+- For every $\epsilon > 0$, there exists $\delta > 0$ such that:
+  $$
+  |f(x) - f(p)| < \epsilon \quad \text{whenever} \quad |x - p| < \delta
+  $$
+
+### 3.3.2 Examples
+
+**Example 1 — Constant function:**
+- $f(x) = c$. Then $\lim_{x \to p} c = c = f(p)$ for every $p$.
+- **Constant functions are continuous everywhere.**
+
+**Example 2 — Identity function:**
+- $f(x) = x$. Then $\lim_{x \to p} x = p = f(p)$ for every $p$.
+- **The identity function is continuous everywhere.**
+
+**Example 3 — Greatest-integer function:**
+- $f(x) = [x]$ is continuous at every non-integer point.
+- At integers $p$: discontinuous (limit does not exist; jump discontinuity).
+- However, $f$ is **continuous from the right** at each integer (right-hand limit equals $f(p)$).
+
+**Example 4 — Infinite discontinuity:**
+- $f(x) = 1/x^2$ for $x \neq 0$, $f(0) = 0$.
+- Discontinuous at 0; **infinite discontinuity** (function takes arbitrarily large values near 0).
+
+**Example 5 — Removable discontinuity:**
+- $f(x) = 1$ for $x \neq 0$, $f(0) = 0$.
+- Discontinuous at 0 because $f(0) \neq \lim_{x \to 0} f(x) = 1$.
+- Could be "removed" by redefining $f(0) = 1$.
+- **Jump discontinuities** (like $[x]$) cannot be removed by changing $f$ at a single point.
+
+### 3.3.3 Types of Discontinuities Summary
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **Removable** | Limit exists but $\neq f(p)$ | $f(x) = 1$ ($x \neq 0$), $f(0) = 0$ |
+| **Jump** | Left and right limits exist but differ | $f(x) = [x]$ at integers |
+| **Infinite** | Function unbounded near $p$ | $f(x) = 1/x^2$ at $x = 0$ |
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
