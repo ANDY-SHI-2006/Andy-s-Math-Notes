@@ -684,6 +684,59 @@ $$
 
 In particular, if $f(x) \ge 0$ on $[a, b]$, then $\displaystyle\int_a^b f(x)\,dx \ge 0$.
 
+
+## 1.17 Integration of Polynomials
+
+### 1.17.1 Extending the Power Formula
+
+From Section 1.15, for $b > 0$ and $p$ a positive integer:
+
+$$
+\int_0^b x^p \, dx = \frac{b^{p+1}}{p+1}. \tag{1.10}
+$$
+
+This also holds for $b = 0$. Using **Theorem 1.19** with $k = -1$, we can show (1.10) holds for negative $b$ as well:
+
+$$
+\int_0^{-b} x^p \, dx = -\int_0^b (-x)^p \, dx = (-1)^{p+1} \int_0^b x^p \, dx = \frac{(-b)^{p+1}}{p+1}.
+$$
+
+Then by additivity, for all real $a, b$ and any integer $p \ge 0$:
+
+$$
+\int_a^b x^p \, dx = \frac{b^{p+1} - a^{p+1}}{p+1}.
+$$
+
+### 1.17.2 Notation
+
+The symbol $\displaystyle P(x)\,\Big|_a^b$ denotes $P(b) - P(a)$. Thus:
+
+$$
+\int_a^b x^p \, dx = \frac{x^{p+1}}{p+1}\,\Bigg|_a^b = \frac{b^{p+1} - a^{p+1}}{p+1}.
+$$
+
+### 1.17.3 Integrating Polynomials Term by Term
+
+By linearity, the integral of any polynomial is obtained by integrating each term:
+
+$$
+\int_a^b \sum_{k=0}^{n} c_k x^k \, dx = \sum_{k=0}^{n} c_k \, \frac{b^{k+1} - a^{k+1}}{k+1}.
+$$
+
+**Example.** Compute $\displaystyle\int_1^3 (x^2 - 3x + 5)\,dx$:
+
+$$
+\int_1^3 (x^2 - 3x + 5)\,dx = \frac{x^3}{3}\Big|_1^3 - 3\,\frac{x^2}{2}\Big|_1^3 + 5x\Big|_1^3 = \frac{26}{3} - 12 + 10 = \frac{20}{3}.
+$$
+
+### 1.17.4 Piecewise Polynomial Integration
+
+We can also integrate piecewise polynomial functions by splitting at sign changes. For example:
+
+$$
+\int_0^1 |x(2x-1)|\,dx = -\int_0^{1/2} x(2x-1)\,dx + \int_{1/2}^1 x(2x-1)\,dx = \frac{1}{4}.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
