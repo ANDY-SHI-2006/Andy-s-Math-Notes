@@ -1087,3 +1087,96 @@ $$
 **Proof:**
 - If $\operatorname{Ker} L = \{O\}$: by Theorem 3.2, $\dim \operatorname{Im} L = \dim W$. By Corollary 3.5 (Chapter I), $\operatorname{Im} L = W$, so $L$ is surjective. Also injective since kernel is trivial.
 - If $\operatorname{Im} L = W$: by Theorem 3.2, $\dim \operatorname{Ker} L = 0$, so $\operatorname{Ker} L = \{O\}$. Hence $L$ is injective and surjective.
+
+
+## 3.4 Composition and Inverse of Linear Mappings
+
+### 3.4.1 Theorem 4.1 — Composition of Linear Maps
+
+**Theorem 4.1.** Let $F: U \to V$ and $G: V \to W$ be linear maps. Then $G \circ F: U \to W$ is also linear.
+
+**Proof:**
+- $(G \circ F)(u + v) = G(F(u + v)) = G(F(u) + F(v)) = G(F(u)) + G(F(v)) = (G \circ F)(u) + (G \circ F)(v)$
+- $(G \circ F)(cu) = G(F(cu)) = G(cF(u)) = cG(F(u)) = c(G \circ F)(u)$
+
+### 3.4.2 Theorem 4.2 — Distributive Laws
+
+**Theorem 4.2.** Let $F: U \to V$ and $G, H: V \to W$ be linear. Then:
+
+$$
+(G + H) \circ F = G \circ F + H \circ F, \qquad (cG) \circ F = c(G \circ F).
+$$
+
+If $T: U \to V$ is also linear:
+
+$$
+G \circ (F + T) = G \circ F + G \circ T.
+$$
+
+**Proof of first:** $((G + H) \circ F)(u) = (G + H)(F(u)) = G(F(u)) + H(F(u)) = (G \circ F)(u) + (H \circ F)(u)$.
+
+### 3.4.3 Non-Commutativity
+
+If $U = V = W$, we can form $F \circ G$ and $G \circ F$. In general:
+
+$$
+F \circ G \neq G \circ F.
+$$
+
+**Example:** Let $U = \mathbf{R}^3$, $F(x, y, z) = (x, y, 0)$, $G(x, y, z) = (x, z, 0)$. Then:
+- $(G \circ F)(x, y, z) = (x, 0, 0)$
+- $(F \circ G)(x, y, z) = (x, z, 0)$
+
+### 3.4.4 Powers of Linear Operators
+
+A linear map $F: V \to V$ is called an **operator**. Define:
+- $F^n = F \circ F \circ \cdots \circ F$ ($n$ times) for $n \ge 1$
+- $F^0 = I$ (identity map)
+
+Then $F^{r+s} = F^r \circ F^s$ for integers $r, s \ge 0$.
+
+### 3.4.5 Theorem 4.3 — Inverse of a Linear Map is Linear
+
+**Theorem 4.3.** Let $F: U \to V$ be linear with inverse $G: V \to U$. Then $G$ is linear.
+
+**Proof:** Let $u_1 = G(v_1)$ and $u_2 = G(v_2)$, so $F(u_1) = v_1$ and $F(u_2) = v_2$. Then:
+
+$$
+F(u_1 + u_2) = F(u_1) + F(u_2) = v_1 + v_2.
+$$
+
+By definition of inverse, $G(v_1 + v_2) = u_1 + u_2 = G(v_1) + G(v_2)$. Similarly $G(cv) = cG(v)$.
+
+### 3.4.6 Corollary 4.4 — Existence of Inverse
+
+**Corollary 4.4.** Let $F: U \to V$ be linear with $\operatorname{Ker} F = \{O\}$ and $\operatorname{Im} F = V$. Then $F$ has an inverse linear map.
+
+**Proof:** $\operatorname{Ker} F = \{O\}$ implies injectivity; $\operatorname{Im} F = V$ implies surjectivity. Hence $F$ is bijective and has an inverse, which is linear by Theorem 4.3.
+
+### 3.4.7 Isomorphism
+
+A linear map $F: U \to V$ with an inverse is called an **isomorphism** (or **invertible**).
+
+**Example 1:** $F: \mathbf{R}^2 \to \mathbf{R}^2$, $F(x, y) = (3x - y, 4x + 2y)$. The kernel is $\{O\}$ (solve $3x - y = 0$, $4x + 2y = 0$ to get $x = y = 0$). By Theorem 3.2, $\dim \operatorname{Im} F = 2$, so $\operatorname{Im} F = \mathbf{R}^2$. Hence $F$ is an isomorphism.
+
+**Example 2:** Let $V$ have dimension $n$ with basis $\{v_1, \dots, v_n\}$. The map $L: \mathbf{R}^n \to V$ defined by:
+
+$$
+L(x_1, \dots, x_n) = x_1 v_1 + \cdots + x_n v_n
+$$
+
+is an isomorphism.
+
+**Proof:** $\operatorname{Ker} L = \{O\}$ (by linear independence) and $\operatorname{Im} L = V$ (since $v_i$ generate $V$).
+
+### 3.4.8 Notation
+
+For linear maps $F, G: V \to V$, we often write $FG$ instead of $F \circ G$. Then:
+
+$$
+F(G + H) = FG + FH.
+$$
+
+But $FG \neq GF$ in general. If $F$ and $G$ commute, then arithmetic of linear maps works like arithmetic of numbers.
+
+> Powers $I, F, F^2, F^3, \dots$ commute with each other.
