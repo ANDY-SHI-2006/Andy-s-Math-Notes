@@ -97,6 +97,32 @@ A familiar example is the postage function: the cost of first-class mail is cons
 If $P'$ is obtained from $P$ by adjoining additional subdivision points, then $P'$ is called a **refinement** of $P$, and we say $P'$ is **finer** than $P$.
 
 If a function is a step function relative to $P$, it is also a step function relative to every refinement $P'$.
+
+## 1.4 Sum and Product of Step Functions
+
+### 1.4.1 Sum of Step Functions
+
+Let $s$ and $t$ be step functions on $[a, b]$, with partitions $P_1$ and $P_2$ respectively. Their **sum** is defined pointwise:
+
+$$
+u(x) = s(x) + t(x), \quad a \le x \le b.
+$$
+
+To show $u$ is a step function, take the **common refinement** $P$ of $P_1$ and $P_2$ (i.e. all points of $P_1$ together with all points of $P_2$). Since both $s$ and $t$ are constant on each open subinterval of $P$, so is $u$.
+
+### 1.4.2 Product of Step Functions
+
+The **product** $v = s \cdot t$, defined by:
+
+$$
+v(x) = s(x) \cdot t(x), \quad a \le x \le b,
+$$
+
+is also a step function, by the same argument using the common refinement.
+
+### 1.4.3 Scalar Multiplication
+
+If $t(x) = c$ is constant on $[a, b]$, then $v = c \cdot s$ is a step function obtained by multiplying each function value of $s$ by $c$.
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
