@@ -2510,6 +2510,28 @@ $$
 - **Leibniz notation**: Write $\Delta y = f(x+h)-f(x)$ and $\Delta x = h$, so the difference quotient is $\dfrac{\Delta y}{\Delta x}$. As $\Delta x \to 0$, this approaches $f'(x)$, denoted $\dfrac{dy}{dx}$.
 - **Caution**: $\dfrac{dy}{dx}$ is a single symbol, not a quotient of $dy$ and $dx$. For now, $dy$ and $dx$ should not be treated as separate quantities.
 
+### 4.3.4 Differentiation and Higher-Order Derivatives
+
+- The limit process producing $f'(x)$ from $f(x)$ is called **differentiation**.
+- $f'$ is the **first derivative** of $f$.
+- If $f'$ is differentiable, its derivative is the **second derivative**, denoted $f''$.
+- Inductively, the **$n$th derivative** $f^{(n)}$ is the first derivative of $f^{(n-1)}$.
+- Convention: $f^{(0)} = f$ (the zeroth derivative is the function itself).
+
+### 4.3.5 Acceleration
+
+- For rectilinear motion, the first derivative of velocity is **acceleration**:
+  $$
+  a(t) = v'(t) = f''(t).
+  $$
+- **Example** (projectile from Section 4.2): $v(t) = 144 - 32t$.
+  $$
+  \frac{v(t+h)-v(t)}{h} = \frac{-32h}{h} = -32.
+  $$
+  Hence $a(t) = -32\ \text{ft/s}^2$ (constant).
+  - Velocity decreases by $32\ \text{ft/s}$ each second.
+  - In 9 seconds the total decrease is $288\ \text{ft/s}$, matching $v(0)=144$ to $v(9)=-144$.
+
 ## 4.4 Examples of Derivatives
 
 ### 4.4.1 Constant Function
