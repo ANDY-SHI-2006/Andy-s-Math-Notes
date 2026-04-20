@@ -2768,6 +2768,58 @@ $$
   $$
   Setting $t=k$ and substituting gives a formula valid even when $k=0$, yielding the same limit $u'(y)\cdot v'(x)$.
 
+## 4.9 Applications of the Chain Rule: Related Rates and Implicit Differentiation
+
+### 4.9.1 The Chain Rule in Leibniz Notation
+
+- Let $y=v(x)$ and $z=u(y)=u[v(x)]=f(x)$.
+- Then
+  $$
+  \frac{dz}{dx} = \frac{dz}{dy}\cdot\frac{dy}{dx}.
+  $$
+- This makes the chain rule look like a trivial algebraic cancellation of $dy$.
+
+### 4.9.2 Related Rates
+
+- **Problem**: A gas is pumped into a spherical balloon at $50\ \text{cm}^3/\text{s}$. How fast is the radius increasing when $r=5\ \text{cm}$?
+- **Solution**:
+  - $V=\frac{4}{3}\pi r^3$, so $\dfrac{dV}{dr}=4\pi r^2$.
+  - By the chain rule:
+    $$
+    \frac{dV}{dt} = \frac{dV}{dr}\cdot\frac{dr}{dt} = 4\pi r^2\frac{dr}{dt}.
+    $$
+  - Substituting $dV/dt=50$ and $r=5$:
+    $$
+    \frac{dr}{dt} = \frac{1}{2\pi}\ \text{cm/s}.
+    $$
+- **Key point**: It is not necessary to express $r$ as an explicit function of $t$.
+
+### 4.9.3 Differentiating Powers of a Function
+
+- If $f(x)=[v(x)]^n$ with $n\in\mathbb{Z}^+$, then by the chain rule:
+  $$
+  f'(x) = n[v(x)]^{n-1}v'(x).
+  $$
+- In function notation:
+  $$
+  (v^n)' = n v^{n-1} v'.
+  $$
+- Valid also for **rational** powers whenever $v^n$ and $v^{n-1}$ are defined.
+- **Example**: $f(x)=\sin(x^2)$. Let $v(x)=x^2$, $u(x)=\sin x$. Then
+  $$
+  f'(x)=\cos(x^2)\cdot 2x.
+  $$
+
+### 4.9.4 Implicit Differentiation
+
+- The equation $x^2+y^2=r^2$ defines $y$ **implicitly** as a function of $x$ (actually two functions: upper and lower semicircles).
+- Instead of solving for $y$, differentiate both sides with respect to $x$, remembering that $y$ is a function of $x$:
+  $$
+  2x + 2yy' = 0 \quad\Longrightarrow\quad y' = -\frac{x}{y}\quad (y\neq 0).
+  $$
+- This is **implicit differentiation**.
+- Geometric meaning: at $(x,y)$ on the circle, the tangent slope is $-x/y$, while the radius slope is $y/x$; their product is $-1$, so the tangent is perpendicular to the radius.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
