@@ -1878,7 +1878,7 @@ Then $\{B', C'\}$ is a basis for the solution space.
 
 ### 5.4.1 Definition
 
-Let $U, V, W$ be vector spaces over $K$. A map $g: U 	imes V 	o W$ is **bilinear** if:
+Let $U, V, W$ be vector spaces over $K$. A map $g: U \times V \to W$ is **bilinear** if:
 
 | Condition | Statement |
 |-----------|-----------|
@@ -1893,34 +1893,89 @@ and similarly on the other side.
 
 ### 5.4.2 Bilinear Map Associated with a Matrix
 
-Let $A = (a_{ij})$ be an $m 	imes n$ matrix. Define:
-
+Let $A = (a_{ij})$ be an $m \times n$ matrix. Define:
 $$
-g_A: K^m 	imes K^n 	o K, \qquad g_A(X, Y) = {}^tX A Y.
+g_A: K^m \times K^n \to K, \qquad g_A(X, Y) = {}^tX A Y.
 $$
 
-Here $X, Y$ are column vectors, so ${}^tX$ is a row vector, ${}^tX A$ is a row vector, and ${}^tX A Y$ is $1 	imes 1$ (a scalar).
+Our vectors $X$ and $Y$ are column vectors, so ${}^tX$ is a row vector. Then ${}^tX A$ is a row vector, and ${}^tX A Y$ is a $1 \times 1$ matrix (i.e. a scalar).
 
 Writing as a sum:
+$$
+{}^tX A = \left(\sum_{i=1}^m x_i a_{i1}, \dots, \sum_{i=1}^m x_i a_{in}\right),
+$$
+and thus:
 $$
 {}^tX A Y = \sum_{j=1}^n \sum_{i=1}^m x_i a_{ij} y_j = \sum_{j=1}^n \sum_{i=1}^m a_{ij} x_i y_j.
 $$
 
-**Example.** Let $A = egin{pmatrix} 1 & 2 \ 3 & -1 \end{pmatrix}$, $X = egin{pmatrix} x_1 \ x_2 \end{pmatrix}$, $Y = egin{pmatrix} y_1 \ y_2 \end{pmatrix}$. Then:
+**Example.** Let $A = \begin{pmatrix} 1 & 2 \\ 3 & -1 \end{pmatrix}$, $X = \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}$, $Y = \begin{pmatrix} y_1 \\ y_2 \end{pmatrix}$. Then:
 $$
 {}^tX A Y = x_1 y_1 + 2x_1 y_2 + 3x_2 y_1 - x_2 y_2.
 $$
 
+If we fix $X$, then:
+$$
+g_A(X, Y + Y') = g_A(X, Y) + g_A(X, Y'), \qquad g_A(X, cY) = c \, g_A(X, Y),
+$$
+and similarly on the other side. This is merely a reformulation of properties of multiplication of matrices:
+$$
+{}^tX A (Y + Y') = {}^tX A Y + {}^tX A Y', \qquad {}^tX A (cY) = c \, {}^tX A Y.
+$$
+
 ### 5.4.3 Correspondence Theorem
 
-**Theorem 4.1.** Given a bilinear map $g: K^m 	imes K^n 	o K$, there exists a **unique** matrix $A$ such that $g = g_A$, i.e. $g(X, Y) = {}^tX A Y$.
+**Theorem 4.1.** Given a bilinear map $g: K^m \times K^n \to K$, there exists a **unique** matrix $A$ such that $g = g_A$, i.e. such that:
+$$
+g(X, Y) = {}^tX A Y.
+$$
 
-The set of bilinear maps $\operatorname{Bil}(K^m 	imes K^n, K)$ is a vector space, and the association $A \mapsto g_A$ gives an **isomorphism** between $\operatorname{Mat}_{m 	imes n}(K)$ and $\operatorname{Bil}(K^m 	imes K^n, K)$.
+The set of bilinear maps $\operatorname{Bil}(K^m \times K^n, K)$ is a vector space, and the association:
+$$
+A \mapsto g_A
+$$
+gives an **isomorphism** between $\operatorname{Mat}_{m \times n}(K)$ and $\operatorname{Bil}(K^m \times K^n, K)$.
 
-**Proof (existence):** Let $E^1, \dots, E^m$ and $U^1, \dots, U^n$ be standard unit vectors. Write $X = \sum x_i E^i$, $Y = \sum y_j U^j$. By bilinearity:
+**Proof.** Let $E^1, \dots, E^m$ be the standard unit vectors for $K^m$, and let $U^1, \dots, U^n$ be the standard unit vectors for $K^n$. We can write any $X \in K^m$ as:
+$$
+X = \sum_{i=1}^m x_i E^i,
+$$
+and any $Y \in K^n$ as:
+$$
+Y = \sum_{j=1}^n y_j U^j.
+$$
+
+Then:
+$$
+g(X, Y) = g\left(\sum_{i=1}^m x_i E^i, \sum_{j=1}^n y_j U^j\right).
+$$
+Using the linearity on the left:
+$$
+g(X, Y) = \sum_{i=1}^m x_i g\left(E^i, \sum_{j=1}^n y_j U^j\right).
+$$
+Using the linearity on the right:
 $$
 g(X, Y) = \sum_{i=1}^m \sum_{j=1}^n x_i y_j \, g(E^i, U^j).
 $$
-Let $a_{ij} = g(E^i, U^j)$. Then $g(X, Y) = \sum_{i,j} a_{ij} x_i y_j = {}^tX A Y$.
 
-**Proof (uniqueness):** If ${}^tX A Y = {}^tX B Y$ for all $X, Y$, then ${}^tX(A - B)Y = 0$. Let $C = A - B = (c_{ij})$. Taking $X = E^k$, $Y = U^l$ gives $c_{kl} = 0$ for all $k, l$. Hence $A = B$.
+Let $a_{ij} = g(E^i, U^j)$. Then:
+$$
+g(X, Y) = \sum_{i=1}^m \sum_{j=1}^n a_{ij} x_i y_j,
+$$
+which is precisely the expression we obtained for the product ${}^tX A Y$, where $A$ is the matrix $(a_{ij})$. This proves that $g = g_A$.
+
+The uniqueness is also easy to see. Suppose that $B$ is a matrix such that $g = g_B$. Then for all vectors $X, Y$:
+$$
+{}^tX A Y = {}^tX B Y.
+$$
+Subtracting:
+$$
+{}^tX (A - B) Y = O
+$$
+for all $X, Y$. Let $C = A - B = (c_{ij})$. For $X = E^k$ and $Y = U^l$:
+$$
+0 = {}^tE^k C U^l = c_{kl}.
+$$
+This proves $c_{kl} = 0$ for all $k, l$, so $A = B$.
+
+> The second statement (isomorphism) is left as an exercise.
