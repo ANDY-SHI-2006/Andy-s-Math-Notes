@@ -879,6 +879,101 @@ $$
 
 Since $T$ is congruent to $S$ (translation by $c$), $S$ is also measurable with the same area.
 
+
+## 2.3 Worked Examples
+
+### 2.3.1 Example 1 — Simple Region
+
+Compute the area of the region $S$ between $f(x) = x(x-2)$ and $g(x) = x/2$ over $[0, 2]$.
+
+Since $f \le g$ on $[0, 2]$, by Theorem 2.1:
+
+$$
+a(S) = \int_0^2 \bigl[g(x) - f(x)\bigr]\,dx = \int_0^2 \left(\frac{5}{2}x - x^2\right) dx = \frac{5}{2}\cdot\frac{2^2}{2} - \frac{2^3}{3} = \frac{7}{3}.
+$$
+
+### 2.3.2 Example 2 — Splitting the Interval
+
+Compute the area between $f(x) = x$ and $g(x) = x^3/4$ over $[-1, 2]$.
+
+Here $f \le g$ on $[-1, 0]$ but $g \le f$ on $[0, 2]$. We split:
+
+$$
+a(S) = \int_{-1}^{0} \bigl[g(x) - f(x)\bigr]\,dx + \int_{0}^{2} \bigl[f(x) - g(x)\bigr]\,dx
+$$
+
+$$
+= \int_{-1}^{0} \left(\frac{x^3}{4} - x\right) dx + \int_{0}^{2} \left(x - \frac{x^3}{4}\right) dx = \frac{23}{16}.
+$$
+
+In general, if $[a, b]$ can be broken into subintervals where either $f \le g$ or $g \le f$:
+
+$$
+a(S) = \int_a^b |g(x) - f(x)|\,dx.
+$$
+
+### 2.3.3 Example 3 — Area of a Circular Disk
+
+A disk of radius $r$ is the region between $g(x) = \sqrt{r^2 - x^2}$ and $f(x) = -\sqrt{r^2 - x^2}$ on $[-r, r]$.
+
+By Theorem 2.1 and the fact that $g - f = 2g$:
+
+$$
+A(r) = \int_{-r}^{r} 2g(x)\,dx = 2\int_{-r}^{r} \sqrt{r^2 - x^2}\,dx.
+$$
+
+Using Theorem 1.19 with $k = 1/r$:
+
+$$
+A(r) = 2r^2 \int_{-1}^{1} \sqrt{1 - x^2}\,dx = r^2 A(1).
+$$
+
+**Definition.** We define the number $\pi$ to be the area of a unit disk: $\pi = A(1)$. Thus:
+
+$$
+A(r) = \pi r^2.
+$$
+
+### 2.3.4 Example 4 — Similarity Transformation
+
+Let $f$ be nonnegative and integrable on $[a, b]$, with ordinate set $S$. Under a similarity transformation with factor $k > 0$, the set $kS$ is the ordinate set of $g(x) = kf(x/k)$ on $[ka, kb]$.
+
+By Theorem 1.19:
+
+$$
+a(kS) = \int_{ka}^{kb} kf(x/k)\,dx = k^2 \int_a^b f(x)\,dx = k^2 \, a(S).
+$$
+
+Thus similarity with factor $k$ multiplies area by $k^2$.
+
+### 2.3.5 Example 5 — Calculating $\int_0^a x^{1/2}\,dx$
+
+Consider $f(x) = x^{1/2}$ on $[0, a]$. Its ordinate set $S$ has area:
+
+$$
+a(S) = \int_0^a x^{1/2}\,dx.
+$$
+
+The region $T$ above the curve and below $y = a^{1/2}$ is the ordinate set of $g(y) = y^2$ on $[0, a^{1/2}]$:
+
+$$
+a(T) = \int_0^{a^{1/2}} y^2\,dy = \frac{1}{3}a^{3/2}.
+$$
+
+Since $a(S) + a(T) = a \cdot a^{1/2} = a^{3/2}$:
+
+$$
+\int_0^a x^{1/2}\,dx = a^{3/2} - \frac{1}{3}a^{3/2} = \frac{2}{3}a^{3/2}.
+$$
+
+### 2.3.6 Theorem 2.2 — General Power Formula
+
+For $a > 0$, $b > 0$, and $n$ a positive integer:
+
+$$
+\int_a^b x^{1/n}\,dx = \frac{b^{1+1/n} - a^{1+1/n}}{1 + 1/n}. \tag{2.2}
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
