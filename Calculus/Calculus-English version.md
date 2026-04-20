@@ -2820,6 +2820,38 @@ $$
 - This is **implicit differentiation**.
 - Geometric meaning: at $(x,y)$ on the circle, the tangent slope is $-x/y$, while the radius slope is $y/x$; their product is $-1$, so the tangent is perpendicular to the radius.
 
+## 4.10 Applications of Differentiation to Extreme Values of Functions
+
+### 4.10.1 Absolute and Relative Extrema
+
+- **Absolute maximum** on a set $S$: $f(x) \le f(c)$ for all $x \in S$.
+- **Relative maximum** at $c \in S$: there exists an open interval $I$ containing $c$ such that
+  $$
+  f(x) \le f(c) \quad \text{for all } x \in I \cap S.
+  $$
+- **Relative minimum**: reverse the inequality.
+- A **relative maximum** at $c$ is an absolute maximum in some neighborhood of $c$, but not necessarily on all of $S$.
+- Every absolute maximum is, in particular, a relative maximum.
+- An **extremum** (or extreme value) is either a relative maximum or a relative minimum.
+
+### 4.10.2 Theorem 4.3 — Vanishing of the Derivative at an Interior Extremum
+
+- Let $f$ be defined on an open interval $I$ and have a relative maximum or minimum at an interior point $c \in I$.
+- **If $f'(c)$ exists, then $f'(c)=0$**.
+- **Proof sketch**: Define
+  $$
+  Q(x) = \frac{f(x)-f(c)}{x-c}\quad (x\neq c), \qquad Q(c)=f'(c).
+  $$
+  Then $Q$ is continuous at $c$. If $Q(c)=f'(c)\gt0$, the sign-preserving property gives $f(x)\gt f(c)$ for $x\gt c$ near $c$, contradicting the extremum. Similarly $Q(c)\lt0$ is impossible. Hence $Q(c)=0$, i.e. $f'(c)=0$.
+
+### 4.10.3 Important Caveats
+
+1. **$f'(c)=0$ does NOT imply an extremum at $c$**.
+   - **Example**: $f(x)=x^3$ has $f'(0)=0$, but $0$ is not an extremum (the function is increasing through $0$).
+2. **An extremum may occur where $f'(c)$ does not exist**.
+   - **Example**: $f(x)=|x|$ has a relative minimum at $0$, but $f'(0)$ does not exist (sharp corner).
+3. **Theorem 4.3 requires the derivative to exist** at the interior extremum. In the absence of sharp corners, the derivative must vanish at an interior extremum.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
