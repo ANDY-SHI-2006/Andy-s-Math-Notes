@@ -975,15 +975,15 @@ $$
 $$
 
 
-## 2.5 The Trigonometric Functions
+## 2.4 The Trigonometric Functions
 
-### 2.5.1 Introduction
+### 2.4.1 Introduction
 
 Before further applications of integration, we briefly discuss the six trigonometric functions — sine, cosine, tangent, cotangent, secant, cosecant — and their inverses. In calculus their importance lies not in triangle relations but in their **properties as functions**, especially **periodicity**.
 
 A function $f$ is **periodic** with period $p \neq 0$ if $f(x+p) = f(x)$ for all $x$ in its domain. The sine and cosine functions are periodic with period $2\pi$, where $\pi$ is the area of a unit circular disk.
 
-### 2.5.2 Fundamental Properties of Sine and Cosine
+### 2.4.2 Fundamental Properties of Sine and Cosine
 
 We take the following four properties as axioms; all other properties can be deduced from them.
 
@@ -994,7 +994,7 @@ We take the following four properties as axioms; all other properties can be ded
 | **3. Cosine of a difference** | $\cos(y-x) = \cos y \cos x + \sin y \sin x$ for all $x, y$. |
 | **4. Fundamental inequalities** | For $0 < x < \frac{\pi}{2}$: $0 < \cos x < \dfrac{\sin x}{x} < \dfrac{1}{\cos x}$. |
 
-### 2.5.3 Theorem 2.3 — Deduced Properties
+### 2.4.3 Theorem 2.3 — Deduced Properties
 
 If $\sin$ and $\cos$ satisfy properties 1–4, then they also satisfy:
 
@@ -1009,7 +1009,7 @@ If $\sin$ and $\cos$ satisfy properties 1–4, then they also satisfy:
 | **(g) Difference formulas** | $\sin a - \sin b = 2\sin\frac{a-b}{2}\cos\frac{a+b}{2}$, $\cos a - \cos b = -2\sin\frac{a-b}{2}\sin\frac{a+b}{2}$. |
 | **(h) Monotonicity** | On $[0, \frac{\pi}{2}]$, $\sin$ is strictly increasing and $\cos$ is strictly decreasing. |
 
-### 2.5.4 Proof Sketch
+### 2.4.4 Proof Sketch
 
 - **(a)** Set $x = y$ in property 3 and use $\cos 0 = 1$.
 - **(b)** Follows from (a) with $x = 0, \frac{\pi}{2}, \pi$ and $\sin\frac{\pi}{2} = 1$.
@@ -1020,7 +1020,7 @@ If $\sin$ and $\cos$ satisfy properties 1–4, then they also satisfy:
 - **(g)** Replace $y$ by $-y$ in the sine addition formula, then add/subtract.
 - **(h)** From property 4, $\sin x$ and $\cos x$ are positive on $(0, \frac{\pi}{2})$. Using (g) with $0 < b < a < \frac{\pi}{2}$ shows $\sin a > \sin b$ and $\cos a < \cos b$.
 
-### 2.5.5 Double-Angle Formulas
+### 2.4.5 Double-Angle Formulas
 
 Setting $y = x$ in the addition formulas:
 
@@ -1031,13 +1031,13 @@ $$
 By the Pythagorean identity, $|\sin x| \le 1$ and $|\cos x| \le 1$ for all $x$.
 
 
-## 2.6 Integration Formulas for the Sine and Cosine
+## 2.5 Integration Formulas for the Sine and Cosine
 
-### 2.6.1 Integrability
+### 2.5.1 Integrability
 
 By Theorem 2.3(h), $\sin$ and $\cos$ are strictly monotonic on each quarter-period. Hence they are **piecewise monotonic** and therefore **integrable** on every finite interval.
 
-### 2.6.2 Theorem 2.4 — Approximation Inequalities
+### 2.5.2 Theorem 2.4 — Approximation Inequalities
 
 If $0 < a \le \frac{\pi}{2}$ and $n \ge 1$, then:
 
@@ -1045,7 +1045,7 @@ $$
 \frac{a}{n} \sum_{k=1}^{n} \cos\frac{ka}{n} < \sin a < \frac{a}{n} \sum_{k=0}^{n-1} \cos\frac{ka}{n}. \tag{2.6}
 $$
 
-### 2.6.3 Proof Sketch
+### 2.5.3 Proof Sketch
 
 Use the trigonometric identity (provable by difference formulas and telescoping):
 
@@ -1055,7 +1055,7 @@ $$
 
 Dividing by $2\sin\frac{x}{2}$ (for $x \neq 2m\pi$) gives closed forms for $\sum\cos kx$ and $\sum_{k=0}^{n-1}\cos kx$. Substituting $x = a/n$ and using the fundamental inequality $\cos\theta < \frac{\sin\theta}{\theta}$ yields (2.6).
 
-### 2.6.4 Theorem 2.5 — Basic Integrals
+### 2.5.4 Theorem 2.5 — Basic Integrals
 
 For every real $a$:
 
@@ -1063,7 +1063,7 @@ $$
 \int_0^a \cos x \, dx = \sin a, \qquad \int_0^a \sin x \, dx = 1 - \cos a. \tag{2.13, 2.14}
 $$
 
-### 2.6.5 Proof Sketch
+### 2.5.5 Proof Sketch
 
 **Step 1.** For $0 < a \le \frac{\pi}{2}$, apply **Theorem 1.14** (calculation formula for monotonic functions) together with the inequalities (2.6) of Theorem 2.4. This gives (2.13) directly.
 
@@ -1078,7 +1078,7 @@ $$
 \int_0^a \sin x\,dx = \int_{-\pi/2}^{a-\pi/2} \cos x\,dx = 1 - \cos a.
 $$
 
-### 2.6.6 Example 1 — General Interval Formulas
+### 2.5.6 Example 1 — General Interval Formulas
 
 For any real $a, b$:
 
@@ -1087,7 +1087,7 @@ $$
 \int_a^b \sin x\,dx = -(\cos b - \cos a) = -\cos x\,\Big|_a^b.
 $$
 
-### 2.6.7 Example 2 — Scaling the Argument
+### 2.5.7 Example 2 — Scaling the Argument
 
 For $c \neq 0$:
 
@@ -1096,7 +1096,7 @@ $$
 \int_a^b \sin cx\,dx = -\frac{1}{c}(\cos cb - \cos ca).
 $$
 
-### 2.6.8 Example 3 — Powers of Sine and Cosine
+### 2.5.8 Example 3 — Powers of Sine and Cosine
 
 Using $\sin^2 x = \frac{1}{2}(1 - \cos 2x)$:
 
@@ -1106,14 +1106,14 @@ $$
 $$
 
 
-## 2.7 A Geometric Description of the Sine and Cosine
+## 2.6 A Geometric Description of the Sine and Cosine
 
-### 2.7.1 Radian Measure via Sector Area
+### 2.6.1 Radian Measure via Sector Area
 
 - On the unit circle $x^2 + y^2 = 1$, define the **radian measure** of an angle by twice the area of the corresponding circular sector.
 - For a sector with central angle $\theta$, area $= \frac{1}{2}\theta$, so $\theta$ is the arc length on the unit circle.
 
-### 2.7.2 Geometric Definitions
+### 2.6.2 Geometric Definitions
 
 - Let $(x, y)$ be the endpoint of an arc of length $t$ on the unit circle, starting at $(1, 0)$ and moving counterclockwise.
 - Define:
@@ -1122,14 +1122,14 @@ $$
   $$
 - This agrees with the analytic definitions and satisfies $-1 \le \sin t, \cos t \le 1$.
 
-### 2.7.3 Pythagorean Identity
+### 2.6.3 Pythagorean Identity
 
 - Since $(x, y)$ lies on the unit circle:
   $$
   \sin^2 t + \cos^2 t = 1.
   $$
 
-### 2.7.4 Cosine Difference Formula
+### 2.6.4 Cosine Difference Formula
 
 - From the geometric definition, the distance between two points on the unit circle corresponding to arc lengths $x$ and $y$ is invariant under rotation. This yields:
   $$
@@ -1141,7 +1141,7 @@ $$
   \cos\left(\frac{\pi}{2} - x\right) = \sin x.
   $$
 
-### 2.7.5 Fundamental Inequalities
+### 2.6.5 Fundamental Inequalities
 
 - For $0 < x < \frac{\pi}{2}$:
   $$
@@ -1153,9 +1153,9 @@ $$
   \lim_{x \to 0} \frac{\sin x}{x} = 1.
   $$
 
-## 2.9 Polar Coordinates
+## 2.7 Polar Coordinates
 
-### 2.9.1 Definition
+### 2.7.1 Definition
 
 - A point $P$ distinct from the origin is located by **polar coordinates** $(r, \theta)$:
   - $r > 0$: radial distance from origin to $P$
@@ -1166,20 +1166,20 @@ $$
   $$
   (Equation 2.15)
 
-### 2.9.2 Non-Uniqueness of Polar Coordinates
+### 2.7.2 Non-Uniqueness of Polar Coordinates
 
 - If $(r, \theta)$ represents $P$, so does $(r, \theta + 2n\pi)$ for any integer $n$.
 - The radial distance is unique: $r = \sqrt{x^2 + y^2}$.
 - The polar angle $\theta$ is determined only up to integer multiples of $2\pi$.
 - **Origin**: $r = 0$ and $\theta$ may be any real number.
 
-### 2.9.3 Polar Equations
+### 2.7.3 Polar Equations
 
 - Let $f$ be a nonnegative function on $[a, b]$. The set of points with $r = f(\theta)$ is the **graph of $f$ in polar coordinates**.
 - The equation $r = f(\theta)$ is called a **polar equation**.
 - Some curves have simpler polar equations than Cartesian equations.
 
-### 2.9.4 Example — Figure-Eight Curve
+### 2.7.4 Example — Figure-Eight Curve
 
 - Cartesian equation: $(x^2 + y^2)^3 = y^2$
 - Conversion: using $x^2 + y^2 = r^2$ and $y = r \sin \theta$:
@@ -1191,16 +1191,16 @@ $$
   - Key points: $\theta = \pi/6, \pi/4, \pi/3$.
   - The rest follows from symmetry and periodicity of $|\sin \theta|$.
 
-### 2.9.5 Another Example — Circle
+### 2.7.5 Another Example — Circle
 
 - Cartesian: $x^2 + y^2 = 4$
 - Polar: $r = 2$ (much simpler)
 
 
 
-## 2.10 The Integral for Area in Polar Coordinates
+## 2.8 The Integral for Area in Polar Coordinates
 
-### 2.10.1 Radial Set
+### 2.8.1 Radial Set
 
 - Let $f \ge 0$ on $[a, b]$ with $0 \le b - a \le 2\pi$.
 - The **radial set** of $f$ over $[a, b]$:
@@ -1209,7 +1209,7 @@ $$
   $$
 - If $f$ is constant, $R$ is a circular sector.
 
-### 2.10.2 Area of a Step Function's Radial Set
+### 2.8.2 Area of a Step Function's Radial Set
 
 - For a step function $s$ with values $s_k$ on subintervals $(\theta_{k-1}, \theta_k)$:
   - Each piece is a circular sector of radius $s_k$ and angle $(\theta_k - \theta_{k-1})$.
@@ -1219,7 +1219,7 @@ $$
     a(S) = \frac{1}{2} \sum_{k=1}^{n} s_k^2 (\theta_k - \theta_{k-1}) = \frac{1}{2} \int_a^b s^2(\theta) \, d\theta
     $$
 
-### 2.10.3 Theorem 2.6 — Area Formula
+### 2.8.3 Theorem 2.6 — Area Formula
 
 Let $R$ be the radial set of a nonnegative function $f$ over $[a, b]$ ($0 \le b - a \le 2\pi$), and assume $R$ is measurable. If $f^2$ is integrable on $[a, b]$, then:
 
@@ -1241,7 +1241,7 @@ $$
    2a(R) = \int_a^b f^2(\theta) \, d\theta
    $$
 
-### 2.10.4 Example — Area of the Figure-Eight Curve
+### 2.8.4 Example — Area of the Figure-Eight Curve
 
 - For $r = \sqrt{|\sin \theta|}$, we have $f^2(\theta) = |\sin \theta|$.
 - By symmetry, compute the first-quadrant portion and multiply by 4:
@@ -1250,14 +1250,14 @@ $$
   $$
 
 
-## 2.12 Application of Integration to the Calculation of Volume
+## 2.9 Application of Integration to the Calculation of Volume
 
-### 2.12.1 Measurable Sets and Volume Function
+### 2.9.1 Measurable Sets and Volume Function
 
 - We assume a class $\mathscr{A}$ of **measurable sets** (solids) in 3D space and a **volume function** $v$ assigning each $S \in \mathscr{A}$ a number $v(S)$.
 - The axioms for volume parallel those for area, with one key difference: **Cavalieri's principle** replaces congruence invariance.
 
-### 2.12.2 Axioms for Volume
+### 2.9.2 Axioms for Volume
 
 | Axiom | Statement |
 |-------|-----------|
@@ -1271,13 +1271,13 @@ $$
 - **Cavalieri solid**: A solid whose cross-sections perpendicular to a given line $L$ are all measurable plane sets.
 - **Intuition**: A Cavalieri solid is like a stack of thin sheets; sliding sheets in their own planes changes shape but not volume.
 
-### 2.12.3 Consequences of the Axioms
+### 2.9.3 Consequences of the Axioms
 
 - **Monotone property**: $S \subseteq T \implies v(S) \le v(T)$ (follows from Axioms 1 and 3).
 - **Bounded plane sets have zero volume**: Any bounded plane set $S$ lies inside a box of arbitrarily small altitude, so $v(S) = 0$.
 - If $a(S \cap F) = a(T \cap F)$ for all $F \perp L$, then $v(S) = v(T)$.
 
-### 2.12.4 Volume of a Right Cylindrical Solid
+### 2.9.4 Volume of a Right Cylindrical Solid
 
 - A **right cylindrical solid** with base area $a(B)$ and altitude $(b - a)$:
   $$
@@ -1285,7 +1285,7 @@ $$
   $$
   where $a_S(z)$ is the cross-sectional area function (constant $= a(B)$ on $[a, b]$).
 
-### 2.12.5 Theorem 2.7 — General Cavalieri Solid
+### 2.9.5 Theorem 2.7 — General Cavalieri Solid
 
 Let $R$ be a Cavalieri solid with cross-sectional area function $a_R$ integrable on $[a, b]$ (zero outside). Then:
 
@@ -1301,7 +1301,7 @@ $$
 4. Hence $\int_a^b s \le v(R) \le \int_a^b t$ for all such $s, t$.
 5. Since $a_R$ is integrable, $v(R) = \int_a^b a_R(u) \, du$.
 
-### 2.12.6 Example — Solid of Revolution (Disk Method)
+### 2.9.6 Example — Solid of Revolution (Disk Method)
 
 - Let $f \ge 0$ and integrable on $[a, b]$. Revolve the ordinate set about the $x$-axis.
 - Cross section at $x$ is a circular disk of radius $f(x)$, area $\pi f^2(x)$.
@@ -1314,7 +1314,7 @@ $$
 - $f(x) = \sqrt{r^2 - x^2}$ on $[-r, r]$
 - $v = \pi \int_{-r}^{r} (r^2 - x^2) \, dx = 2\pi \int_0^r (r^2 - x^2) \, dx = \frac{4}{3}\pi r^3$
 
-### 2.12.7 Washer Method
+### 2.9.7 Washer Method
 
 - For two functions $0 \le f \le g$ on $[a, b]$, revolve the region between their graphs about the $x$-axis.
 - Cross section at $x$ is an **annulus** with area $\pi[g^2(x) - f^2(x)]$.
