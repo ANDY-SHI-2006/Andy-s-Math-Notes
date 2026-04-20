@@ -2436,3 +2436,63 @@ by the third row (which has a zero):
 $$
 (-1)^{3+1} \cdot 0 \cdot \operatorname{Det}(A_{31}) + (-1)^{3+2} \cdot 1 \cdot \begin{vmatrix} 1 & 1 \\ -1 & 1 \end{vmatrix} + (-1)^{3+3} \cdot 5 \cdot \begin{vmatrix} 1 & 2 \\ -1 & 3 \end{vmatrix} = -1(2) + 5(5) = 23.
 $$
+
+## 6.3 Additional Properties of Determinants
+
+### 6.3.1 Deduced Properties
+
+The following properties follow from multilinearity, alternation, and normalization (Theorem 2.1):
+
+**4. Column interchange.** If the $i$-th and $j$-th columns ($i \neq j$) are interchanged, the determinant changes by a sign.
+
+**Proof.** First for adjacent columns $j, j+1$: in $D(\dots, A^j + A^{j+1}, A^j + A^{j+1}, \dots)$, expand by multilinearity. The two terms with equal columns vanish by property 2, leaving:
+$$
+0 = D(\dots, A^{j+1}, A^j, \dots) + D(\dots, A^j, A^{j+1}, \dots).
+$$
+For non-adjacent columns, use successive adjacent swaps.
+
+**5. Equal columns.** If any two columns $A^i = A^j$ ($i \neq j$), then $D(A) = 0$.
+
+**Proof.** Bring the equal columns together by adjacent interchanges (each changes sign) until they are adjacent; then apply property 2.
+
+**6. Column addition.** Adding a scalar multiple of one column to another does not change the determinant.
+
+**Proof.** $D(\dots, A^k + tA^j, \dots) = D(\dots, A^k, \dots) + t D(\dots, A^j, \dots)$. In the second term, $A^j$ appears in both the $k$-th and $j$-th places, so it equals 0 by property 5.
+
+### 6.3.2 Efficient Computation
+
+Using property 6 (valid for rows too, since $\operatorname{Det}(A) = \operatorname{Det}({}^tA)$), we simplify determinants by creating zeros. The goal is to make all but one element in a column (or row) equal to 0, then expand along that column.
+
+**Example 1.** Compute:
+$$
+\begin{vmatrix} 3 & 0 & 1 \\ 1 & 2 & 5 \\ -1 & 4 & 2 \end{vmatrix}
+$$
+Subtract twice row 2 from row 3:
+$$
+\begin{vmatrix} 3 & 0 & 1 \\ 1 & 2 & 5 \\ -3 & 0 & -8 \end{vmatrix}.
+$$
+Expand along column 2 (only one non-zero term):
+$$
+2 \begin{vmatrix} 3 & 1 \\ -3 & -8 \end{vmatrix} = 2(-24 + 3) = -42.
+$$
+
+**Example 2.** Compute:
+$$
+\begin{vmatrix} 1 & 3 & 1 & 1 \\ 2 & 1 & 5 & 2 \\ 1 & -1 & 2 & 3 \\ 4 & 1 & -3 & 7 \end{vmatrix}
+$$
+Add row 3 to rows 2 and 4; add $3 \times$ row 3 to row 1:
+$$
+\begin{vmatrix} 4 & 0 & 7 & 10 \\ 3 & 0 & 7 & 5 \\ 1 & -1 & 2 & 3 \\ 5 & 0 & -1 & 10 \end{vmatrix}.
+$$
+Expand along column 2:
+$$
+(-1)^{3+2}(-1) \begin{vmatrix} 4 & 7 & 10 \\ 3 & 7 & 5 \\ 5 & -1 & 10 \end{vmatrix} = \begin{vmatrix} 4 & 7 & 10 \\ 3 & 7 & 5 \\ 5 & -1 & 10 \end{vmatrix}.
+$$
+Subtract $2 \times$ row 2 from rows 1 and 3:
+$$
+\begin{vmatrix} -2 & -7 & 0 \\ 3 & 7 & 5 \\ -1 & -15 & 0 \end{vmatrix}.
+$$
+Expand along column 3:
+$$
+(-1)^{2+3} \cdot 5 \begin{vmatrix} -2 & -7 \\ -1 & -15 \end{vmatrix} = -5(30 - 7) = -115.
+$$
