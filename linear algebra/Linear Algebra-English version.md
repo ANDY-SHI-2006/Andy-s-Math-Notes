@@ -2558,3 +2558,46 @@ since each determinant has the $k$-th column equal to the $j$-th column.
 > In terms of linear equations: if a system of $n$ equations in $n$ unknowns has coefficient matrix with non-zero determinant, then it has a unique solution, given by Cramer's rule.
 
 **Theorem 4.4.** $D(A^1, \dots, A^n) = 0$ if and only if $A^1, \dots, A^n$ are linearly dependent.
+
+## 6.5 Triangulation of a Matrix by Column Operations
+
+### 6.5.1 Column Operations
+
+The two column operations used for computing determinants:
+
+| Operation | Description |
+|-----------|-------------|
+| **COL 1** | Add a scalar multiple of one column to another. |
+| **COL 2** | Interchange two columns. |
+
+Matrices $A$ and $B$ are **column equivalent** if $B$ is obtained from $A$ by a succession of COL 1 and COL 2 operations.
+
+**Proposition 5.1.** If $A$ and $B$ are column equivalent, then:
+- $\operatorname{rank} A = \operatorname{rank} B$
+- $A$ is invertible $\iff$ $B$ is invertible
+- $\operatorname{Det}(A) = 0 \iff \operatorname{Det}(B) = 0$
+
+**Proof.** Interchanging columns does not change the column space. Adding $x A^2$ to $A^1$ leaves the span of $\{A^1 + xA^2, A^2, \dots, A^n\}$ equal to the span of $\{A^1, \dots, A^n\}$. Hence column spaces are equal, so ranks are equal. The determinant changes only by a sign under COL 2 and is unchanged under COL 1, so $\operatorname{Det}(A) = 0 \iff \operatorname{Det}(B) = 0$. If $A$ is invertible, $\operatorname{rank} A = n$, so $\operatorname{rank} B = n$, hence $B$ is invertible.
+
+### 6.5.2 Triangular Form
+
+**Theorem 5.2.** Every $n \times n$ matrix $A$ is column equivalent to a lower triangular matrix:
+$$
+B = \begin{pmatrix} b_{11} & 0 & \cdots & 0 \\ b_{21} & b_{22} & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ b_{n1} & b_{n2} & \cdots & b_{nn} \end{pmatrix}.
+$$
+
+**Proof (by induction on $n$).** For $n = 1$, trivial. For $n > 1$:
+- If the first row of $A$ is all zeros, apply induction to the bottom-right $(n-1) \times (n-1)$ block.
+- Otherwise, use column interchanges (COL 2) to make $a_{11} \neq 0$. Then add suitable multiples of the first column to the others (COL 1) to zero out $b_{12}, \dots, b_{1n}$. Now apply induction to the submatrix obtained by deleting the first row and first column.
+
+### 6.5.3 Invertibility Criterion
+
+**Theorem 5.3.** Let $A = (A^1, \dots, A^n)$ be a square matrix. The following are equivalent:
+
+| Condition | Statement |
+|-----------|-----------|
+| **(a)** | $A$ is invertible. |
+| **(b)** | The columns $A^1, \dots, A^n$ are linearly independent. |
+| **(c)** | $D(A) \neq 0$. |
+
+**Proof.** (a) $\iff$ (b) was proved in Chapter IV, Theorem 2.2. By Proposition 5.1 and Theorem 5.2, we may assume $A$ is triangular. Then $\operatorname{Det}(A)$ is the product of the diagonal elements, which is $0$ iff some diagonal element is $0$, equivalently the columns are dependent.
