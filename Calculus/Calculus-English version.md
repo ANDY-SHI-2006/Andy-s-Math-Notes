@@ -1733,6 +1733,107 @@ A function $f$ is **continuous at $p$** if:
 | **Infinite** | Function unbounded near $p$ | $f(x) = 1/x^2$ at $x = 0$ |
 
 
+## 3.4 The Basic Limit Theorems. More Examples of Continuous Functions
+
+### 3.4.1 Theorem 3.1 — Basic Limit Rules
+
+Let $\lim_{x \to p} f(x) = A$ and $\lim_{x \to p} g(x) = B$. Then:
+
+| Rule | Formula |
+|------|---------|
+| **(i) Sum** | $\lim_{x \to p} [f(x) + g(x)] = A + B$ |
+| **(ii) Difference** | $\lim_{x \to p} [f(x) - g(x)] = A - B$ |
+| **(iii) Product** | $\lim_{x \to p} [f(x) \cdot g(x)] = A \cdot B$ |
+| **(iv) Quotient** | $\lim_{x \to p} f(x)/g(x) = A/B$ \quad (if $B \neq 0$) |
+
+- Special case of (iii): $\lim_{x \to p} [c \cdot g(x)] = c \cdot B$ (constant multiple).
+- Proof is in Section 3.5.
+
+### 3.4.2 Theorem 3.2 — Continuity of Combinations
+
+Let $f$ and $g$ be continuous at $p$. Then:
+- $f + g$, $f - g$, $f \cdot g$ are continuous at $p$.
+- $f/g$ is continuous at $p$ (if $g(p) \neq 0$).
+
+**Proof:** Apply Theorem 3.1 with $A = f(p)$ and $B = g(p)$.
+
+### 3.4.3 Example 1 — Continuity of Polynomials
+
+- $f(x) = x$ is continuous $\implies x^2 = x \cdot x$ is continuous (by product rule).
+- By induction: $x^n$ is continuous for all positive integers $n$.
+- $cx^n$ is continuous; sums of continuous functions are continuous.
+- **Every polynomial** $p(x) = \sum_{k=0}^n c_k x^k$ is continuous at all points.
+
+### 3.4.4 Example 2 — Continuity of Rational Functions
+
+- A **rational function** $r(x) = p(x)/q(x)$ (where $p, q$ are polynomials).
+- Continuous wherever $q(x) \neq 0$.
+- Example: $r(x) = 1/x$ is continuous everywhere except at $x = 0$.
+
+### 3.4.5 Theorem 3.3 — Squeezing Principle
+
+Suppose $f(x) \le g(x) \le h(x)$ for all $x \neq p$ in some neighborhood $N(p)$, and:
+
+$$
+\lim_{x \to p} f(x) = \lim_{x \to p} h(x) = a
+$$
+
+Then:
+
+$$
+\lim_{x \to p} g(x) = a
+$$
+
+**Proof Sketch:**
+1. Let $G(x) = g(x) - f(x) \ge 0$ and $H(x) = h(x) - f(x) \ge 0$.
+2. Need to show $G(x) \to 0$ as $x \to p$, given $H(x) \to 0$.
+3. For any neighborhood $N_1(0)$ of 0, since $H(x) \to 0$, there exists $N_2(p)$ such that $H(x) \in N_1(0)$ for $x \in N_2(p)$, $x \neq p$.
+4. Since $0 \le G \le H$, we have $G(x) \in N_1(0)$ as well. Hence $G(x) \to 0$.
+
+### 3.4.6 Theorem 3.4 — Continuity of Indefinite Integrals
+
+Assume $f$ is integrable on $[a, x]$ for every $x \in [a, b]$, and let:
+
+$$
+A(x) = \int_a^x f(t) \, dt
+$$
+
+Then $A$ is **continuous at each point of $[a, b]$** (one-sided continuity at endpoints).
+
+**Proof Sketch:**
+1. $A(x) - A(p) = \int_p^x f(t) \, dt$.
+2. Since $f$ is bounded ($|f| \le M$ on $[a, b]$):
+   $$-M|x - p| \le A(x) - A(p) \le M|x - p|$$
+3. Apply squeezing principle as $x \to p$: $A(x) \to A(p)$.
+
+### 3.4.7 Example 3 — Continuity of Sine and Cosine
+
+- $\sin x = \int_0^x \cos t \, dt$ $\implies$ sine is continuous everywhere (by Theorem 3.4).
+- $\cos x = 1 - \int_0^x \sin t \, dt$ $\implies$ cosine is continuous everywhere.
+
+### 3.4.8 Example 4 — The Limit $\lim_{x \to 0} \frac{\sin x}{x} = 1$
+
+From Section 2.5, for $0 < |x| < \pi/2$:
+
+$$
+0 < \cos x < \frac{\sin x}{x} < \frac{1}{\cos x}
+$$
+
+- As $x \to 0$: $\cos x \to 1$ (cosine is continuous at 0), so $1/\cos x \to 1$.
+- By squeezing principle: $\displaystyle\lim_{x \to 0} \frac{\sin x}{x} = 1$.
+- (Equation 3.6)
+- Defining $f(x) = (\sin x)/x$ for $x \neq 0$ and $f(0) = 1$ makes $f$ continuous everywhere.
+
+### 3.4.9 Example 5 — Continuity of $x^r$ for Rational $r > 0$
+
+- From Theorem 2.2: $\int_0^x t^{1/n} \, dt = \frac{x^{1+1/n}}{1 + 1/n}$ for $x > 0$, $n \ge 1$.
+- By Theorems 3.4 and 3.1: $x^{1+1/n}$ is continuous for $x > 0$.
+- Then $x^{1/n} = A(x)/x$ is continuous (quotient of continuous functions).
+- By products: $x^{m/n}$ is continuous for any positive integers $m, n$.
+- **Conclusion**: $f(x) = x^r$ is continuous for all $x > 0$ when $r$ is any positive rational number.
+- At $x = 0$: right-hand continuity.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
