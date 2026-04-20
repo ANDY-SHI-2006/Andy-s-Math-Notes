@@ -1152,6 +1152,51 @@ $$
   $$
   \lim_{x \to 0} \frac{\sin x}{x} = 1.
   $$
+
+## 2.9 Polar Coordinates
+
+### 2.9.1 Definition
+
+- A point $P$ distinct from the origin is located by **polar coordinates** $(r, \theta)$:
+  - $r > 0$: radial distance from origin to $P$
+  - $\theta$: angle (in radians) between the positive $x$-axis and segment $\overline{OP}$
+- Relation to rectangular coordinates $(x, y)$:
+  $$
+  x = r \cos \theta, \qquad y = r \sin \theta
+  $$
+  (Equation 2.15)
+
+### 2.9.2 Non-Uniqueness of Polar Coordinates
+
+- If $(r, \theta)$ represents $P$, so does $(r, \theta + 2n\pi)$ for any integer $n$.
+- The radial distance is unique: $r = \sqrt{x^2 + y^2}$.
+- The polar angle $\theta$ is determined only up to integer multiples of $2\pi$.
+- **Origin**: $r = 0$ and $\theta$ may be any real number.
+
+### 2.9.3 Polar Equations
+
+- Let $f$ be a nonnegative function on $[a, b]$. The set of points with $r = f(\theta)$ is the **graph of $f$ in polar coordinates**.
+- The equation $r = f(\theta)$ is called a **polar equation**.
+- Some curves have simpler polar equations than Cartesian equations.
+
+### 2.9.4 Example — Figure-Eight Curve
+
+- Cartesian equation: $(x^2 + y^2)^3 = y^2$
+- Conversion: using $x^2 + y^2 = r^2$ and $y = r \sin \theta$:
+  $$
+  r^6 = r^2 \sin^2 \theta \implies r^4 = \sin^2 \theta \implies r = \sqrt{|\sin \theta|}
+  $$
+- Sketching via polar equation is easier than from Cartesian form alone.
+  - In $0 \le \theta \le \pi/2$: $\sin \theta$ increases from $0$ to $1$, so $r$ increases from $0$ to $1$.
+  - Key points: $\theta = \pi/6, \pi/4, \pi/3$.
+  - The rest follows from symmetry and periodicity of $|\sin \theta|$.
+
+### 2.9.5 Another Example — Circle
+
+- Cartesian: $x^2 + y^2 = 4$
+- Polar: $r = 2$ (much simpler)
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
