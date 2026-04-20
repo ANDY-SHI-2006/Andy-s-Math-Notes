@@ -1583,6 +1583,99 @@ $$
 > — Trying to learn continuity from a dictionary alone is like trying to learn Chinese with only a Chinese dictionary.
 
 
+## 3.2 The Definition of the Limit of a Function
+
+### 3.2.1 Limit Notation
+
+- $\displaystyle\lim_{x \to p} f(x) = A$: "The limit of $f(x)$ as $x$ approaches $p$ is $A$."
+- Alternative: $f(x) \to A$ as $x \to p$.
+- $f$ need not be defined at $p$ itself.
+
+### 3.2.2 Neighborhood of a Point
+
+- **Definition**: Any open interval containing $p$ as its midpoint is a **neighborhood** of $p$.
+- Notation: $N(p)$, $N_1(p)$, $N_2(p)$, etc.
+- $N(p; r)$: neighborhood of radius $r > 0$, consisting of all $x$ with $|x - p| < r$.
+
+### 3.2.3 Definition of Limit (Neighborhood Form)
+
+$$
+\lim_{x \to p} f(x) = A
+$$
+
+means: for every neighborhood $N_1(A)$, there exists some neighborhood $N_2(p)$ such that:
+
+$$
+f(x) \in N_1(A) \quad \text{whenever} \quad x \in N_2(p) \text{ and } x \neq p
+$$
+(Equation 3.1)
+
+- $N_1(A)$ is chosen **first**: specifies how close $f(x)$ should be to $A$.
+- $N_2(p)$ depends on $N_1(A)$: specifies how close $x$ should be to $p$.
+- **Key**: for *every* $N_1(A)$, no matter how small, there is *some* $N_2(p)$.
+
+### 3.2.4 Definition of Limit ($\epsilon$-$\delta$ Form)
+
+- Radius of $N_1(A)$ = $\epsilon$ (epsilon); radius of $N_2(p)$ = $\delta$ (delta).
+- Equivalent formulation:
+
+$$
+\lim_{x \to p} f(x) = A \iff \forall \epsilon > 0, \ \exists \delta > 0 \text{ such that } |f(x) - A| < \epsilon \text{ whenever } 0 < |x - p| < \delta
+$$
+(Equation 3.2)
+
+### 3.2.5 Equivalent Limit Statements
+
+The following are equivalent:
+
+$$
+\lim_{x \to p} f(x) = A, \qquad \lim_{x \to p} (f(x) - A) = 0, \qquad \lim_{x \to p} |f(x) - A| = 0
+$$
+
+Also equivalent:
+
+$$
+\lim_{x \to p} f(x) = A \iff \lim_{h \to 0} f(p + h) = A
+$$
+
+### 3.2.6 Examples
+
+**Example 1 — Constant function:**
+- $f(x) = c$ for all $x$. Then $\displaystyle\lim_{x \to p} c = c$.
+
+**Example 2 — Identity function:**
+- $f(x) = x$. Then $\displaystyle\lim_{x \to p} x = p$.
+
+**Example 3 — Greatest-integer function:**
+- $f(x) = [x]$ at integer $p$:
+  $$
+  \lim_{x \to p^-} f(x) = p - 1, \qquad \lim_{x \to p^+} f(x) = p
+  $$
+  Left and right limits differ $\implies$ limit at $p$ does **not exist**.
+
+**Example 4 — $f(x) = 1/x^2$ at $x = 0$:**
+- $f$ takes arbitrarily large values near 0.
+- No real number $A$ can be the limit (violates (3.3) for any neighborhood).
+
+**Example 5 — Removable discontinuity:**
+- $f(x) = 1$ for $x \neq 0$, $f(0) = 0$.
+- $\displaystyle\lim_{x \to 0} f(x) = 1$ (both one-sided limits equal 1).
+- Limit exists and equals 1, even though $f(0) = 0$.
+
+### 3.2.7 One-Sided Limits
+
+- **Right-hand limit**: $x \to p^+$ (through values $x > p$):
+  $$
+  \lim_{x \to p^+} f(x) = A
+  $$
+  means: for every $N_1(A)$, there exists $N_2(p)$ such that $f(x) \in N_1(A)$ whenever $x \in N_2(p)$ and $x > p$.
+  (Equation 3.3)
+
+- **Left-hand limit**: $x \to p^-$ (through values $x < p$): similarly defined.
+
+- **Existence of limit**: $\displaystyle\lim_{x \to p} f(x) = A$ exists iff both one-sided limits exist and equal $A$.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
