@@ -242,6 +242,77 @@ This makes clearer that the integral depends only on the **function $s$** and th
 
 The symbol $dx$ may seem superfluous now, but it becomes an extremely useful computational device for routine integral calculations.
 
+
+## 1.8 The Integral of More General Functions
+
+### 1.8.1 Motivation — Archimedes' Method
+
+To define the integral for a general function $f$ on $[a, b]$, we approximate $f$ from **below** and **above** by step functions $s$ and $t$:
+
+$$
+s(x) \le f(x) \le t(x).
+$$
+
+By the comparison theorem:
+
+$$
+\int_a^b s(x) \, dx \le \int_a^b t(x) \, dx.
+$$
+
+If there is **one and only one** number $I$ satisfying:
+
+$$
+\int_a^b s(x) \, dx \le I \le \int_a^b t(x) \, dx
+$$
+
+for **every** such pair $(s, t)$, then $I$ is defined to be the integral of $f$.
+
+### 1.8.2 Boundedness Requirement
+
+Not every function can be surrounded by step functions. For example:
+
+$$
+f(x) = \frac{1}{x} \quad (x \neq 0), \qquad f(0) = 0
+$$
+
+is **unbounded** near the origin, so it cannot be approximated from above on any interval containing $0$.
+
+Therefore we first restrict to **bounded functions** on $[a, b]$: there exists $M > 0$ such that:
+
+$$
+|f(x)| \le M \quad \text{for all } x \in [a, b].
+$$
+
+### 1.8.3 Definition of the Integral
+
+**Definition.** Let $f$ be defined and bounded on $[a, b]$. If there is one and only one number $I$ such that:
+
+$$
+\int_a^b s(x) \, dx \le I \le \int_a^b t(x) \, dx
+$$
+
+for every pair of step functions $s, t$ with $s \le f \le t$ on $[a, b]$, then this number $I$ is called the **integral of $f$ from $a$ to $b$**, denoted:
+
+$$
+\int_a^b f(x) \, dx \quad \text{or} \quad \int_a^b f.
+$$
+
+When such an $I$ exists, $f$ is said to be **integrable** on $[a, b]$.
+
+### 1.8.4 Terminology and Conventions
+
+| Term | Meaning |
+|------|---------|
+| **Integrand** | The function $f$ being integrated |
+| **Limits of integration** | The numbers $a$ and $b$ |
+| **Interval of integration** | The interval $[a, b]$ |
+
+We also define:
+
+$$
+\int_b^a f(x) \, dx = -\int_a^b f(x) \, dx \quad (a < b), \qquad \int_a^a f(x) \, dx = 0.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
