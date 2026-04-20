@@ -2379,6 +2379,45 @@ $$
 
 # 4. Differential Calculus
 
+## 4.1 Historical Introduction
+
+### 4.1.1 Newton and Leibniz
+
+- **Newton** and **Leibniz**, independently, developed integral calculus to solve previously insurmountable problems.
+- Their key achievement: fusing **integral calculus** with **differential calculus**.
+
+### 4.1.2 The Central Idea — Derivative
+
+- The central concept of differential calculus is the **derivative**.
+- Like the integral, the derivative originated from a **geometric problem**: finding the **tangent line** at a point of a curve.
+- Unlike the integral, the derivative evolved very **late** in mathematical history.
+
+### 4.1.3 Fermat's Contribution
+
+- **Pierre de Fermat** (early 17th century) first attempted to determine maxima and minima of functions.
+- **Fermat's observation**: At points where a curve has a maximum or minimum (e.g., $x_0$ and $x_1$ in Figure 4.1), the tangent line is **horizontal**.
+- This connects the problem of finding extrema to finding horizontal tangents.
+
+### 4.1.4 The General Problem
+
+- The broader question: determining the direction of the tangent line at **any** point of a curve.
+- Solving this general problem led to the rudimentary ideas underlying the **derivative**.
+
+### 4.1.5 The Connection Between Integral and Differential Calculus
+
+- At first, no apparent connection between:
+  - Finding area under a curve (integral calculus)
+  - Finding tangent lines (differential calculus)
+- **Isaac Barrow** (1630–1677), Newton's teacher, was the first to realize these ideas are intimately related.
+- **Newton and Leibniz** were the first to fully understand and exploit this relation, inaugurating an unprecedented era in mathematics.
+
+### 4.1.6 Beyond Tangents
+
+- Although originally formulated for tangent problems, the derivative also provides:
+  - **Velocity**
+  - **Rate of change** of a function
+- The next section considers a special velocity problem whose solution contains all essential features of the derivative concept.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
