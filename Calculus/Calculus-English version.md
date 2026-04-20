@@ -1552,6 +1552,36 @@ $$
 
 # 3. Continuous Functions
 
+## 3.1 Informal Description of Continuity
+
+### 3.1.1 Intuitive Idea
+
+- **Continuity** is one of the most important concepts in mathematics.
+- Roughly: $f$ is continuous at $p$ if $f(x)$ is close to $f(p)$ whenever $x$ is near $p$.
+- No sudden jumps in the values of a continuous function.
+
+### 3.1.2 Types of Discontinuities
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **Jump discontinuity** | Left and right limits exist but differ | $f(x) = x - [x]$ at each integer |
+| **Infinite discontinuity** | Function becomes unbounded | $f(x) = 1/x^2$ at $x = 0$ |
+
+- **Figure 3.1(a)**: $f(x) = x - [x]$ has a jump at each integer.
+  - $f(2) = 0$, but $x \to 2^-$ gives $f(x) \to 1 \neq f(2)$.
+  - $f$ is **continuous from the right** at 2, but **discontinuous from the left**.
+  - Continuity at a point requires both left and right continuity.
+
+### 3.1.3 Historical Note
+
+- Early calculus dealt almost exclusively with continuous functions.
+- Discontinuous functions arose in physical problems (heat theory) in the late 18th century.
+- **J. B. J. Fourier** (1758–1830) on heat theory forced mathematicians to examine continuity more carefully.
+- A satisfactory definition was first formulated by **Augustin-Louis Cauchy** (1789–1857) in 1821, using the limit concept.
+
+> "Continuity: Quality or state of being continuous. Continuous: Having continuity of parts."
+> — Trying to learn continuity from a dictionary alone is like trying to learn Chinese with only a Chinese dictionary.
+
 
 # 14. Calculus of Vector-Valued Functions
 
