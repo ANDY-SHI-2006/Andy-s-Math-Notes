@@ -2346,3 +2346,93 @@ The vectors $\begin{pmatrix} a \\ c \end{pmatrix}$ and $\begin{pmatrix} b \\ d \
 **Proof.** If $x a + y b = 0$ and $x c + y d = 0$ with $x, y$ not both $0$:
 - Multiply the first by $d$, the second by $b$, and subtract: $x(ad - bc) = 0$. Since $x \neq 0$, we get $ad - bc = 0$.
 - Conversely, if $ad - bc = 0$ and not both vectors are zero, say $a \neq 0$. Let $y = -a$ and $x = b$. Then $x a + y b = b a - a b = 0$ and $x c + y d = b c - a d = -(ad - bc) = 0$. Hence the columns are dependent.
+
+## 6.2 Existence of Determinants
+
+### 6.2.1 Determinants of Order 3
+
+For a $3 \times 3$ matrix $A = (a_{ij})$, define its determinant by **expansion along the first row**:
+$$
+\operatorname{Det}(A) = a_{11} \begin{vmatrix} a_{22} & a_{23} \\ a_{32} & a_{33} \end{vmatrix} - a_{12} \begin{vmatrix} a_{21} & a_{23} \\ a_{31} & a_{33} \end{vmatrix} + a_{13} \begin{vmatrix} a_{21} & a_{22} \\ a_{31} & a_{32} \end{vmatrix}.
+$$
+
+Let $A_{ij}$ be the $(n-1) \times (n-1)$ matrix obtained by deleting the $i$-th row and $j$-th column of $A$. Then:
+$$
+\operatorname{Det}(A) = a_{11} \operatorname{Det}(A_{11}) - a_{12} \operatorname{Det}(A_{12}) + a_{13} \operatorname{Det}(A_{13}).
+$$
+
+**Example 1.** Let:
+$$
+A = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 1 & 4 \\ -3 & 2 & 5 \end{pmatrix}.
+$$
+Then $A_{11} = \begin{pmatrix} 1 & 4 \\ 2 & 5 \end{pmatrix}$, $A_{12} = \begin{pmatrix} 1 & 4 \\ -3 & 5 \end{pmatrix}$, $A_{13} = \begin{pmatrix} 1 & 1 \\ -3 & 2 \end{pmatrix}$, and:
+$$
+\operatorname{Det}(A) = 2(5 - 8) - 1(5 + 12) + 0 = -23.
+$$
+
+### 6.2.2 Properties
+
+**Theorem 2.1.** The determinant satisfies:
+
+1. **Multilinear:** As a function of each column, $D$ is linear. If $A^j = C + C'$, then:
+   $$
+   D(A^1, \dots, C + C', \dots, A^n) = D(A^1, \dots, C, \dots, A^n) + D(A^1, \dots, C', \dots, A^n),
+   $$
+   and $D(A^1, \dots, tA^j, \dots, A^n) = t \, D(A^1, \dots, A^j, \dots, A^n)$.
+
+2. **Alternating:** If two adjacent columns are equal ($A^j = A^{j+1}$), then $D(A) = 0$.
+
+3. **Normalization:** $D(I) = 1$.
+
+> In the $3 \times 3$ case, these are proved by direct computation using the definition (*).
+
+### 6.2.3 Expansion by Any Row or Column
+
+Expansion can be done along any row, with signs following the chessboard pattern:
+$$
+\begin{pmatrix} + & - & + \\ - & + & - \\ + & - & + \end{pmatrix}.
+$$
+
+For example, along the second row:
+$$
+\operatorname{Det}(A) = -a_{21} \operatorname{Det}(A_{21}) + a_{22} \operatorname{Det}(A_{22}) - a_{23} \operatorname{Det}(A_{23}).
+$$
+
+Expanding all terms gives the explicit formula:
+$$
+\operatorname{Det}(A) = a_{11}a_{22}a_{33} - a_{11}a_{32}a_{23} - a_{12}a_{21}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31}.
+$$
+
+**Theorem 2.2.** The determinant satisfies expansion according to rows and columns, and $\operatorname{Det}(A) = \operatorname{Det}({}^tA)$.
+
+**Example 2.** Compute:
+$$
+\begin{vmatrix} 3 & 0 & 1 \\ 1 & 2 & 5 \\ -1 & 4 & 2 \end{vmatrix}
+$$
+by the second column: $2 \begin{vmatrix} 3 & 1 \\ -1 & 2 \end{vmatrix} - 4 \begin{vmatrix} 3 & 1 \\ 1 & 5 \end{vmatrix} = 2(7) - 4(14) = -42$.
+
+### 6.2.4 The n×n Case
+
+A function $F: K^n \times \cdots \times K^n \to K$ is **multilinear** if it is linear in each variable when the others are fixed. It is **alternating** if $F(\dots, A^j, A^j, \dots) = 0$ whenever two adjacent arguments are equal.
+
+**Theorem 2.3.** There exists a multilinear alternating function $F: K^n \times \cdots \times K^n \to K$ with $F(I) = 1$. Such a function is **uniquely** determined by these three properties.
+
+**Existence (by induction).** Assume determinants defined for $(n-1) \times (n-1)$ matrices. For fixed $i$ ($1 \le i \le n$), define:
+$$
+D(A) = \sum_{j=1}^n (-1)^{i+j} a_{ij} \operatorname{Det}(A_{ij}).
+$$
+This is the **expansion according to the $i$-th row**. One verifies that $D$ satisfies properties 1, 2, and 3.
+
+**Theorem 2.4.** Determinants satisfy expansion according to rows and columns. For any column $A^j$:
+$$
+D(A) = \sum_{i=1}^n (-1)^{i+j} a_{ij} D(A_{ij}).
+$$
+
+**Example 3.** Compute:
+$$
+\begin{vmatrix} 1 & 2 & 1 \\ -1 & 3 & 1 \\ 0 & 1 & 5 \end{vmatrix}
+$$
+by the third row (which has a zero):
+$$
+(-1)^{3+1} \cdot 0 \cdot \operatorname{Det}(A_{31}) + (-1)^{3+2} \cdot 1 \cdot \begin{vmatrix} 1 & 1 \\ -1 & 1 \end{vmatrix} + (-1)^{3+3} \cdot 5 \cdot \begin{vmatrix} 1 & 2 \\ -1 & 3 \end{vmatrix} = -1(2) + 5(5) = 23.
+$$
