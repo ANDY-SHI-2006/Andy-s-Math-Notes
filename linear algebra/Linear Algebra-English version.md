@@ -2043,3 +2043,100 @@ $$
 c = \frac{\langle B, A \rangle}{\langle A, A \rangle} = \frac{1}{2}.
 $$
 Let $v_2 = B - \frac{1}{2}A$. Then $\{v_1, v_2\}$ is an orthogonal basis of $V$ with respect to this product.
+
+## 5.6 The Dual Space and Scalar Products
+
+### 5.6.1 The Dual Space
+
+Let $V$ be a vector space over $K$. The set of all linear maps of $V$ into $K$ is called the **dual space**, denoted $V^*$:
+$$
+V^* = \mathscr{L}(V, K).
+$$
+
+Elements of $V^*$ are called **functionals**.
+
+If $\dim V = n$, then $V \cong K^n$. For a functional $\varphi: K^n \to K$, there exists a unique $A \in K^n$ such that:
+$$
+\varphi(X) = A \cdot X \quad \text{for all } X \in K^n.
+$$
+Thus $\varphi = L_A$, and the association $A \mapsto L_A$ is an isomorphism $K^n \to V^*$.
+
+**Theorem 6.1.** Let $V$ be finite dimensional. Then $\dim V^* = \dim V$.
+
+**Example 1 (Coordinate functions).** Let $V = K^n$. The projection $\varphi(x_1, \dots, x_n) = x_i$ is a functional. These are the **coordinate functions** $\varphi_i$.
+
+### 5.6.2 The Dual Basis
+
+Let $\{v_1, \dots, v_n\}$ be a basis of $V$. For each $i$, let $\varphi_i: V \to K$ be the functional such that:
+$$
+\varphi_i(v_i) = 1, \qquad \varphi_i(v_j) = 0 \quad \text{if } i \neq j.
+$$
+Then $\varphi_i(v) = x_i$ (the $i$-th coordinate). The set $\{\varphi_1, \dots, \varphi_n\}$ is a basis of $V^*$, called the **dual basis** of $\{v_1, \dots, v_n\}$.
+
+**Example 2.** Let $V$ have a scalar product. For fixed $v_0 \in V$, the map $v \mapsto \langle v, v_0 \rangle$ is a functional.
+
+**Example 3.** Let $V$ be continuous real-valued functions on $[0, 1]$. Then:
+$$
+L(f) = \int_0^1 f(t) \, dt
+$$
+is a functional. For fixed $f_0 \in V$, the map $f \mapsto \int_0^1 f_0(t) f(t) \, dt$ is also a functional.
+
+**Example 4 (Dirac functional).** With $V$ as in Example 3, $\delta(f) = f(0)$ is a functional.
+
+**Example 5 (Hermitian product).** Let $V$ be over $\mathbf{C}$ with a hermitian product. The map $v \mapsto \langle v, v_0 \rangle$ is a functional. However, $v \mapsto \langle v_0, v \rangle$ is **not** linear; it is **anti-linear** (or semi-linear), since $\langle v_0, \alpha v \rangle = \bar{\alpha} \langle v_0, v \rangle$.
+
+### 5.6.3 Scalar Product and the Dual
+
+Given a scalar product on $V$, to each $v \in V$ associate the functional $L_v \in V^*$ defined by:
+$$
+L_v(w) = \langle v, w \rangle \quad \text{for all } w \in V.
+$$
+Then $L_{v_1 + v_2} = L_{v_1} + L_{v_2}$ and $L_{cv} = c L_v$. Thus the map $v \mapsto L_v$ is a linear map $V \to V^*$.
+
+**Theorem 6.2.** Let $V$ be finite dimensional with a **non-degenerate** scalar product. Then the map $v \mapsto L_v$ is an isomorphism $V \to V^*$.
+
+**Proof.** Linearity was shown above. If $L_v = O$, then $\langle v, w \rangle = 0$ for all $w$, so $v = O$ by non-degeneracy. Hence the map is injective. Since $\dim V = \dim V^*$, it is an isomorphism.
+
+> We say that $v$ **represents** the functional $L$ with respect to the scalar product.
+
+**Example (Dot product).** For $V = K^n$ with $X \cdot Y = x_1 y_1 + \cdots + x_n y_n$, every linear map $\varphi: V \to K$ is given by $\varphi(H) = A \cdot H$ for a unique $A \in K^n$. Thus $A$ represents $\varphi$.
+
+**Example from calculus.** Let $U \subset \mathbf{R}^n$ be open and $f: U \to \mathbf{R}$ differentiable. Then:
+$$
+f(X + H) = f(X) + L(H) + \|H\| g(H), \qquad \lim_{H \to O} g(H) = 0,
+$$
+where $L: \mathbf{R}^n \to \mathbf{R}$ is linear. There is a unique $A \in \mathbf{R}^n$ such that $L = L_A$, i.e.:
+$$
+f(X + H) = f(X) + A \cdot H + \|H\| g(H).
+$$
+This vector $A$ is the **gradient**:
+$$
+A = \left( \frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n} \right) = (\operatorname{grad} f)(X).
+$$
+Thus $(\operatorname{grad} f)(X)$ represents the derivative functional $L = f'(X)$.
+
+### 5.6.4 Orthogonal Complements in the Dual
+
+**Theorem 6.3.** Let $V$ have dimension $n$, and let $W$ be a subspace. Define:
+$$
+W^\perp = \{ \varphi \in V^* \text{ such that } \varphi(W) = 0 \}.
+$$
+Then $\dim W + \dim W^\perp = n$.
+
+**Proof.** If $W = \{O\}$, immediate. Otherwise, extend a basis $\{w_1, \dots, w_r\}$ of $W$ to a basis $\{w_1, \dots, w_n\}$ of $V$. Let $\{\varphi_1, \dots, \varphi_n\}$ be the dual basis. Then $\{\varphi_{r+1}, \dots, \varphi_n\}$ is a basis of $W^\perp$.
+
+Now suppose $V$ has a non-degenerate scalar product. By Theorem 6.2, $V \cong V^*$ via $v \mapsto L_v$. For a subspace $W \subset V$, there are two orthogonal complements:
+
+| Notation | Space | Definition |
+|----------|-------|------------|
+| $\operatorname{perp}_V(W)$ | $V$ | $\{v \in V : \langle v, w \rangle = 0 \text{ for all } w \in W\}$ |
+| $\operatorname{perp}_{V^*}(W)$ | $V^*$ | $\{\varphi \in V^* : \varphi(W) = 0\}$ |
+
+Theorem 6.2 gives an isomorphism $\operatorname{perp}_V(W) \xrightarrow{\sim} \operatorname{perp}_{V^*}(W)$. Therefore:
+
+**Theorem 6.4.** Let $V$ be finite dimensional with a non-degenerate scalar product, and $W$ a subspace. Let $W^\perp = \{v \in V : \langle v, w \rangle = 0 \text{ for all } w \in W\}$. Then:
+$$
+\dim W + \dim W^\perp = \dim V.
+$$
+
+> This proves Theorem 3.1, taking the scalar product to be the ordinary dot product on $K^n$.
