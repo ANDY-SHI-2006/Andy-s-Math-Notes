@@ -1470,6 +1470,86 @@ $$
 > Weighted averages also appear in probability theory, where **expectation** and **variance** play analogous roles to center of mass and moment of inertia.
 
 
+## 2.12 The Integral as a Function of the Upper Limit. Indefinite Integrals
+
+### 2.12.1 Definition
+
+- Let $f$ be integrable on $[a, b]$. Define:
+  $$
+  A(x) = \int_a^x f(t) \, dt, \qquad a \le x \le b
+  $$
+  (Equation 2.20)
+- $A(x)$ is called **an indefinite integral** of $f$.
+- The lower limit $a$ is fixed; different choices of $a$ give different functions $A$.
+
+### 2.12.2 Two Indefinite Integrals Differ by a Constant
+
+- If $F(x) = \int_c^x f(t) \, dt$ (different lower limit $c$), then:
+  $$
+  A(x) - F(x) = \int_a^c f(t) \, dt
+  $$
+- The difference is **independent of $x$**; any two indefinite integrals of $f$ differ by a constant.
+
+### 2.12.3 Evaluating Definite Integrals
+
+- If $F(x) = \int_c^x f(t) \, dt$, then:
+  $$
+  \int_a^b f(t) \, dt = F(b) - F(a)
+  $$
+  (Equation 2.21)
+- Notation: $F(x)\big|_a^b = F(b) - F(a)$.
+- A different choice of $c$ changes $F$ by a constant, which cancels in $F(b) - F(a)$.
+
+**Example:**
+- $\int_0^x t^n \, dt = \frac{x^{n+1}}{n+1}$ (Theorem 1.15)
+- $\int_a^b t^n \, dt = \frac{b^{n+1} - a^{n+1}}{n+1}$
+
+### 2.12.4 Geometric Interpretation
+
+- For $f \ge 0$: $A(x)$ equals the area under $f$ from $a$ to $x$.
+- For $f$ with both signs: $A(x)$ = (area above $x$-axis) − (area below $x$-axis).
+
+### 2.12.5 Monotonicity of $A(x)$
+
+- If $f \ge 0$ on $[a, b]$, then $A$ is **increasing**:
+  $$
+  A(y) - A(x) = \int_x^y f(t) \, dt \ge 0 \quad (x \le y)
+  $$
+
+### 2.12.6 Convexity and Concavity
+
+**Definition (Convex function):**
+- $g$ is **convex** on $[a, b]$ if for all $x, y \in [a, b]$ and $0 < \alpha < 1$:
+  $$
+  g(z) \le \alpha g(y) + (1 - \alpha)g(x), \quad \text{where } z = \alpha y + (1 - \alpha)x
+  $$
+  (Equation 2.22)
+- $g$ is **concave** if the reverse inequality holds.
+- **Geometric meaning**: For convex $g$, the chord lies above the graph; for concave $g$, the chord lies below.
+
+**Theorem 2.9:**
+- Let $A(x) = \int_a^x f(t) \, dt$. Then:
+  - $A$ is **convex** on intervals where $f$ is **increasing**.
+  - $A$ is **concave** on intervals where $f$ is **decreasing**.
+
+**Proof Sketch:**
+1. For $f$ increasing, choose $x < y$ and $z = \alpha y + (1 - \alpha)x$.
+2. Need to show: $(1 - \alpha)\int_x^z f \le \alpha\int_z^y f$.
+3. Since $f$ is increasing: $f(t) \le f(z)$ on $[x, z]$ and $f(z) \le f(t)$ on $[z, y]$.
+4. Integrating: $\int_x^z f \le f(z)(z - x)$ and $f(z)(y - z) \le \int_z^y f$.
+5. Using $(1 - \alpha)(z - x) = \alpha(y - z)$, the inequality follows.
+
+**Example:**
+- $\cos x$ decreases on $[0, \pi]$, so $\sin x = \int_0^x \cos t \, dt$ is **concave** on $[0, \pi]$.
+- $\cos x$ increases on $[\pi, 2\pi]$, so $\sin x$ is **convex** on $[\pi, 2\pi]$.
+
+### 2.12.7 Integral of a Step Function is Piecewise Linear
+
+- Where $f$ is constant, $A(x)$ is linear.
+- Example: $f(x) = [x]$ (greatest-integer function) $\implies A(x) = \int_0^x [t] \, dt$ is piecewise linear.
+- The indefinite integral "smooths out" jumps — $A(x)$ is always continuous (proved in next chapter).
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
