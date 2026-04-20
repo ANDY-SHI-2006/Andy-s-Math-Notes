@@ -798,3 +798,108 @@ where $A$ is $m \times n$, $X$ is an $n \times 1$ column vector, and $B$ is an $
 
 
 # 3. Linear Mappings
+
+
+## 3.1 Mappings
+
+### 3.1.1 Definition
+
+Let $S, S'$ be two sets. A **mapping** from $S$ to $S'$ is an association which to every element of $S$ associates an element of $S'$. Notation: $F: S \to S'$.
+
+A **function** is a special type of mapping: a mapping from a set into a field $K$ (i.e. into $\mathbf{R}$, $\mathbf{C}$, or $K$).
+
+**Terminology:**
+- $T(u)$ or $Tu$: the **value** of $T$ at $u$, or the **image** of $u$ under $T$.
+- **Image** of $T$: the set of all $T(u)$ for $u \in S$.
+- **Image of $W$ under $T$**: for $W \subset S$, the set $\{T(w) \mid w \in W\}$, denoted $T(W)$.
+- $x \mapsto F(x)$: denotes the image of $x$ under $F$.
+
+**Example 1:** $f: \mathbf{R} \to \mathbf{R}$, $f(x) = x^2$. Image = $\{y \ge 0\}$.
+
+**Example 2:** $g: [0, \infty) \to \mathbf{R}$, $g(x) = x^{1/2}$.
+
+**Example 3:** $D: S \to S$, where $S$ is the set of infinitely differentiable functions on $(0, 1)$, and $Df = df/dt$.
+
+**Example 4:** $\mathscr{I}: S \to S'$, where $S$ = continuous functions on $[0, 1]$, $S'$ = differentiable functions on $[0, 1]$, and:
+
+$$
+(\mathscr{I}f)(x) = \int_0^x f(t) \, dt.
+$$
+
+**Example 5:** $L: \mathbf{R}^3 \to \mathbf{R}$, $L(X) = A \cdot X$ where $A = (2, 3, -1)$. Then $L(1, 1, -1) = 6$.
+
+**Example 6:** $F: \mathbf{R}^2 \to \mathbf{R}^2$, $F(x, y) = (2x, 2y)$. The image of the unit circle $x^2 + y^2 = 1$ is the circle of radius 2.
+
+### 3.1.2 Operations on Mappings
+
+Let $F, G: S \to V$ be mappings into a vector space $V$.
+- **Sum:** $(F + G)(t) = F(t) + G(t)$
+- **Scalar multiple:** $(cF)(t) = cF(t)$ for $c \in K$
+
+These satisfy axioms VS 1–VS 8, so mappings form a vector space.
+
+### 3.1.3 Coordinate Functions
+
+Let $F: S \to K^n$ be a mapping. Then $F(t) = (f_1(t), \dots, f_n(t))$, where $f_i: S \to K$ are the **coordinate functions** of $F$.
+
+If $K = \mathbf{R}$ and $S$ is an interval $J$, then $F: J \to \mathbf{R}^n$ is a **(parametric) curve** in $n$-space.
+
+**Example 9:** $F: \mathbf{R} \to \mathbf{R}^3$, $F(t) = (2t, 10^t, t^3)$. Coordinate functions: $f_1(t) = 2t$, $f_2(t) = 10^t$, $f_3(t) = t^3$.
+
+### 3.1.4 Composition of Mappings
+
+Let $F: U \to V$ and $G: V \to W$. The **composite mapping** $G \circ F: U \to W$ is defined by:
+
+$$
+(G \circ F)(t) = G(F(t)).
+$$
+
+**Associativity:** For $F: U \to V$, $G: V \to W$, $H: W \to S$:
+
+$$
+H \circ (G \circ F) = (H \circ G) \circ F.
+$$
+
+**Proof:** Both sides evaluated at $u$ give $H(G(F(u)))$.
+
+### 3.1.5 Injective, Surjective, Bijective
+
+Let $f: S \to S'$ be a mapping.
+
+| Property | Definition |
+|----------|------------|
+| **Injective** (one-to-one) | $f(x) = f(y) \implies x = y$ |
+| **Surjective** (onto) | Image of $f$ = all of $S'$ |
+| **Bijective** | Both injective and surjective |
+
+**Example 10:** $f(x) = x^2$ from $\mathbf{R} \to \mathbf{R}$ is **not** injective ($f(1) = f(-1) = 1$) and **not** surjective (image is $[0, \infty)$).
+
+However, $x \mapsto x^2$ from $\mathbf{R}^+ \to \mathbf{R}^+$ **is** bijective.
+
+> **Important:** The domain and codomain must be specified to determine injectivity/surjectivity.
+
+### 3.1.6 Identity Mapping
+
+The **identity mapping** $I_S: S \to S$ is defined by $I_S(x) = x$ for all $x \in S$. It is both injective and surjective. Also denoted $\operatorname{id}_S$ or $\operatorname{id}$.
+
+### 3.1.7 Inverse Mappings
+
+$F: S \to S'$ has an **inverse** if there exists $G: S' \to S$ such that:
+
+$$
+G \circ F = I_S \quad \text{and} \quad F \circ G = I_{S'}.
+$$
+
+**Key result:** $f$ has an inverse **if and only if** $f$ is bijective.
+
+**Proof:**
+- ($\implies$) If $g$ is the inverse of $f$: injectivity follows from $x = g(f(x)) = g(f(y)) = y$; surjectivity follows from $f(g(z)) = z$.
+- ($\impliedby$) If $f$ is bijective: for each $z \in S'$, there exists unique $x \in S$ with $f(x) = z$. Define $g(z) = x$. Then $f(g(z)) = z$ and $g(f(x)) = x$.
+
+**Example 11:** $f: [0, \infty) \to [0, \infty)$, $f(x) = x^2$. Inverse: $g(x) = \sqrt{x}$.
+
+**Example 12:** $f: \mathbf{R} \to \mathbf{R}_{>0}$, $f(x) = e^x$. Inverse: logarithm.
+
+**Example 13 — Translation:** Let $u \in V$ be fixed. $T_u: V \to V$ defined by $T_u(v) = v + u$.
+- $T_{u_1 + u_2} = T_{u_1} \circ T_{u_2}$
+- Inverse of $T_u$ is $T_{-u}$
