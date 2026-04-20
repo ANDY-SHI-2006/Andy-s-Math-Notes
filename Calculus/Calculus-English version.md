@@ -1901,6 +1901,69 @@ Two key properties of absolute values:
 - This proves (3.14), completing the proof of (iv).
 
 
+## 3.6 Composite Functions and Continuity
+
+### 3.6.1 Definition of Composition
+
+- The **composition** of $u$ and $v$ (in that order) is the function $f$ defined by:
+  $$
+  f(x) = u[v(x)] \quad \text{(read as "$u$ of $v$ of $x$")}
+  $$
+- Notation: $f = u(v)$ or $f = u \circ v$ (read as "$u$ circle $v$").
+- To evaluate: first compute $v(x)$, then apply $u$ at $v(x)$.
+- $f$ is defined only where $v(x)$ is in the domain of $u$.
+
+**Examples:**
+- $f(x) = \sin(x^2)$: $u(x) = \sin x$, $v(x) = x^2$, so $f = u \circ v$.
+- $f(x) = \sqrt{1 - x^2}$: $u(x) = \sqrt{x}$, $v(x) = 1 - x^2$.
+  - $v$ defined for all $x$, but $u$ requires $x \ge 0$.
+  - So $f$ is defined only where $1 - x^2 \ge 0$, i.e., $x^2 \le 1$.
+
+### 3.6.2 Properties of Composition
+
+- **Associative law** (Equation 3.17):
+  $$
+  u \circ (v \circ w) = (u \circ v) \circ w
+  $$
+- **Commutative law does NOT hold** in general:
+  - $u(x) = \sin x$, $v(x) = x^2$:
+    - $u \circ v$: $f(x) = \sin(x^2)$
+    - $v \circ u$: $g(x) = (\sin x)^2 = \sin^2 x$
+  - These are different functions.
+
+### 3.6.3 Theorem 3.5 — Continuity of Composites
+
+If $v$ is continuous at $p$ and $u$ is continuous at $q = v(p)$, then $f = u \circ v$ is continuous at $p$.
+
+**Proof:**
+1. Since $u$ is continuous at $q$: for every $N_1[u(q)]$, there exists $N_2(q)$ such that:
+   $$
+   u(y) \in N_1[u(q)] \quad \text{whenever} \quad y \in N_2(q)
+   $$
+   (Equation 3.18)
+2. Since $v$ is continuous at $p$ ($q = v(p)$): for $N_2(q)$, there exists $N_3(p)$ such that:
+   $$
+   v(x) \in N_2(q) \quad \text{whenever} \quad x \in N_3(p)
+   $$
+   (Equation 3.19)
+3. Let $y = v(x)$. Combining (3.18) and (3.19): for every $N_1[u(v(p))] = N_1[f(p)]$, there exists $N_3(p)$ such that:
+   $$
+   f(x) = u[v(x)] \in N_1[f(p)] \quad \text{whenever} \quad x \in N_3(p)
+   $$
+4. Hence $f$ is continuous at $p$.
+
+### 3.6.4 Examples
+
+**Example 1:**
+- $f(x) = \sin(x^2)$ — composition of two everywhere-continuous functions.
+- **$f$ is continuous everywhere.**
+
+**Example 2:**
+- $f(x) = \sqrt{1 - x^2} = u[v(x)]$, where $u(x) = \sqrt{x}$, $v(x) = 1 - x^2$.
+- $v$ continuous everywhere; $u$ continuous for $x \ge 0$.
+- **$f$ is continuous where $v(x) \ge 0$, i.e., $x^2 \le 1$.**
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
