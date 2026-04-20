@@ -1287,3 +1287,6 @@ where $Q = \sum_{i=1}^{n-1} \frac{t_i}{1 - t_n} P_i \in S'$ by induction. Since 
 $$
 L(tv + (1 - t)w) = tL(v) + (1 - t)L(w) < 0.
 $$
+
+
+# 4. Linear Maps and Matrices
