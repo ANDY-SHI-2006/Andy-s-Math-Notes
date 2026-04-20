@@ -3004,6 +3004,50 @@ $$
 - $f''(x)>0$ if $3x^2>1$ (convex); $f''(x)<0$ if $3x^2<1$ (concave).
 - **Points of inflection** at $x^2=\dfrac{1}{3}$, i.e. $x=\pm\dfrac{1}{\sqrt{3}}$, where $f''$ changes sign.
 
+## 4.15 Worked Examples of Extremum Problems
+
+### 4.15.1 Two Basic Principles
+
+1. **Constant-sum, maximum-product principle**
+   - Given $x+y=S$ with $x,y\gt0$, the product $xy$ is largest when $x=y=\dfrac{S}{2}$.
+   - Proof: $f(x)=x(S-x)$ has $f'(x)=S-2x$, zero at $x=S/2$.
+
+2. **Constant-product, minimum-sum principle**
+   - Given $xy=P$ with $x,y\gt0$, the sum $x+y$ is smallest when $x=y=\sqrt{P}$.
+   - Proof: $f(x)=x+P/x$ has $f'(x)=1-P/x^2$, zero at $x=\sqrt{P}$.
+
+### 4.15.2 Consequences
+
+- Among all rectangles of a given perimeter, the **square** has the largest area (Principle 1).
+- **Arithmetic–geometric mean inequality**: For $a,b\gt0$,
+  $$
+  \sqrt{ab}\le\frac{a+b}{2},
+  $$
+  with equality if and only if $a=b$ (Principle 2).
+
+### 4.15.3 Example: Minimizing Propelling Force
+
+- A block of weight $W$ is pulled along a table by a force inclined at angle $\theta$.
+- The propelling force needed to overcome friction is
+  $$
+  F(\theta)=\frac{\mu W}{\cos\theta+\mu\sin\theta},\qquad 0\le\theta\le\frac{\pi}{2}.
+  $$
+- To minimize $F$, maximize the denominator $g(\theta)=\cos\theta+\mu\sin\theta$.
+- $g'(\theta)=-\sin\theta+\mu\cos\theta=0$ gives $\tan\alpha=\mu$.
+- The minimum force is
+  $$
+  F_{\min}=\frac{\mu W}{\sqrt{1+\mu^2}}.
+  $$
+
+### 4.15.4 Example: Shortest Distance from a Point to a Parabola
+
+- Find the shortest distance from $(0,b)$ on the $y$-axis to the parabola $x^2=4y$.
+- Minimize $d^2=x^2+(y-b)^2=4y+(y-b)^2$ for $y\ge0$.
+- $f'(y)=4+2(y-b)=0$ gives $y=b-2$.
+- **Case $b\lt2$**: critical point $y=b-2$ is negative, so excluded. Since $f'(y)\gt0$ for $y\ge0$, the minimum occurs at the endpoint $y=0$. Minimum distance $=|b|$.
+- **Case $b\ge2$**: legitimate critical point at $y=b-2$. Since $f''(y)=2\gt0$, this gives the absolute minimum. Minimum distance $=2\sqrt{b-1}$.
+- The special transition value is $b=2$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
