@@ -903,3 +903,104 @@ $$
 **Example 13 — Translation:** Let $u \in V$ be fixed. $T_u: V \to V$ defined by $T_u(v) = v + u$.
 - $T_{u_1 + u_2} = T_{u_1} \circ T_{u_2}$
 - Inverse of $T_u$ is $T_{-u}$
+
+
+## 3.2 Linear Mappings
+
+### 3.2.1 Definition
+
+Let $V, V'$ be vector spaces over $K$. A **linear mapping** $F: V \to V'$ satisfies:
+
+| Property | Statement |
+|----------|-----------|
+| **LM 1.** Additivity | $F(u + v) = F(u) + F(v)$ for all $u, v \in V$ |
+| **LM 2.** Homogeneity | $F(cv) = cF(v)$ for all $c \in K$, $v \in V$ |
+
+If we wish to specify $K$, we say $F$ is **$K$-linear**. Usually we simply say $F$ is **linear**.
+
+**Basic property:** $L(O) = O$ for any linear map $L: V \to W$. If $F(O) \neq O$, then $F$ is not linear.
+
+**General property:** For any $u_1, \dots, u_n \in V$ and $a_1, \dots, a_n \in K$:
+
+$$
+T(a_1 u_1 + \cdots + a_n u_n) = a_1 T(u_1) + \cdots + a_n T(u_n).
+$$
+
+### 3.2.2 Example 1 — Coordinate Map
+
+Let $V$ be finite dimensional with basis $\{v_1, \dots, v_n\}$. Define $F: V \to K^n$ by:
+
+$$
+F(v) = (x_1, \dots, x_n) \quad \text{where } v = x_1 v_1 + \cdots + x_n v_n.
+$$
+
+Then $F$ is linear:
+- $F(v + w) = X + Y = F(v) + F(w)$
+- $F(cv) = cX = cF(v)$
+
+### 3.2.3 Example 2 — Projection
+
+$F: \mathbf{R}^3 \to \mathbf{R}^2$, $F(x, y, z) = (x, y)$. More generally, for $r < n$:
+
+$$
+F: K^n \to K^r, \quad F(x_1, \dots, x_n) = (x_1, \dots, x_r).
+$$
+
+### 3.2.4 Example 3 — Dot Product Map
+
+Let $A \in K^n$. Define $L_A: K^n \to K$ by $L_A(X) = X \cdot A$. This is linear by properties SP 2 and SP 3 of the dot product.
+
+More generally, for an $m \times n$ matrix $A$:
+
+$$
+L_A: K^n \to K^m, \quad L_A(X) = AX.
+$$
+
+### 3.2.5 Example 4 — Identity and Zero Maps
+
+- **Identity mapping** $\operatorname{id}: V \to V$, $\operatorname{id}(u) = u$.
+- **Zero mapping** $O: V \to V'$, $O(u) = O$ for all $u$.
+
+### 3.2.6 Example 6 — Space of Linear Maps
+
+Let $\mathscr{L}(V, V')$ (or $\mathscr{L}$) denote the set of all linear mappings from $V$ to $V'$.
+
+For $T, F \in \mathscr{L}(V, V')$:
+- **Sum:** $(T + F)(u) = T(u) + F(u)$
+- **Scalar multiple:** $(aT)(u) = aT(u)$ for $a \in K$
+
+Then $T + F$ and $aT$ are linear maps, and $\mathscr{L}(V, V')$ is a vector space.
+
+### 3.2.7 Example 7 — Derivative
+
+Let $V$ be the space of infinitely differentiable real-valued functions. $D: V \to V$, $D(f) = df/dt$ is linear:
+
+$$
+D(f + g) = Df + Dg, \qquad D(cf) = cDf.
+$$
+
+For example, $(D + I)f = Df + f$. If $f(x) = e^x$, then $(D + I)f = 2e^x$.
+
+### 3.2.8 Theorem 2.1 — Linear Maps Determined by Basis Values
+
+**Theorem 2.1.** Let $\{v_1, \dots, v_n\}$ be a basis of $V$, and $w_1, \dots, w_n \in W$. There exists a **unique** linear mapping $T: V \to W$ such that:
+
+$$
+T(v_1) = w_1, \quad \dots, \quad T(v_n) = w_n.
+$$
+
+Explicitly:
+
+$$
+T(x_1 v_1 + \cdots + x_n v_n) = x_1 w_1 + \cdots + x_n w_n.
+$$
+
+**Proof:**
+- **Existence:** Define $T(v) = x_1 w_1 + \cdots + x_n w_n$ where $v = x_1 v_1 + \cdots + x_n v_n$. Then:
+  - $T(v + v') = (x_1 + y_1)w_1 + \cdots + (x_n + y_n)w_n = T(v) + T(v')$
+  - $T(cv) = cx_1 w_1 + \cdots + cx_n w_n = cT(v)$
+
+- **Uniqueness:** Any linear $F$ with $F(v_i) = w_i$ must satisfy:
+  $$
+  F(x_1 v_1 + \cdots + x_n v_n) = x_1 w_1 + \cdots + x_n w_n = T(v).
+  $$
