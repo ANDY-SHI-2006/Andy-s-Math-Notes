@@ -123,6 +123,27 @@ is also a step function, by the same argument using the common refinement.
 ### 1.4.3 Scalar Multiplication
 
 If $t(x) = c$ is constant on $[a, b]$, then $v = c \cdot s$ is a step function obtained by multiplying each function value of $s$ by $c$.
+
+## 1.5 The Definition of the Integral for Step Functions
+
+### 1.5.1 Definition
+
+Let $s$ be a step function on $[a, b]$, constant on the open subintervals of a partition $P = \{x_0, x_1, \dots, x_n\}$. Denote by $s_k$ the constant value on $(x_{k-1}, x_k)$. The **integral of $s$ from $a$ to $b$** is:
+
+$$
+\int_a^b s(x) \, dx = \sum_{k=1}^{n} s_k \cdot (x_k - x_{k-1}).
+$$
+
+> **Note:** The values of $s$ at the subdivision points are immaterial — they do not appear on the right-hand side.
+
+### 1.5.2 Geometric Interpretation
+
+For a nonnegative step function, the integral equals the **area of its ordinate set** (a finite union of rectangles). Vertical line segments at subdivision points have zero area and make no contribution.
+
+### 1.5.3 Independence of Partition
+
+The value of the integral is independent of the choice of partition, as long as $s$ is constant on its open subintervals. Inserting additional subdivision points splits one term $s_k(x_k - x_{k-1})$ into two terms whose sum is unchanged; by repeated insertion, the integral is the same for every refinement of $P$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
