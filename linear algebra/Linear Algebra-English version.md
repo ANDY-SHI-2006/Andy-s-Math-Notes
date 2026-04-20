@@ -1004,3 +1004,86 @@ $$
   $$
   F(x_1 v_1 + \cdots + x_n v_n) = x_1 w_1 + \cdots + x_n w_n = T(v).
   $$
+
+
+## 3.3 The Kernel and Image of a Linear Map
+
+### 3.3.1 Kernel
+
+Let $F: V \to W$ be a linear map. The **kernel** of $F$ is:
+
+$$
+\operatorname{Ker} F = \{v \in V \mid F(v) = O\}.
+$$
+
+**Example 1:** $L: \mathbf{R}^3 \to \mathbf{R}$, $L(x, y, z) = 3x - 2y + z$. Then $\operatorname{Ker} L$ is the set of solutions to $3x - 2y + z = 0$.
+
+More generally, for $A \in \mathbf{R}^n$, $L_A(X) = A \cdot X$ has kernel = all $X$ perpendicular to $A$.
+
+**Example 2:** $P: \mathbf{R}^3 \to \mathbf{R}^2$, $P(x, y, z) = (x, y)$. Then $\operatorname{Ker} P = \{(0, 0, z) \mid z \in \mathbf{R}\}$.
+
+**Property:** $\operatorname{Ker} F$ is a **subspace** of $V$.
+
+**Proof:**
+- $F(O) = O$, so $O \in \operatorname{Ker} F$
+- If $v, w \in \operatorname{Ker} F$, then $F(v + w) = F(v) + F(w) = O + O = O$
+- If $c \in K$, then $F(cv) = cF(v) = cO = O$
+
+### 3.3.2 Injectivity Criterion
+
+For a linear map $F: V \to W$, the following are **equivalent**:
+
+1. $\operatorname{Ker} F = \{O\}$
+2. $F$ is **injective**
+
+**Proof:**
+- (1 $\implies$ 2): If $F(v) = F(w)$, then $F(v - w) = O$, so $v - w = O$, hence $v = w$.
+- (2 $\implies$ 1): If $F(v) = O = F(O)$, then $v = O$ by injectivity.
+
+### 3.3.3 Theorem 3.1 — Linear Independence Preserved
+
+**Theorem 3.1.** Let $F: V \to W$ be linear with $\operatorname{Ker} F = \{O\}$. If $v_1, \dots, v_n$ are linearly independent in $V$, then $F(v_1), \dots, F(v_n)$ are linearly independent in $W$.
+
+**Proof:** Suppose $x_1 F(v_1) + \cdots + x_n F(v_n) = O$. By linearity, $F(x_1 v_1 + \cdots + x_n v_n) = O$. Since $\operatorname{Ker} F = \{O\}$, we have $x_1 v_1 + \cdots + x_n v_n = O$. By linear independence of $v_i$, all $x_i = 0$.
+
+### 3.3.4 Image
+
+The **image** of $F$ is:
+
+$$
+\operatorname{Im} F = \{w \in W \mid \exists v \in V \text{ such that } F(v) = w\}.
+$$
+
+**Property:** $\operatorname{Im} F$ is a **subspace** of $W$.
+
+**Proof:**
+- $F(O) = O \in \operatorname{Im} F$
+- If $w_1 = F(v_1)$ and $w_2 = F(v_2)$, then $w_1 + w_2 = F(v_1 + v_2) \in \operatorname{Im} F$
+- $cw_1 = F(cv_1) \in \operatorname{Im} F$
+
+### 3.3.5 Theorem 3.2 — Dimension Formula
+
+**Theorem 3.2.** Let $L: V \to W$ be linear. Then:
+
+$$
+\dim V = \dim \operatorname{Ker} L + \dim \operatorname{Im} L.
+$$
+
+**Proof sketch:**
+- Let $\{w_1, \dots, w_s\}$ be a basis of $\operatorname{Im} L$, and $v_i \in V$ with $L(v_i) = w_i$.
+- Let $\{u_1, \dots, u_q\}$ be a basis of $\operatorname{Ker} L$ (omit if kernel is $\{O\}$).
+- Then $\{v_1, \dots, v_s, u_1, \dots, u_q\}$ is a basis of $V$:
+  - **Generate:** For any $v \in V$, $L(v) = x_1 w_1 + \cdots + x_s w_s$. Then $v - x_1 v_1 - \cdots - x_s v_s \in \operatorname{Ker} L$, so it equals $y_1 u_1 + \cdots + y_q u_q$.
+  - **Independent:** If $x_1 v_1 + \cdots + x_s v_s + y_1 u_1 + \cdots + y_q u_q = O$, apply $L$ to get $x_1 w_1 + \cdots + x_s w_s = O$, so all $x_i = 0$. Then $y_1 u_1 + \cdots + y_q u_q = O$, so all $y_j = 0$.
+
+**Example 1 (cont.):** $L(x, y, z) = 3x - 2y + z$. $\operatorname{Im} L = \mathbf{R}$ (dimension 1), so $\dim \operatorname{Ker} L = 3 - 1 = 2$.
+
+**Example 2 (cont.):** $P: \mathbf{R}^3 \to \mathbf{R}^2$ is surjective, so $\dim \operatorname{Im} P = 2$, hence $\dim \operatorname{Ker} P = 3 - 2 = 1$.
+
+### 3.3.6 Theorem 3.3 — Bijectivity Criterion
+
+**Theorem 3.3.** Let $L: V \to W$ be linear with $\dim V = \dim W$. If $\operatorname{Ker} L = \{O\}$ or $\operatorname{Im} L = W$, then $L$ is **bijective**.
+
+**Proof:**
+- If $\operatorname{Ker} L = \{O\}$: by Theorem 3.2, $\dim \operatorname{Im} L = \dim W$. By Corollary 3.5 (Chapter I), $\operatorname{Im} L = W$, so $L$ is surjective. Also injective since kernel is trivial.
+- If $\operatorname{Im} L = W$: by Theorem 3.2, $\dim \operatorname{Ker} L = 0$, so $\operatorname{Ker} L = \{O\}$. Hence $L$ is injective and surjective.
