@@ -2251,6 +2251,35 @@ $$
 - By the intermediate-value theorem, the range of $f$ is the closed interval $[\inf f, \sup f]$.
 
 
+## 3.13 The Small-Span Theorem for Continuous Functions (Uniform Continuity)
+
+### 3.13.1 Definition — Span of a Function
+
+- Let $M(f)$ and $m(f)$ denote the maximum and minimum values of $f$ on $[a, b]$.
+- The **span** of $f$ on $[a, b]$:
+  $$
+  \text{span}(f) = M(f) - m(f)
+  $$
+- Some authors use **oscillation**; older texts use **saltus** (Latin for "leap").
+- The span of $f$ on any subinterval cannot exceed the span on $[a, b]$.
+
+### 3.13.2 Theorem 3.13 — Small-Span Theorem
+
+Let $f$ be continuous on a closed interval $[a, b]$. Then for every $\epsilon > 0$, there is a **partition** of $[a, b]$ into a finite number of subintervals such that the span of $f$ in **every** subinterval is less than $\epsilon$.
+
+> This theorem is also known as the theorem on **uniform continuity**.
+
+**Proof (by contradiction, successive bisections):**
+1. Assume the theorem is false for some $\epsilon = \epsilon_0 > 0$.
+2. Bisect $[a, b]$; the theorem must be false for $\epsilon_0$ in at least one half. Call it $[a_1, b_1]$.
+3. Repeat: obtain a nested sequence $[a_n, b_n]$ of length $(b - a)/2^n$ where the span of $f$ is at least $\epsilon_0$.
+4. Let $A = \{a, a_1, a_2, \dots\}$ and $\alpha = \sup A$. Then $\alpha \in [a, b]$.
+5. By continuity at $\alpha$: there exists an interval $(\alpha - \delta, \alpha + \delta)$ in which the span of $f$ is less than $\epsilon_0$.
+6. However, $[a_n, b_n] \subset (\alpha - \delta, \alpha + \delta)$ for large $n$ (since $(b - a)/2^n < \delta$).
+7. Therefore the span of $f$ in $[a_n, b_n]$ is also less than $\epsilon_0$.
+8. **Contradiction**: the span in $[a_n, b_n]$ was chosen to be at least $\epsilon_0$.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
