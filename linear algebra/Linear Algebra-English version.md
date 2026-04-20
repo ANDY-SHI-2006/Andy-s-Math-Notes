@@ -1329,3 +1329,94 @@ A homogeneous system $AX = O$ can be interpreted as:
 $$
 \text{Set of solutions} = \operatorname{Ker} L_A.
 $$
+
+
+## 4.2 The Matrix Associated with a Linear Map
+
+### 4.2.1 Special Case — $K^n \to K$
+
+Let $L: K^n \to K$ be linear. There exists a **unique** vector $A \in K^n$ such that $L = L_A$, i.e.:
+
+$$
+L(X) = A \cdot X.
+$$
+
+**Proof:** Let $a_i = L(E_i)$ where $E_i$ are unit vectors. Then:
+
+$$
+L(X) = L(x_1 E_1 + \cdots + x_n E_n) = x_1 L(E_1) + \cdots + x_n L(E_n) = x_1 a_1 + \cdots + x_n a_n = X \cdot A.
+$$
+
+### 4.2.2 Theorem 2.1 — General Case
+
+**Theorem 2.1.** Let $L: K^n \to K^m$ be linear. Then there exists a **unique** matrix $A$ such that $L = L_A$.
+
+**Proof:** Let $E^1, \dots, E^n$ be unit column vectors in $K^n$, and $e^1, \dots, e^m$ in $K^m$. Write $X = x_1 E^1 + \cdots + x_n E^n$. By linearity:
+
+$$
+L(X) = x_1 L(E^1) + \cdots + x_n L(E^n).
+$$
+
+Each $L(E^j)$ can be written as $L(E^j) = a_{1j} e^1 + \cdots + a_{mj} e^m$. Hence:
+
+$$
+L(X) = \sum_{j=1}^n x_j \sum_{i=1}^m a_{ij} e^i = \sum_{i=1}^m \left(\sum_{j=1}^n a_{ij} x_j\right) e^i = AX.
+$$
+
+The $j$-th column of $A$ is $L(E^j)$. Uniqueness follows from Theorem 1.1.
+
+### 4.2.3 Examples
+
+**Example 1 — Projection:** $F: \mathbf{R}^3 \to \mathbf{R}^2$, $F(x_1, x_2, x_3) = (x_1, x_2)$.
+
+$$
+A = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}.
+$$
+
+**Example 2 — Identity:** $I: \mathbf{R}^n \to \mathbf{R}^n$. Associated matrix is $I_n$.
+
+**Example 3:** $L: \mathbf{R}^4 \to \mathbf{R}^2$ with:
+
+$$
+L(E^1) = \begin{pmatrix} 2 \\ 1 \end{pmatrix}, \; L(E^2) = \begin{pmatrix} 3 \\ -1 \end{pmatrix}, \; L(E^3) = \begin{pmatrix} -5 \\ 4 \end{pmatrix}, \; L(E^4) = \begin{pmatrix} 1 \\ 7 \end{pmatrix}.
+$$
+
+$$
+A = \begin{pmatrix} 2 & 3 & -5 & 1 \\ 1 & -1 & 4 & 7 \end{pmatrix}.
+$$
+
+**Example 4 — Rotations:** $L: \mathbf{R}^2 \to \mathbf{R}^2$ is a **rotation** by angle $\theta$ if:
+
+$$
+R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}.
+$$
+
+Then $L(E^1) = (\cos\theta, \sin\theta)$ and $L(E^2) = (-\sin\theta, \cos\theta)$. For $\theta = \pi/2$:
+
+$$
+R\left(\frac{\pi}{2}\right) = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}.
+$$
+
+### 4.2.4 Correspondence of Operations
+
+Matrix operations correspond to linear map operations:
+
+| Matrix Operation | Linear Map Operation |
+|------------------|----------------------|
+| $A + B$ | $L_A + L_B$ |
+| $cA$ | $cL_A$ |
+| $BA$ | $G \circ F$ (if $G = L_B$, $F = L_A$) |
+
+For $F: K^n \to K^m$ and $G: K^m \to K^s$ with matrices $A, B$:
+
+$$
+(G \circ F)(X) = G(F(X)) = B(AX) = (BA)X.
+$$
+
+### 4.2.5 Theorem 2.2 — Invertibility Criterion
+
+**Theorem 2.2.** Let $A$ be $n \times n$ with columns $A^1, \dots, A^n$. Then $A$ is invertible if and only if $A^1, \dots, A^n$ are linearly independent.
+
+**Proof:**
+- ($\impliedby$) If $A^1, \dots, A^n$ are independent, they form a basis of $K^n$. There exists $B$ such that $BA^j = E^j$ for all $j$, i.e. $BA = I$.
+- ($\implies$) If $A$ is invertible, $\operatorname{Ker} L_A = \{O\}$ (since $AX = O \implies X = O$). Thus $A^1, \dots, A^n$ are independent.
