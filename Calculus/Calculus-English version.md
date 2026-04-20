@@ -2104,6 +2104,51 @@ $$
   $$
 
 
+## 3.10 Properties of Functions Preserved by Inversion
+
+### 3.10.1 Graphical Relationship
+
+- The graphs of $f$ and its inverse $g$ are related by **reflection through the line $y = x$**.
+- A point $(u, v)$ lies on the graph of $f$ iff $(v, u)$ lies on the graph of $g$.
+
+### 3.10.2 Theorem 3.10 — Monotonicity and Continuity of Inverses
+
+Assume $f$ is strictly increasing and continuous on $[a, b]$. Let $c = f(a)$, $d = f(b)$, and let $g$ be the inverse of $f$ (defined on $[c, d]$). Then:
+
+- **(a)** $g$ is strictly increasing on $[c, d]$.
+- **(b)** $g$ is continuous on $[c, d]$.
+
+**Proof of (a):**
+- Choose $y_1 < y_2$ in $[c, d]$. Let $x_1 = g(y_1)$, $x_2 = g(y_2)$.
+- Then $y_1 = f(x_1)$ and $y_2 = f(x_2)$.
+- Since $f$ is strictly increasing, $y_1 < y_2 \implies x_1 < x_2$.
+- Hence $g(y_1) < g(y_2)$, so $g$ is strictly increasing.
+
+**Proof of (b):**
+- Choose $y_0 \in (c, d)$ and let $x_0 = g(y_0)$, so $f(x_0) = y_0$.
+- Given $\epsilon > 0$ (small enough that $x_0 \pm \epsilon \in [a, b]$), we need $\delta > 0$ such that:
+  $$
+  g(y_0) - \epsilon < g(y) < g(y_0) + \epsilon \quad \text{whenever} \quad y_0 - \delta < y < y_0 + \delta
+  $$
+  (Equation 3.22)
+- Let $\delta$ be the smaller of:
+  $$
+  f(x_0) - f(x_0 - \epsilon) \quad \text{and} \quad f(x_0 + \epsilon) - f(x_0)
+  $$
+- Since $f$ is strictly increasing, this $\delta$ ensures (3.22) holds.
+- A slight modification proves continuity from the right at $c$ and from the left at $d$.
+
+> **Corresponding theorem for decreasing functions**: The inverse of a strictly decreasing continuous function is strictly decreasing and continuous. (Apply Theorem 3.10 to $-f$.)
+
+### 3.10.3 Example — Continuity of the $n$th-Root Function
+
+- The $n$th-root function $g(y) = y^{1/n}$ ($y \ge 0$) is the inverse of $f(x) = x^n$.
+- Since $f$ is strictly increasing and continuous, by Theorem 3.10:
+  - $g$ is **strictly increasing** and **continuous** on every interval $[c, d]$ with $0 \le c < d$.
+- This provides an **alternate proof** of the continuity of $y^{1/n}$, independent of integration theory.
+- Since products of continuous functions are continuous, the $r$th-power function $h(y) = y^r$ ($r = m/n$ positive rational, $y \ge 0$) is also continuous.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
