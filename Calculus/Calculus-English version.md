@@ -1402,6 +1402,74 @@ $$
 > Curved motion work is discussed in Volume II using line integrals.
 
 
+## 2.11 Average Value of a Function
+
+### 2.11.1 Arithmetic Mean
+
+- For $n$ real numbers $a_1, a_2, \dots, a_n$:
+  $$
+  \bar{a} = \frac{1}{n} \sum_{k=1}^n a_k
+  $$
+  (Equation 2.17)
+- If $a_k = f(x_k)$, the arithmetic mean of function values is $\frac{1}{n}\sum_{k=1}^n f(x_k)$.
+
+### 2.11.2 Definition — Average Value on an Interval
+
+- If $f$ is integrable on $[a, b]$, the **average value** of $f$ on $[a, b]$ is:
+  $$
+  A(f) = \frac{1}{b - a} \int_a^b f(x) \, dx
+  $$
+  (Equation 2.18)
+
+**Geometric interpretation** (for $f \ge 0$):
+- $(b - a)A(f) = \int_a^b f(x) \, dx$
+- The rectangle of altitude $A(f)$ and base $[a, b]$ has area equal to the ordinate set of $f$.
+
+### 2.11.3 Connection to Discrete Mean
+
+- For a step function constant on $n$ equal subintervals of $[a, b]$:
+  $$
+  A(f) = \frac{1}{b - a} \sum_{k=1}^n f(x_k) \frac{b - a}{n} = \frac{1}{n} \sum_{k=1}^n f(x_k)
+  $$
+- Thus $A(f)$ extends the arithmetic mean to continuous functions.
+
+### 2.11.4 Weighted Average
+
+- For weights $w_1, \dots, w_n$ (nonnegative, not all zero):
+  $$
+  \bar{a} = \frac{\sum_{k=1}^n w_k a_k}{\sum_{k=1}^n w_k}
+  $$
+- Extension to integrable functions (weight function $w \ge 0$, $\int_a^b w \neq 0$):
+  $$
+  A(f) = \frac{\int_a^b w(x)f(x) \, dx}{\int_a^b w(x) \, dx}
+  $$
+  (Equation 2.19)
+
+### 2.11.5 Applications in Physics
+
+**Center of mass of a rod:**
+- Rod of length $a$ along $x$-axis with mass density $\rho(x)$.
+- Mass of portion $[0, x]$: $m(x) = \int_0^x \rho(t) \, dt$.
+- **Center of mass**:
+  $$
+  \bar{x} = \frac{\int_0^a x\rho(x) \, dx}{\int_0^a \rho(x) \, dx}
+  $$
+  (weighted average of distance $x$ with weight $\rho$)
+
+**Moment of inertia and radius of gyration:**
+- **Second moment** (moment of inertia) about 0:
+  $$
+  \int_0^a x^2 \rho(x) \, dx
+  $$
+- **Radius of gyration** $r$:
+  $$
+  r^2 = \frac{\int_0^a x^2 \rho(x) \, dx}{\int_0^a \rho(x) \, dx}
+  $$
+  (weighted average of $x^2$ with weight $\rho$)
+
+> Weighted averages also appear in probability theory, where **expectation** and **variance** play analogous roles to center of mass and moment of inertia.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
