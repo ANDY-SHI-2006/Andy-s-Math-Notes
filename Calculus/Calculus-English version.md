@@ -2185,6 +2185,72 @@ Assume $f$ is strictly increasing and continuous on $[a, b]$. Let $c = f(a)$, $d
 - This technique will be used extensively in Chapter 6.
 
 
+## 3.12 The Extreme-Value Theorem for Continuous Functions
+
+### 3.12.1 Definitions
+
+- **Absolute maximum**: $f$ has an absolute maximum on $S$ if $\exists c \in S$ such that $f(x) \le f(c)$ for all $x \in S$.
+- **Absolute minimum**: $f$ has an absolute minimum on $S$ if $\exists d \in S$ such that $f(x) \ge f(d)$ for all $x \in S$.
+
+**Examples (Figure 3.13):**
+
+| Function | Domain | Absolute Min | Absolute Max |
+|----------|--------|--------------|--------------|
+| $f(x) = \sin x$ | $[0, \pi]$ | $0$ (at endpoints) | $1$ (at $x = \pi/2$) |
+| $f(x) = 1/x$ ($x > 0$), $f(0) = 1$ | $[0, 2]$ | $1/2$ (at $x = 2$) | **None** (discontinuity at 0) |
+
+- The second example shows that discontinuity can prevent the existence of an absolute maximum.
+
+### 3.12.2 Theorem 3.11 — Boundedness Theorem
+
+Let $f$ be continuous on a closed interval $[a, b]$. Then $f$ is **bounded** on $[a, b]$; i.e., $\exists C \ge 0$ such that $|f(x)| \le C$ for all $x \in [a, b]$.
+
+**Proof (by contradiction, successive bisection):**
+1. Assume $f$ is unbounded on $[a, b]$.
+2. Bisect $[a, b]$; $f$ must be unbounded on at least one half. Call it $[a_1, b_1]$.
+3. Repeat: obtain a nested sequence $[a_n, b_n]$ of length $(b - a)/2^n$ on which $f$ is unbounded.
+4. Let $A = \{a, a_1, a_2, \dots\}$ and $\alpha = \sup A$. Then $\alpha \in [a, b]$.
+5. By continuity at $\alpha$: $\exists \delta > 0$ such that $|f(x) - f(\alpha)| < 1$ for $x \in (\alpha - \delta, \alpha + \delta)$.
+   (Equation 3.25)
+6. Hence $|f(x)| < 1 + |f(\alpha)|$ in this interval — $f$ is bounded here.
+7. But $[a_n, b_n] \subset (\alpha - \delta, \alpha + \delta)$ for large $n$ (since $(b - a)/2^n < \delta$).
+8. Contradiction: $f$ is bounded on $[a_n, b_n]$ yet was chosen to be unbounded there.
+
+### 3.12.3 Supremum and Infimum of a Bounded Function
+
+- If $f$ is bounded on $[a, b]$, define:
+  $$
+  \sup f = \sup\{f(x) \mid a \le x \le b\}, \qquad \inf f = \inf\{f(x) \mid a \le x \le b\}
+  $$
+- For any bounded function: $\inf f \le f(x) \le \sup f$ for all $x \in [a, b]$.
+
+### 3.12.4 Theorem 3.12 — Extreme-Value Theorem
+
+Assume $f$ is continuous on $[a, b]$. Then there exist points $c, d \in [a, b]$ such that:
+
+$$
+f(c) = \sup f \quad \text{and} \quad f(d) = \inf f
+$$
+
+**Proof (for supremum):**
+1. Let $M = \sup f$. Assume for contradiction that $f(x) \neq M$ for all $x \in [a, b]$.
+2. Define $g(x) = M - f(x) > 0$ on $[a, b]$.
+3. Then $1/g$ is continuous on $[a, b]$.
+4. By Theorem 3.11, $1/g$ is bounded: $1/g(x) < C$ for some $C > 0$.
+5. This implies $g(x) > 1/C$, so $M - f(x) > 1/C$, hence $f(x) < M - 1/C$.
+6. But $M - 1/C < M$, contradicting $M$ being the least upper bound.
+7. Therefore $f(c) = M$ for some $c \in [a, b]$.
+
+> **Note:** For the infimum, apply the same argument to $-f$.
+
+### 3.12.5 Consequence — Range of a Continuous Function
+
+- If $f$ is continuous on $[a, b]$, then:
+  - $\sup f$ is the **absolute maximum**.
+  - $\inf f$ is the **absolute minimum**.
+- By the intermediate-value theorem, the range of $f$ is the closed interval $[\inf f, \sup f]$.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
