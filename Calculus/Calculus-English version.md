@@ -629,6 +629,61 @@ $$
 \int_0^b x^p \, dx = \frac{b^{p+1}}{p+1}.
 $$
 
+
+## 1.16 The Basic Properties of the Integral
+
+### 1.16.1 Theorem 1.16 — Linearity
+
+If $f$ and $g$ are integrable on $[a, b]$, then so is $c_1 f + c_2 g$ for all real $c_1, c_2$, and:
+
+$$
+\int_a^b \bigl[c_1 f(x) + c_2 g(x)\bigr] \, dx = c_1 \int_a^b f(x) \, dx + c_2 \int_a^b g(x) \, dx.
+$$
+
+By induction, for any finite sum:
+
+$$
+\int_a^b \sum_{k=1}^{n} c_k f_k(x) \, dx = \sum_{k=1}^{n} c_k \int_a^b f_k(x) \, dx.
+$$
+
+### 1.16.2 Theorem 1.17 — Additivity with Respect to the Interval
+
+If two of the following three integrals exist, the third also exists, and:
+
+$$
+\int_a^b f(x) \, dx + \int_b^c f(x) \, dx = \int_a^c f(x) \, dx.
+$$
+
+> **Note:** If $f$ is monotonic on $[a, b]$ and on $[b, c]$, then all three integrals exist.
+
+### 1.16.3 Theorem 1.18 — Invariance under Translation
+
+If $f$ is integrable on $[a, b]$, then for every real $c$:
+
+$$
+\int_a^b f(x) \, dx = \int_{a+c}^{b+c} f(x - c) \, dx.
+$$
+
+### 1.16.4 Theorem 1.19 — Expansion or Contraction
+
+If $f$ is integrable on $[a, b]$, then for every real $k \neq 0$:
+
+$$
+\int_a^b f(x) \, dx = \frac{1}{k} \int_{ka}^{kb} f\!\left(\frac{x}{k}\right) dx.
+$$
+
+> **Note:** When $k = -1$, this is called the **reflection property**.
+
+### 1.16.5 Theorem 1.20 — Comparison Theorem
+
+If $f$ and $g$ are integrable on $[a, b]$ and $g(x) \le f(x)$ for all $x \in [a, b]$, then:
+
+$$
+\int_a^b g(x) \, dx \le \int_a^b f(x) \, dx.
+$$
+
+In particular, if $f(x) \ge 0$ on $[a, b]$, then $\displaystyle\int_a^b f(x)\,dx \ge 0$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
