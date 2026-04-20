@@ -2376,6 +2376,9 @@ $$
 > **Use**: The weighted mean-value theorem provides useful estimates for integrals of products, especially when one factor's integral is easy to compute.
 
 
+# 4. Differential Calculus
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
