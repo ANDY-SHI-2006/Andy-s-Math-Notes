@@ -314,33 +314,64 @@ $$
 $$
 
 
+
 ## 1.9 Upper and Lower Integrals
 
-### 1.9.1 Definitions
+### 1.9.1 The Sets S and T
 
-Let $f$ be bounded on $[a, b]$. Define:
+Assume $f$ is bounded on $[a, b]$. Let $s$ and $t$ be step functions with $s \le f \le t$.
 
-- **Lower integral**: $
-  \displaystyle I(f) = \sup\left\{\int_a^b s(x)\,dx \;\bigg|\; s \le f\right\}
-  $
-- **Upper integral**: $
-  \displaystyle \bar{I}(f) = \inf\left\{\int_a^b t(x)\,dx \;\bigg|\; f \le t\right\}
-  $
+Define:
 
-Both exist (since $f$ is bounded), and for all step functions $s \le f \le t$:
+- $S = \left\{\displaystyle\int_a^b s(x)\,dx \;\bigg|\; s \le f\right\}$  
+  (all lower approximations)
+- $T = \left\{\displaystyle\int_a^b t(x)\,dx \;\bigg|\; f \le t\right\}$  
+  (all upper approximations)
+
+Both sets are nonempty because $f$ is bounded.
+
+### 1.9.2 The Inequality Chain
+
+If $s \le f \le t$, then by the comparison theorem:
 
 $$
-\int_a^b s(x)\,dx \le I(f) \le \bar{I}(f) \le \int_a^b t(x)\,dx.
+\int_a^b s(x)\,dx \le \int_a^b t(x)\,dx.
 $$
 
-### 1.9.2 Integrability Criterion
+Hence every number in $S$ is less than every number in $T$. Therefore $S$ has a supremum, $T$ has an infimum, and:
 
-**Theorem 1.9.** A bounded function $f$ is integrable on $[a, b]$ **if and only if** its upper and lower integrals are equal. In that case:
+$$
+\int_a^b s(x)\,dx \le \sup S \le \inf T \le \int_a^b t(x)\,dx
+$$
+
+for all $s, t$ with $s \le f \le t$.
+
+### 1.9.3 Lower and Upper Integrals
+
+The number $\sup S$ is called the **lower integral** of $f$, denoted $I(f)$.
+
+The number $\inf T$ is called the **upper integral** of $f$, denoted $\bar{I}(f)$.
+
+Thus:
+
+$$
+I(f) = \sup\left\{\int_a^b s(x)\,dx \;\bigg|\; s \le f\right\}, \qquad
+\bar{I}(f) = \inf\left\{\int_a^b t(x)\,dx \;\bigg|\; f \le t\right\}.
+$$
+
+### 1.9.4 Integrability Criterion
+
+**Theorem 1.9.** Every function $f$ which is bounded on $[a, b]$ has a lower integral $I(f)$ and an upper integral $\bar{I}(f)$ satisfying:
+
+$$
+\int_a^b s(x)\,dx \le I(f) \le \bar{I}(f) \le \int_a^b t(x)\,dx
+$$
+
+for all step functions $s$ and $t$ with $s \le f \le t$. The function $f$ is integrable on $[a, b]$ if and only if its upper and lower integrals are equal, in which case:
 
 $$
 \int_a^b f(x)\,dx = I(f) = \bar{I}(f).
 $$
-
 ## 1.10 The Area of an Ordinate Set Expressed as an Integral
 
 ### 1.10.1 Theorem 1.10 — Area Equals Integral
