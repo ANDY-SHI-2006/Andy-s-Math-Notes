@@ -1180,3 +1180,110 @@ $$
 But $FG \neq GF$ in general. If $F$ and $G$ commute, then arithmetic of linear maps works like arithmetic of numbers.
 
 > Powers $I, F, F^2, F^3, \dots$ commute with each other.
+
+
+## 3.5 Geometric Applications
+
+### 3.5.1 Line Segments
+
+The **line segment** between $v$ and $v + u$ is:
+
+$$
+\{v + tu \mid 0 \le t \le 1\}.
+$$
+
+For $t = \frac{1}{2}$: midpoint $v + \frac{1}{2}u$. For $t = \frac{1}{3}$: one-third point.
+
+The line segment between $v$ and $w$ (where $u = w - v$):
+
+$$
+v + t(w - v) = (1 - t)v + tw, \quad 0 \le t \le 1.
+$$
+
+Equivalently: $t_1 v + t_2 w$ with $t_1, t_2 \ge 0$ and $t_1 + t_2 = 1$.
+
+**Property:** If $L: V \to V'$ is linear, the image of a line segment is a line segment:
+
+$$
+L(t_1 v + t_2 w) = t_1 L(v) + t_2 L(w).
+$$
+
+### 3.5.2 Parallelograms
+
+Let $v, w$ be linearly independent. The **parallelogram spanned by $v, w$** is:
+
+$$
+\{t_1 v + t_2 w \mid 0 \le t_i \le 1 \text{ for } i = 1, 2\}.
+$$
+
+A **translated parallelogram** by $u$:
+
+$$
+\{u + t_1 v + t_2 w \mid 0 \le t_i \le 1\}.
+$$
+
+**Property:** The image of a parallelogram under a linear map is a parallelogram (if non-degenerate):
+
+$$
+L(u + t_1 v + t_2 w) = L(u) + t_1 L(v) + t_2 L(w).
+$$
+
+### 3.5.3 Triangles
+
+The **triangle spanned by $O, v, w$** (linearly independent):
+
+$$
+\{t_1 v + t_2 w \mid t_i \ge 0, \; t_1 + t_2 \le 1\}.
+$$
+
+This equals the union of all line segments from $v$ to points on $\overline{Ow}$.
+
+A **general triangle** with vertices $v_1, v_2, v_3$ (where $v_1 - v_3$ and $v_2 - v_3$ are linearly independent):
+
+$$
+\{t_1 v_1 + t_2 v_2 + t_3 v_3 \mid t_i \ge 0, \; t_1 + t_2 + t_3 = 1\}.
+$$
+
+This is the translation by $v_3$ of the triangle spanned by $O, v_1 - v_3, v_2 - v_3$.
+
+**Property:** The image of a triangle under a linear map is a triangle (if vertices don't lie on a straight line).
+
+### 3.5.4 Convex Sets
+
+A subset $S$ of $V$ is **convex** if for any $P, Q \in S$, the line segment between $P$ and $Q$ is contained in $S$.
+
+**Theorem 5.1.** Let $P_1, \dots, P_n \in V$. The set of all linear combinations:
+
+$$
+t_1 P_1 + \cdots + t_n P_n \quad \text{with } t_i \ge 0 \text{ and } t_1 + \cdots + t_n = 1
+$$
+
+is convex.
+
+**Proof:** Let $P = \sum t_i P_i$ and $Q = \sum s_i P_i$ with $\sum t_i = \sum s_i = 1$. For $0 \le t \le 1$:
+
+$$
+(1 - t)P + tQ = \sum [(1 - t)t_i + ts_i] P_i.
+$$
+
+The coefficients are non-negative and sum to $(1 - t) + t = 1$.
+
+This convex set is called the convex set **spanned by** $P_1, \dots, P_n$. A triangle is a special case.
+
+**Theorem 5.2.** Any convex set $S'$ containing $P_1, \dots, P_n$ also contains all linear combinations $t_1 P_1 + \cdots + t_n P_n$ with $t_i \ge 0$ and $\sum t_i = 1$.
+
+**Proof:** By induction on $n$. For $n = 1$, trivial. For $n > 1$, if $t_n = 1$, done. Otherwise:
+
+$$
+t_1 P_1 + \cdots + t_n P_n = (1 - t_n)Q + t_n P_n
+$$
+
+where $Q = \sum_{i=1}^{n-1} \frac{t_i}{1 - t_n} P_i \in S'$ by induction. Since $S'$ is convex, the result follows.
+
+**Example:** Let $L: V \to \mathbf{R}$ be linear. Then $\{v \in V \mid L(v) < 0\}$ is convex.
+
+**Proof:** If $L(v) < 0$ and $L(w) < 0$, then for $0 < t < 1$:
+
+$$
+L(tv + (1 - t)w) = tL(v) + (1 - t)L(w) < 0.
+$$
