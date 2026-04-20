@@ -1105,6 +1105,53 @@ $$
 \int_0^a \cos^2 x\,dx = \frac{a}{2} + \frac{1}{4}\sin 2a.
 $$
 
+
+## 2.7 A Geometric Description of the Sine and Cosine
+
+### 2.7.1 Radian Measure via Sector Area
+
+- On the unit circle $x^2 + y^2 = 1$, define the **radian measure** of an angle by twice the area of the corresponding circular sector.
+- For a sector with central angle $\theta$, area $= \frac{1}{2}\theta$, so $\theta$ is the arc length on the unit circle.
+
+### 2.7.2 Geometric Definitions
+
+- Let $(x, y)$ be the endpoint of an arc of length $t$ on the unit circle, starting at $(1, 0)$ and moving counterclockwise.
+- Define:
+  $$
+  \cos t = x, \qquad \sin t = y.
+  $$
+- This agrees with the analytic definitions and satisfies $-1 \le \sin t, \cos t \le 1$.
+
+### 2.7.3 Pythagorean Identity
+
+- Since $(x, y)$ lies on the unit circle:
+  $$
+  \sin^2 t + \cos^2 t = 1.
+  $$
+
+### 2.7.4 Cosine Difference Formula
+
+- From the geometric definition, the distance between two points on the unit circle corresponding to arc lengths $x$ and $y$ is invariant under rotation. This yields:
+  $$
+  \cos(y - x) = \cos y \cos x + \sin y \sin x.
+  $$
+- Setting $y = \frac{\pi}{2}$ gives the reduction formulas:
+  $$
+  \sin\left(\frac{\pi}{2} - x\right) = \cos x, \qquad
+  \cos\left(\frac{\pi}{2} - x\right) = \sin x.
+  $$
+
+### 2.7.5 Fundamental Inequalities
+
+- For $0 < x < \frac{\pi}{2}$:
+  $$
+  0 < \cos x < \frac{\sin x}{x} < \frac{1}{\cos x}.
+  $$
+- **Geometric proof**: Compare the area of the circular sector ($x/2$), the inscribed triangle ($\frac{1}{2}\sin x$), and the circumscribed triangle ($\frac{1}{2}\tan x$).
+- These inequalities imply the limit:
+  $$
+  \lim_{x \to 0} \frac{\sin x}{x} = 1.
+  $$
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
