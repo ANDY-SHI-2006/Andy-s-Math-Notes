@@ -2388,22 +2388,58 @@ $$
 
 ## 4.2 A Problem Involving Velocity
 
-- Projectile with initial velocity $144\ \text{ft/s}$:
+### 4.2.1 The Projectile Model
+
+- A projectile is fired straight up from the ground with initial velocity $144\ \text{ft/s}$.
+- Neglect friction; gravity is the only force.
+- Height at time $t$:
   $$
-  f(t) = 144t - 16t^2,\quad 0\le t\le 9.
+  f(t) = 144t - 16t^2, \qquad 0 \le t \le 9.
   $$
-- **Average velocity** over $[t,t+h]$:
+- $f(0)=0$ and $f(9)=0$: the projectile returns to earth after $9$ seconds.
+
+### 4.2.2 Average Velocity — The Difference Quotient
+
+- Average velocity over $[t, t+h]$:
   $$
   \frac{f(t+h)-f(t)}{h}.
   $$
-- **Instantaneous velocity**:
+- **Example ($t=2$)**:
+  - $f(2)=224$.
+  - $f(2+h)=224+80h-16h^2$.
+  - Average velocity $= \dfrac{80h-16h^2}{h}=80-16h$.
+  - As $|h|$ gets smaller, this approaches $80$.
+
+### 4.2.3 Instantaneous Velocity
+
+- For general $t$:
+  $$
+  \frac{f(t+h)-f(t)}{h} = 144 - 32t - 16h.
+  $$
+- Letting $h \to 0$:
   $$
   v(t) = \lim_{h\to 0}\frac{f(t+h)-f(t)}{h} = 144 - 32t.
   $$
-- Key values:
-  - $v(0)=144$, $v(9)=-144$
-  - $v(t)=0$ at $t=\dfrac{9}{2}$; max height $f\left(\dfrac{9}{2}\right)=324$
-  - $t<\dfrac{9}{2}$: rising; $t>\dfrac{9}{2}$: falling
+
+### 4.2.4 Properties of the Velocity Function
+
+| Quantity | Value |
+|----------|-------|
+| Initial velocity | $v(0)=144$ |
+| Final velocity | $v(9)=-144$ |
+| Zero velocity | $v(t)=0$ at $t=\dfrac{9}{2}$ |
+| Max height | $f\left(\dfrac{9}{2}\right)=324$ |
+
+- $t < \dfrac{9}{2}$: $v(t)>0$ (rising).
+- $t > \dfrac{9}{2}$: $v(t)<0$ (falling).
+
+### 4.2.5 General Definition
+
+- For any position function $f$, the **instantaneous velocity** is:
+  $$
+  v(t) = \lim_{h\to 0}\frac{f(t+h)-f(t)}{h},
+  $$
+  provided the limit exists.
 
 # 14. Calculus of Vector-Valued Functions
 
