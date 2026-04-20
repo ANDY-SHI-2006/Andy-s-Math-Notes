@@ -63,6 +63,40 @@ $$
 
 Ordinate sets are the geometric objects whose areas we compute by means of integral calculus. We shall define the integral first for **step functions** and then use the integral of a step function to formulate the definition of integral for more general functions.
 
+
+## 1.3 Partitions and Step Functions
+
+### 1.3.1 Partitions
+
+A **partition** $P$ of a closed interval $[a, b]$ is a collection of points:
+
+$$
+P = \{x_0, x_1, \dots, x_n\}, \quad a = x_0 < x_1 < \dots < x_n = b.
+$$
+
+It determines $n$ closed subintervals $[x_{k-1}, x_k]$ and $n$ open subintervals $(x_{k-1}, x_k)$.
+
+### 1.3.2 Step Functions
+
+A **step function** $s$ on $[a, b]$ is a function for which there exists a partition $P$ such that $s$ is **constant** on each open subinterval of $P$. That is, for each $k = 1, 2, \dots, n$, there is a real number $s_k$ such that:
+
+$$
+s(x) = s_k \quad \text{if } \; x_{k-1} < x < x_k.
+$$
+
+> **Note:** The values at the endpoints $x_{k-1}$ and $x_k$ are well-defined but need not equal $s_k$.
+
+Step functions are also called **piecewise constant functions**.
+
+### 1.3.3 Example — The Postage Function
+
+A familiar example is the postage function: the cost of first-class mail is constant over each ounce interval and jumps at integer ounce marks.
+
+### 1.3.4 Refinement
+
+If $P'$ is obtained from $P$ by adjoining additional subdivision points, then $P'$ is called a **refinement** of $P$, and we say $P'$ is **finer** than $P$.
+
+If a function is a step function relative to $P$, it is also a step function relative to every refinement $P'$.
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
