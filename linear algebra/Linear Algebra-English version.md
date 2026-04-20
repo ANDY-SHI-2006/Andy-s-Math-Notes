@@ -795,3 +795,6 @@ AX = B
 $$
 
 where $A$ is $m \times n$, $X$ is an $n \times 1$ column vector, and $B$ is an $m \times 1$ column vector.
+
+
+# 3. Linear Mappings
