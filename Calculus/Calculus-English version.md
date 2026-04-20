@@ -1963,6 +1963,69 @@ If $v$ is continuous at $p$ and $u$ is continuous at $q = v(p)$, then $f = u \ci
 - $v$ continuous everywhere; $u$ continuous for $x \ge 0$.
 - **$f$ is continuous where $v(x) \ge 0$, i.e., $x^2 \le 1$.**
 
+## 3.7 Bolzano's Theorem for Continuous Functions
+
+### 3.7.1 Introduction
+
+- This section discusses special properties of continuous functions that appear geometrically obvious but require rigorous proof.
+- Most proofs rely on the **least-upper-bound axiom** for the real number system.
+- **Bernard Bolzano** (1781–1848), a Catholic priest, was among the first to recognize that "obvious" statements about continuous functions need proof.
+- His work was published posthumously in 1850 in *Paradoxien des Unendlichen*; this theorem first appeared in 1817.
+
+### 3.7.2 Theorem 3.6 — Bolzano's Theorem
+
+Let $f$ be continuous at each point of a closed interval $[a, b]$ and assume $f(a)$ and $f(b)$ have **opposite signs**. Then there exists at least one $c \in (a, b)$ such that:
+
+$$
+f(c) = 0
+$$
+
+- **Geometric meaning**: A continuous curve crossing from below to above the $x$-axis must intersect the axis somewhere in between.
+
+### 3.7.3 Theorem 3.7 — Sign-Preserving Property
+
+Let $f$ be continuous at $c$ and $f(c) \neq 0$. Then there exists an interval $(c - \delta, c + \delta)$ in which $f$ has the **same sign** as $f(c)$.
+
+**Proof:**
+- Suppose $f(c) > 0$. By continuity, for every $\epsilon > 0$, there exists $\delta > 0$ such that:
+  $$
+  f(c) - \epsilon < f(x) < f(c) + \epsilon \quad \text{whenever} \quad c - \delta < x < c + \delta
+  $$
+  (Equation 3.20)
+- Take $\epsilon = f(c)/2$ (positive). Then:
+  $$
+  \frac{1}{2}f(c) < f(x) < \frac{3}{2}f(c)
+  $$
+- Hence $f(x) > 0$ in this interval.
+- If $f(c) < 0$, take $\epsilon = -f(c)/2$; same conclusion.
+
+> **Note:** If only one-sided continuity holds, there is a corresponding one-sided interval $[c, c + \delta)$ or $(c - \delta, c]$ with the same sign property.
+
+### 3.7.4 Proof of Bolzano's Theorem
+
+**Setup:**
+- Assume $f(a) < 0$ and $f(b) > 0$ (WLOG).
+- Let $S = \{x \in [a, b] \mid f(x) \le 0\}$.
+- $S$ is nonempty ($a \in S$) and bounded above (by $b$), so $c = \sup S$ exists.
+
+**Show $f(c) = 0$ by eliminating the other two cases:**
+
+**Case 1: $f(c) > 0$**
+- By Theorem 3.7, $f > 0$ on some interval $(c - \delta, c + \delta)$ (or $(c - \delta, c]$ if $c = b$).
+- Then no points of $S$ lie to the right of $c - \delta$.
+- So $c - \delta$ is an upper bound for $S$, contradicting $c = \sup S$ (least upper bound).
+- **Impossible.**
+
+**Case 2: $f(c) < 0$**
+- By Theorem 3.7, $f < 0$ on some interval $(c - \delta, c + \delta)$ (or $[c, c + \delta)$ if $c = a$).
+- Then $f(x) < 0$ for some $x > c$, so $x \in S$ and $x > c$.
+- This contradicts $c$ being an upper bound for $S$.
+- **Impossible.**
+
+**Conclusion:**
+- The only remaining possibility is $f(c) = 0$.
+- Also $a < c < b$ because $f(a) < 0$ and $f(b) > 0$.
+
 
 # 14. Calculus of Vector-Valued Functions
 
