@@ -2586,6 +2586,82 @@ $$
     $$
     has no limit as $h\to 0$.
 
+## 4.5 The Algebra of Derivatives
+
+### 4.5.1 Theorem 4.1 — Basic Rules
+
+- Let $f$ and $g$ be differentiable on a common interval.
+- Then $f\pm g$, $f\cdot g$, and $f/g$ (where $g\neq 0$) are also differentiable, and:
+  1. **Sum/Difference**:
+     $$
+     (f\pm g)' = f' \pm g'.
+     $$
+  2. **Product rule**:
+     $$
+     (fg)' = f g' + f' g.
+     $$
+  3. **Quotient rule** (at points where $g(x)\neq 0$):
+     $$
+     \left(\frac{f}{g}\right)' = \frac{g f' - f g'}{g^2}.
+     $$
+
+### 4.5.2 Linearity
+
+- **Special case of product rule**: $(cf)' = c f'$ for any constant $c$.
+- Combined with the sum rule:
+  $$
+  (c_1 f + c_2 g)' = c_1 f' + c_2 g'.
+  $$
+- By induction, for any finite sum:
+  $$
+  \left(\sum_{i=1}^{n} c_i f_i\right)' = \sum_{i=1}^{n} c_i f_i'.
+  $$
+
+### 4.5.3 Proof Sketches
+
+- **Sum rule**: The difference quotient for $f+g$ splits into the sum of the two difference quotients; each tends to the respective derivative.
+- **Product rule**: Add and subtract $g(x)f(x+h)$ in the numerator:
+  $$
+  \frac{f(x+h)g(x+h)-f(x)g(x)}{h} = g(x)\frac{f(x+h)-f(x)}{h} + f(x+h)\frac{g(x+h)-g(x)}{h}.
+  $$
+  As $h\to 0$: the first term $\to g(x)f'(x)$; by continuity $f(x+h)\to f(x)$, so the second term $\to f(x)g'(x)$.
+- **Quotient rule**: First prove the special case
+  $$
+  \left(\frac{1}{g}\right)' = -\frac{g'}{g^2},
+  $$
+  then apply the product rule to $f\cdot(1/g)$.
+
+### 4.5.4 Differentiating Polynomials
+
+- Using linearity and $(x^n)'=nx^{n-1}$, differentiate any polynomial term by term:
+  $$
+  f(x)=\sum_{k=0}^{n}c_k x^k \quad\Longrightarrow\quad f'(x)=\sum_{k=0}^{n}k c_k x^{k-1}.
+  $$
+- The derivative of a degree-$n$ polynomial is a degree-$(n-1)$ polynomial.
+- **Example**: $f(x)=2x^3+5x^2-7x+8 \Rightarrow f'(x)=6x^2+10x-7$.
+
+### 4.5.5 Rational Functions
+
+- If $r(x)=p(x)/q(x)$ with $p,q$ polynomials, apply the quotient rule wherever $q(x)\neq 0$.
+- **Special case** ($r(x)=1/x^m$, $m\in\mathbb{Z}^+$, $x\neq 0$):
+  $$
+  r'(x)=-\frac{m}{x^{m+1}}=-m x^{-m-1}.
+  $$
+- This extends the power rule from positive to **negative integer exponents**.
+
+### 4.5.6 Rational Powers
+
+- **Theorem**: For any rational number $r$ and $x>0$:
+  $$
+  (x^r)' = r x^{r-1}.
+  $$
+- Already proved for $r=1/n$ (Section 4.4.6).
+- Extend to $r=m/n$ by induction using the product rule.
+- Extend to negative rationals using the quotient rule.
+- **Examples**:
+  - $f(x)=x^{2/3} \Rightarrow f'(x)=\frac{2}{3}x^{-1/3}$
+  - $f(x)=x^{-1/2} \Rightarrow f'(x)=-\frac{1}{2}x^{-3/2}$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
