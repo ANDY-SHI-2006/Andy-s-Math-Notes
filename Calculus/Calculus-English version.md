@@ -2058,6 +2058,52 @@ $$
 5. **Uniqueness**: $f(x) = x^n$ is strictly increasing on $[0, c]$, so there cannot be more than one such $b$.
 
 
+## 3.9 The Process of Inversion
+
+### 3.9.1 Introduction
+
+- **Inversion** is a method to construct new functions from given ones.
+- Example: $f(x) = 2x + 1$ on $[0, 2]$ has range $[1, 5]$.
+  - Each $x \in [0, 2]$ maps to exactly one $y \in [1, 5]$: $y = 2x + 1$.
+  - Conversely, each $y \in [1, 5]$ comes from exactly one $x \in [0, 2]$.
+  - Solving for $x$: $x = \frac{1}{2}(y - 1)$.
+  - This defines $g(y) = \frac{1}{2}(y - 1)$, the **inverse** of $f$.
+
+### 3.9.2 Definition of Inverse Function
+
+- Let $f$ have domain $A$ and range $B$. If for each $y \in B$ there is **exactly one** $x \in A$ with $f(x) = y$, then the **inverse function** $g$ is defined on $B$ by:
+  $$
+  g(y) = x \quad \text{where} \quad y = f(x)
+  $$
+- **Key properties**:
+  $$
+  g[f(x)] = x \quad \text{for all } x \in A, \qquad f[g(y)] = y \quad \text{for all } y \in B
+  $$
+
+### 3.9.3 Existence of Inverses for Strictly Monotonic Functions
+
+- A function that is **continuous and strictly monotonic** on $[a, b]$ has an inverse.
+- **Reason**:
+  1. By the intermediate-value theorem, $f$ takes on every value between $c = f(a)$ and $d = f(b)$.
+  2. Since $f$ is strictly monotonic, $f(x_1) \neq f(x_2)$ whenever $x_1 \neq x_2$.
+  3. Thus each $y$ in the range comes from exactly one $x$.
+
+### 3.9.4 Ordered-Pair Formulation
+
+- A function $f$ can be viewed as a set of ordered pairs $(x, y)$ with distinct first elements.
+- The inverse $g$ is formed by **interchanging** $x$ and $y$: $(y, x) \in g \iff (x, y) \in f$.
+- If $f$ is strictly monotonic, no two pairs have the same second element, so $g$ is indeed a function.
+
+### 3.9.5 Example — The $n$th-Root Function
+
+- Let $f(x) = x^n$ for $x \ge 0$ ($n$ a positive integer).
+- $f$ is strictly increasing on every interval $[a, b]$ with $0 \le a \le b$.
+- The inverse function $g$ is the **$n$th-root function**:
+  $$
+  g(y) = y^{1/n} \quad \text{for } y \ge 0
+  $$
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
