@@ -275,3 +275,94 @@ Let $\{v_1, \dots, v_n\} \subset V$ and $r \le n$. $\{v_1, \dots, v_r\}$ is a **
    $$
 
 2. For any $v \in V$: $v = c_1 v_1 + \cdots + c_n v_n$. Replace each $v_i$ ($i > r$) by a linear combination of $v_1, \dots, v_r$. Collecting terms expresses $v$ as a linear combination of $v_1, \dots, v_r$.
+
+
+## 1.8 Dimension of a Vector Space
+
+### 1.8.1 Theorem 3.1
+
+**Theorem 3.1.** Let $V$ be a vector space over $K$. Let $\{v_1, \dots, v_m\}$ be a basis of $V$. Let $w_1, \dots, w_n \in V$ with $n > m$. Then $w_1, \dots, w_n$ are linearly dependent.
+
+**Proof sketch (Steinitz exchange):**
+
+1. Since $\{v_1, \dots, v_m\}$ is a basis:
+   $$
+   w_1 = a_1 v_1 + \cdots + a_m v_m.
+   $$
+   Since $w_1 \neq O$, some $a_i \neq 0$. Assume $a_1 \neq 0$. Then:
+   $$
+   v_1 = a_1^{-1} w_1 - a_1^{-1} a_2 v_2 - \cdots - a_1^{-1} a_m v_m.
+   $$
+   Thus $\{w_1, v_2, \dots, v_m\}$ generates $V$.
+
+2. By induction: assume $\{w_1, \dots, w_r, v_{r+1}, \dots, v_m\}$ generates $V$. Then:
+   $$
+   w_{r+1} = b_1 w_1 + \cdots + b_r w_r + c_{r+1} v_{r+1} + \cdots + c_m v_m.
+   $$
+   Some $c_j \neq 0$ (otherwise $w_1, \dots, w_{r+1}$ dependent). Assume $c_{r+1} \neq 0$. Then $v_{r+1}$ is a linear combination of $w_1, \dots, w_{r+1}, v_{r+2}, \dots, v_m$.
+
+3. By induction, $\{w_1, \dots, w_m\}$ generates $V$. If $n > m$:
+   $$
+   w_n = d_1 w_1 + \cdots + d_m w_m,
+   $$
+   proving $w_1, \dots, w_n$ are dependent.
+
+### 1.8.2 Theorem 3.2 — Uniqueness of Dimension
+
+**Theorem 3.2.** Let $V$ be a vector space. If one basis has $n$ elements and another has $m$ elements, then $m = n$.
+
+**Proof:** Apply Theorem 3.1 to both bases. $n > m$ and $m > n$ are both impossible.
+
+### 1.8.3 Definition of Dimension
+
+Let $V$ have a basis of $n$ elements. Then $n$ is the **dimension** of $V$, denoted $\dim_K V$ or $\dim V$.
+
+- If $V = \{O\}$, then $\dim V = 0$ (no basis).
+
+A vector space with a finite basis (or the zero space) is **finite dimensional**; otherwise **infinite dimensional**.
+
+> **Convention:** In this book, "dimension" always means finite dimensional.
+
+**Example 1:** $\mathbf{R}^n$ has dimension $n$ over $\mathbf{R}$; $\mathbf{C}^n$ has dimension $n$ over $\mathbf{C}$; $K^n$ has dimension $n$ over $K$.
+
+**Example 2:** $K$ is a vector space over itself of dimension $1$. The element $1$ forms a basis, since any $x \in K$ has $x = x \cdot 1$.
+
+**Example 3:** A subspace of dimension $1$ is called a **line** in $V$. A subspace of dimension $2$ is called a **plane** in $V$.
+
+### 1.8.4 Maximal Sets of Linearly Independent Elements
+
+Let $v_1, \dots, v_n$ be linearly independent. They form a **maximal set of linearly independent elements** of $V$ if for any $w \in V$, the elements $w, v_1, \dots, v_n$ are linearly dependent.
+
+**Theorem 3.3.** Let $\{v_1, \dots, v_n\}$ be a maximal set of linearly independent elements of $V$. Then $\{v_1, \dots, v_n\}$ is a basis of $V$.
+
+**Proof:** For any $w \in V$: $w, v_1, \dots, v_n$ are dependent, so there exist $x_0, x_1, \dots, x_n$ not all $0$ with:
+$$
+x_0 w + x_1 v_1 + \cdots + x_n v_n = O.
+$$
+We cannot have $x_0 = 0$ (that would make $v_1, \dots, v_n$ dependent). Hence:
+$$
+w = -\frac{x_1}{x_0} v_1 - \cdots - \frac{x_n}{x_0} v_n.
+$$
+Thus $v_1, \dots, v_n$ generate $V$.
+
+### 1.8.5 Theorem 3.4 — Linearly Independent Elements Form a Basis
+
+**Theorem 3.4.** Let $\dim V = n$, and let $v_1, \dots, v_n$ be linearly independent. Then $v_1, \dots, v_n$ constitute a basis of $V$.
+
+**Proof:** By Theorem 3.1, $\{v_1, \dots, v_n\}$ is a maximal set of linearly independent elements. By Theorem 3.3, it is a basis.
+
+### 1.8.6 Corollaries
+
+**Corollary 3.5.** Let $W$ be a subspace of $V$. If $\dim W = \dim V$ then $W = V$.
+
+**Proof:** A basis for $W$ is also a basis for $V$ by Theorem 3.4.
+
+**Corollary 3.6.** Let $\dim V = n$, $r < n$, and $v_1, \dots, v_r$ be linearly independent. Then one can find $v_{r+1}, \dots, v_n$ such that $\{v_1, \dots, v_n\}$ is a basis of $V$.
+
+**Proof:** Since $r < n$, $\{v_1, \dots, v_r\}$ is not maximal. Find $v_{r+1}$ such that $v_1, \dots, v_{r+1}$ are independent. Repeat until $n$ independent elements are obtained. By Theorem 3.4, this is a basis.
+
+### 1.8.7 Theorem 3.7 — Dimension of a Subspace
+
+**Theorem 3.7.** Let $\dim V = n$ and $W$ be a subspace not consisting of $O$ alone. Then $W$ has a basis, and $\dim W \le n$.
+
+**Proof:** Let $w_1 \in W$, $w_1 \neq O$. If $\{w_1\}$ is not maximal in $W$, find $w_2 \in W$ such that $w_1, w_2$ are independent. Continue. By Theorem 3.1, this process stops at some $m \le n$. The resulting $\{w_1, \dots, w_m\}$ is a maximal independent set in $W$, hence a basis by Theorem 3.3.
