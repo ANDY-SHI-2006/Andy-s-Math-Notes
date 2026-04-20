@@ -2297,3 +2297,5 @@ The left side is $\ge 0$; the right side is $\le 0$. Hence both equal 0, so $x_1
 Since $\dim V = n$, we have $r + n - r' \le n$, so $r \le r'$. By symmetry, $r' \le r$. Hence $r = r'$.
 
 The integer $r$ is the **index of positivity** of the scalar product.
+
+## 6. Determinants
