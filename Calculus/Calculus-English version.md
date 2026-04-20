@@ -453,7 +453,6 @@ Fortunately, most of the functions that occur in practice are monotonic or sums 
 
 The discussion of "Technique of Integration" begins in Section 1.23, where we calculate the integral $\int_0^b x^p\,dx$ when $p$ is a positive integer. Then we develop general properties of the integral, such as **linearity** and **additivity**, and show how these properties help us to extend our knowledge of integrals of specific functions.
 
-
 ## 1.12 Monotonic and Piecewise Monotonic Functions
 
 ### 1.12.1 Definitions
@@ -488,6 +487,60 @@ $$
 
 **Example 3 — The semicircle function.** Let $g(x) = \sqrt{r^2 - x^2}$ for $-r \le x \le r$. Then $g$ is **strictly increasing** on $[-r, 0]$ and **strictly decreasing** on $[0, r]$. Hence $g$ is piecewise monotonic on $[-r, r]$.
 
+
+## 1.13 Integrability of Bounded Monotonic Functions
+
+### 1.13.1 Theorem 1.12
+
+**Theorem 1.12.** If $f$ is monotonic on a closed interval $[a, b]$, then $f$ is integrable on $[a, b]$.
+
+### 1.13.2 Proof Sketch (Increasing Case)
+
+We prove the theorem for increasing functions; the decreasing case is analogous.
+
+Let $I(f)$ and $\bar{I}(f)$ denote the lower and upper integrals of $f$. We shall prove that $I(f) = \bar{I}(f)$.
+
+Let $n$ be a positive integer and partition $[a, b]$ into $n$ **equal** subintervals $[x_{k-1}, x_k]$ with:
+
+$$
+x_k - x_{k-1} = \frac{b - a}{n} \quad \text{for each } k = 1, 2, \dots, n.
+$$
+
+Define step functions $s_n$ and $t_n$ by:
+
+$$
+s_n(x) = f(x_{k-1}), \qquad t_n(x) = f(x_k) \quad \text{if } \; x_{k-1} < x < x_k.
+$$
+
+At the subdivision points, define $s_n$ and $t_n$ so that $s_n \le f \le t_n$ throughout $[a, b]$.
+
+Then:
+
+$$
+\int_a^b t_n(x)\,dx - \int_a^b s_n(x)\,dx = \sum_{k=1}^{n} \bigl[f(x_k) - f(x_{k-1})\bigr] \frac{b-a}{n} = \frac{(b-a)[f(b) - f(a)]}{n},
+$$
+
+where the last equality follows from the **telescoping property**.
+
+Since:
+
+$$
+\int_a^b s_n \le I(f) \le \bar{I}(f) \le \int_a^b t_n,
+$$
+
+we obtain:
+
+$$
+0 \le \bar{I}(f) - I(f) \le \int_a^b t_n - \int_a^b s_n = \frac{(b-a)[f(b) - f(a)]}{n}.
+$$
+
+This holds for **every** integer $n \ge 1$. Letting $n \to \infty$, the right-hand side tends to $0$. Therefore:
+
+$$
+\bar{I}(f) = I(f),
+$$
+
+which proves that $f$ is integrable on $[a, b]$.
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
