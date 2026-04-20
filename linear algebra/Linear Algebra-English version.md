@@ -1420,3 +1420,112 @@ $$
 **Proof:**
 - ($\impliedby$) If $A^1, \dots, A^n$ are independent, they form a basis of $K^n$. There exists $B$ such that $BA^j = E^j$ for all $j$, i.e. $BA = I$.
 - ($\implies$) If $A$ is invertible, $\operatorname{Ker} L_A = \{O\}$ (since $AX = O \implies X = O$). Thus $A^1, \dots, A^n$ are independent.
+
+
+## 4.3 Bases, Matrices, and Linear Maps
+
+### 4.3.1 Matrix of a Linear Map Relative to Bases
+
+Let $V, W$ be finite dimensional with bases $\mathscr{B} = \{v_1, \dots, v_n\}$ and $\mathscr{B}' = \{w_1, \dots, w_m\}$. For $F: V \to W$ linear, the **matrix associated with $F$ relative to $\mathscr{B}, \mathscr{B}'$** is denoted $M_{\mathscr{B}'}^{\mathscr{B}}(F)$.
+
+This is the unique matrix $A$ such that:
+
+> If $X$ is the coordinate vector of $v \in V$ relative to $\mathscr{B}$, then $AX$ is the coordinate vector of $F(v)$ relative to $\mathscr{B}'$.
+
+**Notation:** $X_{\mathscr{B}}(v)$ denotes the coordinate vector of $v$ relative to $\mathscr{B}$.
+
+**Theorem 3.1.** For $v \in V$:
+
+$$
+X_{\mathscr{B}'}(F(v)) = M_{\mathscr{B}'}^{\mathscr{B}}(F) \, X_{\mathscr{B}}(v).
+$$
+
+**Corollary 3.2.** For bases $\mathscr{B}, \mathscr{B}'$ of $V$:
+
+$$
+X_{\mathscr{B}'}(v) = M_{\mathscr{B}'}^{\mathscr{B}}(\operatorname{id}) \, X_{\mathscr{B}}(v).
+$$
+
+This describes how coordinates change when the basis changes.
+
+### 4.3.2 Constructing the Matrix
+
+If $F(v_j) = a_{1j} w_1 + \cdots + a_{mj} w_m$, then:
+
+$$
+M_{\mathscr{B}'}^{\mathscr{B}}(F) = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}.
+$$
+
+The $j$-th column consists of the coordinates of $F(v_j)$ relative to $\mathscr{B}'$.
+
+**Example 1:** $\dim V = 2$, $\dim W = 3$, with:
+- $F(v_1) = 3w_1 - w_2 + 17w_3$
+- $F(v_2) = w_1 + w_2 - w_3$
+
+$$
+M_{\mathscr{B}'}^{\mathscr{B}}(F) = \begin{pmatrix} 3 & 1 \\ -1 & 1 \\ 17 & -1 \end{pmatrix}.
+$$
+
+**Example 2:** $M_{\mathscr{B}}^{\mathscr{B}}(\operatorname{id}) = I$.
+
+> **Warning:** If $\mathscr{B} \neq \mathscr{B}'$, then $M_{\mathscr{B}'}^{\mathscr{B}}(\operatorname{id}) \neq I$ in general.
+
+**Example 3:** Let $\mathscr{B} = \{v_1, \dots, v_n\}$ and $\mathscr{B}' = \{w_1, \dots, w_n\}$ with:
+
+$$
+w_i = a_{i1} v_1 + \cdots + a_{in} v_n.
+$$
+
+Then $M_{\mathscr{B}}^{\mathscr{B}'}(\operatorname{id}) = {}^tA$ where $A = (a_{ij})$.
+
+### 4.3.3 Theorem 3.3 — Linearity of the Association
+
+**Theorem 3.3.** Let $M = M_{\mathscr{B}'}^{\mathscr{B}}$. Then:
+
+$$
+M(f + g) = M(f) + M(g), \qquad M(cf) = cM(f).
+$$
+
+The association $f \mapsto M_{\mathscr{B}'}^{\mathscr{B}}(f)$ is an **isomorphism** between $\mathscr{L}(V, W)$ and $\operatorname{Mat}_{m \times n}(K)$.
+
+### 4.3.4 Theorem 3.4 — Composition Corresponds to Multiplication
+
+**Theorem 3.4.** Let $F: V \to W$ and $G: W \to U$ be linear. Then:
+
+$$
+M_{\mathscr{B}''}^{\mathscr{B}'}(G) \, M_{\mathscr{B}'}^{\mathscr{B}}(F) = M_{\mathscr{B}''}^{\mathscr{B}}(G \circ F).
+$$
+
+**Proof:** The coordinate vector of $F(v)$ relative to $\mathscr{B}'$ is $AX$. The coordinate vector of $G(F(v))$ relative to $\mathscr{B}''$ is $B(AX) = (BA)X$.
+
+### 4.3.5 Change of Basis
+
+**Corollary 3.5.** For bases $\mathscr{B}, \mathscr{B}'$ of $V$:
+
+$$
+M_{\mathscr{B}'}^{\mathscr{B}}(\operatorname{id}) \, M_{\mathscr{B}}^{\mathscr{B}'}(\operatorname{id}) = I = M_{\mathscr{B}}^{\mathscr{B}'}(\operatorname{id}) \, M_{\mathscr{B}'}^{\mathscr{B}}(\operatorname{id}).
+$$
+
+In particular, $M_{\mathscr{B}'}^{\mathscr{B}}(\operatorname{id})$ is invertible.
+
+**Theorem 3.6.** Let $F: V \to V$ be linear, and $\mathscr{B}, \mathscr{B}'$ be bases of $V$. Then:
+
+$$
+M_{\mathscr{B}'}^{\mathscr{B}'}(F) = N^{-1} M_{\mathscr{B}}^{\mathscr{B}}(F) N
+$$
+
+where $N = M_{\mathscr{B}}^{\mathscr{B}'}(\operatorname{id})$.
+
+**Proof:** Apply Theorem 3.4 to $F = \operatorname{id} \circ F \circ \operatorname{id}$.
+
+### 4.3.6 Diagonalization and Similarity
+
+A basis $\mathscr{B}$ **diagonalizes** $F: V \to V$ if $M_{\mathscr{B}}^{\mathscr{B}}(F)$ is a diagonal matrix. If such a basis exists, $F$ is **diagonalizable**.
+
+**Theorem 3.7.** $F$ (or its matrix $M$) can be diagonalized if and only if there exists an invertible matrix $N$ such that $N^{-1} M N$ is diagonal.
+
+Two matrices $M, M'$ are **similar** (over $K$) if there exists invertible $N$ such that:
+
+$$
+M' = N^{-1} M N.
+$$
