@@ -2140,3 +2140,81 @@ $$
 $$
 
 > This proves Theorem 3.1, taking the scalar product to be the ordinary dot product on $K^n$.
+
+## 5.7 Quadratic Forms
+
+### 5.7.1 Definition
+
+A scalar product on $V$ is also called a **symmetric bilinear form**, often denoted by a letter:
+$$
+g: V \times V \to K, \qquad g(v, w) = \langle v, w \rangle.
+$$
+
+The **quadratic form** determined by $g$ is the function $f: V \to K$:
+$$
+f(v) = g(v, v) = \langle v, v \rangle.
+$$
+
+**Example 1.** If $V = K^n$ with the ordinary dot product:
+$$
+f(X) = X \cdot X = x_1^2 + \cdots + x_n^2.
+$$
+
+In general, if $C$ is a symmetric matrix representing the form, then:
+$$
+f(X) = {}^tX C X = \sum_{i,j=1}^n c_{ij} x_i x_j.
+$$
+
+If $C$ is diagonal, this simplifies to:
+$$
+f(X) = c_1 x_1^2 + \cdots + c_n x_n^2.
+$$
+
+### 5.7.2 Polarization Identities
+
+The bilinear form $g$ can be recovered from its quadratic form $f$:
+
+$$
+\langle v, w \rangle = \tfrac{1}{4}\big[\langle v + w, v + w \rangle - \langle v - w, v - w \rangle\big],
+$$
+
+or equivalently:
+
+$$
+g(v, w) = \tfrac{1}{4}\big[f(v + w) - f(v - w)\big].
+$$
+
+Also:
+
+$$
+\langle v, w \rangle = \tfrac{1}{2}\big[\langle v + w, v + w \rangle - \langle v, v \rangle - \langle w, w \rangle\big].
+$$
+
+**Proof of the second identity:**
+$$
+\langle v + w, v + w \rangle - \langle v, v \rangle - \langle w, w \rangle = \langle v, v \rangle + 2\langle v, w \rangle + \langle w, w \rangle - \langle v, v \rangle - \langle w, w \rangle = 2\langle v, w \rangle.
+$$
+
+### 5.7.3 Example: Finding the Matrix
+
+**Example 2.** Let $V = \mathbf{R}^2$ and $f(x, y) = 2x^2 + 3xy + y^2$. The symmetric matrix $C$ satisfies:
+$$
+f(x, y) = (x, y) \begin{pmatrix} a & b \\ b & d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = ax^2 + 2bxy + dy^2.
+$$
+Comparing coefficients: $a = 2$, $2b = 3$, $d = 1$. Hence:
+$$
+C = \begin{pmatrix} 2 & \frac{3}{2} \\ \frac{3}{2} & 1 \end{pmatrix}.
+$$
+
+### 5.7.4 Application to Calculus
+
+Let $f: \mathbf{R}^n \to \mathbf{R}$ have continuous partial derivatives of orders 1 and 2, and assume:
+$$
+f(tX) = t^2 f(X) \quad \text{for all } X \in \mathbf{R}^n.
+$$
+Then $f$ is a quadratic form: there exists a symmetric matrix $A = (a_{ij})$ such that:
+$$
+f(X) = \sum_{i,j=1}^n a_{ij} x_i x_j.
+$$
+
+> (Proof requires calculus of several variables.)
