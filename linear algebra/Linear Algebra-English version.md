@@ -1529,3 +1529,6 @@ Two matrices $M, M'$ are **similar** (over $K$) if there exists invertible $N$ s
 $$
 M' = N^{-1} M N.
 $$
+
+
+# 5. Scalar Products and Orthogonality
