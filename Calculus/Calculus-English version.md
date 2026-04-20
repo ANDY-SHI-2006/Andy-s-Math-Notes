@@ -372,9 +372,20 @@ for all step functions $s$ and $t$ with $s \le f \le t$. The function $f$ is int
 $$
 \int_a^b f(x)\,dx = I(f) = \bar{I}(f).
 $$
+
 ## 1.10 The Area of an Ordinate Set Expressed as an Integral
 
-### 1.10.1 Theorem 1.10 — Area Equals Integral
+### 1.10.1 Introduction
+
+We already know that for a nonnegative step function, the area of its ordinate set equals its integral. We now show the same holds for any integrable nonnegative function.
+
+Recall: the ordinate set of a nonnegative function $f$ over $[a, b]$ is:
+
+$$
+Q = \{(x, y) \mid a \le x \le b, \; 0 \le y \le f(x)\}.
+$$
+
+### 1.10.2 Theorem 1.10 — Area Equals Integral
 
 Let $f$ be a nonnegative function, integrable on $[a, b]$, and let $Q$ be its ordinate set. Then $Q$ is **measurable** and its area is:
 
@@ -382,9 +393,37 @@ $$
 a(Q) = \int_a^b f(x)\,dx.
 $$
 
-### 1.10.2 Theorem 1.11 — Graph Has Zero Area
+### 1.10.3 Proof Sketch
 
-Let $f$ be a nonnegative function, integrable on $[a, b]$. Then the **graph** of $f$:
+Let $S$ and $T$ be step regions with $S \subseteq Q \subseteq T$. Then there exist step functions $s$ and $t$ with $s \le f \le t$ such that:
+
+$$
+a(S) = \int_a^b s(x)\,dx, \qquad a(T) = \int_a^b t(x)\,dx.
+$$
+
+Since $f$ is integrable, $I = \int_a^b f(x)\,dx$ is the **only** number satisfying:
+
+$$
+\int_a^b s(x)\,dx \le I \le \int_a^b t(x)\,dx
+$$
+
+for all such $s, t$. Hence $I$ is also the only number with $a(S) \le I \le a(T)$ for all step regions $S \subseteq Q \subseteq T$. By the **exhaustion property**, $Q$ is measurable and $a(Q) = I$.
+
+### 1.10.4 Theorem 1.11 — Graph Has Zero Area
+
+Let $Q$ be the ordinate set of Theorem 1.10, and let $Q'$ be the set with the graph of $f$ removed:
+
+$$
+Q' = \{(x, y) \mid a \le x \le b, \; 0 \le y < f(x)\}.
+$$
+
+The same argument shows $Q'$ is measurable with $a(Q') = a(Q)$. By the **difference property**:
+
+$$
+a(Q - Q') = a(Q) - a(Q') = 0.
+$$
+
+**Theorem 1.11.** Let $f$ be a nonnegative function, integrable on $[a, b]$. Then the **graph** of $f$:
 
 $$
 \{(x, y) \mid a \le x \le b, \; y = f(x)\}
