@@ -2386,6 +2386,25 @@ $$
 - **Fermat** (early 17th century) observed that at maxima/minima, the tangent is **horizontal**; this idea generalized to finding the tangent at any point, leading to the derivative.
 - **Barrow** first realized the intimate relation between area (integral) and tangent (derivative); **Newton and Leibniz** fully exploited it.
 
+## 4.2 A Problem Involving Velocity
+
+- Projectile with initial velocity $144\ \text{ft/s}$:
+  $$
+  f(t) = 144t - 16t^2,\quad 0\le t\le 9.
+  $$
+- **Average velocity** over $[t,t+h]$:
+  $$
+  \frac{f(t+h)-f(t)}{h}.
+  $$
+- **Instantaneous velocity**:
+  $$
+  v(t) = \lim_{h\to 0}\frac{f(t+h)-f(t)}{h} = 144 - 32t.
+  $$
+- Key values:
+  - $v(0)=144$, $v(9)=-144$
+  - $v(t)=0$ at $t=\dfrac{9}{2}$; max height $f\left(\dfrac{9}{2}\right)=324$
+  - $t<\dfrac{9}{2}$: rising; $t>\dfrac{9}{2}$: falling
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
