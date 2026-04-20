@@ -737,6 +737,105 @@ $$
 \int_0^1 |x(2x-1)|\,dx = -\int_0^{1/2} x(2x-1)\,dx + \int_{1/2}^1 x(2x-1)\,dx = \frac{1}{4}.
 $$
 
+
+## 1.18 Proofs of the Basic Properties of the Integral
+
+### 1.18.1 Linearity (Theorem 1.16)
+
+We prove (A) $\int_a^b (f+g) = \int_a^b f + \int_a^b g$ and (B) $\int_a^b cf = c\int_a^b f$ separately.
+
+**(A) Additivity.** Since $f, g$ are integrable:
+
+$$
+I(f) = \sup\left\{\int_a^b s_1 \;\bigg|\; s_1 \le f\right\}, \quad I(g) = \sup\left\{\int_a^b s_2 \;\bigg|\; s_2 \le g\right\}.
+$$
+
+By the additive property of the supremum:
+
+$$
+I(f) + I(g) = \sup\left\{\int_a^b s_1 + \int_a^b s_2 \;\bigg|\; s_1 \le f, \; s_2 \le g\right\}.
+$$
+
+If $s_1 \le f$ and $s_2 \le g$, then $s = s_1 + s_2$ is a step function below $f+g$, so:
+
+$$
+\int_a^b s_1 + \int_a^b s_2 = \int_a^b s \le I(f+g).
+$$
+
+Thus $I(f) + I(g) \le I(f+g)$. Similarly, using upper integrals:
+
+$$
+\bar{I}(f+g) \le \bar{I}(f) + \bar{I}(g) = I(f) + I(g).
+$$
+
+Since $I(f+g) \le \bar{I}(f+g)$, all inequalities become equalities, proving (A).
+
+**(B) Homogeneity.** If $c > 0$, every step function below $cf$ has the form $cs$ where $s \le f$. Hence:
+
+$$
+I(cf) = \sup\left\{\int_a^b cs \;\bigg|\; s \le f\right\} = c \cdot I(f).
+$$
+
+Similarly $\bar{I}(cf) = c\bar{I}(f) = cI(f)$. The case $c < 0$ uses $\sup(cA) = c\inf(A)$.
+
+### 1.18.2 Additivity with Respect to the Interval (Theorem 1.17)
+
+Assume $a < b < c$ and $\int_a^b f$, $\int_b^c f$ exist. Let $I(f)$ and $\bar{I}(f)$ over $[a, c]$ denote the lower and upper integrals.
+
+If $s_1 \le f$ on $[a, b]$ and $s_2 \le f$ on $[b, c]$, then the function $s$ equal to $s_1$ on $[a, b)$ and $s_2$ on $[b, c]$ is a step function below $f$ on $[a, c]$, and:
+
+$$
+\int_a^c s = \int_a^b s_1 + \int_b^c s_2.
+$$
+
+By the additive property of the supremum:
+
+$$
+I(f) = \sup\left\{\int_a^c s\right\} = \int_a^b f + \int_b^c f.
+$$
+
+Similarly $\bar{I}(f) = \int_a^b f + \int_b^c f$, proving the result.
+
+### 1.18.3 Translation (Theorem 1.18)
+
+Let $g(x) = f(x-c)$ on $[a+c, b+c]$. For any step function $s \le g$, define $s_1(x) = s(x+c)$ on $[a, b]$. Then $s_1 \le f$ and:
+
+$$
+\int_{a+c}^{b+c} s(x)\,dx = \int_a^b s_1(x)\,dx.
+$$
+
+Therefore:
+
+$$
+I(g) = \sup\left\{\int_{a+c}^{b+c} s\right\} = \sup\left\{\int_a^b s_1 \;\bigg|\; s_1 \le f\right\} = \int_a^b f(x)\,dx.
+$$
+
+Similarly $\bar{I}(g) = \int_a^b f$.
+
+### 1.18.4 Expansion (Theorem 1.19)
+
+Let $g(x) = f(x/k)$ on $[ka, kb]$ for $k > 0$. For any step function $s \le g$, define $s_1(x) = s(kx)$ on $[a, b]$. Then $s_1 \le f$ and by the expansion property for step functions:
+
+$$
+\int_{ka}^{kb} s(x)\,dx = k \int_a^b s_1(x)\,dx.
+$$
+
+Therefore:
+
+$$
+I(g) = \sup\left\{\int_{ka}^{kb} s\right\} = k \cdot \sup\left\{\int_a^b s_1 \;\bigg|\; s_1 \le f\right\} = k \int_a^b f(x)\,dx.
+$$
+
+Similarly $\bar{I}(g) = k\int_a^b f$.
+
+### 1.18.5 Comparison (Theorem 1.20)
+
+Assume $g \le f$ on $[a, b]$. If $s \le g$ and $t \ge f$, then $s \le t$, so $\int_a^b s \le \int_a^b t$. Hence:
+
+$$
+\int_a^b g = \sup\left\{\int_a^b s \;\bigg|\; s \le g\right\} \le \inf\left\{\int_a^b t \;\bigg|\; f \le t\right\} = \int_a^b f.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
