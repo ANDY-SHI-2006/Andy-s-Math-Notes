@@ -455,3 +455,132 @@ is the set of $n$-tuples $(w_1, \dots, w_n)$ with $w_i \in W_i$. Addition and sc
 
 
 # 2. Matrices
+
+
+## 2.1 The Space of Matrices
+
+### 2.1.1 Definition
+
+Let $K$ be a field, $m, n \ge 1$ integers. An array of numbers in $K$:
+
+$$
+A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}
+$$
+
+is called a **matrix** in $K$, abbreviated as $(a_{ij})$ with $i = 1, \dots, m$ and $j = 1, \dots, n$.
+
+- An $m \times n$ matrix has $m$ **rows** and $n$ **columns**.
+- $a_{ij}$ is the **$ij$-entry** (or **$ij$-component**).
+- $A_i = (a_{i1}, a_{i2}, \dots, a_{in})$: the **$i$-th row**.
+- $A^j = \begin{pmatrix} a_{1j} \\ a_{2j} \\ \vdots \\ a_{mj} \end{pmatrix}$: the **$j$-th column** (a **column vector**).
+
+**Example 1:**
+
+$$
+\begin{pmatrix} 1 & 1 & -2 \\ -1 & 4 & -5 \end{pmatrix}
+$$
+
+is a $2 \times 3$ matrix. Rows: $(1, 1, -2)$ and $(-1, 4, -5)$.
+
+Special cases:
+- A vector $(x_1, \dots, x_n)$ is a $1 \times n$ matrix (row vector).
+- A column vector is an $n \times 1$ matrix.
+- A single number $(a)$ is a $1 \times 1$ matrix.
+
+### 2.1.2 Square Matrices
+
+If $m = n$, the matrix is a **square matrix**.
+
+**Example:**
+
+$$
+\begin{pmatrix} 1 & 2 \\ -1 & 0 \end{pmatrix}, \qquad \begin{pmatrix} 1 & -1 & 5 \\ 2 & 1 & -1 \\ 3 & 1 & -1 \end{pmatrix}
+$$
+
+### 2.1.3 Zero Matrix
+
+The **zero matrix** $O$ has $a_{ij} = 0$ for all $i, j$.
+
+> We have met: zero number $0$, zero vector $O$, and zero matrix $O$.
+
+### 2.1.4 Addition of Matrices
+
+Addition is defined only for matrices of the **same size**. If $A = (a_{ij})$ and $B = (b_{ij})$ are both $m \times n$:
+
+$$
+A + B = (a_{ij} + b_{ij}).
+$$
+
+**Example 2:**
+
+$$
+A = \begin{pmatrix} 1 & -1 & 0 \\ 2 & 3 & 4 \end{pmatrix}, \quad B = \begin{pmatrix} 5 & 1 & -1 \\ 2 & 1 & -1 \end{pmatrix}
+$$
+
+$$
+A + B = \begin{pmatrix} 6 & 0 & -1 \\ 4 & 4 & 3 \end{pmatrix}
+$$
+
+$O + A = A + O = A$ for any matrix $A$.
+
+### 2.1.5 Scalar Multiplication
+
+For $c \in K$ and $A = (a_{ij})$:
+
+$$
+cA = (ca_{ij}).
+$$
+
+**Example 3:** With $A, B$ as above and $c = 2$:
+
+$$
+2A = \begin{pmatrix} 2 & -2 & 0 \\ 4 & 6 & 8 \end{pmatrix}, \qquad 2B = \begin{pmatrix} 10 & 2 & -2 \\ 4 & 2 & -2 \end{pmatrix}
+$$
+
+Also $(-1)A = -A$, and $A + (-1)A = O$.
+
+> The matrices of a given size $m \times n$ with components in $K$ form a vector space over $K$, denoted $\operatorname{Mat}_{m \times n}(K)$. All axioms VS 1–VS 8 are satisfied.
+
+### 2.1.6 Transpose
+
+The **transpose** of an $m \times n$ matrix $A = (a_{ij})$ is the $n \times m$ matrix $^tA = (b_{ji})$ where $b_{ji} = a_{ij}$.
+
+Taking the transpose interchanges rows and columns.
+
+**Example:**
+
+$$
+A = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 3 & 5 \end{pmatrix} \implies {}^tA = \begin{pmatrix} 2 & 1 \\ 1 & 3 \\ 0 & 5 \end{pmatrix}
+$$
+
+If $A = (2, 1, -4)$ is a row vector, then ${}^tA = \begin{pmatrix} 2 \\ 1 \\ -4 \end{pmatrix}$ is a column vector.
+
+### 2.1.7 Symmetric Matrices
+
+A matrix $A$ is **symmetric** if ${}^tA = A$. A symmetric matrix must be square.
+
+**Example:**
+
+$$
+\begin{pmatrix} 1 & -1 & 2 \\ -1 & 0 & 3 \\ 2 & 3 & 7 \end{pmatrix}
+$$
+
+### 2.1.8 Diagonal Matrices
+
+For a square matrix $A = (a_{ij})$, the elements $a_{11}, \dots, a_{nn}$ are its **diagonal components**.
+
+A **diagonal matrix** has $a_{ij} = 0$ for all $i \neq j$:
+
+$$
+\begin{pmatrix} a_1 & 0 & \cdots & 0 \\ 0 & a_2 & \cdots & 0 \\ \vdots & \vdots & & \vdots \\ 0 & 0 & \cdots & a_n \end{pmatrix}
+$$
+
+Every diagonal matrix is symmetric.
+
+### 2.1.9 Unit Matrix
+
+The **unit matrix** $I_n$ (or $I$) is the diagonal matrix with all diagonal components equal to $1$:
+
+$$
+I_n = \begin{pmatrix} 1 & 0 & \cdots & 0 \\ 0 & 1 & \cdots & 0 \\ \vdots & \vdots & & \vdots \\ 0 & 0 & \cdots & 1 \end{pmatrix}
+$$
