@@ -2587,9 +2587,9 @@ $$
   \left(\frac{1}{f}\right)'(x) = -\frac{f'(x)}{[f(x)]^2}.
   $$
 
-## 4.7 Geometric Interpretation of the Derivative as a Slope
+## 4.6 Geometric Interpretation of the Derivative as a Slope
 
-### 4.7.1 Tangent Line and Slope
+### 4.6.1 Tangent Line and Slope
 
 - The derivative $f'(x)$ represents the **slope of the tangent line** to the curve $y = f(x)$ at the point $(x, f(x))$.
 - If $f'(x)$ exists, the curve has a **uniquely determined tangent line** at that point.
@@ -2598,7 +2598,7 @@ $$
   \tan\theta = f'(x).
   $$
 
-### 4.7.2 Equation of the Tangent Line
+### 4.6.2 Equation of the Tangent Line
 
 - The tangent line at $(x, f(x))$ has equation:
   $$
