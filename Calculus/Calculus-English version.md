@@ -1324,6 +1324,84 @@ $$
   $$
 
 
+## 2.10 Application of Integration to the Concept of Work
+
+### 2.10.1 Work as Energy Expended
+
+- **Work** measures energy expended by a force moving a particle along a line (the $x$-axis) from $x = a$ to $x = b$.
+- Force is a function of position: $f(x)$.
+  - $f(x) > 0$: force acts in positive $x$-direction
+  - $f(x) < 0$: force acts in opposite direction
+- **Constant force**: $W = c \cdot (b - a)$ (force × displacement).
+
+**Units:**
+
+| System | Force | Distance | Work |
+|--------|-------|----------|------|
+| British | pounds (lb) | feet (ft) | foot-pounds (ft-lb) |
+| cgs | dynes | centimeters (cm) | dyne-centimeters (ergs) |
+| mks | newtons (N) | meters (m) | newton-meters (joules) |
+
+- $1$ newton $= 10^5$ dynes; $1$ joule $= 10^7$ ergs.
+
+### 2.10.2 Example — Stone Thrown Upward
+
+- A 3 lb stone thrown upward to 15 ft.
+- Gravity: $f(x) = -3$ lb (downward).
+- Work by gravity from $x = 6$ ft to $x = 15$ ft:
+  $$W = (-3)(15 - 6) = -27 \text{ ft-lb}$$
+- Work by gravity falling from $x = 15$ ft to $x = 6$ ft:
+  $$W = (-3)(6 - 15) = 27 \text{ ft-lb}$$
+
+### 2.10.3 Fundamental Properties of Work
+
+Let $W_a^b(f)$ denote work done by $f$ from $a$ to $b$.
+
+| Property | Statement |
+|----------|-----------|
+| **1. Additive** | If $a < c < b$, then $W_a^b(f) = W_a^c(f) + W_c^b(f)$ |
+| **2. Monotone** | If $f \le g$ on $[a, b]$, then $W_a^b(f) \le W_a^b(g)$ |
+| **3. Elementary** | If $f(x) = c$ (constant), then $W_a^b(f) = c \cdot (b - a)$ |
+
+- Additivity extends to any finite partition: $W_a^b(f) = \sum_{k=1}^n W_k$.
+
+### 2.10.4 Work for Step Functions
+
+- If $s$ is a step function with value $s_k$ on $(x_{k-1}, x_k)$:
+  $$
+  W_a^b(s) = \sum_{k=1}^n s_k(x_k - x_{k-1}) = \int_a^b s(x) \, dx
+  $$
+
+### 2.10.5 Theorem 2.8 — Work as Integral
+
+Suppose work satisfies properties 1, 2, and 3. Then for any integrable force function $f$:
+
+$$
+W_a^b(f) = \int_a^b f(x) \, dx
+$$
+
+**Proof Sketch:**
+
+1. Choose step functions $s \le f \le t$ on $[a, b]$.
+2. By monotonicity: $W_a^b(s) \le W_a^b(f) \le W_a^b(t)$.
+3. For step functions: $W_a^b(s) = \int_a^b s$ and $W_a^b(t) = \int_a^b t$.
+4. Hence $\int_a^b s \le W_a^b(f) \le \int_a^b t$ for all such $s, t$.
+5. Since $f$ is integrable: $W_a^b(f) = \int_a^b f(x) \, dx$.
+
+> **Note:** Many authors simply define work as $\int_a^b f(x) \, dx$; the above provides motivation.
+
+### 2.10.6 Example — Work to Stretch a Spring (Hooke's Law)
+
+- Force to stretch a spring: $f(x) = cx$ (Hooke's law), $c > 0$.
+- Work to stretch distance $a$:
+  $$
+  W = \int_0^a cx \, dx = \frac{ca^2}{2}
+  $$
+- Work is proportional to the **square** of displacement.
+
+> Curved motion work is discussed in Volume II using line integrals.
+
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
