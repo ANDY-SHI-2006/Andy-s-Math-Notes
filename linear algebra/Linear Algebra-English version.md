@@ -628,7 +628,7 @@ A non-trivial solution is an $n$-tuple $X \neq O$ giving a linear dependence rel
 
 ### 2.2.3 Theorem 2.1 — Existence of Non-Trivial Solutions
 
-**Theorem 2.1.** Let (**) be a homogeneous system of $m$ linear equations in $n$ unknowns, with $n > m$. Then the system has a **non-trivial solution** in $K$.
+**Theorem 2.1.** Let (\*\*) be a homogeneous system of $m$ linear equations in $n$ unknowns, with $n > m$. Then the system has a **non-trivial solution** in $K$.
 
 **Proof:** The column vectors $A^1, \dots, A^n \in K^m$. Since $\dim K^m = m$ and $n > m$, by Theorem 3.1 (Chapter I) the vectors $A^1, \dots, A^n$ are linearly dependent. Hence there exist $x_1, \dots, x_n$ not all zero such that $x_1 A^1 + \cdots + x_n A^n = O$.
 
