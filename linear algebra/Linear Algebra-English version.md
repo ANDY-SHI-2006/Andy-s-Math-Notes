@@ -584,3 +584,70 @@ The **unit matrix** $I_n$ (or $I$) is the diagonal matrix with all diagonal comp
 $$
 I_n = \begin{pmatrix} 1 & 0 & \cdots & 0 \\ 0 & 1 & \cdots & 0 \\ \vdots & \vdots & & \vdots \\ 0 & 0 & \cdots & 1 \end{pmatrix}
 $$
+
+
+## 2.2 Linear Equations
+
+### 2.2.1 Systems of Linear Equations
+
+Let $A = (a_{ij})$ be an $m \times n$ matrix in $K$, and $b_1, \dots, b_m \in K$. A system of **linear equations**:
+
+$$
+\begin{cases}
+a_{11}x_1 + \cdots + a_{1n}x_n = b_1 \\
+\quad \vdots \\
+a_{m1}x_1 + \cdots + a_{mn}x_n = b_m
+\end{cases} \tag{*}
+$$
+
+- **Homogeneous** if all $b_i = 0$.
+- $n$ = number of **unknowns**; $m$ = number of **equations**.
+- $(a_{ij})$ = **matrix of coefficients**.
+
+The **homogeneous system** associated with (*):
+
+$$
+\begin{cases}
+a_{11}x_1 + \cdots + a_{1n}x_n = 0 \\
+\quad \vdots \\
+a_{m1}x_1 + \cdots + a_{mn}x_n = 0
+\end{cases} \tag{**}
+$$
+
+The system (**) always has the **trivial solution** $x_1 = \cdots = x_n = 0$. A solution with some $x_i \neq 0$ is **non-trivial**.
+
+### 2.2.2 Column Vector Interpretation
+
+The homogeneous system (**) can be rewritten using column vectors $A^1, \dots, A^n$ of $A$:
+
+$$
+x_1 A^1 + \cdots + x_n A^n = O.
+$$
+
+A non-trivial solution is an $n$-tuple $X \neq O$ giving a linear dependence relation among the columns.
+
+### 2.2.3 Theorem 2.1 — Existence of Non-Trivial Solutions
+
+**Theorem 2.1.** Let (**) be a homogeneous system of $m$ linear equations in $n$ unknowns, with $n > m$. Then the system has a **non-trivial solution** in $K$.
+
+**Proof:** The column vectors $A^1, \dots, A^n \in K^m$. Since $\dim K^m = m$ and $n > m$, by Theorem 3.1 (Chapter I) the vectors $A^1, \dots, A^n$ are linearly dependent. Hence there exist $x_1, \dots, x_n$ not all zero such that $x_1 A^1 + \cdots + x_n A^n = O$.
+
+### 2.2.4 The Non-Homogeneous System
+
+Let $B = \begin{pmatrix} b_1 \\ \vdots \\ b_m \end{pmatrix}$. The system (*) can be written as:
+
+$$
+x_1 A^1 + \cdots + x_n A^n = B.
+$$
+
+### 2.2.5 Theorem 2.2 — Uniqueness of Solution
+
+**Theorem 2.2.** Assume $m = n$ in (*) and that $A^1, \dots, A^n$ are linearly independent. Then (*) has a **unique solution** in $K$.
+
+**Proof:** Since $A^1, \dots, A^n$ are linearly independent and $\dim K^n = n$, they form a basis of $K^n$. Hence any vector $B$ has a unique expression:
+
+$$
+B = x_1 A^1 + \cdots + x_n A^n
+$$
+
+with $x_i \in K$. Thus $X = (x_1, \dots, x_n)$ is the unique solution.
