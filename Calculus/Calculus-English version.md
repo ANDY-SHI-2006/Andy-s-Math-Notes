@@ -2714,6 +2714,15 @@ $$
 - At a local **maximum or minimum**, if the derivative exists, it must be zero: $f'(x)=0$.
 - **Caution**: $f'(x)=0$ does not guarantee a max or min (e.g., inflection points).
 
+## 4.7 Other Notations for Derivatives
+
+- **Lagrange**: $f'(x),\; y',\; y'',\; y^{(n)}$.
+- **Newton**: $\dot{y},\; \ddot{y}$ (dots, still used for velocity/acceleration).
+- **Arbogast / Cauchy**: $Df,\; D^2f,\; D^nf$; $D$ is the **differentiation operator**.
+- **Leibniz**: $\dfrac{dy}{dx}$. He regarded it as a quotient of **infinitesimals** $dy$ and $dx$.
+  - This view was later replaced by the rigorous limit definition (Cauchy).
+  - **Non-standard analysis** (Robinson, 1966) gave a consistent foundation for infinitesimals.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
