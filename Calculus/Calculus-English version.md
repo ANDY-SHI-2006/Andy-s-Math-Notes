@@ -385,7 +385,7 @@ $$
 Q = \{(x, y) \mid a \le x \le b, \; 0 \le y \le f(x)\}.
 $$
 
-### 1.10.2 Theorem 1.10 — Area Equals Integral
+### 1.10.2 Integrability of the Ordinate Set
 
 Let $f$ be a nonnegative function, integrable on $[a, b]$, and let $Q$ be its ordinate set. Then $Q$ is **measurable** and its area is:
 
@@ -409,7 +409,7 @@ $$
 
 for all such $s, t$. Hence $I$ is also the only number with $a(S) \le I \le a(T)$ for all step regions $S \subseteq Q \subseteq T$. By the **exhaustion property**, $Q$ is measurable and $a(Q) = I$.
 
-### 1.10.4 Theorem 1.11 — Graph Has Zero Area
+### 1.10.4 Null Set Property of the Graph
 
 Let $Q$ be the ordinate set of Theorem 1.10, and let $Q'$ be the set with the graph of $f$ removed:
 
