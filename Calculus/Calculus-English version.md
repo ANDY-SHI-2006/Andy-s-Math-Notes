@@ -2491,6 +2491,101 @@ $$
   - Velocity decreases by $32\ \text{ft/s}$ each second.
   - In 9 seconds the total decrease is $288\ \text{ft/s}$, matching $v(0)=144$ to $v(9)=-144$.
 
+## 4.4 Examples of Derivatives
+
+### 4.4.1 Constant Function
+
+- Let $f(x) = c$.
+- Difference quotient:
+  $$
+  \frac{f(x+h)-f(x)}{h} = \frac{c-c}{h} = 0.
+  $$
+- Derivative:
+  $$
+  f'(x) = \lim_{h\to 0}0 = 0.
+  $$
+- **Result**: The derivative of a constant function is $0$ everywhere.
+
+### 4.4.2 Linear Function
+
+- Let $f(x) = mx + b$.
+- Difference quotient:
+  $$
+  \frac{m(x+h)+b-(mx+b)}{h} = \frac{mh}{h} = m.
+  $$
+- **Result**:
+  $$
+  f'(x) = m \quad \text{for every } x.
+  $$
+- The derivative of a linear function is a constant function.
+
+### 4.4.3 Positive Integer Powers
+
+- Let $f(x)=x^n$ for a positive integer $n$.
+- Using the identity $a^n-b^n=(a-b)\sum_{k=0}^{n-1}a^k b^{n-1-k}$ with $a=x+h$, $b=x$:
+  $$
+  \frac{(x+h)^n-x^n}{h} = \sum_{k=0}^{n-1}(x+h)^k x^{n-1-k}.
+  $$
+- As $h\to 0$, each of the $n$ terms approaches $x^{n-1}$.
+- **Result**:
+  $$
+  (x^n)' = nx^{n-1}, \qquad n\in\mathbb{Z}^+.
+  $$
+
+### 4.4.4 The Sine Function
+
+- Let $s(x)=\sin x$.
+- Using $\sin y - \sin x = 2\sin\dfrac{y-x}{2}\cos\dfrac{y+x}{2}$ with $y=x+h$:
+  $$
+  \frac{\sin(x+h)-\sin x}{h} = \frac{\sin(h/2)}{h/2}\,\cos\left(x+\frac{h}{2}\right).
+  $$
+- As $h\to 0$: $\dfrac{\sin(h/2)}{h/2}\to 1$ and $\cos\left(x+\dfrac{h}{2}\right)\to\cos x$.
+- **Result**:
+  $$
+  (\sin x)' = \cos x.
+  $$
+
+### 4.4.5 The Cosine Function
+
+- Let $c(x)=\cos x$.
+- Using $\cos y - \cos x = -2\sin\dfrac{y-x}{2}\sin\dfrac{y+x}{2}$ with $y=x+h$:
+  $$
+  \frac{\cos(x+h)-\cos x}{h} = -\frac{\sin(h/2)}{h/2}\,\sin\left(x+\frac{h}{2}\right).
+  $$
+- As $h\to 0$: $\dfrac{\sin(h/2)}{h/2}\to 1$ and $\sin\left(x+\dfrac{h}{2}\right)\to\sin x$.
+- **Result**:
+  $$
+  (\cos x)' = -\sin x.
+  $$
+
+### 4.4.6 The $n$th-Root Function
+
+- Let $f(x)=x^{1/n}$ for $x>0$, $n\in\mathbb{Z}^+$.
+- Set $u=(x+h)^{1/n}$, $v=x^{1/n}$. Then $u^n-v^n=h$, and:
+  $$
+  \frac{u-v}{h} = \frac{1}{u^{n-1}+u^{n-2}v+\dots+v^{n-1}}.
+  $$
+- As $h\to 0$, $u\to v$, so the denominator tends to $nv^{n-1}$.
+- **Result**:
+  $$
+  \left(x^{1/n}\right)' = \frac{1}{n}x^{1/n-1}, \qquad x>0.
+  $$
+
+### 4.4.7 Differentiability Implies Continuity
+
+- **Theorem**: If $f$ has a derivative at $x$, then $f$ is continuous at $x$.
+- **Proof sketch**: Write
+  $$
+  f(x+h) = f(x) + h\cdot\frac{f(x+h)-f(x)}{h}.
+  $$
+  As $h\to 0$, the difference quotient approaches $f'(x)$ and $h\to 0$, so $f(x+h)\to f(x)$.
+- **Converse is false**: Continuity does not imply differentiability.
+  - **Counterexample**: $f(x)=|x|$ is continuous at $0$ but not differentiable there, since
+    $$
+    \frac{|h|}{h} = \begin{cases} +1 & h>0 \\ -1 & h<0 \end{cases}
+    $$
+    has no limit as $h\to 0$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
