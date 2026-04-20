@@ -1810,7 +1810,7 @@ $$
 
 ### 5.3.1 Three Interpretations of the Solution Space
 
-For a homogeneous system $AX = O$ with $A$ an $m 	imes n$ matrix:
+For a homogeneous system $AX = O$ with $A$ an $m \times n$ matrix:
 
 | View | Description |
 |------|-------------|
@@ -1826,11 +1826,13 @@ For a homogeneous system $AX = O$ with $A$ an $m 	imes n$ matrix:
 
 Equivalently: column rank = max number of linearly independent columns; row rank = max number of linearly independent rows.
 
-**Theorem 3.2.** Let $A$ be an $m 	imes n$ matrix. Then row rank = column rank = $r$, and $n - r$ = dimension of the solution space of (**).
+**Theorem 3.1.** Let $W$ be a subspace of $K^n$. Then $\dim W + \dim W^\perp = n$.
+
+**Theorem 3.2.** Let $A$ be an $m \times n$ matrix. Then row rank = column rank = $r$, and $n - r$ = dimension of the solution space of (**).
 
 > This common value is called the **rank** of $A$.
 
-**Proof sketch:** Consider $L: K^n 	o K^m$, $L(X) = x_1 A^1 + \cdots + x_n A^n$.
+**Proof sketch:** Consider $L: K^n \to K^m$, $L(X) = x_1 A^1 + \cdots + x_n A^n$.
 - $\operatorname{Im} L$ = column space, so column rank + dim(solution space) = $n$ (by Theorem 3.2, Ch. III).
 - Interpreting solutions as orthogonal to row space: row rank + dim(solution space) = $n$.
 - Hence row rank = column rank.
@@ -1843,7 +1845,7 @@ $$
 ### 5.3.3 Inhomogeneous Systems
 
 For $AX = B$:
-- May have no solution (inconsistent).
+- May have no solution (inconsistent). Example: $2x + 3y - z = 1$ and $2x + 3y - z = 2$.
 - If one solution exists, all solutions = that solution + any solution of the associated homogeneous system.
 - The **dimension of the solution set** = dimension of the associated homogeneous system.
 
@@ -1851,36 +1853,26 @@ For $AX = B$:
 
 **Example 1.** Find the rank of:
 $$
-egin{pmatrix} 2 & 1 & 1 \ 0 & 1 & -1 \end{pmatrix}
+\begin{pmatrix} 2 & 1 & 1 \\ 0 & 1 & -1 \end{pmatrix}
 $$
-Only 2 rows, so rank $\le 2$. Columns $egin{pmatrix} 2 \ 0 \end{pmatrix}$ and $egin{pmatrix} 1 \ 1 \end{pmatrix}$ are linearly independent, so rank = 2.
+Only 2 rows, so rank $\le 2$. Columns $\begin{pmatrix} 2 \\ 0 \end{pmatrix}$ and $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$ are linearly independent, so rank = 2.
 
 **Example 2.** Find the dimension and set of solutions in $\mathbf{R}^3$:
 $$
-egin{cases} 2x + y + z = 1 \ y - z = 0 \end{cases}
+\begin{cases} 2x + y + z = 1 \\ y - z = 0 \end{cases}
 $$
-Rank = 2, so dimension = $3 - 2 = 1$. One particular solution: $(rac{1}{2}, 0, 0)$. Homogeneous solution: $t(-rac{1}{2}, 1, 1)$. Solution set:
+Rank = 2, so dimension = $3 - 2 = 1$. One particular solution: $(\frac{1}{2}, 0, 0)$. Homogeneous solution: $t(-\frac{1}{2}, 1, 1)$. Solution set:
 $$
-\left(rac{1}{2}, 0, 0
-ight) + t\left(-rac{1}{2}, 1, 1
-ight).
+\left(\frac{1}{2}, 0, 0\right) + t\left(-\frac{1}{2}, 1, 1\right).
 $$
 
 **Example 3.** Find a basis for the solution space of $3x - 2y + z = 0$.
 
 Let $A = (3, -2, 1)$. Solution space is $A^\perp$, dimension 2. Extend with $B = (0, 1, 0)$, $C = (0, 0, 1)$. Orthogonalize:
-- $B' = B - rac{\langle B, A 
-angle}{\langle A, A 
-angle} A = \left(rac{3}{7}, rac{5}{7}, rac{1}{7}
-ight)$
-- $C' = C - rac{\langle C, A 
-angle}{\langle A, A 
-angle} A - rac{\langle C, B' 
-angle}{\langle B', B' 
-angle} B' = (0,0,1) - rac{1}{14}(3,-2,1) - rac{1}{35}(3,5,1)$
+- $B' = B - \frac{\langle B, A \rangle}{\langle A, A \rangle} A = \left(\frac{3}{7}, \frac{5}{7}, \frac{1}{7}\right)$
+- $C' = C - \frac{\langle C, A \rangle}{\langle A, A \rangle} A - \frac{\langle C, B' \rangle}{\langle B', B' \rangle} B' = (0,0,1) - \frac{1}{14}(3,-2,1) - \frac{1}{35}(3,5,1)$
 
 Then $\{B', C'\}$ is a basis for the solution space.
-
 
 ## 5.4 Bilinear Maps and Matrices
 
