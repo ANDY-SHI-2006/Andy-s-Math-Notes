@@ -2473,6 +2473,91 @@ $$
   v(t) = \lim_{h\to 0}\frac{f(t+h)-f(t)}{h},
   $$
   provided the limit exists.
+
+## 4.3 The Derivative of a Function
+
+### 4.3.1 Definition of the Derivative
+
+- Let $f$ be defined on an open interval $(a,b)$.
+- For a fixed $x$ in $(a,b)$ and $h \neq 0$, the **difference quotient** is:
+  $$
+  \frac{f(x+h)-f(x)}{h}.
+  $$
+- This measures the average rate of change of $f$ over $[x, x+h]$.
+- The **derivative of $f$ at $x$** is the limit:
+  $$
+  f'(x) = \lim_{h\to 0}\frac{f(x+h)-f(x)}{h},
+  $$
+  provided the limit exists.
+- If the limit exists, $f$ is **differentiable at $x$**.
+- If $f$ is differentiable at every $x$ in $(a,b)$, then $f$ is **differentiable on $(a,b)$**.
+
+### 4.3.2 The Derived Function
+
+- The function $f'$ assigns to each $x$ the value $f'(x)$.
+- Domain of $f'$: the set of $x$ in $(a,b)$ where the limit exists.
+- $f'$ is called the **derived function** or simply the **derivative** of $f$.
+
+### 4.3.3 Notations for the Derivative
+
+| Notation | Introduced by | Usage |
+|----------|---------------|-------|
+| $f'(x)$, $y'$ | Lagrange | Emphasizes the function $f'$ evaluated at $x$ |
+| $Df(x)$, $Dy$ | Cauchy | Operator-style notation |
+| $\dfrac{df(x)}{dx}$, $\dfrac{dy}{dx}$ | Leibniz | Suggestive of a quotient; very useful in calculations |
+
+- Here $y = f(x)$.
+- **Leibniz notation**: Write $\Delta y = f(x+h)-f(x)$ and $\Delta x = h$, so the difference quotient is $\dfrac{\Delta y}{\Delta x}$. As $\Delta x \to 0$, this approaches $f'(x)$, denoted $\dfrac{dy}{dx}$.
+- **Caution**: $\dfrac{dy}{dx}$ is a single symbol, not a quotient of $dy$ and $dx$. For now, $dy$ and $dx$ should not be treated as separate quantities.
+
+## 4.4 Examples of Derivatives
+
+### 4.4.1 Constant Function
+
+- Let $f(x) = c$.
+- Difference quotient:
+  $$
+  \frac{f(x+h)-f(x)}{h} = \frac{c-c}{h} = 0.
+  $$
+- Derivative:
+  $$
+  f'(x) = \lim_{h\to 0}0 = 0.
+  $$
+- **Result**: The derivative of a constant function is $0$ everywhere.
+
+### 4.4.2 The Sine Function
+
+- Let $f(x) = \sin x$.
+- Using the sum-to-product formula:
+  $$
+  \sin(x+h)-\sin x = 2\sin\frac{h}{2}\,\cos\left(x+\frac{h}{2}\right).
+  $$
+- Difference quotient:
+  $$
+  \frac{\sin(x+h)-\sin x}{h} = \frac{\sin(h/2)}{h/2}\,\cos\left(x+\frac{h}{2}\right).
+  $$
+- As $h\to 0$: $\dfrac{\sin(h/2)}{h/2}\to 1$ and $\cos\left(x+\dfrac{h}{2}\right)\to\cos x$.
+- **Result**:
+  $$
+  (\sin x)' = \cos x.
+  $$
+
+### 4.4.3 Positive Integer Powers
+
+- Let $f(x)=x^n$ for a positive integer $n$.
+- By the binomial theorem:
+  $$
+  (x+h)^n = x^n + nx^{n-1}h + \binom{n}{2}x^{n-2}h^2 + \dots + h^n.
+  $$
+- Difference quotient:
+  $$
+  \frac{(x+h)^n-x^n}{h} = nx^{n-1} + \binom{n}{2}x^{n-2}h + \dots + h^{n-1}.
+  $$
+- Every term except the first contains a positive power of $h$ and tends to $0$ as $h\to 0$.
+- **Result**:
+  $$
+  (x^n)' = nx^{n-1}, \qquad n\in\mathbb{Z}^+.
+  $$
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
