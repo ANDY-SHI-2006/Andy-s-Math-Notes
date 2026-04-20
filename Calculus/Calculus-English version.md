@@ -974,6 +974,62 @@ $$
 \int_a^b x^{1/n}\,dx = \frac{b^{1+1/n} - a^{1+1/n}}{1 + 1/n}. \tag{2.2}
 $$
 
+
+## 2.5 The Trigonometric Functions
+
+### 2.5.1 Introduction
+
+Before further applications of integration, we briefly discuss the six trigonometric functions — sine, cosine, tangent, cotangent, secant, cosecant — and their inverses. In calculus their importance lies not in triangle relations but in their **properties as functions**, especially **periodicity**.
+
+A function $f$ is **periodic** with period $p \neq 0$ if $f(x+p) = f(x)$ for all $x$ in its domain. The sine and cosine functions are periodic with period $2\pi$, where $\pi$ is the area of a unit circular disk.
+
+### 2.5.2 Fundamental Properties of Sine and Cosine
+
+We take the following four properties as axioms; all other properties can be deduced from them.
+
+| Property | Statement |
+|----------|-----------|
+| **1. Domain** | $\sin x$ and $\cos x$ are defined for all real $x$. |
+| **2. Special values** | $\cos 0 = \sin\frac{\pi}{2} = 1$, $\cos\pi = -1$. |
+| **3. Cosine of a difference** | $\cos(y-x) = \cos y \cos x + \sin y \sin x$ for all $x, y$. |
+| **4. Fundamental inequalities** | For $0 < x < \frac{\pi}{2}$: $0 < \cos x < \dfrac{\sin x}{x} < \dfrac{1}{\cos x}$. |
+
+### 2.5.3 Theorem 2.3 — Deduced Properties
+
+If $\sin$ and $\cos$ satisfy properties 1–4, then they also satisfy:
+
+| Property | Statement |
+|----------|-----------|
+| **(a) Pythagorean identity** | $\sin^2 x + \cos^2 x = 1$ for all $x$. |
+| **(b) Special values** | $\sin 0 = \cos\frac{\pi}{2} = \sin\pi = 0$. |
+| **(c) Even / odd** | $\cos(-x) = \cos x$, $\sin(-x) = -\sin x$. |
+| **(d) Co-relations** | $\sin(\frac{\pi}{2}+x) = \cos x$, $\cos(\frac{\pi}{2}+x) = -\sin x$. |
+| **(e) Periodicity** | $\sin(x+2\pi) = \sin x$, $\cos(x+2\pi) = \cos x$. |
+| **(f) Addition formulas** | $\cos(x+y) = \cos x \cos y - \sin x \sin y$, $\sin(x+y) = \sin x \cos y + \cos x \sin y$. |
+| **(g) Difference formulas** | $\sin a - \sin b = 2\sin\frac{a-b}{2}\cos\frac{a+b}{2}$, $\cos a - \cos b = -2\sin\frac{a-b}{2}\sin\frac{a+b}{2}$. |
+| **(h) Monotonicity** | On $[0, \frac{\pi}{2}]$, $\sin$ is strictly increasing and $\cos$ is strictly decreasing. |
+
+### 2.5.4 Proof Sketch
+
+- **(a)** Set $x = y$ in property 3 and use $\cos 0 = 1$.
+- **(b)** Follows from (a) with $x = 0, \frac{\pi}{2}, \pi$ and $\sin\frac{\pi}{2} = 1$.
+- **(c)** Evenness of $\cos$ follows from property 3 with $y = 0$. Oddness of $\sin$ follows from $\cos(\frac{\pi}{2}-x) = \sin x$ and property 3.
+- **(d)** Use $\cos(\frac{\pi}{2}-x) = \sin x$ (set $y = \frac{\pi}{2}$ in property 3).
+- **(e)** Repeated application of (d).
+- **(f)** Replace $x$ by $-x$ in property 3 and use even/odd properties; then apply (d).
+- **(g)** Replace $y$ by $-y$ in the sine addition formula, then add/subtract.
+- **(h)** From property 4, $\sin x$ and $\cos x$ are positive on $(0, \frac{\pi}{2})$. Using (g) with $0 < b < a < \frac{\pi}{2}$ shows $\sin a > \sin b$ and $\cos a < \cos b$.
+
+### 2.5.5 Double-Angle Formulas
+
+Setting $y = x$ in the addition formulas:
+
+$$
+\sin 2x = 2\sin x \cos x, \qquad \cos 2x = \cos^2 x - \sin^2 x = 1 - 2\sin^2 x.
+$$
+
+By the Pythagorean identity, $|\sin x| \le 1$ and $|\cos x| \le 1$ for all $x$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
