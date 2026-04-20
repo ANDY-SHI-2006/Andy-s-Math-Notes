@@ -2662,6 +2662,58 @@ $$
   - $f(x)=x^{2/3} \Rightarrow f'(x)=\frac{2}{3}x^{-1/3}$
   - $f(x)=x^{-1/2} \Rightarrow f'(x)=-\frac{1}{2}x^{-3/2}$
 
+## 4.6 Geometric Interpretation of the Derivative as a Slope
+
+### 4.6.1 Difference Quotient and Secant Slope
+
+- The difference quotient
+  $$
+  \frac{f(x+h)-f(x)}{h}
+  $$
+  is the slope of the secant line through $P=(x,f(x))$ and $Q=(x+h,f(x+h))$.
+- It equals $\tan\alpha$, where $\alpha$ is the angle the secant makes with the horizontal.
+
+### 4.6.2 Derivative as Tangent Slope
+
+- As $h\to 0$, the point $Q$ moves toward $P$ along the curve, and the secant line approaches a limiting position.
+- This limiting line is the **tangent line** at $P$.
+- The derivative $f'(x)$ is the **slope of the tangent line** at $(x,f(x))$:
+  $$
+  \text{slope of tangent} = f'(x) = \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}.
+  $$
+- If $f'(x)$ exists, the curve has a **uniquely determined tangent line** at that point.
+- The angle $\theta$ between the tangent line and the positive $x$-axis satisfies:
+  $$
+  \tan\theta = f'(x).
+  $$
+
+### 4.6.3 Equation of the Tangent Line
+
+- The tangent line at $(x, f(x))$ has equation:
+  $$
+  Y - f(x) = f'(x)(X - x),
+  $$
+  where $(X, Y)$ denotes a variable point on the line.
+- This is the **point–slope form** using the derivative as the slope.
+
+### 4.6.4 Parallel and Perpendicular Lines
+
+- Two nonvertical lines are **parallel** if and only if they have the same slope.
+- Two nonvertical lines are **perpendicular** if and only if the product of their slopes is $-1$.
+- These follow from the identities:
+  $$
+  \tan(\alpha-\beta)=\frac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}, \qquad
+  \cot(\alpha-\beta)=\frac{1+\tan\alpha\tan\beta}{\tan\alpha-\tan\beta}.
+  $$
+
+### 4.6.5 Sign of the Derivative
+
+- $f'(x)>0$ on an interval: graph is **rising** (moving left to right).
+- $f'(x)<0$ on an interval: graph is **falling**.
+- $f'(x)=0$: **horizontal tangent**.
+- At a local **maximum or minimum**, if the derivative exists, it must be zero: $f'(x)=0$.
+- **Caution**: $f'(x)=0$ does not guarantee a max or min (e.g., inflection points).
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
