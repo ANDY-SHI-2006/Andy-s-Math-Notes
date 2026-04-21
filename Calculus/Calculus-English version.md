@@ -3370,9 +3370,9 @@ This formula expresses $f$ in terms of $f'$, allowing properties of $f$ to be de
 
 - **Convexity / concavity**: Theorem 2.9 shows that the indefinite integral of an increasing function is convex. Therefore, if $f'$ is continuous and increasing on $I$, Equation (5.4) shows that $f$ is **convex** on $I$. Similarly, $f$ is **concave** on intervals where $f'$ is continuous and decreasing.
 
-## 5.6 The Leibniz Notation for Primitives
+## 5.5 The Leibniz Notation for Primitives
 
-### 5.6.1 The Indefinite Integral Symbol
+### 5.5.1 The Indefinite Integral Symbol
 
 Leibniz introduced the symbol $\int f(x)\,dx$ to denote a **general primitive** of $f$:
 
@@ -3393,7 +3393,7 @@ where $P'(x)=f(x)$ and $C$ is an arbitrary constant. Equation (5.5) is merely an
 
 > **Note**: $C$ represents an arbitrary constant, so each formula above describes a whole *family* of functions.
 
-### 5.6.2 Relation to Definite Integration
+### 5.5.2 Relation to Definite Integration
 
 Despite similar appearance, $\int f(x)\,dx$ and $\int_{a}^{b}f(x)\,dx$ are conceptually distinct — they originate from differentiation and integration respectively. The fundamental theorems connect them:
 
@@ -3409,7 +3409,7 @@ Despite similar appearance, $\int f(x)\,dx$ and $\int_{a}^{b}f(x)\,dx$ are conce
   $$
   In practice: evaluate any primitive at the endpoints and subtract.
 
-### 5.6.3 Terminology and Techniques of Integration
+### 5.5.3 Terminology and Techniques of Integration
 
 Because of long historical usage, many textbooks call $\int f(x)\,dx$ an **indefinite integral** rather than a primitive. Since the second fundamental theorem reduces integration to finding primitives, the phrase **"technique of integration"** refers to any systematic method for finding primitives.
 
