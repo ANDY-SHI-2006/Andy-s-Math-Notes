@@ -3424,6 +3424,101 @@ Three principal techniques for constructing tables of indefinite integrals:
 - These techniques explain how integral tables are built and how formulas are reduced to basic forms.
 - When asked to "integrate" $\int f(x)\,dx$, what is wanted is the most general primitive of $f$.
 
+## 5.6 Integration by Substitution
+
+### 5.6.1 The Chain Rule in Reverse
+
+If $Q(x)=P[g(x)]$ and $P'(x)=f(x)$, the chain rule gives:
+
+$$
+Q'(x)=P'[g(x)]g'(x)=f[g(x)]g'(x).
+$$
+
+Hence:
+
+$$
+\int f[g(x)]g'(x)\,dx=P[g(x)]+C. \tag{5.6}
+$$
+
+**Leibniz formalism.** Set $u=g(x)$ and write $du=g'(x)\,dx$. Then (5.6) becomes:
+
+$$
+\int f(u)\,du=P(u)+C.
+$$
+
+> **Note**: $dx$ and $du$ are treated as purely formal devices; each substitution step is really an application of the chain rule.
+
+### 5.6.2 Examples — Indefinite Integrals
+
+**Example 1.** $\displaystyle\int x^{3}\cos x^{4}\,dx$.
+- Let $u=x^{4}$, $du=4x^{3}\,dx$.
+- Compensate for the factor $4$:
+  $$
+  \int x^{3}\cos x^{4}\,dx=\tfrac14\int(\cos x^{4})(4x^{3}\,dx)=\tfrac14\int\cos u\,du=\tfrac14\sin u+C=\tfrac14\sin x^{4}+C.
+  $$
+
+**Example 2.** $\displaystyle\int\cos^{2}x\sin x\,dx$.
+- Let $u=\cos x$, $du=-\sin x\,dx$.
+  $$
+  \int\cos^{2}x\sin x\,dx=-\int u^{2}\,du=-\frac{u^{3}}{3}+C=-\frac{\cos^{3}x}{3}+C.
+  $$
+
+**Example 3.** $\displaystyle\int\frac{\sin\sqrt{x}}{\sqrt{x}}\,dx$.
+- Let $u=\sqrt{x}$, $du=\frac{1}{2\sqrt{x}}\,dx$, so $\frac{dx}{\sqrt{x}}=2\,du$.
+  $$
+  \int\frac{\sin\sqrt{x}}{\sqrt{x}}\,dx=2\int\sin u\,du=-2\cos u+C=-2\cos\sqrt{x}+C.
+  $$
+
+**Example 4.** $\displaystyle\int\frac{x\,dx}{\sqrt{1+x^{2}}}$.
+- Let $u=1+x^{2}$, $du=2x\,dx$, so $x\,dx=\tfrac12\,du$.
+  $$
+  \int\frac{x\,dx}{\sqrt{1+x^{2}}}=\tfrac12\int u^{-1/2}\,du=u^{1/2}+C=\sqrt{1+x^{2}}+C.
+  $$
+
+### 5.6.3 Definite Integrals and Change of Limits
+
+For definite integrals one may either:
+1. find the indefinite integral, then evaluate at the endpoints; or
+2. change the limits of integration to match the new variable $u$.
+
+**Example (method 1).**
+$$
+\int_{0}^{\pi/2}\cos^{2}x\sin x\,dx=-\frac13\cos^{3}x\Big|_{0}^{\pi/2}=-\frac13(0-1)=\frac13.
+$$
+
+**Example 5 (method 2).** $\displaystyle\int_{2}^{3}\frac{(x+1)\,dx}{\sqrt{x^{2}+2x+3}}$.
+- Let $u=x^{2}+2x+3$, $du=(2x+2)\,dx$, so $(x+1)\,dx=\tfrac12\,du$.
+- New limits: $x=2\Rightarrow u=11$, $x=3\Rightarrow u=18$.
+  $$
+  \int_{2}^{3}\frac{(x+1)\,dx}{\sqrt{x^{2}+2x+3}}=\tfrac12\int_{11}^{18}u^{-1/2}\,du=\sqrt{u}\,\Big|_{11}^{18}=\sqrt{18}-\sqrt{11}.
+  $$
+
+### 5.6.4 The Substitution Theorem
+
+**Theorem 5.4 (Substitution Theorem for Integrals).**  
+Assume $g$ has a continuous derivative $g'$ on an open interval $I$. Let $J$ be the set of values taken by $g$ on $I$, and assume $f$ is continuous on $J$. Then for each $x$ and $c$ in $I$:
+
+$$
+\int_{c}^{x}f[g(t)]g'(t)\,dt=\int_{g(c)}^{g(x)}f(u)\,du. \tag{5.7}
+$$
+
+**Proof.** Let $a=g(c)$ and define:
+$$
+P(x)=\int_{a}^{x}f(u)\,du\quad(x\in J),\qquad Q(x)=\int_{c}^{x}f[g(t)]g'(t)\,dt\quad(x\in I).
+$$
+Then $P'(x)=f(x)$ and $Q'(x)=f[g(x)]g'(x)$. Set $R(x)=P[g(x)]$. By the chain rule:
+$$
+R'(x)=P'[g(x)]g'(x)=f[g(x)]g'(x)=Q'(x).
+$$
+Applying the second fundamental theorem twice:
+$$
+\int_{g(c)}^{g(x)}f(u)\,du=P[g(x)]-P[g(c)]=R(x)-R(c),
+$$
+$$
+\int_{c}^{x}f[g(t)]g'(t)\,dt=Q(x)-Q(c)=R(x)-R(c).
+$$
+Thus the two integrals in (5.7) are equal. ∎
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
