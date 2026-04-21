@@ -3370,6 +3370,60 @@ This formula expresses $f$ in terms of $f'$, allowing properties of $f$ to be de
 
 - **Convexity / concavity**: Theorem 2.9 shows that the indefinite integral of an increasing function is convex. Therefore, if $f'$ is continuous and increasing on $I$, Equation (5.4) shows that $f$ is **convex** on $I$. Similarly, $f$ is **concave** on intervals where $f'$ is continuous and decreasing.
 
+## 5.6 The Leibniz Notation for Primitives
+
+### 5.6.1 The Indefinite Integral Symbol
+
+Leibniz introduced the symbol $\int f(x)\,dx$ to denote a **general primitive** of $f$:
+
+$$
+\int f(x)\,dx=P(x)+C, \tag{5.5}
+$$
+
+where $P'(x)=f(x)$ and $C$ is an arbitrary constant. Equation (5.5) is merely an alternative way of writing $P'(x)=f(x)$.
+
+- **Example**:
+  $$
+  \int\cos x\,dx=\sin x+C.
+  $$
+- **Example** ($n\neq-1$):
+  $$
+  \int x^{n}\,dx=\frac{x^{n+1}}{n+1}+C.
+  $$
+
+> **Note**: $C$ represents an arbitrary constant, so each formula above describes a whole *family* of functions.
+
+### 5.6.2 Relation to Definite Integration
+
+Despite similar appearance, $\int f(x)\,dx$ and $\int_{a}^{b}f(x)\,dx$ are conceptually distinct — they originate from differentiation and integration respectively. The fundamental theorems connect them:
+
+- **First FTC** (Equation 5.15):
+  $$
+  \int f(x)\,dx=\int_{c}^{x}f(t)\,dt+C.
+  $$
+  Thus $\int f(x)\,dx$ may be viewed as an indefinite integral plus a constant.
+
+- **Second FTC** (Equation 5.16):
+  $$
+  \int_{a}^{b}f(x)\,dx=\Bigl[\int f(x)\,dx\Bigr]_{a}^{b}.
+  $$
+  In practice: evaluate any primitive at the endpoints and subtract.
+
+### 5.6.3 Terminology and Techniques of Integration
+
+Because of long historical usage, many textbooks call $\int f(x)\,dx$ an **indefinite integral** rather than a primitive. Since the second fundamental theorem reduces integration to finding primitives, the phrase **"technique of integration"** refers to any systematic method for finding primitives.
+
+Three principal techniques for constructing tables of indefinite integrals:
+
+| Technique | Basis | Location |
+|-----------|-------|----------|
+| **Integration by substitution** | Chain rule | Next section |
+| **Integration by parts** | Product rule | Section 5.9 |
+| **Integration by partial fractions** | Algebraic decomposition | End of Chapter 6 |
+
+- These techniques explain how integral tables are built and how formulas are reduced to basic forms.
+- When asked to "integrate" $\int f(x)\,dx$, what is wanted is the most general primitive of $f$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
