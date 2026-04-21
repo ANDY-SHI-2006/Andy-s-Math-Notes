@@ -3542,3 +3542,49 @@ is a diagonal matrix.
 **Proof.** View $A$ as the matrix of a symmetric linear map $F: \mathbf{R}^n \to \mathbf{R}^n$ relative to the standard basis. By Theorem 4.3, there exists an orthonormal basis $\{w_1, \dots, w_n\}$ of eigenvectors. Let $U = M_{\mathscr{B}'}^{\mathscr{B}}(\operatorname{id})$. Then $U^{-1}AU$ is diagonal, and $U$ is unitary because ${}^tU U = I$.
 
 **Remark.** Every real symmetric matrix $A$ can be written as ${}^tU B U$ where $B$ is diagonal and $U$ is real unitary.
+
+
+## 8.5 The Hermitian Case
+
+Throughout this section, $V$ is a finite dimensional vector space over $\mathbf{C}$ with a positive definite hermitian product.
+
+### 8.5.1 Real Eigenvalues
+
+**Theorem 5.1.** Let $A: V \to V$ be a hermitian operator. Then every eigenvalue of $A$ is real.
+
+**Proof.** Let $v$ be an eigenvector with eigenvalue $\lambda$. By Theorem 2.4 (Chapter VII), $\langle Av, v \rangle$ is real. Since $Av = \lambda v$:
+
+$$
+\langle Av, v \rangle = \lambda \langle v, v \rangle.
+$$
+
+But $\langle v, v \rangle$ is real and $> 0$. Hence $\lambda$ is real.
+
+### 8.5.2 Stable Subspaces and the Spectral Theorem
+
+Over $\mathbf{C}$, every operator has an eigenvector and eigenvalue (Theorem 2.3). Thus the analogue of Theorem 4.1 holds automatically.
+
+**Theorem 5.2.** Let $A: V \to V$ be hermitian.
+
+- If $v$ is a non-zero eigenvector and $w \perp v$, then $Aw \perp v$.
+- If $W$ is stable under $A$, then $W^\perp$ is also stable under $A$.
+
+*(Proof same as Theorem 4.2.)*
+
+**Theorem 5.3 (Spectral theorem).** Let $A: V \to V$ be hermitian. Then $V$ has an orthogonal basis consisting of eigenvectors of $A$.
+
+*(Proof same as Theorem 4.3.)*
+
+> **Remark.** If $\{v_1, \dots, v_n\}$ is such a basis, the matrix of $A$ relative to this basis is a **real diagonal** matrix. Thus hermitian maps (or matrices) can be handled just like the real case.
+
+### 8.5.3 Unitary Diagonalization
+
+**Theorem 5.4.** Let $A$ be an $n \times n$ complex hermitian matrix. Then there exists a complex unitary matrix $U$ such that:
+
+$$
+U^* A U = U^{-1} A U
+$$
+
+is a diagonal matrix.
+
+*(Proof like that of Theorem 4.4.)*
