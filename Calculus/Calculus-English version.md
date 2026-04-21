@@ -3760,6 +3760,17 @@ Hence $L(ab)=L(a)+L(b)$. ∎
 - $L''(x)=-1/x^{2}<0$, so the graph is **concave**.
 - As $x\to0^{+}$, $L(x)\to-\infty$; as $x\to+\infty$, $L(x)\to+\infty$.
 
+## 6.4 The Graph of the Natural Logarithm
+
+The shape of $y=L(x)$ follows directly from Theorem 6.1 without elaborate calculation:
+
+- **Strictly increasing**: $L'(x)=1/x>0$ for all $x>0$.
+- **Zero at $x=1$**: $L(1)=0$, so the graph lies **above** the $x$-axis for $x>1$ and **below** it for $0<x<1$.
+- **Unit slope at $x=1$**: $L'(1)=1$.
+- **Slope tends to $0$ as $x\to+\infty$**: $L'(x)=1/x\to0$.
+- **Slope blows up as $x\to0^{+}$**: $L'(x)=1/x\to+\infty$.
+- **Concave everywhere**: $L''(x)=-1/x^{2}<0$ for all $x>0$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
