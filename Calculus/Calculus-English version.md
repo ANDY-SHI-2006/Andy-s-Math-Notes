@@ -3651,6 +3651,72 @@ A simpler and more elegant route is available through calculus:
 
 This reverses the elementary order and avoids the logical gaps above.
 
+## 6.2 Motivation for Defining the Natural Logarithm as an Integral
+
+### 6.2.1 The Functional Equation
+
+A key property desired for logarithms is:
+
+$$
+f(xy)=f(x)+f(y). \tag{6.3}
+$$
+
+An equation relating the values of a function at two or more points is called a **functional equation**. Rather than guessing a formula, we determine all differentiable solutions of (6.3).
+
+### 6.2.2 Elementary Consequences
+
+Assume $f$ satisfies (6.3) and is defined at the points indicated.
+
+| Substitution | Result |
+|--------------|--------|
+| $x=y=1$ | $f(1)=0$ |
+| $x=y=-1$ | $f(-1)=0$ |
+| $y=-1$ | $f(-x)=f(x)$ (so $f$ is **even**) |
+| $y=0$ (if $0$ is in the domain) | $f\equiv0$ |
+
+- The zero function is the **only** solution defined on all of $\mathbb{R}$.
+- Any solution that is **not** identically zero **cannot** be defined at $0$.
+
+### 6.2.3 Differentiability and the Integral Formula
+
+Assume $f$ has a derivative at each $x\neq0$. Fix $y$ in (6.3) and differentiate with respect to $x$ (chain rule on the left):
+
+$$
+yf'(xy)=f'(x).
+$$
+
+Setting $x=1$:
+
+$$
+f'(y)=\frac{f'(1)}{y}\qquad(y\neq0).
+$$
+
+Since $f'$ is continuous on every closed interval not containing $0$, the second fundamental theorem gives, for $x>0$ and $c=1$ (using $f(1)=0$):
+
+$$
+f(x)=f'(1)\int_{1}^{x}\frac{1}{t}\,dt. \tag{6.4}
+$$
+
+Because $f$ is even, the formula for $x<0$ involves $\int_{1}^{|x|}$. Both cases are combined as:
+
+$$
+f(x)=f'(1)\int_{1}^{|x|}\frac{1}{t}\,dt\qquad(x\neq0). \tag{6.5}
+$$
+
+### 6.2.4 Normalization and the Key Insight
+
+If $f$ is **not** identically zero, then $f'(1)\neq0$. Dividing (6.5) by $f'(1)$ yields:
+
+$$
+g(x)=\int_{1}^{|x|}\frac{1}{t}\,dt\qquad(x\neq0), \tag{6.6}
+$$
+
+where $g(x)=f(x)/f'(1)$. Since $cf$ is a solution of (6.3) whenever $f$ is, $g$ is also a solution, and **all** non-zero solutions are scalar multiples of $g$.
+
+> **Important caveat:** The argument above assumed that a non-zero solution exists; it did **not** prove that the function $g$ in (6.6) actually satisfies (6.3).
+
+**The reverse idea.** Use the integral in (6.6) to *define* a function, then verify directly that it satisfies (6.3). However, (6.6) gives $g(-x)=g(x)$, so distinct numbers would have the same logarithm. To ensure distinct numbers have distinct logarithms, we restrict the definition to **positive $x$ only**.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
