@@ -3814,6 +3814,45 @@ $$
 - **Notation**: The symbols $\ln x$ or $\log x$ are commonly used instead of $L(x)$.
 - **Preview** (Chapter 7): explicit formulas for computing $e$ to any accuracy, and a proof that $e$ is irrational.
 
+## 6.6 Logarithms to Any Positive Base $b\neq1$
+
+### 6.6.1 General Solution of the Functional Equation
+
+The most general differentiable solution of $f(xy)=f(x)+f(y)$ on the positive real axis is:
+
+$$
+f(x)=c\log x, \tag{6.9}
+$$
+
+where $c$ is a constant. When $c\neq0$, there is a unique $b>0$ with $f(b)=1$. Since $c\log b=1$, we obtain $c=1/\log b$ and (6.9) becomes:
+
+$$
+f(x)=\frac{\log x}{\log b}.
+$$
+
+### 6.6.2 Definition
+
+**Definition.** If $b>0$, $b\neq1$, and $x>0$, the **logarithm of $x$ to the base $b$** is:
+
+$$
+\log_{b}x=\frac{\log x}{\log b}, \tag{6.10}
+$$
+
+where the logarithms on the right are natural logarithms.
+
+- $\log_{b}b=1$.
+- When $b=e$: $\log_{e}x=\log x$; natural logarithms are exactly those with base $e$.
+- In higher mathematics the word "logarithm" almost invariably means **natural** logarithm.
+
+### 6.6.3 Graphs
+
+The graph of $y=\log_{b}x$ is obtained from $y=\log x$ by multiplying all ordinates by the factor $1/\log b$:
+
+| Range of $b$ | Factor $1/\log b$ | Shape |
+|--------------|-------------------|-------|
+| $b>1$ | Positive | Same general shape as $\log x$, steeper if $1<b<e$, flatter if $b>e$. |
+| $0<b<1$ | Negative | Reflection of $y=\log_{1/b}x$ through the $x$-axis. |
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
