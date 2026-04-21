@@ -3266,6 +3266,95 @@ If $f'(x)=0$ for every $x$ in an open interval $I$, then $f$ is constant on $I$.
 
 - This theorem, used in combination with the first fundamental theorem of calculus, leads to the **second fundamental theorem of calculus** (Section 5.3).
 
+## 5.3 Primitive Functions and the Second Fundamental Theorem of Calculus
+
+### 5.3.1 Primitive Functions
+
+A function $P$ is called a **primitive** (or **antiderivative**) of $f$ on an open interval $I$ if:
+
+$$
+P'(x)=f(x)\quad\text{for all }x\in I.
+$$
+
+- **Example**: $\sin x$ is a primitive of $\cos x$ on every interval, since $(\sin x)'=\cos x$.
+- We speak of **a** primitive, not **the** primitive: if $P$ is a primitive of $f$, so is $P+k$ for every constant $k$.
+- **Uniqueness up to a constant**: Any two primitives $P$ and $Q$ of the same function $f$ differ only by a constant, because
+  $$
+  (P-Q)'=P'-Q'=f-f=0\quad\Longrightarrow\quad P-Q=\text{constant}
+  $$
+  by Theorem 5.2.
+
+### 5.3.2 Second Fundamental Theorem of Calculus
+
+The first fundamental theorem guarantees that a continuous function always has a primitive (obtained by integration). Combining this with the constant-difference property above yields:
+
+**Theorem 5.3 (Second Fundamental Theorem of Calculus).**  
+Assume $f$ is continuous on an open interval $I$, and let $P$ be any primitive of $f$ on $I$. Then for each $c$ and each $x$ in $I$:
+
+$$
+P(x)=P(c)+\int_{c}^{x}f(t)\,dt. \tag{5.2}
+$$
+
+Equivalently:
+
+$$
+\int_{c}^{x}f(t)\,dt=P(x)-P(c). \tag{5.3}
+$$
+
+**Proof.** Let $A(x)=\int_{c}^{x}f(t)\,dt$. By Theorem 5.1, $A'(x)=f(x)$, so $A$ is a primitive of $f$. Since two primitives differ only by a constant:
+$$
+A(x)-P(x)=k.
+$$
+Put $x=c$: $A(c)=0$, so $k=-P(c)$. Hence $A(x)-P(x)=-P(c)$, which gives (5.2). ∎
+
+- In words: *knowing one primitive $P$ reduces integral evaluation to simple subtraction.*
+
+### 5.3.3 Integration of Rational Powers
+
+From the differentiation formula $\bigl(x^{n+1}/(n+1)\bigr)'=x^{n}$ and (5.3):
+
+$$
+\int_{a}^{b}x^{n}\,dx=\frac{b^{n+1}-a^{n+1}}{n+1},\qquad n\neq-1.
+$$
+
+| Exponent type | Validity | Restriction |
+|---------------|----------|-------------|
+| Nonnegative integers | Directly from power rule | None |
+| Negative integers ($n\neq-1$) | $P(x)=x^{n+1}/(n+1)$ is rational | Exclude intervals containing $x=0$ |
+| Rational exponents ($n\neq-1$) | Extend via general power rule (Chapter 6) | Integrand must be defined on $[a,b]$ |
+
+- **Example** ($n=-\tfrac12$, $0<a<b$):
+  $$
+  \int_{a}^{b}\frac{1}{\sqrt{x}}\,dx=\int_{a}^{b}x^{-1/2}\,dx=\Bigl.\frac{x^{1/2}}{1/2}\Bigr|_{a}^{b}=2(\sqrt{b}-\sqrt{a}).
+  $$
+
+### 5.3.4 The Natural Logarithm
+
+The power rule does **not** cover $n=-1$, since $x^{n+1}/(n+1)$ is undefined. Nevertheless, a primitive of $1/x$ exists:
+
+$$
+P(x)=\int_{1}^{x}\frac{1}{t}\,dt\qquad(x>0).
+$$
+
+- The integral exists because the integrand $1/t$ is monotonic.
+- This function is called the **logarithm** (more precisely, the **natural logarithm**).
+- Its properties are developed systematically in Chapter 6.
+
+### 5.3.5 Integration of Sine and Cosine
+
+Since $(\sin x)'=\cos x$ and $(\cos x)'=-\sin x$:
+
+$$
+\int_{a}^{b}\cos x\,dx=\sin x\Big|_{a}^{b}=\sin b-\sin a,
+$$
+
+$$
+\int_{a}^{b}\sin x\,dx=-\cos x\Big|_{a}^{b}=\cos a-\cos b.
+$$
+
+- These formulas also follow directly from the definition of the integral (proved in Chapter 2).
+- Further integration formulas are obtained by taking finite sums of terms $Ax^{n}$, $B\sin x$, $C\cos x$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
