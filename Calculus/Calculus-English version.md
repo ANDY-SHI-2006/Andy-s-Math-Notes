@@ -3717,6 +3717,49 @@ where $g(x)=f(x)/f'(1)$. Since $cf$ is a solution of (6.3) whenever $f$ is, $g$ 
 
 **The reverse idea.** Use the integral in (6.6) to *define* a function, then verify directly that it satisfies (6.3). However, (6.6) gives $g(-x)=g(x)$, so distinct numbers would have the same logarithm. To ensure distinct numbers have distinct logarithms, we restrict the definition to **positive $x$ only**.
 
+## 6.3 The Definition of the Logarithm and Its Basic Properties
+
+### 6.3.1 Definition
+
+If $x$ is a positive real number, the **natural logarithm** of $x$, denoted temporarily by $L(x)$, is defined by:
+
+$$
+L(x)=\int_{1}^{x}\frac{1}{t}\,dt. \tag{6.7}
+$$
+
+- For $x>1$, $L(x)$ is the area under the hyperbola $y=1/t$ from $t=1$ to $t=x$.
+- For $0<x<1$, the integral is negative (area counted with opposite orientation).
+
+### 6.3.2 Basic Properties
+
+**Theorem 6.1.** The logarithm function $L$ has the following properties:
+
+| Property | Statement | Proof |
+|----------|-----------|-------|
+| **(a)** | $L(1)=0$ | Immediate from the definition. |
+| **(b)** | $L'(x)=\dfrac1x$ for every $x>0$ | $L$ is an indefinite integral of the continuous function $1/t$; apply the first fundamental theorem. |
+| **(c)** | $L(ab)=L(a)+L(b)$ for all $a,b>0$ | Additivity of the integral plus the substitution $u=t/a$. |
+
+**Proof of (c).** For $a,b>0$:
+$$
+\begin{aligned}
+L(ab)&=\int_{1}^{ab}\frac{dt}{t}=\int_{1}^{a}\frac{dt}{t}+\int_{a}^{ab}\frac{dt}{t}\\[4pt]
+&=L(a)+\int_{a}^{ab}\frac{dt}{t}.
+\end{aligned}
+$$
+In the last integral set $u=t/a$, $du=dt/a$:
+$$
+\int_{a}^{ab}\frac{dt}{t}=\int_{1}^{b}\frac{du}{u}=L(b).
+$$
+Hence $L(ab)=L(a)+L(b)$. ∎
+
+### 6.3.3 Graph of the Natural Logarithm
+
+- $L(1)=0$; the graph passes through $(1,0)$.
+- $L'(x)=1/x>0$, so $L$ is **strictly increasing**.
+- $L''(x)=-1/x^{2}<0$, so the graph is **concave**.
+- As $x\to0^{+}$, $L(x)\to-\infty$; as $x\to+\infty$, $L(x)\to+\infty$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
