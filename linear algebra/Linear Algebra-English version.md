@@ -2964,3 +2964,73 @@ so the first two rows are linearly independent. Hence $\operatorname{rank} C = 2
 
 
 # 7. Symmetric, Hermitian, and Unitary Operators
+
+
+## 7.1 Symmetric Operators
+
+Let $V$ be a finite dimensional vector space over the real or complex numbers, with a positive definite scalar product. Let $A: V \to V$ be a linear map. We study three important special cases of such maps (symmetric, hermitian, unitary), which are also represented by matrices bearing the same names when a basis of $V$ has been chosen.
+
+### 7.1.1 Setup
+
+Throughout this section, $V$ is a finite dimensional vector space over a field $K$, with a fixed non-degenerate scalar product $\langle v, w \rangle$.
+
+> We may take $V = K^n$ and fix the scalar product to be the ordinary dot product $\langle X, Y \rangle = {}^tX Y$.
+
+A linear map $A: V \to V$ is called an **operator**.
+
+### 7.1.2 The Transpose of an Operator
+
+**Lemma 1.1.** Let $A: V \to V$ be an operator. Then there exists a **unique** operator $B: V \to V$ such that for all $v, w \in V$:
+
+$$
+\langle Av, w \rangle = \langle v, Bw \rangle.
+$$
+
+**Proof.** Given $w \in V$, define $L(v) = \langle Av, w \rangle$. Then $L \in V^*$ (a functional). By Theorem 6.2 (Chapter V), there exists a unique $w' \in V$ such that $L(v) = \langle v, w' \rangle$ for all $v$. Define $Bw = w'$.
+
+Linearity of $B$:
+- $\langle v, B(w_1+w_2) \rangle = \langle Av, w_1+w_2 \rangle = \langle v, Bw_1 \rangle + \langle v, Bw_2 \rangle = \langle v, Bw_1+Bw_2 \rangle$.
+- $\langle v, B(cw) \rangle = \langle Av, cw \rangle = c\langle v, Bw \rangle = \langle v, cBw \rangle$.
+
+Hence $B$ is linear.
+
+This operator $B$ is called the **transpose** of $A$, denoted ${}^tA$. Thus:
+
+$$
+\langle Av, w \rangle = \langle v, {}^tA w \rangle \quad \text{for all } v, w \in V.
+$$
+
+An operator $A$ is **symmetric** (with respect to the fixed scalar product) if:
+
+$$
+{}^tA = A.
+$$
+
+Equivalently, $A$ is symmetric iff $\langle Av, w \rangle = \langle v, Aw \rangle$ for all $v, w$.
+
+**Example 1.** Let $V = K^n$ with the ordinary dot product. For a matrix $A$ and column vectors $X, Y$:
+
+$$
+\langle AX, Y \rangle = {}^t(AX)Y = {}^tX {}^tA Y = \langle X, {}^tA Y \rangle.
+$$
+
+Thus the transpose of the operator is represented by the transpose of the associated matrix.
+
+### 7.1.3 Formal Properties of the Transpose
+
+**Theorem 1.2.** Let $A, B$ be operators and $c \in K$. Then:
+
+| Formula | Statement |
+|---------|-----------|
+| **Sum** | ${}^t(A+B) = {}^tA + {}^tB$ |
+| **Product** | ${}^t(AB) = {}^tB {}^tA$ |
+| **Scalar** | ${}^t(cA) = c{}^tA$ |
+| **Double transpose** | ${}^{tt}A = A$ |
+
+**Proof of product formula.** For all $v, w \in V$:
+
+$$
+\langle ABv, w \rangle = \langle Bv, {}^tA w \rangle = \langle v, {}^tB {}^tA w \rangle.
+$$
+
+Hence ${}^t(AB) = {}^tB {}^tA$. The other formulas follow similarly.
