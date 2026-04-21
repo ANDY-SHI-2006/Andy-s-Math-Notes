@@ -3123,3 +3123,85 @@ $$
   \langle Av, v \rangle = \overline{\langle Av, v \rangle} = \langle v, Av \rangle = \langle A^*v, v \rangle.
   $$
   Hence $\langle (A-A^*)v, v \rangle = 0$ for all $v$. By Theorem 2.4, $A - A^* = O$.
+
+
+## 7.3 Unitary Operators
+
+### 7.3.1 Real Unitary Operators
+
+Let $V$ be a finite dimensional vector space over $\mathbf{R}$ with a positive definite scalar product.
+
+A linear map $A: V \to V$ is **unitary** (or **orthogonal**) if:
+
+$$
+\langle Av, Aw \rangle = \langle v, w \rangle \quad \text{for all } v, w \in V.
+$$
+
+**Theorem 3.1.** The following conditions on $A$ are equivalent:
+
+| Condition | Statement |
+|-----------|-----------|
+| **(1)** | $A$ is unitary. |
+| **(2)** | $A$ preserves norms: $\|Av\| = \|v\|$ for all $v \in V$. |
+| **(3)** | $A$ maps unit vectors to unit vectors. |
+
+**Proof.** (1) $\implies$ (2) is trivial. For (2) $\implies$ (1):
+
+$$
+\langle A(v+w), A(v+w) \rangle - \langle A(v-w), A(v-w) \rangle = 4\langle Av, Aw \rangle.
+$$
+
+By (2), the left side equals $\langle v+w, v+w \rangle - \langle v-w, v-w \rangle = 4\langle v, w \rangle$. Hence $\langle Av, Aw \rangle = \langle v, w \rangle$.
+
+A unitary map preserves perpendicularity. However, preserving perpendicularity alone does not imply unitary (e.g. $v \mapsto 2v$ over $\mathbf{R}$ preserves perpendicularity but not norms).
+
+**Theorem 3.2.** $A$ is unitary if and only if:
+
+$$
+{}^tA A = I.
+$$
+
+**Proof.** $\langle Av, Aw \rangle = \langle v, w \rangle \iff \langle {}^tA A v, w \rangle = \langle v, w \rangle$ for all $v, w \iff {}^tA A = I$.
+
+> Every unitary map is invertible: if $Av = O$, then $\|v\| = \|Av\| = 0$, so $v = O$.
+
+For $V = \mathbf{R}^n$ with the usual dot product, a real matrix $A$ is unitary (orthogonal) iff ${}^tA A = I_n$, or equivalently ${}^tA = A^{-1}$.
+
+**Example.** The only unitary maps of $\mathbf{R}^2$ into itself have matrices of the form:
+
+$$
+\begin{pmatrix}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{pmatrix} \quad \text{or} \quad \begin{pmatrix}\cos\theta & \sin\theta \\ \sin\theta & -\cos\theta\end{pmatrix}.
+$$
+
+If the determinant is $1$, the matrix is necessarily of the first type, and the map is called a **rotation**.
+
+### 7.3.2 Complex Unitary Operators
+
+Let $V$ be a finite dimensional vector space over $\mathbf{C}$ with a positive definite hermitian product.
+
+A linear map $A: V \to V$ is **unitary** if:
+
+$$
+\langle Av, Aw \rangle = \langle v, w \rangle \quad \text{for all } v, w \in V.
+$$
+
+The analogue of Theorem 3.1 holds verbatim.
+
+**Theorem 3.3.** $A$ is unitary if and only if:
+
+$$
+A^* A = I.
+$$
+
+For $V = \mathbf{C}^n$ with the standard hermitian form, a complex matrix $A$ is unitary iff ${}^t\bar{A}\, A = I_n$, or equivalently $A^* = A^{-1}$.
+
+### 7.3.3 Unitary Maps and Orthonormal Bases
+
+**Theorem 3.4.** Let $V$ be over $\mathbf{R}$ (with positive definite scalar product) or over $\mathbf{C}$ (with positive definite hermitian product). Let $\{v_1, \dots, v_n\}$ be an orthonormal basis of $V$.
+
+| | Statement |
+|---|-----------|
+| **(a)** | If $A$ is unitary, then $\{Av_1, \dots, Av_n\}$ is an orthonormal basis. |
+| **(b)** | If $\{w_1, \dots, w_n\}$ is another orthonormal basis and $Av_i = w_i$ for all $i$, then $A$ is unitary. |
+
+**Proof.** Immediate from the definitions.
