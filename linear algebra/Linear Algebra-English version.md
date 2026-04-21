@@ -2845,3 +2845,74 @@ $$
 $$
 
 which is precisely the expansion for $\operatorname{Det}({}^tA)$.
+
+
+## 6.8 Inverse of a Matrix
+
+### 6.8.1 The 2 × 2 Case
+
+Let $A=\begin{pmatrix}a&b\\c&d\end{pmatrix}$ with $\det(A)=ad-bc\neq 0$. To find $X=\begin{pmatrix}x&y\\z&w\end{pmatrix}$ such that $AX=I$:
+
+- First column: $\begin{cases} ax+bz=1 \\ cx+dz=0 \end{cases}$
+- Second column: $\begin{cases} ay+bw=0 \\ cy+dw=1 \end{cases}$
+
+**Example:** For $A=\begin{pmatrix}2&1\\4&3\end{pmatrix}$:
+
+| Unknown | Value |
+|---------|-------|
+| $x$ | $\frac{3}{2}$ |
+| $z$ | $-2$ |
+| $y$ | $-\frac{1}{2}$ |
+| $w$ | $1$ |
+
+Hence:
+
+$$
+X=\begin{pmatrix}\frac{3}{2}&-\frac{1}{2}\\-2&1\end{pmatrix},
+$$
+
+and one verifies $AX=XA=I$.
+
+### 6.8.2 Definition and Uniqueness
+
+For an $n\times n$ matrix $A$, a matrix $B$ such that $AB=I$ and $BA=I$ is called the **inverse** of $A$, denoted $A^{-1}$.
+
+**Uniqueness.** If $C$ is also an inverse, then $C=CI=C(AB)=(CA)B=IB=B$.
+
+A square matrix with $\det(A)\neq 0$, or equivalently one that admits an inverse, is called **non-singular**.
+
+### 6.8.3 Theorem 8.1 — Formula for the Inverse
+
+**Theorem 8.1.** Let $A=(a_{ij})$ be $n\times n$ with $D(A)\neq 0$. Let $E^j$ be the $j$-th unit column vector, and let:
+
+$$
+b_{ij}=\frac{D(A^1,\dots,E^j,\dots,A^n)}{D(A)},
+$$
+
+where $E^j$ occurs in the $i$-th place. Then $B=(b_{ij})$ is the inverse of $A$.
+
+**Proof.**
+- **Existence ($AX=I$):** The $j$-th column of $X$ satisfies $E^j=x_{1j}A^1+\cdots+x_{nj}A^n$. By Cramer's rule:
+  $$
+x_{ij}=\frac{D(A^1,\dots,E^j,\dots,A^n)}{D(A)}=b_{ij}.
+  $$
+- **Verification ($XA=I$):** Since $D({}^tA)\neq 0$, there exists $Y$ with ${}^tA\,Y=I$. Taking transposes gives ${}^tY A=I$. Then:
+  $$
+  XA=I(XA)=({}^tY A)(XA)={}^tY(AX)A={}^tY I A={}^tY A=I.
+  $$
+
+### 6.8.4 Explicit Formula via Cofactors
+
+Expanding the numerator determinant of $b_{ij}$ along its $i$-th column yields a single non-zero term. Let $A_{ji}$ denote the submatrix obtained from $A$ by deleting the $j$-th row and $i$-th column. Then:
+
+$$
+b_{ij}=\frac{(-1)^{i+j}\det(A_{ji})}{\det(A)}.
+$$
+
+Hence:
+
+$$
+A^{-1}={}^t\!\left(\frac{(-1)^{i+j}\det(A_{ij})}{\det(A)}\right).
+$$
+
+> In words: form the **cofactor matrix** $C=(c_{ij})$ with $c_{ij}=(-1)^{i+j}\det(A_{ij})$, take its transpose (the **adjugate**), and divide by $\det(A)$.
