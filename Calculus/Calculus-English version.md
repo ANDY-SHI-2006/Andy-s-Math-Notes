@@ -3926,6 +3926,58 @@ $$
   \end{aligned}
   $$
 
+## 6.8 Logarithmic Differentiation
+
+A technique developed by Johann Bernoulli (1697) for computing derivatives of products or quotients.
+
+### 6.8.1 The Method
+
+Set:
+
+$$
+g(x)=\log|f(x)|.
+$$
+
+By the chain rule and $L_{0}'(x)=1/x$:
+
+$$
+g'(x)=\frac{f'(x)}{f(x)}. \tag{6.15}
+$$
+
+Hence:
+
+$$
+f'(x)=f(x)\,g'(x).
+$$
+
+The idea is that $g'(x)$ is often easier to compute than $f'(x)$ directly, especially when $f$ is a product or quotient of several simpler functions.
+
+### 6.8.2 Example
+
+Compute $f'(x)$ for:
+
+$$
+f(x)=x^{2}\cos x\,(1+x^{4})^{-7}.
+$$
+
+Take logarithms:
+$$
+\begin{aligned}
+g(x)&=\log|f(x)|\\
+&=2\log|x|+\log|\cos x|-7\log(1+x^{4}).
+\end{aligned}
+$$
+
+Differentiate term by term:
+$$
+g'(x)=\frac{2}{x}-\tan x-\frac{28x^{3}}{1+x^{4}}.
+$$
+
+Multiply by $f(x)$:
+$$
+f'(x)=\frac{2x\cos x}{(1+x^{4})^{7}}-\frac{x^{2}\sin x}{(1+x^{4})^{7}}-\frac{28x^{5}\cos x}{(1+x^{4})^{8}}.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
