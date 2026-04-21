@@ -3034,3 +3034,92 @@ $$
 $$
 
 Hence ${}^t(AB) = {}^tB {}^tA$. The other formulas follow similarly.
+
+
+## 7.2 Hermitian Operators
+
+Throughout this section, $V$ is a finite dimensional vector space over $\mathbf{C}$, with a fixed positive definite hermitian product $\langle v, w \rangle$.
+
+> We may take $V = \mathbf{C}^n$ with the standard hermitian product $\langle X, Y \rangle = {}^tX \bar{Y}$.
+
+### 7.2.1 The Adjoint of an Operator
+
+For each $w \in V$, the map $L_w(v) = \langle Av, w \rangle$ is a functional.
+
+**Theorem 2.1.** Given a functional $L$ on $V$, there exists a unique $w' \in V$ such that $L(v) = \langle v, w' \rangle$ for all $v \in V$.
+
+**Proof.** Similar to the real case (Theorem 6.2, Chapter V).
+
+> **Remark.** The association $w \mapsto L_w$ is *not* an isomorphism $V \to V^*$, since $L_{\alpha w} = \bar{\alpha} L_w$.
+
+**Lemma 2.2.** Given an operator $A: V \to V$, there exists a unique operator $A^*: V \to V$ such that for all $v, w \in V$:
+
+$$
+\langle Av, w \rangle = \langle v, A^* w \rangle.
+$$
+
+**Proof.** Similar to Lemma 1.1.
+
+The operator $A^*$ is called the **adjoint** of $A$. Note that $A^*$ is linear (not anti-linear).
+
+**Example.** Let $V = \mathbf{C}^n$ with the standard form. For a matrix $A$ and column vectors $X, Y$:
+
+$$
+\langle AX, Y \rangle = {}^t(AX)\bar{Y} = {}^tX {}^tA \bar{Y} = {}^tX \overline{(\overline{{}^tA}\, Y)} = \langle X, {}^t\bar{A}\, Y \rangle.
+$$
+
+Thus $A^* = {}^t\bar{A}$.
+
+An operator $A$ is called **hermitian** (or **self-adjoint**) if $A^* = A$, i.e.:
+
+$$
+\langle Av, w \rangle = \langle v, Aw \rangle \quad \text{for all } v, w \in V.
+$$
+
+A complex square matrix $A$ is hermitian if ${}^t\bar{A} = A$ (equivalently ${}^tA = \bar{A}$).
+
+### 7.2.2 Formal Properties of the Adjoint
+
+**Theorem 2.3.** Let $A, B$ be operators and $\alpha \in \mathbf{C}$. Then:
+
+| Formula | Statement |
+|---------|-----------|
+| **Sum** | $(A+B)^* = A^* + B^*$ |
+| **Product** | $(AB)^* = B^* A^*$ |
+| **Scalar** | $(\alpha A)^* = \bar{\alpha} A^*$ |
+| **Double adjoint** | $A^{**} = A$ |
+
+**Proof of scalar rule.** For all $v, w \in V$:
+
+$$
+\langle \alpha Av, w \rangle = \alpha \langle Av, w \rangle = \alpha \langle v, A^* w \rangle = \langle v, \bar{\alpha} A^* w \rangle.
+$$
+
+Hence $(\alpha A)^* = \bar{\alpha} A^*$. The other formulas follow similarly.
+
+**Polarization identities.** For all $v, w \in V$:
+
+$$
+\begin{aligned}
+\langle A(v+w), v+w \rangle - \langle A(v-w), v-w \rangle &= 2\big[\langle Aw, v \rangle + \langle Av, w \rangle\big], \\
+\langle A(v+w), v+w \rangle - \langle Av, v \rangle - \langle Aw, w \rangle &= \langle Av, w \rangle + \langle Aw, v \rangle.
+\end{aligned}
+$$
+
+(Verifications are trivial by expanding the left-hand sides.)
+
+### 7.2.3 Characterizations of Hermitian Operators
+
+**Theorem 2.4.** Let $A$ be an operator such that $\langle Av, v \rangle = 0$ for all $v \in V$. Then $A = O$.
+
+**Proof.** By the second polarization identity, $\langle Aw, v \rangle + \langle Av, w \rangle = 0$ for all $v, w$. Replacing $v$ by $iv$ gives $-\langle Aw, v \rangle + \langle Av, w \rangle = 0$. Adding yields $2\langle Av, w \rangle = 0$, so $A = O$.
+
+**Theorem 2.5.** Let $A$ be an operator. Then $A$ is hermitian if and only if $\langle Av, v \rangle$ is real for all $v \in V$.
+
+**Proof.**
+- ($\implies$) If $A = A^*$: $\langle Av, v \rangle = \langle v, Av \rangle = \overline{\langle Av, v \rangle}$, so the value is real.
+- ($\impliedby$) If $\langle Av, v \rangle$ is real for all $v$:
+  $$
+  \langle Av, v \rangle = \overline{\langle Av, v \rangle} = \langle v, Av \rangle = \langle A^*v, v \rangle.
+  $$
+  Hence $\langle (A-A^*)v, v \rangle = 0$ for all $v$. By Theorem 2.4, $A - A^* = O$.
