@@ -3382,3 +3382,99 @@ Eigenvalues: $1, 1\pm i$. Eigenspace bases: $X^1 = \begin{pmatrix}0\\1\\1\end{pm
 **Proof.** $\det(tI - A) = \det(B^{-1}(tI-A)B) = \det(tI - B^{-1}AB)$.
 
 Hence the characteristic polynomial of a linear operator $L: V \to V$ is well-defined (independent of the choice of basis). Theorem 2.3 also holds for operators: any linear operator on a finite dimensional complex vector space ($\dim > 0$) has a non-zero eigenvector and eigenvalue.
+
+
+## 8.3 Eigenvalues and Eigenvectors of Symmetric Matrices
+
+### 8.3.1 Existence of Real Eigenvectors
+
+**Theorem 3.1.** Let $A$ be a real symmetric $n \times n$ matrix. Then there exists a non-zero real eigenvector for $A$.
+
+**First proof (using complex numbers).**
+
+**Theorem 3.2.** Let $A$ be a real symmetric matrix and $\lambda$ an eigenvalue in $\mathbf{C}$. Then $\lambda$ is real. If $Z = X + iY \neq O$ ($X,Y \in \mathbf{R}^n$) is a complex eigenvector with eigenvalue $\lambda$, then both $X$ and $Y$ are real eigenvectors of $A$ with eigenvalue $\lambda$, and $X$ or $Y \neq O$.
+
+**Proof.** Let $Z = (z_1, \dots, z_n)^t$. Then:
+
+$$
+{}^tZ \bar{Z} = \sum_{i=1}^n |z_i|^2 > 0.
+$$
+
+From $AZ = \lambda Z$:
+
+$$
+{}^t\bar{Z}AZ = \lambda \, {}^t\bar{Z}Z.
+$$
+
+Taking transpose and using ${}^tA = A$:
+
+$$
+{}^tZ A \bar{Z} = \lambda \, {}^tZ \bar{Z}.
+$$
+
+But $\overline{AZ} = A\bar{Z} = \bar{\lambda}\bar{Z}$ (since $A$ is real), so ${}^tZ A \bar{Z} = \bar{\lambda} \, {}^tZ \bar{Z}$. Hence $\lambda = \bar{\lambda}$, i.e. $\lambda$ is real.
+
+From $AZ = \lambda Z$ we get $AX + iAY = \lambda X + i\lambda Y$. Comparing real and imaginary parts: $AX = \lambda X$ and $AY = \lambda Y$.
+
+### 8.3.2 The Calculus Proof
+
+Define the **quadratic form** associated with $A$:
+
+$$
+f(X) = {}^tX A X = \sum_{i,j=1}^n a_{ij} x_i x_j.
+$$
+
+**Example.** $A = \begin{pmatrix}3&-1\\-1&2\end{pmatrix}$ gives $f(x,y) = 3x^2 - 2xy + 2y^2$.
+
+> In general, $A = \begin{pmatrix}a&b\\b&d\end{pmatrix}$ gives $f(x,y) = ax^2 + 2bxy + dy^2$.
+
+The **unit sphere** is $\{X \in \mathbf{R}^n : \|X\| = 1\}$. A continuous function on the sphere has a maximum.
+
+**Theorem 3.3.** Let $A$ be real symmetric and $f(X) = {}^tXAX$. Let $P$ be a point on the unit sphere where $f(P)$ is maximal. Then $P$ is an eigenvector of $A$.
+
+**Proof.** Let $W = P^\perp$ ($\dim W = n-1$). For $w \in W$ with $\|w\|=1$, define:
+
+$$
+C(t) = (\cos t)P + (\sin t)w.
+$$
+
+Then $C(t)$ lies on the sphere, $C(0)=P$, $C'(0)=w$. Set $g(t) = f(C(t))$. Then:
+
+$$
+g'(t) = 2C'(t) \cdot AC(t).
+$$
+
+Since $f(P)$ is maximal, $g'(0) = 0$, so $w \cdot AP = 0$ for all $w \in W$. Thus $AP \in W^\perp$, which is spanned by $P$. Hence $AP = \lambda P$.
+
+**Corollary 3.4.** The maximum value of $f$ on the unit sphere equals the largest eigenvalue of $A$.
+
+**Proof.** For a unit eigenvector $P$: $f(P) = {}^tP AP = \lambda \, {}^tP P = \lambda$. By Theorem 3.3, the maximum is attained at an eigenvector.
+
+### 8.3.3 Example
+
+Let $f(x,y) = 2x^2 - 3xy + y^2$. The associated symmetric matrix is:
+
+$$
+A = \begin{pmatrix}2&-\frac{3}{2}\\-\frac{3}{2}&1\end{pmatrix}.
+$$
+
+Characteristic polynomial:
+
+$$
+\begin{vmatrix}t-2&\frac{3}{2}\\\frac{3}{2}&t-1\end{vmatrix} = t^2 - 3t - \frac{1}{4}.
+$$
+
+Eigenvalues: $\lambda = \frac{3 \pm \sqrt{10}}{2}$.
+
+Eigenvectors (putting $x=1$):
+
+$$
+X(\lambda) = \begin{pmatrix}1\\\frac{2}{3}(2-\lambda)\end{pmatrix}.
+$$
+
+Unit eigenvectors: $P(\lambda) = X(\lambda)/\|X(\lambda)\|$.
+
+| | Value |
+|---|-------|
+| **Maximum** of $f$ on unit circle | $\frac{3+\sqrt{10}}{2}$ |
+| **Minimum** of $f$ on unit circle | $\frac{3-\sqrt{10}}{2}$ |
