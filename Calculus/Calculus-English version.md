@@ -4118,6 +4118,43 @@ $$
 \boxed{E(r)=e^{r}\quad\text{for every rational number }r.} \tag{6.22}
 $$
 
+## 6.12 The Definition of $e^{x}$ for Arbitrary Real $x$
+
+For rational $r$ we have $e^{r}=E(r)$. We **define** $e^{x}$ for irrational $x$ by the same formula:
+
+$$
+e^{x}=E(x)\qquad\text{for every real }x. \tag{6.23}
+$$
+
+- **Justification**: with this definition the law of exponents
+  $$
+  e^{a}e^{b}=e^{a+b}
+  $$
+  holds for **all** real $a,b$, because it is simply a restatement of the functional equation $E(a+b)=E(a)E(b)$.
+- **Notation**: $e^{x}$ (or $\exp x$) is the standard symbol; $E(x)$ is still used occasionally in this chapter.
+- The two equations $y=e^{x}$ and $x=\log y$ mean exactly the same thing.
+
+## 6.13 The Definition of $a^{x}$ for $a>0$ and $x$ Real
+
+Now that $e^{x}$ is defined for arbitrary real $x$, we define general powers by:
+
+$$
+a^{x}=e^{x\log a}\qquad(a>0,\;x\in\mathbb{R}). \tag{6.24}
+$$
+
+This definition is preferable because it is meaningful for **all** positive $a$ (including $a=1$) and makes the following properties immediate:
+
+$$
+\begin{aligned}
+\log a^{x}&=x\log a, & (ab)^{x}&=a^{x}b^{x},\\
+a^{x}a^{y}&=a^{x+y}, & (a^{x})^{y}&=(a^{y})^{x}=a^{xy}.
+\end{aligned}
+$$
+
+- If $a\neq1$, then $y=a^{x}\iff x=\log_{a}y$.
+- The graph of $y=a^{x}$ is the reflection of $y=\log_{a}x$ through the line $y=x$.
+- The case $a=1$ gives the horizontal line $y=1$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
