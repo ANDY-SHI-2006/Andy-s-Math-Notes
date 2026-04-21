@@ -3608,6 +3608,49 @@ which is (5.10) since $G(c)=\int_{a}^{c}g(x)\,dx$ and $G(b)-G(c)=\int_{c}^{b}g(x
 
 # 6. The Logarithm, the Exponential, and the Inverse Trigonometric Functions
 
+## 6.1 Introduction
+
+This chapter studies three indispensable families of functions:
+- the **logarithm** and its inverse, the **exponential**;
+- the **inverse trigonometric functions**.
+
+### 6.1.1 The Elementary-Algebra Viewpoint
+
+In elementary algebra, the logarithm to base $b$ ($b>0$, $b\neq1$) is defined by:
+
+$$
+u=\log_{b}x\quad\Longleftrightarrow\quad x=b^{u}. \tag{6.1}
+$$
+
+The fundamental property follows from the law of exponents:
+
+$$
+\log_{b}(xy)=\log_{b}x+\log_{b}y. \tag{6.2}
+$$
+
+- Base $10$ is convenient for decimal calculations; e.g. $\log_{10}0.01=-2$, $\log_{10}1000=3$.
+
+### 6.1.2 Logical Gaps in the Elementary Approach
+
+Defining logarithms via (6.1) raises several difficulties:
+
+| Gap | Issue |
+|-----|-------|
+| **Meaning of $b^{u}$** | Easy when $u$ is integer or rational, but nontrivial when $u$ is irrational (e.g. $10^{\sqrt2}$). |
+| **Existence** | Must prove that for every $x>0$ there actually exists a real $u$ with $x=b^{u}$. |
+| **Laws of exponents** | The identity $b^{u}b^{v}=b^{u+v}$ must be established for *all* real exponents before (6.2) can be derived from (6.1). |
+
+Overcoming these gaps directly is possible but long and tedious.
+
+### 6.1.3 The Calculus Approach
+
+A simpler and more elegant route is available through calculus:
+
+- **Define the logarithm first** (via integration).
+- **Then use logarithms to define $b^{u}$**.
+
+This reverses the elementary order and avoids the logical gaps above.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
