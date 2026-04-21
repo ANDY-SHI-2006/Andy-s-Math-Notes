@@ -3771,6 +3771,49 @@ The shape of $y=L(x)$ follows directly from Theorem 6.1 without elaborate calcul
 - **Slope blows up as $x\to0^{+}$**: $L'(x)=1/x\to+\infty$.
 - **Concave everywhere**: $L''(x)=-1/x^{2}<0$ for all $x>0$.
 
+## 6.5 Consequences of the Functional Equation $L(ab)=L(a)+L(b)$
+
+### 6.5.1 Unboundedness
+
+From $L(a^{n})=nL(a)$ (proved by induction using the functional equation):
+
+- For any $M>0$, choose an integer $n>M/L(2)$. Then:
+  $$
+  L(2^{n})=nL(2)>M.
+  $$
+  Hence $L$ is **not bounded above**.
+- Taking $b=1/a$ in the functional equation gives $L(1/a)=-L(a)$. Therefore:
+  $$
+  L\!igl(2^{-n}\bigr)=-L(2^{n})<-M,
+  $$
+  so $L$ is **not bounded below**.
+
+### 6.5.2 Existence and Uniqueness
+
+**Theorem 6.2.** For every real number $b$ there is exactly one positive real number $a$ such that $L(a)=b$.
+
+**Proof sketch.**
+- If $b>0$, pick $n$ with $L(2^{n})>b$. On $[1,2^{n}]$ we have $L(1)=0$ and $L(2^{n})>b$, so the intermediate-value theorem guarantees at least one $a$ with $L(a)=b$. Uniqueness follows from strict monotonicity.
+- If $b<0$, use $L(1/a)=-L(a)$.
+- If $b=0$, then $a=1$.
+
+Thus the graph of $L$ crosses every horizontal line exactly once.
+
+### 6.5.3 The Number $e$
+
+Since $L$ takes the value $1$ exactly once, we make the following definition.
+
+**Definition.** We denote by $e$ the unique positive number for which:
+
+$$
+L(e)=1. \tag{6.8}
+$$
+
+- **Decimal value**: $e\approx2.7182818285\dots$
+- **History**: The notation $e$ was introduced by Leonard Euler (1707--1783). Natural logarithms are also called **Napierian logarithms** (after John Napier, 1550--1617).
+- **Notation**: The symbols $\ln x$ or $\log x$ are commonly used instead of $L(x)$.
+- **Preview** (Chapter 7): explicit formulas for computing $e$ to any accuracy, and a proof that $e$ is irrational.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
