@@ -3301,3 +3301,84 @@ $$
 A linear map $L$ (or an $n \times n$ matrix $A$) can be **diagonalized** if there exists a basis of $V$ consisting of eigenvectors.
 
 > Later in this chapter we show that if $A$ is a symmetric matrix, then $L_A: \mathbf{R}^n \to \mathbf{R}^n$ can be diagonalized.
+
+
+## 8.2 The Characteristic Polynomial
+
+### 8.2.1 Eigenvalues and Invertibility
+
+**Theorem 2.1.** Let $A: V \to V$ be linear. Then $\lambda$ is an eigenvalue of $A$ if and only if $A - \lambda I$ is not invertible.
+
+**Proof.**
+- If $\lambda$ is an eigenvalue, then $(A-\lambda I)v = O$ for some $v \neq O$, so $A-\lambda I$ has a non-zero kernel.
+- Conversely, if $A-\lambda I$ is not invertible, it has a non-zero kernel (Chapter III, Theorem 3.3), so $(A-\lambda I)v = O$ for some $v \neq O$.
+
+### 8.2.2 The Characteristic Polynomial
+
+Let $A$ be an $n \times n$ matrix. The **characteristic polynomial** is:
+
+$$
+P_A(t) = \det(tI - A) = \begin{vmatrix} t-a_{11} & -a_{12} & \cdots \\ -a_{21} & t-a_{22} & \cdots \\ \vdots & \vdots & \ddots \end{vmatrix}.
+$$
+
+Expanding shows $P_A(t) = t^n + \text{terms of lower degree}$.
+
+**Theorem 2.2.** $\lambda$ is an eigenvalue of $A$ if and only if $\lambda$ is a root of $P_A(t)$.
+
+**Proof.** $\lambda$ is an eigenvalue $\iff A-\lambda I$ is not invertible (Theorem 2.1) $\iff \det(\lambda I - A) = 0$ (Chapter VI, Theorem 5.3).
+
+### 8.2.3 Examples
+
+**Example 1.** For $A = \begin{pmatrix}1&-1&3\\-2&1&1\\0&1&-1\end{pmatrix}$:
+
+$$
+P_A(t) = \begin{vmatrix}t-1&1&-3\\2&t-1&-1\\0&-1&t+1\end{vmatrix} = t^3 - t^2 - 4t + 6.
+$$
+
+**Example 2.** For $A = \begin{pmatrix}1&4\\2&3\end{pmatrix}$:
+
+$$
+P_A(t) = t^2 - 4t - 5 = (t-5)(t+1).
+$$
+
+Eigenvalues: $5, -1$. Eigenspace bases: $X^1 = \begin{pmatrix}1\\1\end{pmatrix}$ for $\lambda=5$, $X^2 = \begin{pmatrix}2\\-1\end{pmatrix}$ for $\lambda=-1$.
+
+**Example 3.** For $A = \begin{pmatrix}2&1&0\\0&1&-1\\0&2&4\end{pmatrix}$:
+
+$$
+P_A(t) = (t-2)^2(t-3).
+$$
+
+Eigenvalues: $2, 3$. Eigenspace bases: $X^1 = \begin{pmatrix}1\\0\\0\end{pmatrix}$ for $\lambda=2$, $X^2 = \begin{pmatrix}1\\1\\-2\end{pmatrix}$ for $\lambda=3$.
+
+> **Upper triangular matrices.** If $A$ is upper triangular, $P_A(t) = (t-a_{11})(t-a_{22})\cdots(t-a_{nn})$. The eigenvalues are the diagonal entries.
+
+**Example 4 (complex eigenvalues).** For $A = \begin{pmatrix}2&-1\\3&1\end{pmatrix}$:
+
+$$
+P_A(t) = t^2 - 3t + 5.
+$$
+
+Eigenvalues: $\lambda = \frac{3 \pm \sqrt{-11}}{2}$ (no real eigenvalues). Eigenvectors: $X(\lambda) = \begin{pmatrix}1\\2-\lambda\end{pmatrix}$.
+
+**Example 5.** For $A = \begin{pmatrix}1&1&-1\\0&1&0\\1&0&1\end{pmatrix}$:
+
+$$
+P_A(t) = (t-1)(t^2-2t+2).
+$$
+
+Eigenvalues: $1, 1\pm i$. Eigenspace bases: $X^1 = \begin{pmatrix}0\\1\\1\end{pmatrix}$ for $\lambda=1$, and $X(\lambda) = \begin{pmatrix}1/(1-\lambda)\\0\\1\end{pmatrix}$ for $\lambda=1\pm i$.
+
+### 8.2.4 Existence of Eigenvalues
+
+**Theorem 2.3.** Let $A$ be a complex $n \times n$ matrix. Then $A$ has a non-zero eigenvector and an eigenvalue in $\mathbf{C}$.
+
+> This follows from the fundamental theorem of algebra: every non-constant polynomial with complex coefficients has a complex root. This is not always true over $\mathbf{R}$.
+
+### 8.2.5 Similarity Invariance
+
+**Theorem 2.4.** Let $A, B$ be $n \times n$ matrices with $B$ invertible. Then $A$ and $B^{-1}AB$ have the same characteristic polynomial.
+
+**Proof.** $\det(tI - A) = \det(B^{-1}(tI-A)B) = \det(tI - B^{-1}AB)$.
+
+Hence the characteristic polynomial of a linear operator $L: V \to V$ is well-defined (independent of the choice of basis). Theorem 2.3 also holds for operators: any linear operator on a finite dimensional complex vector space ($\dim > 0$) has a non-zero eigenvector and eigenvalue.
