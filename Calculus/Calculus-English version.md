@@ -4234,6 +4234,47 @@ $$
   \int\frac{dx}{1+e^{x}}=x-\log(1+e^{x})+C.
   $$
 
+## 6.15 The Hyperbolic Functions
+
+Combinations of exponentials that occur frequently in analysis:
+
+$$
+\begin{aligned}
+\sinh x&=\frac{e^{x}-e^{-x}}{2}, & \cosh x&=\frac{e^{x}+e^{-x}}{2}, & \tanh x&=\frac{\sinh x}{\cosh x}=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}},\\[4pt]
+\csch x&=\frac{1}{\sinh x}, & \sech x&=\frac{1}{\cosh x}, & \coth x&=\frac{1}{\tanh x}.
+\end{aligned}
+$$
+
+- The name "hyperbolic" comes from the geometric relation to a hyperbola (analogous to the relation of trigonometric functions to a circle); discussed in detail in Chapter 14.
+- The hyperbolic functions possess many properties that resemble those of the trigonometric functions.
+
+**Graphs** (Figure 6.8):
+- $y=\sinh x$: odd, strictly increasing, passes through the origin.
+- $y=\cosh x$: even, U-shaped with minimum $1$ at $x=0$.
+- $y=\tanh x$: odd, increasing, horizontal asymptotes $y=\pm1$.
+
+## 6.16 Derivatives of Inverse Functions
+
+**Theorem 6.7.** Assume $f$ is strictly increasing and continuous on $[a,b]$, and let $g$ be the inverse of $f$. If $f'(x)$ exists and is nonzero at a point $x$ in $(a,b)$, then $g'(y)$ also exists and is nonzero at the corresponding point $y=f(x)$. Moreover:
+
+$$
+g'(y)=\frac{1}{f'(x)}. \tag{6.30}
+$$
+
+**Leibniz form.** With $y=f(x)$, $\dfrac{dy}{dx}=f'(x)$, $x=g(y)$, $\dfrac{dx}{dy}=g'(y)$:
+
+$$
+\frac{dx}{dy}=\frac{1}{\,\dfrac{dy}{dx}\,}.
+$$
+
+**Proof sketch.** Let $h=g(y+k)-g(y)$. Then $y+k=f(x+h)$ and $k=f(x+h)-f(x)$. Since $g$ is continuous, $h\to0$ as $k\to0$. The difference quotient becomes:
+
+$$
+\frac{g(y+k)-g(y)}{k}=\frac{h}{f(x+h)-f(x)}=\frac{1}{[f(x+h)-f(x)]/h}\to\frac{1}{f'(x)}
+$$
+
+as $k\to0$. ∎
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
