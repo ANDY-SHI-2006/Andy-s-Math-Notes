@@ -2725,3 +2725,123 @@ $$
 - Every transposition is odd.
 
 > **Example 4.** The permutation in Example 2 is **even** (product of 2 transpositions). The permutation in Example 3 is **odd** (product of 3 transpositions).
+
+
+## 6.7 Expansion Formula and Uniqueness of Determinants
+
+### 6.7.1 Expansion Formula
+
+**3 × 3 case.** Let $X^1, X^2, X^3 \in K^3$ and $(b_{ij})$ be a $3 \times 3$ matrix. If:
+
+$$
+A^j = \sum_{k=1}^3 b_{kj} X^k \quad (j=1,2,3),
+$$
+
+then by multilinearity:
+
+$$
+D(A^1,A^2,A^3) = \sum_{k=1}^3\sum_{l=1}^3\sum_{m=1}^3 b_{k1}b_{l2}b_{m3}\,D(X^k,X^l,X^m).
+$$
+
+Writing $k=\sigma(1)$, $l=\sigma(2)$, $m=\sigma(3)$ for a permutation $\sigma$ of $\{1,2,3\}$:
+
+$$
+D(A^1,A^2,A^3) = \sum_\sigma b_{\sigma(1),1}b_{\sigma(2),2}b_{\sigma(3),3}\,D(X^{\sigma(1)},X^{\sigma(2)},X^{\sigma(3)}).
+$$
+
+**General case — Lemma 7.1.** Let $X^1,\dots,X^n$ be vectors in $n$-space and $B=(b_{ij})$ an $n\times n$ matrix. Let:
+
+$$
+A^j = \sum_{i=1}^n b_{ij}X^i.
+$$
+
+Then:
+
+$$
+D(A^1,\dots,A^n) = \sum_\sigma \epsilon(\sigma)\,b_{\sigma(1),1}\cdots b_{\sigma(n),n}\,D(X^1,\dots,X^n),
+$$
+
+where the sum is over all permutations $\sigma$ of $\{1,\dots,n\}$.
+
+**Proof sketch.** Expand $D(A^1,\dots,A^n)$ by multilinearity in each column. Terms where $\sigma$ is not injective (i.e. $\sigma(i)=\sigma(j)$ for some $i\neq j$) vanish because the determinant has two equal columns. For permutations, $D(X^{\sigma(1)},\dots,X^{\sigma(n)}) = \epsilon(\sigma)D(X^1,\dots,X^n)$ by Proposition 6.2.
+
+### 6.7.2 Uniqueness of the Determinant
+
+**Theorem 7.2.** Determinants are uniquely determined by properties 1, 2, and 3 (multilinearity, alternation, normalization). For $A=(a_{ij})$:
+
+$$
+D(A^1,\dots,A^n) = \sum_\sigma \epsilon(\sigma)\,a_{\sigma(1),1}\cdots a_{\sigma(n),n}.
+$$
+
+**Proof.** Apply Lemma 7.1 with $X^j=E^j$ (unit vectors) and $b_{ij}=a_{ij}$. Since $D(E^1,\dots,E^n)=1$, the formula follows immediately.
+
+**Verification for 2 × 2.** For $A=\begin{pmatrix}a&b\\c&d\end{pmatrix}$:
+
+$$
+\begin{aligned}
+D(A) &= D(aE^1+cE^2,\;bE^1+dE^2) \\
+&= abD(E^1,E^1)+cbD(E^2,E^1)+adD(E^1,E^2)+cdD(E^2,E^2) \\
+&= -bcD(E^1,E^2)+adD(E^1,E^2) \\
+&= ad-bc.
+\end{aligned}
+$$
+
+Thus any function $D$ satisfying the basic properties is given by the $2\times 2$ formula.
+
+### 6.7.3 Multiplicativity and Transpose
+
+**Theorem 7.3.** Let $A,B$ be $n\times n$ matrices. Then:
+
+$$
+\operatorname{Det}(AB)=\operatorname{Det}(A)\operatorname{Det}(B).
+$$
+
+**Proof.** Let $C=AB$ and let $C^k$ be the $k$-th column of $C$. Then:
+
+$$
+C^k = b_{1k}A^1+\cdots+b_{nk}A^n.
+$$
+
+By Lemma 7.1:
+
+$$
+\begin{aligned}
+D(AB) &= D(C^1,\dots,C^n) \\
+&= \sum_\sigma\epsilon(\sigma)\,b_{\sigma(1),1}\cdots b_{\sigma(n),n}\,D(A^1,\dots,A^n) \\
+&= D(B)\,D(A).
+\end{aligned}
+$$
+
+**Corollary 7.4.** If $A$ is invertible, then:
+
+$$
+\operatorname{Det}(A^{-1})=\operatorname{Det}(A)^{-1}.
+$$
+
+**Proof.** $1=D(I)=D(AA^{-1})=D(A)D(A^{-1})$.
+
+**Theorem 7.5.** Let $A$ be a square matrix. Then:
+
+$$
+\operatorname{Det}(A)=\operatorname{Det}({}^tA).
+$$
+
+**Proof.** From Theorem 7.2:
+
+$$
+\operatorname{Det}(A)=\sum_\sigma\epsilon(\sigma)\,a_{\sigma(1),1}\cdots a_{\sigma(n),n}.
+$$
+
+If $\sigma(j)=k$, then $a_{\sigma(j),j}=a_{k,\sigma^{-1}(k)}$. Since each integer $1,\dots,n$ occurs exactly once among $\sigma(1),\dots,\sigma(n)$, the product equals:
+
+$$
+a_{1,\sigma^{-1}(1)}\cdots a_{n,\sigma^{-1}(n)}.
+$$
+
+Using $\epsilon(\sigma)=\epsilon(\sigma^{-1})$:
+
+$$
+\operatorname{Det}(A)=\sum_\sigma\epsilon(\sigma^{-1})\,a_{1,\sigma^{-1}(1)}\cdots a_{n,\sigma^{-1}(n)}=\sum_\sigma\epsilon(\sigma)\,a_{1,\sigma(1)}\cdots a_{n,\sigma(n)},
+$$
+
+which is precisely the expansion for $\operatorname{Det}({}^tA)$.
