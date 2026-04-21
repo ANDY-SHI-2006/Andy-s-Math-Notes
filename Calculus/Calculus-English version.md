@@ -4058,6 +4058,66 @@ $$
   $$
   giving $0.6921<\log2<0.6935$.
 
+## 6.10 The Exponential Function
+
+### 6.10.1 Definition
+
+Theorem 6.2 shows that for every real $x$ there is a unique $y>0$ with $L(y)=x$. The **exponential function** (or **antilogarithm**), denoted $E$, is the inverse of $L$:
+
+$$
+y=E(x)\quad\Longleftrightarrow\quad L(y)=x.
+$$
+
+- **Domain**: all real numbers; **range**: $(0,+\infty)$.
+- The graph of $E$ is the reflection of the graph of $L$ through the line $y=x$ (Figure 6.6).
+- Inverse relations:
+  $$
+  L[E(x)]=x\quad\text{for all }x,\qquad E[L(y)]=y\quad\text{for all }y>0.
+  $$
+
+### 6.10.2 Basic Properties
+
+**Theorem 6.6.** The exponential function satisfies:
+
+| Property | Statement |
+|----------|-----------|
+| **(a)** | $E(0)=1$, $E(1)=e$. |
+| **(b)** | $E'(x)=E(x)$ for every $x$. |
+| **(c)** | $E(a+b)=E(a)E(b)$ for all $a,b$. |
+
+**Proof.**
+- **(a)** Follows from $L(1)=0$ and $L(e)=1$.
+- **(c)** Let $x=E(a)$, $y=E(b)$, $c=L(xy)$. Then $L(x)=a$, $L(y)=b$, and $c=L(xy)=L(x)+L(y)=a+b$. Hence $E(a+b)=E(c)=xy=E(a)E(b)$.
+- **(b)** Using (c), the difference quotient is:
+  $$
+  \frac{E(x+h)-E(x)}{h}=E(x)\,\frac{E(h)-1}{h}.
+  $$
+  Set $k=E(h)-1$; then $h=L(k+1)$ and
+  $$
+  \frac{E(h)-1}{h}=\frac{k}{L(k+1)}=\frac{1}{[L(k+1)-L(1)]/k}\to\frac{1}{L'(1)}=1
+  $$
+  as $h\to0$ (so $k\to0$). Thus $E'(x)=E(x)$. ∎
+
+## 6.11 Exponentials Expressed as Powers of $e$
+
+The functional equation $E(a+b)=E(a)E(b)$ implies:
+
+$$
+E(-a)=\frac{1}{E(a)},\qquad E(na)=E(a)^{n}\quad(n\in\mathbb{Z}^{+}).
+$$
+
+Taking $a=1$ gives $E(n)=e^{n}$; taking $a=1/n$ gives $E(1/n)=e^{1/n}$. Combining these:
+
+$$
+E\Bigl(\frac{n}{m}\Bigr)=E\Bigl(\frac1m\Bigr)^{n}=e^{n/m}
+$$
+
+for all positive integers $m,n$. Since $E(-r)=1/E(r)$, we obtain:
+
+$$
+\boxed{E(r)=e^{r}\quad\text{for every rational number }r.} \tag{6.22}
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
