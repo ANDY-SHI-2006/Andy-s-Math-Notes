@@ -3355,6 +3355,21 @@ $$
 - These formulas also follow directly from the definition of the integral (proved in Chapter 2).
 - Further integration formulas are obtained by taking finite sums of terms $Ax^{n}$, $B\sin x$, $C\cos x$.
 
+## 5.4 Properties of a Function Deduced from Properties of Its Derivative
+
+If $f$ has a continuous derivative $f'$ on an open interval $I$, the second fundamental theorem gives:
+
+$$
+f(x)=f(c)+\int_{c}^{x}f'(t)\,dt\qquad\text{for all }x,c\in I. \tag{5.4}
+$$
+
+This formula expresses $f$ in terms of $f'$, allowing properties of $f$ to be deduced from properties of $f'$.
+
+- **Monotonicity**: Suppose $f'$ is continuous and nonnegative on $I$. If $x>c$, then $\int_{c}^{x}f'(t)\,dt\ge0$, so $f(x)\ge f(c)$.  
+  Hence: *a continuous nonnegative derivative implies $f$ is increasing on $I$.*
+
+- **Convexity / concavity**: Theorem 2.9 shows that the indefinite integral of an increasing function is convex. Therefore, if $f'$ is continuous and increasing on $I$, Equation (5.4) shows that $f$ is **convex** on $I$. Similarly, $f$ is **concave** on intervals where $f'$ is continuous and decreasing.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
