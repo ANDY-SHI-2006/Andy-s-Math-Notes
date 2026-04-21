@@ -3157,6 +3157,8 @@ f_{2,2}&=-x\sin y-x^{2}y^{2}\cos(xy)-4xy\sin(xy)+2\cos(xy).
 \end{aligned}
 $$
 
+# 5. The Relation between Integration and Differentiation
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
