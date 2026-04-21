@@ -2916,3 +2916,48 @@ A^{-1}={}^t\!\left(\frac{(-1)^{i+j}\det(A_{ij})}{\det(A)}\right).
 $$
 
 > In words: form the **cofactor matrix** $C=(c_{ij})$ with $c_{ij}=(-1)^{i+j}\det(A_{ij})$, take its transpose (the **adjugate**), and divide by $\det(A)$.
+
+
+## 6.9 The Rank of a Matrix and Subdeterminants
+
+### 6.9.1 Rank via Subdeterminants
+
+Since determinants test linear independence, they can be used to determine the rank of a matrix.
+
+**Example 1.** Let:
+
+$$
+A=\begin{pmatrix}3&1&2&5\\1&2&-1&2\\1&1&0&1\end{pmatrix}.
+$$
+
+This $3\times 4$ matrix has rank at most 3. The subdeterminant from columns 1, 2, 4:
+
+$$
+\begin{vmatrix}3&1&5\\1&2&2\\1&1&1\end{vmatrix}=-4\neq 0,
+$$
+
+so $\operatorname{rank} A = 3$.
+
+It may happen that some $3\times 3$ subdeterminant is 0 while the rank is still 3. For instance, let:
+
+$$
+B=\begin{pmatrix}3&1&2&5\\1&2&-1&2\\4&3&1&1\end{pmatrix}.
+$$
+
+The first three columns have determinant 0 (row 3 = row 1 + row 2). But columns 2, 3, 4 give a non-zero determinant, so $\operatorname{rank} B = 3$.
+
+> **General principle.** For a $3\times 4$ matrix, if the rank is $\le 2$, then **every** $3\times 3$ subdeterminant is 0. Conversely, if every $3\times 3$ subdeterminant is 0, the rank is $\le 2$.
+
+**Example 2.** Let:
+
+$$
+C=\begin{pmatrix}3&1&2&5\\1&2&-1&2\\4&3&1&7\end{pmatrix}.
+$$
+
+Every $3\times 3$ subdeterminant is 0, so $\operatorname{rank} C\le 2$. However:
+
+$$
+\begin{vmatrix}3&1\\1&2\end{vmatrix}=5\neq 0,
+$$
+
+so the first two rows are linearly independent. Hence $\operatorname{rank} C = 2$. (Indeed, row 3 = row 1 + row 2.)
