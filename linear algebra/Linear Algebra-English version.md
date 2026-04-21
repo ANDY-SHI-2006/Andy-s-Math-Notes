@@ -3732,3 +3732,68 @@ f(t) = (t-\alpha_1)^{m_1} \cdots (t-\alpha_r)^{m_r},
 $$
 
 with integers $m_1, \dots, m_r > 0$, uniquely determined. The integer $m_i$ is called the **multiplicity** of $\alpha_i$ in $f$.
+
+
+## 9.2 Polynomials of Matrices and Linear Maps
+
+The set of polynomials with coefficients in $K$ is denoted $K[t]$.
+
+Let $A$ be a square matrix with coefficients in $K$. For $f \in K[t]$ with $f(t) = a_n t^n + \cdots + a_0$, define:
+
+$$
+f(A) = a_n A^n + \cdots + a_0 I.
+$$
+
+### 9.2.1 Basic Properties
+
+**Example 1.** Let $f(t) = 3t^2 - 2t + 5$ and $A = \begin{pmatrix}1&-1\\2&0\end{pmatrix}$. Then:
+
+$$
+f(A) = 3A^2 - 2A + 5I = \begin{pmatrix}0&-1\\2&-1\end{pmatrix}.
+$$
+
+**Theorem 2.1.** Let $f, g \in K[t]$ and $A$ a square matrix over $K$. Then:
+
+| Property | Statement |
+|----------|-----------|
+| **Sum** | $(f+g)(A) = f(A) + g(A)$ |
+| **Product** | $(fg)(A) = f(A)g(A)$ |
+| **Scalar** | $(cf)(A) = cf(A)$ for $c \in K$ |
+
+**Proof of product.** If $(fg)(t) = \sum_k c_k t^k$ with $c_k = \sum_{i=0}^k a_i b_{k-i}$, then:
+
+$$
+(fg)(A) = \sum_k c_k A^k = \sum_{i,j} a_i b_j A^{i+j} = \left(\sum_i a_i A^i\right)\left(\sum_j b_j A^j\right) = f(A)g(A).
+$$
+
+**Example 2.** If $f(t) = (t-1)(t+3) = t^2 + 2t - 3$, then:
+
+$$
+f(A) = (A-I)(A+3I) = A^2 + 2A - 3I.
+$$
+
+**Example 3.** If $f(t) = (t-\alpha_1)\cdots(t-\alpha_n)$, then:
+
+$$
+f(A) = (A-\alpha_1 I)\cdots(A-\alpha_n I).
+$$
+
+### 9.2.2 Polynomials of Linear Maps
+
+Let $V$ be a vector space over $K$ and $A: V \to V$ an operator. Define $A^n$ by iteration ($A^0 = I$). Then $A^{m+n} = A^m A^n$.
+
+If $f \in K[t]$, we define $f(A)$ in the same way. The same rules as in Theorem 2.1 hold for operators.
+
+### 9.2.3 Existence of an Annihilating Polynomial
+
+**Theorem 2.2.** Let $A$ be an $n \times n$ matrix over a field $K$. Then there exists a non-zero polynomial $f \in K[t]$ such that $f(A) = O$.
+
+**Proof.** The space of $n \times n$ matrices over $K$ has dimension $n^2$. Hence the powers $I, A, A^2, \dots, A^N$ are linearly dependent for $N > n^2$. Thus there exist $a_0, \dots, a_N \in K$, not all zero, with:
+
+$$
+a_N A^N + \cdots + a_0 I = O.
+$$
+
+Let $f(t) = a_N t^N + \cdots + a_0$.
+
+> **Note.** Theorem 2.2 also holds for linear maps on finite dimensional vector spaces. Later in Chapter X, §2, an explicit polynomial $P(t)$ with $P(A) = O$ will be constructed (the characteristic polynomial). By dividing by the leading coefficient, one may assume $f$ is monic.
