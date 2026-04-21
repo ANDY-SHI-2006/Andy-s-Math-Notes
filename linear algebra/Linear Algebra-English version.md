@@ -3588,3 +3588,70 @@ $$
 is a diagonal matrix.
 
 *(Proof like that of Theorem 4.4.)*
+
+
+## 8.6 Unitary Operators
+
+### 8.6.1 The Complex Case
+
+Let $V$ be a finite dimensional vector space over $\mathbf{C}$ with a positive definite hermitian product. Let $U: V \to V$ be a unitary operator.
+
+Recall the equivalent conditions: $\|Uv\| = \|v\|$; $\langle Uv, Uw \rangle = \langle v, w \rangle$; $U$ maps unit vectors to unit vectors.
+
+Since $U$ is invertible, any eigenvalue $\lambda$ satisfies $\lambda \neq 0$.
+
+**Lemma 6.1.** Let $W$ be a $U$-invariant subspace of $V$. Then $W^\perp$ is also $U$-invariant.
+
+**Proof.** For $v \in W^\perp$ and $w \in W$:
+
+$$
+\langle w, Uv \rangle = \langle U^*w, v \rangle = \langle U^{-1}w, v \rangle = 0,
+$$
+
+since $U^{-1}$ maps $W$ into itself.
+
+**Theorem 6.2.** Let $U: V \to V$ be unitary. Then $V$ has an orthogonal basis consisting of eigenvectors of $U$.
+
+**Proof.** Let $v_1$ be a non-zero eigenvector and $V_1 = \langle v_1 \rangle$. By Lemma 6.1, $V_1^\perp$ is $U$-invariant. By induction, $V_1^\perp$ has an orthogonal basis of eigenvectors $\{v_2, \dots, v_n\}$. Then $\{v_1, \dots, v_n\}$ is the desired basis.
+
+### 8.6.2 The Real Case
+
+Let $V$ be a finite dimensional vector space over $\mathbf{R}$ ($\dim > 0$) with a positive definite scalar product. Let $T$ be a real unitary (orthogonal) operator.
+
+**Theorem 6.3.** $V$ can be expressed as a direct sum of mutually orthogonal $T$-invariant subspaces:
+
+$$
+V = V_1 \oplus \cdots \oplus V_r,
+$$
+
+where $\dim V_i = 1$ or $2$ for each $i$.
+
+**Proof sketch.** Pick an orthonormal basis and represent $T$ by a unitary matrix $M$. View $M$ as operating on $\mathbf{C}^n$. Since $M$ is real and ${}^tM = M^{-1}$, we also have ${}^t\bar{M} = M^{-1}$, so $M$ is complex unitary.
+
+Let $Z = X + iY$ ($X, Y \in \mathbf{R}^n$) be a non-zero eigenvector in $\mathbf{C}^n$ with eigenvalue $\lambda = e^{i\theta}$ (since $\|MZ\| = \|Z\|$, we have $|\lambda| = 1$).
+
+**Case 1.** $\lambda$ is real ($\lambda = \pm 1$). Then $MX = \lambda X$ and $MY = \lambda Y$. At least one of $X, Y$ is non-zero, giving a real eigenvector $v$. Let $V_1 = \langle v \rangle$. Then $V = V_1 \oplus V_1^\perp$ and $V_1^\perp$ is $T$-invariant (Lemma 6.1 applies to the real case). Conclude by induction.
+
+**Case 2.** $\lambda$ is not real. Then $\bar{\lambda} = e^{-i\theta}$ and $M\bar{Z} = \bar{\lambda}\bar{Z}$. Writing $e^{i\theta} = \cos\theta + i\sin\theta$ and comparing real and imaginary parts in $MZ = \lambda Z$:
+
+$$
+MX = (\cos\theta)X - (\sin\theta)Y, \qquad MY = (\sin\theta)X + (\cos\theta)Y.
+$$
+
+The vectors $X, Y$ are linearly independent over $\mathbf{R}$. Let $V_1 = \text{span}_\mathbf{R}\{X, Y\}$. Then $V_1$ is $T$-invariant, $\dim V_1 = 2$, and $V = V_1 \oplus V_1^\perp$ with $V_1^\perp$ also $T$-invariant. Conclude by induction.
+
+**Theorem 6.4.** There exists a basis of $V$ such that the matrix of $T$ consists of blocks:
+
+$$
+\begin{pmatrix} M_1 & O & \cdots & O \\ O & M_2 & \cdots & O \\ \vdots & \vdots & & \vdots \\ O & O & \cdots & M_r \end{pmatrix},
+$$
+
+where each $M_i$ is $1 \times 1$ or $2 \times 2$ of the following types:
+
+| Type | Matrix | Geometric meaning |
+|------|--------|-------------------|
+| **(1)** | $(1)$ | Identity $I$ |
+| **($-1$)** | $(-1)$ | Reflection $-I$ |
+| **Rotation** | $\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$ | Rotation by $\theta$ |
+
+> **Geometric content.** On each component $V_i$, $T$ is either the identity, a reflection, or a rotation.
