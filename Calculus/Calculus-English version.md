@@ -3606,6 +3606,8 @@ $$
 
 which is (5.10) since $G(c)=\int_{a}^{c}g(x)\,dx$ and $G(b)-G(c)=\int_{c}^{b}g(x)\,dx$. ∎
 
+# 6. The Logarithm, the Exponential, and the Inverse Trigonometric Functions
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
