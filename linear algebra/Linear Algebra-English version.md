@@ -2961,3 +2961,6 @@ $$
 $$
 
 so the first two rows are linearly independent. Hence $\operatorname{rank} C = 2$. (Indeed, row 3 = row 1 + row 2.)
+
+
+# 7. Symmetric, Hermitian, and Unitary Operators
