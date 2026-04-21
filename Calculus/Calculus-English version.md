@@ -3159,6 +3159,103 @@ $$
 
 # 5. The Relation between Integration and Differentiation
 
+## 5.1 The Derivative of an Indefinite Integral
+
+### 5.1.1 First Fundamental Theorem of Calculus
+
+Integration and differentiation are inverse processes, analogous to squaring and taking the square root.
+
+**Theorem 5.1 (First Fundamental Theorem of Calculus).**  
+Let $f$ be integrable on $[a,x]$ for each $x\in[a,b]$. Choose $c\in[a,b]$ and define:
+
+$$
+A(x)=\int_{c}^{x}f(t)\,dt,\qquad a\le x\le b.
+$$
+
+If $f$ is continuous at a point $x$ in the open interval $(a,b)$, then the derivative $A'(x)$ exists and:
+
+$$
+A'(x)=f(x).
+$$
+
+- In words: *differentiating an indefinite integral of $f$ gives back $f$.*
+- **Example**: $f(x)=x^{2}$. Then
+  $$
+  A(x)=\int_{c}^{x}t^{2}\,dt=\frac{x^{3}}{3}-\frac{c^{3}}{3},
+  $$
+  and indeed $A'(x)=x^{2}=f(x)$.
+
+### 5.1.2 Geometric Motivation
+
+Consider the area function $A$ over $[a,b]$.
+
+- For $h>0$:
+  $$
+  \int_{x}^{x+h}f(t)\,dt=\int_{c}^{x+h}f(t)\,dt-\int_{c}^{x}f(t)\,dt=A(x+h)-A(x).
+  $$
+- By the **mean-value theorem for integrals** (assuming $f$ continuous on $[x,x+h]$):
+  $$
+  A(x+h)-A(x)=h\,f(z),\qquad x\le z\le x+h.
+  $$
+- Hence:
+  $$
+  \frac{A(x+h)-A(x)}{h}=f(z).
+  $$
+- As $h\to 0$, $z\to x$; if $f$ is continuous, $f(z)\to f(x)$, so $A'(x)=f(x)$.
+
+> **Caveat:** This geometric argument assumes $f$ is continuous in a whole *neighborhood* of $x$, whereas Theorem 5.1 requires only continuity at the *single point* $x$.
+
+### 5.1.3 Analytic Proof
+
+Fix a point $x$ at which $f$ is continuous. The difference quotient is:
+
+$$
+\frac{A(x+h)-A(x)}{h}.
+$$
+
+Its numerator simplifies to:
+
+$$
+A(x+h)-A(x)=\int_{x}^{x+h}f(t)\,dt.
+$$
+
+Decompose $f(t)$ as $f(x)+[f(t)-f(x)]$:
+
+$$
+\begin{aligned}
+A(x+h)-A(x)
+&=\int_{x}^{x+h}f(x)\,dt+\int_{x}^{x+h}[f(t)-f(x)]\,dt\\[4pt]
+&=h\,f(x)+\int_{x}^{x+h}[f(t)-f(x)]\,dt.
+\end{aligned}
+$$
+
+Therefore:
+
+$$
+\frac{A(x+h)-A(x)}{h}=f(x)+\frac{1}{h}\int_{x}^{x+h}[f(t)-f(x)]\,dt.\tag{5.1}
+$$
+
+It remains to show that the second term tends to $0$ as $h\to 0$.
+
+1. Let $\varepsilon>0$. By continuity of $f$ at $x$, there exists $\delta>0$ such that
+   $$
+   |f(t)-f(x)|<\frac{\varepsilon}{2}\quad\text{whenever}\quad |t-x|<\delta.
+   $$
+2. Choose $0<|h|<\delta$. Then every $t$ between $x$ and $x+h$ satisfies $|t-x|<\delta$, so:
+   $$
+   \Bigl|\int_{x}^{x+h}[f(t)-f(x)]\,dt\Bigr|
+   \le\int_{x}^{x+h}|f(t)-f(x)|\,dt
+   <\int_{x}^{x+h}\frac{\varepsilon}{2}\,dt
+   =\frac{\varepsilon}{2}|h|
+   <\varepsilon|h|.
+   $$
+3. Dividing by $|h|$ gives
+   $$
+   \Bigl|\frac{1}{h}\int_{x}^{x+h}[f(t)-f(x)]\,dt\Bigr|<\varepsilon.
+   $$
+
+Hence the second term in (5.1) vanishes as $h\to 0$, and $A'(x)=f(x)$. ∎
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
