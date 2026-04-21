@@ -3853,6 +3853,79 @@ The graph of $y=\log_{b}x$ is obtained from $y=\log x$ by multiplying all ordina
 | $b>1$ | Positive | Same general shape as $\log x$, steeper if $1<b<e$, flatter if $b>e$. |
 | $0<b<1$ | Negative | Reflection of $y=\log_{1/b}x$ through the $x$-axis. |
 
+## 6.7 Differentiation and Integration Formulas Involving Logarithms
+
+### 6.7.1 Basic Formulas
+
+Since $D\log x=1/x$ for $x>0$:
+
+$$
+\int\frac{1}{x}\,dx=\log x+C.
+$$
+
+More generally, if $u=f(x)$ with $f$ continuously differentiable:
+
+$$
+\int\frac{du}{u}=\log u+C\qquad\text{or}\qquad\int\frac{f'(x)}{f(x)}\,dx=\log f(x)+C. \tag{6.11}
+$$
+
+> **Caution**: (6.11) is valid only when $u$ (or $f(x)$) is **positive**, because the logarithm is not defined for negative numbers.
+
+### 6.7.2 Extension to Nonzero Values — The Function $L_{0}$
+
+To accommodate functions that may be negative, define:
+
+$$
+L_{0}(x)=\log|x|=\int_{1}^{|x|}\frac{1}{t}\,dt\qquad(x\neq0). \tag{6.12}
+$$
+
+- $L_{0}$ is even; its graph is symmetric about the $y$-axis (Figure 6.4).
+- $L_{0}$ also satisfies the functional equation $L_{0}(xy)=L_{0}(x)+L_{0}(y)$ for all nonzero $x,y$.
+- Its derivative is:
+  $$
+  L_{0}'(x)=\frac{1}{x}\qquad\text{for all }x\neq0. \tag{6.13}
+  $$
+
+Hence the integration formulas extend to:
+
+$$
+\int\frac{du}{u}=\log|u|+C,\qquad\int\frac{f'(x)}{f(x)}\,dx=\log|f(x)|+C. \tag{6.14}
+$$
+
+> When evaluating definite integrals with (6.14), avoid intervals containing points where $u$ or $f(x)$ is zero.
+
+### 6.7.3 Examples
+
+**Example 1.** $\displaystyle\int\tan x\,dx$.
+- Write $\tan x=-(\cos x)'/\cos x$. With $u=\cos x$:
+  $$
+  \int\tan x\,dx=-\int\frac{du}{u}=-\log|u|+C=-\log|\cos x|+C,
+  $$
+  valid on any interval where $\cos x\neq0$.
+
+**Example 2.** $\displaystyle\int\log x\,dx$ (integration by parts).
+- Let $u=\log x$, $dv=dx$ $\Rightarrow$ $du=dx/x$, $v=x$.
+  $$
+  \int\log x\,dx=x\log x-\int x\cdot\frac{1}{x}\,dx=x\log x-x+C.
+  $$
+
+**Example 3.** $\displaystyle\int\sin(\log x)\,dx$ and $\displaystyle\int\cos(\log x)\,dx$.
+- For $\int\sin(\log x)\,dx$, let $u=\sin(\log x)$, $dv=dx$:
+  $$
+  \int\sin(\log x)\,dx=x\sin(\log x)-\int\cos(\log x)\,dx.
+  $$
+- Apply parts again to $\int\cos(\log x)\,dx$:
+  $$
+  \int\cos(\log x)\,dx=x\cos(\log x)+\int\sin(\log x)\,dx.
+  $$
+- Solving the two equations simultaneously:
+  $$
+  \begin{aligned}
+  \int\sin(\log x)\,dx&=\tfrac12x\sin(\log x)-\tfrac12x\cos(\log x)+C,\\[4pt]
+  \int\cos(\log x)\,dx&=\tfrac12x\sin(\log x)+\tfrac12x\cos(\log x)+C.
+  \end{aligned}
+  $$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
