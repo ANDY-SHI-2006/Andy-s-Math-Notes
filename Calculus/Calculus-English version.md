@@ -3256,6 +3256,16 @@ It remains to show that the second term tends to $0$ as $h\to 0$.
 
 Hence the second term in (5.1) vanishes as $h\to 0$, and $A'(x)=f(x)$. ∎
 
+## 5.2 The Zero-Derivative Theorem
+
+- If $f$ is constant on an open interval $(a,b)$, then $f'(x)=0$ everywhere on $(a,b)$ — an immediate consequence of the definition of the derivative.
+- The converse is stated separately as Theorem 5.2:
+
+**Theorem 5.2 (Zero-Derivative Theorem).**  
+If $f'(x)=0$ for every $x$ in an open interval $I$, then $f$ is constant on $I$.
+
+- This theorem, used in combination with the first fundamental theorem of calculus, leads to the **second fundamental theorem of calculus** (Section 5.3).
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
