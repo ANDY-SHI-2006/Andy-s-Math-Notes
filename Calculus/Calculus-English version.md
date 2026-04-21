@@ -3519,6 +3519,93 @@ $$
 $$
 Thus the two integrals in (5.7) are equal. ∎
 
+## 5.7 Integration by Parts
+
+### 5.7.1 The Formula
+
+From the product rule $(fg)'=f'g+fg'$ we obtain:
+
+$$
+\int f(x)g'(x)\,dx=f(x)g(x)-\int f'(x)g(x)\,dx+C. \tag{5.8}
+$$
+
+**Abbreviated form.** With $u=f(x)$, $v=g(x)$, $du=f'(x)\,dx$, $dv=g'(x)\,dx$:
+
+$$
+\int u\,dv=uv-\int v\,du+C. \tag{5.9}
+$$
+
+**Definite-integral version:**
+
+$$
+\int_{a}^{b}f(x)g'(x)\,dx=f(b)g(b)-f(a)g(a)-\int_{a}^{b}f'(x)g(x)\,dx.
+$$
+
+The idea is to choose $f$ and $g$ so that the new integral on the right is easier than the original.
+
+### 5.7.2 Examples
+
+**Example 1.** $\displaystyle\int x\cos x\,dx$.
+- Good choice: $u=x$, $dv=\cos x\,dx$ $\Rightarrow$ $du=dx$, $v=\sin x$.
+  $$
+  \int x\cos x\,dx=x\sin x-\int\sin x\,dx=x\sin x+\cos x+C.
+  $$
+- Bad choice: $u=\cos x$, $dv=x\,dx$ $\Rightarrow$ $du=-\sin x\,dx$, $v=\tfrac12x^{2}$.
+  $$
+  \int x\cos x\,dx=\tfrac12x^{2}\cos x+\tfrac12\int x^{2}\sin x\,dx,
+  $$
+  which leads to a harder integral. (However, solving for $\int x^{2}\sin x\,dx$ and using the first result gives $\int x^{2}\sin x\,dx=2x\sin x+2\cos x-x^{2}\cos x+C$.)
+
+**Example 2.** $\displaystyle\int x^{2}\cos x\,dx$.
+- Let $u=x^{2}$, $dv=\cos x\,dx$ $\Rightarrow$ $du=2x\,dx$, $v=\sin x$.
+  $$
+  \int x^{2}\cos x\,dx=x^{2}\sin x-2\int x\sin x\,dx.
+  $$
+- Apply parts again to $\int x\sin x\,dx$ ($u=x$, $dv=\sin x\,dx$):
+  $$
+  \int x\sin x\,dx=-x\cos x+\sin x+C.
+  $$
+- Hence:
+  $$
+  \int x^{2}\cos x\,dx=x^{2}\sin x+2x\cos x-2\sin x+C.
+  $$
+
+**Example 3 (failure mode).** $\displaystyle\int x^{-1}\,dx$ by parts.
+- Let $u=x$, $dv=x^{-2}\,dx$ $\Rightarrow$ $du=dx$, $v=-x^{-1}$.
+  $$
+  \int x^{-1}\,dx=-1+\int x^{-1}\,dx+C,
+  $$
+  which circles back. This shows the importance of the constant $C$: omitting it would give the fallacious conclusion $0=-1$.
+
+### 5.7.3 Second Mean-Value Theorem for Integrals
+
+**Theorem 5.5 (Second Mean-Value Theorem for Integrals).**  
+Assume $g$ is continuous on $[a,b]$, and $f$ has a derivative which is continuous and never changes sign on $[a,b]$. Then for some $c$ in $[a,b]$:
+
+$$
+\int_{a}^{b}f(x)g(x)\,dx=f(a)\int_{a}^{c}g(x)\,dx+f(b)\int_{c}^{b}g(x)\,dx. \tag{5.10}
+$$
+
+**Proof.** Let $G(x)=\int_{a}^{x}g(t)\,dt$. Then $G'(x)=g(x)$ and $G(a)=0$. Integration by parts gives:
+
+$$
+\int_{a}^{b}f(x)g(x)\,dx=f(b)G(b)-\int_{a}^{b}f'(x)G(x)\,dx.
+$$
+
+By the weighted mean-value theorem, for some $c\in[a,b]$:
+
+$$
+\int_{a}^{b}f'(x)G(x)\,dx=G(c)\int_{a}^{b}f'(x)\,dx=G(c)\bigl[f(b)-f(a)\bigr].
+$$
+
+Substituting and rearranging:
+
+$$
+\int_{a}^{b}f(x)g(x)\,dx=f(b)G(b)-G(c)\bigl[f(b)-f(a)\bigr]=f(a)G(c)+f(b)\bigl[G(b)-G(c)\bigr],
+$$
+
+which is (5.10) since $G(c)=\int_{a}^{c}g(x)\,dx$ and $G(b)-G(c)=\int_{c}^{b}g(x)\,dx$. ∎
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
