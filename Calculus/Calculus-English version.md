@@ -4155,6 +4155,85 @@ $$
 - The graph of $y=a^{x}$ is the reflection of $y=\log_{a}x$ through the line $y=x$.
 - The case $a=1$ gives the horizontal line $y=1$.
 
+## 6.14 Differentiation and Integration Formulas Involving Exponentials
+
+### 6.14.1 Differentiation
+
+The most remarkable property of the exponential is that it equals its own derivative:
+
+$$
+E'(x)=E(x). \tag{6.25}
+$$
+
+For a general base $a>0$, write $a^{x}=e^{x\log a}=E(x\log a)$. By the chain rule:
+
+$$
+\frac{d}{dx}(a^{x})=a^{x}\log a\qquad(a>0). \tag{6.26}
+$$
+
+The factor $\log a$ equals $1$ when $a=e$.
+
+### 6.14.2 Integration — Basic Formulas
+
+From the derivatives above:
+
+$$
+\int e^{x}\,dx=e^{x}+C,\qquad\int a^{x}\,dx=\frac{a^{x}}{\log a}+C\quad(a>0,\;a\neq1). \tag{6.27}
+$$
+
+With substitution $u=f(x)$, $du=f'(x)\,dx$:
+
+$$
+\int e^{f(x)}f'(x)\,dx=e^{f(x)}+C,\qquad\int a^{f(x)}f'(x)\,dx=\frac{a^{f(x)}}{\log a}+C.
+$$
+
+### 6.14.3 Examples
+
+**Example 1.** $\displaystyle\int x^{2}e^{x^{3}}\,dx$.
+- Let $u=x^{3}$, $du=3x^{2}\,dx$:
+  $$
+  \int x^{2}e^{x^{3}}\,dx=\tfrac13\int e^{u}\,du=\tfrac13e^{x^{3}}+C.
+  $$
+
+**Example 2.** $\displaystyle\int\frac{2^{\sqrt{x}}}{\sqrt{x}}\,dx$.
+- Let $u=\sqrt{x}$, $du=\frac{1}{2\sqrt{x}}\,dx$:
+  $$
+  \int\frac{2^{\sqrt{x}}}{\sqrt{x}}\,dx=2\int2^{u}\,du=\frac{2^{1+\sqrt{x}}}{\log2}+C.
+  $$
+
+**Example 3.** $\displaystyle\int\cos x\,e^{2\sin x}\,dx$.
+- Let $u=2\sin x$, $du=2\cos x\,dx$:
+  $$
+  \int\cos x\,e^{2\sin x}\,dx=\tfrac12\int e^{u}\,du=\tfrac12e^{2\sin x}+C.
+  $$
+
+**Example 4.** $\displaystyle\int e^{x}\sin x\,dx$ and $\displaystyle\int e^{x}\cos x\,dx$ (integration by parts).
+- Set $u=e^{x}$, $dv=\sin x\,dx$:
+  $$
+  \int e^{x}\sin x\,dx=-e^{x}\cos x+\int e^{x}\cos x\,dx. \tag{6.28}
+  $$
+- Set $u=e^{x}$, $dv=\cos x\,dx$:
+  $$
+  \int e^{x}\cos x\,dx=e^{x}\sin x-\int e^{x}\sin x\,dx. \tag{6.29}
+  $$
+- Solving (6.28) and (6.29) simultaneously:
+  $$
+  \begin{aligned}
+  \int e^{x}\sin x\,dx&=\tfrac12e^{x}(\sin x-\cos x)+C,\\[4pt]
+  \int e^{x}\cos x\,dx&=\tfrac12e^{x}(\sin x+\cos x)+C.
+  \end{aligned}
+  $$
+
+**Example 5.** $\displaystyle\int\frac{dx}{1+e^{x}}$.
+- Rewrite $\dfrac1{1+e^{x}}=\dfrac{e^{-x}}{e^{-x}+1}$ and let $u=e^{-x}+1$:
+  $$
+  \int\frac{dx}{1+e^{x}}=-\log(1+e^{-x})+C=x-\log(1+e^{x})+C.
+  $$
+- Alternatively, write $\dfrac1{1+e^{x}}=1-\dfrac{e^{x}}{1+e^{x}}$ and let $u=1+e^{x}$:
+  $$
+  \int\frac{dx}{1+e^{x}}=x-\log(1+e^{x})+C.
+  $$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
