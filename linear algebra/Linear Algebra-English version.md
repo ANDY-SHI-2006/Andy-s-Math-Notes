@@ -2601,3 +2601,127 @@ $$
 | **(c)** | $D(A) \neq 0$. |
 
 **Proof.** (a) $\iff$ (b) was proved in Chapter IV, Theorem 2.2. By Proposition 5.1 and Theorem 5.2, we may assume $A$ is triangular. Then $\operatorname{Det}(A)$ is the product of the diagonal elements, which is $0$ iff some diagonal element is $0$, equivalently the columns are dependent.
+
+
+## 6.6 Permutations
+
+### 6.6.1 Definition
+
+Let $J_n = \{1, \dots, n\}$. A **permutation** of $J_n$ is a bijection:
+
+$$
+\sigma: J_n \to J_n.
+$$
+
+The set $\{\sigma(1), \dots, \sigma(n)\}$ consists of $n$ distinct integers, hence is a rearrangement of $\{1, \dots, n\}$.
+
+**Inverse permutation:** For each $k \in J_n$, there exists a unique $j \in J_n$ such that $\sigma(j) = k$. The **inverse** $\sigma^{-1}: J_n \to J_n$ is defined by $\sigma^{-1}(k) = j$.
+
+**Composition:** If $\sigma, \tau$ are permutations of $J_n$, their **composite** is:
+
+$$
+(\sigma \circ \tau)(i) = \sigma(\tau(i)).
+$$
+
+We usually omit the circle and write $\sigma\tau$. The composite of permutations is again a permutation.
+
+**Properties:**
+- $\sigma\sigma^{-1} = \operatorname{id} = \sigma^{-1}\sigma$
+- $(\sigma_1 \cdots \sigma_r)^{-1} = \sigma_r^{-1} \cdots \sigma_1^{-1}$
+
+### 6.6.2 Transpositions
+
+A **transposition** is a permutation which interchanges two numbers and leaves the others fixed.
+
+**Properties:**
+- The inverse of a transposition $\tau$ is itself: $\tau^2 = \operatorname{id}$.
+- **Proposition 6.1.** Every permutation of $J_n$ can be expressed as a product of transpositions.
+
+### 6.6.3 Notation
+
+A permutation $\sigma$ of $\{1, \dots, n\}$ is denoted by:
+
+$$
+\begin{bmatrix} 1 & \cdots & n \\ \sigma(1) & \cdots & \sigma(n) \end{bmatrix}.
+$$
+
+**Example 1:**
+- $\sigma = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{bmatrix}$ is a transposition.
+- If $\sigma' = \begin{bmatrix} 1 & 2 & 3 \\ 3 & 1 & 2 \end{bmatrix}$, then:
+  $$
+  \sigma\sigma' = \begin{bmatrix} 1 & 2 & 3 \\ 3 & 2 & 1 \end{bmatrix}.
+  $$
+- The inverse of $\sigma'$ is:
+  $$
+  \sigma'^{-1} = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 3 & 1 \end{bmatrix}.
+  $$
+
+### 6.6.4 Decomposition into Transpositions
+
+**Example 2.** Express $\sigma = \begin{bmatrix} 1 & 2 & 3 \\ 3 & 1 & 2 \end{bmatrix}$ as a product of transpositions.
+
+Let $\tau$ interchange 3 and 1 (fixing 2). Then:
+
+$$
+\tau\sigma = \begin{bmatrix} 1 & 2 & 3 \\ 1 & 3 & 2 \end{bmatrix} = \tau',
+$$
+
+where $\tau'$ interchanges 2 and 3. Hence $\sigma = \tau\tau'$.
+
+**Example 3.** Express $\sigma = \begin{bmatrix} 1 & 2 & 3 & 4 \\ 2 & 3 & 4 & 1 \end{bmatrix}$ as a product of transpositions.
+
+Let $\tau_1$ interchange 1 and 2. Then:
+
+$$
+\tau_1\sigma = \begin{bmatrix} 1 & 2 & 3 & 4 \\ 1 & 3 & 4 & 2 \end{bmatrix}.
+$$
+
+Let $\tau_2$ interchange 2 and 3. Then:
+
+$$
+\tau_2\tau_1\sigma = \begin{bmatrix} 1 & 2 & 3 & 4 \\ 1 & 2 & 4 & 3 \end{bmatrix} = \tau_3,
+$$
+
+where $\tau_3$ interchanges 3 and 4. Hence $\sigma = \tau_1\tau_2\tau_3$.
+
+### 6.6.5 The Sign of a Permutation
+
+**Proposition 6.2.** To each permutation $\sigma$ of $J_n$ it is possible to assign a **sign** $\epsilon(\sigma) \in \{1, -1\}$ satisfying:
+
+| Condition | Statement |
+|-----------|-----------|
+| **(a)** | If $\tau$ is a transposition, $\epsilon(\tau) = -1$. |
+| **(b)** | $\epsilon(\sigma\sigma') = \epsilon(\sigma)\epsilon(\sigma')$. |
+
+**Definition via determinant:** If $A = (A^1, \dots, A^n)$ is an $n \times n$ matrix with $D(A) \neq 0$:
+
+$$
+\epsilon(\sigma) = \frac{D(A^{\sigma(1)}, \dots, A^{\sigma(n)})}{D(A^1, \dots, A^n)}.
+$$
+
+The sign is well-defined: it does not depend on the choice of columns, nor on the particular sequence of transpositions used.
+
+### 6.6.6 Even and Odd Permutations
+
+**Corollary 6.3.** If $\sigma = \tau_1 \cdots \tau_s$ with each $\tau_i$ a transposition, then:
+
+$$
+\epsilon(\sigma) = (-1)^s.
+$$
+
+Thus $s$ is even iff $\epsilon(\sigma) = 1$, and odd iff $\epsilon(\sigma) = -1$.
+
+**Corollary 6.4.** For any permutation $\sigma$:
+
+$$
+\epsilon(\sigma) = \epsilon(\sigma^{-1}).
+$$
+
+**Proof:** $1 = \epsilon(\operatorname{id}) = \epsilon(\sigma\sigma^{-1}) = \epsilon(\sigma)\epsilon(\sigma^{-1})$.
+
+**Terminology:**
+- A permutation is **even** if $\epsilon(\sigma) = 1$.
+- A permutation is **odd** if $\epsilon(\sigma) = -1$.
+- Every transposition is odd.
+
+> **Example 4.** The permutation in Example 2 is **even** (product of 2 transpositions). The permutation in Example 3 is **odd** (product of 3 transpositions).
