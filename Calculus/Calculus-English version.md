@@ -3978,6 +3978,86 @@ $$
 f'(x)=\frac{2x\cos x}{(1+x^{4})^{7}}-\frac{x^{2}\sin x}{(1+x^{4})^{7}}-\frac{28x^{5}\cos x}{(1+x^{4})^{8}}.
 $$
 
+## 6.9 Polynomial Approximations to the Logarithm
+
+### 6.9.1 Setting Up the Integral
+
+Replace $x$ by $1-x$ in the defining integral:
+
+$$
+\log(1-x)=\int_{1}^{1-x}\frac{dt}{t}\qquad(x<1).
+$$
+
+The change of variable $t=1-u$ gives:
+
+$$
+-\log(1-x)=\int_{0}^{x}\frac{du}{1-u}\qquad(x<1). \tag{6.16}
+$$
+
+### 6.9.2 The Approximating Polynomials
+
+From $1-u^{n}=(1-u)(1+u+\dots+u^{n-1})$:
+
+$$
+\frac{1}{1-u}=1+u+\dots+u^{n-1}+\frac{u^{n}}{1-u}.
+$$
+
+Integrating from $0$ to $x$ ($x<1$) yields:
+
+**Theorem 6.3.** Let
+$$
+P_{n}(x)=\sum_{k=1}^{n}\frac{x^{k}}{k}=x+\frac{x^{2}}{2}+\dots+\frac{x^{n}}{n}.
+$$
+Then for every $x<1$ and $n\ge1$:
+
+$$
+-\log(1-x)=P_{n}(x)+E_{n}(x), \tag{6.17}
+$$
+
+where the error term is:
+
+$$
+E_{n}(x)=\int_{0}^{x}\frac{u^{n}}{1-u}\,du.
+$$
+
+### 6.9.3 Error Estimates
+
+**Theorem 6.4.** The error $E_{n}(x)$ satisfies:
+
+- If $0<x<1$:
+  $$
+  \frac{x^{n+1}}{n+1}\le E_{n}(x)\le\frac{1}{1-x}\cdot\frac{x^{n+1}}{n+1}. \tag{6.18}
+  $$
+
+- If $x<0$:
+  $$
+  0<(-1)^{n+1}E_{n}(x)\le\frac{|x|^{n+1}}{n+1}. \tag{6.19}
+  $$
+
+**Proof sketch.** For $0<x<1$, use $1-x\le1-u\le1$ on $[0,x]$ to bound the integrand $u^{n}/(1-u)$. For $x<0$, set $t=-x$ and observe the sign alternation. ∎
+
+### 6.9.4 A Formula for Computation
+
+Subtracting (6.17) at $-x$ from (6.17) at $x$ (valid for $-1<x<1$) eliminates even powers:
+
+**Theorem 6.5.** If $0<x<1$ and $m\ge1$:
+
+$$
+\log\frac{1+x}{1-x}=2\Bigl(x+\frac{x^{3}}{3}+\dots+\frac{x^{2m-1}}{2m-1}\Bigr)+R_{m}(x), \tag{6.20}
+$$
+
+where:
+
+$$
+\frac{x^{2m+1}}{2m+1}<R_{m}(x)\le\frac{2-x}{1-x}\cdot\frac{x^{2m+1}}{2m+1}. \tag{6.21}
+$$
+
+- **Example** ($m=2$, $x=\tfrac13$): since $(1+x)/(1-x)=2$,
+  $$
+  \log2=2\Bigl(\tfrac13+\tfrac1{81}\Bigr)+R_{2}\bigl(\tfrac13\bigr),\qquad\tfrac1{486}<R_{2}\bigl(\tfrac13\bigr)\le\tfrac5{486},
+  $$
+  giving $0.6921<\log2<0.6935$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
