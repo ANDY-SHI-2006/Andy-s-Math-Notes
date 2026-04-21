@@ -3048,6 +3048,115 @@ $$
 - **Case $b\ge2$**: legitimate critical point at $y=b-2$. Since $f''(y)=2\gt0$, this gives the absolute minimum. Minimum distance $=2\sqrt{b-1}$.
 - The special transition value is $b=2$.
 
+## 4.16 Partial Derivatives
+
+### 4.16.1 Functions of Two Variables
+
+- A **real-valued function of two real variables** has domain $X$ in the $xy$-plane and assigns a real number $f(x,y)$ to each point $(x,y)\in X$.
+- **Example**: Temperature on a circular disk of radius $4$:
+  $$
+  f(x,y)=16-x^{2}-y^{2},\qquad x^{2}+y^{2}\le 16.
+  $$
+  On any circle $x^{2}+y^{2}=r^{2}$ the temperature is constant: $f=16-r^{2}$.
+
+### 4.16.2 Geometric Representations
+
+Two methods for visualizing $z=f(x,y)$:
+
+| Method | Description |
+|--------|-------------|
+| **Surface** | Plot $(x,y,z)$ with $z=f(x,y)$ in 3-space. |
+| **Level curves** | Project the intersection of $z=f(x,y)$ with horizontal planes $z=c$ onto the $xy$-plane; each curve satisfies $f(x,y)=c$. |
+
+- **Level curves** are also called **contour lines** or **isotherms** (in temperature problems).
+- Closely spaced level curves indicate rapid change (steepness); widely spaced curves indicate slow change.
+- **Example**: $z=xy$ (hyperbolic paraboloid) has level curves $xy=c$.
+
+### 4.16.3 Definition of Partial Derivatives
+
+Cut the surface $z=f(x,y)$ with the plane $y=y_{0}$. The intersection is the curve $z=f(x,y_{0})$, a function of $x$ alone.
+
+- **Difference quotient with respect to $x$**:
+  $$
+  \frac{f(x_{0}+h,y_{0})-f(x_{0},y_{0})}{h}.
+  $$
+- **Partial derivative with respect to $x$** at $(x_{0},y_{0})$:
+  $$
+  f_{1}(x_{0},y_{0})=\lim_{h\to 0}\frac{f(x_{0}+h,y_{0})-f(x_{0},y_{0})}{h}.
+  $$
+- **Partial derivative with respect to $y$** at $(x_{0},y_{0})$:
+  $$
+  f_{2}(x_{0},y_{0})=\lim_{k\to 0}\frac{f(x_{0},y_{0}+k)-f(x_{0},y_{0})}{k}.
+  $$
+
+Geometrically, $f_{1}(x_{0},y_{0})$ is the slope of the tangent to the curve $z=f(x,y_{0})$ at $x=x_{0}$; $f_{2}(x_{0},y_{0})$ is the slope of the tangent to $z=f(x_{0},y)$ at $y=y_{0}$.
+
+### 4.16.4 Notations
+
+| With respect to $x$ | With respect to $y$ |
+|---------------------|---------------------|
+| $\displaystyle\frac{\partial f}{\partial x}$ | $\displaystyle\frac{\partial f}{\partial y}$ |
+| $f'_{x}(x,y)$ | $f'_{y}(x,y)$ |
+| $f_{x}(x,y)$ | $f_{y}(x,y)$ |
+| $f_{1}(x,y)$ | $f_{2}(x,y)$ |
+| $D_{1}f(x,y)$ | $D_{2}f(x,y)$ |
+
+If $z=f(x,y)$, one also writes $\partial z/\partial x$ and $\partial z/\partial y$.
+
+### 4.16.5 Computation and Examples
+
+To compute $\partial f/\partial x$, treat $y$ as constant and differentiate with respect to $x$ using the ordinary rules; similarly for $\partial f/\partial y$.
+
+**Example 1**:
+$$
+f(x,y)=16-x^{2}-y^{2}\quad\Longrightarrow\quad f_{1}=-2x,\;\;f_{2}=-2y.
+$$
+
+**Example 2**:
+$$
+f(x,y)=x\sin y+y^{2}\cos(xy).
+$$
+Then
+$$
+f_{1}(x,y)=\sin y-y^{3}\sin(xy),
+$$
+$$
+f_{2}(x,y)=x\cos y-xy^{2}\sin(xy)+2y\cos(xy).
+$$
+
+### 4.16.6 Second-Order Partial Derivatives
+
+Since $f_{1}$ and $f_{2}$ are themselves functions of two variables, we may differentiate again:
+
+| Notation | Meaning |
+|----------|---------|
+| $f_{1,1}=f_{xx}=\dfrac{\partial^{2}f}{\partial x^{2}}$ | Differentiate $f_{1}$ with respect to $x$ |
+| $f_{1,2}=f_{xy}=\dfrac{\partial^{2}f}{\partial y\,\partial x}$ | Differentiate $f_{1}$ with respect to $y$ |
+| $f_{2,1}=f_{yx}=\dfrac{\partial^{2}f}{\partial x\,\partial y}$ | Differentiate $f_{2}$ with respect to $x$ |
+| $f_{2,2}=f_{yy}=\dfrac{\partial^{2}f}{\partial y^{2}}$ | Differentiate $f_{2}$ with respect to $y$ |
+
+In $\partial$-notation:
+$$
+\frac{\partial^{2}f}{\partial y\,\partial x}=\frac{\partial}{\partial y}\!\left(\frac{\partial f}{\partial x}\right),\qquad
+\frac{\partial^{2}f}{\partial x\,\partial y}=\frac{\partial}{\partial x}\!\left(\frac{\partial f}{\partial y}\right).
+$$
+
+- The two **mixed partial derivatives** need not be equal in general, but equality holds under mild conditions satisfied by most functions occurring in practice (discussed in Volume II).
+
+**Example 1**: For $f(x,y)=16-x^{2}-y^{2}$:
+$$
+f_{1,1}=-2,\qquad f_{1,2}=f_{2,1}=0,\qquad f_{2,2}=-2.
+$$
+
+**Example 2**: For $f(x,y)=x\sin y+y^{2}\cos(xy)$:
+$$
+\begin{aligned}
+f_{1,1}&=-y^{4}\cos(xy),\\[4pt]
+f_{1,2}&=\cos y-xy^{3}\cos(xy)-3y^{2}\sin(xy)=f_{2,1},\\[4pt]
+f_{2,2}&=-x\sin y-x^{2}y^{2}\cos(xy)-4xy\sin(xy)+2\cos(xy).
+\end{aligned}
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
