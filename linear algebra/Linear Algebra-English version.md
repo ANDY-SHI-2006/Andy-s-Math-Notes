@@ -3655,3 +3655,80 @@ where each $M_i$ is $1 \times 1$ or $2 \times 2$ of the following types:
 | **Rotation** | $\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$ | Rotation by $\theta$ |
 
 > **Geometric content.** On each component $V_i$, $T$ is either the identity, a reflection, or a rotation.
+
+
+# 9. Polynomials and Matrices
+
+## 9.1 Polynomials
+
+Let $K$ be a field. A **polynomial** over $K$ is a formal expression:
+
+$$
+f(t) = a_n t^n + a_{n-1} t^{n-1} + \cdots + a_0,
+$$
+
+where $a_i \in K$ and $t$ is a variable.
+
+### 9.1.1 Operations on Polynomials
+
+Given $g(t) = b_m t^m + \cdots + b_0$ (assume $n \ge m$ by padding with zeros):
+
+| Operation | Formula |
+|-----------|---------|
+| **Sum** | $(f+g)(t) = (a_n+b_n)t^n + \cdots + (a_0+b_0)$ |
+| **Scalar multiple** | $(cf)(t) = ca_n t^n + \cdots + ca_0$ for $c \in K$ |
+| **Product** | $(fg)(t) = c_{n+m}t^{n+m} + \cdots + c_0$, where $c_k = \sum_{i=0}^k a_i b_{k-i}$ |
+
+Thus polynomials form a vector space over $K$.
+
+### 9.1.2 Degree and Terminology
+
+For $f(t) = a_n t^n + \cdots + a_0$ with $a_n \neq 0$:
+
+| Term | Definition |
+|------|------------|
+| **Coefficients** | $a_0, a_1, \dots, a_n$ |
+| **Degree** | $\deg f = n$ |
+| **Leading coefficient** | $a_n$ |
+| **Constant term** | $a_0$ |
+| **Linear polynomial** | Polynomial of degree 1 |
+
+For the zero polynomial: $\deg 0 = -\infty$, with conventions:
+
+$$
+-\infty + (-\infty) = -\infty, \qquad -\infty + a = -\infty, \qquad -\infty < a.
+$$
+
+**Theorem 1.1.** Let $f, g$ be polynomials over $K$. Then:
+
+$$
+\deg(fg) = \deg f + \deg g.
+$$
+
+**Proof.** If $f(t) = a_n t^n + \cdots$ ($a_n \neq 0$) and $g(t) = b_m t^m + \cdots$ ($b_m \neq 0$), then $f(t)g(t) = a_n b_m t^{n+m} + \text{lower degree terms}$, with $a_n b_m \neq 0$. Hence $\deg(fg) = n+m$. If $f=0$ or $g=0$, the convention on $-\infty$ gives the result.
+
+A number $\alpha$ is a **root** of $f$ if $f(\alpha) = 0$.
+
+### 9.1.3 Factorization over $\mathbf{C}$
+
+**Theorem 1.2.** Let $f$ be a polynomial with complex coefficients, $\deg f \ge 1$. Then $f$ has a root in $\mathbf{C}$.
+
+> (Fundamental theorem of algebra. Proof postponed to an appendix.)
+
+**Theorem 1.3.** Let $f$ be a polynomial with complex coefficients, leading coefficient $1$, and $\deg f = n \ge 1$. Then there exist complex numbers $\alpha_1, \dots, \alpha_n$ such that:
+
+$$
+f(t) = (t-\alpha_1)\cdots(t-\alpha_n).
+$$
+
+The numbers $\alpha_1, \dots, \alpha_n$ are uniquely determined up to a permutation. Every root $\alpha$ of $f$ equals some $\alpha_i$, and conversely.
+
+> (Proof given in Chapter XI.)
+
+Let $\alpha_1, \dots, \alpha_r$ be the distinct roots of $f$ in $\mathbf{C}$. Then:
+
+$$
+f(t) = (t-\alpha_1)^{m_1} \cdots (t-\alpha_r)^{m_r},
+$$
+
+with integers $m_1, \dots, m_r > 0$, uniquely determined. The integer $m_i$ is called the **multiplicity** of $\alpha_i$ in $f$.
