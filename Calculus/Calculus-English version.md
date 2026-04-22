@@ -6080,6 +6080,65 @@ using homogeneity with $t=k$. Hence $kS$ is also an integral curve.
 
 > **Converse.** If the integral curves of $y'=f(x,y)$ are invariant under all similarity transformations, then the equation is necessarily homogeneous.
 
+## 8.19 Geometrical and Physical Problems Leading to First-Order Equations
+
+### 8.19.1 Orthogonal Trajectories
+
+Two curves intersect **orthogonally** if their tangents are perpendicular at the intersection point.
+
+- Given a family satisfying $y'=f(x,y)$, the orthogonal trajectories satisfy:
+  $$
+  y'=-\frac{1}{f(x,y)}.
+  $$
+- If the original equation is separable (or homogeneous), so is the orthogonal equation.
+
+**Example.** Find orthogonal trajectories of circles through the origin with centers on the $x$-axis.
+
+- Family: $x^{2}+y^{2}-2Cx=0$; differential equation: $y'=\dfrac{y^{2}-x^{2}}{2xy}$.
+- Orthogonal equation: $y'=\dfrac{2xy}{x^{2}-y^{2}}$ (homogeneous).
+- Substituting $v=y/x$ yields the family: $x^{2}+y^{2}-2Cy=0$.
+- **Result:** circles through the origin with centers on the $y$-axis.
+
+### 8.19.2 Pursuit Problems
+
+Point $Q$ moves along $C_{1}$; point $P$ pursues $Q$ so that $P$'s velocity is always directed toward $Q$. The locus of $P$ is a **curve of pursuit**.
+
+With $P=(x,y)$ and $Q=(X,Y)$:
+
+$$
+y'=\frac{Y-y}{X-x}.
+$$
+
+**Example (Tractrix).** $Q$ moves on the $y$-axis; $P$ stays at distance $k$ from $Q$ and starts at $(k,0)$.
+
+- $X=0$, $(X-x)^{2}+(Y-y)^{2}=k^{2}$ gives $Y-y=\sqrt{k^{2}-x^{2}}$.
+- $y'=\dfrac{\sqrt{k^{2}-x^{2}}}{-x}$.
+- Substitute $x=k\cos t$, integrate with $y(k)=0$:
+  $$
+  y=k\log\frac{k+\sqrt{k^{2}-x^{2}}}{x}-\sqrt{k^{2}-x^{2}}.
+  $$
+- This curve is called the **tractrix**.
+
+### 8.19.3 Flow of Fluid Through an Orifice
+
+**Setup.** Tank with cross-sectional area $A(y)$; orifice area $A_{0}$; discharge coefficient $c\approx 0.60$.
+
+- Volume rate of change: $dV/dt=-cA_{0}\sqrt{2gy}$.
+- With $V(y)=\int_{0}^{y}A(u)\,du$, chain rule gives:
+  $$
+  A(y)\,\frac{dy}{dt}=-cA_{0}\sqrt{2gy}.
+  $$
+- Separating (with $g=32$):
+  $$
+  \int\frac{A(y)}{\sqrt{y}}\,dy=-4.8A_{0}\int dt+C.
+  $$
+
+**Example.** $A(y)=A$ constant; level drops from 10 ft to 9 ft in 10 min (600 s).
+
+- $-\int_{10}^{9}\dfrac{dy}{\sqrt{y}}=k\int_{0}^{600}dt$, where $k=\dfrac{4.8A_{0}}{A}$.
+- $k=\dfrac{\sqrt{10}-3}{300}$.
+- Time to fall from 7 ft to 1 ft: $t_{2}-t_{1}=10\,\dfrac{\sqrt{7}-1}{\sqrt{10}-3}\approx 101.3$ min.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
