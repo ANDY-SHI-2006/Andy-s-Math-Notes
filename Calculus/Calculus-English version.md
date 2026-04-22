@@ -5648,6 +5648,83 @@ is a **basis** for the solution space: every solution is a linear combination of
 - A differential equation has more than one basis. Example: $y''=9y$ has bases $\{e^{3x},e^{-3x}\}$ and $\{\cosh 3x,\sinh 3x\}$.
 - **Test.** $v_{1},v_{2}$ form a basis iff $v_{2}/v_{1}$ is **not** constant.
 
+## 8.12 Nonhomogeneous Linear Equations of Second Order with Constant Coefficients
+
+### 8.12.1 Operator Notation
+
+Define the linear operator:
+
+$$
+L(f)=f''+af'+bf.
+$$
+
+Then the equation becomes $L(y)=R$. The operator $L$ is **linear**:
+
+$$
+L(c_{1}y_{1}+c_{2}y_{2})=c_{1}L(y_{1})+c_{2}L(y_{2}).
+$$
+
+If $y_{1},y_{2}$ both satisfy $L(y)=R$, then $L(y_{2}-y_{1})=R-R=0$; hence $y_{2}-y_{1}$ solves the homogeneous equation $L(y)=0$.
+
+### 8.12.2 Theorem 8.8 — General Solution Structure
+
+If $y_{1}$ is a **particular solution** of $L(y)=R$, then the **general solution** is:
+
+$$
+y=c_{1}v_{1}+c_{2}v_{2}+y_{1},
+$$
+
+where $c_{1}v_{1}+c_{2}v_{2}$ is the general solution of $L(y)=0$.
+
+### 8.12.3 Theorem 8.9 — Variation of Parameters
+
+Let $v_{1},v_{2}$ be a basis of solutions of $L(y)=0$. Define the **Wronskian**:
+
+$$
+W(x)=v_{1}(x)v_{2}'(x)-v_{2}(x)v_{1}'(x)\quad(\neq 0\text{ everywhere}).
+$$
+
+Then a particular solution of $L(y)=R$ is:
+
+$$
+y_{1}(x)=t_{1}(x)v_{1}(x)+t_{2}(x)v_{2}(x),
+$$
+
+where:
+
+$$
+t_{1}(x)=-\int\frac{v_{2}(x)R(x)}{W(x)}\,dx,\qquad t_{2}(x)=\int\frac{v_{1}(x)R(x)}{W(x)}\,dx.
+$$
+
+**Derivation.** Impose $t_{1}'v_{1}+t_{2}'v_{2}=0$. Then $y_{1}'=t_{1}v_{1}'+t_{2}v_{2}'$ and $y_{1}''=t_{1}v_{1}''+t_{2}v_{2}''+t_{1}'v_{1}'+t_{2}'v_{2}'$. Since $L(v_{1})=L(v_{2})=0$, we get $L(y_{1})=t_{1}'v_{1}'+t_{2}'v_{2}'=R$. Solving the algebraic system:
+
+$$
+t_{1}'=-\frac{v_{2}R}{W},\qquad t_{2}'=\frac{v_{1}R}{W}.
+$$
+
+> **History.** First used by Johann Bernoulli (1697) for first-order equations; extended by Lagrange (1774) to second order.
+
+### 8.12.4 Example: $y''+y=\tan x$
+
+On $(-\pi/2,\pi/2)$: $v_{1}=\cos x$, $v_{2}=\sin x$, $W=1$.
+
+$$
+t_{1}=-\int\sin x\tan x\,dx=\sin x-\log\bigl|\sec x+\tan x\bigr|,\qquad
+ t_{2}=\int\cos x\tan x\,dx=-\cos x.
+$$
+
+Particular solution:
+
+$$
+y_{1}=t_{1}\cos x+t_{2}\sin x=-\cos x\,\log\bigl|\sec x+\tan x\bigr|.
+$$
+
+**General solution:**
+
+$$
+y=c_{1}\cos x+c_{2}\sin x-\cos x\,\log\bigl|\sec x+\tan x\bigr|.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
