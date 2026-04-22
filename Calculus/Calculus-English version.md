@@ -6574,6 +6574,32 @@ If $f(n)\to L$ and $g(n)\to M$, then:
 - $f(n)g(n)\to LM$
 - $f(n)/g(n)\to L/M$ (if $M\neq 0$)
 
+## 10.3 Monotonic Sequences of Real Numbers
+
+### 10.3.1 Definitions
+
+| Type | Condition | Notation |
+|------|-----------|----------|
+| **Increasing** | $f(n)\le f(n+1)$ for all $n\ge 1$ | $f(n)\nearrow$ |
+| **Decreasing** | $f(n)\ge f(n+1)$ for all $n\ge 1$ | $f(n)\searrow$ |
+| **Monotonic** | Increasing or decreasing | — |
+
+A sequence is **bounded** if $|f(n)|\le M$ for some $M>0$ and all $n$; otherwise it is **unbounded**.
+
+### 10.3.2 Theorem 10.1
+
+A monotonic sequence **converges if and only if it is bounded**.
+
+**Proof.**
+
+- An unbounded sequence cannot converge (obvious).
+- Let $f(n)\nearrow$ and be bounded. Let $L=\sup\{f(n)\}$ (exists by the least-upper-bound axiom).
+  - $f(n)\le L$ for all $n$.
+  - For any $\epsilon>0$, $L-\epsilon$ is not an upper bound, so $f(N)>L-\epsilon$ for some $N$.
+  - Since $f$ is increasing: $L-\epsilon<f(n)\le L$ for all $n\ge N$.
+  - Hence $0\le L-f(n)<\epsilon$, so $f(n)\to L$.
+- The decreasing case is similar, with limit $=\inf\{f(n)\}$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
