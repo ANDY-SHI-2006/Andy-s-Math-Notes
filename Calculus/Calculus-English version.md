@@ -4759,6 +4759,91 @@ $$
   E_{n}(x)=\frac{f^{(n+1)}(c)}{n!\,p}\,(x-c)^{n+1-p}(x-a)^{p}.
   $$
 
+## 7.7 The o-Notation (Little-oh)
+
+### 7.7.1 Definition
+
+Assume $g(x) \neq 0$ for all $x \neq a$ in some interval containing $a$. The notation
+
+$$
+f(x) = o\bigl(g(x)\bigr) \quad \text{as} \quad x \to a
+$$
+
+means
+
+$$
+\lim_{x \to a} \frac{f(x)}{g(x)} = 0 .
+$$
+
+Read: "$f(x)$ is **little-oh** of $g(x)$" or "$f(x)$ is of **smaller order** than $g(x)$."
+
+- $f(x) = o(1)$ as $x \to a$ $\;\Longleftrightarrow\;$ $f(x) \to 0$.
+- $f(x) = o(x)$ as $x \to 0$ $\;\Longleftrightarrow\;$ $\dfrac{f(x)}{x} \to 0$.
+- $f(x) = h(x) + o\bigl(g(x)\bigr)$ means $f(x) - h(x) = o\bigl(g(x)\bigr)$.
+
+**Example.** $\sin x = x + o(x)$ as $x \to 0$, since $\dfrac{\sin x - x}{x} = \dfrac{\sin x}{x} - 1 \to 0$.
+
+### 7.7.2 Taylor's Formula in o-Notation
+
+If $f^{(n+1)}$ is continuous near $a$:
+
+$$
+f(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}\,(x-a)^{k} + o\bigl((x-a)^{n}\bigr) \qquad \text{as } x \to a .
+$$
+
+**Common expansions** (as $x \to 0$):
+
+| Function | Expansion |
+|----------|-----------|
+| $\dfrac{1}{1-x}$ | $1 + x + x^{2} + \cdots + x^{n} + o(x^{n})$ |
+| $\log(1+x)$ | $x - \dfrac{x^{2}}{2} + \dfrac{x^{3}}{3} - \cdots + (-1)^{n-1}\dfrac{x^{n}}{n} + o(x^{n})$ |
+| $e^{x}$ | $1 + x + \dfrac{x^{2}}{2!} + \cdots + \dfrac{x^{n}}{n!} + o(x^{n})$ |
+| $\sin x$ | $x - \dfrac{x^{3}}{3!} + \dfrac{x^{5}}{5!} - \cdots + (-1)^{n-1}\dfrac{x^{2n-1}}{(2n-1)!} + o(x^{2n})$ |
+| $\cos x$ | $1 - \dfrac{x^{2}}{2!} + \dfrac{x^{4}}{4!} - \cdots + (-1)^{n}\dfrac{x^{2n}}{(2n)!} + o(x^{2n+1})$ |
+| $\arctan x$ | $x - \dfrac{x^{3}}{3} + \dfrac{x^{5}}{5} - \cdots + (-1)^{n-1}\dfrac{x^{2n-1}}{2n-1} + o(x^{2n})$ |
+
+### 7.7.3 Algebra of o-Symbols
+
+**Theorem 7.8.** As $x \to a$:
+
+| Rule | Statement |
+|------|-----------|
+| (a) Addition | $o(g) \pm o(g) = o(g)$ |
+| (b) Scalar | $o(cg) = o(g)$ $(c \neq 0)$ |
+| (c) Product | $f \cdot o(g) = o(fg)$ |
+| (d) Nesting | $o(o(g)) = o(g)$ |
+| (e) Reciprocal | $\dfrac{1}{1+g(x)} = 1 - g(x) + o(g)$, if $g(x) \to 0$ |
+
+**Example 1.** Prove $\tan x = x + \dfrac{1}{3}x^{3} + o(x^{3})$ as $x \to 0$.
+
+*Solution.* Use $\sin x = x - \dfrac{x^{3}}{6} + o(x^{4})$ and $\cos x = 1 - \dfrac{x^{2}}{2} + o(x^{3})$. By (e):
+
+$$
+\frac{1}{\cos x} = \frac{1}{1 - \frac{1}{2}x^{2} + o(x^{3})} = 1 + \frac{1}{2}x^{2} + o(x^{2}) .
+$$
+
+Then:
+
+$$
+\tan x = \frac{\sin x}{\cos x} = \Bigl(x - \frac{x^{3}}{6} + o(x^{4})\Bigr)\Bigl(1 + \frac{x^{2}}{2} + o(x^{2})\Bigr) = x + \frac{1}{3}x^{3} + o(x^{3}) .
+$$
+
+**Example 2.** Prove $(1+x)^{1/x} = e\Bigl(1 - \dfrac{x}{2} + \dfrac{11x^{2}}{24} + o(x^{2})\Bigr)$ as $x \to 0$.
+
+*Solution.* Write $(1+x)^{1/x} = \exp\!\Bigl(\dfrac{\log(1+x)}{x}\Bigr)$. Using $\log(1+x) = x - \dfrac{x^{2}}{2} + \dfrac{x^{3}}{3} + o(x^{3})$:
+
+$$
+\frac{\log(1+x)}{x} = 1 - \frac{x}{2} + \frac{x^{2}}{3} + o(x^{2}) .
+$$
+
+Set $u = -\dfrac{x}{2} + \dfrac{x^{2}}{3} + o(x^{2})$. Since $e^{u} = 1 + u + \dfrac{u^{2}}{2} + o(u^{2})$:
+
+$$
+e^{u} = 1 - \frac{x}{2} + \frac{x^{2}}{3} + o(x^{2}) + \frac{1}{2}\Bigl(-\frac{x}{2} + o(x)\Bigr)^{2} + o(x^{2}) = 1 - \frac{x}{2} + \frac{11x^{2}}{24} + o(x^{2}) .
+$$
+
+Hence $(1+x)^{1/x} = e \cdot e^{u}$ gives the desired result.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
