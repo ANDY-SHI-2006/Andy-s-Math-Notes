@@ -6642,6 +6642,72 @@ The symbol $\displaystyle\sum_{k=p}^{\infty}a_{k}$ (for $p\ge 0$) differs from $
 
 > **Adding or omitting a finite number of terms at the beginning does not affect convergence or divergence.**
 
+## 10.5 Linearity of Convergent Series
+
+### 10.5.1 Theorem 10.2
+
+If $\sum a_{n}$ and $\sum b_{n}$ converge and $\alpha,\beta$ are complex constants, then $\sum(\alpha a_{n}+\beta b_{n})$ also converges, and:
+
+$$
+\sum_{n=1}^{\infty}(\alpha a_{n}+\beta b_{n})=\alpha\sum_{n=1}^{\infty}a_{n}+\beta\sum_{n=1}^{\infty}b_{n}.
+$$
+
+**Proof.** Apply the corresponding properties of finite sums and take limits.
+
+### 10.5.2 Theorem 10.3
+
+If $\sum a_{n}$ converges and $\sum b_{n}$ diverges, then $\sum(a_{n}+b_{n})$ **diverges**.
+
+**Proof.** If $\sum(a_{n}+b_{n})$ converged, then $\sum b_{n}=\sum[(a_{n}+b_{n})-a_{n}]$ would converge by Theorem 10.2—contradiction.
+
+> If **both** diverge, $\sum(a_{n}+b_{n})$ may converge or diverge.
+
+**Example.** $\sum(1/k+1/2^{k})$ diverges because $\sum 1/k$ diverges while $\sum 1/2^{k}$ converges.
+
+## 10.6 Telescoping Series
+
+### 10.6.1 Theorem 10.4
+
+Let $a_{n}=b_{n}-b_{n+1}$. Then:
+
+$$
+\sum_{n=1}^{\infty}a_{n}\text{ converges}\quad\Longleftrightarrow\quad\{b_{n}\}\text{ converges}.
+$$
+
+In that case, with $L=\lim_{n\to\infty}b_{n}$:
+
+$$
+\sum_{n=1}^{\infty}a_{n}=b_{1}-L.
+$$
+
+**Proof.** The $n$th partial sum is $s_{n}=\sum_{k=1}^{n}(b_{k}-b_{k+1})=b_{1}-b_{n+1}$.
+
+> Every series is telescoping (choose $b_{1}$ arbitrarily and set $b_{n+1}=b_{1}-s_{n}$), but the decomposition is useful only when $b_{n}$ is simple.
+
+### 10.6.2 Examples
+
+**Example 1.** $a_{n}=\dfrac{1}{n^{2}+n}=\dfrac{1}{n}-\dfrac{1}{n+1}$. Here $b_{n}=1/n$, $L=0$:
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n(n+1)}=1.
+$$
+
+**Example 2.** For $x$ not a negative integer:
+
+$$
+\frac{1}{(n+x)(n+x+1)(n+x+2)}=\frac{1}{2}\Bigl(\frac{1}{(n+x)(n+x+1)}-\frac{1}{(n+x+1)(n+x+2)}\Bigr).
+$$
+
+Hence:
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{(n+x)(n+x+1)(n+x+2)}=\frac{1}{2(x+1)(x+2)}.
+$$
+
+**Example 3.** $\log\dfrac{n}{n+1}=\log n-\log(n+1)$. Since $\log n\to\infty$, the series **diverges**.
+
+> **Caution.** In an infinite telescoping series $(b_{1}-b_{2})+(b_{2}-b_{3})+\cdots$, one cannot simply "cancel" all intermediate terms to obtain sum $b_{1}$ unless $\lim b_{n}=0$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
