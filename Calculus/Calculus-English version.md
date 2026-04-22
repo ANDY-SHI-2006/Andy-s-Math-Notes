@@ -5018,6 +5018,44 @@ $$
 
 The factor $-1/t^{2}$ cancels in $F'/G'$, giving $F'(t)/G'(t)=f'(x)/g'(x)\to L$. Apply Theorem 7.9 to $F/G$ as $t\to 0+$.
 
+## 7.11 Infinite Limits
+
+### 7.11.1 Definition
+
+**$\lim_{x\to a}f(x)=+\infty$.** To every $M>0$, there corresponds $\delta>0$ such that:
+
+$$
+f(x)>M\qquad\text{whenever}\quad 0<|x-a|<\delta.
+$$
+
+**One-sided variants.**
+- $\displaystyle\lim_{x\to a+}f(x)=+\infty$: require $0<x-a<\delta$.
+- $\displaystyle\lim_{x\to a-}f(x)=+\infty$: require $0<a-x<\delta$.
+
+**$-\infty$.** Replace $f(x)>M$ by $f(x)<-M$ in the above definitions.
+
+### 7.11.2 Infinite Limits at Infinity
+
+| Symbol | Meaning |
+|--------|---------|
+| $\displaystyle\lim_{x\to+\infty}f(x)=+\infty$ | $f(x)>M$ whenever $x>X$ (for some $X$) |
+| $\displaystyle\lim_{x\to+\infty}f(x)=-\infty$ | $f(x)<-M$ whenever $x>X$ |
+| $\displaystyle\lim_{x\to-\infty}f(x)=+\infty$ | $f(x)>M$ whenever $x<-X$ |
+| $\displaystyle\lim_{x\to-\infty}f(x)=-\infty$ | $f(x)<-M$ whenever $x<-X$ |
+
+### 7.11.3 Examples
+
+| Limit | Reason |
+|-------|--------|
+| $\displaystyle\lim_{x\to+\infty}\log x=+\infty$ | $\log$ is increasing and unbounded on $(0,+\infty)$ |
+| $\displaystyle\lim_{x\to 0+}\log x=-\infty$ | $\log x<0$ for $0<x<1$; no lower bound near $0$ |
+| $\displaystyle\lim_{x\to+\infty}e^{x}=+\infty$ | From $\log$ above and inverse relation |
+| $\displaystyle\lim_{x\to-\infty}e^{x}=0$ | Equivalent to $\displaystyle\lim_{x\to+\infty}e^{-x}=0$ |
+| $\displaystyle\lim_{x\to+\infty}x^{\alpha}=+\infty\;(\\alpha>0)$ | Write $x^{\alpha}=e^{\alpha\log x}$ |
+| $\displaystyle\lim_{x\to+\infty}x^{-\alpha}=0$ | Reciprocal of the above |
+| $\displaystyle\lim_{x\to 0-}e^{-1/x}=+\infty$ | $-1/x\to+\infty$ as $x\to 0-$ |
+| $\displaystyle\lim_{x\to 0+}e^{-1/x}=0$ | $-1/x\to-\infty$ as $x\to 0+$ |
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
