@@ -5725,6 +5725,69 @@ $$
 y=c_{1}\cos x+c_{2}\sin x-\cos x\,\log\bigl|\sec x+\tan x\bigr|.
 $$
 
+## 8.13 Special Methods for Particular Solutions (Undetermined Coefficients)
+
+### 8.13.1 Case 1 — $R(x)$ Is a Polynomial
+
+If $R$ is a polynomial of degree $n$:
+
+| Condition | Trial form for $y_{1}$ |
+|-----------|------------------------|
+| $b\neq 0$ | Polynomial of degree $n$ |
+| $b=0$, $a\neq 0$ | Polynomial of degree $n+1$ |
+| $a=b=0$ | Polynomial of degree $n+2$ (integrate twice) |
+
+**Example.** $y''+y=x^{3}$.
+
+- Homogeneous solution: $c_{1}\cos x+c_{2}\sin x$.
+- Try $y_{1}=Ax^{3}+Bx^{2}+Cx+D$. Then $y_{1}''=6Ax+2B$.
+- $(6Ax+2B)+(Ax^{3}+Bx^{2}+Cx+D)=x^{3}$.
+- Equate coefficients: $A=1$, $B=0$, $C=-6$, $D=0$.
+- Particular solution: $y_{1}=x^{3}-6x$.
+- **General solution:** $y=c_{1}\cos x+c_{2}\sin x+x^{3}-6x$.
+
+> Compared with variation of parameters, this method requires no integration.
+
+### 8.13.2 Case 2 — $R(x)=p(x)e^{mx}$
+
+Substitute $y=u(x)e^{mx}$. The equation becomes:
+
+$$
+u''+(2m+a)u'+(m^{2}+am+b)u=p.
+$$
+
+This is Case 1 for $u$, so a polynomial solution $u_{1}$ always exists.
+
+| Condition | Degree of $u_{1}$ |
+|-----------|-------------------|
+| $m^{2}+am+b\neq 0$ | Same as $\deg p$ |
+| $m^{2}+am+b=0$, $2m+a\neq 0$ | $\deg p+1$ |
+| $m^{2}+am+b=0$, $2m+a=0$ | $\deg p+2$ |
+
+The particular solution is $y_{1}=u_{1}(x)e^{mx}$.
+
+**Example.** $y''+y=xe^{3x}$.
+
+- Substitute $y=ue^{3x}$: $u''+6u'+10u=x$.
+- Try $u_{1}=Ax+B$: $u_{1}=\dfrac{5x-3}{50}$.
+- Particular solution: $y_{1}=\dfrac{e^{3x}(5x-3)}{50}$.
+
+### 8.13.3 Extensions
+
+The method also applies when $R$ has the form:
+
+$$
+R(x)=p(x)e^{mx}\cos\alpha x\quad\text{or}\quad R(x)=p(x)e^{mx}\sin\alpha x.
+$$
+
+In either case, seek a particular solution of the form:
+
+$$
+y_{1}(x)=e^{mx}\bigl[q(x)\cos\alpha x+r(x)\sin\alpha x\bigr],
+$$
+
+where $q$ and $r$ are polynomials.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
