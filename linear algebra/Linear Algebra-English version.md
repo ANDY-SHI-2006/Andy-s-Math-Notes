@@ -3956,3 +3956,72 @@ Going from $1$ to $n$ proves the theorem. ∎
 **Corollary 3.2.** Let $A$ be a complex unitary matrix. Then there exists a unitary matrix $U$ such that $U^{-1} A U$ is a diagonal matrix.
 
 **Proof.** Let $\{e^1, \dots, e^n\} = \mathscr{B}$ be the standard orthonormal basis of $\mathbb{C}^n$, and let $\{w_1, \dots, w_n\} = \mathscr{B}'$ be an orthonormal basis of eigenvectors. Let $U = M_{\mathscr{B}'}^{\mathscr{B}}(\text{id})$. Then $U$ is unitary, and if $M'$ is the matrix of $A$ relative to $\mathscr{B}'$, we have $M' = U^{-1} A U$. ∎
+
+
+# 11. Polynomials and Primary Decomposition
+
+## 11.1 The Euclidean Algorithm
+
+We have already defined polynomials and their degree in Chapter 9. In this chapter, we deal with the other standard properties of polynomials. The basic one is the Euclidean algorithm, or long division.
+
+**Theorem 1.1.** Let $f, g$ be polynomials over the field $K$, i.e. polynomials in $K[t]$, and assume $\deg g \geq 0$. Then there exist polynomials $q, r$ in $K[t]$ such that
+
+$$
+f(t) = q(t)g(t) + r(t),
+$$
+
+and $\deg r < \deg g$. The polynomials $q, r$ are uniquely determined by these conditions.
+
+**Proof.** Let $m = \deg g \geq 0$. Write
+
+$$
+f(t) = a_n t^n + \cdots + a_0, \quad g(t) = b_m t^m + \cdots + b_0,
+$$
+
+with $b_m \neq 0$. If $n < m$, let $q = 0$ and $r = f$. If $n \geq m$, let
+
+$$
+f_1(t) = f(t) - a_n b_m^{-1} t^{n-m} g(t).
+$$
+
+Then $\deg f_1 < \deg f$. Continuing inductively, we find polynomials $q_1, r$ such that $f_1 = q_1 g + r$ with $\deg r < \deg g$. Then:
+
+$$
+\begin{aligned}
+f(t) &= a_n b_m^{-1} t^{n-m} g(t) + f_1(t) \\
+&= a_n b_m^{-1} t^{n-m} g(t) + q_1(t)g(t) + r(t) \\
+&= \bigl(a_n b_m^{-1} t^{n-m} + q_1\bigr) g(t) + r(t),
+\end{aligned}
+$$
+
+which expresses $f$ in the desired form.
+
+For uniqueness, suppose $f = q_1 g + r_1 = q_2 g + r_2$ with $\deg r_1, \deg r_2 < \deg g$. Then:
+
+$$
+(q_1 - q_2) g = r_2 - r_1.
+$$
+
+The degree of the left-hand side is either $\geq \deg g$ or the left-hand side is $0$. The degree of the right-hand side is either $< \deg g$ or it is $0$. Hence the only possibility is that both sides are $0$, whence $q_1 = q_2$ and $r_1 = r_2$. ∎
+
+**Corollary 1.2 (Factor Theorem).** Let $f$ be a non-zero polynomial in $K[t]$. Let $\alpha \in K$ be such that $f(\alpha) = 0$. Then there exists a polynomial $q(t)$ in $K[t]$ such that
+
+$$
+f(t) = (t - \alpha) q(t).
+$$
+
+**Proof.** By Theorem 1.1, we can write $f(t) = q(t)(t - \alpha) + r(t)$ where $\deg r < \deg(t - \alpha) = 1$. Hence $r$ is constant. Since $0 = f(\alpha) = q(\alpha)(\alpha - \alpha) + r(\alpha) = r(\alpha)$, it follows that $r = 0$. ∎
+
+**Corollary 1.3.** Let $K$ be a field such that every non-constant polynomial in $K[t]$ has a root in $K$. Let $f$ be such a polynomial. Then there exist elements $\alpha_1, \dots, \alpha_n \in K$ and $c \in K$ such that
+
+$$
+f(t) = c (t - \alpha_1) \cdots (t - \alpha_n).
+$$
+
+**Proof.** In Corollary 1.2, observe that $\deg q = \deg f - 1$. Let $\alpha = \alpha_1$. By assumption, if $q$ is not constant, we can find a root $\alpha_2$ of $q$, and thus write $f(t) = q_2(t)(t - \alpha_1)(t - \alpha_2)$. Proceeding inductively, we keep going until $q_n$ is constant. ∎
+
+> **Note.** Assuming that the complex numbers satisfy the hypothesis of Corollary 1.3, we have proved the existence of a factorization of a polynomial over $\mathbb{C}$ into factors of degree 1. The uniqueness will be proved in the next section.
+
+**Corollary 1.4.** Let $f$ be a polynomial of degree $n$ in $K[t]$. There are at most $n$ roots of $f$ in $K$.
+
+**Proof.** Otherwise, if $m > n$ and $\alpha_1, \dots, \alpha_m$ are distinct roots of $f$ in $K$, then $f(t) = (t - \alpha_1) \cdots (t - \alpha_m) g(t)$ for some polynomial $g$, whence $\deg f \geq m$, a contradiction. ∎
