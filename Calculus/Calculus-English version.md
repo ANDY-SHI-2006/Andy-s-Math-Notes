@@ -5949,6 +5949,62 @@ A **direction field** is constructed by drawing short line segments at various p
 
 > Different initial points $(0,b)$ on the $y$-axis yield different integral curves—this is a geometric reason for the appearance of an arbitrary constant when integrating a first-order equation.
 
+## 8.17 First-Order Separable Equations
+
+### 8.17.1 Definition
+
+A **separable** equation has the form:
+
+$$
+y'=Q(x)R(y)\qquad\text{or}\qquad A(y)y'=Q(x),
+$$
+
+where $A(y)=1/R(y)$.
+
+### 8.17.2 Theorem 8.10
+
+Let $y=Y(x)$ solve $A(y)y'=Q(x)$ on an open interval $I$, with $Y'$, $Q$, and $A\circ Y$ continuous. Let $G$ be any primitive of $A$ ($G'=A$). Then $Y$ satisfies:
+
+$$
+G(y)=\int Q(x)\,dx+C.
+$$
+
+Conversely, any $y$ satisfying this implicit formula is a solution.
+
+**Proof.** $A[Y(x)]Y'(x)=Q(x)$ becomes $G'[Y(x)]Y'(x)=Q(x)$, i.e. $(G\circ Y)'=Q$. Integrate.
+
+> **Mechanical process.** Write $y'=dy/dx$, separate variables $A(y)\,dy=Q(x)\,dx$, and integrate both sides. This is justified by Theorem 8.10.
+
+### 8.17.3 Example: $xy'+y=y^{2}$
+
+Rewrite as:
+
+$$
+\frac{y'}{y(y-1)}=\frac{1}{x}\qquad(y\neq 0,1).
+$$
+
+The constant functions $y\equiv 0$ and $y\equiv 1$ are also solutions.
+
+For $y\notin\{0,1\}$, separate and integrate:
+
+$$
+\int\frac{dy}{y(y-1)}=\int\frac{dx}{x}+K.
+$$
+
+Since $\dfrac{1}{y(y-1)}=\dfrac{1}{y-1}-\dfrac{1}{y}$:
+
+$$
+\log\Bigl|\frac{y-1}{y}\Bigr|=\log|x|+K\quad\Longrightarrow\quad\frac{y-1}{y}=Cx.
+$$
+
+Solving for $y$:
+
+$$
+y=\frac{1}{1-Cx}.
+$$
+
+> All solutions: $y\equiv 0$, $y\equiv 1$, and $y=\dfrac{1}{1-Cx}$ (the case $C=0$ recovers $y\equiv 1$).
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
