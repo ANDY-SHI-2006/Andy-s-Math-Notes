@@ -5788,6 +5788,89 @@ $$
 
 where $q$ and $r$ are polynomials.
 
+## 8.14 Physical Applications of Second-Order Linear ODEs
+
+### 8.14.1 Simple Harmonic Motion
+
+**Model.** $y''+k^{2}y=0$ $(k>0)$.
+
+**Solution.**
+
+$$
+y=A\sin kx+B\cos kx=C\sin(kx+\alpha),
+$$
+
+where $C=\sqrt{A^{2}+B^{2}}$ and $\alpha=\arctan(B/A)$.
+
+| Quantity | Formula |
+|----------|---------|
+| Amplitude | $C$ |
+| Period | $\dfrac{2\pi}{k}$ |
+| Phase angle | $kx+\alpha$ |
+
+### 8.14.2 Damped Vibrations
+
+**Model.** $y''+2cy'+k^{2}y=0$ $(c\neq 0,\;k>0)$.
+
+Discriminant: $d=4(c^{2}-k^{2})$.
+
+| Case | Condition | Form of solution | Behavior ($c>0$) | Name |
+|------|-----------|------------------|------------------|------|
+| (a) | $c^{2}=k^{2}$ | $y=e^{-cx}(A+Bx)$ | $\to 0$ | **Critical damping** |
+| (b) | $c^{2}>k^{2}$ | $y=Ae^{(h-c)x}+Be^{-(h+c)x}$, $h=\sqrt{c^{2}-k^{2}}$ | $\to 0$ | **Overcritical damping** |
+| (c) | $c^{2}<k^{2}$ | $y=Ce^{-cx}\sin(hx+\alpha)$, $h=\sqrt{k^{2}-c^{2}}$ | Oscillates, amplitude $\to 0$ | **Undercritical damping** |
+
+> If $c<0$, some solutions become unbounded as $x\to+\infty$ (unstable).
+
+### 8.14.3 RLC Electric Circuits
+
+With a capacitor $C$ added to the RL circuit:
+
+$$
+LI''(t)+RI'(t)+\frac{1}{C}I(t)=V'(t).
+$$
+
+For constant voltage ($V'=0$):
+
+$$
+I''+\frac{R}{L}I'+\frac{1}{LC}I=0.
+$$
+
+This is the same type as damped vibrations, with $2c=R/L$ and $k^{2}=1/(LC)$.
+
+| Condition | Damping type |
+|-----------|-------------|
+| $CR^{2}=4L$ | Critical |
+| $CR^{2}>4L$ | Overcritical |
+| $CR^{2}<4L$ | Undercritical |
+
+### 8.14.4 Rocket Motion with Variable Mass
+
+**Model.** From conservation of momentum:
+
+$$
+m(t)r''(t)=m'(t)c(t)+F(t),
+$$
+
+where $m(t)$ is mass, $c(t)$ is exhaust velocity (relative to rocket), and $F(t)$ is external force.
+
+**Special case.** Fuel consumed at rate $k$, exhaust speed $-c$ (constant), gravity $-m(t)g$:
+
+$$
+r''(t)=\frac{kc}{w-kt}-g.
+$$
+
+- $w$ = initial total weight, $b$ = fuel weight, $T=w/k$ = total burn time.
+- Velocity: $r'(t)=-c\log\dfrac{w-kt}{w}-gt$.
+- Altitude at fuel exhaustion ($t=b/k$):
+  $$
+  r\Bigl(\frac{b}{k}\Bigr)=\frac{c(w-b)}{k}\log\frac{w-b}{w}-\frac{gb^{2}}{2k^{2}}+\frac{cb}{k}.
+  $$
+- Limiting case $b\to w$ (negligible carrier weight):
+  $$
+  \lim_{b\to w}r\Bigl(\frac{b}{k}\Bigr)=-\frac{1}{2}gT^{2}+cT.
+  $$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
