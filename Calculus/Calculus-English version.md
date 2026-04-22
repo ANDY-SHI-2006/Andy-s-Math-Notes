@@ -6005,6 +6005,81 @@ $$
 
 > All solutions: $y\equiv 0$, $y\equiv 1$, and $y=\dfrac{1}{1-Cx}$ (the case $C=0$ recovers $y\equiv 1$).
 
+## 8.18 Homogeneous First-Order Equations
+
+### 8.18.1 Definition
+
+A first-order equation $y'=f(x,y)$ is **homogeneous** (of degree zero) if:
+
+$$
+f(tx,ty)=f(x,y)\qquad\text{for all }t\neq 0.
+$$
+
+Equivalently, setting $t=1/x$:
+
+$$
+y'=f\Bigl(1,\frac{y}{x}\Bigr).
+$$
+
+**Examples.** $y'=\dfrac{y-x}{y+x}$, $y'=\Bigl(\dfrac{x^{2}+y^{2}}{xy}\Bigr)^{3}$, $y'=\log x-\log y$.
+
+### 8.18.2 Reduction to a Separable Equation
+
+Substitute $v=y/x$ (so $y=vx$, $y'=v'x+v$). Then:
+
+$$
+x\frac{dv}{dx}=f(1,v)-v,
+$$
+
+which is separable. Solve for $v$, then replace $v$ by $y/x$.
+
+### 8.18.3 Example: $y'=\dfrac{y-x}{y+x}$
+
+Rewrite:
+
+$$
+y'=\frac{y/x-1}{y/x+1}=\frac{v-1}{v+1}.
+$$
+
+With $v=y/x$:
+
+$$
+x\frac{dv}{dx}=\frac{v-1}{v+1}-v=-\frac{1+v^{2}}{v+1}.
+$$
+
+Separate and integrate:
+
+$$
+\int\frac{v}{1+v^{2}}\,dv+\int\frac{1}{1+v^{2}}\,dv=-\int\frac{dx}{x}+C,
+$$
+
+$$
+\frac{1}{2}\log(1+v^{2})+\arctan v=-\log|x|+C.
+$$
+
+Replace $v=y/x$ and simplify ($\log x^{2}=2\log|x|$):
+
+$$
+\frac{1}{2}\log(x^{2}+y^{2})+\arctan\frac{y}{x}=C.
+$$
+
+### 8.18.4 Geometric Property — Invariance under Similarity Transformations
+
+A **similarity transformation** multiplies all coordinates by $k>0$. For a homogeneous equation:
+
+- Straight lines through the origin are **isoclines**.
+- If $S$ is an integral curve, so is $kS$ (the image of $S$ under similarity).
+
+**Proof sketch.** Let $S$ be $y=F(x)$ with $F'(x)=f(x,F(x))$. The curve $kS$ is $y=G(x)$ where $G(x)=kF(x/k)$. Then:
+
+$$
+G'(x)=F'\Bigl(\frac{x}{k}\Bigr)=f\Bigl(\frac{x}{k},F\Bigl(\frac{x}{k}\Bigr)\Bigr)=f\Bigl(x,kF\Bigl(\frac{x}{k}\Bigr)\Bigr)=f(x,G(x)),
+$$
+
+using homogeneity with $t=k$. Hence $kS$ is also an integral curve.
+
+> **Converse.** If the integral curves of $y'=f(x,y)$ are invariant under all similarity transformations, then the equation is necessarily homogeneous.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
