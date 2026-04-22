@@ -6385,6 +6385,47 @@ $$
 z^{n}=r^{n}e^{in\theta}=r^{n}\bigl(\cos n\theta+i\sin n\theta\bigr).
 $$
 
+## 9.7 Complex-Valued Functions
+
+A **complex-valued function** takes complex numbers as values.
+
+| Type | Domain | Example |
+|------|--------|---------|
+| Of a real variable | Real numbers | $f(x)=u(x)+iv(x)$ |
+| Of a complex variable | Complex numbers | $f(z)=e^{z}$ |
+
+Most elementary functions (exponential, logarithm, trigonometric) extend to complex variables.
+
+**Periodicity of the complex exponential.** For any integer $n$:
+
+$$
+e^{z+2n\pi i}=e^{z}.
+$$
+
+Thus $e^{z}$ has period $2\pi i$.
+
+## 9.8 Calculus of Complex-Valued Functions of a Real Variable
+
+### 9.8.1 Definitions
+
+Let $f(x)=u(x)+iv(x)$ with $u,v$ real-valued.
+
+| Concept | Definition |
+|---------|-----------|
+| **Continuity** | $f$ continuous $\iff$ $u$ and $v$ both continuous |
+| **Derivative** | $f'(x)=u'(x)+iv'(x)$ |
+| **Integral** | $\displaystyle\int_{a}^{b}f(x)\,dx=\int_{a}^{b}u(x)\,dx+i\int_{a}^{b}v(x)\,dx$ |
+
+### 9.8.2 Extended Theorems
+
+Many theorems of real calculus carry over unchanged:
+
+- Sum, product, and quotient rules for differentiation.
+- First and second fundamental theorems of calculus.
+- **Zero-derivative theorem:** If $f'(x)=0$ on an open interval $I$, then $f$ is constant on $I$.
+
+**Proof.** $f'=u'+iv'=0$ implies $u'=v'=0$. By the real zero-derivative theorem, $u$ and $v$ are constant; hence $f$ is constant.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
