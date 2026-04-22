@@ -5108,6 +5108,48 @@ $$
 
 and evaluate the exponent $g(x)\log f(x)$ by earlier methods.
 
+# 8. Introduction to Differential Equations
+
+## 8.1 Introduction
+
+A **differential equation** is an equation involving at least one derivative of an unknown function.
+
+### 8.1.1 Classification
+
+| Type | Unknown | Example |
+|------|---------|---------|
+| **Ordinary** (ODE) | Function of **one** variable | $f'(x)=f(x)$ |
+| **Partial** (PDE) | Function of **two or more** variables | $\dfrac{\partial^{2}f}{\partial x^{2}}+\dfrac{\partial^{2}f}{\partial y^{2}}=0$ (Laplace's equation) |
+
+### 8.1.2 First Example — The Exponential ODE
+
+$$
+f'(x)=f(x).
+$$
+
+- Particular solution: $f(x)=e^{x}$.
+- **General solution:** $f(x)=Ce^{x}$ for arbitrary constant $C$.
+
+### 8.1.3 A Partial-Differential Equation — Laplace's Equation
+
+$$
+\frac{\partial^{2}f}{\partial x^{2}}+\frac{\partial^{2}f}{\partial y^{2}}=0.
+$$
+
+This appears in electromagnetism, fluid mechanics, and elsewhere. Sample solutions:
+
+- $f(x,y)=x+2y$
+- $f(x,y)=e^{x}\cos y$
+- $f(x,y)=\log(x^{2}+y^{2})$
+
+### 8.1.4 Historical Note
+
+- Originated in the 17th century from problems in **geometry and mechanics**.
+- Early contributors: Newton, Leibniz, the Bernoullis.
+- Two main strands of study:
+  1. **Special tricks** (exact equations, substitutions, etc.) — discussed later in this chapter.
+  2. **Linear differential equations** — the most widely occurring type; a fuller treatment appears in Volume II.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
