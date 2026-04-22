@@ -4463,6 +4463,36 @@ In each case the new integrand becomes a rational function of $\sin t$ and $\cos
 - Let $x=2\sin t$, $dx=2\cos t\,dt$, $\sqrt{4-x^{2}}=2\cos t$.
 - The integral simplifies to $\displaystyle\int\frac{\sin t\,dt}{\cos t+\tfrac12}=-\log\Bigl|\tfrac12+\cos t\Bigr|+C=-\log\bigl(1+\sqrt{4-x^{2}}\bigr)+C$.
 
+# 7. Polynomial Approximations to Functions
+
+## 7.1 Introduction
+
+Polynomials are among the simplest functions in analysis and are pleasant for numerical computation because their values require only finitely many multiplications and additions.
+
+- In Chapter 6 the logarithm was approximated by polynomials to any desired accuracy.
+- This chapter extends the idea to other functions (exponential, trigonometric, etc.).
+- Goal: find a polynomial that agrees with $f$ and some of its derivatives at a given point.
+
+**Example: approximating $e^{x}$ near $x=0$.**
+
+Since $f^{(k)}(0)=1$ for every $k$, the polynomial of degree $n$:
+
+$$
+P_{n}(x)=\sum_{k=0}^{n}\frac{x^{k}}{k!}=1+x+\frac{x^{2}}{2!}+\cdots+\frac{x^{n}}{n!} \tag{7.1}
+$$
+
+agrees with $e^{x}$ and its first $n$ derivatives at $0$.
+
+| Degree | Polynomial | Matches at $x=0$ |
+|--------|-----------|------------------|
+| $1$ | $1+x$ | $f(0), f'(0)$ |
+| $2$ | $1+x+\tfrac12x^{2}$ | $f(0), f'(0), f''(0)$ |
+| $n$ | $\displaystyle\sum_{k=0}^{n}\frac{x^{k}}{k!}$ | $f(0),\dots,f^{(n)}(0)$ |
+
+- The linear polynomial $1+x$ is the tangent line at $(0,1)$.
+- Higher-degree polynomials give better accuracy near $x=0$ (Figure 7.1).
+- Before using such polynomials we need information about the approximation **error**; the general theory follows in the next sections.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
