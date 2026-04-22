@@ -4972,6 +4972,52 @@ $$
 
 As $x\to a+$, we have $c\to a+$, so the right side tends to $L$; hence $f(x)/g(x)\to L$.
 
+## 7.10 The Symbols $+\infty$ and $-\infty$; Extension of L'Hôpital's Rule
+
+### 7.10.1 Limits at Infinity
+
+**Definition.** $\displaystyle\lim_{x\to+\infty}f(x)=A$ means:
+
+> For every $\epsilon>0$, there exists $M>0$ such that $|f(x)-A|<\epsilon$ whenever $x>M$.
+
+Similarly, $\displaystyle\lim_{x\to-\infty}f(x)=A$ means $|f(x)-A|<\epsilon$ whenever $x<-M$.
+
+**Equivalence via substitution.** Let $F(t)=f(1/t)$ for $t\neq 0$. Then:
+
+$$
+\lim_{x\to+\infty}f(x)=A\quad\Longleftrightarrow\quad\lim_{t\to 0+}F(t)=A,
+$$
+
+$$
+\lim_{x\to-\infty}f(x)=A\quad\Longleftrightarrow\quad\lim_{t\to 0-}F(t)=A.
+$$
+
+All usual limit rules (sum, product, quotient, composition) extend to $x\to\pm\infty$.
+
+### 7.10.2 Theorem 7.10 — L'Hôpital's Rule at Infinity ($0/0$)
+
+Assume $f$ and $g$ have derivatives for all $x>M$ (some $M>0$), and:
+
+1. $\displaystyle\lim_{x\to+\infty}f(x)=0$ and $\displaystyle\lim_{x\to+\infty}g(x)=0$,
+2. $g'(x)\neq 0$ for $x>M$,
+3. $\displaystyle\lim_{x\to+\infty}\dfrac{f'(x)}{g'(x)}=L$.
+
+Then:
+
+$$
+\lim_{x\to+\infty}\frac{f(x)}{g(x)}=L.
+$$
+
+> An analogous result holds for $x\to-\infty$.
+
+**Proof sketch.** Set $F(t)=f(1/t)$, $G(t)=g(1/t)$. As $x\to+\infty$, $t=1/x\to 0+$. By the chain rule:
+
+$$
+F'(t)=-\frac{1}{t^{2}}f'\!\Bigl(\frac{1}{t}\Bigr),\qquad G'(t)=-\frac{1}{t^{2}}g'\!\Bigl(\frac{1}{t}\Bigr).
+$$
+
+The factor $-1/t^{2}$ cancels in $F'/G'$, giving $F'(t)/G'(t)=f'(x)/g'(x)\to L$. Apply Theorem 7.9 to $F/G$ as $t\to 0+$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
