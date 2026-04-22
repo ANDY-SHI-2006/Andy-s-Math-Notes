@@ -6470,6 +6470,54 @@ $$
 
 > If $t=\alpha+i\beta$, the real and imaginary parts $u(x)=e^{\alpha x}\cos\beta x$ and $v(x)=e^{\alpha x}\sin\beta x$ are both real solutions. Their linear combination $y=c_{1}u+c_{2}v$ is the general solution, agreeing with Theorem 8.7.
 
+# 10. Sequences, Infinite Series, Improper Integrals
+
+## 10.1 Zeno's Paradox
+
+### 10.1.1 The Racecourse Paradox
+
+Zeno of Elea (495–435 B.C.) argued that a runner can never reach the end of a racecourse: he must first cover half the distance, then half of what remains, then half of that, *ad infinitum*.
+
+If the runner covers the first half in $T$ minutes, the total time is represented by the **infinite series**:
+
+$$
+T+\frac{T}{2}+\frac{T}{4}+\cdots+\frac{T}{2^{n}}+\cdots.
+$$
+
+**Partial sums.**
+
+$$
+s_{n}=T+\frac{T}{2}+\cdots+\frac{T}{2^{n-1}}=\Bigl(2-\frac{1}{2^{n-1}}\Bigr)T.
+$$
+
+Since $1/2^{n-1}\to 0$, we have $s_{n}\to 2T$. Thus the series has **sum** $2T$, resolving the paradox.
+
+### 10.1.2 A Divergent Variant
+
+Suppose instead the runner's speed decreases so that the portion from $1/2^{n-1}$ to $1/2^{n}$ takes $T/n$ minutes. The total time is:
+
+$$
+T+\frac{T}{2}+\frac{T}{3}+\cdots+\frac{T}{n}+\cdots.
+$$
+
+**Integral estimate.** The harmonic partial sums satisfy:
+
+$$
+1+\frac{1}{2}+\cdots+\frac{1}{n}\ge\log(n+1).
+$$
+
+Hence $s_{n}\ge T\log(n+1)\to+\infty$. The runner never arrives—Zeno is right in this case.
+
+> **Convergent** series have partial sums approaching a finite limit; **divergent** series do not.
+
+### 10.1.3 Historical Remarks
+
+- **17th century:** Widespread use of infinite series; Newton discovered the **binomial series**.
+- **Binomial theorem:** $(1+x)^{n}=\displaystyle\sum_{k=0}^{n}\binom{n}{k}x^{k}$ for integer $n\ge 0$.
+- Newton extended this to arbitrary real exponents (no rigorous proof at the time).
+- **1812:** Gauss published the first thorough and rigorous treatment of convergence.
+- **1821:** Cauchy introduced the analytic definition of limit in *Cours d'analyse algébrique*, laying the foundations of modern convergence theory.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
