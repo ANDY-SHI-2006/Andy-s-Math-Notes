@@ -6139,6 +6139,50 @@ $$
 - $k=\dfrac{\sqrt{10}-3}{300}$.
 - Time to fall from 7 ft to 1 ft: $t_{2}-t_{1}=10\,\dfrac{\sqrt{7}-1}{\sqrt{10}-3}\approx 101.3$ min.
 
+# 9. Complex Numbers
+
+## 9.1 Historical Introduction
+
+The equation $x^{2}+1=0$ has no solution in the real-number system. **Complex numbers** were introduced to provide solutions to such equations.
+
+- **16th century:** The symbol $\sqrt{-1}$ was introduced; later denoted by $i$.
+- Early view: $i$ was a fictitious number whose square is $-1$. Expressions like $2+3i$ were used formally for nearly 300 years.
+- **19th century:** Gauss and Hamilton independently proposed defining complex numbers as **ordered pairs** $(a,b)$ of real numbers with special arithmetic rules.
+
+## 9.2 Definitions and Field Properties
+
+### 9.2.1 Definition
+
+If $a,b\in\mathbb{R}$, the pair $(a,b)$ is a **complex number**.
+
+| Operation | Definition |
+|-----------|-----------|
+| **Equality** | $(a,b)=(c,d)\iff a=c$ and $b=d$ |
+| **Sum** | $(a,b)+(c,d)=(a+c,\;b+d)$ |
+| **Product** | $(a,b)(c,d)=(ac-bd,\;ad+bc)$ |
+
+The number $a$ is the **real part**; $b$ is the **imaginary part**.
+
+### 9.2.2 Theorem 9.1 — Field Axioms
+
+The set of all complex numbers satisfies the six field axioms:
+
+| Axiom | Element | Property |
+|-------|---------|----------|
+| 1–3 | — | Commutative, associative, distributive laws (addition and multiplication) |
+| 4 | $(0,0)$ | Additive identity |
+| 4 | $(1,0)$ | Multiplicative identity |
+| 5 | $(-a,-b)$ | Additive inverse: $-(a,b)$ |
+| 6 | $\bigl(\dfrac{a}{a^{2}+b^{2}},\dfrac{-b}{a^{2}+b^{2}}\bigr)$ | Multiplicative inverse (reciprocal), for $(a,b)\neq(0,0)$ |
+
+**Quotient.** For $(a,b)\neq(0,0)$:
+
+$$
+\frac{(c,d)}{(a,b)}=(c,d)\,(a,b)^{-1}.
+$$
+
+> Since all field axioms hold, every algebraic law valid for real numbers (Theorems I.1–I.15) extends to complex numbers.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
