@@ -6255,6 +6255,65 @@ For $ax^{2}+bx+c=0$ with real coefficients:
 >
 > Hence no number system more general than $\mathbb{C}$ is needed to solve polynomial equations.
 
+## 9.5 Geometric Interpretation, Modulus and Argument
+
+### 9.5.1 The Complex Plane
+
+A complex number $z=x+iy$ is represented by the point $(x,y)$ in the plane. The $x$-axis is the **real axis**; the $y$-axis is the **imaginary axis**.
+
+- **Addition/subtraction** obey the **parallelogram law**.
+
+### 9.5.2 Polar Form
+
+For $z=x+iy\neq 0$, write $x=r\cos\theta$, $y=r\sin\theta$:
+
+$$
+z=r(\cos\theta+i\sin\theta).
+$$
+
+| Quantity | Definition | Formula |
+|----------|-----------|---------|
+| **Modulus** (absolute value) | Distance from origin | $\|z\|=\sqrt{x^{2}+y^{2}}=r$ |
+| **Argument** | Polar angle | $\theta=\arg z$ (determined up to $2\pi$) |
+| **Principal argument** | Unique choice | $\operatorname{Arg}z\in(-\pi,\pi]$ |
+
+### 9.5.3 Properties of the Modulus
+
+$$
+\begin{aligned}
+&|z|>0\quad\text{if }z\neq 0,&&|z_{1}-z_{2}|=|z_{2}-z_{1}|,\\
+&|z_{1}+z_{2}|\le|z_{1}|+|z_{2}|,&&|z_{1}z_{2}|=|z_{1}|\,|z_{2}|,\\
+&\Bigl|\frac{z_{1}}{z_{2}}\Bigr|=\frac{|z_{1}|}{|z_{2}|}\quad(z_{2}\neq 0).
+\end{aligned}
+$$
+
+The product formula follows from:
+
+$$
+(ac-bd)^{2}+(bc+ad)^{2}=(a^{2}+b^{2})(c^{2}+d^{2}).
+$$
+
+### 9.5.4 Complex Conjugate
+
+For $z=x+iy$, the **conjugate** is $\bar{z}=x-iy$ (reflection in the real axis).
+
+$$
+\overline{z_{1}+z_{2}}=\bar{z}_{1}+\bar{z}_{2},\qquad
+\overline{z_{1}z_{2}}=\bar{z}_{1}\bar{z}_{2},\qquad
+\overline{z_{1}/z_{2}}=\bar{z}_{1}/\bar{z}_{2},\qquad
+z\bar{z}=|z|^{2}.
+$$
+
+### 9.5.5 Conjugate Roots of Real Polynomials
+
+If a real-coefficient quadratic has no real roots, its complex roots are **conjugates**.
+
+Conversely, if $r_{1}=\alpha+i\beta$ and $r_{2}=\alpha-i\beta$ are conjugates, they are roots of:
+
+$$
+x^{2}-2\alpha x+\alpha^{2}+\beta^{2}=0.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
