@@ -6518,6 +6518,62 @@ Hence $s_{n}\ge T\log(n+1)\to+\infty$. The runner never arrives—Zeno is right 
 - **1812:** Gauss published the first thorough and rigorous treatment of convergence.
 - **1821:** Cauchy introduced the analytic definition of limit in *Cours d'analyse algébrique*, laying the foundations of modern convergence theory.
 
+## 10.2 Sequences
+
+### 10.2.1 Definition
+
+A **sequence** is a function $f$ whose domain is the set of positive integers. The value $f(n)$ is called the $n$th **term**.
+
+**Notation.** $\{f(n)\}$, or $a_{n}, s_{n}, x_{n}, u_{n}$, etc.
+
+**Examples.**
+- $a_{n}=1/n$: $\;1,\tfrac{1}{2},\tfrac{1}{3},\tfrac{1}{4},\ldots$
+- $a_{2n-1}=1$, $a_{2n}=2n^{2}$: $\;1,2,1,8,1,18,\ldots$
+- **Fibonacci** (recursion): $a_{1}=a_{2}=1$, $a_{n+1}=a_{n}+a_{n-1}$: $\;1,1,2,3,5,8,13,\ldots$
+
+### 10.2.2 Limit of a Sequence
+
+**Definition.** A sequence $\{f(n)\}$ has **limit** $L$ if:
+
+> For every $\epsilon>0$, there exists $N$ such that $|f(n)-L|<\epsilon$ for all $n\ge N$.
+
+We write $\displaystyle\lim_{n\to\infty}f(n)=L$ or $f(n)\to L$.
+
+A sequence with no limit is **divergent**.
+
+### 10.2.3 Complex-Valued Sequences
+
+If $f=u+iv$ and $L=a+ib$, then:
+
+$$
+f(n)\to L\quad\Longleftrightarrow\quad u(n)\to a\;\text{ and }\;v(n)\to b.
+$$
+
+Hence:
+
+$$
+\lim_{n\to\infty}f(n)=\lim_{n\to\infty}u(n)+i\lim_{n\to\infty}v(n).
+$$
+
+> For complex $f$: $f(n)\to\infty$ means $|f(n)|\to+\infty$.
+
+### 10.2.4 Basic Limit Formulas
+
+| Formula | Condition |
+|---------|-----------|
+| $\displaystyle\lim_{n\to\infty}\dfrac{1}{n^{\alpha}}=0$ | $\alpha>0$ |
+| $\displaystyle\lim_{n\to\infty}x^{n}=0$ | $|x|<1$ |
+| $\displaystyle\lim_{n\to\infty}\dfrac{(\log n)^{a}}{n^{b}}=0$ | $a>0$, $b>0$ |
+| $\displaystyle\lim_{n\to\infty}n^{1/n}=1$ | — |
+| $\displaystyle\lim_{n\to\infty}\Bigl(1+\dfrac{a}{n}\Bigr)^{n}=e^{a}$ | $a\in\mathbb{R}$ |
+
+### 10.2.5 Algebra of Limits
+
+If $f(n)\to L$ and $g(n)\to M$, then:
+- $f(n)+g(n)\to L+M$
+- $f(n)g(n)\to LM$
+- $f(n)/g(n)\to L/M$ (if $M\neq 0$)
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
