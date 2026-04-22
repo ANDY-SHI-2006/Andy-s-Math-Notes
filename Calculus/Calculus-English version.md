@@ -6426,6 +6426,50 @@ Many theorems of real calculus carry over unchanged:
 
 **Proof.** $f'=u'+iv'=0$ implies $u'=v'=0$. By the real zero-derivative theorem, $u$ and $v$ are constant; hence $f$ is constant.
 
+### 9.8.3 Differentiation and Integration of $e^{tx}$
+
+**Theorem 9.5.** If $f(x)=e^{tx}$ for real $x$ and fixed complex $t$, then:
+
+$$
+f'(x)=te^{tx}.
+$$
+
+**Proof.** Write $t=\alpha+i\beta$. Then:
+
+$$
+f(x)=e^{\alpha x}\cos\beta x+i\,e^{\alpha x}\sin\beta x.
+$$
+
+Differentiating the real and imaginary parts and combining gives $f'(x)=(\alpha+i\beta)e^{(\alpha+i\beta)x}=te^{tx}$.
+
+**Integration formula** ($t\neq 0$):
+
+$$
+\int e^{tx}\,dx=\frac{e^{tx}}{t}.
+$$
+
+Equating real and imaginary parts with $t=\alpha+i\beta$:
+
+$$
+\int e^{\alpha x}\cos\beta x\,dx=\frac{e^{\alpha x}(\alpha\cos\beta x+\beta\sin\beta x)}{\alpha^{2}+\beta^{2}},
+$$
+
+$$
+\int e^{\alpha x}\sin\beta x\,dx=\frac{e^{\alpha x}(\alpha\sin\beta x-\beta\cos\beta x)}{\alpha^{2}+\beta^{2}}.
+$$
+
+### 9.8.4 Connection with Second-Order Linear ODEs
+
+**Theorem 9.6.** Let $L(y)=y''+ay'+by$ with real constants $a,b$. The function $f(x)=e^{tx}$ satisfies $L(f)=0$ iff $t$ is a root of the characteristic equation:
+
+$$
+t^{2}+at+b=0.
+$$
+
+**Proof.** $f'(x)=te^{tx}$ and $f''(x)=t^{2}e^{tx}$, so $L(f)=e^{tx}(t^{2}+at+b)$. Since $e^{tx}\neq 0$, the result follows.
+
+> If $t=\alpha+i\beta$, the real and imaginary parts $u(x)=e^{\alpha x}\cos\beta x$ and $v(x)=e^{\alpha x}\sin\beta x$ are both real solutions. Their linear combination $y=c_{1}u+c_{2}v$ is the general solution, agreeing with Theorem 8.7.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
