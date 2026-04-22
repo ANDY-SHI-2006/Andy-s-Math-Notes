@@ -4670,6 +4670,95 @@ $$
 
 Integration by parts with $u=f^{(n+1)}(t)-f^{(n+1)}(a)$ and $v=-\dfrac{(x-t)^{n+1}}{n+1}$ yields (7.9) with $n$ replaced by $n+1$. ∎
 
+## 7.5 Estimates for the Error in Taylor's Formula
+
+### 7.5.1 Error Bounds
+
+**Theorem 7.7.** If $m\le f^{(n+1)}(t)\le M$ for all $t$ in an interval containing $a$, then for every $x$ in this interval:
+
+- If $x>a$:
+  $$
+  m\frac{(x-a)^{n+1}}{(n+1)!}\le E_{n}(x)\le M\frac{(x-a)^{n+1}}{(n+1)!}.
+  $$
+- If $x<a$:
+  $$
+  m\frac{(a-x)^{n+1}}{(n+1)!}\le(-1)^{n+1}E_{n}(x)\le M\frac{(a-x)^{n+1}}{(n+1)!}.
+  $$
+
+**Proof idea.** Bound the integrand in the integral form of $E_{n}(x)$ and integrate. ∎
+
+### 7.5.2 Example — Approximating $e$
+
+For $f(x)=e^{x}$ at $a=0$ with $x=1$:
+
+$$
+e=\sum_{k=0}^{n}\frac{1}{k!}+E_{n}(1),\qquad\frac{1}{(n+1)!}\le E_{n}(1)<\frac{3}{(n+1)!}.
+$$
+
+Taking $n=12$ gives $2.718281826<e<2.718281833$, so $e\approx2.7182818$ (correct to 7 decimals).
+
+### 7.5.3 Example — Irrationality of $e$
+
+Multiplying the error bounds by $n!$:
+
+$$
+\frac{1}{n+1}\le n!\,e-\sum_{k=0}^{n}\frac{n!}{k!}<\frac{3}{n+1}\le\frac34\qquad(n\ge3).
+$$
+
+The sum is an integer. If $e$ were rational, $n!e$ would be an integer for large $n$, but the inequalities force the difference of two integers to be a positive number $\le\tfrac34$ — impossible. Hence $e$ is irrational.
+
+### 7.5.4 Example — Approximating an Integral
+
+For $\displaystyle\int_{0}^{1/2}e^{-t^{2}}\,dt$, use the Taylor polynomial of $e^{x}$ with $n=4$ and replace $x$ by $-t^{2}$:
+
+$$
+e^{-t^{2}}=1-t^{2}+\frac{t^{4}}{2!}-\frac{t^{6}}{3!}+\frac{t^{8}}{4!}+E_{4}(-t^{2}),
+$$
+
+where $-\dfrac{t^{10}}{5!}\le E_{4}(-t^{2})<0$. Integrating from $0$ to $\tfrac12$:
+
+$$
+\int_{0}^{1/2}e^{-t^{2}}\,dt=\frac12-\frac{1}{3\cdot2^{3}}+\frac{1}{5\cdot2^{5}\cdot2!}-\frac{1}{7\cdot2^{7}\cdot3!}+\frac{1}{9\cdot2^{9}\cdot4!}-\theta,
+$$
+
+with $0<\theta\le0.0000045$. Rounding to four decimals: $0.4613$.
+
+## 7.6 Other Forms of the Remainder
+
+### 7.6.1 Lagrange Form
+
+Since $(x-t)^{n}$ does not change sign on $[a,x]$, the weighted mean-value theorem for integrals gives:
+
+$$
+E_{n}(x)=\frac{f^{(n+1)}(c)}{(n+1)!}\,(x-a)^{n+1}\qquad\text{for some }c\text{ between }a\text{ and }x.
+$$
+
+This is **Lagrange's form**; it resembles the earlier Taylor terms except the derivative is evaluated at an unknown point $c$.
+
+### 7.6.2 Cauchy Form
+
+Define $F(t)=f(t)+\sum_{k=1}^{n}\dfrac{f^{(k)}(t)}{k!}(x-t)^{k}$. Then $F(x)=f(x)$, $F(a)=T_{n}f(x;a)$, and:
+
+$$
+F'(t)=\frac{(x-t)^{n}}{n!}\,f^{(n+1)}(t).
+$$
+
+Apply Cauchy's mean-value formula to $F$ and an auxiliary function $G$ on $[a,x]$:
+
+$$
+E_{n}(x)=\frac{F'(c)}{G'(c)}\,\bigl[G(x)-G(a)\bigr]\qquad(a<c<x).
+$$
+
+- With $G(t)=(x-t)^{n+1}$: **Lagrange form** (as above).
+- With $G(t)=x-t$: **Cauchy form**:
+  $$
+  E_{n}(x)=\frac{f^{(n+1)}(c)}{n!}\,(x-c)^{n}(x-a).
+  $$
+- With $G(t)=(x-t)^{p}$ ($p\ge1$): general form:
+  $$
+  E_{n}(x)=\frac{f^{(n+1)}(c)}{n!\,p}\,(x-c)^{n+1-p}(x-a)^{p}.
+  $$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
