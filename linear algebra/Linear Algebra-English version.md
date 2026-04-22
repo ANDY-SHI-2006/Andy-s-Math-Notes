@@ -4413,3 +4413,72 @@ A hyperplane whose equation is $X \cdot N = c$ determines two closed half spaces
 Since the intersection of convex sets is convex, the intersection of a finite number of half spaces is convex. Such an intersection can be bounded or unbounded.
 
 **Definition (Bounded).** A subset $S$ of $\mathbb{R}^n$ is said to be **bounded** if there exists a number $c > 0$ such that $\|X\| \leq c$ for all $X \in S$.
+
+
+## 12.2 Separating Hyperplanes
+
+**Theorem 2.1.** Let $S$ be a closed convex set in $\mathbb{R}^n$. Let $P$ be a point of $\mathbb{R}^n$. Then either $P$ belongs to $S$, or there exists a hyperplane $H$ which contains $P$, and such that $S$ is contained in one of the open half spaces determined by $H$.
+
+**Proof.** Suppose $P$ does not belong to $S$. We consider the function $f$ on the closed set $S$ given by $f(X) = \|X - P\|$. By calculus this function has a minimum on $S$. Let $Q$ be a point of $S$ such that $\|Q - P\| \leq \|X - P\|$ for all $X$ in $S$. Let $N = Q - P$. Since $P$ is not in $S$, $N \neq O$.
+
+We contend that the hyperplane passing through $P$, perpendicular to $N$, satisfies our requirements. Let $Q'$ be any point of $S$, $Q' \neq Q$. Then for every $t$ with $0 < t \leq 1$:
+
+$$
+\|Q - P\| \leq \|Q + t(Q' - Q) - P\| = \|(Q - P) + t(Q' - Q)\|.
+$$
+
+Squaring gives
+
+$$
+(Q - P)^2 \leq (Q - P)^2 + 2t(Q - P)\cdot(Q' - Q) + t^2(Q' - Q)^2.
+$$
+
+Canceling and dividing by $t$:
+
+$$
+0 \leq 2(Q - P)\cdot(Q' - Q) + t(Q' - Q)^2.
+$$
+
+Letting $t \to 0$ yields $0 \leq (Q - P)\cdot(Q' - Q) = N\cdot(Q' - P) - N\cdot N$. But $N\cdot N > 0$. Hence:
+
+$$
+Q' \cdot N > P \cdot N.
+$$
+
+This proves that $S$ is contained in the open half space defined by $X \cdot N > P \cdot N$. ∎
+
+**Proposition.** Let $S$ be a convex set in $\mathbb{R}^n$. Then the closure of $S$ (denoted by $\bar{S}$) is convex.
+
+**Proof.** If $P, Q$ are points in the closure, we can find points $P_k, Q_k$ of $S$ tending to $P$ and $Q$ respectively. Then $tP_k + (1-t)Q_k$ tends to $tP + (1-t)Q$, which therefore lies in the closure of $S$. ∎
+
+**Definition (Boundary point).** Let $S$ be a convex set in $\mathbb{R}^n$. Let $P$ be a **boundary point** of $S$. This means a point such that for every $\epsilon > 0$, the open ball centered at $P$, of radius $\epsilon$ in $\mathbb{R}^n$, contains points which are in $S$, and points which are not in $S$.
+
+**Definition (Supporting hyperplane).** A hyperplane $H$ is said to be a **supporting hyperplane** of $S$ at $P$ if $P$ is contained in $H$, and if $S$ is contained in one of the two closed half spaces determined by $H$.
+
+**Theorem 2.2.** Let $S$ be a convex set in $\mathbb{R}^n$, and let $P$ be a boundary point of $S$. Then there exists a supporting hyperplane of $S$ at $P$.
+
+**Proof.** Let $\bar{S}$ be the closure of $S$. Then $\bar{S}$ is convex, and $P$ is a boundary point of $\bar{S}$. If we can prove the theorem for $\bar{S}$, then it certainly follows for $S$. Thus we may assume $S$ is closed.
+
+For each integer $k > 2$, we can find a point $P_k$ not in $S$, but at distance $< 1/k$ from $P$. By Theorem 2.1, we find a point $Q_k$ on $S$ whose distance from $P_k$ is minimal, and we let $N_k = Q_k - P_k$. Let $N'_k$ be the vector in the same direction as $N_k$ but of norm $1$. The sequence of vectors $N'_k$ has a point of accumulation $N'$ on the sphere of radius $1$, because the sphere is compact.
+
+By Theorem 2.1, for all $X \in S$:
+
+$$
+X \cdot N_k \geq P_k \cdot N_k,
+$$
+
+whence dividing by $\|N_k\|$:
+
+$$
+X \cdot N'_k > P_k \cdot N'_k.
+$$
+
+Since $N'$ is an accumulation point of $\{N'_k\}$ and $P$ is a limit of $\{P_k\}$, it follows by continuity that for each $X$ in $S$:
+
+$$
+X \cdot N' \geq P \cdot N'.
+$$
+
+This proves our theorem. ∎
+
+> **Remark.** Let $S$ be a convex set, and let $H$ be a hyperplane defined by $X \cdot N = a$. Assume that for all $X \in S$ we have $X \cdot N \geq a$. If $P$ is a point of $S$ lying in the hyperplane, then $P$ is a boundary point of $S$. Otherwise, for $\epsilon > 0$ sufficiently small, $P - \epsilon N$ would be a point of $S$, and thus $(P - \epsilon N)\cdot N = P\cdot N - \epsilon N\cdot N = a - \epsilon N\cdot N < a$, contrary to hypothesis. We conclude therefore that $H$ is a supporting hyperplane of $S$ at $P$.
