@@ -5338,6 +5338,110 @@ $$
 
 Only the solution with $C=-1$ tends to a finite limit as $x\to 0$; that limit is $1$.
 
+## 8.5 Physical Applications of First-Order Linear ODEs
+
+### 8.5.1 Radioactive Decay
+
+**Model.** $y'=-ky$ $(k>0)$.
+
+**Solution.** $f(t)=f(0)\,e^{-kt}$.
+
+**Half-life.** Time $T$ for which $f(T)/f(0)=\frac{1}{2}$:
+
+$$
+T=\frac{\log 2}{k}.
+$$
+
+### 8.5.2 Falling Body in a Resisting Medium
+
+**Forces.** Gravity $mg$ downward; air resistance $-kv$ upward.
+
+**Equation (velocity).**
+
+$$
+v'+\frac{k}{m}v=g.
+$$
+
+**Solution** (released from rest, $v(0)=0$):
+
+$$
+v(t)=\frac{mg}{k}\bigl(1-e^{-kt/m}\bigr).
+$$
+
+- **Terminal velocity:** $v\to\dfrac{mg}{k}$ as $t\to+\infty$.
+- With initial velocity $v_{0}$: $v(t)=\dfrac{mg}{k}\bigl(1-e^{-kt/m}\bigr)+v_{0}\,e^{-kt/m}$.
+
+**Equation (displacement).** $s'=v$ gives:
+
+$$
+s(t)=\frac{mg}{k}\,t+\frac{gm^{2}}{k^{2}}\bigl(e^{-kt/m}-1\bigr)\qquad(s(0)=0).
+$$
+
+### 8.5.3 Newton's Law of Cooling
+
+**Model.** Rate of temperature change proportional to difference from surrounding temperature $M(t)$:
+
+$$
+y'=-k\bigl[y-M(t)\bigr]\quad\text{or}\quad y'+ky=kM(t).
+$$
+
+**General solution** ($f(a)=b$):
+
+$$
+f(t)=b\,e^{-kt}+e^{-kt}\int_{a}^{t}kM(u)\,e^{ku}\,du.
+$$
+
+**Example.** Body cools from $200^{\circ}$ to $100^{\circ}$ in 40 min; surrounding temperature $M=10^{\circ}$.
+
+- $f(0)=200$ $\Rightarrow$ $f(t)=10+190\,e^{-kt}$.
+- $f(40)=100$ $\Rightarrow$ $k=\dfrac{\log 19-\log 9}{40}$.
+- If $M=5^{\circ}$: $f(t)=5+195\,e^{-kt}$; time to reach $100^{\circ}$ is $40\,\dfrac{\log 39-\log 19}{\log 19-\log 9}\approx 38.5$ min.
+
+### 8.5.4 A Dilution Problem
+
+**Setup.** Tank: 100 gal brine at 2.5 lb/gal. Inflow: 2 lb/gal at 5 gal/min. Outflow: 5 gal/min.
+
+**Model.**
+
+$$
+y'+\frac{1}{20}y=10,\qquad y(0)=250.
+$$
+
+**Solution.**
+
+$$
+y(t)=200+50\,e^{-t/20}.
+$$
+
+- $y(t)>200$ for all $t$; $y\to 200$ as $t\to+\infty$.
+
+### 8.5.5 Electric Circuits (RL Circuit)
+
+**Kirchhoff's voltage law.**
+
+$$
+LI'(t)+RI(t)=V(t).
+$$
+
+**General solution** ($I(0)$ given):
+
+$$
+I(t)=I(0)\,e^{-Rt/L}+e^{-Rt/L}\int_{0}^{t}\frac{V(x)}{L}\,e^{Rx/L}\,dx.
+$$
+
+**Constant voltage** $V(t)\equiv E$:
+
+$$
+I(t)=\frac{E}{R}+\Bigl(I(0)-\frac{E}{R}\Bigr)e^{-Rt/L}.
+$$
+
+| Term | Name | Behavior as $t\to+\infty$ |
+|------|------|---------------------------|
+| $\dfrac{E}{R}$ | **Steady-state current** | Constant |
+| $\Bigl(I(0)-\dfrac{E}{R}\Bigr)e^{-Rt/L}$ | **Transient current** | Decays to $0$ |
+
+> **Analog computer.** A physical problem modeled by $y'+ay=Q$ can be simulated by an RL circuit with $R/L=a$ and impressed voltage $LQ$, allowing numerical data to be obtained by electrical measurement.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
