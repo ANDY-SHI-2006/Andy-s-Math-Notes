@@ -4515,3 +4515,36 @@ p_{r+1} = tx_{r+1} + (1-t)y_{r+1},
 $$
 
 and the same argument gives $x_{r+1} = y_{r+1} = p_{r+1}$. It follows that $X = Y = P$, whence $P$ is an extreme point. This proves our theorem. ∎
+
+
+## 12.4 The Krein-Milman Theorem
+
+Let $E$ be a set of points in $\mathbb{R}^n$ (with at least one point in it). We wish to describe the smallest convex set containing $E$. It is the intersection of all convex sets containing $E$, because this intersection is convex and is clearly smallest.
+
+We can also describe this smallest convex set in another way. Let $E^c$ be the set of all linear combinations
+
+$$
+t_1 P_1 + \cdots + t_m P_m
+$$
+
+of points $P_1, \dots, P_m$ in $E$ with real coefficients $t_i$ such that
+
+$$
+0 \leq t_i \leq 1 \quad \text{and} \quad t_1 + \cdots + t_m = 1.
+$$
+
+Then $E^c$ is convex. Any convex set containing $E$ must contain $E^c$, and hence $E^c$ is the smallest convex set containing $E$. We call $E^c$ the **convex closure** (or **convex hull**) of $E$.
+
+Let $S$ be a convex set and let $E$ be the set of its extreme points. Then $E^c \subset S$. We ask for conditions under which $E^c = S$.
+
+> **Examples.** An unbounded convex set need not be the convex closure of its extreme points (e.g. the closed upper half plane, which has no extreme points). Also, an open convex set need not be the convex closure of its extreme points (the interior of an egg has no extreme points). The Krein-Milman theorem states that if we eliminate these two possibilities, then no other troubles can occur.
+
+**Theorem 4.1 (Krein-Milman Theorem).** Let $S$ be a closed, bounded, convex set in $\mathbb{R}^n$. Then $S$ is the smallest closed convex set containing the extreme points of $S$. Equivalently, $S$ is the convex closure of its extreme points.
+
+**Proof.** Let $S'$ be the intersection of all closed convex sets containing the extreme points of $S$. Then $S' \subset S$. We must show that $S$ is contained in $S'$.
+
+Let $P \in S$, and suppose $P \notin S'$. By Theorem 2.1, there exists a hyperplane $H$ passing through $P$, defined by an equation $X \cdot N = c$, such that $X \cdot N > c$ for all $X \in S'$. Let $L: \mathbb{R}^n \to \mathbb{R}$ be the linear map $L(X) = X \cdot N$. Then $L(P) = c$, and $L(P)$ is not contained in $L(S')$.
+
+Since $S$ is closed and bounded, the image $L(S)$ is closed and bounded, and this image is also convex. Hence $L(S)$ is a closed interval, say $[a, b]$, containing $c$. Thus $a \leq c \leq b$. Let $H_a$ be the hyperplane defined by $X \cdot N = a$.
+
+By the remark following Theorem 2.2, we know that $H_a$ is a supporting hyperplane of $S$. By Theorem 3.1, we conclude that $H_a$ contains an extreme point of $S$. This extreme point lies in $S'$. But for all $X$ in $S'$ we have $X \cdot N > c \geq a$, contradicting the fact that the extreme point satisfies $X \cdot N = a$. This proves the Krein-Milman theorem. ∎
