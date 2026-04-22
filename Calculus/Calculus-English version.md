@@ -5583,6 +5583,71 @@ Since $\dfrac{A^{m}}{m!}\to 0$ as $m\to+\infty$, we get $h(x)=0$ on $[-c,c]$. As
 
 > The choice of $0$ is inessential; the theorem holds with initial data prescribed at any point $c$.
 
+## 8.10 Complete Solution of $y''+by=0$
+
+### 8.10.1 Theorem 8.6
+
+Given $b\in\mathbb{R}$, define $u_{1},u_{2}$ on $(-\infty,+\infty)$:
+
+| Case | $b$ | $u_{1}(x)$ | $u_{2}(x)$ |
+|------|-----|-----------|-----------|
+| (a) | $0$ | $1$ | $x$ |
+| (b) | $<0$ ($b=-k^{2}$) | $e^{kx}$ | $e^{-kx}$ |
+| (c) | $>0$ ($b=k^{2}$) | $\cos kx$ | $\sin kx$ |
+
+Then **every** solution of $y''+by=0$ has the form:
+
+$$
+y=c_{1}u_{1}(x)+c_{2}u_{2}(x).
+$$
+
+**Proof idea.** For any solution $f$, solve:
+
+$$
+c_{1}u_{1}(0)+c_{2}u_{2}(0)=f(0),\qquad c_{1}u_{1}'(0)+c_{2}u_{2}'(0)=f'(0)
+$$
+
+for $c_{1},c_{2}$. Then $f$ and $c_{1}u_{1}+c_{2}u_{2}$ are solutions with the same value and derivative at $0$; by uniqueness (Theorem 8.5), they coincide everywhere.
+
+## 8.11 Complete Solution of $y''+ay'+by=0$
+
+### 8.11.1 Theorem 8.7
+
+Let $d=a^{2}-4b$ be the **discriminant**. Then every solution has the form:
+
+$$
+y=e^{-ax/2}\bigl[c_{1}u_{1}(x)+c_{2}u_{2}(x)\bigr],
+$$
+
+where $u_{1},u_{2}$ depend on the sign of $d$:
+
+| Case | Discriminant | $k$ | $u_{1}(x)$ | $u_{2}(x)$ | General solution |
+|------|-------------|-----|-----------|-----------|-----------------|
+| (a) | $d=0$ | — | $1$ | $x$ | $y=e^{-ax/2}(c_{1}+c_{2}x)$ |
+| (b) | $d>0$ | $\frac{1}{2}\sqrt{d}$ | $e^{kx}$ | $e^{-kx}$ | $y=c_{1}e^{r_{1}x}+c_{2}e^{r_{2}x}$ |
+| (c) | $d<0$ | $\frac{1}{2}\sqrt{-d}$ | $\cos kx$ | $\sin kx$ | $y=e^{-ax/2}(c_{1}\cos kx+c_{2}\sin kx)$ |
+
+In case (b), $r_{1,2}=\dfrac{-a\pm\sqrt{d}}{2}$ are the roots of the **characteristic equation**:
+
+$$
+r^{2}+ar+b=0.
+$$
+
+> **Note on complex roots.** When $d<0$, the roots $r_{1},r_{2}$ are complex. The form with $\cos$ and $\sin$ is equivalent to a linear combination of $e^{r_{1}x}$ and $e^{r_{2}x}$ once the exponential is extended to complex numbers (Chapter 9).
+
+### 8.11.2 Basis and General Solution
+
+The pair:
+
+$$
+v_{1}=e^{-ax/2}u_{1},\qquad v_{2}=e^{-ax/2}u_{2}
+$$
+
+is a **basis** for the solution space: every solution is a linear combination of $v_{1}$ and $v_{2}$.
+
+- A differential equation has more than one basis. Example: $y''=9y$ has bases $\{e^{3x},e^{-3x}\}$ and $\{\cosh 3x,\sinh 3x\}$.
+- **Test.** $v_{1},v_{2}$ form a basis iff $v_{2}/v_{1}$ is **not** constant.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
