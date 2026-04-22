@@ -5871,6 +5871,45 @@ $$
   \lim_{b\to w}r\Bigl(\frac{b}{k}\Bigr)=-\frac{1}{2}gT^{2}+cT.
   $$
 
+## 8.15 Remarks on Nonlinear Differential Equations
+
+### 8.15.1 First-Order Equations $y'=f(x,y)$
+
+Unlike linear equations, nonlinear ODEs lack a comprehensive systematic theory. We focus on first-order equations solvable for $y'$:
+
+$$
+y'=f(x,y).
+$$
+
+### 8.15.2 Existence and Uniqueness Failures
+
+A nonlinear equation may have **no solution** or **more than one** solution satisfying a given initial condition.
+
+| Equation | Initial condition | Outcome |
+|----------|-------------------|---------|
+| $(y')^{2}-xy'+y+1=0$ | $y=0$ at $x=0$ | No solution (requires $(y')^{2}=-1$) |
+| $y'=3y^{2/3}$ | $y=0$ at $x=0$ | Two solutions: $Y_{1}(x)\equiv 0$ and $Y_{2}(x)=x^{3}$ |
+
+### 8.15.3 Implicit Formulas
+
+Sometimes $y'$ can be eliminated to obtain a relation:
+
+$$
+F(x,y)=0,
+$$
+
+satisfied by some or all solutions.
+
+**Example.** The equation $y'=\dfrac{y-x}{y+x}$ has solutions satisfying:
+
+$$
+\frac{1}{2}\log(x^{2}+y^{2})+\arctan\frac{y}{x}+C=0.
+$$
+
+This is an **implicit formula**; solving for $y$ explicitly is hopeless. Nevertheless, arriving at such a relation (with no derivatives of the unknown) is regarded as having "solved" or "integrated" the differential equation.
+
+> Qualitative information about solutions can often be obtained directly from the differential equation without explicit or implicit formulas (see next section).
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
