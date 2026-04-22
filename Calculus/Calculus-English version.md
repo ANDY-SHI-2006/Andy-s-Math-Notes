@@ -5503,6 +5503,86 @@ $$
 
 is a solution for arbitrary constants $c_{1},c_{2}$. (Theorem 8.6 will show this includes **all** solutions.)
 
+## 8.8 Reduction of $y''+ay'+by=0$ to $y''+by=0$
+
+### 8.8.1 The Substitution $y=uv$
+
+Let $y=uv$. Then:
+
+$$
+y''+ay'+by=(v''+av'+bv)u+(2v'+av)u'+vu''.
+$$
+
+Choose $v$ so that the coefficient of $u'$ vanishes: $2v'+av=0$, i.e.:
+
+$$
+v=e^{-ax/2}.
+$$
+
+For this $v$: $v''=\dfrac{a^{2}v}{4}$, and:
+
+$$
+v''+av'+bv=\frac{a^{2}v}{4}-\frac{a^{2}v}{2}+bv=\frac{4b-a^{2}}{4}\,v.
+$$
+
+Hence:
+
+$$
+y''+ay'+by=\Bigl(u''+\frac{4b-a^{2}}{4}\,u\Bigr)v.
+$$
+
+### 8.8.2 Theorem 8.4
+
+Let $y=ue^{-ax/2}$. Then on $(-\infty,+\infty)$:
+
+$$
+y''+ay'+by=0\quad\Longleftrightarrow\quad u''+\frac{4b-a^{2}}{4}\,u=0.
+$$
+
+> This reduces the general equation to the special case $u''+\lambda u=0$ already solved in Section 8.7.
+
+## 8.9 Uniqueness Theorem for $y''+by=0$
+
+### 8.9.1 Theorem 8.5
+
+Assume $f$ and $g$ satisfy $y''+by=0$ on $(-\infty,+\infty)$ and:
+
+$$
+f(0)=g(0),\qquad f'(0)=g'(0).
+$$
+
+Then $f(x)=g(x)$ for all $x$.
+
+### 8.9.2 Proof Sketch
+
+Set $h=f-g$. Then $h$ satisfies $y''+by=0$ with $h(0)=h'(0)=0$.
+
+**Step 1 — Derivatives at $0$.** By repeated differentiation:
+
+$$
+y^{(2n)}=(-1)^{n}b^{n}y,\qquad y^{(2n-1)}=(-1)^{n-1}b^{n-1}y'.
+$$
+
+Since $h(0)=h'(0)=0$, all derivatives $h^{(n)}(0)=0$.
+
+**Step 2 — Taylor polynomials.** Every Taylor polynomial of $h$ at $0$ has all coefficients zero.
+
+**Step 3 — Remainder estimate.** By Taylor's formula with remainder (Theorem 7.6):
+
+$$
+h(x)=E_{2n-1}(x).
+$$
+
+On $[-c,c]$, $|h(x)|\le M$ implies $|h^{(2n)}(x)|\le M|b|^{n}$. By Theorem 7.7:
+
+$$
+0\le|h(x)|\le\frac{M\,|b|^{n}\,c^{2n}}{(2n)!}=\frac{MA^{2n}}{(2n)!},\qquad A=|b|^{1/2}c.
+$$
+
+Since $\dfrac{A^{m}}{m!}\to 0$ as $m\to+\infty$, we get $h(x)=0$ on $[-c,c]$. As $c$ is arbitrary, $h(x)\equiv 0$.
+
+> The choice of $0$ is inessential; the theorem holds with initial data prescribed at any point $c$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
