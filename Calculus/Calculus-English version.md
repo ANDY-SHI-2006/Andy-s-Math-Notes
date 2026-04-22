@@ -5150,6 +5150,74 @@ This appears in electromagnetism, fluid mechanics, and elsewhere. Sample solutio
   1. **Special tricks** (exact equations, substitutions, etc.) — discussed later in this chapter.
   2. **Linear differential equations** — the most widely occurring type; a fuller treatment appears in Volume II.
 
+## 8.2 Terminology and Notation
+
+### 8.2.1 Standard Notation
+
+- $y$ in place of $f(x)$; $y', y'', y'''$ for derivatives.
+- Other letters ($u, v, z$) may also be used.
+
+### 8.2.2 Order of a Differential Equation
+
+The **order** is the order of the highest derivative appearing.
+
+| Equation | Order |
+|----------|-------|
+| $y'=y$ | First-order |
+| $y''=x^{3}y+\sin(xy')$ | Second-order |
+
+### 8.2.3 First-Order Equations
+
+General form:
+
+$$
+y'=f(x,y).
+$$
+
+A differentiable function $y=Y(x)$ is a **solution** on an interval $I$ if:
+
+$$
+Y'(x)=f\bigl[x,Y(x)\bigr]\quad\text{for all }x\in I.
+$$
+
+### 8.2.4 The Simplest Case — $y'=Q(x)$
+
+When $f(x,y)$ is independent of $y$:
+
+$$
+y'=Q(x).
+$$
+
+Every solution is given by:
+
+$$
+y=\int Q(x)\,dx+C,
+$$
+
+where $C$ is an arbitrary constant of integration. Even if the integral cannot be expressed in terms of elementary functions, the equation is regarded as solved if the solution is written as an integral of a known function.
+
+## 8.3 A First-Order Differential Equation for the Exponential Function
+
+### 8.3.1 Example: Linear Motion from Velocity
+
+**Problem.** A particle moves with velocity $2\sin t$. Determine its position $Y(t)$.
+
+*Solution.* $Y'(t)=2\sin t$, so:
+
+$$
+Y(t)=2\int\sin t\,dt+C=-2\cos t+C.
+$$
+
+The constant $C$ cannot be determined from velocity alone. An **initial condition** is needed:
+- If $Y(0)=0$, then $C=2$ and $Y(t)=2-2\cos t$.
+- If $Y(0)=2$, then $C=4$ and $Y(t)=4-2\cos t$.
+
+### 8.3.2 Initial-Value Problems
+
+In solving a first-order ODE, an integration removes $y'$ and introduces an arbitrary constant $C$. The manner in which $C$ enters depends on the equation (additive, as in $y=\int Q+C$, or multiplicative, as in $y=Ce^{x}$).
+
+An **initial-value problem** asks for the particular solution satisfying a prescribed value $y(x_{0})=y_{0}$ at some point. This terminology originates in mechanics, where the prescribed value represents displacement at an initial time.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
