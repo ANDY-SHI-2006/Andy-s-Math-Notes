@@ -6183,6 +6183,78 @@ $$
 
 > Since all field axioms hold, every algebraic law valid for real numbers (Theorems I.1–I.15) extends to complex numbers.
 
+## 9.3 Complex Numbers as an Extension of the Real Numbers
+
+Let $C_{0}=\{(a,0):a\in\mathbb{R}\}$ be the set of complex numbers with zero imaginary part.
+
+- **Addition and multiplication in $C_{0}$:**
+  $$
+  (a,0)+(b,0)=(a+b,0),\qquad (a,0)(b,0)=(ab,0).
+  $$
+- The map $f(x)=(x,0)$ is a **one-to-one correspondence** $\mathbb{R}\to C_{0}$ preserving both operations:
+  $$
+  f(a+b)=f(a)+f(b),\qquad f(ab)=f(a)f(b).
+  $$
+- Hence $\mathbb{R}$ and $C_{0}$ are **isomorphic**; we identify $x\leftrightarrow(x,0)$.
+- In particular: $0=(0,0)$, $1=(1,0)$, $-1=(-1,0)$.
+- $C_{0}$ is an **ordered field**: $(x,0)>0\iff x>0$.
+
+## 9.4 The Imaginary Unit $i$
+
+### 9.4.1 Definition
+
+The complex number $(0,1)$ satisfies:
+
+$$
+(0,1)^{2}=(0,1)(0,1)=(-1,0)=-1.
+$$
+
+We denote it by $i$ and call it the **imaginary unit**:
+
+$$
+i^{2}=-1.
+$$
+
+### 9.4.2 The Standard Form $a+bi$
+
+Since $(b,0)(0,1)=(0,b)$:
+
+$$
+(a,b)=(a,0)+(b,0)(0,1)=a+bi.
+$$
+
+**Theorem 9.2.** Every complex number can be written uniquely as $a+bi$ with $a,b\in\mathbb{R}$.
+
+**Algebraic manipulations.** Using $i^{2}=-1$:
+
+$$
+(a+bi)(c+di)=ac-bd+(ad+bc)i.
+$$
+
+$$
+\frac{1}{a+bi}=\frac{a-bi}{a^{2}+b^{2}}=\frac{a}{a^{2}+b^{2}}-\frac{b}{a^{2}+b^{2}}i\qquad(a+bi\neq 0).
+$$
+
+### 9.4.3 Quadratic Equations
+
+For $ax^{2}+bx+c=0$ with real coefficients:
+
+- If $b^{2}-4ac\ge 0$: real roots $\dfrac{-b\pm\sqrt{b^{2}-4ac}}{2a}$.
+- If $b^{2}-4ac<0$: complex conjugate roots:
+  $$
+  r_{1,2}=\frac{-b}{2a}\pm i\,\frac{\sqrt{4ac-b^{2}}}{2a}.
+  $$
+
+### 9.4.4 Fundamental Theorem of Algebra
+
+> **Gauss (1799).** Every polynomial equation
+> $$
+> a_{0}+a_{1}x+\cdots+a_{n}x^{n}=0\qquad(a_{n}\neq 0,\;n\ge 1)
+> $$
+> with complex coefficients has at least one solution in $\mathbb{C}$.
+>
+> Hence no number system more general than $\mathbb{C}$ is needed to solve polynomial equations.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
