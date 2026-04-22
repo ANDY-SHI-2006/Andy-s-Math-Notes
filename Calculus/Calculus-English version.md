@@ -5056,6 +5056,58 @@ $$
 | $\displaystyle\lim_{x\to 0-}e^{-1/x}=+\infty$ | $-1/x\to+\infty$ as $x\to 0-$ |
 | $\displaystyle\lim_{x\to 0+}e^{-1/x}=0$ | $-1/x\to-\infty$ as $x\to 0+$ |
 
+## 7.12 The Behavior of $\log x$ and $e^{x}$ for Large $x$
+
+### 7.12.1 Theorem 7.11 — Growth Hierarchy
+
+If $a>0$ and $b>0$:
+
+$$
+\lim_{x\to+\infty}\frac{(\log x)^{b}}{x^{a}}=0\qquad\text{and}\qquad\lim_{x\to+\infty}\frac{x^{b}}{e^{ax}}=0.
+$$
+
+In $o$-notation:
+
+$$
+(\log x)^{b}=o(x^{a}),\qquad x^{b}=o(e^{ax})\qquad\text{as }x\to+\infty.
+$$
+
+> **Intuition.** Powers of $\log$ grow slower than any positive power of $x$, which in turn grows slower than any exponential $e^{ax}$.
+
+**Proof of (7.31).** For $c>0$ and $x>1$:
+
+$$
+0<\log x=\int_{1}^{x}\frac{1}{t}\,dt\le\int_{1}^{x}t^{c-1}\,dt=\frac{x^{c}-1}{c}<\frac{x^{c}}{c}.
+$$
+
+Hence $0<\dfrac{(\log x)^{b}}{x^{a}}<\dfrac{x^{bc-a}}{c^{b}}$. Choose $c=\dfrac{a}{2b}$; then $bc-a=-a/2<0$, so the right side tends to $0$.
+
+**Proof of (7.32).** Substitute $t=e^{x}$; then $x=\log t$ and:
+
+$$
+\frac{x^{b}}{e^{ax}}=\frac{(\log t)^{b}}{t^{a}}\to 0\quad\text{as }t\to+\infty.
+$$
+
+### 7.12.2 Other Indeterminate Forms
+
+Algebraic manipulation often reduces these to $0/0$ or $\infty/\infty$.
+
+| Form | Example | Technique | Result |
+|------|---------|-----------|--------|
+| $0\cdot\infty$ | $\displaystyle\lim_{x\to 0+}x^{\alpha}\log x$ $(\alpha>0)$ | Set $t=1/x$; use Theorem 7.11 | $0$ |
+| $0^{0}$ | $\displaystyle\lim_{x\to 0+}x^{x}$ | Write $x^{x}=e^{x\log x}$; use Example 2 | $1$ |
+| $\infty^{0}$ | $\displaystyle\lim_{x\to+\infty}x^{1/x}$ | Set $t=1/x$; reduce to Example 3 | $1$ |
+| $1^{\infty}$ | $\displaystyle\lim_{x\to+\infty}\Bigl(1+\frac{a}{x}\Bigr)^{x}$ | Replace $x$ by $1/x$ in $\lim_{x\to 0}(1+ax)^{1/x}=e^{a}$ | $e^{a}$ |
+| $1^{\infty}$ | $\displaystyle\lim_{x\to+\infty}\Bigl(1+\frac{1}{x}\Bigr)^{ax}$ | Same trick | $e^{a}$ |
+
+**General method.** For $f(x)^{g(x)}$, write:
+
+$$
+f(x)^{g(x)}=\exp\!\bigl(g(x)\log f(x)\bigr)
+$$
+
+and evaluate the exponent $g(x)\log f(x)$ by earlier methods.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
