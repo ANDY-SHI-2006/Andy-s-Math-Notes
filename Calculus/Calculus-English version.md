@@ -6600,6 +6600,48 @@ A monotonic sequence **converges if and only if it is bounded**.
   - Hence $0\le L-f(n)<\epsilon$, so $f(n)\to L$.
 - The decreasing case is similar, with limit $=\inf\{f(n)\}$.
 
+## 10.4 Infinite Series
+
+### 10.4.1 Definition
+
+Given a sequence $\{a_{k}\}$, form the **partial sums**:
+
+$$
+s_{n}=\sum_{k=1}^{n}a_{k}=a_{1}+a_{2}+\cdots+a_{n}.
+$$
+
+The sequence $\{s_{n}\}$ is called an **infinite series**, denoted:
+
+$$
+\sum_{k=1}^{\infty}a_{k}\quad\text{or}\quad a_{1}+a_{2}+a_{3}+\cdots.
+$$
+
+If $\displaystyle\lim_{n\to\infty}s_{n}=S$, the series **converges** and has **sum** $S$:
+
+$$
+\sum_{k=1}^{\infty}a_{k}=S.
+$$
+
+If $\{s_{n}\}$ diverges, the series **diverges**.
+
+> The "sum" of a series is the **limit of partial sums**, not ordinary addition.
+
+### 10.4.2 Examples
+
+**Example 1 — The harmonic series.** $\displaystyle\sum_{k=1}^{\infty}\frac{1}{k}$.
+
+Since $s_{n}=\sum_{k=1}^{n}\frac{1}{k}\ge\log(n+1)\to\infty$, the harmonic series **diverges**.
+
+**Example 2 — Geometric series.** $\displaystyle\sum_{k=1}^{\infty}\frac{1}{2^{k-1}}=1+\frac{1}{2}+\frac{1}{4}+\cdots$.
+
+Since $s_{n}=2-\dfrac{1}{2^{n-1}}\to 2$, this series **converges** with sum $2$.
+
+### 10.4.3 Shifting the Index
+
+The symbol $\displaystyle\sum_{k=p}^{\infty}a_{k}$ (for $p\ge 0$) differs from $\displaystyle\sum_{k=1}^{\infty}a_{k}$ by only finitely many terms. Therefore:
+
+> **Adding or omitting a finite number of terms at the beginning does not affect convergence or divergence.**
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
