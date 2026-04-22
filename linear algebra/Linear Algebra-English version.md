@@ -4366,3 +4366,50 @@ V &= V' \oplus U_{j_1} \oplus \cdots \oplus U_{j_l} \\
 $$
 
 giving the desired expression of $V$ as a direct sum of cyclic subspaces. ∎
+
+
+# 12. Convex Sets
+
+## 12.1 Definitions
+
+Let $S$ be a subset of $\mathbb{R}^m$. We say that $S$ is **convex** if given points $P, Q$ in $S$, the line segment joining $P$ to $Q$ is also contained in $S$.
+
+We recall that the line segment joining $P$ to $Q$ is the set of all points $P + t(Q - P)$ with $0 \leq t \leq 1$, i.e. the set of points $(1 - t)P + tQ$ with $0 \leq t \leq 1$.
+
+**Theorem 1.1.** Let $P_1, \dots, P_n$ be points of $\mathbb{R}^m$. The set of all linear combinations
+
+$$
+x_1 P_1 + \cdots + x_n P_n
+$$
+
+with $0 \leq x_i \leq 1$ and $x_1 + \cdots + x_n = 1$, is a convex set.
+
+**Theorem 1.2.** Let $P_1, \dots, P_n$ be points of $\mathbb{R}^m$. Any convex set which contains $P_1, \dots, P_n$ also contains all linear combinations
+
+$$
+x_1 P_1 + \cdots + x_n P_n
+$$
+
+such that $0 \leq x_i \leq 1$ for all $i$, and $x_1 + \cdots + x_n = 1$.
+
+> In view of Theorems 1.1 and 1.2, the set of linear combinations described in these theorems is the **smallest convex set** containing all points $P_1, \dots, P_n$.
+
+The following properties have already occurred as exercises:
+
+| Property | Statement |
+|----------|-----------|
+| (1) | If $S$ and $S'$ are convex sets, then the intersection $S \cap S'$ is convex. |
+| (2) | Let $F: \mathbb{R}^m \to \mathbb{R}^n$ be a linear map. If $S$ is convex in $\mathbb{R}^m$, then $F(S)$ is convex in $\mathbb{R}^n$. |
+| (3) | Let $F: \mathbb{R}^m \to \mathbb{R}^n$ be a linear map. If $S' \subset \mathbb{R}^n$ is convex, then $F^{-1}(S')$ is convex. |
+
+**Examples.** Let $A$ be a vector in $\mathbb{R}^n$. The map $F(X) = A \cdot X$ is linear. Note that a point $c \in \mathbb{R}$ is a convex set. Hence the **hyperplane** $H$ consisting of all $X$ such that $A \cdot X = c$ is convex.
+
+Furthermore, the set of all $X \in \mathbb{R}^n$ such that $A \cdot X > c$ is convex. It is called an **open half space**. Similarly, the set of points $X \in \mathbb{R}^n$ such that $A \cdot X \geq c$ is called a **closed half space**.
+
+A hyperplane whose equation is $X \cdot N = c$ determines two closed half spaces, namely the spaces defined by the equations $X \cdot N \geq c$ and $X \cdot N \leq c$, and similarly for the open half spaces.
+
+## 12.2 Intersections of Half Spaces
+
+Since the intersection of convex sets is convex, the intersection of a finite number of half spaces is convex. Such an intersection can be bounded or unbounded.
+
+**Definition (Bounded).** A subset $S$ of $\mathbb{R}^n$ is said to be **bounded** if there exists a number $c > 0$ such that $\|X\| \leq c$ for all $X \in S$.
