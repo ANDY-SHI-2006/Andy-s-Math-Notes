@@ -4345,6 +4345,86 @@ Restrict $\tan x$ to $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$.
 | $\arcsec x$ | $\arccos\dfrac1x$ | $|x|\ge1$ |
 | $\arccsc x$ | $\arcsin\dfrac1x$ | $|x|\ge1$ |
 
+## 6.18 Integration by Partial Fractions
+
+Every rational function can be integrated in terms of polynomials, logarithms, and inverse tangents.
+
+### 6.18.1 Preliminaries
+
+- A quotient $f(x)/g(x)$ of two polynomials is a **rational function**.
+- It is **proper** if $\deg f<\deg g$; otherwise divide to obtain a polynomial plus a proper part:
+  $$
+  \frac{f(x)}{g(x)}=Q(x)+\frac{R(x)}{g(x)}.
+  $$
+- **Algebraic theorem**: every proper rational function is a finite sum of fractions of the two types:
+  $$
+  \frac{A}{(x+a)^{k}},\qquad\frac{Bx+C}{(x^{2}+bx+c)^{m}},
+  $$
+  where $x^{2}+bx+c$ is **irreducible** ($b^{2}-4c<0$).
+
+### 6.18.2 Case 1 — Distinct Linear Factors
+
+If $g(x)=(x-x_{1})(x-x_{2})\cdots(x-x_{n})$, then:
+
+$$
+\frac{f(x)}{g(x)}=\frac{A_{1}}{x-x_{1}}+\cdots+\frac{A_{n}}{x-x_{n}}.
+$$
+
+**Example.** $\displaystyle\int\frac{2x^{2}+5x-1}{x^{3}+x^{2}-2x}\,dx$.
+- $x^{3}+x^{2}-2x=x(x-1)(x+2)$.
+- $A_{1}=\tfrac12$, $A_{2}=2$, $A_{3}=-\tfrac12$ (cover-up method).
+- Result: $\tfrac12\log|x|+2\log|x-1|-\tfrac12\log|x+2|+C$.
+
+### 6.18.3 Case 2 — Repeated Linear Factors
+
+If $(x+a)^{p}$ occurs, include $p$ terms:
+
+$$
+\sum_{k=1}^{p}\frac{A_{k}}{(x+a)^{k}}.
+$$
+
+**Example.** $\displaystyle\int\frac{x^{2}+2x+3}{(x-1)(x+1)^{2}}\,dx$.
+- Decompose as $\dfrac{A_{1}}{x-1}+\dfrac{A_{2}}{x+1}+\dfrac{A_{3}}{(x+1)^{2}}$.
+- $A_{1}=\tfrac32$, $A_{3}=-1$ (cover-up); $A_{2}=-\tfrac12$ (substitute $x=0$ or differentiate).
+- Result: $\tfrac32\log|x-1|-\tfrac12\log|x+1|+\dfrac{1}{x+1}+C$.
+
+### 6.18.4 Case 3 — Distinct Irreducible Quadratics
+
+**Example.** $\displaystyle\int\frac{3x^{2}+2x-2}{x^{3}-1}\,dx$.
+- $x^{3}-1=(x-1)(x^{2}+x+1)$.
+- Decompose: $\dfrac{1}{x-1}+\dfrac{2x+3}{x^{2}+x+1}$.
+- Second term: split into $\dfrac{2x+1}{x^{2}+x+1}$ (log) and $\dfrac{2}{(x+\tfrac12)^{2}+\tfrac34}$ (arctan).
+- Result: $\log|x-1|+\log(x^{2}+x+1)+\tfrac{4}{\sqrt3}\arctan\!\bigl(\tfrac{2x+1}{\sqrt3}\bigr)+C$.
+
+### 6.18.5 Case 4 — Repeated Irreducible Quadratics
+
+If $(x^{2}+bx+c)^{m}$ occurs, include $m$ terms with linear numerators:
+
+$$
+\sum_{k=1}^{m}\frac{B_{k}x+C_{k}}{(x^{2}+bx+c)^{k}}.
+$$
+
+**Example.** $\displaystyle\int\frac{x^{4}-x^{3}+2x^{2}-x+2}{(x-1)(x^{2}+2)^{2}}\,dx$.
+- Decompose: $\dfrac{A}{x-1}+\dfrac{Bx+C}{x^{2}+2}+\dfrac{Dx+E}{(x^{2}+2)^{2}}$.
+- Constants: $A=\tfrac13$, $B=\tfrac23$, $C=-\tfrac13$, $D=-1$, $E=0$.
+- Result: $\tfrac13\log|x-1|+\tfrac13\log(x^{2}+2)-\tfrac{\sqrt2}{6}\arctan\!\bigl(\tfrac{x}{\sqrt2}\bigr)+\dfrac{1}{2(x^{2}+2)}+C$.
+
+### 6.18.6 The Basic Integrals
+
+All partial-fraction integrals reduce to the three forms below.
+
+| Form | Technique | Result |
+|------|-----------|--------|
+| $\displaystyle\int\frac{dx}{(x+a)^{n}}$ | Direct power rule | $\log|x+a|$ if $n=1$; $\dfrac{(x+a)^{1-n}}{1-n}$ if $n>1$ |
+| $\displaystyle\int\frac{x\,dx}{(x^{2}+bx+c)^{m}}$ | Write numerator as derivative of quadratic | $\tfrac12\log(x^{2}+bx+c)$ if $m=1$ |
+| $\displaystyle\int\frac{dx}{(x^{2}+bx+c)^{m}}$ | Complete the square: $u^{2}+\alpha^{2}$ | $\dfrac1\alpha\arctan\!\bigl(\tfrac u\alpha\bigr)$ if $m=1$; reduction formula for $m>1$ |
+
+**Reduction formula** (for $m>1$):
+
+$$
+\int\frac{du}{(u^{2}+\alpha^{2})^{m}}=\frac{u}{2\alpha^{2}(m-1)(u^{2}+\alpha^{2})^{m-1}}+\frac{2m-3}{2\alpha^{2}(m-1)}\int\frac{du}{(u^{2}+\alpha^{2})^{m-1}}.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
