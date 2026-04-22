@@ -3880,3 +3880,79 @@ Using the existence of eigenvectors over the complex numbers, we prove that any 
 **Corollary 1.4.** Let $M$ be a matrix of complex numbers. There exists a non-singular matrix $B$ such that $B^{-1}MB$ is a triangular matrix.
 
 **Proof.** This is the standard interpretation of the change of matrices when we change bases, applied to Corollary 1.3. ∎
+
+
+## 10.2 Theorem of Hamilton-Cayley
+
+Let $V$ be a finite dimensional vector space over a field $K$, and let $A: V \to V$ be a linear map.
+
+If $V$ has a basis consisting of eigenvectors of $A$, say $\{v_1, \dots, v_n\}$ with eigenvalues $\{\lambda_1, \dots, \lambda_n\}$, then the characteristic polynomial is
+
+$$
+P(t) = (t - \lambda_1) \cdots (t - \lambda_n),
+$$
+
+and $P(A) = (A - \lambda_1 I) \cdots (A - \lambda_n I) = O$, since each factor $A - \lambda_i I$ kills $v_i$.
+
+In general, we cannot find such a basis. However, by using fans, we can construct a generalization of this argument.
+
+**Theorem 2.1.** Let $V$ be a finite dimensional vector space over the complex numbers, of dimension $\geq 1$, and let $A: V \to V$ be a linear map. Let $P$ be its characteristic polynomial. Then $P(A) = O$.
+
+**Proof.** By Theorem 1.2, we can find a fan for $A$, say $\{V_1, \dots, V_n\}$. Let the upper triangular matrix of $A$ with respect to a fan basis $\{v_1, \dots, v_n\}$ be $(a_{ij})$. Then:
+
+$$
+Av_i = a_{ii} v_i + \text{an element of } V_{i-1},
+$$
+
+so $(A - a_{ii} I) v_i$ lies in $V_{i-1}$. The characteristic polynomial is:
+
+$$
+P(t) = (t - a_{11}) \cdots (t - a_{nn}),
+$$
+
+so that $P(A) = (A - a_{11} I) \cdots (A - a_{nn} I)$.
+
+We prove by induction that $(A - a_{11} I) \cdots (A - a_{ii} I) v = O$ for all $v \in V_i$, $i = 1, \dots, n$.
+- For $i = 1$: $(A - a_{11} I) v_1 = Av_1 - a_{11} v_1 = O$.
+- Assume the assertion for $i - 1$. Any $v \in V_i$ can be written as $v' + c v_i$ with $v' \in V_{i-1}$. Then $(A - a_{ii} I) v'$ lies in $V_{i-1}$, and by induction:
+  $$(A - a_{11} I) \cdots (A - a_{i-1,i-1} I) (A - a_{ii} I) v' = O.$$
+- Also $(A - a_{ii} I) c v_i$ lies in $V_{i-1}$, so the same product kills it by induction.
+
+Hence $P(A) v = O$ for all $v \in V_n = V$. ∎
+
+**Corollary 2.2.** Let $A$ be an $n \times n$ matrix of complex numbers, and let $P$ be its characteristic polynomial. Then $P(A) = O$.
+
+**Corollary 2.3.** Let $V$ be a finite dimensional vector space over any field $K$, and let $A: V \to V$ be a linear map. Let $P$ be the characteristic polynomial of $A$. Then $P(A) = O$.
+
+**Proof.** Take a basis of $V$, let $M$ be the matrix representing $A$. Then $P_M = P_A$, and it suffices to prove $P_M(M) = O$. Apply Theorem 2.1. ∎
+
+> **Remark.** One can base a proof of Theorem 2.1 on a continuity argument. Given a complex matrix $A$, there exist matrices $Z$ arbitrarily close to $A$ such that $P_Z$ has all roots of multiplicity 1. Then $Z$ is diagonalizable, so $P_Z(Z) = O$ trivially. As $Z \to A$, we have $P_Z(Z) \to P_A(A)$, hence $P_A(A) = O$.
+
+## 10.3 Diagonalization of Unitary Maps
+
+Using the methods of this chapter, we give a new proof for the following theorem, already proved in Chapter VIII.
+
+**Theorem 3.1.** Let $V$ be a finite dimensional vector space over the complex numbers, with $\dim V \geq 1$. Assume given a positive definite hermitian product on $V$. Let $A: V \to V$ be a unitary map. Then there exists an orthogonal basis of $V$ consisting of eigenvectors of $A$.
+
+**Proof.** First observe that if $w$ is an eigenvector for $A$ with eigenvalue $\lambda$, then $\lambda \neq 0$ because $A$ preserves length.
+
+By Theorem 1.2, we can find a fan for $A$, say $\{V_1, \dots, V_n\}$, with fan basis $\{v_1, \dots, v_n\}$. Use the Gram-Schmidt orthogonalization process:
+
+$$
+v_1' = v_1, \quad v_2' = v_2 - \frac{\langle v_2, v_1 \rangle}{\langle v_1, v_1 \rangle} v_1, \quad \dots
+$$
+
+This yields an orthogonal basis $\{v_1', \dots, v_n'\}$ which is again a fan basis (since $\{v_1', \dots, v_i'\}$ spans the same space $V_i$). Dividing each by its norm, we obtain an orthonormal fan basis $\{w_1, \dots, w_n\}$.
+
+We contend that each $w_i$ is an eigenvector for $A$. Proceed by induction:
+- Since $Aw_1 \in V_1$, there exists $\lambda_1$ such that $Aw_1 = \lambda_1 w_1$, with $\lambda_1 \neq 0$.
+- Assume $w_1, \dots, w_{i-1}$ are eigenvectors with non-zero eigenvalues. There exist scalars $c_1, \dots, c_i$ such that:
+  $$Aw_i = c_1 w_1 + \cdots + c_i w_i.$$
+- Since $A$ preserves perpendicularity, $Aw_i$ is perpendicular to $Aw_k = \lambda_k w_k$ for every $k < i$. Hence $Aw_i \perp w_k$, so $c_k = 0$ for $k < i$.
+- Thus $Aw_i = c_i w_i$, and $c_i \neq 0$ because $A$ preserves length.
+
+Going from $1$ to $n$ proves the theorem. ∎
+
+**Corollary 3.2.** Let $A$ be a complex unitary matrix. Then there exists a unitary matrix $U$ such that $U^{-1} A U$ is a diagonal matrix.
+
+**Proof.** Let $\{e^1, \dots, e^n\} = \mathscr{B}$ be the standard orthonormal basis of $\mathbb{C}^n$, and let $\{w_1, \dots, w_n\} = \mathscr{B}'$ be an orthonormal basis of eigenvectors. Let $U = M_{\mathscr{B}'}^{\mathscr{B}}(\text{id})$. Then $U$ is unitary, and if $M'$ is the matrix of $A$ relative to $\mathscr{B}'$, we have $M' = U^{-1} A U$. ∎
