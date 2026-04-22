@@ -4626,6 +4626,50 @@ where $g(x)\to0$ as $x\to0$, then $P_{n}=T_{n}f$ (the Taylor polynomial of $f$ a
   T_{2n+1}(\arctan x)=\sum_{k=0}^{n}(-1)^{k}\frac{x^{2k+1}}{2k+1}.
   $$
 
+## 7.4 Taylor's Formula with Remainder
+
+### 7.4.1 The Error Term
+
+The **error** (or **remainder**) in approximating $f$ by its Taylor polynomial $T_{n}f$ at $a$ is:
+
+$$
+E_{n}(x)=f(x)-T_{n}f(x).
+$$
+
+Hence:
+
+$$
+f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}\,(x-a)^{k}+E_{n}(x). \tag{7.8}
+$$
+
+### 7.4.2 Integral Form of the Remainder
+
+**Theorem 7.5 (Linear case).** If $f$ has a continuous second derivative near $a$, then for every $x$ in this neighborhood:
+
+$$
+f(x)=f(a)+f'(a)(x-a)+E_{1}(x),\qquad E_{1}(x)=\int_{a}^{x}(x-t)f''(t)\,dt.
+$$
+
+**Theorem 7.6 (General case).** If $f$ has a continuous derivative of order $n+1$ in an interval containing $a$, then for every $x$ in this interval:
+
+$$
+E_{n}(x)=\frac{1}{n!}\int_{a}^{x}(x-t)^{n}f^{(n+1)}(t)\,dt. \tag{7.9}
+$$
+
+**Proof sketch (induction).** The case $n=1$ is Theorem 7.5. Assuming (7.9) holds for $n$, write Taylor's formula for $n+1$ and $n$ and subtract:
+
+$$
+E_{n+1}(x)=E_{n}(x)-\frac{f^{(n+1)}(a)}{(n+1)!}\,(x-a)^{n+1}.
+$$
+
+Using the integral for $E_{n}(x)$ and the identity $\dfrac{(x-a)^{n+1}}{n+1}=\int_{a}^{x}(x-t)^{n}\,dt$:
+
+$$
+E_{n+1}(x)=\frac{1}{n!}\int_{a}^{x}(x-t)^{n}\bigl[f^{(n+1)}(t)-f^{(n+1)}(a)\bigr]\,dt.
+$$
+
+Integration by parts with $u=f^{(n+1)}(t)-f^{(n+1)}(a)$ and $v=-\dfrac{(x-t)^{n+1}}{n+1}$ yields (7.9) with $n$ replaced by $n+1$. ∎
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
