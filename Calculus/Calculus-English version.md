@@ -5442,6 +5442,67 @@ $$
 
 > **Analog computer.** A physical problem modeled by $y'+ay=Q$ can be simulated by an RL circuit with $R/L=a$ and impressed voltage $LQ$, allowing numerical data to be obtained by electrical measurement.
 
+## 8.6 Linear Equations of Second Order with Constant Coefficients
+
+### 8.6.1 General Form
+
+A **second-order linear** differential equation has the form:
+
+$$
+y''+P_{1}(x)y'+P_{2}(x)y=R(x).
+$$
+
+- **Coefficients:** $P_{1}, P_{2}$.
+- **Homogeneous** when $R(x)\equiv 0$.
+
+This chapter treats only the case where $P_{1}, P_{2}$ are **constants**.
+
+### 8.6.2 The Homogeneous Equation
+
+$$
+y''+ay'+by=0.
+$$
+
+> First completely solved by Euler (1743). It arises in a wide variety of applied problems.
+
+## 8.7 Existence of Solutions of $y''+by=0$
+
+We seek nontrivial solutions on $(-\infty,+\infty)$. The trivial solution $y\equiv 0$ always exists.
+
+### 8.7.1 Example 1: $y''=0$
+
+Here $a=b=0$. Integrating twice:
+
+$$
+y=c_{1}x+c_{2}.
+$$
+
+Conversely, every linear polynomial satisfies $y''=0$; these are **all** solutions.
+
+### 8.7.2 Example 2: $y''+by=0$ with $b<0$
+
+Write $b=-k^{2}$ $(k>0)$; the equation becomes $y''=k^{2}y$.
+
+By inspection, $y=e^{kx}$ and $y=e^{-kx}$ are solutions. Hence:
+
+$$
+y=c_{1}e^{kx}+c_{2}e^{-kx}
+$$
+
+is a solution for arbitrary constants $c_{1},c_{2}$. (Theorem 8.6 will show this includes **all** solutions.)
+
+### 8.7.3 Example 3: $y''+by=0$ with $b>0$
+
+Write $b=k^{2}$ $(k>0)$; the equation becomes $y''=-k^{2}y$.
+
+By inspection, $y=\cos kx$ and $y=\sin kx$ are solutions. Hence:
+
+$$
+y=c_{1}\cos kx+c_{2}\sin kx
+$$
+
+is a solution for arbitrary constants $c_{1},c_{2}$. (Theorem 8.6 will show this includes **all** solutions.)
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
