@@ -4482,3 +4482,36 @@ $$
 This proves our theorem. ∎
 
 > **Remark.** Let $S$ be a convex set, and let $H$ be a hyperplane defined by $X \cdot N = a$. Assume that for all $X \in S$ we have $X \cdot N \geq a$. If $P$ is a point of $S$ lying in the hyperplane, then $P$ is a boundary point of $S$. Otherwise, for $\epsilon > 0$ sufficiently small, $P - \epsilon N$ would be a point of $S$, and thus $(P - \epsilon N)\cdot N = P\cdot N - \epsilon N\cdot N = a - \epsilon N\cdot N < a$, contrary to hypothesis. We conclude therefore that $H$ is a supporting hyperplane of $S$ at $P$.
+
+
+## 12.3 Extreme Points and Supporting Hyperplanes
+
+**Definition (Extreme point).** Let $S$ be a convex set and let $P$ be a point of $S$. We shall say that $P$ is an **extreme point** of $S$ if there do not exist points $Q_1, Q_2$ of $S$ with $Q_1 \neq Q_2$ such that $P$ can be written in the form
+
+$$
+P = tQ_1 + (1-t)Q_2 \quad \text{with} \quad 0 < t < 1.
+$$
+
+In other words, $P$ cannot lie on a line segment contained in $S$ unless it is one of the end-points of the line segment.
+
+**Theorem 3.1.** Let $S$ be a closed convex set which is bounded. Then every supporting hyperplane of $S$ contains an extreme point.
+
+**Proof.** Let $H$ be a supporting hyperplane, defined by the equation $X \cdot N = P_0 \cdot N$ at a boundary point $P_0$, and say $X \cdot N \geq P_0 \cdot N$ for all $X \in S$. Let $T$ be the intersection of $S$ and the hyperplane. Then $T$ is convex, closed, and bounded.
+
+We contend that an extreme point of $T$ will also be an extreme point of $S$. To prove this, let $P$ be an extreme point of $T$, and suppose we can write $P = tQ_1 + (1-t)Q_2$ with $0 < t < 1$ and $Q_1, Q_2 \in S$. Dotting with $N$ and using $P \cdot N = P_0 \cdot N$:
+
+$$
+P_0 \cdot N = t Q_1 \cdot N + (1-t) Q_2 \cdot N. \tag{1}
+$$
+
+We have $Q_1 \cdot N, Q_2 \cdot N \geq P_0 \cdot N$. If one of these is $> P_0 \cdot N$, say $Q_1 \cdot N > P_0 \cdot N$, then the right-hand side of (1) is $> t P_0 \cdot N + (1-t) P_0 \cdot N = P_0 \cdot N$, which is impossible. Hence both $Q_1, Q_2$ lie in the hyperplane, contradicting the hypothesis that $P$ is an extreme point of $T$.
+
+We now find an extreme point of $T$. Among all points of $T$, there is at least one whose first coordinate is smallest, because $T$ is closed and bounded. (The image of $T$ under this projection has a greatest lower bound which is taken on by an element of $T$ since $T$ is closed.) Let $T_1$ be the subset of $T$ consisting of all points whose first coordinate equals this smallest one. Then $T_1$ is closed and bounded. We can find a point of $T_1$ whose second coordinate is smallest among all points of $T_1$, and the set $T_2$ of all points of $T_1$ having this second coordinate is closed and bounded. Proceeding in this way, we find a point $P = (p_1, \dots, p_n)$ of $T$ having successively smallest first, second, $\dots$, $n$-th coordinate.
+
+We assert that $P$ is an extreme point of $T$. Suppose $P = tX + (1-t)Y$ with $0 < t < 1$, where $X = (x_1, \dots, x_n)$ and $Y = (y_1, \dots, y_n)$ are in $T$. Then $x_1, y_1 \geq p_1$, and $p_1 = tx_1 + (1-t)y_1$. If $x_1$ or $y_1 > p_1$, then $tx_1 + (1-t)y_1 > p_1$, impossible. Hence $x_1 = y_1 = p_1$. Proceeding inductively, suppose $x_i = y_i = p_i$ for $i = 1, \dots, r$. Then if $r < n$:
+
+$$
+p_{r+1} = tx_{r+1} + (1-t)y_{r+1},
+$$
+
+and the same argument gives $x_{r+1} = y_{r+1} = p_{r+1}$. It follows that $X = Y = P$, whence $P$ is an extreme point. This proves our theorem. ∎
