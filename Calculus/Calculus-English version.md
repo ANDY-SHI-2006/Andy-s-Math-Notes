@@ -4559,6 +4559,73 @@ $$
 
 > **Observation**: $T_{2n}(\cos x)$ is the derivative of $T_{2n+1}(\sin x)$, reflecting the fact that $\cos x$ is the derivative of $\sin x$.
 
+## 7.3 Calculus of Taylor Polynomials
+
+### 7.3.1 Algebraic Properties of the Taylor Operator
+
+**Theorem 7.2.** The Taylor operator $T_{n}$ has the following properties (all polynomials are generated at a common point $a$):
+
+| Property | Formula |
+|----------|---------|
+| **(a) Linearity** | $T_{n}(c_{1}f+c_{2}g)=c_{1}T_{n}(f)+c_{2}T_{n}(g)$ |
+| **(b) Differentiation** | $(T_{n}f)'=T_{n-1}(f')$ |
+| **(c) Integration** | If $g(x)=\int_{a}^{x}f(t)\,dt$, then $T_{n+1}g(x)=\int_{a}^{x}T_{n}f(t)\,dt$ |
+
+**Proof idea.** In each case both sides are polynomials of the same degree that agree in value and in derivatives up to the appropriate order at $a$; uniqueness (Theorem 7.1) forces equality. ∎
+
+### 7.3.2 Substitution Property
+
+**Theorem 7.3.** Let $g(x)=f(cx)$ with $c$ constant. Then:
+
+$$
+T_{n}g(x;a)=T_{n}f(cx;ca). \tag{7.6}
+$$
+
+In particular, when $a=0$: $T_{n}g(x)=T_{n}f(cx)$.
+
+**Proof.** By the chain rule $g^{(k)}(x)=c^{k}f^{(k)}(cx)$; substitute into the Taylor formula. ∎
+
+**Examples.**
+- Replacing $x$ by $-x$ in $T_{n}(e^{x})$:
+  $$
+  T_{n}(e^{-x})=1-x+\frac{x^{2}}{2!}-\frac{x^{3}}{3!}+\cdots+(-1)^{n}\frac{x^{n}}{n!}.
+  $$
+- Using linearity with $\cosh x=\tfrac12e^{x}+\tfrac12e^{-x}$:
+  $$
+  T_{2n}(\cosh x)=1+\frac{x^{2}}{2!}+\frac{x^{4}}{4!}+\cdots+\frac{x^{2n}}{(2n)!}.
+  $$
+- Differentiation gives $T_{2n-1}(\sinh x)$.
+
+### 7.3.3 Recognition by Remainder Form
+
+**Theorem 7.4.** Let $P_{n}$ be a polynomial of degree $n\ge1$. If
+
+$$
+f(x)=P_{n}(x)+x^{n}g(x), \tag{7.7}
+$$
+
+where $g(x)\to0$ as $x\to0$, then $P_{n}=T_{n}f$ (the Taylor polynomial of $f$ at $0$).
+
+**Proof.** Set $h(x)=f(x)-P_{n}(x)=x^{n}g(x)$. Repeated differentiation shows $h$ and its first $n$ derivatives vanish at $0$; hence $f$ agrees with $P_{n}$ through order $n$. ∎
+
+**Examples.**
+- From $\dfrac{1}{1-x}=1+x+\dots+x^{n}+\dfrac{x^{n+1}}{1-x}$:
+  $$
+  T_{n}\!\Bigl(\frac{1}{1-x}\Bigr)=1+x+\dots+x^{n}.
+  $$
+- Integrating:
+  $$
+  T_{n+1}[-\log(1-x)]=x+\frac{x^{2}}{2}+\frac{x^{3}}{3}+\cdots+\frac{x^{n+1}}{n+1}.
+  $$
+- Replacing $x$ by $-x^{2}$ in the first example:
+  $$
+  T_{2n}\!\Bigl(\frac{1}{1+x^{2}}\Bigr)=\sum_{k=0}^{n}(-1)^{k}x^{2k}.
+  $$
+- Integrating:
+  $$
+  T_{2n+1}(\arctan x)=\sum_{k=0}^{n}(-1)^{k}\frac{x^{2k+1}}{2k+1}.
+  $$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
