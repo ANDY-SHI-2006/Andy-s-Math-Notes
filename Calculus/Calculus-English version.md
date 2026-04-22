@@ -6314,6 +6314,77 @@ $$
 x^{2}-2\alpha x+\alpha^{2}+\beta^{2}=0.
 $$
 
+## 9.6 Complex Exponentials
+
+### 9.6.1 Motivation
+
+To extend $e^{z}$ to complex $z$ while preserving the law $e^{a}e^{b}=e^{a+b}$, write $z=x+iy$:
+
+$$
+e^{z}=e^{x+iy}=e^{x}e^{iy}.
+$$
+
+Set $e^{iy}=A(y)+iB(y)$. Differentiating twice and comparing with $-e^{iy}$ gives $A''=-A$, $B''=-B$. With initial values $A(0)=1$, $A'(0)=0$, $B(0)=0$, $B'(0)=1$, uniqueness yields:
+
+$$
+A(y)=\cos y,\qquad B(y)=\sin y.
+$$
+
+### 9.6.2 Definition
+
+For $z=x+iy$:
+
+$$
+e^{z}=e^{x}(\cos y+i\sin y).
+$$
+
+When $y=0$, this reduces to the real exponential $e^{x}$.
+
+### 9.6.3 Theorem 9.3 — Law of Exponents
+
+For all complex $a,b$:
+
+$$
+e^{a}e^{b}=e^{a+b}.
+$$
+
+**Proof.** Write $a=x+iy$, $b=u+iv$. Using the addition formulas for $\cos$ and $\sin$:
+
+$$
+e^{a}e^{b}=e^{x+u}\bigl[\cos(y+v)+i\sin(y+v)\bigr]=e^{a+b}.
+$$
+
+### 9.6.4 Theorem 9.4 — Polar Form
+
+Every $z\neq 0$ can be written as:
+
+$$
+z=re^{i\theta},
+$$
+
+where $r=|z|$ and $\theta=\arg(z)+2n\pi$. This follows from **Euler's formula**:
+
+$$
+e^{i\theta}=\cos\theta+i\sin\theta.
+$$
+
+### 9.6.5 Multiplication and Division in Polar Form
+
+If $z_{1}=r_{1}e^{i\theta}$ and $z_{2}=r_{2}e^{i\phi}$:
+
+$$
+z_{1}z_{2}=r_{1}r_{2}\,e^{i(\theta+\phi)},\qquad
+\frac{z_{1}}{z_{2}}=\frac{r_{1}}{r_{2}}\,e^{i(\theta-\phi)}.
+$$
+
+### 9.6.6 De Moivre's Formula
+
+For any integer $n$:
+
+$$
+z^{n}=r^{n}e^{in\theta}=r^{n}\bigl(\cos n\theta+i\sin n\theta\bigr).
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
