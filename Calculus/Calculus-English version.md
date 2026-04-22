@@ -5198,25 +5198,145 @@ where $C$ is an arbitrary constant of integration. Even if the integral cannot b
 
 ## 8.3 A First-Order Differential Equation for the Exponential Function
 
-### 8.3.1 Example: Linear Motion from Velocity
+### 8.3.1 Theorem 8.1 — Existence and Uniqueness
 
-**Problem.** A particle moves with velocity $2\sin t$. Determine its position $Y(t)$.
-
-*Solution.* $Y'(t)=2\sin t$, so:
+**Statement.** If $C$ is a given real number, there is **one and only one** function $f$ satisfying:
 
 $$
-Y(t)=2\int\sin t\,dt+C=-2\cos t+C.
+f'(x)=f(x)\quad\text{for all }x,\qquad f(0)=C.
 $$
 
-The constant $C$ cannot be determined from velocity alone. An **initial condition** is needed:
-- If $Y(0)=0$, then $C=2$ and $Y(t)=2-2\cos t$.
-- If $Y(0)=2$, then $C=4$ and $Y(t)=4-2\cos t$.
+This function is $f(x)=Ce^{x}$.
+
+**Proof.**
+
+- *Verification.* $f(x)=Ce^{x}$ clearly satisfies $f'=f$ and $f(0)=C$.
+- *Uniqueness.* Let $g$ be any solution and define $h(x)=g(x)e^{-x}$. Then:
+  $$
+  h'(x)=g'(x)e^{-x}-g(x)e^{-x}=e^{-x}[g'(x)-g(x)]=0.
+  $$
+  By the zero-derivative theorem, $h$ is constant. Since $h(0)=g(0)e^{0}=C$, we have $h(x)\equiv C$, hence $g(x)=Ce^{x}$.
+
+> Theorem 8.1 is the simplest example of an **existence-uniqueness theorem**.
 
 ### 8.3.2 Initial-Value Problems
 
-In solving a first-order ODE, an integration removes $y'$ and introduces an arbitrary constant $C$. The manner in which $C$ enters depends on the equation (additive, as in $y=\int Q+C$, or multiplicative, as in $y=Ce^{x}$).
+In solving a first-order ODE, integration removes $y'$ and introduces an arbitrary constant $C$. The way $C$ enters depends on the equation (additive, as in $y=\int Q+C$, or multiplicative, as in $y=Ce^{x}$).
 
-An **initial-value problem** asks for the particular solution satisfying a prescribed value $y(x_{0})=y_{0}$ at some point. This terminology originates in mechanics, where the prescribed value represents displacement at an initial time.
+An **initial-value problem** asks for the particular solution satisfying $y(x_{0})=y_{0}$ at some point. This terminology comes from mechanics, where the prescribed value is the displacement at an initial time.
+
+## 8.4 First-Order Linear Differential Equations
+
+### 8.4.1 Standard Form
+
+$$
+y'+P(x)y=Q(x),
+$$
+
+where $P,Q$ are continuous on an open interval $I$.
+
+- **Nonhomogeneous** when $Q\not\equiv 0$.
+- **Homogeneous (reduced)** when $Q\equiv 0$:
+  $$
+  y'+P(x)y=0.
+  $$
+
+### 8.4.2 Solving the Homogeneous Equation
+
+If $y\neq 0$ on $I$, divide by $y$:
+
+$$
+\frac{y'}{y}=-P(x)\quad\Longrightarrow\quad D\log y=-P(x).
+$$
+
+Hence:
+
+$$
+y=e^{-A(x)},\qquad A(x)=\int P(x)\,dx-C.
+$$
+
+**Theorem 8.2.** Let $P$ be continuous on $I$, $a\in I$, $b\in\mathbb{R}$. The initial-value problem
+
+$$
+y'+P(x)y=0,\quad f(a)=b
+$$
+
+has the **unique** solution on $I$:
+
+$$
+f(x)=b\,e^{-A(x)},\qquad A(x)=\int_{a}^{x}P(t)\,dt.
+$$
+
+**Proof.** Define $h(x)=g(x)e^{A(x)}$ for any solution $g$. Then $h'(x)=e^{A(x)}[g'(x)+P(x)g(x)]=0$, so $h$ is constant. Since $h(a)=g(a)=b$, we get $g(x)=b\,e^{-A(x)}$.
+
+### 8.4.3 Solving the Nonhomogeneous Equation
+
+Let $g$ satisfy $y'+P(x)y=Q(x)$ and set $h(x)=g(x)e^{A(x)}$ with $A(x)=\int_{a}^{x}P(t)\,dt$. Then:
+
+$$
+h'(x)=e^{A(x)}Q(x).
+$$
+
+By the second FTC:
+
+$$
+h(x)=h(a)+\int_{a}^{x}e^{A(t)}Q(t)\,dt.
+$$
+
+Since $h(a)=g(a)$, every solution of (8.5) has the form:
+
+$$
+g(x)=g(a)\,e^{-A(x)}+e^{-A(x)}\int_{a}^{x}Q(t)\,e^{A(t)}\,dt.
+$$
+
+**Theorem 8.3.** Let $P,Q$ be continuous on $I$, $a\in I$, $b\in\mathbb{R}$. The initial-value problem
+
+$$
+y'+P(x)y=Q(x),\quad f(a)=b
+$$
+
+has the **unique** solution on $I$:
+
+$$
+f(x)=b\,e^{-A(x)}+e^{-A(x)}\int_{a}^{x}Q(t)\,e^{A(t)}\,dt,\qquad A(x)=\int_{a}^{x}P(t)\,dt.
+$$
+
+### 8.4.4 Example
+
+**Problem.** Find all solutions of $xy'+(1-x)y=e^{2x}$ on $(0,+\infty)$.
+
+*Solution.* Divide by $x$:
+
+$$
+y'+\Bigl(\frac{1}{x}-1\Bigr)y=\frac{e^{2x}}{x},\qquad P(x)=\frac{1}{x}-1,\;Q(x)=\frac{e^{2x}}{x}.
+$$
+
+Take $a=1$ and compute:
+
+$$
+A(x)=\int_{1}^{x}\Bigl(\frac{1}{t}-1\Bigr)dt=\log x-(x-1).
+$$
+
+Hence $e^{-A(x)}=\dfrac{e^{x-1}}{x}$ and $e^{A(t)}=te^{1-t}$. By Theorem 8.3 with $f(1)=b$:
+
+$$
+f(x)=b\,\frac{e^{x-1}}{x}+\frac{e^{x-1}}{x}\int_{1}^{x}\frac{e^{2t}}{t}\cdot te^{1-t}\,dt
+=b\,\frac{e^{x-1}}{x}+\frac{e^{x}}{x}(e^{x}-e).
+$$
+
+Simplifying:
+
+$$
+f(x)=\frac{e^{2x}+Ce^{x}}{x},\qquad C=be^{-1}-e.
+$$
+
+**Behavior near $x=0$.** Using $e^{2x}=1+2x+o(x)$ and $e^{x}=1+x+o(x)$:
+
+$$
+f(x)=\frac{(1+C)+(2+C)x+o(x)}{x}=\frac{1+C}{x}+(2+C)+o(1).
+$$
+
+Only the solution with $C=-1$ tends to a finite limit as $x\to 0$; that limit is $1$.
 
 # 14. Calculus of Vector-Valued Functions
 
