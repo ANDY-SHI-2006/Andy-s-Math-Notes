@@ -5910,6 +5910,45 @@ This is an **implicit formula**; solving for $y$ explicitly is hopeless. Neverth
 
 > Qualitative information about solutions can often be obtained directly from the differential equation without explicit or implicit formulas (see next section).
 
+## 8.16 Integral Curves and Direction Fields
+
+### 8.16.1 Integral Curves
+
+A solution of $y'=f(x,y)$ satisfying an implicit relation $F(x,y,C)=0$ defines a curve called an **integral curve**. As $C$ varies, the collection forms a **one-parameter family** of curves.
+
+| Equation | Family | Constant $C$ means |
+|----------|--------|-------------------|
+| $y'=3$ | $y=3x+C$ | $y$-intercept |
+| $y'=x$ | $y=\frac{1}{2}x^{2}+C$ | Crosses $y$-axis at $(0,C)$ |
+| $y'=y$ | $y=Ce^{x}$ | $y$-intercept (also slope at $y$-axis) |
+
+### 8.16.2 Envelopes and Singular Solutions
+
+The equation $y=x\,y'-\frac{1}{4}(y')^{2}$ has the one-parameter family:
+
+$$
+y=Cx-\frac{1}{4}C^{2}.
+$$
+
+The **envelope** of this family is $y=x^{2}$ (dotted in Figure 8.9). The envelope is itself a solution and is **not** a member of the family. By piecing together family members with portions of the envelope, further solutions can be constructed.
+
+### 8.16.3 Finding a Differential Equation from Its Integral Curves
+
+**Example 1.** Circles centered at the origin: $x^{2}+y^{2}=C^{2}$.
+
+Differentiate: $2x+2yy'=0$, hence $y'=-x/y$.
+
+**Example 2.** Circles through the origin with centers on the $x$-axis: $x^{2}+y^{2}-2Cx=0$.
+
+- Differentiate: $x+yy'=C$.
+- Eliminate $C$: $y'=\dfrac{y^{2}-x^{2}}{2xy}$.
+
+### 8.16.4 Direction Fields
+
+A **direction field** is constructed by drawing short line segments at various points $(a,b)$ with slope $f(a,b)$. It provides qualitative information about solutions without solving the equation.
+
+> Different initial points $(0,b)$ on the $y$-axis yield different integral curves—this is a geometric reason for the appearance of an arbitrary constant when integrating a first-order equation.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
