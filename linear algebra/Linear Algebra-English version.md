@@ -4272,3 +4272,97 @@ Let $V$ be a vector space over $K$, and let $S$ be a set of operators of $V$. Le
 **Proof.** Let $J$ be the ideal of polynomials $f$ in $\mathbb{C}[t]$ such that $f(A) = O$. Let $g$ be a generator for this ideal, with leading coefficient $1$. Then $g \neq 0$. We contend that $g$ is irreducible. Otherwise, we can write $g = h_1 h_2$ with polynomials $h_1, h_2$ of degrees $< \deg g$. Consequently $h_1(A) \neq O$. By Theorem 5.1 and Remarks 1, 2 we conclude that $h_1(A)$ is invertible. Similarly, $h_2(A)$ is invertible. Hence $h_1(A)h_2(A)$ is invertible, an impossibility since $h_1(A)h_2(A) = g(A) = O$. This proves that $g$ must be irreducible.
 
 But the only irreducible polynomials over the complex numbers are of degree $1$, and hence $g(t) = t - \lambda$ for some $\lambda \in \mathbb{C}$. Since $g(A) = O$, we conclude that $A - \lambda I = O$, whence $A = \lambda I$. ∎
+
+
+## 11.6 The Jordan Normal Form
+
+In Chapter 10, §1 we proved that a linear map over the complex numbers can always be triangulated. This result suffices for many applications, but it is possible to improve it and find a basis such that the matrix of the linear map has an exceptionally simple triangular form. We do this now, using the primary decomposition.
+
+### 11.6.1 Cyclic Vectors and Jordan Bases
+
+We first consider a special case, which turns out to be rather typical afterwards. Let $V$ be a vector space over $\mathbb{C}$, let $A: V \to V$ be a linear map, let $\alpha \in \mathbb{C}$ and let $v \in V$, $v \neq O$.
+
+**Definition ($(A-\alpha I)$-cyclic).** We shall say that $v$ is **$(A-\alpha I)$-cyclic** if there exists an integer $r \geq 1$ such that $(A-\alpha I)^r v = O$. The smallest positive integer $r$ having this property is called a **period** of $v$ relative to $A-\alpha I$. If $r$ is such a period, then $(A-\alpha I)^k v \neq O$ for any integer $k$ with $0 \leq k < r$.
+
+**Lemma 6.1.** If $v \neq O$ is $(A-\alpha I)$-cyclic, with period $r$, then the elements
+
+$$
+v, \quad (A-\alpha I)v, \quad \dots, \quad (A-\alpha I)^{r-1}v
+$$
+
+are linearly independent.
+
+**Proof.** Let $B = A - \alpha I$. A relation of linear dependence can be written $f(B)v = O$, where $f$ is a non-zero polynomial of degree $\leq r-1$, say $f(t) = c_0 + c_1 t + \cdots + c_s t^s$ with $s \leq r-1$. We also have $B^r v = O$ by hypothesis. Let $g(t) = t^r$. If $h = \gcd(f, g)$, then $h = f_1 f + g_1 g$ for some polynomials $f_1, g_1$, and thus $h(B)v = f_1(B)f(B)v + g_1(B)g(B)v = O$. But $h(t)$ divides $t^r$ and has degree $\leq r-1$, so $h(t) = t^d$ with $d < r$. This contradicts the hypothesis that $r$ is a period of $v$. ∎
+
+**Definition (Cyclic space).** The vector space $V$ will be called **cyclic** if there exists some number $\alpha$ and an element $v \in V$ which is $(A-\alpha I)$-cyclic and $v, Av, \dots, A^{r-1}v$ generate $V$.
+
+If this is the case, Lemma 6.1 implies that
+
+$$
+\bigl\{(A-\alpha I)^{r-1}v, \dots, (A-\alpha I)v, v\bigr\} \tag{*}
+$$
+
+is a basis for $V$. With respect to this basis, for each $k$ we have
+
+$$
+A(A-\alpha I)^k v = (A-\alpha I)^{k+1}v + \alpha(A-\alpha I)^k v.
+$$
+
+Hence the matrix of $A$ with respect to this basis is the triangular matrix
+
+$$
+\begin{pmatrix}
+\alpha & 1 & 0 & \cdots & 0 & 0 \\
+0 & \alpha & 1 & \cdots & 0 & 0 \\
+\vdots & \vdots & \ddots & \ddots & \vdots & \vdots \\
+0 & 0 & 0 & \cdots & \alpha & 1 \\
+0 & 0 & 0 & \cdots & 0 & \alpha
+\end{pmatrix}.
+$$
+
+This matrix has $\alpha$ on the diagonal, $1$ above the diagonal, and $0$ everywhere else. The vector $(A-\alpha I)^{r-1}v$ is an eigenvector for $A$ with eigenvalue $\alpha$.
+
+The basis $(*)$ is called a **Jordan basis** for $V$ with respect to $A$.
+
+### 11.6.2 Existence of the Jordan Normal Form
+
+Suppose that $V$ is expressed as a direct sum of $A$-invariant subspaces,
+
+$$
+V = V_1 \oplus \cdots \oplus V_m,
+$$
+
+and suppose that each $V_i$ is cyclic. If we select a Jordan basis for each $V_i$, then the union of these bases forms a basis for $V$, again called a **Jordan basis for $V$ with respect to $A$**. With respect to this basis, the matrix for $A$ splits into blocks. In each block we have an eigenvalue $\alpha_i$ on the diagonal, $1$ above the diagonal, and $0$ everywhere else. This matrix is called the **Jordan normal form** for $A$.
+
+Our main theorem in this section is that this normal form can always be achieved.
+
+**Theorem 6.2.** Let $V$ be a finite dimensional space over the complex numbers, and $V \neq \{O\}$. Let $A: V \to V$ be an operator. Then $V$ can be expressed as a direct sum of $A$-invariant cyclic subspaces.
+
+**Proof.** By Theorem 4.2 we may assume without loss of generality that there exists a number $\alpha$ and an integer $r \geq 1$ such that $(A-\alpha I)^r = O$. Let $B = A - \alpha I$. Then $B^r = O$. We assume that $r$ is the smallest such integer; then $B^{r-1} \neq O$. The subspace $BV$ is not equal to $V$ because its dimension is strictly smaller (for instance, there exists $w \in V$ with $B^{r-1}w \neq O$; let $v = B^{r-1}w$, then $Bv = O$).
+
+By induction, we may write $BV$ as a direct sum of $A$-invariant (or $B$-invariant) cyclic subspaces,
+
+$$
+BV = W_1 \oplus \cdots \oplus W_m,
+$$
+
+such that $W_i$ has a basis consisting of elements $B^k w_i$ for some cyclic vector $w_i \in W_i$ of period $r_i$. Let $v_i \in V$ be such that $Bv_i = w_i$. Then each $v_i$ is a cyclic vector, because if $B^{r_i} w_i = O$, then $B^{r_i+1} v_i = O$.
+
+Let $V_i$ be the subspace of $V$ generated by $B^k v_i$ for $k = 0, \dots, r_i$. We contend that the subspace $V' = V_1 + \cdots + V_m$ is a direct sum. Suppose
+
+$$
+f_1(B)v_1 + \cdots + f_m(B)v_m = O, \tag{1}
+$$
+
+where each $f_i$ is a polynomial of degree $\leq r_i$. Applying $B$ and noting that $Bf_i(B) = f_i(B)B$ gives $f_1(B)w_1 + \cdots + f_m(B)w_m = O$. Since $W_1 + \cdots + W_m$ is a direct sum, $f_i(B)w_i = O$ for all $i$. Therefore $t^{r_i}$ divides $f_i(t)$; in particular $t$ divides $f_i(t)$, so $f_i(t) = g_i(t)t$ and $f_i(B) = g_i(B)B$. It follows from (1) that $g_1(B)w_1 + \cdots + g_m(B)w_m = O$. Again $t^{r_i}$ divides $g_i(t)$, whence $t^{r_i+1}$ divides $f_i(t)$, and therefore $f_i(B)v_i = O$. This proves that $V'$ is a direct sum.
+
+From the construction, $BV' = BV$. We shall conclude that $V = V' + \ker B$. Indeed, let $v \in V$. Then $Bv = Bv'$ for some $v' \in V'$, hence $B(v-v') = O$. Thus $v = v' + (v-v')$, proving $V = V' + \ker B$. Of course this sum is not necessarily direct. However, let $\mathscr{B}'$ be a Jordan basis of $V'$. We can extend $\mathscr{B}'$ to a basis of $V$ by using elements of $\ker B$. If $\{u_1, \dots, u_s\}$ is a basis of $\ker B$, then for suitable indices we obtain a basis of $V$. Each $u_j$ satisfies $Bu_j = O$, whence $u_j$ is an eigenvector for $A$; the one-dimensional space generated by $u_j$ is $A$-invariant and cyclic. Denote this subspace by $U_j$. Then:
+
+$$
+\begin{aligned}
+V &= V' \oplus U_{j_1} \oplus \cdots \oplus U_{j_l} \\
+&= V_1 \oplus \cdots \oplus V_m \oplus U_{j_1} \oplus \cdots \oplus U_{j_l},
+\end{aligned}
+$$
+
+giving the desired expression of $V$ as a direct sum of cyclic subspaces. ∎
