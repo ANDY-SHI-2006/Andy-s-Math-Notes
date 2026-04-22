@@ -4275,6 +4275,76 @@ $$
 
 as $k\to0$. ∎
 
+## 6.17 Inverses of the Trigonometric Functions
+
+### 6.17.1 Arc Sine
+
+Restrict $\sin x$ to the interval $[-\tfrac{\pi}{2},\tfrac{\pi}{2}]$, where it is strictly increasing and takes every value in $[-1,1]$ exactly once.
+
+**Definition.** $u=\arcsin v$ means $v=\sin u$ with $-\tfrac{\pi}{2}\le u\le\tfrac{\pi}{2}$.
+
+- **Domain**: $[-1,1]$; **range**: $[-\pi/2,\pi/2]$.
+- **Derivative** (from Theorem 6.7 with $f(x)=\sin x$, $f'(x)=\cos x$):
+  $$
+  D\arcsin x=\frac{1}{\sqrt{1-x^{2}}}\qquad(-1<x<1). \tag{6.31}
+  $$
+- **Integration formulas**:
+  $$
+  \int_{0}^{x}\frac{dt}{\sqrt{1-t^{2}}}=\arcsin x,\qquad\int\frac{dx}{\sqrt{1-x^{2}}}=\arcsin x+C.
+  $$
+- **By parts**:
+  $$
+  \int\arcsin x\,dx=x\arcsin x+\sqrt{1-x^{2}}+C.
+  $$
+
+> **Note**: Formula (6.31) can serve as the starting point for a purely analytic theory of the trigonometric functions, with no reference to geometry.
+
+### 6.17.2 Arc Cosine
+
+Restrict $\cos x$ to $[0,\pi]$.
+
+**Definition.** $u=\arccos v$ means $v=\cos u$ with $0\le u\le\pi$.
+
+- **Derivative**:
+  $$
+  D\arccos x=\frac{-1}{\sqrt{1-x^{2}}}\qquad(-1<x<1). \tag{6.32}
+  $$
+- **Relation to arc sine**:
+  $$
+  \arcsin x+\arccos x=\frac{\pi}{2}.
+  $$
+- **Integration formulas**:
+  $$
+  \int\frac{dx}{\sqrt{1-x^{2}}}=-\arccos x+C,\qquad\int\arccos x\,dx=x\arccos x-\sqrt{1-x^{2}}+C.
+  $$
+
+### 6.17.3 Arc Tangent
+
+Restrict $\tan x$ to $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$.
+
+**Definition.** $u=\arctan v$ means $v=\tan u$ with $-\tfrac{\pi}{2}<u<\tfrac{\pi}{2}$.
+
+- **Derivative**:
+  $$
+  D\arctan x=\frac{1}{1+x^{2}}\qquad(\text{all real }x). \tag{6.33}
+  $$
+- **Integration formulas**:
+  $$
+  \int_{0}^{x}\frac{dt}{1+t^{2}}=\arctan x,\qquad\int\frac{dx}{1+x^{2}}=\arctan x+C.
+  $$
+- **By parts**:
+  $$
+  \int\arctan x\,dx=x\arctan x-\tfrac12\log(1+x^{2})+C.
+  $$
+
+### 6.17.4 Other Inverse Trigonometric Functions
+
+| Function | Definition | Domain |
+|----------|-----------|--------|
+| $\arccot x$ | $\dfrac{\pi}{2}-\arctan x$ | all real $x$ |
+| $\arcsec x$ | $\arccos\dfrac1x$ | $|x|\ge1$ |
+| $\arccsc x$ | $\arcsin\dfrac1x$ | $|x|\ge1$ |
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
