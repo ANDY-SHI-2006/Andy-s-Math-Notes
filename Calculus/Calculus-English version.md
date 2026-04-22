@@ -4844,6 +4844,66 @@ $$
 
 Hence $(1+x)^{1/x} = e \cdot e^{u}$ gives the desired result.
 
+## 7.8 Applications to Indeterminate Forms
+
+Taylor approximations and the $o$-notation are useful tools for evaluating limits of indeterminate forms such as $0/0$.
+
+### 7.8.1 Example: $\displaystyle\lim_{x\to 0}\frac{a^{x}-b^{x}}{x}$
+
+**Problem.** If $a,b>0$, determine $\displaystyle\lim_{x\to 0}\frac{a^{x}-b^{x}}{x}$.
+
+*Solution.* Use $e^{t}=1+t+o(t)$ as $t\to 0$. Substitute $t=x\log a$ and $t=x\log b$:
+
+$$
+a^{x}=1+x\log a+o(x),\qquad b^{x}=1+x\log b+o(x).
+$$
+
+Subtract and divide by $x$:
+
+$$
+\frac{a^{x}-b^{x}}{x}=\log a-\log b+o(1)=\log\frac{a}{b}+o(1)\;\longrightarrow\;\log\frac{a}{b}.
+$$
+
+### 7.8.2 Example: $\displaystyle\lim_{x\to 0}\frac{1}{x}\Bigl(\cot x-\frac{1}{x}\Bigr)$
+
+**Problem.** Prove the limit equals $-\dfrac{1}{3}$.
+
+*Solution.* From $\tan x = x + \dfrac{1}{3}x^{3} + o(x^{3})$:
+
+$$
+\cot x = \frac{1}{\tan x} = \frac{1}{x}\cdot\frac{1}{1+\frac{1}{3}x^{2}+o(x^{2})} = \frac{1}{x}\Bigl(1-\frac{1}{3}x^{2}+o(x^{2})\Bigr) = \frac{1}{x}-\frac{1}{3}x+o(x).
+$$
+
+Hence:
+
+$$
+\frac{1}{x}\Bigl(\cot x-\frac{1}{x}\Bigr) = -\frac{1}{3}+o(1)\;\longrightarrow\;-\frac{1}{3}.
+$$
+
+### 7.8.3 Example: $\displaystyle\lim_{x\to 0}\frac{\log(1+ax)}{x}$
+
+**Problem.** Prove the limit equals $a$ for every real $a$.
+
+*Solution.* If $a=0$, trivial. For $a\neq 0$, use $\log(1+x)=x+o(x)$ and replace $x$ by $ax$:
+
+$$
+\log(1+ax)=ax+o(ax)=ax+o(x).
+$$
+
+Dividing by $x$ gives $a+o(1)\to a$.
+
+### 7.8.4 Example: $\displaystyle\lim_{x\to 0}(1+ax)^{1/x}$
+
+**Problem.** Prove $\displaystyle\lim_{x\to 0}(1+ax)^{1/x}=e^{a}$ for every real $a$.
+
+*Solution.* Write $(1+ax)^{1/x}=\exp\!\Bigl(\dfrac{\log(1+ax)}{x}\Bigr)$. By Example 3, the exponent tends to $a$; by continuity of $\exp$, the limit is $e^{a}$.
+
+> **Related limit.** Replacing $ax$ by $y$:
+> $$
+> \lim_{y\to 0}(1+y)^{a/y}=e^{a}.
+> $$
+> These relations are sometimes taken as starting points for the theory of the exponential function.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
