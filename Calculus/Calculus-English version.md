@@ -4425,6 +4425,44 @@ $$
 \int\frac{du}{(u^{2}+\alpha^{2})^{m}}=\frac{u}{2\alpha^{2}(m-1)(u^{2}+\alpha^{2})^{m-1}}+\frac{2m-3}{2\alpha^{2}(m-1)}\int\frac{du}{(u^{2}+\alpha^{2})^{m-1}}.
 $$
 
+## 6.19 Integrals Reducible to Rational Functions
+
+### 6.19.1 The Weierstrass Substitution
+
+For integrals of the form $\displaystyle\int R(\sin x,\cos x)\,dx$ (where $R$ is a rational function of two variables), the substitution:
+
+$$
+u=\tan\tfrac{x}{2}
+$$
+
+converts the integrand into a rational function of $u$:
+
+$$
+\sin x=\frac{2u}{1+u^{2}},\qquad\cos x=\frac{1-u^{2}}{1+u^{2}},\qquad dx=\frac{2\,du}{1+u^{2}}.
+$$
+
+**Example 1.** $\displaystyle\int\frac{dx}{\sin x+\cos x}$.
+- With $u=\tan\tfrac{x}{2}$ the integral becomes $-2\displaystyle\int\frac{du}{u^{2}-2u-1}$.
+- Factor $u^{2}-2u-1=(u-a)(u-b)$ with $a=1+\sqrt2$, $b=1-\sqrt2$.
+- Partial fractions give:
+  $$
+  \int\frac{dx}{\sin x+\cos x}=\frac{\sqrt2}{2}\log\Bigl|\tan\Bigl(\frac{x}{2}+\frac{\pi}{8}\Bigr)\Bigr|+C.
+  $$
+
+### 6.19.2 Trigonometric Substitutions for Radicals
+
+| Radical form | Substitution | Differential | Simplification |
+|--------------|--------------|--------------|----------------|
+| $\sqrt{a^{2}-(cx+d)^{2}}$ | $cx+d=a\sin t$ | $c\,dx=a\cos t\,dt$ | $\sqrt{\cdots}=a\cos t$ |
+| $\sqrt{a^{2}+(cx+d)^{2}}$ | $cx+d=a\tan t$ | $c\,dx=a\sec^{2}t\,dt$ | $\sqrt{\cdots}=a\sec t$ |
+| $\sqrt{(cx+d)^{2}-a^{2}}$ | $cx+d=a\sec t$ | $c\,dx=a\sec t\tan t\,dt$ | $\sqrt{\cdots}=a\tan t$ |
+
+In each case the new integrand becomes a rational function of $\sin t$ and $\cos t$.
+
+**Example 2.** $\displaystyle\int\frac{x\,dx}{4-x^{2}+\sqrt{4-x^{2}}}$.
+- Let $x=2\sin t$, $dx=2\cos t\,dt$, $\sqrt{4-x^{2}}=2\cos t$.
+- The integral simplifies to $\displaystyle\int\frac{\sin t\,dt}{\cos t+\tfrac12}=-\log\Bigl|\tfrac12+\cos t\Bigr|+C=-\log\bigl(1+\sqrt{4-x^{2}}\bigr)+C$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
