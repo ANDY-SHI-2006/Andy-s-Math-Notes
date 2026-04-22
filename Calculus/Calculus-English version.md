@@ -4904,6 +4904,74 @@ Dividing by $x$ gives $a+o(1)\to a$.
 > $$
 > These relations are sometimes taken as starting points for the theory of the exponential function.
 
+## 7.9 L'Hôpital's Rule for the Indeterminate Form $0/0$
+
+### 7.9.1 Motivation
+
+For $\dfrac{f(x)}{g(x)}$ with $f(a)=g(a)=0$:
+
+$$
+\frac{f(x)}{g(x)}=\frac{f(x)-f(a)}{g(x)-g(a)}=\frac{\dfrac{f(x)-f(a)}{x-a}}{\dfrac{g(x)-g(a)}{x-a}}\;\longrightarrow\;\frac{f'(a)}{g'(a)}
+$$
+
+provided $f'(a), g'(a)$ exist and $g'(a)\neq 0$.
+
+### 7.9.2 Theorem 7.9 — L'Hôpital's Rule ($0/0$)
+
+Assume $f$ and $g$ have derivatives $f'(x), g'(x)$ at each point of an open interval $(a, b)$, and:
+
+1. $\displaystyle\lim_{x\to a+}f(x)=0$ and $\displaystyle\lim_{x\to a+}g(x)=0$,
+2. $g'(x)\neq 0$ for all $x\in(a,b)$,
+3. $\displaystyle\lim_{x\to a+}\dfrac{f'(x)}{g'(x)}=L$.
+
+Then $\displaystyle\lim_{x\to a+}\dfrac{f(x)}{g(x)}$ also exists and equals $L$.
+
+> The theorem also holds for **left-handed** limits $(x\to a-)$ and **two-sided** limits $(x\to a)$.
+
+### 7.9.3 Examples
+
+| # | Limit | Key Step | Result |
+|---|-------|----------|--------|
+| 1 | $\displaystyle\lim_{x\to 0}\dfrac{\sin x}{x}$ | $\dfrac{\cos x}{1}\to 1$ | $1$ |
+| 2 | $\displaystyle\lim_{x\to 0}\dfrac{x-\tan x}{x-\sin x}$ | Apply twice; cancel $1-\cos x$ | $-2$ |
+| 3 | $\displaystyle\lim_{x\to 1}\dfrac{x^{c}-cx+c-1}{(x-1)^{2}}$ | Two applications | $\dfrac{c(c-1)}{2}$ |
+| 6 | $\displaystyle\lim_{x\to 0+}\dfrac{\sqrt{x}}{1-e^{2\sqrt{x}}}$ | Substitute $t=\sqrt{x}$ | $-\dfrac{1}{2}$ |
+
+**Example 2 (detail).** Let $f(x)=x-\tan x$, $g(x)=x-\sin x$. Then:
+
+$$
+\frac{f'(x)}{g'(x)}=\frac{1-\sec^{2}x}{1-\cos x}=\frac{-\tan^{2}x}{1-\cos x}=\frac{-\sin^{2}x}{\cos^{2}x(1-\cos x)}=-\frac{1+\cos x}{\cos^{2}x}\to -2.
+$$
+
+### 7.9.4 Caveats
+
+- **Not infallible.** For $f(x)=e^{-1/x}$ ($x\neq 0$) and $g(x)=x$ as $x\to 0+$:
+  $$
+  \frac{f'(x)}{g'(x)}=\frac{x^{-2}e^{-1/x}}{1}=\frac{e^{-1/x}}{x^{2}},
+  $$
+  and repeated differentiation never resolves the indeterminacy.
+- **Check the form.** A common error:
+  $$
+  \lim_{x\to 1}\frac{3x^{2}-2x-1}{x^{2}-x}=\lim_{x\to 1}\frac{6x-2}{2x-1}=\lim_{x\to 1}\frac{6}{2}=3\quad\text{(wrong!)}.
+  $$
+  The second step is invalid because $\dfrac{6x-2}{2x-1}$ is **not** $0/0$ at $x=1$. The correct limit is $4$.
+
+### 7.9.5 Proof (Cauchy's Mean-Value Theorem)
+
+Define $F(x)=f(x)$ for $x\neq a$, $F(a)=0$; similarly $G(x)=g(x)$ for $x\neq a$, $G(a)=0$. Both are continuous on $[a,x]$ and differentiable on $(a,x)$. By Cauchy's mean-value theorem:
+
+$$
+[F(x)-F(a)]G'(c)=[G(x)-G(a)]F'(c)\quad\text{for some }c\in(a,x).
+$$
+
+Since $F(a)=G(a)=0$ and $G'(c)=g'(c)\neq 0$, $g(x)\neq 0$:
+
+$$
+\frac{f(x)}{g(x)}=\frac{F'(c)}{G'(c)}=\frac{f'(c)}{g'(c)}.
+$$
+
+As $x\to a+$, we have $c\to a+$, so the right side tends to $L$; hence $f(x)/g(x)\to L$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
