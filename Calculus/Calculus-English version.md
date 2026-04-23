@@ -8082,6 +8082,31 @@ $$
 
 > The unit coordinate vectors $E_1,\dots,E_n$ form the standard orthonormal set in $V_n$.
 
+## 12.11 Bases
+
+### 12.11.1 Definition
+
+**Definition.** A set $S=\{A_1,\dots,A_k\}$ in $V_n$ is called a **basis** for $V_n$ if $S$ spans every vector in $V_n$ uniquely. If, in addition, $S$ is orthogonal, it is called an **orthogonal basis**.
+
+Thus a basis is a linearly independent set which spans the whole space. The unit coordinate vectors $E_1,\dots,E_n$ form the **standard basis**; it is also an orthogonal basis.
+
+### 12.11.2 Fundamental Properties of Bases
+
+**Theorem 12.10.** In a given vector space $V_n$, bases have the following properties:
+- **(a)** Every basis contains exactly $n$ vectors.
+- **(b)** Any set of linearly independent vectors is a subset of some basis.
+- **(c)** Any set of $n$ linearly independent vectors is a basis.
+
+### 12.11.3 Proof Sketch
+
+**Part (a) — Equal cardinality.** Let $S$ and $T$ be two bases with $k$ and $r$ vectors respectively. Since $T\subseteq L(S)=V_n$ and $T$ has $r$ vectors, Theorem 12.8 implies $r\le k$ (otherwise $T$ would be dependent). Interchanging roles gives $k\le r$. Hence $k=r$. Since $\{E_1,\dots,E_n\}$ is one basis, every basis has $n$ elements.
+
+**Part (b) — Extension to a basis.** Let $S$ be independent. If $L(S)=V_n$, done. Otherwise pick $X\notin L(S)$ and form $S'=S\cup\{X\}$. If $S'$ were dependent, a nontrivial relation $\sum c_iA_i+c_{k+1}X=O$ would force $c_{k+1}\neq0$ (since $S$ is independent), yielding $X\in L(S)$, a contradiction. Thus $S'$ remains independent. Repeating finitely many times produces a basis (the process must stop, otherwise $n+1$ independent vectors would exist, contradicting Theorem 12.8).
+
+**Part (c) — $n$ independent vectors form a basis.** Let $S$ be any independent set of $n$ vectors. By (b), $S\subseteq B$ for some basis $B$. By (a), $B$ has exactly $n$ elements, so $S=B$.
+
+> Properties (a)–(c) justify calling $n$ the **dimension** of $V_n$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
