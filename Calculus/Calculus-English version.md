@@ -1,4 +1,4 @@
-# 1. The Concepts of Integral Calculus
+﻿# 1. The Concepts of Integral Calculus
 
 ## 1.1 The Concept of Area as a Set Function
 
@@ -88,7 +88,7 @@ $$
 
 Step functions are also called **piecewise constant functions**.
 
-### 1.3.3 Example — The Postage Function
+### 1.3.3 Example 鈥?The Postage Function
 
 A familiar example is the postage function: the cost of first-class mail is constant over each ounce interval and jumps at integer ounce marks.
 
@@ -134,7 +134,7 @@ $$
 \int_a^b s(x) \, dx = \sum_{k=1}^{n} s_k \cdot (x_k - x_{k-1}).
 $$
 
-> **Note:** The values of $s$ at the subdivision points are immaterial — they do not appear on the right-hand side.
+> **Note:** The values of $s$ at the subdivision points are immaterial 鈥?they do not appear on the right-hand side.
 
 ### 1.5.2 Geometric Interpretation
 
@@ -218,7 +218,7 @@ $$
 
 ### 1.7.1 Dummy Variables
 
-The integration variable is a **dummy variable** — it plays no essential role. Any letter will do:
+The integration variable is a **dummy variable** 鈥?it plays no essential role. Any letter will do:
 
 $$
 \int_a^b s(x)\,dx = \int_a^b s(t)\,dt = \int_a^b s(u)\,du.
@@ -245,7 +245,7 @@ The symbol $dx$ may seem superfluous now, but it becomes an extremely useful com
 
 ## 1.8 The Integral of More General Functions
 
-### 1.8.1 Motivation — Archimedes' Method
+### 1.8.1 Motivation 鈥?Archimedes' Method
 
 To define the integral for a general function $f$ on $[a, b]$, we approximate $f$ from **below** and **above** by step functions $s$ and $t$:
 
@@ -477,15 +477,15 @@ In particular, step functions are piecewise monotonic.
 
 ### 1.12.3 Examples
 
-**Example 1 — The power functions.** Let $p$ be a positive integer and $f(x) = x^p$. Then $f$ is **strictly increasing** on the nonnegative real axis (since $0 \le x < y \implies x^p < y^p$). It is piecewise monotonic on every finite interval.
+**Example 1 鈥?The power functions.** Let $p$ be a positive integer and $f(x) = x^p$. Then $f$ is **strictly increasing** on the nonnegative real axis (since $0 \le x < y \implies x^p < y^p$). It is piecewise monotonic on every finite interval.
 
-**Example 2 — The square-root function.** Let $f(x) = \sqrt{x}$ for $x \ge 0$. Then $f$ is **strictly increasing** on the nonnegative real axis, since for $0 \le x < y$:
+**Example 2 鈥?The square-root function.** Let $f(x) = \sqrt{x}$ for $x \ge 0$. Then $f$ is **strictly increasing** on the nonnegative real axis, since for $0 \le x < y$:
 
 $$
 \sqrt{y} - \sqrt{x} = \frac{y - x}{\sqrt{y} + \sqrt{x}} > 0.
 $$
 
-**Example 3 — The semicircle function.** Let $g(x) = \sqrt{r^2 - x^2}$ for $-r \le x \le r$. Then $g$ is **strictly increasing** on $[-r, 0]$ and **strictly decreasing** on $[0, r]$. Hence $g$ is piecewise monotonic on $[-r, r]$.
+**Example 3 鈥?The semicircle function.** Let $g(x) = \sqrt{r^2 - x^2}$ for $-r \le x \le r$. Then $g$ is **strictly increasing** on $[-r, 0]$ and **strictly decreasing** on $[0, r]$. Hence $g$ is piecewise monotonic on $[-r, r]$.
 
 
 ## 1.13 Integrability of Bounded Monotonic Functions
@@ -544,7 +544,7 @@ which proves that $f$ is integrable on $[a, b]$.
 
 ## 1.14 Calculation of the Integral of a Bounded Monotonic Function
 
-### 1.14.1 Theorem 1.13 — Increasing Functions
+### 1.14.1 Theorem 1.13 鈥?Increasing Functions
 
 **Theorem 1.13.** Assume $f$ is increasing on $[a, b]$. Let $x_k = a + k\,\dfrac{b-a}{n}$ for $k = 0, 1, \dots, n$. If $I$ is any number satisfying:
 
@@ -574,7 +574,7 @@ $$
 
 for every $n \ge 1$. Letting $n \to \infty$ gives $I = \int_a^b f(x)\,dx$.
 
-### 1.14.3 Theorem 1.14 — Decreasing Functions
+### 1.14.3 Theorem 1.14 鈥?Decreasing Functions
 
 **Theorem 1.14.** Assume $f$ is decreasing on $[a, b]$. Let $x_k = a + k\,\dfrac{b-a}{n}$ for $k = 0, 1, \dots, n$. If $I$ is any number satisfying:
 
@@ -632,7 +632,7 @@ $$
 
 ## 1.16 The Basic Properties of the Integral
 
-### 1.16.1 Theorem 1.16 — Linearity
+### 1.16.1 Theorem 1.16 鈥?Linearity
 
 If $f$ and $g$ are integrable on $[a, b]$, then so is $c_1 f + c_2 g$ for all real $c_1, c_2$, and:
 
@@ -646,7 +646,7 @@ $$
 \int_a^b \sum_{k=1}^{n} c_k f_k(x) \, dx = \sum_{k=1}^{n} c_k \int_a^b f_k(x) \, dx.
 $$
 
-### 1.16.2 Theorem 1.17 — Additivity with Respect to the Interval
+### 1.16.2 Theorem 1.17 鈥?Additivity with Respect to the Interval
 
 If two of the following three integrals exist, the third also exists, and:
 
@@ -656,7 +656,7 @@ $$
 
 > **Note:** If $f$ is monotonic on $[a, b]$ and on $[b, c]$, then all three integrals exist.
 
-### 1.16.3 Theorem 1.18 — Invariance under Translation
+### 1.16.3 Theorem 1.18 鈥?Invariance under Translation
 
 If $f$ is integrable on $[a, b]$, then for every real $c$:
 
@@ -664,7 +664,7 @@ $$
 \int_a^b f(x) \, dx = \int_{a+c}^{b+c} f(x - c) \, dx.
 $$
 
-### 1.16.4 Theorem 1.19 — Expansion or Contraction
+### 1.16.4 Theorem 1.19 鈥?Expansion or Contraction
 
 If $f$ is integrable on $[a, b]$, then for every real $k \neq 0$:
 
@@ -674,7 +674,7 @@ $$
 
 > **Note:** When $k = -1$, this is called the **reflection property**.
 
-### 1.16.5 Theorem 1.20 — Comparison Theorem
+### 1.16.5 Theorem 1.20 鈥?Comparison Theorem
 
 If $f$ and $g$ are integrable on $[a, b]$ and $g(x) \le f(x)$ for all $x \in [a, b]$, then:
 
@@ -855,7 +855,7 @@ $$
 f(x) \le y \le g(x), \quad a \le x \le b.
 $$
 
-### 2.2.2 Theorem 2.1 — Area Formula
+### 2.2.2 Theorem 2.1 鈥?Area Formula
 
 Assume $f$ and $g$ are integrable and $f \le g$ on $[a, b]$. Then the region $S$ between their graphs is **measurable**, and its area is:
 
@@ -882,7 +882,7 @@ Since $T$ is congruent to $S$ (translation by $c$), $S$ is also measurable with 
 
 ## 2.3 Worked Examples
 
-### 2.3.1 Example 1 — Simple Region
+### 2.3.1 Example 1 鈥?Simple Region
 
 Compute the area of the region $S$ between $f(x) = x(x-2)$ and $g(x) = x/2$ over $[0, 2]$.
 
@@ -892,7 +892,7 @@ $$
 a(S) = \int_0^2 \bigl[g(x) - f(x)\bigr]\,dx = \int_0^2 \left(\frac{5}{2}x - x^2\right) dx = \frac{5}{2}\cdot\frac{2^2}{2} - \frac{2^3}{3} = \frac{7}{3}.
 $$
 
-### 2.3.2 Example 2 — Splitting the Interval
+### 2.3.2 Example 2 鈥?Splitting the Interval
 
 Compute the area between $f(x) = x$ and $g(x) = x^3/4$ over $[-1, 2]$.
 
@@ -912,7 +912,7 @@ $$
 a(S) = \int_a^b |g(x) - f(x)|\,dx.
 $$
 
-### 2.3.3 Example 3 — Area of a Circular Disk
+### 2.3.3 Example 3 鈥?Area of a Circular Disk
 
 A disk of radius $r$ is the region between $g(x) = \sqrt{r^2 - x^2}$ and $f(x) = -\sqrt{r^2 - x^2}$ on $[-r, r]$.
 
@@ -934,7 +934,7 @@ $$
 A(r) = \pi r^2.
 $$
 
-### 2.3.4 Example 4 — Similarity Transformation
+### 2.3.4 Example 4 鈥?Similarity Transformation
 
 Let $f$ be nonnegative and integrable on $[a, b]$, with ordinate set $S$. Under a similarity transformation with factor $k > 0$, the set $kS$ is the ordinate set of $g(x) = kf(x/k)$ on $[ka, kb]$.
 
@@ -946,7 +946,7 @@ $$
 
 Thus similarity with factor $k$ multiplies area by $k^2$.
 
-### 2.3.5 Example 5 — Calculating $\int_0^a x^{1/2}\,dx$
+### 2.3.5 Example 5 鈥?Calculating $\int_0^a x^{1/2}\,dx$
 
 Consider $f(x) = x^{1/2}$ on $[0, a]$. Its ordinate set $S$ has area:
 
@@ -966,7 +966,7 @@ $$
 \int_0^a x^{1/2}\,dx = a^{3/2} - \frac{1}{3}a^{3/2} = \frac{2}{3}a^{3/2}.
 $$
 
-### 2.3.6 Theorem 2.2 — General Power Formula
+### 2.3.6 Theorem 2.2 鈥?General Power Formula
 
 For $a > 0$, $b > 0$, and $n$ a positive integer:
 
@@ -979,7 +979,7 @@ $$
 
 ### 2.4.1 Introduction
 
-Before further applications of integration, we briefly discuss the six trigonometric functions — sine, cosine, tangent, cotangent, secant, cosecant — and their inverses. In calculus their importance lies not in triangle relations but in their **properties as functions**, especially **periodicity**.
+Before further applications of integration, we briefly discuss the six trigonometric functions 鈥?sine, cosine, tangent, cotangent, secant, cosecant 鈥?and their inverses. In calculus their importance lies not in triangle relations but in their **properties as functions**, especially **periodicity**.
 
 A function $f$ is **periodic** with period $p \neq 0$ if $f(x+p) = f(x)$ for all $x$ in its domain. The sine and cosine functions are periodic with period $2\pi$, where $\pi$ is the area of a unit circular disk.
 
@@ -994,9 +994,9 @@ We take the following four properties as axioms; all other properties can be ded
 | **3. Cosine of a difference** | $\cos(y-x) = \cos y \cos x + \sin y \sin x$ for all $x, y$. |
 | **4. Fundamental inequalities** | For $0 < x < \frac{\pi}{2}$: $0 < \cos x < \dfrac{\sin x}{x} < \dfrac{1}{\cos x}$. |
 
-### 2.4.3 Theorem 2.3 — Deduced Properties
+### 2.4.3 Theorem 2.3 鈥?Deduced Properties
 
-If $\sin$ and $\cos$ satisfy properties 1–4, then they also satisfy:
+If $\sin$ and $\cos$ satisfy properties 1鈥?, then they also satisfy:
 
 | Property | Statement |
 |----------|-----------|
@@ -1037,7 +1037,7 @@ By the Pythagorean identity, $|\sin x| \le 1$ and $|\cos x| \le 1$ for all $x$.
 
 By Theorem 2.3(h), $\sin$ and $\cos$ are strictly monotonic on each quarter-period. Hence they are **piecewise monotonic** and therefore **integrable** on every finite interval.
 
-### 2.5.2 Theorem 2.4 — Approximation Inequalities
+### 2.5.2 Theorem 2.4 鈥?Approximation Inequalities
 
 If $0 < a \le \frac{\pi}{2}$ and $n \ge 1$, then:
 
@@ -1055,7 +1055,7 @@ $$
 
 Dividing by $2\sin\frac{x}{2}$ (for $x \neq 2m\pi$) gives closed forms for $\sum\cos kx$ and $\sum_{k=0}^{n-1}\cos kx$. Substituting $x = a/n$ and using the fundamental inequality $\cos\theta < \frac{\sin\theta}{\theta}$ yields (2.6).
 
-### 2.5.4 Theorem 2.5 — Basic Integrals
+### 2.5.4 Theorem 2.5 鈥?Basic Integrals
 
 For every real $a$:
 
@@ -1078,7 +1078,7 @@ $$
 \int_0^a \sin x\,dx = \int_{-\pi/2}^{a-\pi/2} \cos x\,dx = 1 - \cos a.
 $$
 
-### 2.5.6 Example 1 — General Interval Formulas
+### 2.5.6 Example 1 鈥?General Interval Formulas
 
 For any real $a, b$:
 
@@ -1087,7 +1087,7 @@ $$
 \int_a^b \sin x\,dx = -(\cos b - \cos a) = -\cos x\,\Big|_a^b.
 $$
 
-### 2.5.7 Example 2 — Scaling the Argument
+### 2.5.7 Example 2 鈥?Scaling the Argument
 
 For $c \neq 0$:
 
@@ -1096,7 +1096,7 @@ $$
 \int_a^b \sin cx\,dx = -\frac{1}{c}(\cos cb - \cos ca).
 $$
 
-### 2.5.8 Example 3 — Powers of Sine and Cosine
+### 2.5.8 Example 3 鈥?Powers of Sine and Cosine
 
 Using $\sin^2 x = \frac{1}{2}(1 - \cos 2x)$:
 
@@ -1179,7 +1179,7 @@ $$
 - The equation $r = f(\theta)$ is called a **polar equation**.
 - Some curves have simpler polar equations than Cartesian equations.
 
-### 2.7.4 Example — Figure-Eight Curve
+### 2.7.4 Example 鈥?Figure-Eight Curve
 
 - Cartesian equation: $(x^2 + y^2)^3 = y^2$
 - Conversion: using $x^2 + y^2 = r^2$ and $y = r \sin \theta$:
@@ -1191,7 +1191,7 @@ $$
   - Key points: $\theta = \pi/6, \pi/4, \pi/3$.
   - The rest follows from symmetry and periodicity of $|\sin \theta|$.
 
-### 2.7.5 Another Example — Circle
+### 2.7.5 Another Example 鈥?Circle
 
 - Cartesian: $x^2 + y^2 = 4$
 - Polar: $r = 2$ (much simpler)
@@ -1219,7 +1219,7 @@ $$
     a(S) = \frac{1}{2} \sum_{k=1}^{n} s_k^2 (\theta_k - \theta_{k-1}) = \frac{1}{2} \int_a^b s^2(\theta) \, d\theta
     $$
 
-### 2.8.3 Theorem 2.6 — Area Formula
+### 2.8.3 Theorem 2.6 鈥?Area Formula
 
 Let $R$ be the radial set of a nonnegative function $f$ over $[a, b]$ ($0 \le b - a \le 2\pi$), and assume $R$ is measurable. If $f^2$ is integrable on $[a, b]$, then:
 
@@ -1241,7 +1241,7 @@ $$
    2a(R) = \int_a^b f^2(\theta) \, d\theta
    $$
 
-### 2.8.4 Example — Area of the Figure-Eight Curve
+### 2.8.4 Example 鈥?Area of the Figure-Eight Curve
 
 - For $r = \sqrt{|\sin \theta|}$, we have $f^2(\theta) = |\sin \theta|$.
 - By symmetry, compute the first-quadrant portion and multiply by 4:
@@ -1285,7 +1285,7 @@ $$
   $$
   where $a_S(z)$ is the cross-sectional area function (constant $= a(B)$ on $[a, b]$).
 
-### 2.9.5 Theorem 2.7 — General Cavalieri Solid
+### 2.9.5 Theorem 2.7 鈥?General Cavalieri Solid
 
 Let $R$ be a Cavalieri solid with cross-sectional area function $a_R$ integrable on $[a, b]$ (zero outside). Then:
 
@@ -1301,7 +1301,7 @@ $$
 4. Hence $\int_a^b s \le v(R) \le \int_a^b t$ for all such $s, t$.
 5. Since $a_R$ is integrable, $v(R) = \int_a^b a_R(u) \, du$.
 
-### 2.9.6 Example — Solid of Revolution (Disk Method)
+### 2.9.6 Example 鈥?Solid of Revolution (Disk Method)
 
 - Let $f \ge 0$ and integrable on $[a, b]$. Revolve the ordinate set about the $x$-axis.
 - Cross section at $x$ is a circular disk of radius $f(x)$, area $\pi f^2(x)$.
@@ -1332,7 +1332,7 @@ $$
 - Force is a function of position: $f(x)$.
   - $f(x) > 0$: force acts in positive $x$-direction
   - $f(x) < 0$: force acts in opposite direction
-- **Constant force**: $W = c \cdot (b - a)$ (force × displacement).
+- **Constant force**: $W = c \cdot (b - a)$ (force 脳 displacement).
 
 **Units:**
 
@@ -1344,7 +1344,7 @@ $$
 
 - $1$ newton $= 10^5$ dynes; $1$ joule $= 10^7$ ergs.
 
-### 2.10.2 Example — Stone Thrown Upward
+### 2.10.2 Example 鈥?Stone Thrown Upward
 
 - A 3 lb stone thrown upward to 15 ft.
 - Gravity: $f(x) = -3$ lb (downward).
@@ -1372,7 +1372,7 @@ Let $W_a^b(f)$ denote work done by $f$ from $a$ to $b$.
   W_a^b(s) = \sum_{k=1}^n s_k(x_k - x_{k-1}) = \int_a^b s(x) \, dx
   $$
 
-### 2.10.5 Theorem 2.8 — Work as Integral
+### 2.10.5 Theorem 2.8 鈥?Work as Integral
 
 Suppose work satisfies properties 1, 2, and 3. Then for any integrable force function $f$:
 
@@ -1390,7 +1390,7 @@ $$
 
 > **Note:** Many authors simply define work as $\int_a^b f(x) \, dx$; the above provides motivation.
 
-### 2.10.6 Example — Work to Stretch a Spring (Hooke's Law)
+### 2.10.6 Example 鈥?Work to Stretch a Spring (Hooke's Law)
 
 - Force to stretch a spring: $f(x) = cx$ (Hooke's law), $c > 0$.
 - Work to stretch distance $a$:
@@ -1413,7 +1413,7 @@ $$
   (Equation 2.17)
 - If $a_k = f(x_k)$, the arithmetic mean of function values is $\frac{1}{n}\sum_{k=1}^n f(x_k)$.
 
-### 2.11.2 Definition — Average Value on an Interval
+### 2.11.2 Definition 鈥?Average Value on an Interval
 
 - If $f$ is integrable on $[a, b]$, the **average value** of $f$ on $[a, b]$ is:
   $$
@@ -1507,7 +1507,7 @@ $$
 ### 2.12.4 Geometric Interpretation
 
 - For $f \ge 0$: $A(x)$ equals the area under $f$ from $a$ to $x$.
-- For $f$ with both signs: $A(x)$ = (area above $x$-axis) − (area below $x$-axis).
+- For $f$ with both signs: $A(x)$ = (area above $x$-axis) 鈭?(area below $x$-axis).
 
 ### 2.12.5 Monotonicity of $A(x)$
 
@@ -1547,7 +1547,7 @@ $$
 
 - Where $f$ is constant, $A(x)$ is linear.
 - Example: $f(x) = [x]$ (greatest-integer function) $\implies A(x) = \int_0^x [t] \, dt$ is piecewise linear.
-- The indefinite integral "smooths out" jumps — $A(x)$ is always continuous (proved in next chapter).
+- The indefinite integral "smooths out" jumps 鈥?$A(x)$ is always continuous (proved in next chapter).
 
 
 # 3. Continuous Functions
@@ -1576,11 +1576,11 @@ $$
 
 - Early calculus dealt almost exclusively with continuous functions.
 - Discontinuous functions arose in physical problems (heat theory) in the late 18th century.
-- **J. B. J. Fourier** (1758–1830) on heat theory forced mathematicians to examine continuity more carefully.
-- A satisfactory definition was first formulated by **Augustin-Louis Cauchy** (1789–1857) in 1821, using the limit concept.
+- **J. B. J. Fourier** (1758鈥?830) on heat theory forced mathematicians to examine continuity more carefully.
+- A satisfactory definition was first formulated by **Augustin-Louis Cauchy** (1789鈥?857) in 1821, using the limit concept.
 
 > "Continuity: Quality or state of being continuous. Continuous: Having continuity of parts."
-> — Trying to learn continuity from a dictionary alone is like trying to learn Chinese with only a Chinese dictionary.
+> 鈥?Trying to learn continuity from a dictionary alone is like trying to learn Chinese with only a Chinese dictionary.
 
 
 ## 3.2 The Definition of the Limit of a Function
@@ -1640,24 +1640,24 @@ $$
 
 ### 3.2.6 Examples
 
-**Example 1 — Constant function:**
+**Example 1 鈥?Constant function:**
 - $f(x) = c$ for all $x$. Then $\displaystyle\lim_{x \to p} c = c$.
 
-**Example 2 — Identity function:**
+**Example 2 鈥?Identity function:**
 - $f(x) = x$. Then $\displaystyle\lim_{x \to p} x = p$.
 
-**Example 3 — Greatest-integer function:**
+**Example 3 鈥?Greatest-integer function:**
 - $f(x) = [x]$ at integer $p$:
   $$
   \lim_{x \to p^-} f(x) = p - 1, \qquad \lim_{x \to p^+} f(x) = p
   $$
   Left and right limits differ $\implies$ limit at $p$ does **not exist**.
 
-**Example 4 — $f(x) = 1/x^2$ at $x = 0$:**
+**Example 4 鈥?$f(x) = 1/x^2$ at $x = 0$:**
 - $f$ takes arbitrarily large values near 0.
 - No real number $A$ can be the limit (violates (3.3) for any neighborhood).
 
-**Example 5 — Removable discontinuity:**
+**Example 5 鈥?Removable discontinuity:**
 - $f(x) = 1$ for $x \neq 0$, $f(0) = 0$.
 - $\displaystyle\lim_{x \to 0} f(x) = 1$ (both one-sided limits equal 1).
 - Limit exists and equals 1, even though $f(0) = 0$.
@@ -1678,7 +1678,7 @@ $$
 
 ## 3.3 The Definition of Continuity of a Function
 
-### 3.3.1 Definition — Continuity at a Point
+### 3.3.1 Definition 鈥?Continuity at a Point
 
 A function $f$ is **continuous at $p$** if:
 
@@ -1701,24 +1701,24 @@ A function $f$ is **continuous at $p$** if:
 
 ### 3.3.2 Examples
 
-**Example 1 — Constant function:**
+**Example 1 鈥?Constant function:**
 - $f(x) = c$. Then $\lim_{x \to p} c = c = f(p)$ for every $p$.
 - **Constant functions are continuous everywhere.**
 
-**Example 2 — Identity function:**
+**Example 2 鈥?Identity function:**
 - $f(x) = x$. Then $\lim_{x \to p} x = p = f(p)$ for every $p$.
 - **The identity function is continuous everywhere.**
 
-**Example 3 — Greatest-integer function:**
+**Example 3 鈥?Greatest-integer function:**
 - $f(x) = [x]$ is continuous at every non-integer point.
 - At integers $p$: discontinuous (limit does not exist; jump discontinuity).
 - However, $f$ is **continuous from the right** at each integer (right-hand limit equals $f(p)$).
 
-**Example 4 — Infinite discontinuity:**
+**Example 4 鈥?Infinite discontinuity:**
 - $f(x) = 1/x^2$ for $x \neq 0$, $f(0) = 0$.
 - Discontinuous at 0; **infinite discontinuity** (function takes arbitrarily large values near 0).
 
-**Example 5 — Removable discontinuity:**
+**Example 5 鈥?Removable discontinuity:**
 - $f(x) = 1$ for $x \neq 0$, $f(0) = 0$.
 - Discontinuous at 0 because $f(0) \neq \lim_{x \to 0} f(x) = 1$.
 - Could be "removed" by redefining $f(0) = 1$.
@@ -1735,7 +1735,7 @@ A function $f$ is **continuous at $p$** if:
 
 ## 3.4 The Basic Limit Theorems. More Examples of Continuous Functions
 
-### 3.4.1 Theorem 3.1 — Basic Limit Rules
+### 3.4.1 Theorem 3.1 鈥?Basic Limit Rules
 
 Let $\lim_{x \to p} f(x) = A$ and $\lim_{x \to p} g(x) = B$. Then:
 
@@ -1749,7 +1749,7 @@ Let $\lim_{x \to p} f(x) = A$ and $\lim_{x \to p} g(x) = B$. Then:
 - Special case of (iii): $\lim_{x \to p} [c \cdot g(x)] = c \cdot B$ (constant multiple).
 - Proof is in Section 3.5.
 
-### 3.4.2 Theorem 3.2 — Continuity of Combinations
+### 3.4.2 Theorem 3.2 鈥?Continuity of Combinations
 
 Let $f$ and $g$ be continuous at $p$. Then:
 - $f + g$, $f - g$, $f \cdot g$ are continuous at $p$.
@@ -1757,20 +1757,20 @@ Let $f$ and $g$ be continuous at $p$. Then:
 
 **Proof:** Apply Theorem 3.1 with $A = f(p)$ and $B = g(p)$.
 
-### 3.4.3 Example 1 — Continuity of Polynomials
+### 3.4.3 Example 1 鈥?Continuity of Polynomials
 
 - $f(x) = x$ is continuous $\implies x^2 = x \cdot x$ is continuous (by product rule).
 - By induction: $x^n$ is continuous for all positive integers $n$.
 - $cx^n$ is continuous; sums of continuous functions are continuous.
 - **Every polynomial** $p(x) = \sum_{k=0}^n c_k x^k$ is continuous at all points.
 
-### 3.4.4 Example 2 — Continuity of Rational Functions
+### 3.4.4 Example 2 鈥?Continuity of Rational Functions
 
 - A **rational function** $r(x) = p(x)/q(x)$ (where $p, q$ are polynomials).
 - Continuous wherever $q(x) \neq 0$.
 - Example: $r(x) = 1/x$ is continuous everywhere except at $x = 0$.
 
-### 3.4.5 Theorem 3.3 — Squeezing Principle
+### 3.4.5 Theorem 3.3 鈥?Squeezing Principle
 
 Suppose $f(x) \le g(x) \le h(x)$ for all $x \neq p$ in some neighborhood $N(p)$, and:
 
@@ -1790,7 +1790,7 @@ $$
 3. For any neighborhood $N_1(0)$ of 0, since $H(x) \to 0$, there exists $N_2(p)$ such that $H(x) \in N_1(0)$ for $x \in N_2(p)$, $x \neq p$.
 4. Since $0 \le G \le H$, we have $G(x) \in N_1(0)$ as well. Hence $G(x) \to 0$.
 
-### 3.4.6 Theorem 3.4 — Continuity of Indefinite Integrals
+### 3.4.6 Theorem 3.4 鈥?Continuity of Indefinite Integrals
 
 Assume $f$ is integrable on $[a, x]$ for every $x \in [a, b]$, and let:
 
@@ -1806,12 +1806,12 @@ Then $A$ is **continuous at each point of $[a, b]$** (one-sided continuity at en
    $$-M|x - p| \le A(x) - A(p) \le M|x - p|$$
 3. Apply squeezing principle as $x \to p$: $A(x) \to A(p)$.
 
-### 3.4.7 Example 3 — Continuity of Sine and Cosine
+### 3.4.7 Example 3 鈥?Continuity of Sine and Cosine
 
 - $\sin x = \int_0^x \cos t \, dt$ $\implies$ sine is continuous everywhere (by Theorem 3.4).
 - $\cos x = 1 - \int_0^x \sin t \, dt$ $\implies$ cosine is continuous everywhere.
 
-### 3.4.8 Example 4 — The Limit $\lim_{x \to 0} \frac{\sin x}{x} = 1$
+### 3.4.8 Example 4 鈥?The Limit $\lim_{x \to 0} \frac{\sin x}{x} = 1$
 
 From Section 2.5, for $0 < |x| < \pi/2$:
 
@@ -1824,7 +1824,7 @@ $$
 - (Equation 3.6)
 - Defining $f(x) = (\sin x)/x$ for $x \neq 0$ and $f(0) = 1$ makes $f$ continuous everywhere.
 
-### 3.4.9 Example 5 — Continuity of $x^r$ for Rational $r > 0$
+### 3.4.9 Example 5 鈥?Continuity of $x^r$ for Rational $r > 0$
 
 - From Theorem 2.2: $\int_0^x t^{1/n} \, dt = \frac{x^{1+1/n}}{1 + 1/n}$ for $x > 0$, $n \ge 1$.
 - By Theorems 3.4 and 3.1: $x^{1+1/n}$ is continuous for $x > 0$.
@@ -1842,7 +1842,7 @@ Two key properties of absolute values:
 1. **Triangle inequality**: $|a + b| \le |a| + |b|$
 2. **Product rule**: $|ab| = |a|\,|b|$
 
-### 3.5.2 Proof of (i) and (ii) — Sum and Difference
+### 3.5.2 Proof of (i) and (ii) 鈥?Sum and Difference
 
 **Reduction to zero limits:**
 - Since $\lim_{x \to p} f(x) = A \iff \lim_{x \to p} [f(x) - A] = 0$, it suffices to prove (i) when $A = B = 0$.
@@ -1860,7 +1860,7 @@ Two key properties of absolute values:
 
 **Proof of (ii):** Entirely similar, using $|f(x) - g(x)| \le |f(x)| + |g(x)|$.
 
-### 3.5.3 Proof of (iii) — Product
+### 3.5.3 Proof of (iii) 鈥?Product
 
 **Reduction to special case:**
 - Write: $f(x)g(x) - AB = f(x)[g(x) - B] + B[f(x) - A]$.
@@ -1879,7 +1879,7 @@ Two key properties of absolute values:
   $$|f(x)g(x)| < (1 + |A|) \cdot \frac{\epsilon}{1 + |A|} = \epsilon$$
 - (Equation 3.10)
 
-### 3.5.4 Proof of (iv) — Quotient
+### 3.5.4 Proof of (iv) 鈥?Quotient
 
 **Reduction:**
 - Write $\frac{f(x)}{g(x)} = \frac{f(x)}{B} \cdot \frac{B}{g(x)}$.
@@ -1931,7 +1931,7 @@ Two key properties of absolute values:
     - $v \circ u$: $g(x) = (\sin x)^2 = \sin^2 x$
   - These are different functions.
 
-### 3.6.3 Theorem 3.5 — Continuity of Composites
+### 3.6.3 Theorem 3.5 鈥?Continuity of Composites
 
 If $v$ is continuous at $p$ and $u$ is continuous at $q = v(p)$, then $f = u \circ v$ is continuous at $p$.
 
@@ -1955,7 +1955,7 @@ If $v$ is continuous at $p$ and $u$ is continuous at $q = v(p)$, then $f = u \ci
 ### 3.6.4 Examples
 
 **Example 1:**
-- $f(x) = \sin(x^2)$ — composition of two everywhere-continuous functions.
+- $f(x) = \sin(x^2)$ 鈥?composition of two everywhere-continuous functions.
 - **$f$ is continuous everywhere.**
 
 **Example 2:**
@@ -1969,10 +1969,10 @@ If $v$ is continuous at $p$ and $u$ is continuous at $q = v(p)$, then $f = u \ci
 
 - This section discusses special properties of continuous functions that appear geometrically obvious but require rigorous proof.
 - Most proofs rely on the **least-upper-bound axiom** for the real number system.
-- **Bernard Bolzano** (1781–1848), a Catholic priest, was among the first to recognize that "obvious" statements about continuous functions need proof.
+- **Bernard Bolzano** (1781鈥?848), a Catholic priest, was among the first to recognize that "obvious" statements about continuous functions need proof.
 - His work was published posthumously in 1850 in *Paradoxien des Unendlichen*; this theorem first appeared in 1817.
 
-### 3.7.2 Theorem 3.6 — Bolzano's Theorem
+### 3.7.2 Theorem 3.6 鈥?Bolzano's Theorem
 
 Let $f$ be continuous at each point of a closed interval $[a, b]$ and assume $f(a)$ and $f(b)$ have **opposite signs**. Then there exists at least one $c \in (a, b)$ such that:
 
@@ -1982,7 +1982,7 @@ $$
 
 - **Geometric meaning**: A continuous curve crossing from below to above the $x$-axis must intersect the axis somewhere in between.
 
-### 3.7.3 Theorem 3.7 — Sign-Preserving Property
+### 3.7.3 Theorem 3.7 鈥?Sign-Preserving Property
 
 Let $f$ be continuous at $c$ and $f(c) \neq 0$. Then there exists an interval $(c - \delta, c + \delta)$ in which $f$ has the **same sign** as $f(c)$.
 
@@ -2029,7 +2029,7 @@ Let $f$ be continuous at $c$ and $f(c) \neq 0$. Then there exists an interval $(
 
 ## 3.8 The Intermediate-Value Theorem for Continuous Functions
 
-### 3.8.1 Theorem 3.8 — Intermediate-Value Theorem
+### 3.8.1 Theorem 3.8 鈥?Intermediate-Value Theorem
 
 Let $f$ be continuous at each point of a closed interval $[a, b]$. Choose $x_1 < x_2$ in $[a, b]$ with $f(x_1) \neq f(x_2)$. Then $f$ takes on **every value between $f(x_1)$ and $f(x_2)$** somewhere in $(x_1, x_2)$.
 
@@ -2042,7 +2042,7 @@ Let $f$ be continuous at each point of a closed interval $[a, b]$. Choose $x_1 <
 
 > **Note:** In both Bolzano's theorem and the intermediate-value theorem, $f$ must be continuous at **every point** of $[a, b]$, including the endpoints. Figure 3.9 shows a function continuous everywhere in $[a, b]$ except at $a$; although $f(a) < 0$ and $f(b) > 0$, there is no $x$ with $f(x) = 0$.
 
-### 3.8.2 Theorem 3.9 — Existence of $n$th Roots
+### 3.8.2 Theorem 3.9 鈥?Existence of $n$th Roots
 
 If $n$ is a positive integer and $a > 0$, then there is **exactly one** positive $b$ such that:
 
@@ -2094,7 +2094,7 @@ $$
 - The inverse $g$ is formed by **interchanging** $x$ and $y$: $(y, x) \in g \iff (x, y) \in f$.
 - If $f$ is strictly monotonic, no two pairs have the same second element, so $g$ is indeed a function.
 
-### 3.9.5 Example — The $n$th-Root Function
+### 3.9.5 Example 鈥?The $n$th-Root Function
 
 - Let $f(x) = x^n$ for $x \ge 0$ ($n$ a positive integer).
 - $f$ is strictly increasing on every interval $[a, b]$ with $0 \le a \le b$.
@@ -2111,7 +2111,7 @@ $$
 - The graphs of $f$ and its inverse $g$ are related by **reflection through the line $y = x$**.
 - A point $(u, v)$ lies on the graph of $f$ iff $(v, u)$ lies on the graph of $g$.
 
-### 3.10.2 Theorem 3.10 — Monotonicity and Continuity of Inverses
+### 3.10.2 Theorem 3.10 鈥?Monotonicity and Continuity of Inverses
 
 Assume $f$ is strictly increasing and continuous on $[a, b]$. Let $c = f(a)$, $d = f(b)$, and let $g$ be the inverse of $f$ (defined on $[c, d]$). Then:
 
@@ -2140,7 +2140,7 @@ Assume $f$ is strictly increasing and continuous on $[a, b]$. Let $c = f(a)$, $d
 
 > **Corresponding theorem for decreasing functions**: The inverse of a strictly decreasing continuous function is strictly decreasing and continuous. (Apply Theorem 3.10 to $-f$.)
 
-### 3.10.3 Example — Continuity of the $n$th-Root Function
+### 3.10.3 Example 鈥?Continuity of the $n$th-Root Function
 
 - The $n$th-root function $g(y) = y^{1/n}$ ($y \ge 0$) is the inverse of $f(x) = x^n$.
 - Since $f$ is strictly increasing and continuous, by Theorem 3.10:
@@ -2201,7 +2201,7 @@ Assume $f$ is strictly increasing and continuous on $[a, b]$. Let $c = f(a)$, $d
 
 - The second example shows that discontinuity can prevent the existence of an absolute maximum.
 
-### 3.12.2 Theorem 3.11 — Boundedness Theorem
+### 3.12.2 Theorem 3.11 鈥?Boundedness Theorem
 
 Let $f$ be continuous on a closed interval $[a, b]$. Then $f$ is **bounded** on $[a, b]$; i.e., $\exists C \ge 0$ such that $|f(x)| \le C$ for all $x \in [a, b]$.
 
@@ -2212,7 +2212,7 @@ Let $f$ be continuous on a closed interval $[a, b]$. Then $f$ is **bounded** on 
 4. Let $A = \{a, a_1, a_2, \dots\}$ and $\alpha = \sup A$. Then $\alpha \in [a, b]$.
 5. By continuity at $\alpha$: $\exists \delta > 0$ such that $|f(x) - f(\alpha)| < 1$ for $x \in (\alpha - \delta, \alpha + \delta)$.
    (Equation 3.25)
-6. Hence $|f(x)| < 1 + |f(\alpha)|$ in this interval — $f$ is bounded here.
+6. Hence $|f(x)| < 1 + |f(\alpha)|$ in this interval 鈥?$f$ is bounded here.
 7. But $[a_n, b_n] \subset (\alpha - \delta, \alpha + \delta)$ for large $n$ (since $(b - a)/2^n < \delta$).
 8. Contradiction: $f$ is bounded on $[a_n, b_n]$ yet was chosen to be unbounded there.
 
@@ -2224,7 +2224,7 @@ Let $f$ be continuous on a closed interval $[a, b]$. Then $f$ is **bounded** on 
   $$
 - For any bounded function: $\inf f \le f(x) \le \sup f$ for all $x \in [a, b]$.
 
-### 3.12.4 Theorem 3.12 — Extreme-Value Theorem
+### 3.12.4 Theorem 3.12 鈥?Extreme-Value Theorem
 
 Assume $f$ is continuous on $[a, b]$. Then there exist points $c, d \in [a, b]$ such that:
 
@@ -2243,7 +2243,7 @@ $$
 
 > **Note:** For the infimum, apply the same argument to $-f$.
 
-### 3.12.5 Consequence — Range of a Continuous Function
+### 3.12.5 Consequence 鈥?Range of a Continuous Function
 
 - If $f$ is continuous on $[a, b]$, then:
   - $\sup f$ is the **absolute maximum**.
@@ -2253,7 +2253,7 @@ $$
 
 ## 3.13 The Small-Span Theorem for Continuous Functions (Uniform Continuity)
 
-### 3.13.1 Definition — Span of a Function
+### 3.13.1 Definition 鈥?Span of a Function
 
 - Let $M(f)$ and $m(f)$ denote the maximum and minimum values of $f$ on $[a, b]$.
 - The **span** of $f$ on $[a, b]$:
@@ -2263,7 +2263,7 @@ $$
 - Some authors use **oscillation**; older texts use **saltus** (Latin for "leap").
 - The span of $f$ on any subinterval cannot exceed the span on $[a, b]$.
 
-### 3.13.2 Theorem 3.13 — Small-Span Theorem
+### 3.13.2 Theorem 3.13 鈥?Small-Span Theorem
 
 Let $f$ be continuous on a closed interval $[a, b]$. Then for every $\epsilon > 0$, there is a **partition** of $[a, b]$ into a finite number of subintervals such that the span of $f$ in **every** subinterval is less than $\epsilon$.
 
@@ -2282,7 +2282,7 @@ Let $f$ be continuous on a closed interval $[a, b]$. Then for every $\epsilon > 
 
 ## 3.14 The Integrability Theorem for Continuous Functions
 
-### 3.14.1 Theorem 3.14 — Integrability of Continuous Functions
+### 3.14.1 Theorem 3.14 鈥?Integrability of Continuous Functions
 
 If $f$ is continuous at each point of a closed interval $[a, b]$, then $f$ is **integrable** on $[a, b]$.
 
@@ -2336,7 +2336,7 @@ If $f$ is continuous at each point of a closed interval $[a, b]$, then $f$ is **
 
 ## 3.15 Mean-Value Theorems for Integrals of Continuous Functions
 
-### 3.15.1 Theorem 3.15 — Mean-Value Theorem for Integrals
+### 3.15.1 Theorem 3.15 鈥?Mean-Value Theorem for Integrals
 
 If $f$ is continuous on $[a, b]$, then for some $c \in [a, b]$:
 
@@ -2352,7 +2352,7 @@ $$
 5. By the intermediate-value theorem, $A(f) = f(c)$ for some $c \in [a, b]$.
 6. Hence $\int_a^b f(x) \, dx = f(c)(b - a)$.
 
-### 3.15.2 Theorem 3.16 — Weighted Mean-Value Theorem
+### 3.15.2 Theorem 3.16 鈥?Weighted Mean-Value Theorem
 
 Assume $f$ and $g$ are continuous on $[a, b]$. If $g$ never changes sign on $[a, b]$, then for some $c \in [a, b]$:
 
@@ -2398,7 +2398,7 @@ $$
   $$
 - $f(0)=0$ and $f(9)=0$: the projectile returns to earth after $9$ seconds.
 
-### 4.2.2 Average Velocity — The Difference Quotient
+### 4.2.2 Average Velocity 鈥?The Difference Quotient
 
 - Average velocity over $[t, t+h]$:
   $$
@@ -2588,7 +2588,7 @@ $$
 
 ## 4.5 The Algebra of Derivatives
 
-### 4.5.1 Theorem 4.1 — Basic Rules
+### 4.5.1 Theorem 4.1 鈥?Basic Rules
 
 - Let $f$ and $g$ be differentiable on a common interval.
 - Then $f\pm g$, $f\cdot g$, and $f/g$ (where $g\neq 0$) are also differentiable, and:
@@ -2694,7 +2694,7 @@ $$
   Y - f(x) = f'(x)(X - x),
   $$
   where $(X, Y)$ denotes a variable point on the line.
-- This is the **point–slope form** using the derivative as the slope.
+- This is the **point鈥搒lope form** using the derivative as the slope.
 
 ### 4.6.4 Parallel and Perpendicular Lines
 
@@ -2834,7 +2834,7 @@ $$
 - Every absolute maximum is, in particular, a relative maximum.
 - An **extremum** (or extreme value) is either a relative maximum or a relative minimum.
 
-### 4.10.2 Theorem 4.3 — Vanishing of the Derivative at an Interior Extremum
+### 4.10.2 Theorem 4.3 鈥?Vanishing of the Derivative at an Interior Extremum
 
 - Let $f$ be defined on an open interval $I$ and have a relative maximum or minimum at an interior point $c \in I$.
 - **If $f'(c)$ exists, then $f'(c)=0$**.
@@ -3019,7 +3019,7 @@ $$
 ### 4.15.2 Consequences
 
 - Among all rectangles of a given perimeter, the **square** has the largest area (Principle 1).
-- **Arithmetic–geometric mean inequality**: For $a,b\gt0$,
+- **Arithmetic鈥揼eometric mean inequality**: For $a,b\gt0$,
   $$
   \sqrt{ab}\le\frac{a+b}{2},
   $$
@@ -3254,11 +3254,10 @@ It remains to show that the second term tends to $0$ as $h\to 0$.
    \Bigl|\frac{1}{h}\int_{x}^{x+h}[f(t)-f(x)]\,dt\Bigr|<\varepsilon.
    $$
 
-Hence the second term in (5.1) vanishes as $h\to 0$, and $A'(x)=f(x)$. ∎
-
+Hence the second term in (5.1) vanishes as $h\to 0$, and $A'(x)=f(x)$. 鈭?
 ## 5.2 The Zero-Derivative Theorem
 
-- If $f$ is constant on an open interval $(a,b)$, then $f'(x)=0$ everywhere on $(a,b)$ — an immediate consequence of the definition of the derivative.
+- If $f$ is constant on an open interval $(a,b)$, then $f'(x)=0$ everywhere on $(a,b)$ 鈥?an immediate consequence of the definition of the derivative.
 - The converse is stated separately as Theorem 5.2:
 
 **Theorem 5.2 (Zero-Derivative Theorem).**  
@@ -3305,8 +3304,7 @@ $$
 $$
 A(x)-P(x)=k.
 $$
-Put $x=c$: $A(c)=0$, so $k=-P(c)$. Hence $A(x)-P(x)=-P(c)$, which gives (5.2). ∎
-
+Put $x=c$: $A(c)=0$, so $k=-P(c)$. Hence $A(x)-P(x)=-P(c)$, which gives (5.2). 鈭?
 - In words: *knowing one primitive $P$ reduces integral evaluation to simple subtraction.*
 
 ### 5.3.3 Integration of Rational Powers
@@ -3395,7 +3393,7 @@ where $P'(x)=f(x)$ and $C$ is an arbitrary constant. Equation (5.5) is merely an
 
 ### 5.5.2 Relation to Definite Integration
 
-Despite similar appearance, $\int f(x)\,dx$ and $\int_{a}^{b}f(x)\,dx$ are conceptually distinct — they originate from differentiation and integration respectively. The fundamental theorems connect them:
+Despite similar appearance, $\int f(x)\,dx$ and $\int_{a}^{b}f(x)\,dx$ are conceptually distinct 鈥?they originate from differentiation and integration respectively. The fundamental theorems connect them:
 
 - **First FTC** (Equation 5.15):
   $$
@@ -3448,7 +3446,7 @@ $$
 
 > **Note**: $dx$ and $du$ are treated as purely formal devices; each substitution step is really an application of the chain rule.
 
-### 5.6.2 Examples — Indefinite Integrals
+### 5.6.2 Examples 鈥?Indefinite Integrals
 
 **Example 1.** $\displaystyle\int x^{3}\cos x^{4}\,dx$.
 - Let $u=x^{4}$, $du=4x^{3}\,dx$.
@@ -3517,8 +3515,7 @@ $$
 $$
 \int_{c}^{x}f[g(t)]g'(t)\,dt=Q(x)-Q(c)=R(x)-R(c).
 $$
-Thus the two integrals in (5.7) are equal. ∎
-
+Thus the two integrals in (5.7) are equal. 鈭?
 ## 5.7 Integration by Parts
 
 ### 5.7.1 The Formula
@@ -3604,8 +3601,7 @@ $$
 \int_{a}^{b}f(x)g(x)\,dx=f(b)G(b)-G(c)\bigl[f(b)-f(a)\bigr]=f(a)G(c)+f(b)\bigl[G(b)-G(c)\bigr],
 $$
 
-which is (5.10) since $G(c)=\int_{a}^{c}g(x)\,dx$ and $G(b)-G(c)=\int_{c}^{b}g(x)\,dx$. ∎
-
+which is (5.10) since $G(c)=\int_{a}^{c}g(x)\,dx$ and $G(b)-G(c)=\int_{c}^{b}g(x)\,dx$. 鈭?
 # 6. The Logarithm, the Exponential, and the Inverse Trigonometric Functions
 
 ## 6.1 Introduction
@@ -3751,8 +3747,7 @@ In the last integral set $u=t/a$, $du=dt/a$:
 $$
 \int_{a}^{ab}\frac{dt}{t}=\int_{1}^{b}\frac{du}{u}=L(b).
 $$
-Hence $L(ab)=L(a)+L(b)$. ∎
-
+Hence $L(ab)=L(a)+L(b)$. 鈭?
 ### 6.3.3 Graph of the Natural Logarithm
 
 - $L(1)=0$; the graph passes through $(1,0)$.
@@ -3871,7 +3866,7 @@ $$
 
 > **Caution**: (6.11) is valid only when $u$ (or $f(x)$) is **positive**, because the logarithm is not defined for negative numbers.
 
-### 6.7.2 Extension to Nonzero Values — The Function $L_{0}$
+### 6.7.2 Extension to Nonzero Values 鈥?The Function $L_{0}$
 
 To accommodate functions that may be negative, define:
 
@@ -4034,8 +4029,7 @@ $$
   0<(-1)^{n+1}E_{n}(x)\le\frac{|x|^{n+1}}{n+1}. \tag{6.19}
   $$
 
-**Proof sketch.** For $0<x<1$, use $1-x\le1-u\le1$ on $[0,x]$ to bound the integrand $u^{n}/(1-u)$. For $x<0$, set $t=-x$ and observe the sign alternation. ∎
-
+**Proof sketch.** For $0<x<1$, use $1-x\le1-u\le1$ on $[0,x]$ to bound the integrand $u^{n}/(1-u)$. For $x<0$, set $t=-x$ and observe the sign alternation. 鈭?
 ### 6.9.4 A Formula for Computation
 
 Subtracting (6.17) at $-x$ from (6.17) at $x$ (valid for $-1<x<1$) eliminates even powers:
@@ -4096,8 +4090,7 @@ $$
   $$
   \frac{E(h)-1}{h}=\frac{k}{L(k+1)}=\frac{1}{[L(k+1)-L(1)]/k}\to\frac{1}{L'(1)}=1
   $$
-  as $h\to0$ (so $k\to0$). Thus $E'(x)=E(x)$. ∎
-
+  as $h\to0$ (so $k\to0$). Thus $E'(x)=E(x)$. 鈭?
 ## 6.11 Exponentials Expressed as Powers of $e$
 
 The functional equation $E(a+b)=E(a)E(b)$ implies:
@@ -4173,7 +4166,7 @@ $$
 
 The factor $\log a$ equals $1$ when $a=e$.
 
-### 6.14.2 Integration — Basic Formulas
+### 6.14.2 Integration 鈥?Basic Formulas
 
 From the derivatives above:
 
@@ -4273,8 +4266,7 @@ $$
 \frac{g(y+k)-g(y)}{k}=\frac{h}{f(x+h)-f(x)}=\frac{1}{[f(x+h)-f(x)]/h}\to\frac{1}{f'(x)}
 $$
 
-as $k\to0$. ∎
-
+as $k\to0$. 鈭?
 ## 6.17 Inverses of the Trigonometric Functions
 
 ### 6.17.1 Arc Sine
@@ -4362,7 +4354,7 @@ Every rational function can be integrated in terms of polynomials, logarithms, a
   $$
   where $x^{2}+bx+c$ is **irreducible** ($b^{2}-4c<0$).
 
-### 6.18.2 Case 1 — Distinct Linear Factors
+### 6.18.2 Case 1 鈥?Distinct Linear Factors
 
 If $g(x)=(x-x_{1})(x-x_{2})\cdots(x-x_{n})$, then:
 
@@ -4375,7 +4367,7 @@ $$
 - $A_{1}=\tfrac12$, $A_{2}=2$, $A_{3}=-\tfrac12$ (cover-up method).
 - Result: $\tfrac12\log|x|+2\log|x-1|-\tfrac12\log|x+2|+C$.
 
-### 6.18.3 Case 2 — Repeated Linear Factors
+### 6.18.3 Case 2 鈥?Repeated Linear Factors
 
 If $(x+a)^{p}$ occurs, include $p$ terms:
 
@@ -4388,7 +4380,7 @@ $$
 - $A_{1}=\tfrac32$, $A_{3}=-1$ (cover-up); $A_{2}=-\tfrac12$ (substitute $x=0$ or differentiate).
 - Result: $\tfrac32\log|x-1|-\tfrac12\log|x+1|+\dfrac{1}{x+1}+C$.
 
-### 6.18.4 Case 3 — Distinct Irreducible Quadratics
+### 6.18.4 Case 3 鈥?Distinct Irreducible Quadratics
 
 **Example.** $\displaystyle\int\frac{3x^{2}+2x-2}{x^{3}-1}\,dx$.
 - $x^{3}-1=(x-1)(x^{2}+x+1)$.
@@ -4396,7 +4388,7 @@ $$
 - Second term: split into $\dfrac{2x+1}{x^{2}+x+1}$ (log) and $\dfrac{2}{(x+\tfrac12)^{2}+\tfrac34}$ (arctan).
 - Result: $\log|x-1|+\log(x^{2}+x+1)+\tfrac{4}{\sqrt3}\arctan\!\bigl(\tfrac{2x+1}{\sqrt3}\bigr)+C$.
 
-### 6.18.5 Case 4 — Repeated Irreducible Quadratics
+### 6.18.5 Case 4 鈥?Repeated Irreducible Quadratics
 
 If $(x^{2}+bx+c)^{m}$ occurs, include $m$ terms with linear numerators:
 
@@ -4571,8 +4563,7 @@ $$
 | **(b) Differentiation** | $(T_{n}f)'=T_{n-1}(f')$ |
 | **(c) Integration** | If $g(x)=\int_{a}^{x}f(t)\,dt$, then $T_{n+1}g(x)=\int_{a}^{x}T_{n}f(t)\,dt$ |
 
-**Proof idea.** In each case both sides are polynomials of the same degree that agree in value and in derivatives up to the appropriate order at $a$; uniqueness (Theorem 7.1) forces equality. ∎
-
+**Proof idea.** In each case both sides are polynomials of the same degree that agree in value and in derivatives up to the appropriate order at $a$; uniqueness (Theorem 7.1) forces equality. 鈭?
 ### 7.3.2 Substitution Property
 
 **Theorem 7.3.** Let $g(x)=f(cx)$ with $c$ constant. Then:
@@ -4583,8 +4574,7 @@ $$
 
 In particular, when $a=0$: $T_{n}g(x)=T_{n}f(cx)$.
 
-**Proof.** By the chain rule $g^{(k)}(x)=c^{k}f^{(k)}(cx)$; substitute into the Taylor formula. ∎
-
+**Proof.** By the chain rule $g^{(k)}(x)=c^{k}f^{(k)}(cx)$; substitute into the Taylor formula. 鈭?
 **Examples.**
 - Replacing $x$ by $-x$ in $T_{n}(e^{x})$:
   $$
@@ -4606,8 +4596,7 @@ $$
 
 where $g(x)\to0$ as $x\to0$, then $P_{n}=T_{n}f$ (the Taylor polynomial of $f$ at $0$).
 
-**Proof.** Set $h(x)=f(x)-P_{n}(x)=x^{n}g(x)$. Repeated differentiation shows $h$ and its first $n$ derivatives vanish at $0$; hence $f$ agrees with $P_{n}$ through order $n$. ∎
-
+**Proof.** Set $h(x)=f(x)-P_{n}(x)=x^{n}g(x)$. Repeated differentiation shows $h$ and its first $n$ derivatives vanish at $0$; hence $f$ agrees with $P_{n}$ through order $n$. 鈭?
 **Examples.**
 - From $\dfrac{1}{1-x}=1+x+\dots+x^{n}+\dfrac{x^{n+1}}{1-x}$:
   $$
@@ -4668,8 +4657,7 @@ $$
 E_{n+1}(x)=\frac{1}{n!}\int_{a}^{x}(x-t)^{n}\bigl[f^{(n+1)}(t)-f^{(n+1)}(a)\bigr]\,dt.
 $$
 
-Integration by parts with $u=f^{(n+1)}(t)-f^{(n+1)}(a)$ and $v=-\dfrac{(x-t)^{n+1}}{n+1}$ yields (7.9) with $n$ replaced by $n+1$. ∎
-
+Integration by parts with $u=f^{(n+1)}(t)-f^{(n+1)}(a)$ and $v=-\dfrac{(x-t)^{n+1}}{n+1}$ yields (7.9) with $n$ replaced by $n+1$. 鈭?
 ## 7.5 Estimates for the Error in Taylor's Formula
 
 ### 7.5.1 Error Bounds
@@ -4685,9 +4673,8 @@ Integration by parts with $u=f^{(n+1)}(t)-f^{(n+1)}(a)$ and $v=-\dfrac{(x-t)^{n+
   m\frac{(a-x)^{n+1}}{(n+1)!}\le(-1)^{n+1}E_{n}(x)\le M\frac{(a-x)^{n+1}}{(n+1)!}.
   $$
 
-**Proof idea.** Bound the integrand in the integral form of $E_{n}(x)$ and integrate. ∎
-
-### 7.5.2 Example — Approximating $e$
+**Proof idea.** Bound the integrand in the integral form of $E_{n}(x)$ and integrate. 鈭?
+### 7.5.2 Example 鈥?Approximating $e$
 
 For $f(x)=e^{x}$ at $a=0$ with $x=1$:
 
@@ -4697,7 +4684,7 @@ $$
 
 Taking $n=12$ gives $2.718281826<e<2.718281833$, so $e\approx2.7182818$ (correct to 7 decimals).
 
-### 7.5.3 Example — Irrationality of $e$
+### 7.5.3 Example 鈥?Irrationality of $e$
 
 Multiplying the error bounds by $n!$:
 
@@ -4705,9 +4692,9 @@ $$
 \frac{1}{n+1}\le n!\,e-\sum_{k=0}^{n}\frac{n!}{k!}<\frac{3}{n+1}\le\frac34\qquad(n\ge3).
 $$
 
-The sum is an integer. If $e$ were rational, $n!e$ would be an integer for large $n$, but the inequalities force the difference of two integers to be a positive number $\le\tfrac34$ — impossible. Hence $e$ is irrational.
+The sum is an integer. If $e$ were rational, $n!e$ would be an integer for large $n$, but the inequalities force the difference of two integers to be a positive number $\le\tfrac34$ 鈥?impossible. Hence $e$ is irrational.
 
-### 7.5.4 Example — Approximating an Integral
+### 7.5.4 Example 鈥?Approximating an Integral
 
 For $\displaystyle\int_{0}^{1/2}e^{-t^{2}}\,dt$, use the Taylor polynomial of $e^{x}$ with $n=4$ and replace $x$ by $-t^{2}$:
 
@@ -4904,7 +4891,7 @@ Dividing by $x$ gives $a+o(1)\to a$.
 > $$
 > These relations are sometimes taken as starting points for the theory of the exponential function.
 
-## 7.9 L'Hôpital's Rule for the Indeterminate Form $0/0$
+## 7.9 L'H么pital's Rule for the Indeterminate Form $0/0$
 
 ### 7.9.1 Motivation
 
@@ -4916,7 +4903,7 @@ $$
 
 provided $f'(a), g'(a)$ exist and $g'(a)\neq 0$.
 
-### 7.9.2 Theorem 7.9 — L'Hôpital's Rule ($0/0$)
+### 7.9.2 Theorem 7.9 鈥?L'H么pital's Rule ($0/0$)
 
 Assume $f$ and $g$ have derivatives $f'(x), g'(x)$ at each point of an open interval $(a, b)$, and:
 
@@ -4972,7 +4959,7 @@ $$
 
 As $x\to a+$, we have $c\to a+$, so the right side tends to $L$; hence $f(x)/g(x)\to L$.
 
-## 7.10 The Symbols $+\infty$ and $-\infty$; Extension of L'Hôpital's Rule
+## 7.10 The Symbols $+\infty$ and $-\infty$; Extension of L'H么pital's Rule
 
 ### 7.10.1 Limits at Infinity
 
@@ -4994,7 +4981,7 @@ $$
 
 All usual limit rules (sum, product, quotient, composition) extend to $x\to\pm\infty$.
 
-### 7.10.2 Theorem 7.10 — L'Hôpital's Rule at Infinity ($0/0$)
+### 7.10.2 Theorem 7.10 鈥?L'H么pital's Rule at Infinity ($0/0$)
 
 Assume $f$ and $g$ have derivatives for all $x>M$ (some $M>0$), and:
 
@@ -5058,7 +5045,7 @@ $$
 
 ## 7.12 The Behavior of $\log x$ and $e^{x}$ for Large $x$
 
-### 7.12.1 Theorem 7.11 — Growth Hierarchy
+### 7.12.1 Theorem 7.11 鈥?Growth Hierarchy
 
 If $a>0$ and $b>0$:
 
@@ -5121,7 +5108,7 @@ A **differential equation** is an equation involving at least one derivative of 
 | **Ordinary** (ODE) | Function of **one** variable | $f'(x)=f(x)$ |
 | **Partial** (PDE) | Function of **two or more** variables | $\dfrac{\partial^{2}f}{\partial x^{2}}+\dfrac{\partial^{2}f}{\partial y^{2}}=0$ (Laplace's equation) |
 
-### 8.1.2 First Example — The Exponential ODE
+### 8.1.2 First Example 鈥?The Exponential ODE
 
 $$
 f'(x)=f(x).
@@ -5130,7 +5117,7 @@ $$
 - Particular solution: $f(x)=e^{x}$.
 - **General solution:** $f(x)=Ce^{x}$ for arbitrary constant $C$.
 
-### 8.1.3 A Partial-Differential Equation — Laplace's Equation
+### 8.1.3 A Partial-Differential Equation 鈥?Laplace's Equation
 
 $$
 \frac{\partial^{2}f}{\partial x^{2}}+\frac{\partial^{2}f}{\partial y^{2}}=0.
@@ -5147,8 +5134,8 @@ This appears in electromagnetism, fluid mechanics, and elsewhere. Sample solutio
 - Originated in the 17th century from problems in **geometry and mechanics**.
 - Early contributors: Newton, Leibniz, the Bernoullis.
 - Two main strands of study:
-  1. **Special tricks** (exact equations, substitutions, etc.) — discussed later in this chapter.
-  2. **Linear differential equations** — the most widely occurring type; a fuller treatment appears in Volume II.
+  1. **Special tricks** (exact equations, substitutions, etc.) 鈥?discussed later in this chapter.
+  2. **Linear differential equations** 鈥?the most widely occurring type; a fuller treatment appears in Volume II.
 
 ## 8.2 Terminology and Notation
 
@@ -5180,7 +5167,7 @@ $$
 Y'(x)=f\bigl[x,Y(x)\bigr]\quad\text{for all }x\in I.
 $$
 
-### 8.2.4 The Simplest Case — $y'=Q(x)$
+### 8.2.4 The Simplest Case 鈥?$y'=Q(x)$
 
 When $f(x,y)$ is independent of $y$:
 
@@ -5198,7 +5185,7 @@ where $C$ is an arbitrary constant of integration. Even if the integral cannot b
 
 ## 8.3 A First-Order Differential Equation for the Exponential Function
 
-### 8.3.1 Theorem 8.1 — Existence and Uniqueness
+### 8.3.1 Theorem 8.1 鈥?Existence and Uniqueness
 
 **Statement.** If $C$ is a given real number, there is **one and only one** function $f$ satisfying:
 
@@ -5557,7 +5544,7 @@ Then $f(x)=g(x)$ for all $x$.
 
 Set $h=f-g$. Then $h$ satisfies $y''+by=0$ with $h(0)=h'(0)=0$.
 
-**Step 1 — Derivatives at $0$.** By repeated differentiation:
+**Step 1 鈥?Derivatives at $0$.** By repeated differentiation:
 
 $$
 y^{(2n)}=(-1)^{n}b^{n}y,\qquad y^{(2n-1)}=(-1)^{n-1}b^{n-1}y'.
@@ -5565,9 +5552,9 @@ $$
 
 Since $h(0)=h'(0)=0$, all derivatives $h^{(n)}(0)=0$.
 
-**Step 2 — Taylor polynomials.** Every Taylor polynomial of $h$ at $0$ has all coefficients zero.
+**Step 2 鈥?Taylor polynomials.** Every Taylor polynomial of $h$ at $0$ has all coefficients zero.
 
-**Step 3 — Remainder estimate.** By Taylor's formula with remainder (Theorem 7.6):
+**Step 3 鈥?Remainder estimate.** By Taylor's formula with remainder (Theorem 7.6):
 
 $$
 h(x)=E_{2n-1}(x).
@@ -5623,7 +5610,7 @@ where $u_{1},u_{2}$ depend on the sign of $d$:
 
 | Case | Discriminant | $k$ | $u_{1}(x)$ | $u_{2}(x)$ | General solution |
 |------|-------------|-----|-----------|-----------|-----------------|
-| (a) | $d=0$ | — | $1$ | $x$ | $y=e^{-ax/2}(c_{1}+c_{2}x)$ |
+| (a) | $d=0$ | 鈥?| $1$ | $x$ | $y=e^{-ax/2}(c_{1}+c_{2}x)$ |
 | (b) | $d>0$ | $\frac{1}{2}\sqrt{d}$ | $e^{kx}$ | $e^{-kx}$ | $y=c_{1}e^{r_{1}x}+c_{2}e^{r_{2}x}$ |
 | (c) | $d<0$ | $\frac{1}{2}\sqrt{-d}$ | $\cos kx$ | $\sin kx$ | $y=e^{-ax/2}(c_{1}\cos kx+c_{2}\sin kx)$ |
 
@@ -5666,7 +5653,7 @@ $$
 
 If $y_{1},y_{2}$ both satisfy $L(y)=R$, then $L(y_{2}-y_{1})=R-R=0$; hence $y_{2}-y_{1}$ solves the homogeneous equation $L(y)=0$.
 
-### 8.12.2 Theorem 8.8 — General Solution Structure
+### 8.12.2 Theorem 8.8 鈥?General Solution Structure
 
 If $y_{1}$ is a **particular solution** of $L(y)=R$, then the **general solution** is:
 
@@ -5676,7 +5663,7 @@ $$
 
 where $c_{1}v_{1}+c_{2}v_{2}$ is the general solution of $L(y)=0$.
 
-### 8.12.3 Theorem 8.9 — Variation of Parameters
+### 8.12.3 Theorem 8.9 鈥?Variation of Parameters
 
 Let $v_{1},v_{2}$ be a basis of solutions of $L(y)=0$. Define the **Wronskian**:
 
@@ -5727,7 +5714,7 @@ $$
 
 ## 8.13 Special Methods for Particular Solutions (Undetermined Coefficients)
 
-### 8.13.1 Case 1 — $R(x)$ Is a Polynomial
+### 8.13.1 Case 1 鈥?$R(x)$ Is a Polynomial
 
 If $R$ is a polynomial of degree $n$:
 
@@ -5748,7 +5735,7 @@ If $R$ is a polynomial of degree $n$:
 
 > Compared with variation of parameters, this method requires no integration.
 
-### 8.13.2 Case 2 — $R(x)=p(x)e^{mx}$
+### 8.13.2 Case 2 鈥?$R(x)=p(x)e^{mx}$
 
 Substitute $y=u(x)e^{mx}$. The equation becomes:
 
@@ -5947,7 +5934,7 @@ Differentiate: $2x+2yy'=0$, hence $y'=-x/y$.
 
 A **direction field** is constructed by drawing short line segments at various points $(a,b)$ with slope $f(a,b)$. It provides qualitative information about solutions without solving the equation.
 
-> Different initial points $(0,b)$ on the $y$-axis yield different integral curves—this is a geometric reason for the appearance of an arbitrary constant when integrating a first-order equation.
+> Different initial points $(0,b)$ on the $y$-axis yield different integral curves鈥攖his is a geometric reason for the appearance of an arbitrary constant when integrating a first-order equation.
 
 ## 8.17 First-Order Separable Equations
 
@@ -6063,7 +6050,7 @@ $$
 \frac{1}{2}\log(x^{2}+y^{2})+\arctan\frac{y}{x}=C.
 $$
 
-### 8.18.4 Geometric Property — Invariance under Similarity Transformations
+### 8.18.4 Geometric Property 鈥?Invariance under Similarity Transformations
 
 A **similarity transformation** multiplies all coordinates by $k>0$. For a homogeneous equation:
 
@@ -6163,13 +6150,13 @@ If $a,b\in\mathbb{R}$, the pair $(a,b)$ is a **complex number**.
 
 The number $a$ is the **real part**; $b$ is the **imaginary part**.
 
-### 9.2.2 Theorem 9.1 — Field Axioms
+### 9.2.2 Theorem 9.1 鈥?Field Axioms
 
 The set of all complex numbers satisfies the six field axioms:
 
 | Axiom | Element | Property |
 |-------|---------|----------|
-| 1–3 | — | Commutative, associative, distributive laws (addition and multiplication) |
+| 1鈥? | 鈥?| Commutative, associative, distributive laws (addition and multiplication) |
 | 4 | $(0,0)$ | Additive identity |
 | 4 | $(1,0)$ | Multiplicative identity |
 | 5 | $(-a,-b)$ | Additive inverse: $-(a,b)$ |
@@ -6181,7 +6168,7 @@ $$
 \frac{(c,d)}{(a,b)}=(c,d)\,(a,b)^{-1}.
 $$
 
-> Since all field axioms hold, every algebraic law valid for real numbers (Theorems I.1–I.15) extends to complex numbers.
+> Since all field axioms hold, every algebraic law valid for real numbers (Theorems I.1鈥揑.15) extends to complex numbers.
 
 ## 9.3 Complex Numbers as an Extension of the Real Numbers
 
@@ -6340,7 +6327,7 @@ $$
 
 When $y=0$, this reduces to the real exponential $e^{x}$.
 
-### 9.6.3 Theorem 9.3 — Law of Exponents
+### 9.6.3 Theorem 9.3 鈥?Law of Exponents
 
 For all complex $a,b$:
 
@@ -6354,7 +6341,7 @@ $$
 e^{a}e^{b}=e^{x+u}\bigl[\cos(y+v)+i\sin(y+v)\bigr]=e^{a+b}.
 $$
 
-### 9.6.4 Theorem 9.4 — Polar Form
+### 9.6.4 Theorem 9.4 鈥?Polar Form
 
 Every $z\neq 0$ can be written as:
 
@@ -6476,7 +6463,7 @@ $$
 
 ### 10.1.1 The Racecourse Paradox
 
-Zeno of Elea (495–435 B.C.) argued that a runner can never reach the end of a racecourse: he must first cover half the distance, then half of what remains, then half of that, *ad infinitum*.
+Zeno of Elea (495鈥?35 B.C.) argued that a runner can never reach the end of a racecourse: he must first cover half the distance, then half of what remains, then half of that, *ad infinitum*.
 
 If the runner covers the first half in $T$ minutes, the total time is represented by the **infinite series**:
 
@@ -6506,7 +6493,7 @@ $$
 1+\frac{1}{2}+\cdots+\frac{1}{n}\ge\log(n+1).
 $$
 
-Hence $s_{n}\ge T\log(n+1)\to+\infty$. The runner never arrives—Zeno is right in this case.
+Hence $s_{n}\ge T\log(n+1)\to+\infty$. The runner never arrives鈥擹eno is right in this case.
 
 > **Convergent** series have partial sums approaching a finite limit; **divergent** series do not.
 
@@ -6516,7 +6503,7 @@ Hence $s_{n}\ge T\log(n+1)\to+\infty$. The runner never arrives—Zeno is right 
 - **Binomial theorem:** $(1+x)^{n}=\displaystyle\sum_{k=0}^{n}\binom{n}{k}x^{k}$ for integer $n\ge 0$.
 - Newton extended this to arbitrary real exponents (no rigorous proof at the time).
 - **1812:** Gauss published the first thorough and rigorous treatment of convergence.
-- **1821:** Cauchy introduced the analytic definition of limit in *Cours d'analyse algébrique*, laying the foundations of modern convergence theory.
+- **1821:** Cauchy introduced the analytic definition of limit in *Cours d'analyse alg茅brique*, laying the foundations of modern convergence theory.
 
 ## 10.2 Sequences
 
@@ -6564,7 +6551,7 @@ $$
 | $\displaystyle\lim_{n\to\infty}\dfrac{1}{n^{\alpha}}=0$ | $\alpha>0$ |
 | $\displaystyle\lim_{n\to\infty}x^{n}=0$ | $|x|<1$ |
 | $\displaystyle\lim_{n\to\infty}\dfrac{(\log n)^{a}}{n^{b}}=0$ | $a>0$, $b>0$ |
-| $\displaystyle\lim_{n\to\infty}n^{1/n}=1$ | — |
+| $\displaystyle\lim_{n\to\infty}n^{1/n}=1$ | 鈥?|
 | $\displaystyle\lim_{n\to\infty}\Bigl(1+\dfrac{a}{n}\Bigr)^{n}=e^{a}$ | $a\in\mathbb{R}$ |
 
 ### 10.2.5 Algebra of Limits
@@ -6582,7 +6569,7 @@ If $f(n)\to L$ and $g(n)\to M$, then:
 |------|-----------|----------|
 | **Increasing** | $f(n)\le f(n+1)$ for all $n\ge 1$ | $f(n)\nearrow$ |
 | **Decreasing** | $f(n)\ge f(n+1)$ for all $n\ge 1$ | $f(n)\searrow$ |
-| **Monotonic** | Increasing or decreasing | — |
+| **Monotonic** | Increasing or decreasing | 鈥?|
 
 A sequence is **bounded** if $|f(n)|\le M$ for some $M>0$ and all $n$; otherwise it is **unbounded**.
 
@@ -6628,11 +6615,11 @@ If $\{s_{n}\}$ diverges, the series **diverges**.
 
 ### 10.4.2 Examples
 
-**Example 1 — The harmonic series.** $\displaystyle\sum_{k=1}^{\infty}\frac{1}{k}$.
+**Example 1 鈥?The harmonic series.** $\displaystyle\sum_{k=1}^{\infty}\frac{1}{k}$.
 
 Since $s_{n}=\sum_{k=1}^{n}\frac{1}{k}\ge\log(n+1)\to\infty$, the harmonic series **diverges**.
 
-**Example 2 — Geometric series.** $\displaystyle\sum_{k=1}^{\infty}\frac{1}{2^{k-1}}=1+\frac{1}{2}+\frac{1}{4}+\cdots$.
+**Example 2 鈥?Geometric series.** $\displaystyle\sum_{k=1}^{\infty}\frac{1}{2^{k-1}}=1+\frac{1}{2}+\frac{1}{4}+\cdots$.
 
 Since $s_{n}=2-\dfrac{1}{2^{n-1}}\to 2$, this series **converges** with sum $2$.
 
@@ -6658,7 +6645,7 @@ $$
 
 If $\sum a_{n}$ converges and $\sum b_{n}$ diverges, then $\sum(a_{n}+b_{n})$ **diverges**.
 
-**Proof.** If $\sum(a_{n}+b_{n})$ converged, then $\sum b_{n}=\sum[(a_{n}+b_{n})-a_{n}]$ would converge by Theorem 10.2—contradiction.
+**Proof.** If $\sum(a_{n}+b_{n})$ converged, then $\sum b_{n}=\sum[(a_{n}+b_{n})-a_{n}]$ would converge by Theorem 10.2鈥攃ontradiction.
 
 > If **both** diverge, $\sum(a_{n}+b_{n})$ may converge or diverge.
 
@@ -6742,7 +6729,7 @@ $$
 1+2x+3x^{2}+\cdots+nx^{n-1}+\cdots=\frac{1}{(1-x)^{2}}\qquad(|x|<1).
 $$
 
-**Integration of (10.28).** Mercator–Brouncker (1668):
+**Integration of (10.28).** Mercator鈥揃rouncker (1668):
 
 $$
 x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\frac{x^{4}}{4}+\cdots=\log(1+x)\qquad(-1<x\le 1).
@@ -6780,7 +6767,7 @@ Convergence tests fall into three categories:
 | (ii) Necessary | If $\sum a_{n}$ converges, then $C$ | convergence$\Rightarrow C$ |
 | (iii) Necessary and sufficient | $\sum a_{n}$ converges $\iff C$ | equivalence |
 
-### 10.8.1 Theorem 10.6 — Necessary Condition
+### 10.8.1 Theorem 10.6 鈥?Necessary Condition
 
 If $\sum a_{n}$ converges, then:
 
@@ -6794,7 +6781,7 @@ $$
 
 ## 10.9 Comparison Tests for Nonnegative Series
 
-### 10.9.1 Theorem 10.7 — Bounded-Partial-Sum Criterion
+### 10.9.1 Theorem 10.7 鈥?Bounded-Partial-Sum Criterion
 
 If $a_{n}\ge 0$, then:
 
@@ -6810,7 +6797,7 @@ $$
 
 The sum is $e-1$.
 
-### 10.9.2 Theorem 10.8 — Comparison Test
+### 10.9.2 Theorem 10.8 鈥?Comparison Test
 
 Assume $a_{n}\ge 0$, $b_{n}\ge 0$, and $a_{n}\le c\,b_{n}$ for some $c>0$ and all $n\ge N$. Then:
 
@@ -6819,7 +6806,7 @@ Assume $a_{n}\ge 0$, $b_{n}\ge 0$, and $a_{n}\le c\,b_{n}$ for some $c>0$ and al
 
 > We say $\sum b_{n}$ **dominates** $\sum a_{n}$.
 
-### 10.9.3 Theorem 10.9 — Limit Comparison Test
+### 10.9.3 Theorem 10.9 鈥?Limit Comparison Test
 
 Assume $a_{n}>0$, $b_{n}>0$. If:
 
@@ -6870,7 +6857,7 @@ $$
 
 i.e. $s_{n}-f(1)\le t_{n}\le s_{n-1}$. Both sequences are monotone increasing, so they are either both bounded or both unbounded.
 
-### 10.10.2 Example 1 — $p$-Series
+### 10.10.2 Example 1 鈥?$p$-Series
 
 $$
 \sum_{n=1}^{\infty}\frac{1}{n^{s}}\quad\text{converges}\iff s>1.
@@ -6885,7 +6872,7 @@ $$
 - $s>1$: $n^{1-s}\to 0$, so $t_{n}\to\dfrac{1}{s-1}$. Converges.
 - $s\le 1$: $t_{n}\to\infty$. Diverges (harmonic series when $s=1$).
 
-### 10.10.3 Example 2 — Logarithmic $p$-Series
+### 10.10.3 Example 2 鈥?Logarithmic $p$-Series
 
 $$
 \sum_{n=2}^{\infty}\frac{1}{n(\log n)^{s}}\quad\text{converges}\iff s>1.
@@ -6901,7 +6888,7 @@ Thus $\{t_{n}\}$ converges iff $s>1$.
 
 ## 10.11 The Root Test and the Ratio Test
 
-### 10.11.1 Theorem 10.12 — Root Test
+### 10.11.1 Theorem 10.12 鈥?Root Test
 
 Let $\sum a_{n}$ have nonnegative terms and suppose:
 
@@ -6921,7 +6908,7 @@ $$
 - $\sum(\log n)^{-n}$: $a_{n}^{1/n}=1/\log n\to 0$. **Converges.**
 - $\sum\bigl[n/(n+1)\bigr]^{n^{2}}$: $a_{n}^{1/n}=\bigl(1+1/n\bigr)^{-n}\to 1/e$. **Converges.**
 
-### 10.11.2 Theorem 10.13 — Ratio Test
+### 10.11.2 Theorem 10.13 鈥?Ratio Test
 
 Let $\sum a_{n}$ have positive terms and suppose:
 
@@ -6961,12 +6948,11 @@ $$
 **Examples:**
 - Logarithmic series: $\displaystyle \log(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots$, converges for $-1 < x \le 1$. At $x=1$:
   $$\log 2 = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots$$
-- Gregory–Leibniz series (1671/1673):
+- Gregory鈥揕eibniz series (1671/1673):
   $$\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots$$
 
 > The alternating harmonic series converges (to $\log 2$), while the harmonic series $\sum 1/n$ diverges.
 
----
 
 ### 10.12.2 Leibniz's Rule
 
@@ -6990,7 +6976,6 @@ $$
 1. $\sum (-1)^{n-1}/n$ converges by Leibniz (sum = $\log 2$).
 2. $\sum (-1)^n (\log n)/n$ converges: $(\log n)/n \to 0$, and for $f(x)=(\log x)/x$, $f'(x)=(1-\log x)/x^2 < 0$ when $x>e$, so the sequence decreases for $n\ge 3$.
 
----
 
 ### 10.12.3 Euler's Constant
 
@@ -7044,7 +7029,6 @@ $$
 - **Complex case:** Write $a_n = u_n + iv_n$. Since $|u_n| \le |a_n|$ and $|v_n| \le |a_n|$, absolute convergence of $\sum |a_n|$ implies convergence of $\sum |u_n|$ and $\sum |v_n|$, hence of $\sum u_n$ and $\sum v_n$.
 - The triangle inequality $|\sum_{k=1}^n a_k| \le \sum_{k=1}^n |a_k|$ gives the stated bound as $n\to\infty$.
 
----
 
 ### 10.13.2 Definitions
 
@@ -7055,7 +7039,6 @@ $$
 
 **Linearity.** If $\sum a_n$ and $\sum b_n$ are absolutely convergent, so is $\sum(\alpha a_n + \beta b_n)$ for any scalars $\alpha,\beta$.
 
----
 
 ## 10.14 The Convergence Tests of Dirichlet and Abel
 
@@ -7070,7 +7053,6 @@ $$
 
 > If $A_n b_{n+1} \to L$ and $\sum A_k(b_k - b_{k+1})$ converges, then $\sum a_k b_k$ converges.
 
----
 
 ### 10.14.2 Dirichlet's Test
 
@@ -7082,7 +7064,6 @@ $$
 $$
 and $\sum (b_k - b_{k+1})$ is a convergent telescoping series, so $\sum A_k(b_k - b_{k+1})$ converges absolutely.
 
----
 
 ### 10.14.3 Abel's Test
 
@@ -7090,7 +7071,6 @@ and $\sum (b_k - b_{k+1})$ is a convergent telescoping series, so $\sum A_k(b_k 
 
 > The proof is analogous to Dirichlet's test, using that $\{A_n\}$ is bounded and $A_n b_{n+1}$ converges.
 
----
 
 ### 10.14.4 Bounded Partial Sums of a Geometric Series on the Unit Circle
 
@@ -7103,9 +7083,8 @@ $$
 
 **Proof.** Use the geometric-series formula $\sum_{k=1}^n x^k = x(x^n-1)/(x-1)$ with $x=e^{2i\theta}$; simplify using Euler's formula to obtain the closed form. The estimate follows from $|\sin n\theta|\le 1$ and $|e^{i(n+1)\theta}|=1$.
 
-> This shows that $\sum x^n$ with $|x|=1$, $x\neq 1$ has bounded partial sums—a key example for Dirichlet's test.
+> This shows that $\sum x^n$ with $|x|=1$, $x\neq 1$ has bounded partial sums鈥攁 key example for Dirichlet's test.
 
----
 
 ### 10.14.5 Applications
 
@@ -7152,13 +7131,11 @@ t_{3m} = (\log 4m + C) - \tfrac{1}{2}(\log 2m + C) - \tfrac{1}{2}(\log m + C) + 
 $$
 Hence the rearranged series converges to $\frac{3}{2}\log 2 \neq \log 2$.
 
----
 
 ### 10.15.2 Definition of Rearrangement
 
 A **permutation** of $\mathbb{P}=\{1,2,3,\dots\}$ is a one-to-one mapping $f:\mathbb{P}\to\mathbb{P}$. If $b_n = a_{f(n)}$, then $\sum b_n$ is called a **rearrangement** of $\sum a_n$.
 
----
 
 ### 10.15.3 Absolute Convergence Preserves the Sum
 
@@ -7170,7 +7147,6 @@ $$
 $$
 Thus $B_n \to S$.
 
----
 
 ### 10.15.4 Positive and Negative Parts
 
@@ -7186,7 +7162,6 @@ $$
 
 > Part (a) follows from linearity: $\sum a_n$ converges but $\sum|a_n|$ diverges, so neither signed part can converge.
 
----
 
 ### 10.15.5 Riemann's Rearrangement Theorem
 
@@ -7222,7 +7197,6 @@ $$
 $$
 convergent iff **both** integrals on the right converge (the choice of $c$ is irrelevant).
 
----
 
 ### 10.16.2 Convergence Tests for Nonnegative Integrands
 
@@ -7238,7 +7212,6 @@ then $\int_a^{\infty}f$ and $\int_a^{\infty}g$ either both converge or both dive
 
 **Example.** $\int_1^{\infty}e^{-x}x^{s}\,dx$ converges for every real $s$ (compare with $x^{-2}$).
 
----
 
 ### 10.16.3 Improper Integrals of the Second Kind
 
@@ -7263,7 +7236,6 @@ $$
 $$
 Mixed combinations (e.g. $\int_{a+}^{\infty}$) are defined analogously.
 
----
 
 ### 10.16.4 The Gamma Function
 
@@ -7290,7 +7262,6 @@ $$
 f(x) = \lim_{n\to\infty} f_n(x).
 $$
 
----
 
 ### 11.1.2 Why Pointwise Convergence Is Not Enough
 
@@ -7308,9 +7279,8 @@ $$
 $$
 > The operations of **limit** and **integration** cannot always be interchanged under mere pointwise convergence.
 
-Historical note: Stokes, Seidel (1848), and Weierstrass recognized that an extra condition—now called **uniform convergence**—is needed to justify interchanging limits with integration (and other operations).
+Historical note: Stokes, Seidel (1848), and Weierstrass recognized that an extra condition鈥攏ow called **uniform convergence**鈥攊s needed to justify interchanging limits with integration (and other operations).
 
----
 
 ## 11.2 Uniform Convergence of Sequences of Functions
 
@@ -7341,7 +7311,6 @@ $$
 |f(x)-f(p)| \le |f(x)-f_N(x)| + |f_N(x)-f_N(p)| + |f_N(p)-f(p)| < \frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\varepsilon.
 $$
 
----
 
 ### 11.3.1 Corollary for Series
 
@@ -7353,7 +7322,6 @@ $$
 $$
 > For a uniformly convergent series we may pass to the limit **term by term**.
 
----
 
 ## 11.4 Uniform Convergence and Integration
 
@@ -7371,7 +7339,6 @@ $$
 |g_n(x)-g(x)| \le \int_a^x|f_n(t)-f(t)|\,dt < \int_a^b\frac{\varepsilon}{b-a}\,dt = \varepsilon.
 $$
 
----
 
 ### 11.4.1 Term-by-Term Integration of Series
 
@@ -7469,7 +7436,7 @@ $F$ is **continuous**, **differentiable**, or **integrable** on an interval if a
 
 ## 14.4 Differentiation Rules
 
-### 14.4.1 Theorem 14.1 — Basic Differentiation Formulas
+### 14.4.1 Theorem 14.1 鈥?Basic Differentiation Formulas
 
 If $F, G$, and $u$ are differentiable on an interval, then so are $F + G$, $uF$, and $F \cdot G$, and we have:
 
@@ -7482,7 +7449,7 @@ If $F, G$, and $u$ are differentiable on an interval, then so are $F + G$, $uF$,
 
 > **Key Point:** The cross product is **not commutative**, so the order of factors in $(F \times G)'$ must be preserved.
 
-### 14.4.2 Theorem 14.2 — Constant Length Property
+### 14.4.2 Theorem 14.2 鈥?Constant Length Property
 
 If a vector-valued function $F$ is differentiable and has **constant length** on an open interval $I$, then:
 
@@ -7498,7 +7465,7 @@ $$
 g' = F' \cdot F + F \cdot F' = 2F \cdot F' = 0 \implies F \cdot F' = 0
 $$
 
-### 14.4.3 Theorem 14.3 — Chain Rule for Vector-Valued Functions
+### 14.4.3 Theorem 14.3 鈥?Chain Rule for Vector-Valued Functions
 
 Let $G = F \circ u$, where $F$ is vector-valued and $u$ is real-valued.
 
@@ -7512,7 +7479,7 @@ $$
 
 ## 14.5 Integration of Vector-Valued Functions
 
-### 14.5.1 Theorem 14.4 — Linearity and Additivity
+### 14.5.1 Theorem 14.4 鈥?Linearity and Additivity
 
 **Linearity:** If $F$ and $G$ are integrable on $[a, b]$, then so is $c_1 F + c_2 G$ for all scalars $c_1, c_2$, and:
 
@@ -7526,7 +7493,7 @@ $$
 \int_a^b F(t) \, dt = \int_a^c F(t) \, dt + \int_c^b F(t) \, dt
 $$
 
-### 14.5.2 Theorem 14.5 — First Fundamental Theorem of Calculus
+### 14.5.2 Theorem 14.5 鈥?First Fundamental Theorem of Calculus
 
 Assume $F$ is a vector-valued function continuous on $[a, b]$. If $c \in [a, b]$, define the indefinite integral:
 
@@ -7540,7 +7507,7 @@ $$
 A'(x) = F(x) \quad \text{for each } x \in (a, b)
 $$
 
-### 14.5.3 Theorem 14.6 — Second Fundamental Theorem of Calculus
+### 14.5.3 Theorem 14.6 鈥?Second Fundamental Theorem of Calculus
 
 Assume the vector-valued function $F$ has a continuous derivative $F'$ on an open interval $I$. Then for each choice of $c$ and $x$ in $I$:
 
@@ -7548,7 +7515,7 @@ $$
 F(x) = F(c) + \int_c^x F'(t) \, dt
 $$
 
-### 14.5.4 Theorem 14.7 — Dot Product with a Constant Vector
+### 14.5.4 Theorem 14.7 鈥?Dot Product with a Constant Vector
 
 If $F = (f_1, \dots, f_n)$ is integrable on $[a, b]$, then for every vector $C = (c_1, \dots, c_n)$, the dot product $C \cdot F$ is integrable on $[a, b]$, and:
 
@@ -7562,7 +7529,7 @@ $$
 C \cdot \int_a^b F(t) \, dt = \sum_{i=1}^n c_i \int_a^b f_i(t) \, dt = \int_a^b \sum_{i=1}^n c_i f_i(t) \, dt = \int_a^b C \cdot F(t) \, dt
 $$
 
-### 14.5.5 Theorem 14.8 — Norm Inequality for Integrals
+### 14.5.5 Theorem 14.8 鈥?Norm Inequality for Integrals
 
 If $F$ and $\|F\|$ are integrable on $[a, b]$, then:
 
