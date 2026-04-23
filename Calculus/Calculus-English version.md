@@ -7332,6 +7332,55 @@ f(x)-\varepsilon < f_n(x) < f(x)+\varepsilon \qquad\text{for all }x\in S.
 $$
 For $n\ge N$, the **entire graph** of $f_n$ over $S$ lies inside a band of height $2\varepsilon$ centered on the graph of $f$.
 
+## 11.3 Uniform Convergence and Continuity
+
+**Theorem.** Assume $f_n\to f$ **uniformly** on an interval $S$. If each $f_n$ is continuous at a point $p\in S$, then the limit function $f$ is also continuous at $p$.
+
+**Proof sketch ($\varepsilon/3$ argument).** Given $\varepsilon>0$, choose $N$ so that $|f_n(x)-f(x)|<\varepsilon/3$ for all $x\in S$ and $n\ge N$. Since $f_N$ is continuous at $p$, there is a neighborhood $N(p)$ with $|f_N(x)-f_N(p)|<\varepsilon/3$ for $x\in N(p)\cap S$. Then
+$$
+|f(x)-f(p)| \le |f(x)-f_N(x)| + |f_N(x)-f_N(p)| + |f_N(p)-f(p)| < \frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\varepsilon.
+$$
+
+---
+
+### Corollary for Series
+
+**Theorem.** If a series of functions $\sum u_k$ converges **uniformly** to $f$ on $S$, and each $u_k$ is continuous at $p\in S$, then $f$ is also continuous at $p$.
+
+Symbolically:
+$$
+\lim_{x\to p}\sum_{k=1}^{\infty}u_k(x) = \sum_{k=1}^{\infty}\lim_{x\to p}u_k(x).
+$$
+> For a uniformly convergent series we may pass to the limit **term by term**.
+
+---
+
+## 11.4 Uniform Convergence and Integration
+
+**Theorem.** Assume $f_n\to f$ uniformly on $[a,b]$ and each $f_n$ is continuous on $[a,b]$. Define
+$$
+g_n(x)=\int_a^x f_n(t)\,dt, \qquad g(x)=\int_a^x f(t)\,dt.
+$$
+Then $g_n\to g$ **uniformly** on $[a,b]$. In symbols:
+$$
+\boxed{\lim_{n\to\infty}\int_a^x f_n(t)\,dt = \int_a^x \lim_{n\to\infty}f_n(t)\,dt}
+$$
+
+**Proof sketch.** Choose $N$ so that $|f_n(t)-f(t)|<\varepsilon/(b-a)$ for all $t\in[a,b]$ and $n\ge N$. Then for any $x\in[a,b]$,
+$$
+|g_n(x)-g(x)| \le \int_a^x|f_n(t)-f(t)|\,dt < \int_a^b\frac{\varepsilon}{b-a}\,dt = \varepsilon.
+$$
+
+---
+
+### Term-by-Term Integration of Series
+
+**Theorem.** If $\sum u_k$ converges uniformly to $f$ on $[a,b]$ and each $u_k$ is continuous on $[a,b]$, then
+$$
+\sum_{k=1}^{\infty}\int_a^x u_k(t)\,dt = \int_a^x \sum_{k=1}^{\infty}u_k(t)\,dt \qquad (x\in[a,b]).
+$$
+> A uniformly convergent series may be **integrated term by term**.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
