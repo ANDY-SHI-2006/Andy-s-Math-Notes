@@ -7343,7 +7343,7 @@ $$
 
 ---
 
-### Corollary for Series
+### 11.3.1 Corollary for Series
 
 **Theorem.** If a series of functions $\sum u_k$ converges **uniformly** to $f$ on $S$, and each $u_k$ is continuous at $p\in S$, then $f$ is also continuous at $p$.
 
@@ -7373,7 +7373,7 @@ $$
 
 ---
 
-### Term-by-Term Integration of Series
+### 11.4.1 Term-by-Term Integration of Series
 
 **Theorem.** If $\sum u_k$ converges uniformly to $f$ on $[a,b]$ and each $u_k$ is continuous on $[a,b]$, then
 $$
