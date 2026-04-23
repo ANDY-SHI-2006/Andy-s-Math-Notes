@@ -8012,6 +8012,76 @@ A+B=\sum_{k=1}^{n}a_k E_k+\sum_{k=1}^{n}b_k E_k=\sum_{k=1}^{n}(a_k+b_k)E_k,
 $$
 and the coefficient of $E_k$ is precisely the $k$th component of $A+B$.
 
+## 12.9 The Linear Span of a Finite Set of Vectors
+
+### 12.9.1 Definition
+
+Let $S=\{A_1,\dots,A_k\}$ be a nonempty set of vectors in $V_n$. If a vector $X$ can be written as
+$$
+X=\sum_{i=1}^{k}c_i A_i,
+$$
+then $S$ is said to **span** $X$. The set of all vectors spanned by $S$ is called the **linear span** of $S$, denoted $L(S)$.
+
+In other words, $L(S)$ is the set of all possible linear combinations of vectors in $S$. We say $S$ **spans the whole space** $V_n$ if $L(S)=V_n$.
+
+### 12.9.2 Unique Spanning
+
+**Definition.** $S$ spans $X$ **uniquely** if
+$$
+X=\sum_{i=1}^{k}c_i A_i=\sum_{i=1}^{k}d_i A_i \quad\Longrightarrow\quad c_i=d_i\text{ for all }i.
+$$
+
+**Theorem 12.7.** $S$ spans every vector in $L(S)$ uniquely **if and only if** $S$ spans the zero vector uniquely.
+
+**Proof sketch.** If $S$ spans $O$ uniquely and $X$ has two representations, subtracting gives a representation of $O$; uniqueness for $O$ forces the coefficients to coincide.
+
+## 12.10 Linear Independence
+
+### 12.10.1 Definition
+
+**Definition.** A set $S=\{A_1,\dots,A_k\}$ is **linearly independent** if it spans the zero vector uniquely. Otherwise $S$ is **linearly dependent**.
+
+Equivalently:
+- **Independent:** $\displaystyle\sum_{i=1}^{k}c_i A_i=O$ implies all $c_i=0$.
+- **Dependent:** there exist scalars $c_1,\dots,c_k$, not all zero, with $\displaystyle\sum_{i=1}^{k}c_i A_i=O$.
+
+> The empty set is agreed to be linearly independent.
+
+### 12.10.2 Examples
+
+1. A subset of an independent set is independent; a superset of a dependent set is dependent.
+2. The unit coordinate vectors $E_1,\dots,E_n$ are linearly independent.
+3. Any set containing the zero vector is dependent.
+4. In $V_2$, $\{i,j,i+j\}$ is dependent, while $\{i,j\}$ is independent.
+
+### 12.10.3 A Key Theorem on Dimension
+
+**Theorem 12.8.** Let $S=\{A_1,\dots,A_k\}$ be linearly independent and let $L(S)$ be its linear span. Then every set of $k+1$ vectors in $L(S)$ is linearly dependent.
+
+> This is the fundamental theorem that underlies the notion of dimension: a $k$-dimensional space cannot contain $k+1$ independent vectors.
+
+**Proof sketch (induction on $k$).** For $k=1$, any two vectors in $L(S)$ are scalar multiples of $A_1$, hence dependent. For the inductive step, write $k+1$ vectors $B_i\in L(S)$ as $B_i=\sum_{j=1}^k a_{ij}A_j$. If all coefficients of $A_1$ vanish, the $B_i$'s lie in the span of $\{A_2,\dots,A_k\}$ and dependence follows from the induction hypothesis. Otherwise, eliminate $A_1$ by forming suitable linear combinations of the $B_i$'s and apply the induction hypothesis again.
+
+### 12.10.4 Orthogonal Sets
+
+**Definition.** A set $S=\{A_1,\dots,A_k\}$ is **orthogonal** if $A_i\cdot A_j=0$ whenever $i\neq j$.
+
+**Theorem 12.9.** Any orthogonal set of **nonzero** vectors in $V_n$ is linearly independent. Moreover, if $X=\sum_{i=1}^{k}c_i A_i$, then the coefficients are given by
+$$
+\boxed{c_j=\frac{X\cdot A_j}{A_j\cdot A_j}} \qquad (j=1,\dots,k).
+$$
+
+**Proof sketch.** Assume $\sum c_i A_i=O$. Take the dot product with $A_j$; orthogonality gives $c_j(A_j\cdot A_j)=0$, and $A_j\neq O$ implies $c_j=0$. For the formula, dot $X$ with $A_j$ and use orthogonality.
+
+### 12.10.5 Orthonormal Sets
+
+An orthogonal set in which every vector has norm $1$ is called an **orthonormal** set. For such a set the coefficient formula simplifies to
+$$
+c_j=X\cdot A_j.
+$$
+
+> The unit coordinate vectors $E_1,\dots,E_n$ form the standard orthonormal set in $V_n$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
