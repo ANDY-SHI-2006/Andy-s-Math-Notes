@@ -7348,6 +7348,91 @@ $$
 $$
 > A uniformly convergent series may be **integrated term by term**.
 
+## 11.5 A Sufficient Condition for Uniform Convergence
+
+### 11.5.1 The Weierstrass M-Test
+
+**Theorem.** Let $\sum u_n$ be a series of functions which converges pointwise to $f$ on a set $S$. If there exists a convergent series of positive constants $\sum M_n$ such that
+$$
+0 \le |u_n(x)| \le M_n \qquad\text{for all }n\ge 1\text{ and all }x\in S,
+$$
+then $\sum u_n$ **converges uniformly** on $S$.
+
+**Proof sketch.** For each $x\in S$ the comparison test gives absolute convergence. The remainder is bounded independently of $x$:
+$$
+\Bigl|f(x)-\sum_{k=1}^{n}u_k(x)\Bigr| = \Bigl|\sum_{k=n+1}^{\infty}u_k(x)\Bigr| \le \sum_{k=n+1}^{\infty}|u_k(x)| \le \sum_{k=n+1}^{\infty}M_k.
+$$
+Since $\sum M_k$ converges, its tail can be made $<\varepsilon$ for all $n\ge N$, and the same $N$ works for every $x\in S$.
+
+### 11.5.2 Warning on Term-by-Term Differentiation
+
+Even for uniformly convergent series, **term-by-term differentiation** is not always valid.
+
+**Example.** The series $\displaystyle\sum_{n=1}^{\infty}\frac{\sin nx}{n^2}$ converges **uniformly** on $\mathbb{R}$ (dominated by $\sum 1/n^2$). But the differentiated series
+$$
+\sum_{n=1}^{\infty}\frac{\cos nx}{n}
+$$
+**diverges** at $x=0$. Thus differentiation may destroy convergence.
+
+> Justifying the interchange of differentiation and summation is harder than for integration. Power series are a notable exception.
+
+## 11.6 Power Series and the Circle of Convergence
+
+### 11.6.1 Definition
+
+A **power series** in $z-a$ is an infinite series of the form
+$$
+\sum_{n=0}^{\infty}a_n(z-a)^n = a_0 + a_1(z-a) + a_2(z-a)^2 + \cdots,
+$$
+where $z,a,a_n$ may be complex. With each power series there is associated a **circle of convergence** centered at $a$ with **radius of convergence** $r$:
+- converges absolutely for every $z$ with $|z-a|<r$,
+- diverges for every $z$ with $|z-a|>r$.
+
+The boundary $|z-a|=r$ may exhibit any behavior: convergence at none, some, or all boundary points.
+
+### 11.6.2 Finding the Radius
+
+The ratio test or root test usually determines $r$.
+
+**Example 1.** $\displaystyle\sum_{n=0}^{\infty}\frac{z^n}{n!}$. By the ratio test,
+$$
+\Bigl|\frac{z^{n+1}}{(n+1)!}\cdot\frac{n!}{z^n}\Bigr| = \frac{|z|}{n+1} \to 0
+$$
+for every $z$. Hence $r=+\infty$; the series converges for all complex $z$. In particular,
+$$
+\lim_{n\to\infty}\frac{z^n}{n!}=0 \quad\text{for every fixed }z.
+$$
+
+**Example 2.** $\displaystyle\sum n^2 3^n z^n$. By the root test,
+$$
+(n^2 3^n |z|^n)^{1/n} = 3|z|\,n^{2/n} \to 3|z|.
+$$
+The series converges absolutely if $|z|<1/3$ and diverges if $|z|>1/3$; thus $r=1/3$. At every boundary point ($|z|=1/3$) the general term has absolute value $n^2\not\to 0$, so the series diverges on the boundary.
+
+**Example 3.** $\displaystyle\sum \frac{z^n}{n}$ and $\displaystyle\sum \frac{z^n}{n^2}$ both have $r=1$.
+- $\sum z^n/n$ diverges at $z=1$ but converges at all other boundary points.
+- $\sum z^n/n^2$ converges at **every** boundary point (dominated by $\sum 1/n^2$).
+
+### 11.6.3 Absolute and Uniform Convergence Inside the Disk
+
+**Theorem 11.6.** Assume $\sum a_n z^n$ converges for some $z_1\neq 0$. Then:
+- **(a)** The series converges **absolutely** for every $z$ with $|z|<|z_1|$.
+- **(b)** The series converges **uniformly** on every closed disk $|z|\le R$ with $R<|z_1|$.
+
+**Proof sketch.** Since $a_n z_1^n\to 0$, we have $|a_n z_1^n|<1$ for $n\ge N$. For $|z|\le R<|z_1|$,
+$$
+|a_n z^n| = |a_n z_1^n|\cdot\Bigl|\frac{z}{z_1}\Bigr|^n < \Bigl(\frac{R}{|z_1|}\Bigr)^n = t^n, \qquad 0<t<1.
+$$
+By the Weierstrass $M$-test with $M_n=t^n$, the series converges uniformly on the disk; absolute convergence follows.
+
+### 11.6.4 Existence of the Circle of Convergence
+
+**Theorem 11.7.** Assume the power series $\sum a_n z^n$ converges for at least one $z_1\neq 0$ and diverges for at least one $z_2$. Then there exists a positive real number $r$ such that the series converges absolutely if $|z|<r$ and diverges if $|z|>r$.
+
+**Proof sketch.** Let $A$ be the set of all positive numbers $|z|$ for which the series converges. $A$ is nonempty ($|z_1|\in A$) and bounded above by $|z_2|$. Let $r=\sup A$. By Theorem 11.6, if $|z|<r$ there is $x\in A$ with $|z|<x<r$, so the series converges absolutely; if $|z|>r$ then $|z|\notin A$, so the series diverges.
+
+> For a power series in $z-a$, the same result holds after the change of variable $Z=z-a$; the circle of convergence is centered at $a$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
