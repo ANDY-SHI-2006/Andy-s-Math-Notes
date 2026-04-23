@@ -8460,6 +8460,54 @@ A\times B=\begin{vmatrix} i & j & k \\ 2 & -8 & 3 \\ 0 & 4 & 3 \end{vmatrix}
 =-36i-6j+8k.
 $$
 
+## 13.9 The Scalar Triple Product
+
+### 13.9.1 Definition and Determinant Form
+
+The **scalar triple product** $A\cdot B\times C$ means $A\cdot(B\times C)$. It is a scalar, and can be computed as a single third-order determinant:
+$$
+A\cdot B\times C=\begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix}.
+$$
+
+### 13.9.2 Criterion for Linear Dependence
+
+**Theorem 13.14.** Three vectors $A,B,C$ in $V_3$ are linearly dependent if and only if
+$$
+A\cdot B\times C=0.
+$$
+
+**Proof sketch.** If $A,B,C$ are dependent, one is a linear combination of the other two; taking the dot product with their cross product yields $0$. Conversely, if $A\cdot(B\times C)=0$ and $B,C$ are independent, write $A=aB+bC+c(B\times C)$. Dotting with $B\times C$ gives $c=0$, so $A$ lies in the span of $B$ and $C$.
+
+**Example.** For $(2,3,-1)$, $(3,-7,5)$, $(1,-5,2)$:
+$$
+\begin{vmatrix} 2 & 3 & -1 \\ 3 & -7 & 5 \\ 1 & -5 & 2 \end{vmatrix}=27\neq0,
+$$
+so the vectors are independent.
+
+### 13.9.3 Geometric Interpretation
+
+The absolute value $|A\cdot B\times C|$ equals the **volume** of the parallelepiped determined by $A,B,C$.
+
+- Base area $=\|A\times B\|$
+- Altitude $=\|C\|\cos\phi$ (where $\phi$ is the angle between $A\times B$ and $C$)
+- Volume $=\|A\times B\|\,\|C\|\cos\phi=(A\times B)\cdot C$
+
+If $A,B,C$ are coplanar, the parallelepiped degenerates and the scalar triple product is zero.
+
+### 13.9.4 Algebraic Properties
+
+**Cyclic symmetry:**
+$$
+A\times B\cdot C=B\times C\cdot A=C\times A\cdot B.
+$$
+
+**Interchangeability of dot and cross:**
+$$
+A\times B\cdot C=A\cdot B\times C.
+$$
+
+Because of this, the scalar triple product is often denoted by the symbol $[ABC]$ without indicating the dot or cross.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
