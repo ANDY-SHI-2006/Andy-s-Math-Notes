@@ -6899,6 +6899,56 @@ $$
 
 Thus $\{t_{n}\}$ converges iff $s>1$.
 
+## 10.11 The Root Test and the Ratio Test
+
+### 10.11.1 Theorem 10.12 — Root Test
+
+Let $\sum a_{n}$ have nonnegative terms and suppose:
+
+$$
+\lim_{n\to\infty}a_{n}^{1/n}=R.
+$$
+
+| Case | Conclusion |
+|------|-----------|
+| $R<1$ | **Converges** |
+| $R>1$ | **Diverges** |
+| $R=1$ | **Inconclusive** |
+
+**Proof sketch.** If $R<1$, choose $x$ with $R<x<1$; then $a_{n}\le x^{n}$ for large $n$. If $R>1$, then $a_{n}>1$ infinitely often, so $a_{n}\not\to 0$.
+
+**Examples.**
+- $\sum(\log n)^{-n}$: $a_{n}^{1/n}=1/\log n\to 0$. **Converges.**
+- $\sum\bigl[n/(n+1)\bigr]^{n^{2}}$: $a_{n}^{1/n}=\bigl(1+1/n\bigr)^{-n}\to 1/e$. **Converges.**
+
+### 10.11.2 Theorem 10.13 — Ratio Test
+
+Let $\sum a_{n}$ have positive terms and suppose:
+
+$$
+\lim_{n\to\infty}\frac{a_{n+1}}{a_{n}}=L.
+$$
+
+| Case | Conclusion |
+|------|-----------|
+| $L<1$ | **Converges** |
+| $L>1$ | **Diverges** |
+| $L=1$ | **Inconclusive** |
+
+**Proof sketch.** If $L<1$, choose $x$ with $L<x<1$; then $a_{n+1}/a_{n}<x$ for large $n$, so $a_{n}\le cx^{n}$. If $L>1$, then $a_{n+1}>a_{n}$ eventually, so $a_{n}\not\to 0$.
+
+> **Warning.** $a_{n+1}/a_{n}<1$ for all $n$ does **not** imply convergence (e.g. harmonic series).
+
+**Example.** $\sum n!/n^{n}$:
+
+$$
+\frac{a_{n+1}}{a_{n}}=\Bigl(\frac{n}{n+1}\Bigr)^{n}=\frac{1}{(1+1/n)^{n}}\to\frac{1}{e}<1.
+$$
+
+**Converges.** In particular, $n!/n^{n}\to 0$, i.e. $n!=o(n^{n})$.
+
+> Both tests are special cases of the comparison test with a geometric series.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
