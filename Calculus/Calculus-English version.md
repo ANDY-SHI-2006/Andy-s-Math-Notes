@@ -8360,6 +8360,56 @@ $$
 
 > A systematic study of linear Cartesian equations is given in Section 13.16.
 
+## 13.7 The Cross Product
+
+### 13.7.1 Definition
+
+For vectors $A=(a_1,a_2,a_3)$ and $B=(b_1,b_2,b_3)$ in $V_3$, the **cross product** is
+$$
+A\times B=(a_2b_3-a_3b_2,\; a_3b_1-a_1b_3,\; a_1b_2-a_2b_1).
+$$
+
+### 13.7.2 Algebraic Properties
+
+**Theorem 13.12.** For all vectors $A,B,C$ in $V_3$ and all scalars $c$:
+- **(a)** $A\times B=-(B\times A)$ (skew symmetry)
+- **(b)** $A\times(B+C)=(A\times B)+(A\times C)$ (distributive law)
+- **(c)** $c(A\times B)=(cA)\times B$ (homogeneity)
+- **(d)** $A\cdot(A\times B)=0$ (orthogonality to $A$)
+- **(e)** $B\cdot(A\times B)=0$ (orthogonality to $B$)
+- **(f)** $\|A\times B\|^2=\|A\|^2\|B\|^2-(A\cdot B)^2$ (Lagrange's identity)
+- **(g)** $A\times B=O$ iff $A$ and $B$ are linearly dependent
+
+> Note: The cross product is **not associative**. For example, $i\times(i\times j)=-j$ but $(i\times i)\times j=O$.
+
+### 13.7.3 Fundamental Geometric Properties
+
+**Theorem 13.13.** Let $A$ and $B$ be linearly independent vectors in $V_3$.
+- **(a)** $A$, $B$, $A\times B$ are linearly independent.
+- **(b)** Every vector $N$ in $V_3$ orthogonal to both $A$ and $B$ is a scalar multiple of $A\times B$.
+
+### 13.7.4 Geometric Interpretation
+
+**Direction.** The vector $A\times B$ is perpendicular to both $A$ and $B$. In a **right-handed** coordinate system its direction is determined by the **right-hand rule**: when $A$ is rotated into $B$, the thumb points in the direction of $A\times B$.
+
+**Magnitude.** Using $A\cdot B=\|A\|\,\|B\|\cos\theta$ in Lagrange's identity:
+$$
+\|A\times B\|^2=\|A\|^2\|B\|^2(1-\cos^2\theta)=\|A\|^2\|B\|^2\sin^2\theta.
+$$
+Hence
+$$
+\boxed{\|A\times B\|=\|A\|\,\|B\|\sin\theta}.
+$$
+Since $\|B\|\sin\theta$ is the altitude of the parallelogram determined by $A$ and $B$, the length of $A\times B$ equals the **area** of that parallelogram.
+
+### 13.7.5 Standard Basis Relations
+
+$$
+i\times j=k, \qquad j\times k=i, \qquad k\times i=j.
+$$
+
+> The cross product is defined only in $V_3$ and produces a vector, not a scalar.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
