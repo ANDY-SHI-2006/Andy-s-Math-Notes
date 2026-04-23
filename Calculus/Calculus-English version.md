@@ -8152,6 +8152,45 @@ The concepts of linear span, linear independence, linear dependence, and basis a
 
 > Complex vector spaces arise naturally in linear differential equations and quantum mechanics.
 
+# 13. Applications of Vector Algebra to Analytic Geometry
+
+## 13.1 Introduction
+
+This chapter applies vector algebra to the study of **lines, planes, and conic sections**. Chapter 14 will combine vector algebra with calculus for curves and mechanics.
+
+### 13.1.1 Geometry as a Deductive System
+
+- **Euclid (~300 B.C.):** Began with axioms describing points and lines; listed ten axioms from which all theorems were deduced.
+- **Hilbert (1862–1943):** In *Grundlagen der Geometrie* (1899) gave a rigorous axiomatization with five undefined concepts—**point, line, on, between, congruence**—and fifteen axioms for plane geometry.
+
+### 13.1.2 The Analytic Approach
+
+Analytic geometry defines concepts such as point, line, and "on" in terms of **real numbers**, producing an **analytic model** of Euclidean geometry. Properties of real numbers are used to deduce Hilbert's axioms. This chapter indicates how primitive concepts may be defined numerically and gives proofs to illustrate the methods.
+
+## 13.2 Lines in $n$-Space
+
+### 13.2.1 Points and Vectors
+
+A **point** is simply a vector in $V_n$ (an ordered $n$-tuple of real numbers). We use the words "point" and "vector" interchangeably. The space $V_n$ is called an **analytic model** of $n$-dimensional Euclidean space, or simply **Euclidean $n$-space**.
+
+### 13.2.2 Definition of a Line
+
+**Definition.** Let $P$ be a given point and $A$ a nonzero vector. The set of all points of the form $P+tA$, where $t$ runs through all real numbers, is called the **line through $P$ parallel to $A$**.
+
+Notation:
+$$
+L(P;A)=\{P+tA\mid t\in\mathbb{R}\}.
+$$
+
+A point $Q$ is **on** the line $L(P;A)$ if $Q\in L(P;A)$.
+
+- $P$ itself corresponds to $t=0$.
+- $A$ is called a **direction vector** for the line.
+- The line $L(O;A)$ through the origin is the linear span of $A$.
+- The line $L(P;A)$ is obtained by translating the linear span of $A$ by the vector $P$.
+
+> Geometrically, each point $P+tA$ can be visualized as the tip of a geometric vector drawn from the origin. As $t$ varies, the point traces out a straight line through $P$ parallel to $A$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
