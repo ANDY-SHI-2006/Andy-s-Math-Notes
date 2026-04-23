@@ -7593,6 +7593,49 @@ $$
 
 > The number $\pi$ may be introduced as the smallest positive $x$ with $\sin x=0$. From this one obtains period $2\pi$, $\sin(\pi/2)=1$, and $\cos(\pi/2)=0$.
 
+## 11.11 Bernstein's Theorem
+
+### 11.11.1 Statement
+
+**Theorem 11.12 (Bernstein).** Assume $f$ and **all its derivatives** are nonnegative on a closed interval $[0,r]$:
+$$
+f(x)\ge 0 \quad\text{and}\quad f^{(n)}(x)\ge 0 \qquad\text{for all }x\in[0,r]\text{ and all }n\ge 1.
+$$
+Then for every $x$ with $0\le x<r$, the Taylor series of $f$ at $0$ converges to $f(x)$:
+$$
+f(x)=\sum_{k=0}^{\infty}\frac{f^{(k)}(0)}{k!}\,x^k.
+$$
+
+### 11.11.2 Proof Sketch
+
+Write Taylor's formula with remainder:
+$$
+f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(0)}{k!}\,x^k+E_n(x).
+$$
+
+**Step 1 — Error estimate.** We show
+$$
+\boxed{0\le E_n(x)\le\Bigl(\frac{x}{r}\Bigr)^{\!n+1}f(r)} \qquad (0<x<r).
+$$
+Since $(x/r)^{n+1}\to 0$, this implies $E_n(x)\to 0$.
+
+**Step 2 — Monotonicity argument.** From the integral form of the error with $a=0$:
+$$
+E_n(x)=\frac{x^{n+1}}{n!}\int_0^1 u^n f^{(n+1)}(x-xu)\,du.
+$$
+Set $F_n(x)=E_n(x)/x^{n+1}$. Because $f^{(n+1)}$ is monotone increasing on $[0,r]$ (its derivative is nonnegative),
+$$
+f^{(n+1)}[x(1-u)]\le f^{(n+1)}[r(1-u)] \qquad (0\le u\le 1).
+$$
+Hence $F_n(x)\le F_n(r)$, i.e.
+$$
+\frac{E_n(x)}{x^{n+1}}\le\frac{E_n(r)}{r^{n+1}}.
+$$
+
+**Step 3 — Bounding $E_n(r)$.** Setting $x=r$ in Taylor's formula, every term of the sum is nonnegative, so $E_n(r)\le f(r)$. Combining with Step 2 yields the desired estimate.
+
+> Bernstein's condition is weaker than the exponential bound $|f^{(n)}|\le A^n$; it applies, for example, to functions like $e^x$ and many other completely monotone functions.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
