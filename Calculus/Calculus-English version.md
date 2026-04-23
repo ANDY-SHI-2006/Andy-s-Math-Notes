@@ -8191,6 +8191,99 @@ A point $Q$ is **on** the line $L(P;A)$ if $Q\in L(P;A)$.
 
 > Geometrically, each point $P+tA$ can be visualized as the tip of a geometric vector drawn from the origin. As $t$ varies, the point traces out a straight line through $P$ parallel to $A$.
 
+## 13.3 Some Simple Properties of Straight Lines
+
+### 13.3.1 Equivalent Descriptions of a Line
+
+**Theorem 13.1.** Two lines $L(P;A)$ and $L(P;B)$ through the same point $P$ are equal if and only if the direction vectors $A$ and $B$ are parallel.
+
+**Theorem 13.2.** Two lines $L(P;A)$ and $L(Q;A)$ with the same direction vector $A$ are equal if and only if $Q$ lies on $L(P;A)$.
+
+> Thus the direction vector may be replaced by any parallel vector, and the base point may be replaced by any other point on the line.
+
+### 13.3.2 Parallel Lines
+
+**Definition.** Two lines $L(P;A)$ and $L(Q;B)$ are **parallel** if their direction vectors $A$ and $B$ are parallel.
+
+**Theorem 13.3 (Parallel Postulate).** Given a line $L$ and a point $Q$ not on $L$, there is one and only one line $L'$ containing $Q$ and parallel to $L$.
+
+> Historical note: Gauss, Bolyai, and Lobatchevski showed that this postulate cannot be derived from Euclid's other axioms, leading to non-Euclidean geometries.
+
+### 13.3.3 Two Points Determine a Line
+
+**Theorem 13.4.** If $P\neq Q$, there is a unique line containing both $P$ and $Q$:
+$$
+L=\{P+t(Q-P)\mid t\in\mathbb{R}\}.
+$$
+
+**Test for incidence.** A point $Q$ lies on $L(P;A)$ if and only if $Q-P$ is a scalar multiple of $A$.
+
+### 13.3.4 Linear Dependence and Collinearity
+
+**Theorem 13.5.** Two vectors $A$ and $B$ in $V_n$ are linearly dependent if and only if they lie on the same line through the origin.
+
+## 13.4 Lines and Vector-Valued Functions
+
+### 13.4.1 Parametric Vector Equation
+
+A line can be described by a **vector-valued function**
+$$
+X(t)=P+tA, \qquad t\in\mathbb{R}.
+$$
+The scalar $t$ is called a **parameter**; $t$ may be interpreted as **time** and $X(t)$ as the **position vector** of a moving particle.
+
+Through two distinct points $P$ and $Q$:
+$$
+X(t)=P+t(Q-P) \qquad\text{or}\qquad X(t)=tQ+(1-t)P.
+$$
+
+### 13.4.2 Scalar Parametric Equations
+
+In components, with $P=(p,q,r)$ and $A=(a,b,c)$:
+$$
+x=p+ta, \qquad y=q+tb, \qquad z=r+tc.
+$$
+These are the **scalar parametric equations** of the line.
+
+### 13.4.3 Cartesian Equation in the Plane
+
+In $V_2$, eliminating $t$ gives
+$$
+b(x-p)-a(y-q)=0.
+$$
+If $a\neq0$ this becomes the **point-slope form**
+$$
+y-q=\frac{b}{a}(x-p).
+$$
+
+### 13.4.4 Normal Form
+
+Let $N=(b,-a)$. Then $N\cdot A=0$, so $N$ is a **normal vector** to the line. The Cartesian equation can be written as
+$$
+(X-P)\cdot N=0 \qquad\text{or}\qquad X\cdot N=P\cdot N.
+$$
+
+### 13.4.5 Distance from the Origin to a Line
+
+**Theorem 13.6.** Let $L$ be the line in $V_2$ given by $X\cdot N=P\cdot N$, where $N$ is a nonzero normal vector. Set
+$$
+d=\frac{|P\cdot N|}{\|N\|}.
+$$
+Then every point $X$ on $L$ satisfies $\|X\|\ge d$, and $\|X\|=d$ if and only if $X$ is the projection of $P$ along $N$:
+$$
+X=tN, \qquad t=\frac{P\cdot N}{N\cdot N}.
+$$
+
+**Proof sketch.** Since $X\cdot N=P\cdot N$, Cauchy–Schwarz gives $|P\cdot N|=|X\cdot N|\le\|X\|\,\|N\|$, whence $\|X\|\ge d$. Equality holds iff $X$ is parallel to $N$.
+
+### 13.4.6 Distance from a Point to a Line
+
+If $Q$ is a point not on $L$, the **distance** from $Q$ to $L$ is
+$$
+\frac{|(P-Q)\cdot N|}{\|N\|}.
+$$
+This is the length of the projection of $P-Q$ along the normal vector $N$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
