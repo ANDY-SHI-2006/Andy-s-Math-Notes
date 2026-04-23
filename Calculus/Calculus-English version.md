@@ -7433,6 +7433,64 @@ By the Weierstrass $M$-test with $M_n=t^n$, the series converges uniformly on th
 
 > For a power series in $z-a$, the same result holds after the change of variable $Z=z-a$; the circle of convergence is centered at $a$.
 
+## 11.7 Properties of Functions Represented by Real Power Series
+
+### 11.7.1 Interval of Convergence
+
+A **real power series** has the form $\sum a_n(x-a)^n$ with real $z,a,a_n$. Its circle of convergence intersects the real axis in a symmetric interval $(a-r,a+r)$, called the **interval of convergence**. The number $r$ is the radius of convergence.
+
+Each real power series defines a sum function
+$$
+f(x)=\sum_{n=0}^{\infty}a_n(x-a)^n \qquad (a-r<x<a+r).
+$$
+The series is called the **power-series expansion** of $f$ about $a$.
+
+### 11.7.2 Continuity and Term-by-Term Integration
+
+**Theorem 11.8.** If $f$ is represented by the power series $\sum a_n(x-a)^n$ in $(a-r,a+r)$, then:
+- $f$ is **continuous** on this interval.
+- Its integral over any closed subinterval may be computed by **integrating term by term**:
+  $$
+  \int_a^x f(t)\,dt = \sum_{n=0}^{\infty}\frac{a_n}{n+1}(x-a)^{n+1} \qquad (a-r<x<a+r).
+  $$
+
+> The integrated series has the **same radius of convergence** as the original series.
+
+### 11.7.3 Term-by-Term Differentiation
+
+**Theorem 11.9.** Let $f$ be represented by $\sum a_n(x-a)^n$ in $(a-r,a+r)$. Then:
+- **(a)** The differentiated series $\displaystyle\sum_{n=1}^{\infty}na_n(x-a)^{n-1}$ also has radius of convergence $r$.
+- **(b)** $f$ is **differentiable** at each $x$ in the interval, and
+  $$
+  f'(x)=\sum_{n=1}^{\infty}na_n(x-a)^{n-1}.
+  $$
+
+**Proof sketch.** Assume $a=0$. For $0<x<r$ and small $h>0$,
+$$
+\frac{f(x+h)-f(x)}{h}=\sum_{n=0}^{\infty}a_n\frac{(x+h)^n-x^n}{h}.
+$$
+By the mean-value theorem, $(x+h)^n-x^n=hnc_n^{n-1}$ with $x<c_n<x+h$. The resulting series $\sum na_nc_n^{n-1}$ is absolutely convergent and dominates $\sum na_nx^{n-1}$, proving (a). Let $g$ be the sum of the differentiated series; integrating $g$ term by term gives $\int_0^x g(t)\,dt=f(x)-a_0$, so by the fundamental theorem of calculus $f'=g$, proving (b).
+
+> Since every power series can be obtained by differentiating its integrated series, all three series (original, integrated, differentiated) have the **same radius of convergence**.
+
+### 11.7.4 Taylor Coefficients and Uniqueness
+
+Repeated term-by-term differentiation yields derivatives of **every** order. Evaluating at $x=a$:
+$$
+f^{(k)}(a)=k!\,a_k \qquad\Longrightarrow\qquad a_k=\frac{f^{(k)}(a)}{k!}.
+$$
+Hence every power-series expansion is a **Taylor series**:
+$$
+\boxed{f(x)=\sum_{k=0}^{\infty}\frac{f^{(k)}(a)}{k!}(x-a)^k}.
+$$
+
+**Uniqueness Theorem (11.10).** If two power series $\sum a_n(x-a)^n$ and $\sum b_n(x-a)^n$ have the same sum function in some neighborhood of $a$, then they are equal term by term:
+$$
+a_n=b_n=\frac{f^{(n)}(a)}{n!} \qquad (n\ge 0).
+$$
+
+> The partial sums of a power series are precisely the **Taylor polynomials** of the sum function. They converge pointwise on the interval of convergence and uniformly on every closed subinterval.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
