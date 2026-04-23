@@ -7858,6 +7858,84 @@ Dividing by $B\cdot B>0$ yields $(B\cdot B)(A\cdot A)-(A\cdot B)^2\ge 0$, which 
 
 > The Cauchy–Schwarz inequality is fundamental for defining the **length** (norm) of a vector.
 
+## 12.5 Length or Norm of a Vector
+
+### 12.5.1 Definition
+
+In $V_2$ and $V_3$ the length of a geometric vector follows from the theorem of Pythagoras:
+$$
+\text{length of }A=\sqrt{a_1^2+a_2^2}\;(V_2), \qquad
+\text{length of }A=\sqrt{a_1^2+a_2^2+a_3^2}\;(V_3).
+$$
+This motivates the definition in $V_n$:
+$$
+\boxed{\|A\|=(A\cdot A)^{1/2}=\Bigl(\sum_{k=1}^{n}a_k^2\Bigr)^{1/2}}.
+$$
+The quantity $\|A\|$ is called the **norm** (or **length**) of $A$.
+
+### 12.5.2 Properties of the Norm
+
+**Theorem 12.4.** For every vector $A$ in $V_n$ and every scalar $c$:
+- **(a)** $\|A\|>0$ if $A\neq O$ (positivity)
+- **(b)** $\|A\|=0$ if $A=O$
+- **(c)** $\|cA\|=|c|\,\|A\|$ (homogeneity)
+
+### 12.5.3 Cauchy–Schwarz in Norm Form
+
+The Cauchy–Schwarz inequality can be rewritten as
+$$
+(A\cdot B)^2\le\|A\|^2\|B\|^2 \qquad\text{or}\qquad |A\cdot B|\le\|A\|\,\|B\|.
+$$
+
+### 12.5.4 The Triangle Inequality
+
+**Theorem 12.5.** For any vectors $A,B$ in $V_n$,
+$$
+\boxed{\|A+B\|\le\|A\|+\|B\|}.
+$$
+Equality holds **if and only if** $A=O$, or $B=O$, or $B=cA$ for some $c>0$.
+
+**Proof.** Squaring both sides gives the equivalent inequality
+$$
+\|A+B\|^2\le(\|A\|+\|B\|)^2.
+$$
+The left side expands to $\|A\|^2+2A\cdot B+\|B\|^2$; the right side is $\|A\|^2+2\|A\|\,\|B\|+\|B\|^2$. Thus the inequality reduces to $A\cdot B\le\|A\|\,\|B\|$, which follows from $|A\cdot B|\le\|A\|\,\|B\|$.
+
+> Conversely, the triangle inequality also implies Cauchy–Schwarz.
+
+## 12.6 Orthogonality of Vectors
+
+### 12.6.1 The Polarization Identity
+
+From the proof of the triangle inequality we obtain the useful identity
+$$
+\|A+B\|^2=\|A\|^2+\|B\|^2+2A\cdot B,
+$$
+valid for any two vectors in $V_n$.
+
+### 12.6.2 Definition of Orthogonality
+
+In the plane, two perpendicular geometric vectors satisfy the Pythagorean theorem
+$$
+\|A+B\|^2=\|A\|^2+\|B\|^2.
+$$
+Comparing with the polarization identity gives $A\cdot B=0$.
+
+**Definition.** Two vectors $A$ and $B$ in $V_n$ are called **perpendicular** or **orthogonal** if
+$$
+A\cdot B=0.
+$$
+
+### 12.6.3 The Pythagorean Identity in $V_n$
+
+**Theorem.** Two vectors $A$ and $B$ in $V_n$ are orthogonal if and only if
+$$
+\|A+B\|^2=\|A\|^2+\|B\|^2.
+$$
+This is called the **Pythagorean identity** in $V_n$.
+
+> Orthogonality is the natural generalization of perpendicularity to arbitrary dimension.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
