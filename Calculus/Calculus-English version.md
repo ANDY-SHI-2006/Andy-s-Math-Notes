@@ -7779,6 +7779,85 @@ Special products that do **not** satisfy all field properties:
 - **Dot product** (Section 12.5): defined in any $V_n$; result is a **scalar**.
 - **Cross product** (Section 13.9): defined only in $V_3$; result is a **vector**, but it is not commutative.
 
+## 12.3 Geometric Interpretation for $n\le 3$
+
+### 12.3.1 Geometric Vectors
+
+A pair of points $A$ and $B$ defines a **geometric vector** $\overrightarrow{AB}$: an arrow from the **initial point** $A$ to the **terminal point** (tip) $B$.
+
+Geometric vectors are especially convenient for physical quantities possessing both **magnitude** and **direction** (force, displacement, velocity, acceleration). The length of the arrow measures the magnitude; the arrowhead indicates the direction.
+
+### 12.3.2 Equivalent Vectors
+
+Two geometric vectors $\overrightarrow{AB}$ and $\overrightarrow{CD}$ are called **equivalent** whenever
+$$
+B-A=D-C.
+$$
+Equivalently, in components: $b_1-a_1=d_1-c_1$ and $b_2-a_2=d_2-c_2$.
+
+> Equivalent arrows have equal lengths, are parallel, and point in the same direction. The four points $A,B,C,D$ are vertices of a parallelogram.
+
+### 12.3.3 Parallelogram Law of Addition
+
+In a parallelogram, opposite vertices have the same sum: $A+D=B+C$. If $A=O$ (the origin), the geometric vector from $O$ to $D$ corresponds to the vector sum $D=B+C$.
+
+> **Vector addition corresponds geometrically to the parallelogram law.** Many physical quantities combine in exactly this way.
+
+For simplicity we write $A$ for the geometric vector $\overrightarrow{OA}$; any geometric vector equivalent to $\overrightarrow{OA}$ is also denoted by $A$.
+
+### 12.3.4 Subtraction and Scalar Multiplication
+
+- **Subtraction:** $B-A$ is the vector from $A$ to $B$.
+- **Scalar multiplication:** If $B=cA$, the geometric vector $B$ has length $|c|$ times the length of $A$; it points in the same direction if $c>0$ and in the opposite direction if $c<0$.
+
+### 12.3.5 Parallelism in $V_n$
+
+**Definition.** Two vectors $A$ and $B$ in $V_n$:
+- have the **same direction** if $B=cA$ for some $c>0$;
+- have the **opposite direction** if $B=cA$ for some $c<0$;
+- are **parallel** if $B=cA$ for some $c\neq 0$.
+
+> The zero vector is parallel only to itself and is the only vector having the opposite direction to itself.
+
+## 12.4 The Dot Product
+
+### 12.4.1 Definition
+
+If $A=(a_1,\dots,a_n)$ and $B=(b_1,\dots,b_n)$ are vectors in $V_n$, their **dot product** (or **scalar product**) is
+$$
+A\cdot B=\sum_{k=1}^{n}a_k b_k.
+$$
+
+### 12.4.2 Algebraic Properties
+
+**Theorem 12.2.** For all vectors $A,B,C$ in $V_n$ and all scalars $c$:
+- **(a)** $A\cdot B=B\cdot A$ (commutative law)
+- **(b)** $A\cdot(B+C)=A\cdot B+A\cdot C$ (distributive law)
+- **(c)** $c(A\cdot B)=(cA)\cdot B=A\cdot(cB)$ (homogeneity)
+- **(d)** $A\cdot A>0$ if $A\neq O$ (positivity)
+- **(e)** $A\cdot A=0$ if $A=O$
+
+### 12.4.3 The Cauchy–Schwarz Inequality
+
+**Theorem 12.3.** For any vectors $A,B$ in $V_n$,
+$$
+\boxed{(A\cdot B)^2\le(A\cdot A)(B\cdot B)}
+$$
+Moreover, equality holds **if and only if** one vector is a scalar multiple of the other.
+
+**Coordinate-free proof.** If either vector is $O$ the result is trivial. Assume both are nonzero and set
+$$
+C=xA-yB, \qquad\text{where }x=B\cdot B,\; y=A\cdot B.
+$$
+By positivity, $C\cdot C\ge 0$. Expanding with properties (a)–(c):
+$$
+C\cdot C=x^2(A\cdot A)-2xy(A\cdot B)+y^2(B\cdot B)
+=(B\cdot B)^2(A\cdot A)-2(A\cdot B)^2(B\cdot B)+(A\cdot B)^2(B\cdot B)\ge 0.
+$$
+Dividing by $B\cdot B>0$ yields $(B\cdot B)(A\cdot A)-(A\cdot B)^2\ge 0$, which is the desired inequality. Equality occurs iff $C=O$, i.e. $xA=yB$, meaning $A$ and $B$ are scalar multiples.
+
+> The Cauchy–Schwarz inequality is fundamental for defining the **length** (norm) of a vector.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
