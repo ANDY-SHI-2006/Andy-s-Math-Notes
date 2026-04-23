@@ -8323,6 +8323,43 @@ $$
 
 **Proof sketch.** If $A,B,C$ are dependent, one is a linear combination of the other two, say $C=sA+tB$. If $A,B$ are independent they span a plane containing $C$; if dependent all three lie on a line through $O$, hence on any plane through $O$ containing them. Conversely, if $A,B,C$ lie on a plane through $O$ and $A,B$ are independent, that plane is unique (Theorem 13.10), so $C=sA+tB$ and the vectors are dependent.
 
+## 13.6 Planes and Vector-Valued Functions
+
+### 13.6.1 Parametric Vector Equation
+
+A plane can be described by a **vector-valued function of two variables**:
+$$
+X(s,t)=P+sA+tB, \qquad s,t\in\mathbb{R}.
+$$
+The scalars $s$ and $t$ are **parameters**; the presence of two parameters gives the plane its two-dimensional quality.
+
+### 13.6.2 Scalar Parametric Equations
+
+In $V_3$, with $P=(p_1,p_2,p_3)$, $A=(a_1,a_2,a_3)$, $B=(b_1,b_2,b_3)$, and $X(s,t)=(x,y,z)$:
+$$
+x=p_1+sa_1+tb_1, \qquad y=p_2+sa_2+tb_2, \qquad z=p_3+sa_3+tb_3.
+$$
+These are the **scalar parametric equations** of the plane.
+
+### 13.6.3 Cartesian Equation
+
+The parameters $s$ and $t$ can always be eliminated from the three scalar equations to obtain a single linear equation of the form
+$$
+ax+by+cz=d,
+$$
+called a **Cartesian equation** of the plane.
+
+**Example.** Let $P=(1,2,3)$, $A=(1,2,1)$, $B=(1,-4,-1)$. The parametric equations are
+$$
+x=1+s+t, \qquad y=2+2s-4t, \qquad z=3+s-t.
+$$
+From the first and third equations, $x-1=s+t$ and $z-3=s-t$. Adding and subtracting give $2s=x+z-4$ and $2t=x-z+2$. Substituting into the equation for $y$ yields the Cartesian equation
+$$
+x+y-3z=-6.
+$$
+
+> A systematic study of linear Cartesian equations is given in Section 13.16.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
