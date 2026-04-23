@@ -6770,6 +6770,86 @@ $$
 
 The partial sums of this power series are precisely the Taylor polynomials. Conditions guaranteeing $E_{n}(x)\to 0$ will be discussed in Section 11.10.
 
+## 10.8 Tests for Convergence
+
+Convergence tests fall into three categories:
+
+| Type | Form | Meaning |
+|------|------|---------|
+| (i) Sufficient | If $C$, then $\sum a_{n}$ converges | $C\Rightarrow$ convergence |
+| (ii) Necessary | If $\sum a_{n}$ converges, then $C$ | convergence$\Rightarrow C$ |
+| (iii) Necessary and sufficient | $\sum a_{n}$ converges $\iff C$ | equivalence |
+
+### 10.8.1 Theorem 10.6 — Necessary Condition
+
+If $\sum a_{n}$ converges, then:
+
+$$
+\lim_{n\to\infty}a_{n}=0.
+$$
+
+**Proof.** $a_{n}=s_{n}-s_{n-1}\to S-S=0$.
+
+> This is **not sufficient** (e.g. $a_{n}=1/n\to 0$ but $\sum 1/n$ diverges). Its practical use is as a **sufficient condition for divergence**: if $a_{n}\not\to 0$, the series diverges.
+
+## 10.9 Comparison Tests for Nonnegative Series
+
+### 10.9.1 Theorem 10.7 — Bounded-Partial-Sum Criterion
+
+If $a_{n}\ge 0$, then:
+
+$$
+\sum a_{n}\text{ converges}\quad\Longleftrightarrow\quad\{s_{n}\}\text{ is bounded above}.
+$$
+
+**Example.** $\sum 1/n!$ converges because $1/k!\le 1/2^{k-1}$, so:
+
+$$
+\sum_{k=1}^{n}\frac{1}{k!}\le\sum_{k=0}^{n-1}\Bigl(\frac{1}{2}\Bigr)^{k}\le 2.
+$$
+
+The sum is $e-1$.
+
+### 10.9.2 Theorem 10.8 — Comparison Test
+
+Assume $a_{n}\ge 0$, $b_{n}\ge 0$, and $a_{n}\le c\,b_{n}$ for some $c>0$ and all $n\ge N$. Then:
+
+- $\sum b_{n}$ converges $\;\Rightarrow\;$ $\sum a_{n}$ converges.
+- $\sum a_{n}$ diverges $\;\Rightarrow\;$ $\sum b_{n}$ diverges.
+
+> We say $\sum b_{n}$ **dominates** $\sum a_{n}$.
+
+### 10.9.3 Theorem 10.9 — Limit Comparison Test
+
+Assume $a_{n}>0$, $b_{n}>0$. If:
+
+$$
+\lim_{n\to\infty}\frac{a_{n}}{b_{n}}=1,
+$$
+
+then $\sum a_{n}$ and $\sum b_{n}$ both converge or both diverge.
+
+> The conclusion also holds if the limit is any $c>0$. If the limit is $0$, only "$\sum b_{n}$ conv. $\Rightarrow$ $\sum a_{n}$ conv." follows.
+
+**Asymptotic equality.** Write $a_{n}\sim b_{n}$ if $\lim a_{n}/b_{n}=1$.
+
+**Theorem 10.10.** Two series with positive, asymptotically equal terms converge or diverge together.
+
+### 10.9.4 Examples
+
+**Riemann zeta function.** For $s>1$:
+
+$$
+\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^{s}}.
+$$
+
+- $\sum 1/n^{2}$ converges since $1/n^{2}\sim 1/(n^{2}+n)$.
+- $\zeta(2)=\pi^{2}/6$ (Euler).
+
+**Divergent examples.** Since $\sum 1/n$ diverges:
+- $\sum 1/\sqrt{n(n+10)}$ diverges ($\sim 1/n$).
+- $\sum\sin(1/n)$ diverges ($\sin(1/n)\sim 1/n$).
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
