@@ -7279,6 +7279,59 @@ converges. Split it as $\int_{0+}^{1} + \int_{1}^{\infty}$:
 
 > The gamma function, introduced by Euler in 1729, extends factorials to positive real arguments.
 
+# 11. Sequences and Series of Functions
+
+## 11.1 Pointwise Convergence of Sequences of Functions
+
+### 11.1.1 Definition
+
+A sequence $\{f_n\}$ of real- or complex-valued functions with a common domain converges **pointwise** to a **limit function** $f$ on a set $S$ if for each $x\in S$:
+$$
+f(x) = \lim_{n\to\infty} f_n(x).
+$$
+
+---
+
+### 11.1.2 Why Pointwise Convergence Is Not Enough
+
+A central question: if each $f_n$ is continuous/differentiable/integrable, is the limit function $f$ also? In general, **no**.
+
+**Example 1 (continuity lost).** Let $f_n(x)=x^n$ on $[0,1]$. Each $f_n$ is continuous, but
+$$
+\lim_{n\to\infty}f_n(x) = f(x) = \begin{cases} 0 & 0\le x<1,\\ 1 & x=1, \end{cases}
+$$
+which is **discontinuous** at $x=1$.
+
+**Example 2 (integral vs. limit).** Let $f_n(x)=nx(1-x^2)^n$ on $[0,1]$. Then $f_n\to 0$ pointwise, yet
+$$
+\int_0^1 f_n(x)\,dx = \frac{n}{2(n+1)} \to \frac{1}{2} \neq 0 = \int_0^1 \lim_{n\to\infty}f_n(x)\,dx.
+$$
+> The operations of **limit** and **integration** cannot always be interchanged under mere pointwise convergence.
+
+Historical note: Stokes, Seidel (1848), and Weierstrass recognized that an extra condition—now called **uniform convergence**—is needed to justify interchanging limits with integration (and other operations).
+
+---
+
+## 11.2 Uniform Convergence of Sequences of Functions
+
+### 11.2.1 Definition
+
+A sequence $\{f_n\}$ converges **uniformly** to $f$ on a set $S$ if for every $\varepsilon>0$ there exists an integer $N$ (depending **only on $\varepsilon$**) such that
+$$
+|f_n(x)-f(x)| < \varepsilon \qquad\text{for all }x\in S\text{ and all }n\ge N.
+$$
+Symbolically: $f_n\to f$ **uniformly on** $S$.
+
+> In pointwise convergence $N$ may depend on both $\varepsilon$ **and** $x$; in uniform convergence $N$ works for **all** $x\in S$ simultaneously.
+
+### 11.2.2 Geometric Meaning
+
+When $f_n$ are real-valued, $|f_n(x)-f(x)|<\varepsilon$ is equivalent to
+$$
+f(x)-\varepsilon < f_n(x) < f(x)+\varepsilon \qquad\text{for all }x\in S.
+$$
+For $n\ge N$, the **entire graph** of $f_n$ over $S$ lies inside a band of height $2\varepsilon$ centered on the graph of $f$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
