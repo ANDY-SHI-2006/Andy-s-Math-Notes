@@ -8410,6 +8410,56 @@ $$
 
 > The cross product is defined only in $V_3$ and produces a vector, not a scalar.
 
+## 13.8 The Cross Product Expressed as a Determinant
+
+### 13.8.1 Determinants of Order Two
+
+The **determinant** of order two is defined by
+$$
+\begin{vmatrix} a & b \\ c & d \end{vmatrix}=ad-bc.
+$$
+Interchanging two rows or two columns changes the sign:
+$$
+\begin{vmatrix} a & b \\ c & d \end{vmatrix}=-\begin{vmatrix} b & a \\ d & c \end{vmatrix}.
+$$
+
+### 13.8.2 Cross Product via 2x2 Determinants
+
+Each component of $A\times B$ can be written as a second-order determinant:
+$$
+A\times B=\Bigl(\begin{vmatrix} a_2 & a_3 \\ b_2 & b_3 \end{vmatrix},\; \begin{vmatrix} a_3 & a_1 \\ b_3 & b_1 \end{vmatrix},\; \begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix}\Bigr).
+$$
+In terms of the unit coordinate vectors:
+$$
+A\times B=\begin{vmatrix} a_2 & a_3 \\ b_2 & b_3 \end{vmatrix}i+\begin{vmatrix} a_3 & a_1 \\ b_3 & b_1 \end{vmatrix}j+\begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix}k.
+$$
+
+### 13.8.3 Determinants of Order Three
+
+A third-order determinant is expanded along its first row:
+$$
+\begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix}
+=a_1\begin{vmatrix} b_2 & b_3 \\ c_2 & c_3 \end{vmatrix}
+-a_2\begin{vmatrix} b_1 & b_3 \\ c_1 & c_3 \end{vmatrix}
++a_3\begin{vmatrix} b_1 & b_2 \\ c_1 & c_2 \end{vmatrix}.
+$$
+
+### 13.8.4 Compact Determinant Form of the Cross Product
+
+When the first row consists of vectors, the determinant is meaningful and yields the cross product in compact form:
+$$
+\boxed{A\times B=\begin{vmatrix} i & j & k \\ a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \end{vmatrix}}
+$$
+
+**Example.** For $A=2i-8j+3k$ and $B=4j+3k$:
+$$
+A\times B=\begin{vmatrix} i & j & k \\ 2 & -8 & 3 \\ 0 & 4 & 3 \end{vmatrix}
+=\begin{vmatrix} -8 & 3 \\ 4 & 3 \end{vmatrix}i
+-\begin{vmatrix} 2 & 3 \\ 0 & 3 \end{vmatrix}j
++\begin{vmatrix} 2 & -8 \\ 0 & 4 \end{vmatrix}k
+=-36i-6j+8k.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
