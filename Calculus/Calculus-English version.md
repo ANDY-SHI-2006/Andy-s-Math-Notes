@@ -8284,6 +8284,45 @@ $$
 $$
 This is the length of the projection of $P-Q$ along the normal vector $N$.
 
+## 13.5 Planes in Euclidean $n$-Space
+
+### 13.5.1 Definition
+
+A **plane** in $V_n$ ($n\ge 2$) is a set of the form
+$$
+M=\{P+sA+tB\mid s,t\in\mathbb{R}\},
+$$
+where $P$ is a point and $A,B$ are **linearly independent** vectors. The vectors $A$ and $B$ are called **direction vectors** of the plane; $M$ is the plane through $P$ spanned by $A$ and $B$.
+
+When $P=O$, the plane is simply the linear span of $A$ and $B$.
+
+### 13.5.2 Equivalent Descriptions
+
+**Theorem 13.7.** Two planes $M=\{P+sA+tB\}$ and $M'=\{P+sC+tD\}$ through the same point $P$ are equal if and only if $L(A,B)=L(C,D)$ (i.e. $\{A,B\}$ and $\{C,D\}$ span the same subspace).
+
+**Theorem 13.8.** Two planes $M=\{P+sA+tB\}$ and $M'=\{Q+sA+tB\}$ spanned by the same vectors are equal if and only if $Q$ lies on $M$.
+
+### 13.5.3 Parallel Planes
+
+**Definition.** Two planes are **parallel** if their direction vectors span the same subspace. A vector $X$ is **parallel to** the plane $M$ if $X\in L(A,B)$.
+
+**Theorem 13.9 (Parallel Postulate for Planes).** Given a plane $M$ and a point $Q$ not on $M$, there is one and only one plane $M'$ containing $Q$ and parallel to $M$.
+
+### 13.5.4 Three Points Determine a Plane
+
+**Theorem 13.10.** If $P,Q,R$ are three points not on the same line, there is a unique plane $M$ containing them:
+$$
+M=\{P+s(Q-P)+t(R-P)\mid s,t\in\mathbb{R}\}.
+$$
+
+**Proof sketch.** First assume $P=O$. Then $Q$ and $R$ are linearly independent and span a plane $M'$. Any other plane $M''$ through $O$ containing $Q$ and $R$ must have direction vectors $A,B$ with $Q=aA+bB$ and $R=cA+dB$. Since $ad-bc\neq0$ (otherwise $Q,R$ would be dependent), we can solve for $A$ and $B$ as linear combinations of $Q$ and $R$, so $M''\subseteq M'$ and $M'\subseteq M''$. The general case follows by translating.
+
+### 13.5.5 Linear Dependence and Coplanarity
+
+**Theorem 13.11.** Three vectors $A,B,C$ in $V_n$ are linearly dependent if and only if they lie on the same plane through the origin.
+
+**Proof sketch.** If $A,B,C$ are dependent, one is a linear combination of the other two, say $C=sA+tB$. If $A,B$ are independent they span a plane containing $C$; if dependent all three lie on a line through $O$, hence on any plane through $O$ containing them. Conversely, if $A,B,C$ lie on a plane through $O$ and $A,B$ are independent, that plane is unique (Theorem 13.10), so $C=sA+tB$ and the vectors are dependent.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
