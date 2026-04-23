@@ -7936,6 +7936,82 @@ This is called the **Pythagorean identity** in $V_n$.
 
 > Orthogonality is the natural generalization of perpendicularity to arbitrary dimension.
 
+## 12.7 Projections and Angle Between Vectors
+
+### 12.7.1 Projection of a Vector
+
+Any vector $A$ can be decomposed as $A=tB+C$ where $C$ is orthogonal to $B$. The vector $tB$ is called the **projection of $A$ along $B$**.
+
+Taking the dot product with $B$ and using $C\cdot B=0$:
+$$
+t=\frac{A\cdot B}{B\cdot B}=\frac{A\cdot B}{\|B\|^2}.
+$$
+
+### 12.7.2 Geometric Meaning of the Dot Product
+
+From the right-triangle interpretation (Figure 12.11),
+$$
+\cos\theta=\frac{\|tB\|}{\|A\|}=\frac{t\,\|B\|}{\|A\|}=\frac{A\cdot B}{\|A\|\,\|B\|}.
+$$
+Hence
+$$
+\boxed{A\cdot B=\|A\|\,\|B\|\cos\theta}.
+$$
+The dot product equals the product of the lengths times the cosine of the included angle.
+
+### 12.7.3 Angle in $V_n$
+
+By Cauchy–Schwarz,
+$$
+-1\le\frac{A\cdot B}{\|A\|\,\|B\|}\le 1
+$$
+for any nonzero vectors. Therefore there is a unique $\theta\in[0,\pi]$ satisfying the formula above.
+
+**Definition.** The **angle** $\theta$ between nonzero vectors $A$ and $B$ in $V_n$ is
+$$
+\theta=\arccos\frac{A\cdot B}{\|A\|\,\|B\|}.
+$$
+In particular, $\theta=\pi/2$ when $A\cdot B=0$ (orthogonal vectors).
+
+## 12.8 The Unit Coordinate Vectors
+
+### 12.8.1 Definition
+
+In $V_n$ the **unit coordinate vectors** are
+$$
+E_1=(1,0,\dots,0),\; E_2=(0,1,0,\dots,0),\;\dots,\; E_n=(0,\dots,0,1).
+$$
+Each has length $1$, and distinct ones are orthogonal:
+$$
+E_k\cdot E_j=0 \quad (k\neq j).
+$$
+
+### 12.8.2 Standard Basis Representation
+
+**Theorem 12.6.** Every vector $X=(x_1,\dots,x_n)$ in $V_n$ can be expressed **uniquely** as
+$$
+X=\sum_{k=1}^{n}x_k E_k.
+$$
+
+> **Proof.** Immediate from the definitions of addition and scalar multiplication; uniqueness follows from equality of components.
+
+A sum $\sum c_i A_i$ is called a **linear combination** of $A_1,\dots,A_n$. Theorem 12.6 says the unit coordinate vectors **span** $V_n$ (and do so uniquely).
+
+### 12.8.3 Notation in Low Dimensions
+
+- In $V_2$: $E_1, E_2$ are often denoted $\boldsymbol{i}, \boldsymbol{j}$.
+- In $V_3$: $E_1, E_2, E_3$ are often denoted $\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}$.
+
+Any vector in $V_3$ is then written $A=a_1\boldsymbol{i}+a_2\boldsymbol{j}+a_3\boldsymbol{k}$.
+
+### 12.8.4 Algebraic Manipulations
+
+When vectors are expressed as linear combinations of the unit coordinate vectors, operations follow the usual rules of algebra. For example,
+$$
+A+B=\sum_{k=1}^{n}a_k E_k+\sum_{k=1}^{n}b_k E_k=\sum_{k=1}^{n}(a_k+b_k)E_k,
+$$
+and the coefficient of $E_k$ is precisely the $k$th component of $A+B$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
