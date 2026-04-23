@@ -7030,6 +7030,102 @@ s_{2n} = \bigl(\log 2n + C + o(1)\bigr) - \bigl(\log n + C + o(1)\bigr) = \log 2
 $$
 Therefore $s_{2n} \to \log 2$, confirming the sum of the alternating harmonic series.
 
+## 10.13 Conditional and Absolute Convergence
+
+### 10.13.1 Absolute Convergence Implies Convergence
+
+**Theorem.** If $\sum |a_n|$ converges, then $\sum a_n$ also converges, and
+$$
+\Bigl|\sum_{n=1}^{\infty}a_n\Bigr| \le \sum_{n=1}^{\infty}|a_n|.
+$$
+
+**Proof sketch.**
+- **Real case:** Let $b_n = a_n + |a_n|$. Then $b_n$ is either $0$ or $2|a_n|$, so $0 \le b_n \le 2|a_n|$. By comparison, $\sum b_n$ converges; hence $\sum a_n = \sum b_n - \sum |a_n|$ converges.
+- **Complex case:** Write $a_n = u_n + iv_n$. Since $|u_n| \le |a_n|$ and $|v_n| \le |a_n|$, absolute convergence of $\sum |a_n|$ implies convergence of $\sum |u_n|$ and $\sum |v_n|$, hence of $\sum u_n$ and $\sum v_n$.
+- The triangle inequality $|\sum_{k=1}^n a_k| \le \sum_{k=1}^n |a_k|$ gives the stated bound as $n\to\infty$.
+
+---
+
+### 10.13.2 Definitions
+
+- **Absolutely convergent:** $\sum |a_n|$ converges.
+- **Conditionally convergent:** $\sum a_n$ converges but $\sum |a_n|$ diverges.
+
+> The alternating harmonic series $\sum (-1)^{n-1}/n$ is **conditionally convergent**.
+
+**Linearity.** If $\sum a_n$ and $\sum b_n$ are absolutely convergent, so is $\sum(\alpha a_n + \beta b_n)$ for any scalars $\alpha,\beta$.
+
+---
+
+## 10.14 The Convergence Tests of Dirichlet and Abel
+
+### 10.14.1 Abel's Partial Summation Formula
+
+Let $\{a_n\},\{b_n\}$ be sequences of complex numbers and let $A_n = \sum_{k=1}^n a_k$. Then
+$$
+\boxed{\sum_{k=1}^{n}a_k b_k = A_n b_{n+1} + \sum_{k=1}^{n}A_k(b_k - b_{k+1})}
+$$
+
+**Proof.** With $A_0=0$, write $a_k = A_k - A_{k-1}$; the identity follows by rearranging the double sum.
+
+> If $A_n b_{n+1} \to L$ and $\sum A_k(b_k - b_{k+1})$ converges, then $\sum a_k b_k$ converges.
+
+---
+
+### 10.14.2 Dirichlet's Test
+
+**Theorem.** Let $\sum a_n$ be a series of complex terms whose partial sums form a **bounded** sequence. Let $\{b_n\}$ be a **decreasing** sequence with $b_n \to 0$. Then $\sum a_n b_n$ **converges**.
+
+**Proof sketch.** $|A_n| \le M$ implies $A_n b_{n+1} \to 0$. Since $b_n \searrow$,
+$$
+|A_k(b_k - b_{k+1})| \le M(b_k - b_{k+1}),
+$$
+and $\sum (b_k - b_{k+1})$ is a convergent telescoping series, so $\sum A_k(b_k - b_{k+1})$ converges absolutely.
+
+---
+
+### 10.14.3 Abel's Test
+
+**Theorem.** Let $\sum a_n$ be a **convergent** series of complex terms and let $\{b_n\}$ be a **monotonic convergent** sequence of real terms. Then $\sum a_n b_n$ **converges**.
+
+> The proof is analogous to Dirichlet's test, using that $\{A_n\}$ is bounded and $A_n b_{n+1}$ converges.
+
+---
+
+### 10.14.4 Bounded Partial Sums of a Geometric Series on the Unit Circle
+
+**Theorem.** For every real $\theta$ not an integer multiple of $\pi$,
+$$
+\sum_{k=1}^{n}e^{2ik\theta} = \frac{\sin n\theta}{\sin\theta}\,e^{i(n+1)\theta},
+\qquad
+\Bigl|\sum_{k=1}^{n}e^{2ik\theta}\Bigr| \le \frac{1}{|\sin\theta|}.
+$$
+
+**Proof.** Use the geometric-series formula $\sum_{k=1}^n x^k = x(x^n-1)/(x-1)$ with $x=e^{2i\theta}$; simplify using Euler's formula to obtain the closed form. The estimate follows from $|\sin n\theta|\le 1$ and $|e^{i(n+1)\theta}|=1$.
+
+> This shows that $\sum x^n$ with $|x|=1$, $x\neq 1$ has bounded partial sums—a key example for Dirichlet's test.
+
+---
+
+### 10.14.5 Applications
+
+**Example.** If $\{b_n\}$ is any decreasing real sequence with $b_n \to 0$ and $|x|=1$, $x\neq 1$, then by Dirichlet's test
+$$
+\sum_{n=1}^{\infty} b_n x^n \quad\text{converges}.
+$$
+- Leibniz's rule is the special case $x=-1$.
+- Writing $x=e^{i\theta}$ and taking real/imaginary parts, the trigonometric series
+  $$\sum_{n=1}^{\infty} b_n\cos n\theta, \qquad \sum_{n=1}^{\infty} b_n\sin n\theta$$
+  both converge (for $\theta$ not a multiple of $2\pi$).
+
+**Special case $b_n = n^{-\alpha}$ $(\alpha>0)$:**
+$$
+\sum_{n=1}^{\infty}\frac{e^{in\theta}}{n^{\alpha}},\quad
+\sum_{n=1}^{\infty}\frac{\cos n\theta}{n^{\alpha}},\quad
+\sum_{n=1}^{\infty}\frac{\sin n\theta}{n^{\alpha}}
+$$
+all converge. When $\alpha>1$ they converge **absolutely** (dominated by $\sum n^{-\alpha}$).
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
