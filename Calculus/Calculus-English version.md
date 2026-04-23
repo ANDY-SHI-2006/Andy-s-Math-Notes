@@ -6949,6 +6949,87 @@ $$
 
 > Both tests are special cases of the comparison test with a geometric series.
 
+## 10.12 Alternating Series
+
+### 10.12.1 Definition
+
+An **alternating series** is a series whose terms alternate in sign:
+$$
+\sum_{n=1}^{\infty}(-1)^{n-1}a_n = a_1 - a_2 + a_3 - a_4 + \cdots, \qquad a_n > 0.
+$$
+
+**Examples:**
+- Logarithmic series: $\displaystyle \log(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots$, converges for $-1 < x \le 1$. At $x=1$:
+  $$\log 2 = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots$$
+- Gregory–Leibniz series (1671/1673):
+  $$\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots$$
+
+> The alternating harmonic series converges (to $\log 2$), while the harmonic series $\sum 1/n$ diverges.
+
+---
+
+### 10.12.2 Leibniz's Rule
+
+**Theorem.** If $\{a_n\}$ is **monotonic decreasing** and $a_n \to 0$, then the alternating series $\sum (-1)^{n-1}a_n$ **converges**.
+
+**Error estimate.** If $S$ is the sum and $s_n$ the $n$th partial sum, then
+$$
+0 < (-1)^n(S - s_n) < a_{n+1} \qquad (n \ge 1).
+$$
+- The error has the **same sign** as the first neglected term $(-1)^n a_{n+1}$.
+- The **absolute error** is **less than** the first neglected term.
+
+**Proof sketch.**
+- Even partial sums $s_{2n}$ form an increasing sequence: $s_{2n+2} - s_{2n} = a_{2n+1} - a_{2n+2} > 0$.
+- Odd partial sums $s_{2n-1}$ form a decreasing sequence.
+- Both are bounded, so $s_{2n} \to S'$ and $s_{2n-1} \to S''$.
+- $S' - S'' = \lim (-a_{2n}) = 0$, hence $S' = S'' = S$.
+- From $s_{2n} \nearrow S \le s_{2n+1} \searrow$, the inequalities follow.
+
+**Examples:**
+1. $\sum (-1)^{n-1}/n$ converges by Leibniz (sum = $\log 2$).
+2. $\sum (-1)^n (\log n)/n$ converges: $(\log n)/n \to 0$, and for $f(x)=(\log x)/x$, $f'(x)=(1-\log x)/x^2 < 0$ when $x>e$, so the sequence decreases for $n\ge 3$.
+
+---
+
+### 10.12.3 Euler's Constant
+
+**Construction.** Define
+$$
+a_{2n-1} = \frac{1}{n}, \qquad a_{2n} = \int_n^{n+1}\frac{dx}{x} = \log(n+1)-\log n.
+$$
+Then $a_n \to 0$ and $a_n \searrow$, so $\sum (-1)^{n-1}a_n$ converges. Its $(2n-1)$st partial sum is
+$$
+s_{2n-1} = 1 + \frac{1}{2} + \cdots + \frac{1}{n} - \log n.
+$$
+Since $s_{2n-1}$ tends to a limit, we obtain **Euler's constant**:
+$$
+\boxed{\lim_{n\to\infty}\Bigl(1 + \frac{1}{2} + \cdots + \frac{1}{n} - \log n\Bigr) = C}
+$$
+
+- $C \approx 0.5772156649\dots$ (to ten decimals).
+- It is still **unknown** whether $C$ is rational or irrational.
+
+**Asymptotic formula:**
+$$
+\sum_{k=1}^{n}\frac{1}{k} = \log n + C + o(1) \qquad (n\to\infty).
+$$
+Hence the partial sums of the harmonic series are asymptotically equal to $\log n$:
+$$
+\sum_{k=1}^{n}\frac{1}{k} \sim \log n.
+$$
+
+**Example (alternating harmonic series).** Let $s_m = \sum_{k=1}^{m}(-1)^{k-1}/k$. Separating even and odd terms for $m=2n$:
+$$
+s_{2n} = \sum_{k=1}^{n}\frac{1}{2k-1} - \sum_{k=1}^{n}\frac{1}{2k}
+     = \sum_{k=1}^{2n}\frac{1}{k} - \sum_{k=1}^{n}\frac{1}{k}.
+$$
+Applying the asymptotic formula:
+$$
+s_{2n} = \bigl(\log 2n + C + o(1)\bigr) - \bigl(\log n + C + o(1)\bigr) = \log 2 + o(1).
+$$
+Therefore $s_{2n} \to \log 2$, confirming the sum of the alternating harmonic series.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
