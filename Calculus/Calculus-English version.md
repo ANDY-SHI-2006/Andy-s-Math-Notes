@@ -8107,6 +8107,51 @@ Thus a basis is a linearly independent set which spans the whole space. The unit
 
 > Properties (a)–(c) justify calling $n$ the **dimension** of $V_n$.
 
+## 12.12 The Complex Vector Space $V_n(\mathbb{C})$
+
+### 12.12.1 Definition
+
+Replacing real scalars by complex scalars in the definition of $V_n$ yields the **complex vector space** $V_n(\mathbb{C})$. Equality, addition, and scalar multiplication are defined componentwise exactly as in the real case.
+
+Since complex numbers satisfy the same field properties as real numbers, all theorems about $V_n$ that use only field properties remain valid for $V_n(\mathbb{C})$.
+
+### 12.12.2 The Complex Dot Product
+
+For $V_n(\mathbb{C})$ the ordinary dot product must be modified to preserve positivity, because a sum of squares of complex numbers can be negative.
+
+**Definition.** For $A=(a_1,\dots,a_n)$ and $B=(b_1,\dots,b_n)$ in $V_n(\mathbb{C})$,
+$$
+\boxed{A\cdot B=\sum_{k=1}^{n}a_k\,\overline{b}_k}
+$$
+where $\overline{b}_k$ is the complex conjugate of $b_k$.
+
+> When the components are real, $\overline{b}_k=b_k$ and this agrees with the real definition.
+
+**Theorem 12.11.** For all vectors $A,B,C$ in $V_n(\mathbb{C})$ and all complex scalars $c$:
+- **(a)** $A\cdot B=\overline{B\cdot A}$
+- **(b)** $A\cdot(B+C)=A\cdot B+A\cdot C$
+- **(c)** $c(A\cdot B)=(cA)\cdot B=A\cdot(\overline{c}B)$
+- **(d)** $A\cdot A>0$ if $A\neq O$
+- **(e)** $A\cdot A=0$ if $A=O$
+
+> Note the conjugations in (a) and (c) when factors are interchanged or scalars are moved across the dot.
+
+### 12.12.3 Norms, Cauchy–Schwarz, and Orthogonality
+
+The Cauchy–Schwarz inequality takes the same form:
+$$
+|A\cdot B|^2\le(A\cdot A)(B\cdot B).
+$$
+The **norm** is defined by $\|A\|=(A\cdot A)^{1/2}$, and the fundamental norm properties (Theorem 12.4) and the **triangle inequality** remain valid without change.
+
+**Orthogonality** is defined exactly as before: $A\perp B$ means $A\cdot B=0$. The Pythagorean identity $\|A+B\|^2=\|A\|^2+\|B\|^2$ holds for orthogonal vectors in $V_n(\mathbb{C})$.
+
+### 12.12.4 Span, Independence, and Basis
+
+The concepts of linear span, linear independence, linear dependence, and basis are defined for $V_n(\mathbb{C})$ exactly as in the real case. Theorems 12.7 through 12.10 and their proofs are all valid without change.
+
+> Complex vector spaces arise naturally in linear differential equations and quantum mechanics.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
