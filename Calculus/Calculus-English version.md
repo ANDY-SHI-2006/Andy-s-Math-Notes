@@ -6850,6 +6850,55 @@ $$
 - $\sum 1/\sqrt{n(n+10)}$ diverges ($\sim 1/n$).
 - $\sum\sin(1/n)$ diverges ($\sin(1/n)\sim 1/n$).
 
+## 10.10 The Integral Test
+
+### 10.10.1 Theorem 10.11
+
+Let $f$ be positive and decreasing for $x\ge 1$. Define:
+
+$$
+s_{n}=\sum_{k=1}^{n}f(k),\qquad t_{n}=\int_{1}^{n}f(x)\,dx.
+$$
+
+Then $\{s_{n}\}$ and $\{t_{n}\}$ **both converge or both diverge**.
+
+**Proof.** Comparing $f$ with step functions:
+
+$$
+\sum_{k=2}^{n}f(k)\le\int_{1}^{n}f(x)\,dx\le\sum_{k=1}^{n-1}f(k),
+$$
+
+i.e. $s_{n}-f(1)\le t_{n}\le s_{n-1}$. Both sequences are monotone increasing, so they are either both bounded or both unbounded.
+
+### 10.10.2 Example 1 — $p$-Series
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n^{s}}\quad\text{converges}\iff s>1.
+$$
+
+Take $f(x)=x^{-s}$. Then:
+
+$$
+t_{n}=\int_{1}^{n}\frac{dx}{x^{s}}=\begin{cases}\dfrac{n^{1-s}-1}{1-s}&s\neq 1,\\[6pt]\log n&s=1.\end{cases}
+$$
+
+- $s>1$: $n^{1-s}\to 0$, so $t_{n}\to\dfrac{1}{s-1}$. Converges.
+- $s\le 1$: $t_{n}\to\infty$. Diverges (harmonic series when $s=1$).
+
+### 10.10.3 Example 2 — Logarithmic $p$-Series
+
+$$
+\sum_{n=2}^{\infty}\frac{1}{n(\log n)^{s}}\quad\text{converges}\iff s>1.
+$$
+
+The corresponding integral is:
+
+$$
+t_{n}=\int_{2}^{n}\frac{dx}{x(\log x)^{s}}=\begin{cases}\dfrac{(\log n)^{1-s}-(\log 2)^{1-s}}{1-s}&s\neq 1,\\[6pt]\log(\log n)-\log(\log 2)&s=1.\end{cases}
+$$
+
+Thus $\{t_{n}\}$ converges iff $s>1$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
