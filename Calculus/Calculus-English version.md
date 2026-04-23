@@ -7550,6 +7550,49 @@ where $B=A|x-a|$. Since $B^n/n!\to 0$ as $n\to\infty$ for every $B$, we have $E_
 
 > The condition $|f^{(n)}|\le A^n$ is satisfied by $e^x$, $\sin x$, $\cos x$, etc., so their Taylor expansions are valid everywhere (or on the whole line).
 
+## 11.10 Power-Series Expansions for the Exponential and Trigonometric Functions
+
+### 11.10.1 Sine and Cosine
+
+Since all derivatives of $\sin x$ and $\cos x$ are bounded by $1$ on $\mathbb{R}$, the condition $|f^{(n)}|\le A^n$ of Theorem 11.11 holds with $A=1$. Hence their Taylor expansions are valid for **all real $x$**:
+$$
+\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots + (-1)^{n-1}\frac{x^{2n-1}}{(2n-1)!} + \cdots
+$$
+$$
+\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots + (-1)^{n}\frac{x^{2n}}{(2n)!} + \cdots
+$$
+
+### 11.10.2 The Exponential Function
+
+For $f(x)=e^x$ we have $f^{(n)}(x)=e^x$ for all $n$. On any finite interval $(-r,r)$ we have $e^x\le e^r$, so Theorem 11.11 applies with $A=e^r$. Since $r$ is arbitrary, the expansion holds for **all real $x$**:
+$$
+e^x = 1 + x + \frac{x^2}{2!} + \cdots + \frac{x^n}{n!} + \cdots
+$$
+
+### 11.10.3 Analytic Development of Trigonometry
+
+These series can be taken as **definitions** of $\sin x$ and $\cos x$. From them one derives all familiar properties:
+- $\sin 0 = 0$, $\cos 0 = 1$
+- $\sin(-x) = -\sin x$, $\cos(-x) = \cos x$
+- $D\sin x = \cos x$, $D\cos x = -\sin x$
+
+**Addition formulas.** Define
+$$
+u(x)=\sin(x+a)-\sin x\cos a-\cos x\sin a,
+$$
+$$
+u(x)=\cos(x+a)-\cos x\cos a+\sin x\sin a,
+$$
+and let $f(x)=[u(x)]^2+[v(x)]^2$. Then $u'=v$ and $v'=-u$, so $f'(x)=0$; since $f(0)=0$, we get $f(x)\equiv 0$, hence $u(x)=v(x)\equiv 0$. Therefore
+$$
+\sin(x+a)=\sin x\cos a+\cos x\sin a,
+$$
+$$
+\cos(x+a)=\cos x\cos a-\sin x\sin a.
+$$
+
+> The number $\pi$ may be introduced as the smallest positive $x$ with $\sin x=0$. From this one obtains period $2\pi$, $\sin(\pi/2)=1$, and $\cos(\pi/2)=0$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
