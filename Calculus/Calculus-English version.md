@@ -7201,6 +7201,84 @@ Each partial sum of the rearrangement differs from $S$ by at most one term, and 
 
 > **Key insight:** Absolute convergence guarantees rearrangement invariance; conditional convergence allows rearrangement to any desired sum.
 
+## 10.16 Improper Integrals
+
+### 10.16.1 Infinite Integrals (First Kind)
+
+If $\int_a^b f(x)\,dx$ exists for every $b\ge a$, define the **infinite integral**
+$$
+\int_a^{\infty} f(x)\,dx = \lim_{b\to+\infty}\int_a^{b}f(x)\,dx.
+$$
+The integral **converges** if the limit exists and is finite; otherwise it **diverges**.
+
+**Examples:**
+1. $\displaystyle\int_1^{\infty}x^{-s}\,dx$ converges iff $s>1$, with value $1/(s-1)$. (Analogous to the zeta series.)
+2. $\displaystyle\int_0^{\infty}\sin x\,dx$ diverges ($1-\cos b$ has no limit).
+3. $\displaystyle\int_{-\infty}^{\infty}e^{-a|x|}\,dx = 2/a$ for $a>0$.
+
+For doubly infinite intervals:
+$$
+\int_{-\infty}^{\infty}f(x)\,dx = \int_{-\infty}^{c}f(x)\,dx + \int_{c}^{\infty}f(x)\,dx,
+$$
+convergent iff **both** integrals on the right converge (the choice of $c$ is irrelevant).
+
+---
+
+### 10.16.2 Convergence Tests for Nonnegative Integrands
+
+**Theorem (Boundedness criterion).** If $f(x)\ge 0$ for $x\ge a$, then $\int_a^{\infty}f(x)\,dx$ converges iff there exists $M>0$ such that $\int_a^b f(x)\,dx \le M$ for all $b\ge a$.
+
+**Comparison test.** If $0\le f(x)\le g(x)$ for $x\ge a$ and $\int_a^{\infty}g$ converges, then $\int_a^{\infty}f$ also converges and $\int_a^{\infty}f \le \int_a^{\infty}g$.
+
+**Limit comparison test.** Let $f(x)\ge 0$, $g(x)>0$ for $x\ge a$. If
+$$
+\lim_{x\to+\infty}\frac{f(x)}{g(x)} = c \neq 0,
+$$
+then $\int_a^{\infty}f$ and $\int_a^{\infty}g$ either both converge or both diverge. If $c=0$, convergence of $\int_a^{\infty}g$ implies convergence of $\int_a^{\infty}f$.
+
+**Example.** $\int_1^{\infty}e^{-x}x^{s}\,dx$ converges for every real $s$ (compare with $x^{-2}$).
+
+---
+
+### 10.16.3 Improper Integrals of the Second Kind
+
+Suppose $f$ is defined on $(a,b]$ and $\int_x^b f(t)\,dt$ exists for $a<x\le b$. Define
+$$
+\int_{a+}^{b}f(t)\,dt = \lim_{x\to a^+}\int_x^{b}f(t)\,dt.
+$$
+
+**Example.** $\displaystyle\int_{0+}^{b}t^{-s}\,dt$ converges iff $s<1$.
+
+> **Connection between the two kinds.** By the substitution $t=1/u$,
+> $$\int_x^{b}t^{-s}\,dt = \int_{1/b}^{1/x}u^{s-2}\,du,$$
+> so convergence of the second-kind integral for $s$ is equivalent to convergence of the first-kind integral for $2-s$.
+
+**Gabriel's horn.** For $f(x)=x^{-3/4}$ on $(0,1]$:
+- $\int_0^1 f(x)\,dx$ **converges** (finite area),
+- but $\int_0^1 \pi f(x)^2\,dx$ **diverges** (infinite volume of revolution).
+
+If $f$ is unbounded at an interior point $c$, split:
+$$
+\int_{a+}^{b-}f(t)\,dt = \int_{a+}^{c}f(t)\,dt + \int_{c}^{b-}f(t)\,dt.
+$$
+Mixed combinations (e.g. $\int_{a+}^{\infty}$) are defined analogously.
+
+---
+
+### 10.16.4 The Gamma Function
+
+For $s>0$ the integral
+$$
+\Gamma(s) = \int_{0+}^{\infty}e^{-t}t^{s-1}\,dt
+$$
+converges. Split it as $\int_{0+}^{1} + \int_{1}^{\infty}$:
+- The second integral converges for all real $s$ (by comparison with $e^{-t/2}$).
+- The first integral converges for $s>0$ (by comparison with $t^{s-1}$).
+
+**Key property:** $\Gamma(n+1) = n!$ for every integer $n\ge 0$.
+
+> The gamma function, introduced by Euler in 1729, extends factorials to positive real arguments.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
