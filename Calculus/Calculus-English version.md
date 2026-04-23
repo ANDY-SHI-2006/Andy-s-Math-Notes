@@ -7636,6 +7636,87 @@ $$
 
 > Bernstein's condition is weaker than the exponential bound $|f^{(n)}|\le A^n$; it applies, for example, to functions like $e^x$ and many other completely monotone functions.
 
+## 11.12 Power Series and Differential Equations
+
+### 11.12.1 The Method of Undetermined Coefficients
+
+Power series can provide solutions of differential equations when other methods fail. The idea is to assume a solution of the form
+$$
+y=\sum_{n=0}^{\infty}a_n x^n
+$$
+and determine the coefficients recursively.
+
+### 11.12.2 Example
+
+Consider the equation
+$$
+(1-x^2)y''=-2y.
+$$
+With $y=\sum a_n x^n$ we have $y''=\sum_{n=2}^{\infty}n(n-1)a_n x^{n-2}$. Substituting and equating coefficients gives the recurrence
+$$
+a_{n+2}=\frac{n-2}{n+2}\,a_n.
+$$
+
+**Even coefficients:** $a_2=-a_0$, $a_4=0$, and $a_6=a_8=\cdots=0$.
+
+**Odd coefficients:**
+$$
+a_{2n+1}=\frac{-1}{(2n+1)(2n-1)}\,a_1.
+$$
+
+Hence the general solution is
+$$
+y=a_0(1-x^2)-a_1\sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)(2n-1)}.
+$$
+The ratio test shows convergence for $|x|<1$.
+
+### 11.12.3 Alternative: Computing Derivatives at the Origin
+
+Since $a_n=f^{(n)}(0)/n!$, the coefficients can also be found by repeated differentiation of the differential equation. Setting $x=0$ in $(1-x^2)y''=-2y$ gives $f''(0)=-2a_0$, so $a_2=-a_0$. Differentiating the equation successively and evaluating at $0$ yields $a_3, a_4,\dots$.
+
+## 11.13 The Binomial Series
+
+### 11.13.1 The Expansion
+
+For any real $\alpha$ and $|x|<1$,
+$$
+\boxed{(1+x)^{\alpha}=\sum_{n=0}^{\infty}\binom{\alpha}{n}x^{n}}
+$$
+where the **generalized binomial coefficient** is
+$$
+\binom{\alpha}{n}=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}.
+$$
+
+When $\alpha$ is a nonnegative integer, all but finitely many coefficients vanish and the series reduces to the ordinary binomial theorem.
+
+### 11.13.2 Proof via Differential Equations
+
+**Step 1 — Convergence.** The ratio test shows absolute convergence for $-1<x<1$.
+
+**Step 2 — Define $f$.** Let
+$$
+f(x)=\sum_{n=0}^{\infty}\binom{\alpha}{n}x^{n}, \qquad |x|<1.
+$$
+
+**Step 3 — Key identity.** For all real $\alpha$ and $n\ge 0$,
+$$
+(n+1)\binom{\alpha}{n+1}=(\alpha-n)\binom{\alpha}{n},
+\qquad\text{equivalently}\qquad
+(n+1)\binom{\alpha}{n+1}+n\binom{\alpha}{n}=\alpha\binom{\alpha}{n}.
+$$
+
+**Step 4 — Differential equation.** Differentiating $f$ and using the identity:
+$$
+(1+x)f'(x)=\sum_{n=0}^{\infty}\Bigl[(n+1)\binom{\alpha}{n+1}+n\binom{\alpha}{n}\Bigr]x^{n}
+=\alpha\sum_{n=0}^{\infty}\binom{\alpha}{n}x^{n}=\alpha f(x).
+$$
+Thus $f$ satisfies
+$$
+y'-\frac{\alpha}{x+1}\,y=0, \qquad f(0)=1.
+$$
+
+**Step 5 — Uniqueness.** By Theorem 8.3 (existence-uniqueness for first-order linear ODEs), this initial-value problem has the unique solution $y=(1+x)^{\alpha}$. Hence $f(x)=(1+x)^{\alpha}$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
