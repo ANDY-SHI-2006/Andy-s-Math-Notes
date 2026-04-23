@@ -7126,6 +7126,81 @@ $$
 $$
 all converge. When $\alpha>1$ they converge **absolutely** (dominated by $\sum n^{-\alpha}$).
 
+## 10.15 Rearrangements of Series
+
+### 10.15.1 A Surprising Example
+
+Finite sums can be rearranged without changing their value, but this is **not always true** for infinite series (Cauchy, 1833).
+
+**Example.** The alternating harmonic series
+$$
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots = \log 2.
+$$
+Rearrange it by taking **two positive terms followed by one negative term**:
+$$
+1 + \frac{1}{3} - \frac{1}{2} + \frac{1}{5} + \frac{1}{7} - \frac{1}{4} + \cdots
+$$
+Let $t_{3m}$ be the $(3m)$th partial sum:
+$$
+t_{3m} = \sum_{k=1}^{2m}\frac{1}{2k-1} - \sum_{k=1}^{m}\frac{1}{2k}
+     = \sum_{k=1}^{4m}\frac{1}{k} - \frac{1}{2}\sum_{k=1}^{2m}\frac{1}{k} - \frac{1}{2}\sum_{k=1}^{m}\frac{1}{k}.
+$$
+Using $\sum_{k=1}^{n}1/k = \log n + C + o(1)$,
+$$
+t_{3m} = (\log 4m + C) - \tfrac{1}{2}(\log 2m + C) - \tfrac{1}{2}(\log m + C) + o(1)
+     = \tfrac{3}{2}\log 2 + o(1).
+$$
+Hence the rearranged series converges to $\frac{3}{2}\log 2 \neq \log 2$.
+
+---
+
+### 10.15.2 Definition of Rearrangement
+
+A **permutation** of $\mathbb{P}=\{1,2,3,\dots\}$ is a one-to-one mapping $f:\mathbb{P}\to\mathbb{P}$. If $b_n = a_{f(n)}$, then $\sum b_n$ is called a **rearrangement** of $\sum a_n$.
+
+---
+
+### 10.15.3 Absolute Convergence Preserves the Sum
+
+**Theorem.** Let $\sum a_n$ be **absolutely convergent** with sum $S$. Then every rearrangement of $\sum a_n$ also converges absolutely and has sum $S$.
+
+**Proof sketch.** Let $b_n = a_{f(n)}$. Then $\sum|b_n|$ converges because its partial sums are bounded by $\sum|a_n|$. Given $\varepsilon>0$, choose $N$ so that $|A_N-S|<\varepsilon/2$ and $\sum_{k>N}|a_k|<\varepsilon/2$. Choose $M$ large enough that $\{1,\dots,N\}\subseteq\{f(1),\dots,f(M)\}$. For $n\ge M$,
+$$
+|B_n - S| \le |B_n - A_N| + |A_N - S| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+$$
+Thus $B_n \to S$.
+
+---
+
+### 10.15.4 Positive and Negative Parts
+
+Define
+$$
+a_n^+ = \frac{a_n+|a_n|}{2} = \max(a_n,0), \qquad a_n^- = \frac{a_n-|a_n|}{2} = \min(a_n,0).
+$$
+
+**Theorem.** For a series $\sum a_n$ of real terms:
+- **(a)** If $\sum a_n$ is **conditionally convergent**, both $\sum a_n^+$ and $\sum a_n^-$ **diverge**.
+- **(b)** If $\sum a_n$ is **absolutely convergent**, both $\sum a_n^+$ and $\sum a_n^-$ **converge**, and
+  $$\sum_{n=1}^{\infty}a_n = \sum_{n=1}^{\infty}a_n^+ + \sum_{n=1}^{\infty}a_n^-.$$
+
+> Part (a) follows from linearity: $\sum a_n$ converges but $\sum|a_n|$ diverges, so neither signed part can converge.
+
+---
+
+### 10.15.5 Riemann's Rearrangement Theorem
+
+**Theorem.** Let $\sum a_n$ be a **conditionally convergent** series of real terms, and let $S$ be any real number. Then there exists a rearrangement $\sum b_n$ of $\sum a_n$ which converges to $S$.
+
+**Proof sketch.** Since $\sum a_n^+$ diverges to $+\infty$ and $\sum a_n^-$ diverges to $-\infty$ (and $a_n\to 0$), we can:
+1. Take just enough positive terms so their sum **exceeds** $S$.
+2. Add just enough negative terms so the sum falls **below** $S$.
+3. Repeat.
+
+Each partial sum of the rearrangement differs from $S$ by at most one term, and since $a_n\to 0$, the partial sums converge to $S$.
+
+> **Key insight:** Absolute convergence guarantees rearrangement invariance; conditional convergence allows rearrangement to any desired sum.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
