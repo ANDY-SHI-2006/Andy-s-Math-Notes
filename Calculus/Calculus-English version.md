@@ -7717,6 +7717,68 @@ $$
 
 **Step 5 — Uniqueness.** By Theorem 8.3 (existence-uniqueness for first-order linear ODEs), this initial-value problem has the unique solution $y=(1+x)^{\alpha}$. Hence $f(x)=(1+x)^{\alpha}$.
 
+# 12. Vector Algebra
+
+## 12.1 Historical Introduction
+
+### 12.1.1 Origins
+
+Vector algebra emerged from the need for analytic tools in mechanics and geometry:
+- **Lagrange (1788):** Published *Mécanique analytique*, demonstrating the power of analytical methods in mechanics.
+- **Hamilton (1805–1865):** Introduced **quaternions**, a new algebraic system that unified algebra and physics.
+- **Gibbs (1839–1903) and Heaviside (1850–1925):** Extracted the vector concept from quaternion analysis, creating the subject of **vector algebra**.
+
+### 12.1.2 Three Approaches to Vector Algebra
+
+1. **Geometric:** Vectors are represented by directed line segments (arrows). Operations are defined and studied by geometric methods.
+2. **Analytic:** Vectors and operations are described entirely in terms of **numbers** (components). Properties are deduced from properties of numbers.
+3. **Axiomatic:** Vectors and operations are **undefined concepts** satisfying a set of axioms. This algebraic system is called a **linear space** or **linear vector space** (studied in detail in Chapter 15).
+
+> The analytic approach is adopted here; geometric pictures are used for motivation when possible.
+
+## 12.2 The Vector Space of $n$-Tuples of Real Numbers
+
+### 12.2.1 Definition
+
+An ordered $n$-tuple of real numbers
+$$
+A=(a_1,a_2,\dots,a_n)
+$$
+is called an **$n$-dimensional vector** (or $n$-dimensional point). The numbers $a_i$ are its **coordinates** or **components**. The collection of all such vectors is the **vector space of $n$-tuples**, denoted $V_n$.
+
+> Notation: vectors by capital letters $A,B,C,\dots$; components by corresponding small letters $a,b,c,\dots$.
+
+### 12.2.2 Equality, Addition, and Scalar Multiplication
+
+- **Equality:** $A=B$ means $a_i=b_i$ for all $i=1,\dots,n$.
+- **Addition:** $A+B=(a_1+b_1,a_2+b_2,\dots,a_n+b_n)$.
+- **Scalar multiplication:** $cA=(ca_1,ca_2,\dots,ca_n)$.
+
+### 12.2.3 Algebraic Properties
+
+**Theorem 12.1.** For all vectors in $V_n$ and all scalars:
+- **Commutativity:** $A+B=B+A$
+- **Associativity:** $A+(B+C)=(A+B)+C$
+- **Scalar associativity:** $c(dA)=(cd)A$
+- **Distributive laws:** $c(A+B)=cA+cB$ and $(c+d)A=cA+dA$
+
+### 12.2.4 Zero Vector, Negative, and Subtraction
+
+- **Zero vector** $O=(0,0,\dots,0)$: satisfies $A+O=A$ for every $A$.
+- **Negative:** $-A=(-1)A=(-a_1,-a_2,\dots,-a_n)$.
+- **Subtraction:** $A-B=A+(-B)$; note $(A+B)-B=A$.
+- $0A=O$ and $1A=A$.
+
+### 12.2.5 Complex Numbers and Two-Dimensional Vectors
+
+Complex numbers and vectors in $V_2$ are defined as ordered pairs of real numbers and are added in exactly the same way. They differ only when **multiplication** is introduced:
+- Complex-number multiplication gives the field properties.
+- For $n>2$ it is impossible to introduce multiplication in $V_n$ satisfying all field properties (only $n=1,2$ are possible).
+
+Special products that do **not** satisfy all field properties:
+- **Dot product** (Section 12.5): defined in any $V_n$; result is a **scalar**.
+- **Cross product** (Section 13.9): defined only in $V_3$; result is a **vector**, but it is not commutative.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
