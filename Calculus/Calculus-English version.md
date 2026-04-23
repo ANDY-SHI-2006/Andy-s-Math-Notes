@@ -6708,6 +6708,68 @@ $$
 
 > **Caution.** In an infinite telescoping series $(b_{1}-b_{2})+(b_{2}-b_{3})+\cdots$, one cannot simply "cancel" all intermediate terms to obtain sum $b_{1}$ unless $\lim b_{n}=0$.
 
+## 10.7 The Geometric Series
+
+### 10.7.1 Theorem 10.5
+
+For complex $x$:
+
+$$
+\sum_{n=0}^{\infty}x^{n}=1+x+x^{2}+\cdots=\frac{1}{1-x}\qquad\text{if }|x|<1.
+$$
+
+If $|x|\ge 1$, the series diverges.
+
+**Proof.** The partial sum $s_{n}=1+x+\cdots+x^{n-1}$ satisfies $(1-x)s_{n}=1-x^{n}$. Hence $s_{n}=\dfrac{1-x^{n}}{1-x}\to\dfrac{1}{1-x}$ when $|x|<1$.
+
+### 10.7.2 Derived Series (by Substitution)
+
+| Series | Sum | Valid for |
+|--------|-----|-----------|
+| $1+x^{2}+x^{4}+\cdots$ | $\dfrac{1}{1-x^{2}}$ | $|x|<1$ |
+| $x+x^{3}+x^{5}+\cdots$ | $\dfrac{x}{1-x^{2}}$ | $|x|<1$ |
+| $1-x+x^{2}-x^{3}+\cdots$ | $\dfrac{1}{1+x}$ | $|x|<1$ |
+| $1-x^{2}+x^{4}-\cdots$ | $\dfrac{1}{1+x^{2}}$ | $|x|<1$ |
+| $x-x^{3}+x^{5}-\cdots$ | $\dfrac{x}{1+x^{2}}$ | $|x|<1$ |
+
+### 10.7.3 Power Series
+
+A series of the form $\displaystyle\sum_{n=0}^{\infty}a_{n}x^{n}$ is called a **power series**. The geometric series is the special case $a_{n}=1$.
+
+**Differentiation of (10.25).**
+
+$$
+1+2x+3x^{2}+\cdots+nx^{n-1}+\cdots=\frac{1}{(1-x)^{2}}\qquad(|x|<1).
+$$
+
+**Integration of (10.28).** Mercator–Brouncker (1668):
+
+$$
+x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\frac{x^{4}}{4}+\cdots=\log(1+x)\qquad(-1<x\le 1).
+$$
+
+**Integration of (10.29).** Gregory (1671):
+
+$$
+x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\frac{x^{7}}{7}+\cdots=\arctan x\qquad(|x|\le 1).
+$$
+
+### 10.7.4 Taylor Series
+
+If $f$ has derivatives of all orders near $0$, Taylor's formula gives:
+
+$$
+f(x)=\sum_{k=0}^{n}a_{k}x^{k}+E_{n}(x),\qquad a_{k}=\frac{f^{(k)}(0)}{k!}.
+$$
+
+If $E_{n}(x)\to 0$ as $n\to\infty$, then:
+
+$$
+f(x)=\sum_{k=0}^{\infty}a_{k}x^{k}.
+$$
+
+The partial sums of this power series are precisely the Taylor polynomials. Conditions guaranteeing $E_{n}(x)\to 0$ will be discussed in Section 11.10.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
