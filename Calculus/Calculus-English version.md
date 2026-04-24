@@ -9301,3 +9301,48 @@ $$
 Thus $\int_a^b v(t)\,dt$ is an upper bound for all $|\pi(P)|$, proving rectifiability and (14.12). ∎
 
 > In a later section we shall prove that the inequality in (14.12) is, in fact, an **equality**. The proof uses the **additivity** of arc length.
+
+
+## 14.8 Additivity of Arc Length
+
+### 14.8.1 The Additive Property
+
+If a rectifiable curve is cut into two pieces, the length of the whole equals the sum of the lengths of the parts.
+
+**Theorem 14.11.** Consider a rectifiable curve of length $\Lambda(a,b)$ traced out by $\boldsymbol{r}(t)$ on $[a,b]$. If $a<c<b$, let $C_1$ and $C_2$ be the curves traced out on $[a,c]$ and $[c,b]$, respectively. Then $C_1$ and $C_2$ are also rectifiable, and
+$$
+\Lambda(a,b)=\Lambda(a,c)+\Lambda(c,b).
+$$
+
+### 14.8.2 Proof
+
+Let $P_1$ and $P_2$ be arbitrary partitions of $[a,c]$ and $[c,b]$. Their union is a partition $P$ of $[a,b]$, and
+$$
+|\pi(P_1)|+|\pi(P_2)|=|\pi(P)|\le\Lambda(a,b).\tag{14.13}
+$$
+Hence $|\pi(P_1)|$ and $|\pi(P_2)|$ are bounded, so $C_1$ and $C_2$ are rectifiable. From (14.13),
+$$
+|\pi(P_1)|\le\Lambda(a,b)-|\pi(P_2)|.
+$$
+Keep $P_2$ fixed and let $P_1$ vary. Since $\Lambda(a,b)-|\pi(P_2)|$ is an upper bound for all $|\pi(P_1)|$, it is at least their least upper bound:
+$$
+\Lambda(a,c)\le\Lambda(a,b)-|\pi(P_2)|\quad\Longrightarrow\quad|\pi(P_2)|\le\Lambda(a,b)-\Lambda(a,c).
+$$
+Now let $P_2$ vary. By the same reasoning,
+$$
+\Lambda(c,b)\le\Lambda(a,b)-\Lambda(a,c),
+$$
+i.e.
+$$
+\Lambda(a,c)+\Lambda(c,b)\le\Lambda(a,b).\tag{14.14}
+$$
+
+For the reverse inequality, start with any partition $P$ of $[a,b]$ and adjoin $c$ to obtain partitions $P_1$ of $[a,c]$ and $P_2$ of $[c,b]$. Then
+$$
+|\pi(P)|\le|\pi(P_1)|+|\pi(P_2)|\le\Lambda(a,c)+\Lambda(c,b).
+$$
+Thus $\Lambda(a,c)+\Lambda(c,b)$ is an upper bound for all $|\pi(P)|$, so
+$$
+\Lambda(a,b)\le\Lambda(a,c)+\Lambda(c,b).
+$$
+Combined with (14.14), this yields $\Lambda(a,b)=\Lambda(a,c)+\Lambda(c,b)$. ∎
