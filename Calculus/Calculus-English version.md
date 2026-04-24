@@ -8645,6 +8645,50 @@ so the plane meets the axes at $(3,0,0)$, $(0,1,0)$, $(0,0,2)$. Its distance fro
 
 - **Angle between planes:** the angle $\theta$ between their normal vectors.
 
+## 13.13 The Conic Sections
+
+### 13.13.1 Definition as Sections of a Cone
+
+A moving line $G$ intersecting a fixed line $A$ at a point $P$, making a constant angle $\theta$ ($0<\theta<\pi/2$), generates a **right circular cone** in 3-space.
+- $G$ = generator, $A$ = axis, $P$ = vertex.
+- The upper and lower portions are called **nappes**.
+
+**Conic sections** (or **conics**) are curves obtained by slicing the cone with a plane not passing through the vertex:
+- **Parabola:** the cutting plane is parallel to a line of the cone through the vertex.
+- **Ellipse:** the plane cuts just one nappe.
+- **Hyperbola:** the plane cuts both nappes (two branches).
+
+### 13.13.2 Historical Importance
+
+- **Apollonius** (3rd century B.C.): systematic treatment of conics.
+- **Galileo:** projectiles follow parabolic paths (neglecting air resistance).
+- **Kepler (~1600):** planetary orbits are elliptical.
+- **Newton (~1680):** an elliptical orbit implies an inverse-square law of gravitation.
+- Conics also describe trajectories of atomic particles, and are used in the design of lenses, mirrors, and architecture.
+
+### 13.13.3 Focal Definitions
+
+| Conic | Definition |
+|---|---|
+| **Ellipse** | Set of points with $d_1+d_2=\text{constant}$, where $d_1,d_2$ are distances to two fixed **foci** $F_1,F_2$. |
+| **Circle** | Special case of an ellipse in which the two foci coincide. |
+| **Hyperbola** | Set of points with $\|d_1-d_2\|=\text{constant}$. |
+| **Parabola** | Set of points equidistant from a fixed point $F$ (focus) and a fixed line (directrix). |
+
+### 13.13.4 The Dandelin Sphere Proof
+
+**Theorem (Dandelin, 1822).** The focal property of an ellipse follows from its definition as a section of a cone.
+
+**Proof sketch.** Draw two spheres $S_1$ and $S_2$ tangent to the cutting plane and to the cone. Let $F_1,F_2$ be their points of tangency with the plane, and let $C_1,C_2$ be the circles of tangency with the cone.
+
+For any point $P$ on the ellipse, the generator through $P$ meets $C_1$ and $C_2$ at $A_1$ and $A_2$. Since $PF_1$ and $PA_1$ are two tangents from $P$ to $S_1$, they have equal length; similarly $|PF_2|=|PA_2|$. Hence
+$$
+|PF_1|+|PF_2|=|PA_1|+|PA_2|=|A_1A_2|,
+$$
+which is the constant distance between the parallel circles $C_1$ and $C_2$ measured along the cone. Thus $F_1$ and $F_2$ are foci of the ellipse.
+
+> Modifications of this argument work for the hyperbola (one sphere in each nappe) and the parabola (one sphere tangent to the cutting plane at the focus).
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
