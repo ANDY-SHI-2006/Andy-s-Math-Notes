@@ -8726,6 +8726,50 @@ $$
 \boxed{\|X-F\|=e\,|(X-F)\cdot N-d|}.
 $$
 
+## 13.15 Polar Equations for Conic Sections
+
+### 13.15.1 Focus at the Origin
+
+When the focus is placed at the origin, Theorem 13.17 simplifies to
+$$
+\|X\|=e\,|X\cdot N-d|.
+$$
+Take the directrix $L$ to be vertical with unit normal $N=i$. In polar coordinates $(r,\theta)$:
+$$
+\|X\|=r, \qquad X\cdot N=r\cos\theta.
+$$
+Hence the basic equation becomes
+$$
+r=e\,|r\cos\theta-d|.
+$$
+
+### 13.15.2 Deriving the Polar Form
+
+**Case 1 — $X$ lies to the left of $L$** ($r\cos\theta<d$). Then $|r\cos\theta-d|=d-r\cos\theta$, so
+$$
+r=e(d-r\cos\theta) \quad\Longrightarrow\quad \boxed{r=\frac{ed}{e\cos\theta+1}}.
+$$
+
+**Case 2 — $X$ lies to the right of $L$** ($r\cos\theta>d$). Then $|r\cos\theta-d|=r\cos\theta-d$, so
+$$
+r=e(r\cos\theta-d) \quad\Longrightarrow\quad \boxed{r=\frac{ed}{e\cos\theta-1}}.
+$$
+Since $r>0$, the second case requires $e>1$; thus points to the right of $L$ occur only for the **hyperbola**.
+
+### 13.15.3 Summary Theorem
+
+**Theorem 13.18.** Let $C$ be a conic with eccentricity $e$, focus at the origin, and vertical directrix $L$ at distance $d$ to the right of the focus.
+- If $0<e\le 1$ (ellipse or parabola), every point of $C$ lies to the left of $L$ and satisfies
+  $$
+  r=\frac{ed}{e\cos\theta+1}.
+  $$
+- If $e>1$ (hyperbola), there is a branch on each side of $L$. Points on the **left** branch satisfy the equation above; points on the **right** branch satisfy
+  $$
+  r=\frac{ed}{e\cos\theta-1}.
+  $$
+
+> Polar equations for other positions of the directrix are obtained by rotating the coordinate system.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
