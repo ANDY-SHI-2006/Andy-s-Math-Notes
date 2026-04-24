@@ -8770,6 +8770,51 @@ Since $r>0$, the second case requires $e>1$; thus points to the right of $L$ occ
 
 > Polar equations for other positions of the directrix are obtained by rotating the coordinate system.
 
+## 13.16 Conic Sections Symmetric About the Origin
+
+### 13.16.1 Achieving Symmetry
+
+A set is **symmetric about the origin** if $-X$ belongs to the set whenever $X$ does. For a conic with eccentricity $e\neq1$, the focus and directrix can always be placed so that the curve is symmetric about the origin.
+
+Starting from $\|X-F\|=e\,|(X-F)\cdot N-d|$ and setting $a=ed+eF\cdot N$, the basic equation becomes
+$$
+\|X-F\|=|eX\cdot N-a|.
+$$
+Squaring and requiring the equation to hold for both $X$ and $-X$ forces
+$$
+(F-eaN)\cdot X=0 \quad\text{for all }X\text{ on the curve},
+$$
+which is satisfied if and only if $F=eaN$. Solving $a=ed+e^2a$ gives
+$$
+\boxed{a=\frac{ed}{1-e^2}}, \qquad \boxed{F=\frac{e^2d}{1-e^2}\,N}.
+$$
+Note that $a>0$ when $e<1$ and $a<0$ when $e>1$.
+
+> For a **parabola** ($e=1$) this relation cannot be satisfied (since $d\neq0$); a parabola has no symmetry about the origin.
+
+### 13.16.2 The Symmetric Equation
+
+**Theorem 13.19.** Let $C$ be a conic with eccentricity $e\neq1$ and focus at distance $d$ from directrix $L$. If $N$ is a unit normal to $L$ and $F=eaN$ with $a$ as above, then $C$ is the set of all $X$ satisfying
+$$
+\boxed{\|X\|^2+e^2a^2=e^2(X\cdot N)^2+a^2}.
+$$
+This equation is unchanged when $X$ is replaced by $-X$, confirming symmetry.
+
+### 13.16.3 Axes and Vertices
+
+Because of this symmetry, the ellipse and hyperbola each have **two foci** and **two directrices**, symmetrically located about the center.
+
+- **Vertices:** the points $X=\pm aN$. The segment joining them is the **major axis** (ellipse) or **transverse axis** (hyperbola).
+- **Minor axis:** let $N'$ be a unit vector orthogonal to $N$. Setting $X=bN'$ gives $b^2=a^2(1-e^2)$, so
+  $$
+  b=a\sqrt{1-e^2} \qquad (e<1).
+  $$
+  The segment joining $\pm bN'$ is the **minor axis** of the ellipse.
+
+### 13.16.4 The Circle as a Limiting Case
+
+If $e=0$, Equation (13.34) reduces to $\|X\|=a$, the equation of a circle of radius $a$. This can be viewed as a limiting case of an ellipse in which $e\to0$ and $d\to\infty$ with $ed\to a$.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
