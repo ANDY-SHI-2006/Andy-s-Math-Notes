@@ -9083,3 +9083,103 @@ Let $T=X'/\|X'\|$ be the unit tangent vector. Then:
 - On the hyperbola: $T\cdot\boldsymbol{u}_2=T\cdot\boldsymbol{u}_1$, so $\cos\theta_2=\cos\theta_1$, giving $\theta_2=\theta_1$.
 
 These angle relations are exactly the reflection properties.
+
+
+## 14.5 Applications to Curvilinear Motion. Velocity, Speed, and Acceleration
+
+### 14.5.1 Definitions
+
+Consider a particle whose position at time $t$ is given by a vector-valued function $X(t)$. The vector-valued function $X$ serves as a natural mathematical model for the motion.
+
+**Terminology:**
+- $X(t)$ — **position function** (or **position vector**)
+- $X'(t)$ — **velocity vector** at time $t$
+- $\|X'(t)\|$ — **speed** at time $t$
+- $X''(t)$ — **acceleration vector**
+
+**Notation.** Often the position function is denoted by $\boldsymbol{r}$, the velocity by $\boldsymbol{v}$, the speed by $v$, and the acceleration by $\boldsymbol{a}$:
+$$
+\boldsymbol{v}=\boldsymbol{r}',\qquad v=\|\boldsymbol{v}\|,\qquad \boldsymbol{a}=\boldsymbol{v}'=\boldsymbol{r}''.
+$$
+
+The velocity vector lies along the tangent line to the path. The speed measures how fast the particle is moving; the acceleration measures the rate of change of velocity (speed or direction, or both). Unlike velocity, the acceleration vector does not necessarily lie along the tangent line.
+
+### 14.5.2 Linear Motion
+
+**Example 1.** For motion along a line,
+$$
+\boldsymbol{r}(t)=P+f(t)A,\qquad A\neq O,
+$$
+the velocity, speed, and acceleration are
+$$
+\boldsymbol{v}(t)=f'(t)A,\qquad v(t)=\|\boldsymbol{v}(t)\|=|f'(t)|\,\|A\|,\qquad \boldsymbol{a}(t)=f''(t)A.
+$$
+If $f'(t)$ and $f''(t)$ are nonzero, the acceleration is parallel to the velocity.
+
+### 14.5.3 Circular Motion
+
+**Example 2.** In polar coordinates $x=r\cos\theta$, $y=r\sin\theta$, fix $r=a$ and let $\theta$ vary. The point $(x,y)$ traces a circle of radius $a$. With $\theta=f(t)$,
+$$
+\boldsymbol{r}(t)=a\cos f(t)\,\boldsymbol{i}+a\sin f(t)\,\boldsymbol{j},
+\qquad\boldsymbol{v}(t)=-af'(t)\sin f(t)\,\boldsymbol{i}+af'(t)\cos f(t)\,\boldsymbol{j}.
+$$
+The speed is
+$$
+v(t)=\|\boldsymbol{v}(t)\|=a\,|f'(t)|.
+$$
+The factor $|f'(t)|=|d\theta/dt|$ is called the **angular speed**.
+
+**Constant angular speed.** If $\theta=\omega t$ ($\omega>0$ constant),
+$$
+\boldsymbol{r}(t)=a\cos\omega t\,\boldsymbol{i}+a\sin\omega t\,\boldsymbol{j},\qquad
+\boldsymbol{v}(t)=-\omega a\sin\omega t\,\boldsymbol{i}+\omega a\cos\omega t\,\boldsymbol{j},\qquad
+v(t)=a\omega.
+$$
+The acceleration is
+$$
+\boldsymbol{a}(t)=-\omega^2a\cos\omega t\,\boldsymbol{i}-\omega^2a\sin\omega t\,\boldsymbol{j}=-\omega^2\boldsymbol{r}(t),
+$$
+which is always directed **opposite** to the position vector — i.e. toward the center of the circle. This is called **centripetal** ("center-seeking") acceleration.
+
+> If the particle has mass $m$, Newton's second law gives force $m\boldsymbol{a}(t)$, directed toward the center. The equal and opposite reaction is called **centrifugal** ("center-fleeing").
+
+### 14.5.4 Motion on an Ellipse
+
+**Example 3.** For an ellipse $x^2/a^2+y^2/b^2=1$, introduce the **eccentric angle** $\theta$:
+$$
+x=a\cos\theta,\qquad y=b\sin\theta.
+$$
+With $\theta=f(t)$, the position function is
+$$
+\boldsymbol{r}(t)=a\cos f(t)\,\boldsymbol{i}+b\sin f(t)\,\boldsymbol{j}.
+$$
+If $\theta=\omega t$ ($\omega$ constant),
+$$
+\boldsymbol{v}(t)=\omega(-a\sin\omega t\,\boldsymbol{i}+b\cos\omega t\,\boldsymbol{j}),\qquad
+v(t)=\omega(a^2\sin^2\omega t+b^2\cos^2\omega t)^{1/2},
+$$
+$$
+\boldsymbol{a}(t)=-\omega^2(a\cos\omega t\,\boldsymbol{i}+b\sin\omega t\,\boldsymbol{j})=-\omega^2\boldsymbol{r}(t).
+$$
+Thus, when the eccentric angle changes at a constant rate, the acceleration is centripetal.
+
+### 14.5.5 Motion on a Helix
+
+**Example 4.** A point $(x,y,z)$ revolves around the $z$-axis at constant distance $a$ while moving parallel to the $z$-axis so that its $z$-component is proportional to the angle of revolution. The path is a **circular helix**:
+$$
+x=a\cos\theta,\qquad y=a\sin\theta,\qquad z=b\theta.\tag{14.7}
+$$
+Here $a>0$, $b\neq0$. As $\theta$ varies from $0$ to $2\pi$, the $x$ and $y$ coordinates return to their original values while $z$ changes from $0$ to $2\pi b$. The number $2\pi b$ is the **pitch** of the helix.
+
+With $\theta=\omega t$ ($\omega$ constant):
+$$
+\boldsymbol{r}(t)=a\cos\omega t\,\boldsymbol{i}+a\sin\omega t\,\boldsymbol{j}+b\omega t\,\boldsymbol{k},
+$$
+$$
+\boldsymbol{v}(t)=-\omega a\sin\omega t\,\boldsymbol{i}+\omega a\cos\omega t\,\boldsymbol{j}+b\omega\,\boldsymbol{k},
+\qquad
+\boldsymbol{a}(t)=-\omega^2(a\cos\omega t\,\boldsymbol{i}+a\sin\omega t\,\boldsymbol{j}).
+$$
+The acceleration is parallel to the $xy$-plane and directed toward the $z$-axis.
+
+Eliminating $\theta$ from the first two equations of (14.7) gives $x^2+y^2=a^2$, a circular cylinder of radius $a$ about the $z$-axis. The helix winds around this cylinder.
