@@ -8508,6 +8508,53 @@ $$
 
 Because of this, the scalar triple product is often denoted by the symbol $[ABC]$ without indicating the dot or cross.
 
+## 13.10 Cramer's Rule for Three Linear Equations
+
+### 13.10.1 Vector Formulation
+
+Consider the system
+$$
+\begin{aligned}
+a_1x+b_1y+c_1z&=d_1,\\
+a_2x+b_2y+c_2z&=d_2,\\
+a_3x+b_3y+c_3z&=d_3.
+\end{aligned}
+$$
+Let $A=(a_1,a_2,a_3)$, $B=(b_1,b_2,b_3)$, $C=(c_1,c_2,c_3)$, $D=(d_1,d_2,d_3)$. The system becomes the single vector equation
+$$
+xA+yB+zC=D.
+$$
+
+### 13.10.2 Derivation
+
+Dot both sides with $B\times C$:
+$$
+x[A\,B\,C]+y[B\,B\,C]+z[C\,B\,C]=[D\,B\,C].
+$$
+Since $[B\,B\,C]=[C\,B\,C]=0$, the coefficients of $y$ and $z$ drop out:
+$$
+x=\frac{[D\,B\,C]}{[A\,B\,C]} \qquad\text{provided }[A\,B\,C]\neq0.
+$$
+Similar arguments give
+$$
+y=\frac{[A\,D\,C]}{[A\,B\,C]}, \qquad z=\frac{[A\,B\,D]}{[A\,B\,C]}.
+$$
+
+### 13.10.3 Cramer's Rule in Determinant Form
+
+Writing the scalar triple products as determinants yields **Cramer's rule**:
+$$
+\boxed{x=\frac{\begin{vmatrix}d_1&b_1&c_1\\d_2&b_2&c_2\\d_3&b_3&c_3\end{vmatrix}}{\Delta},\quad
+y=\frac{\begin{vmatrix}a_1&d_1&c_1\\a_2&d_2&c_2\\a_3&d_3&c_3\end{vmatrix}}{\Delta},\quad
+z=\frac{\begin{vmatrix}a_1&b_1&d_1\\a_2&b_2&d_2\\a_3&b_3&d_3\end{vmatrix}}{\Delta}}
+$$
+where $\displaystyle\Delta=\begin{vmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{vmatrix}=[A\,B\,C]$.
+
+### 13.10.4 Existence and Uniqueness
+
+- If $[A\,B\,C]\neq0$, the vectors $A,B,C$ are linearly independent and form a basis for $V_3$. Every vector $D$ is then spanned uniquely, so the system has a **unique solution**.
+- If $[A\,B\,C]=0$, the vectors $A,B,C$ lie on a plane through the origin. The system has **no solution** unless $D$ lies in the same plane, in which case there are **infinitely many solutions**.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
