@@ -8555,6 +8555,46 @@ where $\displaystyle\Delta=\begin{vmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\
 - If $[A\,B\,C]\neq0$, the vectors $A,B,C$ are linearly independent and form a basis for $V_3$. Every vector $D$ is then spanned uniquely, so the system has a **unique solution**.
 - If $[A\,B\,C]=0$, the vectors $A,B,C$ lie on a plane through the origin. The system has **no solution** unless $D$ lies in the same plane, in which case there are **infinitely many solutions**.
 
+## 13.11 Normal Vectors to Planes
+
+### 13.11.1 Definition
+
+Let $M=\{P+sA+tB\}$ be a plane through $P$ spanned by $A$ and $B$. A vector $N$ in $V_3$ is **perpendicular to $M$** if $N$ is perpendicular to both $A$ and $B$. If, in addition, $N\neq O$, then $N$ is called a **normal vector** to the plane.
+
+> If $N\cdot A=N\cdot B=0$, then $N\cdot(sA+tB)=0$ for all $s,t$, so $N$ is orthogonal to every vector in the linear span of $A$ and $B$. Also, if $N$ is normal to $M$, so is $tN$ for every $t\neq0$.
+
+### 13.11.2 Normal Form of a Plane
+
+**Theorem 13.15.** Let $M=\{P+sA+tB\}$ and let $N=A\times B$. Then:
+- **(a)** $N$ is a normal vector to $M$.
+- **(b)** $M$ is the set of all $X$ in $V_3$ satisfying
+  $$
+  (X-P)\cdot N=0.
+  $$
+
+**Proof sketch.** (a) follows since $A\times B$ is orthogonal to both $A$ and $B$ and $A\times B\neq O$ (because $A,B$ are independent). For (b), if $X\in M$ then $X-P$ lies in $L(A,B)$, hence is orthogonal to $N$, so $X$ satisfies the equation. Conversely, if $X$ satisfies the equation, write $X-P=sA+tB+uN$ (possible since $A,B,N$ are independent by Theorem 13.13). Dotting with $N$ gives $u=0$, so $X-P=sA+tB$ and $X\in M$.
+
+### 13.11.3 Distance from the Origin
+
+**Theorem 13.16.** Let $M$ be a plane through $P$ with nonzero normal vector $N$, and let
+$$
+d=\frac{|P\cdot N|}{\|N\|}.
+$$
+Then every $X$ on $M$ satisfies $\|X\|\ge d$, and $\|X\|=d$ if and only if $X$ is the projection of $P$ along $N$:
+$$
+X=tN, \qquad t=\frac{P\cdot N}{N\cdot N}.
+$$
+
+**Proof.** Since $X\cdot N=P\cdot N$ for $X\in M$, the Cauchy–Schwarz inequality gives $|P\cdot N|=|X\cdot N|\le\|X\|\,\|N\|$, whence $\|X\|\ge d$. Equality holds iff $X$ is parallel to $N$.
+
+### 13.11.4 Distance from a Point to a Plane
+
+If $Q$ is a point not on $M$, the **distance** from $Q$ to $M$ is
+$$
+\frac{|(P-Q)\cdot N|}{\|N\|}.
+$$
+This is the length of the projection of $P-Q$ onto the normal direction. The number $d$ above is the distance from the **origin** to the plane.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
