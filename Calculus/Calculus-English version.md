@@ -9009,9 +9009,9 @@ $$
 Combining (14.2) and (14.3) yields $\|C\|^2\le\|C\|\int_a^b\|F(t)\|\,dt$. Since $\|C\|>0$, divide by $\|C\|$ to obtain (14.1). ∎
 
 
-## 14.5 Applications to Curves. Tangency
+## 14.4 Applications to Curves. Tangency
 
-### 14.5.1 Curves and Parametric Representation
+### 14.4.1 Curves and Parametric Representation
 
 Let $X$ be a vector-valued function with domain an interval $I$. As $t$ runs through $I$, the values $X(t)$ trace a set of points called the **graph** of $X$. If the values lie in 2-space or 3-space, the graph can be visualized geometrically.
 
@@ -9021,7 +9021,7 @@ Let $X$ be a vector-valued function with domain an interval $I$. As $t$ runs thr
 
 > Example: $X(t)=P+tA$ ($A\neq O$) describes a straight line through $P$ parallel to $A$.
 
-### 14.5.2 Tangent Vector and Tangent Line
+### 14.4.2 Tangent Vector and Tangent Line
 
 Form the difference quotient
 $$
@@ -9034,7 +9034,7 @@ $$
 
 **Definition.** Let $C$ be a curve described by a continuous vector-valued function $X$. If $X'(t)$ exists and is nonzero, the straight line through $X(t)$ parallel to $X'(t)$ is called the **tangent line** to $C$ at $X(t)$. The vector $X'(t)$ is called a **tangent vector** to $C$ at $X(t)$.
 
-### 14.5.3 Examples
+### 14.4.3 Examples
 
 **Example 1 (Straight line).** For $X(t)=P+tA$ with $A\neq O$, we have $X'(t)=A$. The tangent line at each point coincides with the graph itself.
 
@@ -9052,7 +9052,7 @@ Y'(t)=X'[u(t)]\,u'(t).
 $$
 Since $u'(t)\neq0$, if $X'[u(t)]\neq0$ then $Y'(t)\neq0$ and $Y'(t)$ is parallel to $X'[u(t)]$. Therefore both representations yield the **same tangent line** at each point of the curve. Tangency is a geometric concept **invariant** under change of parameter.
 
-### 14.5.4 Reflection Properties of the Conic Sections
+### 14.4.4 Reflection Properties of the Conic Sections
 
 Conic sections have reflection properties used in optical and acoustical design:
 
