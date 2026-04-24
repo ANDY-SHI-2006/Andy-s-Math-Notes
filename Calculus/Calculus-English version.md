@@ -9255,3 +9255,49 @@ Note that $\boldsymbol{u}(t)$ makes angle $\alpha(t)+\frac{\pi}{2}$ with the $x$
 $$
 \boldsymbol{u}(t)=-\sin\alpha(t)\,\boldsymbol{i}+\cos\alpha(t)\,\boldsymbol{j}=\cos\Bigl(\alpha(t)+\frac{\pi}{2}\Bigr)\boldsymbol{i}+\sin\Bigl(\alpha(t)+\frac{\pi}{2}\Bigr)\boldsymbol{j}.
 $$
+
+
+## 14.7 The Definition of Arc Length
+
+### 14.7.1 Rectifiable Curves
+
+To define the length of a curve described by a vector-valued function $\boldsymbol{r}$ on $[a,b]$, inscribe a polygon whose vertices are points on the curve. Given a partition
+$$
+P=\{t_0,t_1,\dots,t_n\},\qquad a=t_0<t_1<\cdots<t_n=b,
+$$
+let $\pi(P)$ be the polygon with vertices $\boldsymbol{r}(t_0),\boldsymbol{r}(t_1),\dots,\boldsymbol{r}(t_n)$. The length of $\pi(P)$ is
+$$
+|\pi(P)|=\sum_{k=1}^{n}\|\boldsymbol{r}(t_k)-\boldsymbol{r}(t_{k-1})\|.
+$$
+
+**Definition.** If there exists a positive number $M$ such that
+$$
+|\pi(P)|\le M\tag{14.10}
+$$
+for **all** partitions $P$ of $[a,b]$, then the curve is said to be **rectifiable**, and its **arc length**, denoted by $\Lambda(a,b)$, is defined as the least upper bound of the set of all numbers $|\pi(P)|$. If no such $M$ exists, the curve is called **nonrectifiable**.
+
+> Note that whenever (14.10) holds,
+> $$
+> |\pi(P)|\le\Lambda(a,b)\le M.\tag{14.11}
+> $$
+
+### 14.7.2 Arc Length and the Integral of Speed
+
+**Theorem 14.10.** Denote by $\boldsymbol{v}(t)$ the velocity vector of the curve with position vector $\boldsymbol{r}(t)$, and let $v(t)=\|\boldsymbol{v}(t)\|$ denote the speed. If $\boldsymbol{v}$ is continuous on $[a,b]$, the curve is rectifiable and its length satisfies
+$$
+\Lambda(a,b)\le\int_a^b v(t)\,dt.\tag{14.12}
+$$
+
+*Proof.* For each partition $P$,
+$$
+\begin{aligned}
+|\pi(P)|&=\sum_{k=1}^{n}\|\boldsymbol{r}(t_k)-\boldsymbol{r}(t_{k-1})\|
+=\sum_{k=1}^{n}\Bigl\|\int_{t_{k-1}}^{t_k}\boldsymbol{r}'(t)\,dt\Bigr\|\\
+&=\sum_{k=1}^{n}\Bigl\|\int_{t_{k-1}}^{t_k}\boldsymbol{v}(t)\,dt\Bigr\|
+\le\sum_{k=1}^{n}\int_{t_{k-1}}^{t_k}\|\boldsymbol{v}(t)\|\,dt
+=\int_a^b v(t)\,dt.
+\end{aligned}
+$$
+Thus $\int_a^b v(t)\,dt$ is an upper bound for all $|\pi(P)|$, proving rectifiability and (14.12). ∎
+
+> In a later section we shall prove that the inequality in (14.12) is, in fact, an **equality**. The proof uses the **additivity** of arc length.
