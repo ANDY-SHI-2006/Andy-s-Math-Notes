@@ -9183,3 +9183,75 @@ $$
 The acceleration is parallel to the $xy$-plane and directed toward the $z$-axis.
 
 Eliminating $\theta$ from the first two equations of (14.7) gives $x^2+y^2=a^2$, a circular cylinder of radius $a$ about the $z$-axis. The helix winds around this cylinder.
+
+
+## 14.6 The Unit Tangent, the Principal Normal, and the Osculating Plane
+
+### 14.6.1 The Unit Tangent Vector
+
+For a motion described by a vector-valued function $X$, the **unit tangent vector** is defined by
+$$
+T(t)=\frac{X'(t)}{\|X'(t)\|},
+\qquad\text{whenever }\|X'(t)\|\neq0.
+$$
+Note that $\|T(t)\|=1$ for all $t$.
+
+Since $T$ has constant length, Theorem 14.2 implies $T$ is perpendicular to its derivative $T'$.
+
+> As the particle moves along the curve, $T$ can change only in direction. The tendency of $T$ to change direction is measured by $T'$.
+
+### 14.6.2 The Principal Normal and the Osculating Plane
+
+If the motion is linear, $T'=O$. If $T'\neq O$, the unit vector in the direction of $T'$ is called the **principal normal** to the curve, denoted by $N$:
+$$
+N(t)=\frac{T'(t)}{\|T'(t)\|},\qquad\text{whenever }\|T'(t)\|\neq0.
+$$
+
+When $T(t)$ and $N(t)$ are attached to the curve at $X(t)$, they determine a plane called the **osculating plane** of the curve. If three points $X(t_1),X(t_2),X(t_3)$ approach $X(t_1)$ as $t_2,t_3\to t_1$, the plane through them approaches the osculating plane. Thus the osculating plane is the plane that **best fits** the curve at each point.
+
+> If the curve is a plane curve (not a straight line), the osculating plane coincides with the plane of the curve.
+
+### 14.6.3 Decomposition of Acceleration
+
+**Theorem 14.9.** For a motion described by $\boldsymbol{r}$, let $v(t)=\|\boldsymbol{r}'(t)\|$ denote the speed. Then the acceleration vector $\boldsymbol{a}$ is a linear combination of $T$ and $T'$:
+$$
+\boldsymbol{a}(t)=v'(t)T(t)+v(t)T'(t).\tag{14.8}
+$$
+If $T'(t)\neq O$, we also have
+$$
+\boldsymbol{a}(t)=v'(t)T(t)+v(t)\,\|T'(t)\|\,N(t).\tag{14.9}
+$$
+
+*Proof.* From $\boldsymbol{v}(t)=v(t)T(t)$, differentiate:
+$$
+\boldsymbol{a}(t)=\boldsymbol{v}'(t)=v'(t)T(t)+v(t)T'(t),
+$$
+which proves (14.8). To obtain (14.9), substitute $T'(t)=\|T'(t)\|\,N(t)$. ∎
+
+> The acceleration vector always lies in the osculating plane. The coefficients of $T(t)$ and $N(t)$ in (14.9) are called the **tangential** and **normal components** of acceleration, respectively:
+> - $v'(t)$ — tangential component (change in speed)
+> - $v(t)\|T'(t)\|$ — normal component (change in direction)
+
+### 14.6.4 Geometric Interpretation for Plane Curves
+
+For a plane curve, write the unit tangent as
+$$
+T(t)=\cos\alpha(t)\,\boldsymbol{i}+\sin\alpha(t)\,\boldsymbol{j},
+$$
+where $\alpha(t)$ is the angle of inclination of the tangent vector (Figure 14.11). Differentiating,
+$$
+T'(t)=-\sin\alpha(t)\,\alpha'(t)\,\boldsymbol{i}+\cos\alpha(t)\,\alpha'(t)\,\boldsymbol{j}=\alpha'(t)\,\boldsymbol{u}(t),
+$$
+where $\boldsymbol{u}(t)$ is a unit vector. Therefore
+$$
+\|T'(t)\|=|\alpha'(t)|.
+$$
+This shows that $\|T'(t)\|$ measures the **rate of change of the angle of inclination** of the tangent vector.
+
+- When $\alpha'(t)>0$, the angle is increasing and $\boldsymbol{u}(t)=N(t)$.
+- When $\alpha'(t)<0$, the angle is decreasing and $\boldsymbol{u}(t)=-N(t)$.
+
+Note that $\boldsymbol{u}(t)$ makes angle $\alpha(t)+\frac{\pi}{2}$ with the $x$-axis, since
+$$
+\boldsymbol{u}(t)=-\sin\alpha(t)\,\boldsymbol{i}+\cos\alpha(t)\,\boldsymbol{j}=\cos\Bigl(\alpha(t)+\frac{\pi}{2}\Bigr)\boldsymbol{i}+\sin\Bigl(\alpha(t)+\frac{\pi}{2}\Bigr)\boldsymbol{j}.
+$$
