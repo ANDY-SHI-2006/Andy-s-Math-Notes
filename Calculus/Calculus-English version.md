@@ -8595,6 +8595,56 @@ $$
 $$
 This is the length of the projection of $P-Q$ onto the normal direction. The number $d$ above is the distance from the **origin** to the plane.
 
+## 13.12 Linear Cartesian Equations for Planes
+
+### 13.12.1 The General Form
+
+Writing $N=(a,b,c)$, $P=(x_1,y_1,z_1)$, and $X=(x,y,z)$, the normal equation $(X-P)\cdot N=0$ becomes
+$$
+a(x-x_1)+b(y-y_1)+c(z-z_1)=0.
+$$
+Transposing gives the standard **linear Cartesian equation**
+$$
+\boxed{ax+by+cz=d_1}, \qquad d_1=ax_1+by_1+cz_1=P\cdot N.
+$$
+Conversely, every linear equation with $a,b,c$ not all zero represents a plane with normal vector $N=(a,b,c)$.
+
+### 13.12.2 Distance from the Origin
+
+Since $d_1=P\cdot N$,
+$$
+|d_1|=|P\cdot N|=d\,\|N\|,
+\qquad\text{so}\qquad
+\boxed{d=\frac{|d_1|}{\|N\|}}.
+$$
+In particular $|d_1|=d$ when the normal has length $1$. The plane passes through the origin iff $d_1=0$.
+
+### 13.12.3 Intercepts
+
+Rewriting $ax+by+cz=d_1$ as
+$$
+\frac{x}{d_1/a}+\frac{y}{d_1/b}+\frac{z}{d_1/c}=1
+$$
+(when $a,b,c\neq0$) shows the $x$-, $y$-, and $z$-**intercepts**.
+
+**Example.** $2x+6y+3z=6$ has normal $N=(2,6,3)$ and intercept form
+$$
+\frac{x}{3}+\frac{y}{1}+\frac{z}{2}=1,
+$$
+so the plane meets the axes at $(3,0,0)$, $(0,1,0)$, $(0,0,2)$. Its distance from the origin is $d=6/\|N\|=6/7$.
+
+### 13.12.4 Parallel and Perpendicular Planes
+
+- **Parallel planes** share a common normal. Their equations are
+  $$
+  ax+by+cz=d_1, \qquad ax+by+cz=d_2.
+  $$
+  The **perpendicular distance** between them is $\displaystyle\frac{|d_1-d_2|}{\|N\|}$.
+
+- **Perpendicular planes:** two planes are perpendicular if a normal of one is perpendicular to a normal of the other.
+
+- **Angle between planes:** the angle $\theta$ between their normal vectors.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
