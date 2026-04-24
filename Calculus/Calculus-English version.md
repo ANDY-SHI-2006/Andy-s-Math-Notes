@@ -8815,6 +8815,66 @@ Because of this symmetry, the ellipse and hyperbola each have **two foci** and *
 
 If $e=0$, Equation (13.34) reduces to $\|X\|=a$, the equation of a circle of radius $a$. This can be viewed as a limiting case of an ellipse in which $e\to0$ and $d\to\infty$ with $ed\to a$.
 
+## 13.17 Cartesian Equations for the Conic Sections
+
+### 13.17.1 Ellipse and Hyperbola (Standard Form)
+
+With $N=i$ and $X=(x,y)$, the symmetric equation (13.34) becomes
+$$
+x^2(1-e^2)+y^2=a^2(1-e^2),
+\qquad\text{i.e.}\qquad
+\boxed{\frac{x^2}{a^2}+\frac{y^2}{a^2(1-e^2)}=1}.
+$$
+This represents both the **ellipse** ($e<1$) and the **hyperbola** ($e>1$).
+
+- **Foci:** $(\pm ae,0)$; **directrices:** $x=\pm a/e$.
+
+**Ellipse** ($e<1$). Let $b=a\sqrt{1-e^2}$. Then
+$$
+\boxed{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}, \qquad c=ae=\sqrt{a^2-b^2}.
+$$
+
+**Hyperbola** ($e>1$). Let $b=|a|\sqrt{e^2-1}$. Then
+$$
+\boxed{\frac{x^2}{a^2}-\frac{y^2}{b^2}=1}, \qquad c=|a|\,e=\sqrt{a^2+b^2}.
+$$
+Solving for $y$ gives $y=\pm\frac{b}{|a|}\sqrt{x^2-a^2}$. For large $x$,
+$$
+y_1-y_2=\frac{b}{|a|}(x-\sqrt{x^2-a^2})=\frac{|a|b}{x+\sqrt{x^2-a^2}}\to0,
+$$
+so the lines $y=\pm\frac{b}{|a|}x$ are **asymptotes**.
+
+### 13.17.2 Other Orientations and Translations
+
+If the directrices are horizontal ($N=j$), interchange $x$ and $y$:
+$$
+\frac{y^2}{a^2}+\frac{x^2}{a^2(1-e^2)}=1.
+$$
+A translation by $X_0=(x_0,y_0)$ moves the center to $(x_0,y_0)$; replace $x$ by $x-x_0$ and $y$ by $y-y_0$.
+
+### 13.17.3 Parabola
+
+For $e=1$, take directrix $x=-c$ and focus $(c,0)$. Equation (13.20) gives
+$$
+(x-c)^2+y^2=|x+c|^2 \quad\Longrightarrow\quad \boxed{y^2=4cx}.
+$$
+- **Vertex:** origin (midpoint of focus and directrix).
+- **Axis:** the $x$-axis.
+- Opens right if $c>0$, left if $c<0$.
+
+If the focus is on the $y$-axis at $(0,c)$ with directrix $y=-c$:
+$$
+\boxed{x^2=4cy}.
+$$
+
+**Translated parabolas:**
+$$
+(y-y_0)^2=4c(x-x_0) \quad\text{or}\quad (x-x_0)^2=4c(y-y_0).
+$$
+The first has focus $(x_0+c,y_0)$, directrix $x=x_0-c$, axis $y=y_0$.
+
+> A parabola has **no asymptotes**.
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
