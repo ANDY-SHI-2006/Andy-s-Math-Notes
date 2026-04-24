@@ -8689,6 +8689,43 @@ which is the constant distance between the parallel circles $C_1$ and $C_2$ meas
 
 > Modifications of this argument work for the hyperbola (one sphere in each nappe) and the parabola (one sphere tangent to the cutting plane at the focus).
 
+## 13.14 Eccentricity of Conic Sections
+
+### 13.14.1 Unified Definition
+
+A **conic section** can be defined as the locus of a point $X$ moving in a plane so that the ratio of its distance from a fixed point $F$ (the **focus**) to its distance from a fixed line $L$ (the **directrix**) is a constant $e$ (the **eccentricity**):
+$$
+\frac{\|X-F\|}{d(X,L)}=e.
+$$
+
+| Eccentricity | Conic |
+|---|---|
+| $0<e<1$ | **Ellipse** |
+| $e=1$ | **Parabola** |
+| $e>1$ | **Hyperbola** |
+
+> The number $e$ here is the eccentricity, not to be confused with Euler's number.
+
+### 13.14.2 Distance to a Line
+
+If $N$ is a normal vector to $L$ and $P$ is any point on $L$, the distance from $X$ to $L$ is
+$$
+d(X,L)=\frac{|(X-P)\cdot N|}{\|N\|}.
+$$
+When $\|N\|=1$ this simplifies to $d(X,L)=|(X-P)\cdot N|$, and the defining equation becomes
+$$
+\|X-F\|=e\,|(X-P)\cdot N|.
+$$
+
+### 13.14.3 Standard Vector Equation
+
+Place the focus $F$ in the negative half-plane determined by $L$, and let $P$ be the point of $L$ nearest to $F$. Then $P-F=dN$ where $d=\|P-F\|>0$ is the distance from focus to directrix. Replacing $P$ by $F+dN$ yields:
+
+**Theorem 13.17.** Let $C$ be a conic with eccentricity $e$, focus $F$, and directrix $L$ at distance $d$ from $F$. If $N$ is a unit normal to $L$ and $F$ lies in the negative half-plane, then $C$ consists of all points $X$ satisfying
+$$
+\boxed{\|X-F\|=e\,|(X-F)\cdot N-d|}.
+$$
+
 # 14. Calculus of Vector-Valued Functions
 
 ## 14.1 Vector-Valued Functions of a Real Variable
