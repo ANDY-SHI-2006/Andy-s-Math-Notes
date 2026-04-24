@@ -9007,3 +9007,79 @@ $$
 \int_a^b C\cdot F(t)\,dt\le\int_a^b|C\cdot F(t)|\,dt\le\int_a^b\|C\|\,\|F(t)\|\,dt=\|C\|\int_a^b\|F(t)\|\,dt.\tag{14.3}
 $$
 Combining (14.2) and (14.3) yields $\|C\|^2\le\|C\|\int_a^b\|F(t)\|\,dt$. Since $\|C\|>0$, divide by $\|C\|$ to obtain (14.1). ∎
+
+
+## 14.5 Applications to Curves. Tangency
+
+### 14.5.1 Curves and Parametric Representation
+
+Let $X$ be a vector-valued function with domain an interval $I$. As $t$ runs through $I$, the values $X(t)$ trace a set of points called the **graph** of $X$. If the values lie in 2-space or 3-space, the graph can be visualized geometrically.
+
+- If $X$ is **continuous** on $I$, its graph is called a **curve**; more specifically, the curve **described by** $X$.
+- The interval $I$ is called a **parametric interval**; each $t\in I$ is a **parameter**.
+- The curve is also said to be described **parametrically** by $X$.
+
+> Example: $X(t)=P+tA$ ($A\neq O$) describes a straight line through $P$ parallel to $A$.
+
+### 14.5.2 Tangent Vector and Tangent Line
+
+Form the difference quotient
+$$
+\frac{X(t+h)-X(t)}{h}.\tag{14.4}
+$$
+As $h\to0$, if $X'(t)$ exists,
+$$
+\lim_{h\to0}\frac{X(t+h)-X(t)}{h}=X'(t).
+$$
+
+**Definition.** Let $C$ be a curve described by a continuous vector-valued function $X$. If $X'(t)$ exists and is nonzero, the straight line through $X(t)$ parallel to $X'(t)$ is called the **tangent line** to $C$ at $X(t)$. The vector $X'(t)$ is called a **tangent vector** to $C$ at $X(t)$.
+
+### 14.5.3 Examples
+
+**Example 1 (Straight line).** For $X(t)=P+tA$ with $A\neq O$, we have $X'(t)=A$. The tangent line at each point coincides with the graph itself.
+
+**Example 2 (Circle).** If $X$ describes a circle of radius $a$ centered at $P$, then $\|X(t)-P\|=a$ for each $t$. The vector $X(t)-P$ is the **radius vector**. Since it has constant length, Theorem 14.2 implies it is perpendicular to its derivative, hence perpendicular to the tangent line — consistent with elementary plane geometry.
+
+**Example 3 (Invariance under change of parameter).** Different functions can have the same graph. Suppose $X$ is continuous on $I$ and $u$ is a differentiable real-valued function with $u'\neq0$ on an interval $J$, with range $u(J)=I$. Then
+$$
+Y(t)=X[u(t)]
+$$
+is a continuous vector-valued function having the same graph as $X$. Two such functions $X$ and $Y$ are called **equivalent**; they provide different **parametric representations** of the same curve, and $u$ defines a **change of parameter**.
+
+By the chain rule,
+$$
+Y'(t)=X'[u(t)]\,u'(t).
+$$
+Since $u'(t)\neq0$, if $X'[u(t)]\neq0$ then $Y'(t)\neq0$ and $Y'(t)$ is parallel to $X'[u(t)]$. Therefore both representations yield the **same tangent line** at each point of the curve. Tangency is a geometric concept **invariant** under change of parameter.
+
+### 14.5.4 Reflection Properties of the Conic Sections
+
+Conic sections have reflection properties used in optical and acoustical design:
+
+| Conic | Reflection property |
+|-------|---------------------|
+| **Ellipse** | Light rays from one focus converge at the other focus. |
+| **Hyperbola** | Light rays directed toward one focus converge at the other focus. |
+| **Parabola** | Light rays parallel to the axis converge at the focus. |
+
+*Proof sketch (ellipse and hyperbola).* Place focus $F_1$ at the origin and let $\boldsymbol{u}_1$, $\boldsymbol{u}_2$ be unit vectors in the directions of $X$ and $X-F_2$, respectively. Write the focal distances $d_1=\|X\|$ and $d_2=\|X-F_2\|$, so
+$$
+X=d_1\boldsymbol{u}_1,\qquad X=d_2\boldsymbol{u}_2+F_2.
+$$
+Differentiating and using that unit vectors are perpendicular to their derivatives (Theorem 14.2):
+$$
+X'\cdot\boldsymbol{u}_1=d_1',\qquad X'\cdot\boldsymbol{u}_2=d_2'.\tag{14.5}
+$$
+Adding and subtracting gives
+$$
+X'\cdot(\boldsymbol{u}_1+\boldsymbol{u}_2)=d_1'+d_2',\qquad X'\cdot(\boldsymbol{u}_1-\boldsymbol{u}_2)=d_1'-d_2'.\tag{14.6}
+$$
+
+- **Ellipse:** $d_1+d_2$ is constant, so $d_1'+d_2'=0$. By (14.6), $X'\cdot(\boldsymbol{u}_1+\boldsymbol{u}_2)=0$.
+- **Hyperbola:** $d_1-d_2$ is constant, so $d_1'-d_2'=0$. By (14.6), $X'\cdot(\boldsymbol{u}_1-\boldsymbol{u}_2)=0$.
+
+Let $T=X'/\|X'\|$ be the unit tangent vector. Then:
+- On the ellipse: $T\cdot\boldsymbol{u}_2=-T\cdot\boldsymbol{u}_1$, so $\cos\theta_2=-\cos\theta_1$, giving $\theta_2=\pi-\theta_1$.
+- On the hyperbola: $T\cdot\boldsymbol{u}_2=T\cdot\boldsymbol{u}_1$, so $\cos\theta_2=\cos\theta_1$, giving $\theta_2=\theta_1$.
+
+These angle relations are exactly the reflection properties.
