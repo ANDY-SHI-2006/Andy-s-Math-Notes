@@ -8913,3 +8913,97 @@ $$
 The real-valued functions $f_1,\dots,f_n$ are called the **component functions** (or simply **components**) of $F$. We indicate this by writing $F=(f_1,\dots,f_n)$.
 
 > Every vector-valued function gives rise to $n$ real-valued component functions, and vice versa. This componentwise viewpoint is fundamental for extending calculus to vector-valued functions.
+
+
+## 14.3 Limits, Derivatives, and Integrals
+
+### 14.3.1 Componentwise Definitions
+
+Let $F=(f_1,\dots,f_n)$ be a vector-valued function. We define **limit**, **derivative**, and **integral** componentwise:
+
+| Operation | Definition |
+|-----------|------------|
+| Limit | $\displaystyle\lim_{t\to p}F(t)=\Bigl(\lim_{t\to p}f_1(t),\dots,\lim_{t\to p}f_n(t)\Bigr)$ |
+| Derivative | $\displaystyle F'(t)=\bigl(f_1'(t),\dots,f_n'(t)\bigr)$ |
+| Definite integral | $\displaystyle\int_a^b F(t)\,dt=\Bigl(\int_a^b f_1(t)\,dt,\dots,\int_a^b f_n(t)\,dt\Bigr)$ |
+
+These are meaningful whenever the components on the right are meaningful.
+
+We say $F$ is **continuous**, **differentiable**, or **integrable** on an interval if each component has the corresponding property.
+
+> Many theorems on limits, continuity, differentiation, and integration of real-valued functions extend directly to vector-valued functions via these componentwise definitions.
+
+### 14.3.2 Differentiation Rules
+
+**Theorem 14.1.** If $F$, $G$, and $u$ are differentiable on an interval, then so are $F+G$, $uF$, and $F\cdot G$, and
+$$
+(F+G)'=F'+G',\qquad (uF)'=u'F+uF',\qquad (F\cdot G)'=F'\cdot G+F\cdot G'.
+$$
+If $F$ and $G$ take values in $V_3$, we also have
+$$
+(F\times G)'=F'\times G+F\times G'.
+$$
+
+> The proofs are routine componentwise verifications. For $(uF)'$, writing $F=(f_1,\dots,f_n)$ gives $(uf_k)'=u'f_k+uf_k'$, whence $(uF)'=u'F+uF'$.
+
+> Since the cross product is not commutative, preserve the order of factors in the formula for $(F\times G)'$.
+
+### 14.3.3 Constant-Length Property
+
+**Theorem 14.2.** If a differentiable vector-valued function $F$ has constant length on an open interval $I$, then $F\cdot F'=0$ on $I$. In other words, $F'(t)$ is perpendicular to $F(t)$ for each $t\in I$.
+
+*Proof.* Let $g(t)=\|F(t)\|^2=F(t)\cdot F(t)$. By hypothesis $g$ is constant, so $g'=0$. But $g'=F'\cdot F+F\cdot F'=2F\cdot F'$, hence $F\cdot F'=0$. ∎
+
+### 14.3.4 Chain Rule
+
+**Theorem 14.3.** Let $G=F\circ u$, where $F$ is vector-valued and $u$ is real-valued. If $u$ is continuous at $t$ and $F$ is continuous at $u(t)$, then $G$ is continuous at $t$. If $u'(t)$ and $F'[u(t)]$ exist, then $G'(t)$ exists and
+$$
+G'(t)=F'[u(t)]\,u'(t).
+$$
+
+### 14.3.5 Properties of Integrals
+
+**Theorem 14.4 (Linearity and Additivity).** If $F$ and $G$ are integrable on $[a,b]$, so is $c_1F+c_2G$ for all scalars $c_1,c_2$, and
+$$
+\int_a^b\bigl(c_1F(t)+c_2G(t)\bigr)\,dt=c_1\int_a^b F(t)\,dt+c_2\int_a^b G(t)\,dt.
+$$
+Also, for each $c\in[a,b]$,
+$$
+\int_a^b F(t)\,dt=\int_a^c F(t)\,dt+\int_c^b F(t)\,dt.
+$$
+
+**Theorem 14.5 (First Fundamental Theorem of Calculus).** Assume $F$ is continuous on $[a,b]$. If $c\in[a,b]$, define the indefinite integral
+$$
+A(x)=\int_c^x F(t)\,dt\qquad(a\le x\le b).
+$$
+Then $A'(x)$ exists and $A'(x)=F(x)$ for each $x\in(a,b)$.
+
+**Theorem 14.6 (Second Fundamental Theorem of Calculus).** Assume $F$ has a continuous derivative $F'$ on an open interval $I$. Then, for each $c,x\in I$,
+$$
+F(x)=F(c)+\int_c^x F'(t)\,dt.
+$$
+
+**Theorem 14.7 (Dot product with a constant vector).** If $F=(f_1,\dots,f_n)$ is integrable on $[a,b]$, then for every vector $C=(c_1,\dots,c_n)$ the dot product $C\cdot F$ is integrable on $[a,b]$, and
+$$
+C\cdot\int_a^b F(t)\,dt=\int_a^b C\cdot F(t)\,dt.
+$$
+
+*Proof.* Componentwise:
+$$
+C\cdot\int_a^b F(t)\,dt=\sum_{i=1}^n c_i\int_a^b f_i(t)\,dt=\int_a^b\sum_{i=1}^n c_if_i(t)\,dt=\int_a^b C\cdot F(t)\,dt.\quad\text{∎}
+$$
+
+**Theorem 14.8 (Norm inequality).** If $F$ and $\|F\|$ are integrable on $[a,b]$, then
+$$
+\Bigl\|\int_a^b F(t)\,dt\Bigr\|\le\int_a^b\|F(t)\|\,dt.\tag{14.1}
+$$
+
+*Proof.* Let $C=\int_a^b F(t)\,dt$. If $C=O$, (14.1) holds trivially. Assume $C\neq O$. By Theorem 14.7,
+$$
+\|C\|^2=C\cdot C=C\cdot\int_a^b F(t)\,dt=\int_a^b C\cdot F(t)\,dt.\tag{14.2}
+$$
+Since $C\cdot F(t)$ is real-valued, the Cauchy–Schwarz inequality gives
+$$
+\int_a^b C\cdot F(t)\,dt\le\int_a^b|C\cdot F(t)|\,dt\le\int_a^b\|C\|\,\|F(t)\|\,dt=\|C\|\int_a^b\|F(t)\|\,dt.\tag{14.3}
+$$
+Combining (14.2) and (14.3) yields $\|C\|^2\le\|C\|\int_a^b\|F(t)\|\,dt$. Since $\|C\|>0$, divide by $\|C\|$ to obtain (14.1). ∎
