@@ -9592,3 +9592,65 @@ $$
 $$
 
 
+## 14.12 Plane Motion with Radial Acceleration
+
+### 14.12.1 Condition for Radial Acceleration
+
+- The acceleration is **radial** when the transverse component in (14.26) is zero:
+  $$
+  r\frac{d^2\theta}{dt^2}+2\frac{dr}{dt}\frac{d\theta}{dt}=\frac{1}{r}\frac{d}{dt}\left(r^2\frac{d\theta}{dt}\right)=0.
+  $$
+- Hence acceleration is radial **iff** $r^2\dfrac{d\theta}{dt}$ is constant.
+
+### 14.12.2 Area Swept by the Position Vector
+
+- Let $A(t)$ be the area swept out by the position vector from $t=a$ to $t$.
+- **Theorem**: The time rate of change of this area is:
+  $$
+  \boxed{A'(t)=\frac{1}{2}r^2\frac{d\theta}{dt}}
+  $$
+  (Equation 14.27)
+
+**Proof:**
+1. Eliminate $t$ to express $r=R(\theta)$.
+2. By Theorem 2.6, the area is:
+   $$
+   A(t)=\frac{1}{2}\int_{g(a)}^{g(t)}R^2(\theta)\,d\theta.
+   $$
+3. Differentiate via the first FTC and chain rule:
+   $$
+   A'(t)=\frac{1}{2}R^2[g(t)]g'(t)=\frac{1}{2}f^2(t)g'(t)=\frac{1}{2}r^2\frac{d\theta}{dt}.
+   $$
+
+### 14.12.3 Kepler's Insight
+
+- From (14.27): acceleration is radial **iff** $A'(t)$ is constant.
+- **Equivalently**: the position vector sweeps out area at a **constant rate**.
+
+
+## 14.13 Cylindrical Coordinates
+
+### 14.13.1 Definition
+
+- A point $P=(x,y,z)$ in 3-space is described by $(r,\theta,z)$, where $(r,\theta)$ are polar coordinates in the $xy$-plane.
+- $r\ge0$ is the distance from the $z$-axis to $P$.
+- Constant-$r$ surfaces are **circular cylinders**.
+
+### 14.13.2 Position Vector
+
+$$
+\boldsymbol{r}=r\boldsymbol{u}_r+z(t)\boldsymbol{k}.
+$$
+
+### 14.13.3 Velocity and Acceleration
+
+Add the $z$-component terms to the polar formulas (14.25) and (14.26):
+
+$$
+\boldsymbol{v}=\frac{dr}{dt}\boldsymbol{u}_r+r\frac{d\theta}{dt}\boldsymbol{u}_\theta+z'(t)\boldsymbol{k},
+$$
+
+$$
+\boldsymbol{a}=\left(\frac{d^2r}{dt^2}-r\left(\frac{d\theta}{dt}\right)^2\right)\boldsymbol{u}_r+\left(r\frac{d^2\theta}{dt^2}+2\frac{dr}{dt}\frac{d\theta}{dt}\right)\boldsymbol{u}_\theta+z''(t)\boldsymbol{k}.
+$$
+
