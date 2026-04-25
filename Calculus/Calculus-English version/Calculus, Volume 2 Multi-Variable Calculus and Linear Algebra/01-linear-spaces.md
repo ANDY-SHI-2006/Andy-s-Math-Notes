@@ -51,3 +51,36 @@ Let $V$ be a nonempty set of objects called **elements**. $V$ is a **linear spac
 - When the term **linear space** is used without qualification, it may be either real or complex.
 
 The numbers used as multipliers are called **scalars**.
+
+## 1.3 Examples of Linear Spaces
+
+### Number Spaces
+
+**Example 1:** $V=\mathbb{R}$, the set of all real numbers, with ordinary addition and multiplication.
+
+**Example 2:** $V=\mathbb{C}$, the set of all complex numbers, with ordinary addition of complex numbers and multiplication by **real** scalars. This is a **real** linear space (scalars are real, even though the elements are complex).
+
+**Example 3:** $V=V_n$, the space of all $n$-tuples of real numbers, with componentwise addition and scalar multiplication.
+
+**Example 4:** The set of all vectors in $V_n$ orthogonal to a given nonzero vector $N$.
+- $n=2$: a line through $O$ with $N$ as normal vector.
+- $n=3$: a plane through $O$ with $N$ as normal vector.
+
+### Function Spaces
+
+The following examples have real-valued functions as elements. Addition and scalar multiplication are defined pointwise:
+$$
+(f+g)(x)=f(x)+g(x),\qquad (af)(x)=a\,f(x).
+$$
+The zero element is the function whose values are everywhere zero.
+
+| Example | Space | Note |
+|---------|-------|------|
+| 5 | All functions on a given interval | — |
+| 6 | All polynomials | — |
+| 7 | Polynomials of degree $\le n$ (fixed $n$) | The zero polynomial is included. Degree **exactly** $n$ is **not** a linear space (closure fails: sum of two degree-$n$ polynomials may have lower degree). |
+| 8 | Continuous functions on $[a,b]$ | Denoted $C(a,b)$ |
+| 9 | Functions differentiable at a given point | — |
+| 10 | Functions integrable on a given interval | — |
+| 11 | Functions with $f(1)=0$ | The value $0$ is essential; replacing it by $c\neq 0$ violates closure. |
+| 12 | Solutions of $y''+ay'+by=0$ ($a,b$ constants) | Homogeneous linear ODE; the zero function is a solution. Nonhomogeneous equations do **not** form linear spaces (closure fails). |
