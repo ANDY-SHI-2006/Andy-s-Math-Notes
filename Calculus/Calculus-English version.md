@@ -9346,3 +9346,86 @@ $$
 \Lambda(a,b)\le\Lambda(a,c)+\Lambda(c,b).
 $$
 Combined with (14.14), this yields $\Lambda(a,b)=\Lambda(a,c)+\Lambda(c,b)$. ∎
+
+
+## 14.9 The Arc-Length Function
+
+### 14.9.1 Definition
+
+- Let a curve be traced out by a position vector $\boldsymbol{r}(t)$.
+- The **arc-length function** $s$ is defined by:
+  $$
+  s(t)=\Lambda(a,t)\quad\text{if }t>a,\qquad s(a)=0.
+  $$
+- $s(a)=0$ means motion begins at $t=a$.
+
+### 14.9.2 Monotonicity
+
+**Theorem 14.12.** For any rectifiable curve, the arc-length function $s$ is monotonically increasing on $[a,b]$:
+$$
+s(t_1)\le s(t_2)\quad\text{if }a\le t_1<t_2\le b.
+$$
+(Equation 14.15)
+
+**Proof:**
+$$
+s(t_2)-s(t_1)=\Lambda(a,t_2)-\Lambda(a,t_1)=\Lambda(t_1,t_2)\ge0.
+$$
+
+### 14.9.3 Derivative of Arc Length
+
+**Theorem 14.13.** Let $s$ be the arc-length function and $v(t)$ the speed. If $v$ is continuous on $[a,b]$, then $s'(t)$ exists for each $t\in(a,b)$ and:
+$$
+\boxed{s'(t)=v(t)}
+$$
+(Equation 14.16)
+
+**Proof sketch:**
+1. Define $f(t)=\int_a^t v(u)\,du$. By the first FTC, $f'(t)=v(t)$.
+2. Form the difference quotient:
+   $$
+   \left\|\frac{\boldsymbol{r}(t+h)-\boldsymbol{r}(t)}{h}\right\|.
+   $$
+   (Equation 14.17)
+3. For $h>0$:
+   $$
+   \|\boldsymbol{r}(t+h)-\boldsymbol{r}(t)\|\le\Lambda(t,t+h)=s(t+h)-s(t).
+   $$
+4. Using Theorem 14.10:
+   $$
+   \left\|\frac{\boldsymbol{r}(t+h)-\boldsymbol{r}(t)}{h}\right\|\le\frac{s(t+h)-s(t)}{h}\le\frac{1}{h}\int_t^{t+h}v(u)\,du=\frac{f(t+h)-f(t)}{h}.
+   $$
+5. As $h\to0$: left side $\to\|\boldsymbol{r}'(t)\|=v(t)$; right side $\to f'(t)=v(t)$.
+6. By squeezing, $\displaystyle\lim_{h\to0}\frac{s(t+h)-s(t)}{h}=v(t)$.
+
+### 14.9.4 Computing Arc Length by Integration
+
+Using (14.16) and the second FTC:
+$$
+s(t_2)-s(t_1)=\int_{t_1}^{t_2}s'(t)\,dt=\int_{t_1}^{t_2}v(t)\,dt.
+$$
+In particular:
+$$
+\boxed{\Lambda(a,b)=\int_a^b v(t)\,dt}.
+$$
+
+### 14.9.5 Example 1 — Circular Arc
+
+- Circle of radius $a$: $\boldsymbol{r}(t)=a\cos t\,\boldsymbol{i}+a\sin t\,\boldsymbol{j}$.
+- Velocity: $\boldsymbol{v}(t)=-a\sin t\,\boldsymbol{i}+a\cos t\,\boldsymbol{j}$.
+- Speed: $v(t)=a$.
+- Arc length over angle $\theta$: $\displaystyle\int_0^\theta a\,dt=a\theta$.
+- **Length is proportional to subtended angle**; for unit circle ($a=1$), arc length equals angular measure.
+
+### 14.9.6 Example 2 — Graph of a Real-Valued Function
+
+- Graph of $f$ on $[a,b]$: $\boldsymbol{r}(t)=t\,\boldsymbol{i}+f(t)\,\boldsymbol{j}$.
+- Velocity: $\boldsymbol{v}(t)=\boldsymbol{i}+f'(t)\,\boldsymbol{j}$.
+- Speed: $v(t)=\sqrt{1+[f'(t)]^2}$.
+- Arc length:
+  $$
+  \boxed{s(x)=\int_a^x\sqrt{1+[f'(t)]^2}\,dt}
+  $$
+  (Equation 14.18)
+
+
