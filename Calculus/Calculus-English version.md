@@ -9953,3 +9953,121 @@ Let $(e_1,\dots,e_n)$ be an **ordered basis** (elements taken in a given order).
   - Proof of uniqueness: If $x=\sum d_i e_i$, then $\sum(c_i-d_i)e_i=O$. Independence implies $c_i=d_i$ for all $i$.
 - $(c_1,\dots,c_n)$ are called the **components of $x$ relative to the ordered basis** $(e_1,\dots,e_n)$.
 
+## 15.8 Inner Products, Euclidean Spaces, and Norms
+
+### 15.8.1 Inner Product — Axiomatic Definition
+
+In $V_n$, lengths and angles were defined via the dot product. We now generalize this to arbitrary linear spaces.
+
+Recall the dot product in $V_n$:
+$$
+x\cdot y = \sum_{i=1}^n x_i y_i. \tag{15.5}
+$$
+
+**Definition (Real inner product).** A real linear space $V$ has an **inner product** if for each pair $x,y\in V$ there is a unique real number $(x,y)$ satisfying:
+
+| Axiom | Property | Name |
+|-------|----------|------|
+| (1) | $(x,y)=(y,x)$ | Symmetry |
+| (2) | $(x,y+z)=(x,y)+(x,z)$ | Additivity |
+| (3) | $c(x,y)=(cx,y)$ | Homogeneity |
+| (4) | $(x,x)>0$ if $x\neq O$ | Positivity |
+
+- Note: Taking $c=0$ in (3) gives $(O,y)=0$ for all $y$.
+
+A real linear space with an inner product is called a **real Euclidean space**.
+
+**Complex inner product.** In a complex space, (1) is replaced by:
+$$
+(x,y)=\overline{(y,x)}. \tag{1'}
+$$
+- Then $(x,cy)=\bar c(x,y)$.
+- Such a space is called a **complex Euclidean space** (or **unitary space**).
+- The theorems below apply to both real and complex cases.
+
+### 15.8.2 Examples of Inner Products
+
+**Example 1:** In $V_n$, $(x,y)=x\cdot y$ (the usual dot product).
+
+**Example 2:** In $V_2$, define $(x,y)=2x_1y_1+x_1y_2+x_2y_1+x_2y_2$.
+- This is a valid inner product, showing a space may admit **more than one** inner product.
+
+**Example 3:** In $C(a,b)$ (continuous real-valued functions on $[a,b]$):
+$$
+(f,g)=\int_a^b f(t)g(t)\,dt.
+$$
+- Analogous to (15.5): function values play the role of components, integration replaces summation.
+
+**Example 4 (Weighted):** In $C(a,b)$ with a fixed positive function $w$:
+$$
+(f,g)=\int_a^b w(t)f(t)g(t)\,dt.
+$$
+- $w$ is called a **weight function**; Example 3 has $w(t)\equiv 1$.
+
+**Example 5:** In the space of all real polynomials:
+$$
+(f,g)=\int_0^\infty e^{-t}f(t)g(t)\,dt.
+$$
+- The exponential factor ensures convergence for all polynomials.
+
+### 15.8.3 Theorem 15.8 — Cauchy–Schwarz Inequality
+
+In any Euclidean space $V$,
+$$
+|(x,y)|^2 \le (x,x)(y,y) \quad\text{for all }x,y\in V.
+$$
+
+- **Equality holds iff $x$ and $y$ are dependent** (i.e., one is a scalar multiple of the other).
+
+**Proof sketch:**
+- The proof for $V_n$ (Theorem 12.3) used only the axioms of the dot product (Theorem 12.2), not the specific formula.
+- Hence the same proof is valid in **any** Euclidean space.
+- In the complex case, one obtains $(x,y)(y,x)\le(x,x)(y,y)$, which is the same inequality since $(x,y)(y,x)=(x,y)\overline{(x,y)}=|(x,y)|^2$.
+
+**Example.** In $C(a,b)$ with $(f,g)=\int_a^b f(t)g(t)\,dt$, the inequality becomes:
+$$
+\left(\int_a^b f(t)g(t)\,dt\right)^2 \le \left(\int_a^b f^2(t)\,dt\right)\left(\int_a^b g^2(t)\,dt\right).
+$$
+
+### 15.8.4 Norm
+
+**Definition.** In a Euclidean space $V$, the **norm** of $x$ is
+$$
+\|x\| = (x,x)^{1/2}.
+$$
+
+In terms of norms, the Cauchy–Schwarz inequality becomes:
+$$
+|(x,y)| \le \|x\|\,\|y\|.
+$$
+
+- The norm depends on the choice of inner product (analogous to choice of scale/unit).
+
+**Theorem 15.9 (Properties of norms).** In any Euclidean space, for all $x,y$ and scalars $c$:
+
+| Property | Statement | Name |
+|----------|-----------|------|
+| (a) | $\|x\|=0$ iff $x=O$ | Definiteness |
+| (b) | $\|x\|>0$ if $x\neq O$ | Positivity |
+| (c) | $\|cx\|=|c|\,\|x\|$ | Homogeneity |
+| (d) | $\|x+y\|\le\|x\|+\|y\|$ | Triangle inequality |
+
+- Equality in (d) holds if $x=O$, $y=O$, or $y=cx$ with $c>0$.
+
+**Proof sketch:**
+- (a)–(c) follow directly from inner-product axioms.
+- (d): Expand $\|x+y\|^2=(x+y,x+y)=\|x\|^2+\|y\|^2+(x,y)+\overline{(x,y)}$. By Cauchy–Schwarz, $|(x,y)|\le\|x\|\,\|y\|$, so:
+  $$
+  \|x+y\|^2 \le \|x\|^2+\|y\|^2+2\|x\|\,\|y\| = (\|x\|+\|y\|)^2.
+  $$
+- When $y=cx$ ($c>0$): $\|x+y\|=\|x+cx\|=(1+c)\|x\|=\|x\|+\|cx\|=\|x\|+\|y\|$.
+
+### 15.8.5 Angle in a Real Euclidean Space
+
+**Definition.** The **angle** $\theta$ ($0\le\theta\le\pi$) between nonzero $x$ and $y$ is defined by:
+$$
+\cos\theta = \frac{(x,y)}{\|x\|\,\|y\|}. \tag{15.6}
+$$
+
+- The Cauchy–Schwarz inequality guarantees the quotient lies in $[-1,1]$, so $\theta$ is uniquely determined.
+
