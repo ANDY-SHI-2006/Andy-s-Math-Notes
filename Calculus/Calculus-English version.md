@@ -11136,3 +11136,45 @@ If there are **more equations than unknowns**, the Gauss-Jordan process still ap
 - If an added equation is satisfied by the existing solution, the augmented matrix acquires a **row of zeros** at the bottom.
 - If an added equation is **not** satisfied, the bottom row becomes $[0\;\dots\;0\;|\;a]$ with $a\neq 0$, indicating **no solution**.
 
+## 16.15 Inverses of Square Matrices
+
+### 16.15.1 Nonsingular Matrices
+
+**Definition.** A square $n\times n$ matrix $A$ is **nonsingular** if there exists an $n\times n$ matrix $B$ such that $BA=I$. Such $B$ is called a **left inverse** of $A$.
+
+Let $T:V_n\to V_n$ be the linear transformation with matrix $m(T)=A$ (using the standard basis).
+
+**Theorem 16.20.** $A$ is nonsingular **if and only if** $T$ is invertible. Moreover, if $BA=I$, then $B=m(T^{-1})$.
+
+**Proof sketch:**
+- ($\Rightarrow$) Assume $BA=I$. If $T(x)=O$, let $X$ be the column of components of $x$. Then $AX=O$, so $B(AX)=IX=X=O$. Hence $x=O$ and $T$ is one-to-one, therefore invertible. From $TT^{-1}=I$ we get $Am(T^{-1})=I$; left-multiplying by $B$ gives $m(T^{-1})=B$.
+- ($\Leftarrow$) If $T$ is invertible, then $m(T^{-1})m(T)=I$, so $A$ is nonsingular.
+
+**Properties:**
+- A nonsingular matrix has a **unique** inverse, denoted $A^{-1}$.
+- If $AB=I$, then $B=A^{-1}$ (left inverse = right inverse).
+- $(A^{-1})^{-1}=A$.
+
+### 16.15.2 Computing the Inverse
+
+Let $A=(a_{ij})$ be nonsingular with inverse $A^{-1}=(b_{ij})$. The defining equation $AA^{-1}=I$ gives:
+$$
+\sum_{k=1}^n a_{ik}b_{kj}=\delta_{ij}, \tag{16.31}
+$$
+where $\delta_{ij}=1$ if $i=j$ and $0$ otherwise (Kronecker delta).
+
+For each fixed $j$, this is a linear system with coefficient matrix $A$ and right-hand side $e_j$ (the $j$th unit coordinate vector). Solving these $n$ systems yields the $n$ columns of $A^{-1}$.
+
+**Practical method — Gauss-Jordan on $[A\,|\,I]$:**
+
+Since all $n$ systems share the same coefficient matrix $A$, solve them simultaneously:
+
+1. Form the **augmented matrix** $[A\,|\,I]$.
+2. Apply row operations to reduce the left block to $I$.
+3. If successful, the right block becomes $A^{-1}$:
+   $$
+   [A\,|\,I] \xrightarrow{\text{row ops}} [I\,|\,A^{-1}].
+   $$
+
+> **Note:** It is not necessary to know in advance whether $A$ is nonsingular. If $A$ is **singular** (not nonsingular), the Gauss-Jordan process will at some stage produce a zero on the diagonal, and it will be impossible to transform $A$ into $I$.
+
