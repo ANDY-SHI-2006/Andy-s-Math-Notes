@@ -1,4 +1,4 @@
-[← Previous: A. Complex Numbers](a-complex-numbers.md)
+[<- Previous: A. Complex Numbers](a-complex-numbers.md)
 
 # B. Iwasawa Decomposition and Others
 
@@ -222,4 +222,4 @@ Note that there is another version of the **polar decomposition** as follows.
 
 **Proof.** The existence is a rephrasing of Chapter VIII, §5, Exercise 4. For uniqueness, suppose $g = pk$. The quadratic map gives $gg^* = pp^* = p^2$. The uniqueness of the square root in Theorem 4 shows that $p$ is uniquely determined by $g$, whence so is $k$. ∎
 
-[← Previous: A. Complex Numbers](a-complex-numbers.md)
+[<- Previous: A. Complex Numbers](a-complex-numbers.md)

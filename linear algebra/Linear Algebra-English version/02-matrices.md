@@ -1,7 +1,6 @@
-[← Previous: 1. Vector Spaces](01-vector-spaces.md) | [Next: 3. Linear Mappings →](03-linear-mappings.md)
+[<- Previous: 1. Vector Spaces](01-vector-spaces.md) | [Next: 3. Linear Mappings ->](03-linear-mappings.md)
 
 # 2. Matrices
-
 
 ## 2.1 The Space of Matrices
 
@@ -341,5 +340,6 @@ AX = B
 $$
 
 where $A$ is $m \times n$, $X$ is an $n \times 1$ column vector, and $B$ is an $m \times 1$ column vector.
+---
 
-[← Previous: 1. Vector Spaces](01-vector-spaces.md) | [Next: 3. Linear Mappings →](03-linear-mappings.md)
+[<- Previous: 1. Vector Spaces](01-vector-spaces.md) | [Next: 3. Linear Mappings ->](03-linear-mappings.md)

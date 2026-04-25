@@ -1,7 +1,6 @@
-[← Previous: 2. Matrices](02-matrices.md) | [Next: 4. Linear Maps and Matrices →](04-linear-maps-and-matrices.md)
+[<- Previous: 2. Matrices](02-matrices.md) | [Next: 4. Linear Maps and Matrices ->](04-linear-maps-and-matrices.md)
 
 # 3. Linear Mappings
-
 
 ## 3.1 Mappings
 
@@ -490,5 +489,6 @@ where $Q = \sum_{i=1}^{n-1} \frac{t_i}{1 - t_n} P_i \in S'$ by induction. Since 
 $$
 L(tv + (1 - t)w) = tL(v) + (1 - t)L(w) < 0.
 $$
+---
 
-[← Previous: 2. Matrices](02-matrices.md) | [Next: 4. Linear Maps and Matrices →](04-linear-maps-and-matrices.md)
+[<- Previous: 2. Matrices](02-matrices.md) | [Next: 4. Linear Maps and Matrices ->](04-linear-maps-and-matrices.md)

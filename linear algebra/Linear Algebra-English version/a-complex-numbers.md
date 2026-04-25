@@ -1,4 +1,4 @@
-[← Previous: 12. Convex Sets](12-convex-sets.md) | [Next: B. Iwasawa Decomposition and Others →](b-iwasawa-decomposition-and-others.md)
+[<- Previous: 12. Convex Sets](12-convex-sets.md) | [Next: B. Iwasawa Decomposition and Others ->](b-iwasawa-decomposition-and-others.md)
 
 # A. Complex Numbers
 
@@ -113,5 +113,6 @@ $$
 $$
 
 For sufficiently small $\lambda$ with $0 < \lambda < 1$ we have $0 < 1 - \lambda^m + C\lambda^{m+1} < 1$ (the right inequality amounts to $C\lambda < 1$). Then $|f_1(\lambda z_1)| < |c_0|$, contradicting the hypothesis that $|f(z_0)| \leq |f(t)|$ for all complex numbers $t$. This concludes the proof. ∎
+---
 
-[← Previous: 12. Convex Sets](12-convex-sets.md) | [Next: B. Iwasawa Decomposition and Others →](b-iwasawa-decomposition-and-others.md)
+[<- Previous: 12. Convex Sets](12-convex-sets.md) | [Next: B. Iwasawa Decomposition and Others ->](b-iwasawa-decomposition-and-others.md)

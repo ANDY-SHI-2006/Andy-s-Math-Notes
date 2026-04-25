@@ -1,7 +1,6 @@
-[← Previous: 3. Linear Mappings](03-linear-mappings.md) | [Next: 5. Scalar Products and Orthogonality →](05-scalar-products-and-orthogonality.md)
+[<- Previous: 3. Linear Mappings](03-linear-mappings.md) | [Next: 5. Scalar Products and Orthogonality ->](05-scalar-products-and-orthogonality.md)
 
 # 4. Linear Maps and Matrices
-
 
 ## 4.1 The Linear Map Associated with a Matrix
 
@@ -240,5 +239,6 @@ Two matrices $M, M'$ are **similar** (over $K$) if there exists invertible $N$ s
 $$
 M' = N^{-1} M N.
 $$
+---
 
-[← Previous: 3. Linear Mappings](03-linear-mappings.md) | [Next: 5. Scalar Products and Orthogonality →](05-scalar-products-and-orthogonality.md)
+[<- Previous: 3. Linear Mappings](03-linear-mappings.md) | [Next: 5. Scalar Products and Orthogonality ->](05-scalar-products-and-orthogonality.md)

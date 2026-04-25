@@ -1,4 +1,4 @@
-[← Previous: 8. Eigenvectors and Eigenvalues](08-eigenvectors-and-eigenvalues.md) | [Next: 10. Triangulation of Matrices and Linear Maps →](10-triangulation-of-matrices-and-linear-maps.md)
+[<- Previous: 8. Eigenvectors and Eigenvalues](08-eigenvectors-and-eigenvalues.md) | [Next: 10. Triangulation of Matrices and Linear Maps ->](10-triangulation-of-matrices-and-linear-maps.md)
 
 # 9. Polynomials and Matrices
 
@@ -140,5 +140,6 @@ $$
 Let $f(t) = a_N t^N + \cdots + a_0$.
 
 > **Note.** Theorem 2.2 also holds for linear maps on finite dimensional vector spaces. Later in Chapter X, §2, an explicit polynomial $P(t)$ with $P(A) = O$ will be constructed (the characteristic polynomial). By dividing by the leading coefficient, one may assume $f$ is monic.
+---
 
-[← Previous: 8. Eigenvectors and Eigenvalues](08-eigenvectors-and-eigenvalues.md) | [Next: 10. Triangulation of Matrices and Linear Maps →](10-triangulation-of-matrices-and-linear-maps.md)
+[<- Previous: 8. Eigenvectors and Eigenvalues](08-eigenvectors-and-eigenvalues.md) | [Next: 10. Triangulation of Matrices and Linear Maps ->](10-triangulation-of-matrices-and-linear-maps.md)

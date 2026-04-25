@@ -1,4 +1,4 @@
-[← Previous: 11. Polynomials and Primary Decomposition](11-polynomials-and-primary-decomposition.md) | [Next: A. Complex Numbers →](a-complex-numbers.md)
+[<- Previous: 11. Polynomials and Primary Decomposition](11-polynomials-and-primary-decomposition.md) | [Next: A. Complex Numbers ->](a-complex-numbers.md)
 
 # 12. Convex Sets
 
@@ -180,5 +180,6 @@ Let $P \in S$, and suppose $P \notin S'$. By Theorem 2.1, there exists a hyperpl
 Since $S$ is closed and bounded, the image $L(S)$ is closed and bounded, and this image is also convex. Hence $L(S)$ is a closed interval, say $[a, b]$, containing $c$. Thus $a \leq c \leq b$. Let $H_a$ be the hyperplane defined by $X \cdot N = a$.
 
 By the remark following Theorem 2.2, we know that $H_a$ is a supporting hyperplane of $S$. By Theorem 3.1, we conclude that $H_a$ contains an extreme point of $S$. This extreme point lies in $S'$. But for all $X$ in $S'$ we have $X \cdot N > c \geq a$, contradicting the fact that the extreme point satisfies $X \cdot N = a$. This proves the Krein-Milman theorem. ∎
+---
 
-[← Previous: 11. Polynomials and Primary Decomposition](11-polynomials-and-primary-decomposition.md) | [Next: A. Complex Numbers →](a-complex-numbers.md)
+[<- Previous: 11. Polynomials and Primary Decomposition](11-polynomials-and-primary-decomposition.md) | [Next: A. Complex Numbers ->](a-complex-numbers.md)

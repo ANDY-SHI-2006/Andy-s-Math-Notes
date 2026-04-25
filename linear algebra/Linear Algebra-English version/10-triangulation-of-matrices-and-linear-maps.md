@@ -1,4 +1,4 @@
-[← Previous: 9. Polynomials and Matrices](09-polynomials-and-matrices.md) | [Next: 11. Polynomials and Primary Decomposition →](11-polynomials-and-primary-decomposition.md)
+[<- Previous: 9. Polynomials and Matrices](09-polynomials-and-matrices.md) | [Next: 11. Polynomials and Primary Decomposition ->](11-polynomials-and-primary-decomposition.md)
 
 # 10. Triangulation of Matrices and Linear Maps
 
@@ -157,5 +157,6 @@ Going from $1$ to $n$ proves the theorem. ∎
 **Corollary 3.2.** Let $A$ be a complex unitary matrix. Then there exists a unitary matrix $U$ such that $U^{-1} A U$ is a diagonal matrix.
 
 **Proof.** Let $\{e^1, \dots, e^n\} = \mathscr{B}$ be the standard orthonormal basis of $\mathbb{C}^n$, and let $\{w_1, \dots, w_n\} = \mathscr{B}'$ be an orthonormal basis of eigenvectors. Let $U = M_{\mathscr{B}'}^{\mathscr{B}}(\text{id})$. Then $U$ is unitary, and if $M'$ is the matrix of $A$ relative to $\mathscr{B}'$, we have $M' = U^{-1} A U$. ∎
+---
 
-[← Previous: 9. Polynomials and Matrices](09-polynomials-and-matrices.md) | [Next: 11. Polynomials and Primary Decomposition →](11-polynomials-and-primary-decomposition.md)
+[<- Previous: 9. Polynomials and Matrices](09-polynomials-and-matrices.md) | [Next: 11. Polynomials and Primary Decomposition ->](11-polynomials-and-primary-decomposition.md)

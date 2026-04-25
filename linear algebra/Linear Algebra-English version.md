@@ -452,10 +452,8 @@ $$
 $$
 
 is the set of $n$-tuples $(w_1, \dots, w_n)$ with $w_i \in W_i$. Addition and scalar multiplication are defined componentwise.
-
-
+---
 # 2. Matrices
-
 
 ## 2.1 The Space of Matrices
 
@@ -795,10 +793,8 @@ AX = B
 $$
 
 where $A$ is $m \times n$, $X$ is an $n \times 1$ column vector, and $B$ is an $m \times 1$ column vector.
-
-
+---
 # 3. Linear Mappings
-
 
 ## 3.1 Mappings
 
@@ -1287,10 +1283,8 @@ where $Q = \sum_{i=1}^{n-1} \frac{t_i}{1 - t_n} P_i \in S'$ by induction. Since 
 $$
 L(tv + (1 - t)w) = tL(v) + (1 - t)L(w) < 0.
 $$
-
-
+---
 # 4. Linear Maps and Matrices
-
 
 ## 4.1 The Linear Map Associated with a Matrix
 
@@ -1529,10 +1523,8 @@ Two matrices $M, M'$ are **similar** (over $K$) if there exists invertible $N$ s
 $$
 M' = N^{-1} M N.
 $$
-
-
+---
 # 5. Scalar Products and Orthogonality
-
 
 ## 5.1 Scalar Products
 
@@ -2297,7 +2289,7 @@ The left side is $\ge 0$; the right side is $\le 0$. Hence both equal 0, so $x_1
 Since $\dim V = n$, we have $r + n - r' \le n$, so $r \le r'$. By symmetry, $r' \le r$. Hence $r = r'$.
 
 The integer $r$ is the **index of positivity** of the scalar product.
-
+---
 # 6. Determinants
 
 ## 6.1 Determinants of Order 2
@@ -2961,10 +2953,8 @@ $$
 $$
 
 so the first two rows are linearly independent. Hence $\operatorname{rank} C = 2$. (Indeed, row 3 = row 1 + row 2.)
-
-
+---
 # 7. Symmetric, Hermitian, and Unitary Operators
-
 
 ## 7.1 Symmetric Operators
 
@@ -3205,10 +3195,8 @@ For $V = \mathbf{C}^n$ with the standard hermitian form, a complex matrix $A$ is
 | **(b)** | If $\{w_1, \dots, w_n\}$ is another orthonormal basis and $Av_i = w_i$ for all $i$, then $A$ is unitary. |
 
 **Proof.** Immediate from the definitions.
-
-
+---
 # 8. Eigenvectors and Eigenvalues
-
 
 ## 8.1 Eigenvectors and Eigenvalues
 
@@ -3655,8 +3643,7 @@ where each $M_i$ is $1 \times 1$ or $2 \times 2$ of the following types:
 | **Rotation** | $\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$ | Rotation by $\theta$ |
 
 > **Geometric content.** On each component $V_i$, $T$ is either the identity, a reflection, or a rotation.
-
-
+---
 # 9. Polynomials and Matrices
 
 ## 9.1 Polynomials
@@ -3797,8 +3784,7 @@ $$
 Let $f(t) = a_N t^N + \cdots + a_0$.
 
 > **Note.** Theorem 2.2 also holds for linear maps on finite dimensional vector spaces. Later in Chapter X, §2, an explicit polynomial $P(t)$ with $P(A) = O$ will be constructed (the characteristic polynomial). By dividing by the leading coefficient, one may assume $f$ is monic.
-
-
+---
 # 10. Triangulation of Matrices and Linear Maps
 
 ## 10.1 Existence of Triangulation
@@ -3956,8 +3942,7 @@ Going from $1$ to $n$ proves the theorem. ∎
 **Corollary 3.2.** Let $A$ be a complex unitary matrix. Then there exists a unitary matrix $U$ such that $U^{-1} A U$ is a diagonal matrix.
 
 **Proof.** Let $\{e^1, \dots, e^n\} = \mathscr{B}$ be the standard orthonormal basis of $\mathbb{C}^n$, and let $\{w_1, \dots, w_n\} = \mathscr{B}'$ be an orthonormal basis of eigenvectors. Let $U = M_{\mathscr{B}'}^{\mathscr{B}}(\text{id})$. Then $U$ is unitary, and if $M'$ is the matrix of $A$ relative to $\mathscr{B}'$, we have $M' = U^{-1} A U$. ∎
-
-
+---
 # 11. Polynomials and Primary Decomposition
 
 ## 11.1 The Euclidean Algorithm
@@ -4366,8 +4351,7 @@ V &= V' \oplus U_{j_1} \oplus \cdots \oplus U_{j_l} \\
 $$
 
 giving the desired expression of $V$ as a direct sum of cyclic subspaces. ∎
-
-
+---
 # 12. Convex Sets
 
 ## 12.1 Definitions
@@ -4548,8 +4532,7 @@ Let $P \in S$, and suppose $P \notin S'$. By Theorem 2.1, there exists a hyperpl
 Since $S$ is closed and bounded, the image $L(S)$ is closed and bounded, and this image is also convex. Hence $L(S)$ is a closed interval, say $[a, b]$, containing $c$. Thus $a \leq c \leq b$. Let $H_a$ be the hyperplane defined by $X \cdot N = a$.
 
 By the remark following Theorem 2.2, we know that $H_a$ is a supporting hyperplane of $S$. By Theorem 3.1, we conclude that $H_a$ contains an extreme point of $S$. This extreme point lies in $S'$. But for all $X$ in $S'$ we have $X \cdot N > c \geq a$, contradicting the fact that the extreme point satisfies $X \cdot N = a$. This proves the Krein-Milman theorem. ∎
-
-
+---
 # A. Complex Numbers
 
 ## A.1 Definitions and Basic Properties
@@ -4663,8 +4646,7 @@ $$
 $$
 
 For sufficiently small $\lambda$ with $0 < \lambda < 1$ we have $0 < 1 - \lambda^m + C\lambda^{m+1} < 1$ (the right inequality amounts to $C\lambda < 1$). Then $|f_1(\lambda z_1)| < |c_0|$, contradicting the hypothesis that $|f(z_0)| \leq |f(t)|$ for all complex numbers $t$. This concludes the proof. ∎
-
-
+---
 # B. Iwasawa Decomposition and Others
 
 ## B.1 Groups and Subgroups

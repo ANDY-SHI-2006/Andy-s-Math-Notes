@@ -1,7 +1,6 @@
-[← Previous: 7. Symmetric, Hermitian, and Unitary Operators](07-symmetric-hermitian-and-unitary-operators.md) | [Next: 9. Polynomials and Matrices →](09-polynomials-and-matrices.md)
+[<- Previous: 7. Symmetric, Hermitian, and Unitary Operators](07-symmetric-hermitian-and-unitary-operators.md) | [Next: 9. Polynomials and Matrices ->](09-polynomials-and-matrices.md)
 
 # 8. Eigenvectors and Eigenvalues
-
 
 ## 8.1 Eigenvectors and Eigenvalues
 
@@ -448,5 +447,6 @@ where each $M_i$ is $1 \times 1$ or $2 \times 2$ of the following types:
 | **Rotation** | $\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$ | Rotation by $\theta$ |
 
 > **Geometric content.** On each component $V_i$, $T$ is either the identity, a reflection, or a rotation.
+---
 
-[← Previous: 7. Symmetric, Hermitian, and Unitary Operators](07-symmetric-hermitian-and-unitary-operators.md) | [Next: 9. Polynomials and Matrices →](09-polynomials-and-matrices.md)
+[<- Previous: 7. Symmetric, Hermitian, and Unitary Operators](07-symmetric-hermitian-and-unitary-operators.md) | [Next: 9. Polynomials and Matrices ->](09-polynomials-and-matrices.md)
