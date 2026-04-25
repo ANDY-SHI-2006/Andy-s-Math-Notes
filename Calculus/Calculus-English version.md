@@ -10240,3 +10240,61 @@ $$
 
 - The **normalized Legendre polynomials** are $\varphi_n=y_n/\|y_n\|$.
 
+## 15.11 Orthogonal Complements and Projections
+
+### 15.11.1 The Approximation Problem
+
+Let $V$ be a Euclidean space and $S$ a finite-dimensional subspace. Given $x\in V$, find $s\in S$ minimizing the distance $\|x-s\|$.
+
+- If $x\in S$, then $s=x$.
+- Geometrically (in $V_3$ with $S$ a plane through the origin), the nearest point is obtained by dropping a perpendicular from $x$ to $S$.
+
+### 15.11.2 Orthogonal Complement
+
+**Definition.** An element in $V$ is **orthogonal to $S$** if it is orthogonal to every element of $S$. The set of all such elements is denoted $S^\perp$ (read "$S$ perpendicular").
+
+- $S^\perp$ is a subspace of $V$, whether or not $S$ is.
+- If $S$ is a subspace, $S^\perp$ is called the **orthogonal complement** of $S$.
+- Example: If $S$ is a plane through the origin in $V_3$, then $S^\perp$ is the line through the origin perpendicular to $S$.
+
+### 15.11.3 Theorem 15.15 — Orthogonal Decomposition
+
+Let $V$ be a Euclidean space and $S$ a finite-dimensional subspace. Then **every** $x\in V$ can be represented **uniquely** as:
+$$
+x = s + s^\perp, \quad\text{where }s\in S\text{ and }s^\perp\in S^\perp. \tag{15.16}
+$$
+
+Moreover, the **Pythagorean formula** holds:
+$$
+\|x\|^2 = \|s\|^2 + \|s^\perp\|^2. \tag{15.17}
+$$
+
+**Proof sketch:**
+- Since $S$ is finite-dimensional, it has an orthonormal basis $\{e_1,\dots,e_n\}$.
+- Define:
+  $$
+  s = \sum_{i=1}^n (x,e_i)e_i, \qquad s^\perp = x - s. \tag{15.18}
+  $$
+- $s$ is a linear combination of basis elements, so $s\in S$.
+- For any basis element $e_j$:
+  $$
+  (s^\perp,e_j) = (x,e_j) - (s,e_j) = (x,e_j) - (x,e_j) = 0.
+  $$
+  Hence $s^\perp$ is orthogonal to every element of $S$, so $s^\perp\in S^\perp$.
+- **Uniqueness:** Suppose $x=t+t^\perp$ is another decomposition. Then $s-t=t^\perp-s^\perp$. The left side is in $S$, the right side in $S^\perp$. Thus $s-t$ is orthogonal to itself, so $s-t=O$ and $s^\perp=t^\perp$.
+- **Pythagorean formula:**
+  $$
+  \|x\|^2=(x,x)=(s+s^\perp,s+s^\perp)=(s,s)+(s^\perp,s^\perp)=\|s\|^2+\|s^\perp\|^2.
+  $$
+
+### 15.11.4 Projection onto a Subspace
+
+**Definition.** Let $S$ be a finite-dimensional subspace with orthonormal basis $\{e_1,\dots,e_n\}$. For $x\in V$, the element
+$$
+s = \sum_{i=1}^n (x,e_i)e_i
+$$
+is called the **projection of $x$ on the subspace $S$**.
+
+- This projection is the unique element in $S$ that solves the approximation problem (minimizing $\|x-s\|$).
+- The proof of this optimality property follows from the orthogonal decomposition theorem.
+
