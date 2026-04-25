@@ -235,3 +235,60 @@ Let $S$ be an independent set of $k$ elements in $V$, and let $L(S)$ be its span
 - Induction step: assume true for $k-1$. Let $T=\{y_1,\dots,y_{k+1}\}\subseteq L(S)$, and write $y_i=\sum_{j=1}^k a_{ij}x_j$ (Equation 1.4).
   - **Case 1:** All $a_{i1}=0$. Then each $y_i\in L(S')$ where $S'=\{x_2,\dots,x_k\}$ has $k-1$ independent elements. By induction, $T$ is dependent.
   - **Case 2:** Some $a_{i1}\neq 0$; assume $a_{11}\neq 0$. Set $c_i=a_{i1}/a_{11}$. Then each $c_i y_1-y_i$ is a linear combination of $x_2,\dots,x_k$. By the induction hypothesis applied to these $k$ elements in the span of $k-1$ independent elements, they are dependent. Hence there exist scalars $t_i$, not all zero, with $\sum_{i=2}^{k+1} t_i(c_i y_1-y_i)=O$, which is a nontrivial relation among $y_1,\dots,y_{k+1}$. Therefore $T$ is dependent.
+
+## 1.8 Bases and Dimension
+
+### 1.8.1 Finite Basis and Dimension
+
+**Definition.** A finite set $S$ in a linear space $V$ is a **finite basis** for $V$ if $S$ is **independent** and **spans** $V$.
+
+| Term | Condition |
+|------|-----------|
+| **Finite-dimensional** | $V$ has a finite basis, or $V=\{O\}$ |
+| **Infinite-dimensional** | $V$ has no finite basis |
+
+- By convention, $\dim\{O\}=0$.
+
+**Theorem 1.6 (Uniqueness of basis size).** Let $V$ be finite-dimensional. Then **every finite basis for $V$ has the same number of elements**.
+
+**Proof sketch:**
+- Let bases $S$ ($k$ elements) and $T$ ($m$ elements).
+- $S$ independent and spans $V$ $\Rightarrow$ every set of $k+1$ elements in $V$ is dependent (Theorem 1.5).
+- $T$ is independent with $m$ elements $\Rightarrow m\le k$.
+- Interchange roles $\Rightarrow k\le m$.
+- Hence $k=m$.
+
+**Definition.** If $V$ has a basis of $n$ elements, $n$ is the **dimension** of $V$, written $n=\dim V$.
+
+### 1.8.2 Examples
+
+| Space | Dimension | Basis |
+|-------|-----------|-------|
+| $V_n$ | $n$ | $n$ unit coordinate vectors |
+| Polynomials of degree $\le n$ | $n+1$ | $\{1,t,t^2,\dots,t^n\}$ |
+| Solutions of $y''-2y'-3y=0$ | $2$ | $\{e^{-x},e^{3x}\}$ |
+| All polynomials $p(t)$ | **Infinite** | $\{1,t,t^2,\dots\}$ spans, but no finite set spans |
+
+### 1.8.3 Theorem 1.7 — Properties of Bases
+
+Let $V$ be finite-dimensional with $\dim V=n$.
+
+**(a) Extension.** Any independent set in $V$ is a subset of some basis for $V$.
+
+**(b) Criterion.** Any set of $n$ independent elements in $V$ is a basis for $V$.
+
+**Proof sketch:**
+- **(a):** Let $S=\{x_1,\dots,x_k\}$ be independent. If $L(S)=V$, done. Otherwise pick $y\notin L(S)$. Then $S'=S\cup\{y\}$ is independent (if $\sum c_i x_i+c_{k+1}y=O$, then $c_{k+1}\neq 0$ since $S$ is independent, so $y\in L(S)$, contradiction). Repeat; the process terminates in finitely many steps, yielding a basis containing $S$.
+- **(b):** By (a), $S$ is contained in a basis $B$. But $|B|=n=|S|$, so $S=B$.
+
+## 1.9 Components
+
+Let $V$ be a linear space of dimension $n$ and consider an **ordered basis** $(e_1,\dots,e_n)$ (elements taken in a given order).
+
+- Every $x\in V$ has a unique representation:
+  $$
+  x=\sum_{i=1}^n c_i e_i. \tag{1.5}
+  $$
+- The $n$-tuple $(c_1,\dots,c_n)$ is **uniquely determined** by $x$.
+  - Proof of uniqueness: If $x=\sum d_i e_i$, then $\sum(c_i-d_i)e_i=O$. Independence implies $c_i=d_i$ for all $i$.
+- $(c_1,\dots,c_n)$ are called the **components of $x$ relative to the ordered basis** $(e_1,\dots,e_n)$.
