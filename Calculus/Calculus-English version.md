@@ -9654,3 +9654,95 @@ $$
 \boldsymbol{a}=\left(\frac{d^2r}{dt^2}-r\left(\frac{d\theta}{dt}\right)^2\right)\boldsymbol{u}_r+\left(r\frac{d^2\theta}{dt^2}+2\frac{dr}{dt}\frac{d\theta}{dt}\right)\boldsymbol{u}_\theta+z''(t)\boldsymbol{k}.
 $$
 
+
+## 14.14 Applications to Planetary Motion
+
+### 14.14.1 Kepler's Three Laws
+
+- **First law**: Planets move in **ellipses** with the sun at one focus.
+- **Second law**: The position vector from the sun to a planet sweeps out area at a **constant rate**.
+- **Third law**: The square of the period is proportional to the cube of the mean distance from the sun.
+  > $T^2 \propto a^3$, where $a$ is the semi-major axis.
+
+Newton later proved that all three laws follow from his second law of motion and the universal law of gravitation.
+
+### 14.14.2 Newton's Law of Gravitation
+
+Assume a fixed sun of mass $M$ and a planet of mass $m$.
+
+- Newton's second law: $\boldsymbol{F}=m\boldsymbol{a}$. (Equation 14.28)
+- Universal gravitation:
+  $$
+  \boldsymbol{F}=-G\frac{mM}{r^2}\boldsymbol{u}_r.
+  $$
+- Hence the acceleration is **radial**:
+  $$
+  \boxed{\boldsymbol{a}=-\frac{GM}{r^2}\boldsymbol{u}_r}
+  $$
+  (Equation 14.29)
+
+### 14.14.3 Proof of Kepler's Second Law
+
+1. Since $\boldsymbol{a}$ is parallel to $\boldsymbol{r}$, we have $\boldsymbol{r}\times\boldsymbol{a}=\boldsymbol{O}$.
+2. Then:
+   $$
+   \boldsymbol{r}\times\boldsymbol{a}=\boldsymbol{r}\times\frac{d\boldsymbol{v}}{dt}=\frac{d}{dt}(\boldsymbol{r}\times\boldsymbol{v})=\boldsymbol{O}.
+   $$
+3. Thus $\boldsymbol{r}\times\boldsymbol{v}=\boldsymbol{c}$ (a constant vector).
+4. If $\boldsymbol{c}\neq\boldsymbol{O}$, then $\boldsymbol{r}\cdot\boldsymbol{c}=0$, so the orbit lies in a plane.
+5. In polar coordinates:
+   $$
+   \boldsymbol{c}=\boldsymbol{r}\times\boldsymbol{v}=r^2\frac{d\theta}{dt}\,\boldsymbol{u}_r\times\boldsymbol{u}_\theta.
+   $$
+   (Equation 14.30)
+6. Hence $\|\boldsymbol{c}\|=|r^2 d\theta/dt|=2|A'(t)|$.
+7. Therefore $A'(t)$ is constant — **Kepler's second law** is proved.
+
+### 14.14.4 Proof of Kepler's First Law
+
+1. Form $\boldsymbol{a}\times\boldsymbol{c}$ using (14.29) and (14.30):
+   $$
+   \boldsymbol{a}\times\boldsymbol{c}=GM\frac{d\theta}{dt}\boldsymbol{u}_\theta=\frac{d}{dt}(GM\boldsymbol{u}_r).
+   $$
+2. Since $\boldsymbol{a}=d\boldsymbol{v}/dt$ and $\boldsymbol{u}_\theta=d\boldsymbol{u}_r/d\theta$:
+   $$
+   \frac{d}{dt}(\boldsymbol{v}\times\boldsymbol{c})=\frac{d}{dt}(GM\boldsymbol{u}_r).
+   $$
+3. Integrating:
+   $$
+   \boldsymbol{v}\times\boldsymbol{c}=GM(\boldsymbol{u}_r+\boldsymbol{e}),
+   $$
+   where $\boldsymbol{e}$ is a constant vector. (Equation 14.31)
+4. Dot with $\boldsymbol{r}$ and use (14.30):
+   $$
+   GMr(1+e\cos\phi)=c^2,
+   $$
+   where $e=\|\boldsymbol{e}\|$, $c=\|\boldsymbol{c}\|$, and $\phi$ is the angle between $\boldsymbol{e}$ and $\boldsymbol{r}$. (Equation 14.32)
+5. Let $d=c^2/(GMe)$. Then:
+   $$
+   r=\frac{ed}{e\cos\phi+1}.
+   $$
+   (Equation 14.33)
+6. This is the **polar equation of a conic section** with eccentricity $e$ and focus at the sun.
+7. Since planetary orbits are closed, $e<1$, so the orbit is an **ellipse**.
+
+### 14.14.5 Proof of Kepler's Third Law
+
+- Ellipse area: $\pi ab$, where $2a$ and $2b$ are major and minor axes.
+- Period $T$: time for one orbit. Since area is swept at rate $\frac{1}{2}c$:
+  $$
+  \frac{1}{2}cT=\pi ab \quad\Longrightarrow\quad T=\frac{2\pi ab}{c}.
+  $$
+- From Section 13.22: $b^2=a^2(1-e^2)$ and $ed=a(1-e^2)$.
+- Hence $c^2=GMa(1-e^2)$, and:
+  $$
+  T^2=\frac{4\pi^2a^2b^2}{c^2}=\frac{4\pi^2a^4(1-e^2)}{GMa(1-e^2)}=\frac{4\pi^2}{GM}a^3.
+  $$
+- **Conclusion**:
+  $$
+  \boxed{T^2=\frac{4\pi^2}{GM}a^3}
+  $$
+  Thus $T^2$ is proportional to $a^3$.
+
+
+
