@@ -10839,3 +10839,44 @@ The collection of all $m\times n$ matrices (with real or complex entries) is a *
     \begin{bmatrix}0&0&0\\0&0&1\end{bmatrix}.
     $$
 
+## 16.11 Isomorphism Between Linear Transformations and Matrices
+
+### 16.11.1 The Mapping $m:\mathscr{L}(V,W)\to M_{m,n}$
+
+Fix ordered bases $(e_1,\dots,e_n)$ for $V$ and $(w_1,\dots,w_m)$ for $W$. For $T\in\mathscr{L}(V,W)$, define $m(T)$ to be its matrix representation:
+$$
+T(e_k)=\sum_{i=1}^m t_{ik}w_i \quad\Rightarrow\quad m(T)=(t_{ik})_{i,k=1}^{m,n}. \tag{16.19–16.20}
+$$
+
+This defines a function $m:\mathscr{L}(V,W)\to M_{m,n}$ whose range is all of $M_{m,n}$ (every matrix represents some $T$).
+
+### 16.11.2 Theorem 16.15 — Isomorphism Theorem
+
+For all $S,T\in\mathscr{L}(V,W)$ and scalars $c$:
+$$
+m(S+T)=m(S)+m(T),\qquad m(cT)=cm(T).
+$$
+Moreover,
+$$
+m(S)=m(T) \quad\text{implies}\quad S=T,
+$$
+so $m$ is **one-to-one** on $\mathscr{L}(V,W)$.
+
+**Proof sketch:**
+- Let $S(e_k)=\sum_i s_{ik}w_i$ and $T(e_k)=\sum_i t_{ik}w_i$. Then
+  $$
+  (S+T)(e_k)=S(e_k)+T(e_k)=\sum_i(s_{ik}+t_{ik})w_i,
+  $$
+  so $m(S+T)=(s_{ik}+t_{ik})=m(S)+m(T)$. Similarly $m(cT)=cm(T)$.
+- If $m(S)=m(T)$, then $S(e_k)=T(e_k)$ for every basis element $e_k$. By Theorem 16.12 (prescribed values), $S=T$.
+
+### 16.11.3 Consequences
+
+- The function $m$ is an **isomorphism** between $\mathscr{L}(V,W)$ and $M_{m,n}$.
+- Addition and scalar multiplication are preserved under this correspondence.
+- Since $m$ is one-to-one and onto:
+  $$
+  \dim\mathscr{L}(V,W)=\dim M_{m,n}=mn.
+  $$
+- **Identity matrix:** If $V=W$ and the same basis is used, the matrix of the identity transformation $I:V\to V$ is the $n\times n$ diagonal matrix with 1s on the diagonal. This is called the **identity** (or **unit**) matrix, denoted $I$ or $I_n$.
+
