@@ -10594,3 +10594,42 @@ $$
 
 - These results apply to arbitrary functions. The next sections specialize to linear transformations.
 
+## 16.6 One-to-One Linear Transformations
+
+### 16.6.1 Theorem 16.10 — Equivalent Conditions for One-to-One
+
+Let $T:V\to W$ be a linear transformation. The following are **equivalent**:
+
+**(a)** $T$ is one-to-one on $V$.
+
+**(b)** $T$ is invertible and its inverse $T^{-1}:T(V)\to V$ is linear.
+
+**(c)** $N(T)=\{O\}$; that is, $T(x)=O$ implies $x=O$.
+
+**Proof sketch:**
+- **(a)$\Rightarrow$(b):** Let $u,v\in T(V)$, so $u=T(x)$, $v=T(y)$. Then
+  $$
+  au+bv=aT(x)+bT(y)=T(ax+by).
+  $$
+  Applying $T^{-1}$: $T^{-1}(au+bv)=ax+by=aT^{-1}(u)+bT^{-1}(v)$, so $T^{-1}$ is linear.
+- **(b)$\Rightarrow$(c):** If $T(x)=O$, apply $T^{-1}$: $x=T^{-1}(O)=O$.
+- **(c)$\Rightarrow$(a):** If $T(u)=T(v)$, then $T(u-v)=O$, so $u-v=O$ by (c). Hence $u=v$.
+
+### 16.6.2 Theorem 16.11 — Finite-Dimensional Characterizations
+
+Let $T:V\to W$ be linear with $V$ finite-dimensional, $\dim V=n$. The following are **equivalent**:
+
+**(a)** $T$ is one-to-one on $V$.
+
+**(b)** $T$ preserves independence: if $e_1,\dots,e_p$ are independent in $V$, then $T(e_1),\dots,T(e_p)$ are independent in $T(V)$.
+
+**(c)** $\dim T(V)=n$.
+
+**(d)** If $\{e_1,\dots,e_n\}$ is a basis for $V$, then $\{T(e_1),\dots,T(e_n)\}$ is a basis for $T(V)$.
+
+**Proof sketch:**
+- **(a)$\Rightarrow$(b):** Suppose $\sum_{i=1}^p c_i T(e_i)=O$. By linearity, $T(\sum c_i e_i)=O$. By Theorem 16.10(c), $\sum c_i e_i=O$, so independence of $\{e_i\}$ gives $c_i=0$.
+- **(b)$\Rightarrow$(c):** Take a basis $\{e_1,\dots,e_n\}$ of $V$. By (b), $\{T(e_i)\}$ are independent in $T(V)$, so $\dim T(V)\ge n$. By Theorem 16.3 (nullity + rank), $\dim T(V)\le n$. Hence $\dim T(V)=n$.
+- **(c)$\Rightarrow$(d):** $\{T(e_i)\}$ spans $T(V)$ and there are $n=\dim T(V)$ of them, so they form a basis.
+- **(d)$\Rightarrow$(a):** If $T(x)=O$, write $x=\sum c_i e_i$. Then $T(x)=\sum c_i T(e_i)=O$. By (d), $\{T(e_i)\}$ is independent, so all $c_i=0$ and $x=O$. Thus $N(T)=\{O\}$, and Theorem 16.10 gives (a).
+
