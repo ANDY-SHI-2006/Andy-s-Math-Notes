@@ -63,7 +63,6 @@ $$
 
 Ordinate sets are the geometric objects whose areas we compute by means of integral calculus. We shall define the integral first for **step functions** and then use the integral of a step function to formulate the definition of integral for more general functions.
 
-
 ## 1.3 Partitions and Step Functions
 
 ### 1.3.1 Partitions
@@ -144,7 +143,6 @@ For a nonnegative step function, the integral equals the **area of its ordinate 
 
 The value of the integral is independent of the choice of partition, as long as $s$ is constant on its open subintervals. Inserting additional subdivision points splits one term $s_k(x_k - x_{k-1})$ into two terms whose sum is unchanged; by repeated insertion, the integral is the same for every refinement of $P$.
 
-
 ## 1.6 Properties of the Integral of a Step Function
 
 ### 1.6.1 Additive Property
@@ -213,7 +211,6 @@ $$
 \int_a^b s(x) \, dx = \int_{-b}^{-a} s(-x) \, dx.
 $$
 
-
 ## 1.7 Other Notations for Integrals
 
 ### 1.7.1 Dummy Variables
@@ -241,7 +238,6 @@ This makes clearer that the integral depends only on the **function $s$** and th
 ### 1.7.3 Leibniz Notation
 
 The symbol $dx$ may seem superfluous now, but it becomes an extremely useful computational device for routine integral calculations.
-
 
 ## 1.8 The Integral of More General Functions
 
@@ -312,8 +308,6 @@ We also define:
 $$
 \int_b^a f(x) \, dx = -\int_a^b f(x) \, dx \quad (a < b), \qquad \int_a^a f(x) \, dx = 0.
 $$
-
-
 
 ## 1.9 Upper and Lower Integrals
 
@@ -431,7 +425,6 @@ $$
 
 is measurable and has **area equal to 0**.
 
-
 ## 1.11 Informal Remarks on the Theory and Technique of Integration
 
 ### 1.11.1 Two Fundamental Questions
@@ -486,7 +479,6 @@ $$
 $$
 
 **Example 3 鈥?The semicircle function.** Let $g(x) = \sqrt{r^2 - x^2}$ for $-r \le x \le r$. Then $g$ is **strictly increasing** on $[-r, 0]$ and **strictly decreasing** on $[0, r]$. Hence $g$ is piecewise monotonic on $[-r, r]$.
-
 
 ## 1.13 Integrability of Bounded Monotonic Functions
 
@@ -588,7 +580,6 @@ $$
 I = \int_a^b f(x)\,dx.
 $$
 
-
 ## 1.15 Calculation of the Integral $\int_0^b x^p \, dx$
 
 ### 1.15.1 Theorem 1.15
@@ -628,7 +619,6 @@ These are exactly the inequalities (1.9) of **Theorem 1.13** with $a = 0$ and $I
 $$
 \int_0^b x^p \, dx = \frac{b^{p+1}}{p+1}.
 $$
-
 
 ## 1.16 The Basic Properties of the Integral
 
@@ -684,7 +674,6 @@ $$
 
 In particular, if $f(x) \ge 0$ on $[a, b]$, then $\displaystyle\int_a^b f(x)\,dx \ge 0$.
 
-
 ## 1.17 Integration of Polynomials
 
 ### 1.17.1 Extending the Power Formula
@@ -736,7 +725,6 @@ We can also integrate piecewise polynomial functions by splitting at sign change
 $$
 \int_0^1 |x(2x-1)|\,dx = -\int_0^{1/2} x(2x-1)\,dx + \int_{1/2}^1 x(2x-1)\,dx = \frac{1}{4}.
 $$
-
 
 ## 1.18 Proofs of the Basic Properties of the Integral
 
@@ -836,14 +824,11 @@ $$
 \int_a^b g = \sup\left\{\int_a^b s \;\bigg|\; s \le g\right\} \le \inf\left\{\int_a^b t \;\bigg|\; f \le t\right\} = \int_a^b f.
 $$
 
-
 # 2. Some Applications of Integration
-
 
 ## 2.1 Introduction
 
 In Section 1.18 we expressed the area of the ordinate set of a nonnegative function as an integral. In this chapter we will show that areas of more general regions can also be expressed as integrals. We will also discuss further applications of the integral to concepts such as **volume**, **work**, and **averages**. Then, at the end of the chapter, we will study properties of functions defined by integrals.
-
 
 ## 2.2 The Area of a Region Between Two Graphs Expressed as an Integral
 
@@ -878,7 +863,6 @@ a(T) = \int_a^b \bigl[(g(x)+c) - (f(x)+c)\bigr]\,dx = \int_a^b \bigl[g(x) - f(x)
 $$
 
 Since $T$ is congruent to $S$ (translation by $c$), $S$ is also measurable with the same area.
-
 
 ## 2.3 Worked Examples
 
@@ -974,7 +958,6 @@ $$
 \int_a^b x^{1/n}\,dx = \frac{b^{1+1/n} - a^{1+1/n}}{1 + 1/n}. \tag{2.2}
 $$
 
-
 ## 2.4 The Trigonometric Functions
 
 ### 2.4.1 Introduction
@@ -1029,7 +1012,6 @@ $$
 $$
 
 By the Pythagorean identity, $|\sin x| \le 1$ and $|\cos x| \le 1$ for all $x$.
-
 
 ## 2.5 Integration Formulas for the Sine and Cosine
 
@@ -1104,7 +1086,6 @@ $$
 \int_0^a \sin^2 x\,dx = \frac{a}{2} - \frac{1}{4}\sin 2a, \qquad
 \int_0^a \cos^2 x\,dx = \frac{a}{2} + \frac{1}{4}\sin 2a.
 $$
-
 
 ## 2.6 A Geometric Description of the Sine and Cosine
 
@@ -1196,8 +1177,6 @@ $$
 - Cartesian: $x^2 + y^2 = 4$
 - Polar: $r = 2$ (much simpler)
 
-
-
 ## 2.8 The Integral for Area in Polar Coordinates
 
 ### 2.8.1 Radial Set
@@ -1248,7 +1227,6 @@ $$
   $$
   a(R) = 4 \cdot \frac{1}{2} \int_0^{\pi/2} \sin \theta \, d\theta = 2\Bigl[-\cos \theta\Bigr]_0^{\pi/2} = 2(1 - 0) = 2
   $$
-
 
 ## 2.9 Application of Integration to the Calculation of Volume
 
@@ -1322,7 +1300,6 @@ $$
   $$
   v = \int_a^b \pi\bigl[g^2(x) - f^2(x)\bigr] \, dx
   $$
-
 
 ## 2.10 Application of Integration to the Concept of Work
 
@@ -1401,7 +1378,6 @@ $$
 
 > Curved motion work is discussed in Volume II using line integrals.
 
-
 ## 2.11 Average Value of a Function
 
 ### 2.11.1 Arithmetic Mean
@@ -1468,7 +1444,6 @@ $$
   (weighted average of $x^2$ with weight $\rho$)
 
 > Weighted averages also appear in probability theory, where **expectation** and **variance** play analogous roles to center of mass and moment of inertia.
-
 
 ## 2.12 The Integral as a Function of the Upper Limit. Indefinite Integrals
 
@@ -1549,7 +1524,6 @@ $$
 - Example: $f(x) = [x]$ (greatest-integer function) $\implies A(x) = \int_0^x [t] \, dt$ is piecewise linear.
 - The indefinite integral "smooths out" jumps 鈥?$A(x)$ is always continuous (proved in next chapter).
 
-
 # 3. Continuous Functions
 
 ## 3.1 Informal Description of Continuity
@@ -1581,7 +1555,6 @@ $$
 
 > "Continuity: Quality or state of being continuous. Continuous: Having continuity of parts."
 > 鈥?Trying to learn continuity from a dictionary alone is like trying to learn Chinese with only a Chinese dictionary.
-
 
 ## 3.2 The Definition of the Limit of a Function
 
@@ -1675,7 +1648,6 @@ $$
 
 - **Existence of limit**: $\displaystyle\lim_{x \to p} f(x) = A$ exists iff both one-sided limits exist and equal $A$.
 
-
 ## 3.3 The Definition of Continuity of a Function
 
 ### 3.3.1 Definition 鈥?Continuity at a Point
@@ -1731,7 +1703,6 @@ A function $f$ is **continuous at $p$** if:
 | **Removable** | Limit exists but $\neq f(p)$ | $f(x) = 1$ ($x \neq 0$), $f(0) = 0$ |
 | **Jump** | Left and right limits exist but differ | $f(x) = [x]$ at integers |
 | **Infinite** | Function unbounded near $p$ | $f(x) = 1/x^2$ at $x = 0$ |
-
 
 ## 3.4 The Basic Limit Theorems. More Examples of Continuous Functions
 
@@ -1833,7 +1804,6 @@ $$
 - **Conclusion**: $f(x) = x^r$ is continuous for all $x > 0$ when $r$ is any positive rational number.
 - At $x = 0$: right-hand continuity.
 
-
 ## 3.5 Proofs of the Basic Limit Theorems
 
 ### 3.5.1 Algebraic Tools
@@ -1899,7 +1869,6 @@ Two key properties of absolute values:
 - Therefore:
   $$\frac{|h(x) - 1|}{|h(x)|} < 2 \cdot \frac{\epsilon}{2} = \epsilon$$
 - This proves (3.14), completing the proof of (iv).
-
 
 ## 3.6 Composite Functions and Continuity
 
@@ -2026,7 +1995,6 @@ Let $f$ be continuous at $c$ and $f(c) \neq 0$. Then there exists an interval $(
 - The only remaining possibility is $f(c) = 0$.
 - Also $a < c < b$ because $f(a) < 0$ and $f(b) > 0$.
 
-
 ## 3.8 The Intermediate-Value Theorem for Continuous Functions
 
 ### 3.8.1 Theorem 3.8 鈥?Intermediate-Value Theorem
@@ -2056,7 +2024,6 @@ $$
 3. Since $0 < a < c < c^n$, the value $a$ lies between $f(0)$ and $f(c)$.
 4. By the intermediate-value theorem, $f(x) = a$ for some $x \in (0, c)$; call it $b$.
 5. **Uniqueness**: $f(x) = x^n$ is strictly increasing on $[0, c]$, so there cannot be more than one such $b$.
-
 
 ## 3.9 The Process of Inversion
 
@@ -2103,7 +2070,6 @@ $$
   g(y) = y^{1/n} \quad \text{for } y \ge 0
   $$
 
-
 ## 3.10 Properties of Functions Preserved by Inversion
 
 ### 3.10.1 Graphical Relationship
@@ -2148,7 +2114,6 @@ Assume $f$ is strictly increasing and continuous on $[a, b]$. Let $c = f(a)$, $d
 - This provides an **alternate proof** of the continuity of $y^{1/n}$, independent of integration theory.
 - Since products of continuous functions are continuous, the $r$th-power function $h(y) = y^r$ ($r = m/n$ positive rational, $y \ge 0$) is also continuous.
 
-
 ## 3.11 Inverses of Piecewise Monotonic Functions
 
 ### 3.11.1 The Problem
@@ -2183,7 +2148,6 @@ Assume $f$ is strictly increasing and continuous on $[a, b]$. Let $c = f(a)$, $d
   - Invert each piece separately.
   - Each piece yields a single-valued inverse function.
 - This technique will be used extensively in Chapter 6.
-
 
 ## 3.12 The Extreme-Value Theorem for Continuous Functions
 
@@ -2250,7 +2214,6 @@ $$
   - $\inf f$ is the **absolute minimum**.
 - By the intermediate-value theorem, the range of $f$ is the closed interval $[\inf f, \sup f]$.
 
-
 ## 3.13 The Small-Span Theorem for Continuous Functions (Uniform Continuity)
 
 ### 3.13.1 Definition 鈥?Span of a Function
@@ -2278,7 +2241,6 @@ Let $f$ be continuous on a closed interval $[a, b]$. Then for every $\epsilon > 
 6. However, $[a_n, b_n] \subset (\alpha - \delta, \alpha + \delta)$ for large $n$ (since $(b - a)/2^n < \delta$).
 7. Therefore the span of $f$ in $[a_n, b_n]$ is also less than $\epsilon_0$.
 8. **Contradiction**: the span in $[a_n, b_n]$ was chosen to be at least $\epsilon_0$.
-
 
 ## 3.14 The Integrability Theorem for Continuous Functions
 
@@ -2333,7 +2295,6 @@ If $f$ is continuous at each point of a closed interval $[a, b]$, then $f$ is **
 13. Since this holds for every $N \ge 1$, we must have $\bar{I}(f) = \underline{I}(f)$.
 14. Therefore $f$ is integrable on $[a, b]$.
 
-
 ## 3.15 Mean-Value Theorems for Integrals of Continuous Functions
 
 ### 3.15.1 Theorem 3.15 鈥?Mean-Value Theorem for Integrals
@@ -2374,8 +2335,6 @@ $$
 6. By the intermediate-value theorem, this quotient equals $f(c)$ for some $c \in [a, b]$.
 
 > **Use**: The weighted mean-value theorem provides useful estimates for integrals of products, especially when one factor's integral is easy to compute.
-
-
 
 # 4. Differential Calculus
 
@@ -6953,7 +6912,6 @@ $$
 
 > The alternating harmonic series converges (to $\log 2$), while the harmonic series $\sum 1/n$ diverges.
 
-
 ### 10.12.2 Leibniz's Rule
 
 **Theorem.** If $\{a_n\}$ is **monotonic decreasing** and $a_n \to 0$, then the alternating series $\sum (-1)^{n-1}a_n$ **converges**.
@@ -6975,7 +6933,6 @@ $$
 **Examples:**
 1. $\sum (-1)^{n-1}/n$ converges by Leibniz (sum = $\log 2$).
 2. $\sum (-1)^n (\log n)/n$ converges: $(\log n)/n \to 0$, and for $f(x)=(\log x)/x$, $f'(x)=(1-\log x)/x^2 < 0$ when $x>e$, so the sequence decreases for $n\ge 3$.
-
 
 ### 10.12.3 Euler's Constant
 
@@ -7029,7 +6986,6 @@ $$
 - **Complex case:** Write $a_n = u_n + iv_n$. Since $|u_n| \le |a_n|$ and $|v_n| \le |a_n|$, absolute convergence of $\sum |a_n|$ implies convergence of $\sum |u_n|$ and $\sum |v_n|$, hence of $\sum u_n$ and $\sum v_n$.
 - The triangle inequality $|\sum_{k=1}^n a_k| \le \sum_{k=1}^n |a_k|$ gives the stated bound as $n\to\infty$.
 
-
 ### 10.13.2 Definitions
 
 - **Absolutely convergent:** $\sum |a_n|$ converges.
@@ -7038,7 +6994,6 @@ $$
 > The alternating harmonic series $\sum (-1)^{n-1}/n$ is **conditionally convergent**.
 
 **Linearity.** If $\sum a_n$ and $\sum b_n$ are absolutely convergent, so is $\sum(\alpha a_n + \beta b_n)$ for any scalars $\alpha,\beta$.
-
 
 ## 10.14 The Convergence Tests of Dirichlet and Abel
 
@@ -7053,7 +7008,6 @@ $$
 
 > If $A_n b_{n+1} \to L$ and $\sum A_k(b_k - b_{k+1})$ converges, then $\sum a_k b_k$ converges.
 
-
 ### 10.14.2 Dirichlet's Test
 
 **Theorem.** Let $\sum a_n$ be a series of complex terms whose partial sums form a **bounded** sequence. Let $\{b_n\}$ be a **decreasing** sequence with $b_n \to 0$. Then $\sum a_n b_n$ **converges**.
@@ -7064,13 +7018,11 @@ $$
 $$
 and $\sum (b_k - b_{k+1})$ is a convergent telescoping series, so $\sum A_k(b_k - b_{k+1})$ converges absolutely.
 
-
 ### 10.14.3 Abel's Test
 
 **Theorem.** Let $\sum a_n$ be a **convergent** series of complex terms and let $\{b_n\}$ be a **monotonic convergent** sequence of real terms. Then $\sum a_n b_n$ **converges**.
 
 > The proof is analogous to Dirichlet's test, using that $\{A_n\}$ is bounded and $A_n b_{n+1}$ converges.
-
 
 ### 10.14.4 Bounded Partial Sums of a Geometric Series on the Unit Circle
 
@@ -7084,7 +7036,6 @@ $$
 **Proof.** Use the geometric-series formula $\sum_{k=1}^n x^k = x(x^n-1)/(x-1)$ with $x=e^{2i\theta}$; simplify using Euler's formula to obtain the closed form. The estimate follows from $|\sin n\theta|\le 1$ and $|e^{i(n+1)\theta}|=1$.
 
 > This shows that $\sum x^n$ with $|x|=1$, $x\neq 1$ has bounded partial sums鈥攁 key example for Dirichlet's test.
-
 
 ### 10.14.5 Applications
 
@@ -7131,11 +7082,9 @@ t_{3m} = (\log 4m + C) - \tfrac{1}{2}(\log 2m + C) - \tfrac{1}{2}(\log m + C) + 
 $$
 Hence the rearranged series converges to $\frac{3}{2}\log 2 \neq \log 2$.
 
-
 ### 10.15.2 Definition of Rearrangement
 
 A **permutation** of $\mathbb{P}=\{1,2,3,\dots\}$ is a one-to-one mapping $f:\mathbb{P}\to\mathbb{P}$. If $b_n = a_{f(n)}$, then $\sum b_n$ is called a **rearrangement** of $\sum a_n$.
-
 
 ### 10.15.3 Absolute Convergence Preserves the Sum
 
@@ -7146,7 +7095,6 @@ $$
 |B_n - S| \le |B_n - A_N| + |A_N - S| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
 $$
 Thus $B_n \to S$.
-
 
 ### 10.15.4 Positive and Negative Parts
 
@@ -7161,7 +7109,6 @@ $$
   $$\sum_{n=1}^{\infty}a_n = \sum_{n=1}^{\infty}a_n^+ + \sum_{n=1}^{\infty}a_n^-.$$
 
 > Part (a) follows from linearity: $\sum a_n$ converges but $\sum|a_n|$ diverges, so neither signed part can converge.
-
 
 ### 10.15.5 Riemann's Rearrangement Theorem
 
@@ -7197,7 +7144,6 @@ $$
 $$
 convergent iff **both** integrals on the right converge (the choice of $c$ is irrelevant).
 
-
 ### 10.16.2 Convergence Tests for Nonnegative Integrands
 
 **Theorem (Boundedness criterion).** If $f(x)\ge 0$ for $x\ge a$, then $\int_a^{\infty}f(x)\,dx$ converges iff there exists $M>0$ such that $\int_a^b f(x)\,dx \le M$ for all $b\ge a$.
@@ -7211,7 +7157,6 @@ $$
 then $\int_a^{\infty}f$ and $\int_a^{\infty}g$ either both converge or both diverge. If $c=0$, convergence of $\int_a^{\infty}g$ implies convergence of $\int_a^{\infty}f$.
 
 **Example.** $\int_1^{\infty}e^{-x}x^{s}\,dx$ converges for every real $s$ (compare with $x^{-2}$).
-
 
 ### 10.16.3 Improper Integrals of the Second Kind
 
@@ -7235,7 +7180,6 @@ $$
 \int_{a+}^{b-}f(t)\,dt = \int_{a+}^{c}f(t)\,dt + \int_{c}^{b-}f(t)\,dt.
 $$
 Mixed combinations (e.g. $\int_{a+}^{\infty}$) are defined analogously.
-
 
 ### 10.16.4 The Gamma Function
 
@@ -7262,7 +7206,6 @@ $$
 f(x) = \lim_{n\to\infty} f_n(x).
 $$
 
-
 ### 11.1.2 Why Pointwise Convergence Is Not Enough
 
 A central question: if each $f_n$ is continuous/differentiable/integrable, is the limit function $f$ also? In general, **no**.
@@ -7280,7 +7223,6 @@ $$
 > The operations of **limit** and **integration** cannot always be interchanged under mere pointwise convergence.
 
 Historical note: Stokes, Seidel (1848), and Weierstrass recognized that an extra condition鈥攏ow called **uniform convergence**鈥攊s needed to justify interchanging limits with integration (and other operations).
-
 
 ## 11.2 Uniform Convergence of Sequences of Functions
 
@@ -7311,7 +7253,6 @@ $$
 |f(x)-f(p)| \le |f(x)-f_N(x)| + |f_N(x)-f_N(p)| + |f_N(p)-f(p)| < \frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\varepsilon.
 $$
 
-
 ### 11.3.1 Corollary for Series
 
 **Theorem.** If a series of functions $\sum u_k$ converges **uniformly** to $f$ on $S$, and each $u_k$ is continuous at $p\in S$, then $f$ is also continuous at $p$.
@@ -7321,7 +7262,6 @@ $$
 \lim_{x\to p}\sum_{k=1}^{\infty}u_k(x) = \sum_{k=1}^{\infty}\lim_{x\to p}u_k(x).
 $$
 > For a uniformly convergent series we may pass to the limit **term by term**.
-
 
 ## 11.4 Uniform Convergence and Integration
 
@@ -7338,7 +7278,6 @@ $$
 $$
 |g_n(x)-g(x)| \le \int_a^x|f_n(t)-f(t)|\,dt < \int_a^b\frac{\varepsilon}{b-a}\,dt = \varepsilon.
 $$
-
 
 ### 11.4.1 Term-by-Term Integration of Series
 
@@ -8914,7 +8853,6 @@ The real-valued functions $f_1,\dots,f_n$ are called the **component functions**
 
 > Every vector-valued function gives rise to $n$ real-valued component functions, and vice versa. This componentwise viewpoint is fundamental for extending calculus to vector-valued functions.
 
-
 ## 14.3 Limits, Derivatives, and Integrals
 
 ### 14.3.1 Componentwise Definitions
@@ -9008,7 +8946,6 @@ $$
 $$
 Combining (14.2) and (14.3) yields $\|C\|^2\le\|C\|\int_a^b\|F(t)\|\,dt$. Since $\|C\|>0$, divide by $\|C\|$ to obtain (14.1). ∎
 
-
 ## 14.4 Applications to Curves. Tangency
 
 ### 14.4.1 Curves and Parametric Representation
@@ -9083,7 +9020,6 @@ Let $T=X'/\|X'\|$ be the unit tangent vector. Then:
 - On the hyperbola: $T\cdot\boldsymbol{u}_2=T\cdot\boldsymbol{u}_1$, so $\cos\theta_2=\cos\theta_1$, giving $\theta_2=\theta_1$.
 
 These angle relations are exactly the reflection properties.
-
 
 ## 14.5 Applications to Curvilinear Motion. Velocity, Speed, and Acceleration
 
@@ -9184,7 +9120,6 @@ The acceleration is parallel to the $xy$-plane and directed toward the $z$-axis.
 
 Eliminating $\theta$ from the first two equations of (14.7) gives $x^2+y^2=a^2$, a circular cylinder of radius $a$ about the $z$-axis. The helix winds around this cylinder.
 
-
 ## 14.6 The Unit Tangent, the Principal Normal, and the Osculating Plane
 
 ### 14.6.1 The Unit Tangent Vector
@@ -9256,7 +9191,6 @@ $$
 \boldsymbol{u}(t)=-\sin\alpha(t)\,\boldsymbol{i}+\cos\alpha(t)\,\boldsymbol{j}=\cos\Bigl(\alpha(t)+\frac{\pi}{2}\Bigr)\boldsymbol{i}+\sin\Bigl(\alpha(t)+\frac{\pi}{2}\Bigr)\boldsymbol{j}.
 $$
 
-
 ## 14.7 The Definition of Arc Length
 
 ### 14.7.1 Rectifiable Curves
@@ -9302,7 +9236,6 @@ Thus $\int_a^b v(t)\,dt$ is an upper bound for all $|\pi(P)|$, proving rectifiab
 
 > In a later section we shall prove that the inequality in (14.12) is, in fact, an **equality**. The proof uses the **additivity** of arc length.
 
-
 ## 14.8 Additivity of Arc Length
 
 ### 14.8.1 The Additive Property
@@ -9346,7 +9279,6 @@ $$
 \Lambda(a,b)\le\Lambda(a,c)+\Lambda(c,b).
 $$
 Combined with (14.14), this yields $\Lambda(a,b)=\Lambda(a,c)+\Lambda(c,b)$. ∎
-
 
 ## 14.9 The Arc-Length Function
 
@@ -9427,7 +9359,6 @@ $$
   \boxed{s(x)=\int_a^x\sqrt{1+[f'(t)]^2}\,dt}
   $$
   (Equation 14.18)
-
 
 ## 14.10 Curvature of a Curve
 
@@ -9517,7 +9448,6 @@ $$
 
 > **Practical note**: Computing $\boldsymbol{v}$ and $\boldsymbol{a}$ by differentiating $\boldsymbol{r}$ is usually easier than using the definition of curvature directly.
 
-
 ## 14.11 Velocity and Acceleration in Polar Coordinates
 
 ### 14.11.1 Polar Unit Vectors
@@ -9591,7 +9521,6 @@ $$
 \boldsymbol{a}=\left(\frac{d^2r}{d\theta^2}-r\right)\boldsymbol{u}_r+2\frac{dr}{d\theta}\boldsymbol{u}_\theta.
 $$
 
-
 ## 14.12 Plane Motion with Radial Acceleration
 
 ### 14.12.1 Condition for Radial Acceleration
@@ -9627,7 +9556,6 @@ $$
 - From (14.27): acceleration is radial **iff** $A'(t)$ is constant.
 - **Equivalently**: the position vector sweeps out area at a **constant rate**.
 
-
 ## 14.13 Cylindrical Coordinates
 
 ### 14.13.1 Definition
@@ -9653,7 +9581,6 @@ $$
 $$
 \boldsymbol{a}=\left(\frac{d^2r}{dt^2}-r\left(\frac{d\theta}{dt}\right)^2\right)\boldsymbol{u}_r+\left(r\frac{d^2\theta}{dt^2}+2\frac{dr}{dt}\frac{d\theta}{dt}\right)\boldsymbol{u}_\theta+z''(t)\boldsymbol{k}.
 $$
-
 
 ## 14.14 Applications to Planetary Motion
 
@@ -9744,7 +9671,6 @@ Assume a fixed sun of mass $M$ and a planet of mass $m$.
   $$
   Thus $T^2$ is proportional to $a^3$.
 
-
 # 15. Linear Spaces
 
 ## 15.1 Introduction
@@ -9796,7 +9722,6 @@ Let $V$ be a nonempty set of objects called **elements**. $V$ is a **linear spac
 - The multipliers are called **scalars**.
 - Unless specified otherwise, "linear space" may refer to either real or complex.
 
-
 ## 15.3 Examples of Linear Spaces
 
 ### 15.3.1 Basic Number Spaces
@@ -9834,4 +9759,3 @@ The zero element is the function identically zero.
 | **12** | Solutions of $y''+ay'+by=0$ | Homogeneous linear ODE. Nonhomogeneous case fails closure |
 
 > These examples show how the linear space concept unifies algebra, geometry, and analysis. A theorem proved from the axioms applies to **all** concrete examples at once.
-
