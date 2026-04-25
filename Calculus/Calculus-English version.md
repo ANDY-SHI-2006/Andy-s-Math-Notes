@@ -10071,3 +10071,77 @@ $$
 
 - The Cauchy–Schwarz inequality guarantees the quotient lies in $[-1,1]$, so $\theta$ is uniquely determined.
 
+## 15.9 Orthogonality in a Euclidean Space
+
+### 15.9.1 Orthogonal and Orthonormal Sets
+
+**Definition.** In a Euclidean space $V$:
+
+| Term | Condition |
+|------|-----------|
+| **Orthogonal** | $(x,y)=0$ |
+| **Orthogonal set** | $(x,y)=0$ for every pair of distinct $x,y\in S$ |
+| **Orthonormal set** | Orthogonal set with $\|x\|=1$ for all $x\in S$ |
+
+- The zero element is orthogonal to every element, and is the **only** element orthogonal to itself.
+
+**Theorem 15.10 (Orthogonality implies independence).** In a Euclidean space $V$, every orthogonal set of **nonzero** elements is **independent**.
+
+- In particular, in an $n$-dimensional Euclidean space, every orthogonal set of $n$ nonzero elements is a **basis**.
+
+**Proof sketch:**
+- Suppose $\sum_{i=1}^k c_i x_i=O$ with $x_i\in S$.
+- Take inner product with $x_1$: $c_1(x_1,x_1)=0$.
+- Since $x_1\neq O$, $(x_1,x_1)\neq 0$, so $c_1=0$.
+- Repeat for each $x_j$ $\Rightarrow$ all $c_j=0$.
+- If $|S|=n=\dim V$, then $S$ is a basis by Theorem 15.7(b).
+
+### 15.9.2 Example — Trigonometric Functions in $C(0,2\pi)$
+
+In $C(0,2\pi)$ with $(f,g)=\int_0^{2\pi}f(x)g(x)\,dx$, let
+$$
+u_0(x)=1,\quad u_{2n-1}(x)=\cos nx,\quad u_{2n}(x)=\sin nx\quad (n\ge 1).
+$$
+
+- **Orthogonality:** $\int_0^{2\pi} u_n(x)u_m(x)\,dx=0$ for $m\neq n$.
+- **Norms:**
+  - $\|u_0\|=\sqrt{2\pi}$
+  - $\|u_{2n-1}\|=\|u_{2n}\|=\sqrt{\pi}$ for $n\ge 1$
+- **Orthonormal set** $\{\varphi_0,\varphi_1,\varphi_2,\dots\}$ obtained by dividing each $u_n$ by its norm:
+  $$
+  \varphi_0(x)=\frac{1}{\sqrt{2\pi}},\quad \varphi_{2n-1}(x)=\frac{\cos nx}{\sqrt{\pi}},\quad \varphi_{2n}(x)=\frac{\sin nx}{\sqrt{\pi}}.
+  $$
+
+### 15.9.3 Components Relative to an Orthogonal Basis
+
+**Theorem 15.11.** Let $V$ be finite-dimensional with $\dim V=n$, and let $S=\{e_1,\dots,e_n\}$ be an orthogonal basis. If $x=\sum_{i=1}^n c_i e_i$, then:
+$$
+c_j = \frac{(x,e_j)}{(e_j,e_j)} \quad\text{for }j=1,2,\dots,n. \tag{15.8}
+$$
+
+- In particular, if $S$ is **orthonormal**:
+  $$
+  c_j=(x,e_j). \tag{15.9}
+  $$
+
+- Equation (15.7) then becomes:
+  $$
+  x=\sum_{i=1}^n (x,e_i)e_i. \tag{15.10}
+  $$
+
+**Proof sketch:** Take inner product of $x=\sum c_i e_i$ with $e_j$; orthogonality kills all terms except $i=j$.
+
+### 15.9.4 Parseval’s Formula
+
+**Theorem 15.12.** Let $\{e_1,\dots,e_n\}$ be an orthonormal basis for $V$. Then for all $x,y\in V$:
+$$
+(x,y)=\sum_{i=1}^n (x,e_i)\overline{(y,e_i)}. \tag{15.11}
+$$
+
+- When $x=y$:
+  $$
+  \|x\|^2=\sum_{i=1}^n |(x,e_i)|^2. \tag{15.12}
+  $$
+
+**Proof sketch:** Expand $x$ and $y$ using (15.10) and apply linearity of the inner product; orthonormality yields the sum.
+
