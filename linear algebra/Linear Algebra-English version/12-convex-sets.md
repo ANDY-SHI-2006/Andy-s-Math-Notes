@@ -47,7 +47,7 @@ Since the intersection of convex sets is convex, the intersection of a finite nu
 **Definition (Bounded).** A subset $S$ of $\mathbb{R}^n$ is said to be **bounded** if there exists a number $c > 0$ such that $\|X\| \leq c$ for all $X \in S$.
 
 
-## 12.2 Separating Hyperplanes
+## 12.3 Separating Hyperplanes
 
 **Theorem 2.1.** Let $S$ be a closed convex set in $\mathbb{R}^n$. Let $P$ be a point of $\mathbb{R}^n$. Then either $P$ belongs to $S$, or there exists a hyperplane $H$ which contains $P$, and such that $S$ is contained in one of the open half spaces determined by $H$.
 
@@ -116,7 +116,7 @@ This proves our theorem. ∎
 > **Remark.** Let $S$ be a convex set, and let $H$ be a hyperplane defined by $X \cdot N = a$. Assume that for all $X \in S$ we have $X \cdot N \geq a$. If $P$ is a point of $S$ lying in the hyperplane, then $P$ is a boundary point of $S$. Otherwise, for $\epsilon > 0$ sufficiently small, $P - \epsilon N$ would be a point of $S$, and thus $(P - \epsilon N)\cdot N = P\cdot N - \epsilon N\cdot N = a - \epsilon N\cdot N < a$, contrary to hypothesis. We conclude therefore that $H$ is a supporting hyperplane of $S$ at $P$.
 
 
-## 12.3 Extreme Points and Supporting Hyperplanes
+## 12.4 Extreme Points and Supporting Hyperplanes
 
 **Definition (Extreme point).** Let $S$ be a convex set and let $P$ be a point of $S$. We shall say that $P$ is an **extreme point** of $S$ if there do not exist points $Q_1, Q_2$ of $S$ with $Q_1 \neq Q_2$ such that $P$ can be written in the form
 
@@ -149,7 +149,7 @@ $$
 and the same argument gives $x_{r+1} = y_{r+1} = p_{r+1}$. It follows that $X = Y = P$, whence $P$ is an extreme point. This proves our theorem. ∎
 
 
-## 12.4 The Krein-Milman Theorem
+## 12.5 The Krein-Milman Theorem
 
 Let $E$ be a set of points in $\mathbb{R}^n$ (with at least one point in it). We wish to describe the smallest convex set containing $E$. It is the intersection of all convex sets containing $E$, because this intersection is convex and is clearly smallest.
 
