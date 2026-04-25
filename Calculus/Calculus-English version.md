@@ -9802,3 +9802,46 @@ In any linear space, for arbitrary elements $x,y$ and scalars $a,b$:
 
 **Proof of (c):** Let $z=(-a)x$. Then $z+ax=(-a+a)x=0x=O$, so $z=-(ax)$. Similarly $a(-x)=-(ax)$.
 
+
+## 15.5 Subspaces of a Linear Space
+
+### 15.5.1 Definition
+
+- Let $V$ be a linear space and $S$ a nonempty subset of $V$.
+- If $S$ is itself a linear space under the same operations, $S$ is called a **subspace** of $V$.
+
+### 15.5.2 Theorem 15.4 — Subspace Criterion
+
+Let $S$ be a nonempty subset of a linear space $V$. Then $S$ is a subspace **if and only if** $S$ satisfies the **closure axioms** (Axioms 1 and 2).
+
+**Proof sketch:**
+- If $S$ is a subspace, it satisfies all axioms, hence closure.
+- Conversely, suppose $S$ satisfies closure. Axioms 3, 4, 7–10 hold automatically in $S$ because they hold in $V$.
+- Need to verify Axioms 5 and 6:
+  - For any $x\in S$: by closure, $0x\in S$. But $0x=O$, so $O\in S$.
+  - Also $(-1)x\in S$, and $x+(-1)x=O$, so negatives exist in $S$.
+
+### 15.5.3 Linear Combinations and Linear Span
+
+- A **finite linear combination** of elements of $S$:
+  $$
+  x=\sum_{i=1}^k c_i x_i,\qquad x_i\in S,\ c_i\text{ scalars}.
+  $$
+- The set of all finite linear combinations of elements of $S$ satisfies the closure axioms, hence is a subspace.
+- This subspace is called the **subspace spanned by $S$**, or the **linear span** of $S$, denoted $L(S)$.
+- If $S$ is empty, define $L(S)=\{O\}$.
+
+### 15.5.4 Examples
+
+- $V_2$ is spanned by $\{\boldsymbol{i},\boldsymbol{j}\}$, also by $\{\boldsymbol{i},\boldsymbol{j},\boldsymbol{i}+\boldsymbol{j}\}$, also by $\{O,\boldsymbol{i},-\boldsymbol{i},\boldsymbol{j},-\boldsymbol{j},\boldsymbol{i}+\boldsymbol{j}\}$.
+- Polynomials of degree $\le n$ are spanned by $\{1,t,t^2,\dots,t^n\}$.
+- All polynomials are spanned by $\{1,t,t^2,\dots\}$ (infinite set).
+
+### 15.5.5 Toward Bases and Dimension
+
+- Which spaces can be spanned by a **finite** set?
+- What is the **smallest** number of elements needed?
+- To answer these, we introduce: **dependence, independence, bases, and dimension**.
+- These concepts extend the ideas from Chapter 12 ($V_n$) to general linear spaces.
+
+
