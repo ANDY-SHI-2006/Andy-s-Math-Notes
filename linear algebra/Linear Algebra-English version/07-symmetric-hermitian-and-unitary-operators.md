@@ -1,4 +1,4 @@
-[← Previous: 5. Scalar Products and Orthogonality](05-scalar-products-and-orthogonality.md) | [Next: 8. Eigenvectors and Eigenvalues →](08-eigenvectors-and-eigenvalues.md)
+[← Previous: 6. Determinants](06-determinants.md) | [Next: 8. Eigenvectors and Eigenvalues →](08-eigenvectors-and-eigenvalues.md)
 
 # 7. Symmetric, Hermitian, and Unitary Operators
 
@@ -243,4 +243,4 @@ For $V = \mathbf{C}^n$ with the standard hermitian form, a complex matrix $A$ is
 
 **Proof.** Immediate from the definitions.
 
-[← Previous: 5. Scalar Products and Orthogonality](05-scalar-products-and-orthogonality.md) | [Next: 8. Eigenvectors and Eigenvalues →](08-eigenvectors-and-eigenvalues.md)
+[← Previous: 6. Determinants](06-determinants.md) | [Next: 8. Eigenvectors and Eigenvalues →](08-eigenvectors-and-eigenvalues.md)

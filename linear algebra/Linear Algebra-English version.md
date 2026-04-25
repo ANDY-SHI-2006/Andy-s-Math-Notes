@@ -2298,7 +2298,7 @@ Since $\dim V = n$, we have $r + n - r' \le n$, so $r \le r'$. By symmetry, $r' 
 
 The integer $r$ is the **index of positivity** of the scalar product.
 
-## 6. Determinants
+# 6. Determinants
 
 ## 6.1 Determinants of Order 2
 

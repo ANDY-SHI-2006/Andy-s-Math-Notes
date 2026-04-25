@@ -7,6 +7,7 @@
 - [3. Linear Mappings](03-linear-mappings.md)
 - [4. Linear Maps and Matrices](04-linear-maps-and-matrices.md)
 - [5. Scalar Products and Orthogonality](05-scalar-products-and-orthogonality.md)
+- [6. Determinants](06-determinants.md)
 - [7. Symmetric, Hermitian, and Unitary Operators](07-symmetric-hermitian-and-unitary-operators.md)
 - [8. Eigenvectors and Eigenvalues](08-eigenvectors-and-eigenvalues.md)
 - [9. Polynomials and Matrices](09-polynomials-and-matrices.md)
