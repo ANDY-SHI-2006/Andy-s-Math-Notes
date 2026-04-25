@@ -11025,3 +11025,114 @@ Let $k=\dim N(T)$ (the nullity of $T$). If $v_1,\dots,v_k$ is a basis for $N(T)$
 - Particular solution: $b=(0,2)$.
 - General solution: $(x,y)=(0,2)+t(1,-1)$, or $x=t$, $y=2-t$.
 
+## 16.14 Computation Techniques — Gauss-Jordan Elimination
+
+### 16.14.1 Row Operations
+
+To solve a linear system computationally, we apply three **elementary row operations** on the **augmented matrix** $[A|c]$:
+
+1. **Interchange** two rows.
+2. **Multiply** a row by a nonzero scalar.
+3. **Add** a multiple of one row to another.
+
+These operations produce an **equivalent system** (same solution set).
+
+### 16.14.2 Example 1 — Unique Solution
+
+Solve:
+$$
+\begin{cases}
+2x-5y+4z=-3\\
+x-2y+\phantom{0}z=\phantom{-}5\\
+x-4y+6z=10
+\end{cases}
+$$
+
+**Augmented matrix:**
+$$
+\left[\begin{array}{ccc|c}
+2&-5&4&-3\\1&-2&1&5\\1&-4&6&10
+\end{array}\right]. \tag{16.24}
+$$
+
+**Step 1:** Swap $R_1\leftrightarrow R_2$, then $R_2\leftarrow R_2-2R_1$, $R_3\leftarrow R_3-R_1$:
+$$
+\left[\begin{array}{ccc|c}
+1&-2&1&5\\0&-1&2&-13\\0&-2&5&5
+\end{array}\right]. \tag{16.26}
+$$
+
+**Step 2:** $R_2\leftarrow -R_2$, then $R_3\leftarrow R_3+2R_2$:
+$$
+\left[\begin{array}{ccc|c}
+1&-2&1&5\\0&1&-2&13\\0&0&1&31
+\end{array}\right]. \tag{16.27}
+$$
+
+**Back-substitution:** $z=31$, $y=13+2z=75$, $x=5+2y-z=124$.
+
+Or continue to **reduced row-echelon form**:
+$$
+\left[\begin{array}{ccc|c}
+1&0&0&124\\0&1&0&75\\0&0&1&31
+\end{array}\right]. \tag{16.25}
+$$
+
+### 16.14.3 Example 2 — More Than One Solution
+
+System of 3 equations in 5 unknowns (same left part as Example 1):
+$$
+\begin{cases}
+2x-5y+4z+\phantom{0}u-v=-3\\
+x-2y+\phantom{0}z-\phantom{0}u+v=\phantom{-}5\\
+x-4y+6z+2u-v=10
+\end{cases} \tag{16.28}
+$$
+
+Row reduction yields:
+$$
+\left[\begin{array}{ccccc|c}
+1&0&0&-16&19&124\\0&1&0&-9&11&75\\0&0&1&-3&4&31
+\end{array}\right].
+$$
+
+Solving for the leading variables $x,y,z$ in terms of free variables $u,v$:
+$$
+x=124+16u-19v,\quad y=75+9u-11v,\quad z=31+3u-4v.
+$$
+
+Let $u=t_1$, $v=t_2$. The general solution is:
+$$
+(x,y,z,u,v)=(124,75,31,0,0)+t_1(16,9,3,1,0)+t_2(-19,-11,-4,0,1).
+$$
+
+- $(124,75,31,0,0)$ is a **particular solution**.
+- $(16,9,3,1,0)$ and $(-19,-11,-4,0,1)$ are independent solutions of the homogeneous system, forming a basis for $N(T)$.
+
+### 16.14.4 Example 3 — No Solution
+
+System differing from Example 1 only in the $(3,3)$ entry:
+$$
+\begin{cases}
+2x-5y+4z=-3\\
+x-2y+\phantom{0}z=\phantom{-}5\\
+x-4y+5z=10
+\end{cases} \tag{16.29}
+$$
+
+Same row operations lead to:
+$$
+\left[\begin{array}{ccc|c}
+1&-2&1&5\\0&1&-2&13\\0&0&0&31
+\end{array}\right]. \tag{16.30}
+$$
+
+The last row states $0=31$, a contradiction. **No solution exists.**
+
+### 16.14.5 Overdetermined Systems
+
+If there are **more equations than unknowns**, the Gauss-Jordan process still applies.
+
+- If an added equation is satisfied by the existing solution, the augmented matrix acquires a **row of zeros** at the bottom.
+- If an added equation is **not** satisfied, the bottom row becomes $[0\;\dots\;0\;|\;a]$ with $a\neq 0$, indicating **no solution**.
+
