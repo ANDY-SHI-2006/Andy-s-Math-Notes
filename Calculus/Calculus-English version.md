@@ -9898,3 +9898,58 @@ Let $S$ be an independent set of $k$ elements in $V$, and let $L(S)$ be its span
 - The proof of Theorem 12.8 uses only the fact that $V_n$ is a linear space, not any special property of $V_n$.
 - Hence the same proof is valid for **any** linear space $V$.
 
+## 15.7 Bases and Dimension
+
+### 15.7.1 Finite Basis and Dimension
+
+**Definition.** A finite set $S$ in a linear space $V$ is a **finite basis** for $V$ if $S$ is **independent** and **spans** $V$.
+
+| Term | Condition |
+|------|-----------|
+| **Finite-dimensional** | $V$ has a finite basis, or $V=\{O\}$ |
+| **Infinite-dimensional** | $V$ has no finite basis |
+
+- By convention, $\dim\{O\}=0$.
+
+**Theorem 15.6 (Uniqueness of basis size).** Let $V$ be finite-dimensional. Then **every finite basis for $V$ has the same number of elements**.
+
+**Proof sketch:**
+- Let bases $S$ ($k$ elements) and $T$ ($m$ elements).
+- $S$ independent and spans $V$ $\Rightarrow$ every set of $k+1$ elements in $V$ is dependent (Theorem 15.5).
+- $T$ is independent with $m$ elements $\Rightarrow m\le k$.
+- Interchange roles $\Rightarrow k\le m$.
+- Hence $k=m$.
+
+**Definition.** If $V$ has a basis of $n$ elements, $n$ is the **dimension** of $V$, written $n=\dim V$.
+
+### 15.7.2 Examples
+
+| Space | Dimension | Basis |
+|-------|-----------|-------|
+| $V_n$ | $n$ | $n$ unit coordinate vectors |
+| Polynomials of degree $\le n$ | $n+1$ | $\{1,t,t^2,\dots,t^n\}$ |
+| Solutions of $y''-2y'-3y=0$ | $2$ | $\{e^{-x},e^{3x}\}$ |
+| All polynomials $p(t)$ | **Infinite** | $\{1,t,t^2,\dots\}$ spans, but no finite set spans |
+
+### 15.7.3 Theorem 15.7 — Properties of Bases
+
+Let $V$ be finite-dimensional with $\dim V=n$.
+
+**(a) Extension.** Any independent set in $V$ is a subset of some basis for $V$.
+
+**(b) Criterion.** Any set of $n$ independent elements in $V$ is a basis for $V$.
+
+**Proof sketch:** Identical to parts (b) and (c) of Theorem 12.10.
+
+### 15.7.4 Ordered Basis and Components
+
+Let $(e_1,\dots,e_n)$ be an **ordered basis** (elements taken in a given order).
+
+- Every $x\in V$ has a unique representation:
+  $$
+  x=\sum_{i=1}^n c_i e_i. \tag{15.4}
+  $$
+- The $n$-tuple $(c_1,\dots,c_n)$ is **uniquely determined** by $x$.
+  - Proof of uniqueness: If $x=\sum d_i e_i$, then $\sum(c_i-d_i)e_i=O$. Independence implies $c_i=d_i$ for all $i$.
+- $(c_1,\dots,c_n)$ are called the **components of $x$ relative to the ordered basis** $(e_1,\dots,e_n)$.
+
