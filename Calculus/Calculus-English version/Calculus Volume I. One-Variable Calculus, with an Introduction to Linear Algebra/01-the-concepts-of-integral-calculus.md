@@ -1,7 +1,5 @@
 [Next: 2. Some Applications of Integration ->](02-some-applications-of-integration.md)
 
-﻿# 1. The Concepts of Integral Calculus
-
 ## 1.1 The Concept of Area as a Set Function
 
 ### 1.1.1 Introduction
