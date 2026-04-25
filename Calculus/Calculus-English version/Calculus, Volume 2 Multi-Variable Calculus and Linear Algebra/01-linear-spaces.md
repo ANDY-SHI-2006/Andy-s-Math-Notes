@@ -135,3 +135,45 @@ In any linear space, for arbitrary elements $x,y$ and scalars $a,b$:
 - **(f)** $ax=bx$ implies $(a-b)x=O$. By (d), since $x\neq O$, we get $a-b=0$.
 - **(g)** $(-x)+(-y)$ added to $x+y$ gives $(-x+x)+(-y+y)=O+O=O$.
 - **(h)** By definition, $2x=x+x$, $3x=x+x+x$, etc.
+
+## 1.6 Subspaces of a Linear Space
+
+### 1.6.1 Definition and Criterion
+
+**Definition.** Let $V$ be a linear space. A nonempty subset $S\subseteq V$ is called a **subspace** of $V$ if $S$ is itself a linear space under the same operations of addition and scalar multiplication.
+
+**Theorem 1.4 (Subspace criterion).** A nonempty subset $S$ of a linear space $V$ is a subspace **if and only if** $S$ satisfies the **closure axioms**:
+- $x+y\in S$ for all $x,y\in S$.
+- $ax\in S$ for all $x\in S$ and all scalars $a$.
+
+**Proof sketch:**
+- ($\Rightarrow$) Immediate: a subspace satisfies all axioms, hence closure.
+- ($\Leftarrow$) If $S$ is closed under addition and scalar multiplication:
+  - Axioms 3, 4, 7–10 hold automatically in $S$ because they hold for all elements of $V$.
+  - For Axiom 5 (zero element): take any $x\in S$ and $a=0$; then $0x=O\in S$ by Theorem 1.3(a).
+  - For Axiom 6 (negatives): take $a=-1$; then $(-1)x=-x\in S$, and $x+(-x)=O$.
+
+### 1.6.2 Linear Combinations and Span
+
+**Definition.** Let $S$ be a subset of $V$. An element $x\in V$ of the form
+$$
+x=\sum_{i=1}^k c_i x_i,
+$$
+where $x_1,\dots,x_k\in S$ and $c_1,\dots,c_k$ are scalars, is called a **finite linear combination** of elements of $S$.
+
+The set of all finite linear combinations of elements of $S$ is called the **subspace spanned by $S$** (or the **linear span** of $S$), denoted $L(S)$.
+
+- $L(S)$ satisfies the closure axioms, hence is a subspace of $V$.
+- If $S$ is empty, we define $L(S)=\{O\}$.
+
+### 1.6.3 Examples of Spanning Sets
+
+Different sets may span the same subspace.
+
+| Space | Spanning set(s) |
+|-------|-----------------|
+| $V_2$ | $\{i,j\}$, $\{i,j,i+j\}$, $\{O,i,-i,j,-j,i+j\}$ |
+| Polynomials of degree $\le n$ | $\{1,t,t^2,\dots,t^n\}$, $\{1,t/2,t^2/3,\dots,t^n/(n+1)\}$, $\{1,(1+t),(1+t)^2,\dots,(1+t)^n\}$ |
+| All polynomials | $\{1,t,t^2,\dots\}$ (infinite set) |
+
+> These examples lead naturally to the concepts of **dependence**, **independence**, **bases**, and **dimension** — the subject of the next sections.
