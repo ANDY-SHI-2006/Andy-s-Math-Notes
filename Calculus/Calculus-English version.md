@@ -9429,3 +9429,91 @@ $$
   (Equation 14.18)
 
 
+## 14.10 Curvature of a Curve
+
+### 14.10.1 Curvature Vector
+
+- For a straight line, the unit tangent $T$ is constant, so $T'=O$.
+- For a non-straight curve, $T'$ measures the tendency of the tangent to change direction.
+- The **curvature vector** is the rate of change of $T$ with respect to arc length:
+  $$
+  \frac{dT}{ds}
+  $$
+- By the chain rule and $s'(t)=v(t)$:
+  $$
+  \frac{dT}{ds}=\frac{dt}{ds}\frac{dT}{dt}=\frac{1}{s'(t)}T'(t)=\frac{1}{v(t)}T'(t).
+  $$
+
+### 14.10.2 Curvature
+
+Since $T'(t)=\|T'(t)\|\,N(t)$, we obtain:
+
+$$
+\frac{dT}{ds}=\frac{\|T'(t)\|}{v(t)}N(t)
+$$
+(Equation 14.19)
+
+The scalar factor multiplying $N(t)$ is a nonnegative number called the **curvature** $\kappa(t)$:
+
+$$
+\boxed{\kappa(t)=\frac{\|T'(t)\|}{v(t)}}
+$$
+(Equation 14.20)
+
+> Thus curvature is the **length** of the curvature vector.
+
+### 14.10.3 Example 1 — Curvature of a Circle
+
+- Circle of radius $a$: $\boldsymbol{r}(t)=a\cos t\,\boldsymbol{i}+a\sin t\,\boldsymbol{j}$.
+- $v(t)=a$, $T(t)=-\sin t\,\boldsymbol{i}+\cos t\,\boldsymbol{j}$, $T'(t)=-\cos t\,\boldsymbol{i}-\sin t\,\boldsymbol{j}$.
+- $\|T'(t)\|=1$, so:
+  $$
+  \kappa(t)=\frac{1}{a}.
+  $$
+- A circle has **constant curvature**; the reciprocal of curvature is the radius.
+
+### 14.10.4 Radius of Curvature and Osculating Circle
+
+- When $\kappa(t)\neq0$, its reciprocal $\rho(t)=1/\kappa(t)$ is the **radius of curvature**.
+- The circle in the osculating plane with radius $\rho(t)$ and center at the tip of the curvature vector is the **osculating circle**.
+- It is the limiting position of circles through three nearby points on the curve — the circle that "best fits the curve."
+
+### 14.10.5 Example 2 — Curvature of a Plane Curve
+
+- For a plane curve, $\|T'(t)\|=|\alpha'(t)|$, where $\alpha(t)$ is the angle the tangent makes with the positive $x$-axis.
+- Since $\alpha'(t)=v(t)\,d\alpha/ds$:
+  $$
+  \kappa(t)=\left|\frac{d\alpha}{ds}\right|.
+  $$
+- **Curvature = absolute value of rate of change of direction per unit arc length.**
+
+### 14.10.6 Example 3 — Plane Curves of Constant Curvature
+
+- If $d\alpha/ds=a$ (nonzero constant), then $\alpha=as+b$.
+- Integrating: the curve is a circle (or arc) with radius $1/|a|$.
+- **A plane curve of constant nonzero curvature is a circle of radius $1/\kappa$.**
+
+### 14.10.7 Theorem 14.14 — Acceleration in Terms of Curvature
+
+For any motion with velocity $\boldsymbol{v}$, speed $v$, acceleration $\boldsymbol{a}$, and curvature $\kappa$:
+
+$$
+\boxed{\boldsymbol{a}(t)=v'(t)T(t)+\kappa(t)v^2(t)N(t)}
+$$
+(Equation 14.21)
+
+This yields a practical formula for curvature:
+
+$$
+\boxed{\kappa(t)=\frac{\|\boldsymbol{a}(t)\times\boldsymbol{v}(t)\|}{v^3(t)}}
+$$
+(Equation 14.22)
+
+**Proof sketch:**
+1. From (14.20): $\|T'(t)\|=\kappa v$, so $T'=\kappa vN$.
+2. Substitute into (14.8): $\boldsymbol{a}=v'T+vT'=v'T+\kappa v^2N$.
+3. For (14.22): form $\boldsymbol{a}\times\boldsymbol{v}=(v'T+\kappa v^2N)\times(vT)=\kappa v^3(N\times T)$.
+4. Since $\|N\times T\|=1$, taking lengths gives $\|\boldsymbol{a}\times\boldsymbol{v}\|=\kappa v^3$.
+
+> **Practical note**: Computing $\boldsymbol{v}$ and $\boldsymbol{a}$ by differentiating $\boldsymbol{r}$ is usually easier than using the definition of curvature directly.
+
