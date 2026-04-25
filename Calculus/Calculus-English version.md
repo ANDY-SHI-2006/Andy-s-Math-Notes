@@ -10737,3 +10737,55 @@ $$
   \begin{bmatrix}0&1&1&1\\0&0&2&2\\0&0&0&3\end{bmatrix}.
   $$
 
+## 16.9 Diagonal Form of Matrix Representations
+
+### 16.9.1 Theorem 16.14 — Diagonalization
+
+Let $V$ and $W$ be finite-dimensional with $\dim V=n$, $\dim W=m$, and let $T\in\mathscr{L}(V,W)$ have rank $r=\dim T(V)$. Then there exist a basis $(e_1,\dots,e_n)$ for $V$ and a basis $(w_1,\dots,w_m)$ for $W$ such that:
+$$
+T(e_i)=w_i \quad\text{for }i=1,2,\dots,r, \tag{16.14}
+$$
+and
+$$
+T(e_i)=O \quad\text{for }i=r+1,\dots,n. \tag{16.15}
+$$
+
+Therefore, the matrix $(t_{ik})$ of $T$ relative to these bases has all entries zero except the first $r$ diagonal entries:
+$$
+t_{11}=t_{22}=\dots=t_{rr}=1.
+$$
+
+**Proof sketch:**
+1. **Basis for $W$:** Since $\dim T(V)=r$, choose a basis $w_1,\dots,w_r$ for $T(V)$ and extend it to a basis for $W$:
+   $$
+   (w_1,\dots,w_r,w_{r+1},\dots,w_m). \tag{16.16}
+   $$
+
+2. **First $r$ basis elements of $V$:** For each $w_i$ ($i\le r$), choose $e_i\in V$ with $T(e_i)=w_i$.
+
+3. **Remaining basis elements of $V$:** Let $k=\dim N(T)$. By Theorem 16.3, $n=k+r$. Choose a basis $e_{r+1},\dots,e_{r+k}$ for $N(T)$. Then $T(e_i)=O$ for $i>r$.
+
+4. **Independence of $(e_1,\dots,e_r,e_{r+1},\dots,e_{r+k})$:** \tag{16.17}
+   Suppose $\sum_{i=1}^{r+k}c_i e_i=O$ (16.18). Applying $T$:
+   $$
+   \sum_{i=1}^{r+k}c_i T(e_i)=\sum_{i=1}^r c_i w_i=O.
+   $$
+   Since $w_1,\dots,w_r$ are independent, $c_1=\dots=c_r=0$.
+   The remaining sum $\sum_{i=r+1}^{r+k}c_i e_i=O$ implies $c_{r+1}=\dots=c_{r+k}=0$ because $e_{r+1},\dots,e_{r+k}$ form a basis for $N(T)$.
+
+5. Since $\dim V=n=r+k$, these $n$ independent elements form a basis for $V$.
+
+### 16.9.2 Example — Differentiation Operator in Diagonal Form
+
+Let $D$ map polynomials of degree $\le 3$ (space $V$, $\dim V=4$) to polynomials of degree $\le 2$ (space $W$, $\dim W=3$).
+
+- $T(V)=W$, so $\operatorname{rank}(D)=3$.
+- Choose basis for $W$: $(1,x,x^2)$.
+- Preimages in $V$: $D(x)=1$, $D(\tfrac{1}{2}x^2)=x$, $D(\tfrac{1}{3}x^3)=x^2$.
+- Null space $N(D)$: constant polynomials, basis $(1)$.
+- Basis for $V$: $(x,\tfrac{1}{2}x^2,\tfrac{1}{3}x^3,1)$.
+- Matrix representation:
+  $$
+  \begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\end{bmatrix}.
+  $$
+
