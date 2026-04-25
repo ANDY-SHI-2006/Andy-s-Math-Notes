@@ -10488,3 +10488,62 @@ $$
 
 > **Note:** If $V$ is infinite-dimensional, then at least one of $N(T)$ or $T(V)$ is infinite-dimensional.
 
+## 16.4 Algebraic Operations on Linear Transformations
+
+### 16.4.1 Addition and Scalar Multiplication
+
+Let $S,T:V\to W$ and let $c$ be a scalar. Define:
+$$
+(S+T)(x)=S(x)+T(x),\qquad (cT)(x)=cT(x) \quad\text{for all }x\in V. \tag{16.4}
+$$
+
+- The set of all linear transformations from $V$ to $W$ is denoted $\mathscr{L}(V,W)$.
+
+**Theorem 16.4.** $\mathscr{L}(V,W)$ is a **linear space** under the operations (16.4).
+
+- The zero element is the zero transformation $O$.
+- The negative of $T$ is $(-1)T$.
+- All ten linear-space axioms are satisfied.
+
+### 16.4.2 Composition (Multiplication)
+
+Let $T:U\to V$ and $S:V\to W$. The **composition** $ST:U\to W$ is defined by:
+$$
+(ST)(x)=S[T(x)] \quad\text{for all }x\in U.
+$$
+
+- Order matters: first apply $T$, then $S$.
+- Composition is **not** commutative in general.
+
+**Theorem 16.5 (Associative law).** If $T:U\to V$, $S:V\to W$, and $R:W\to X$, then:
+$$
+R(ST)=(RS)T.
+$$
+
+**Proof:** For each $x\in U$:
+$$
+[R(ST)](x)=R[(ST)(x)]=R[S[T(x)]]=[(RS)T](x).
+$$
+
+**Powers.** For $T:V\to V$:
+$$
+T^0=I,\qquad T^n=TT^{n-1}\quad (n\ge 1).
+$$
+- The associative law implies the **law of exponents**: $T^m T^n=T^{m+n}$ for all nonnegative integers $m,n$.
+
+**Theorem 16.6 (Linearity of composition).** If $T:U\to V$ and $S:V\to W$ are linear, then $ST:U\to W$ is linear.
+
+**Proof:** $(ST)(ax+by)=S[T(ax+by)]=S[aT(x)+bT(y)]=aS[T(x)]+bS[T(y)]=a(ST)(x)+b(ST)(y)$.
+
+**Theorem 16.7 (Distributive laws).** Let $S,T\in\mathscr{L}(V,W)$ and $c$ a scalar.
+
+**(a)** For any $R$ with values in $V$:
+$$
+(S+T)R=SR+TR,\qquad (cS)R=c(SR).
+$$
+
+**(b)** For any linear $R:W\to U$:
+$$
+R(S+T)=RS+RT,\qquad R(cS)=c(RS).
+$$
+
