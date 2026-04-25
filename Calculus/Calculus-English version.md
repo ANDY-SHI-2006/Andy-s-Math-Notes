@@ -10633,3 +10633,39 @@ Let $T:V\to W$ be linear with $V$ finite-dimensional, $\dim V=n$. The following 
 - **(c)$\Rightarrow$(d):** $\{T(e_i)\}$ spans $T(V)$ and there are $n=\dim T(V)$ of them, so they form a basis.
 - **(d)$\Rightarrow$(a):** If $T(x)=O$, write $x=\sum c_i e_i$. Then $T(x)=\sum c_i T(e_i)=O$. By (d), $\{T(e_i)\}$ is independent, so all $c_i=0$ and $x=O$. Thus $N(T)=\{O\}$, and Theorem 16.10 gives (a).
 
+## 16.7 Linear Transformations with Prescribed Values
+
+### 16.7.1 Theorem 16.12 — Existence and Uniqueness
+
+Let $\{e_1,\dots,e_n\}$ be a basis for an $n$-dimensional linear space $V$, and let $u_1,\dots,u_n$ be arbitrary elements in a linear space $W$. Then there is **one and only one** linear transformation $T:V\to W$ such that:
+$$
+T(e_k)=u_k \quad\text{for }k=1,2,\dots,n. \tag{16.7}
+$$
+
+This $T$ acts on an arbitrary element $x=\sum_{k=1}^n x_k e_k$ by:
+$$
+T(x)=\sum_{k=1}^n x_k u_k. \tag{16.8}
+$$
+
+**Proof sketch:**
+- **Existence:** Define $T$ by (16.8). Linearity follows directly from the formula. If $x=e_k$, all components are 0 except the $k$th, which is 1, so $T(e_k)=u_k$.
+- **Uniqueness:** Suppose $T'$ also satisfies $T'(e_k)=u_k$. Then for any $x=\sum x_k e_k$:
+  $$
+  T'(x)=\sum_{k=1}^n x_k T'(e_k)=\sum_{k=1}^n x_k u_k=T(x).
+  $$
+  Hence $T'=T$.
+
+> A linear transformation is **completely determined** by its values on a basis.
+
+### 16.7.2 Example in $V_2$
+
+Determine $T:V_2\to V_2$ such that:
+$$
+T(i)=i+j,\qquad T(j)=2i-j.
+$$
+
+**Solution:** For $x=x_1 i+x_2 j$:
+$$
+T(x)=x_1 T(i)+x_2 T(j)=x_1(i+j)+x_2(2i-j)=(x_1+2x_2)i+(x_1-x_2)j.
+$$
+
