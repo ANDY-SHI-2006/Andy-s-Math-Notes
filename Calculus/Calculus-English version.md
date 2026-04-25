@@ -10669,3 +10669,71 @@ $$
 T(x)=x_1 T(i)+x_2 T(j)=x_1(i+j)+x_2(2i-j)=(x_1+2x_2)i+(x_1-x_2)j.
 $$
 
+## 16.8 Matrix Representations of Linear Transformations
+
+### 16.8.1 Construction of the Matrix
+
+Let $T:V\to W$ with $\dim V=n$ and $\dim W=m$. Choose ordered bases $(e_1,\dots,e_n)$ for $V$ and $(w_1,\dots,w_m)$ for $W$.
+
+Each $T(e_k)$ can be written uniquely as:
+$$
+T(e_k)=\sum_{i=1}^m t_{ik}w_i.
+$$
+
+The scalars $t_{ik}$ form the **components** of $T(e_k)$ relative to $(w_1,\dots,w_m)$. Arranging these as column vectors side by side gives the $m\times n$ **matrix representation** of $T$:
+$$
+(t_{ik})=\begin{bmatrix}t_{11}&t_{12}&\cdots&t_{1n}\\t_{21}&t_{22}&\cdots&t_{2n}\\\vdots&\vdots&&\vdots\\t_{m1}&t_{m2}&\cdots&t_{mn}\end{bmatrix}.
+$$
+
+- First subscript $i$ = row, second subscript $k$ = column.
+- Column $k$ contains the components of $T(e_k)$.
+
+### 16.8.2 Theorem 16.13 — Matrix Action on Components
+
+Let $x=\sum_{k=1}^n x_k e_k$ with components $(x_1,\dots,x_n)$. Then $T(x)=\sum_{i=1}^m y_i w_i$ where:
+$$
+y_i=\sum_{k=1}^n t_{ik}x_k \quad\text{for }i=1,2,\dots,m. \tag{16.13}
+$$
+
+**Proof:**
+$$
+T(x)=\sum_{k=1}^n x_k T(e_k)=\sum_{k=1}^n x_k\sum_{i=1}^m t_{ik}w_i=\sum_{i=1}^m\Bigl(\sum_{k=1}^n t_{ik}x_k\Bigr)w_i.
+$$
+
+> **One-to-one correspondence:** Every linear transformation $T:V\to W$ determines a unique $m\times n$ matrix $(t_{ik})$ (for fixed bases). Conversely, every $m\times n$ matrix determines a unique linear transformation via (16.10).
+
+### 16.8.3 Example 1 — From Matrix to Transformation
+
+Given the $2\times 3$ matrix:
+$$
+\begin{bmatrix}3&1&-2\\1&0&4\end{bmatrix},
+$$
+with the usual unit coordinate-vector bases for $V_3$ and $V_2$. This represents $T:V_3\to V_2$ where:
+$$
+y_1=3x_1+x_2-2x_3,\qquad y_2=x_1+4x_3.
+$$
+
+### 16.8.4 Example 2 — From Transformation to Matrix
+
+Let $D$ be the differentiation operator from the space $V$ of polynomials of degree $\le 3$ (dimension 4, basis $\{1,x,x^2,x^3\}$) to the space $W$ of polynomials of degree $\le 2$ (dimension 3, basis $\{1,x,x^2\}$).
+
+Compute images of basis elements:
+$$
+D(1)=0,\quad D(x)=1,\quad D(x^2)=2x,\quad D(x^3)=3x^2.
+$$
+
+Reading off coefficients as **columns**:
+$$
+\begin{bmatrix}0&1&0&0\\0&0&2&0\\0&0&0&3\end{bmatrix}.
+$$
+
+**Effect of basis ordering:**
+- If $W$ uses basis $(x^2,x,1)$ instead, the matrix becomes:
+  $$
+  \begin{bmatrix}0&0&0&3\\0&0&2&0\\0&1&0&0\end{bmatrix}.
+  $$
+- If $V$ uses basis $(1,1+x,1+x+x^2,1+x+x^2+x^3)$ and $W$ uses $(1,x,x^2)$:
+  $$
+  \begin{bmatrix}0&1&1&1\\0&0&2&2\\0&0&0&3\end{bmatrix}.
+  $$
+
