@@ -84,3 +84,54 @@ The zero element is the function whose values are everywhere zero.
 | 10 | Functions integrable on a given interval | — |
 | 11 | Functions with $f(1)=0$ | The value $0$ is essential; replacing it by $c\neq 0$ violates closure. |
 | 12 | Solutions of $y''+ay'+by=0$ ($a,b$ constants) | Homogeneous linear ODE; the zero function is a solution. Nonhomogeneous equations do **not** form linear spaces (closure fails). |
+
+## 1.4 Elementary Consequences of the Axioms
+
+### 1.4.1 Uniqueness Theorems
+
+**Theorem 1.1 (Uniqueness of the zero element).** In any linear space there is **one and only one** zero element.
+
+**Proof sketch:** Suppose $O_1$ and $O_2$ are both zero elements. Then
+$$
+O_1+O_2=O_1 \quad\text{and}\quad O_2+O_1=O_2.
+$$
+By commutativity (Axiom 3), $O_1+O_2=O_2+O_1$, so $O_1=O_2$.
+
+**Theorem 1.2 (Uniqueness of negatives).** Every element $x$ has exactly one negative.
+
+**Proof sketch:** Suppose $y_1$ and $y_2$ are both negatives of $x$. Then $x+y_1=O$ and $x+y_2=O$. Adding $y_2$ to the first equation:
+$$
+y_2+(x+y_1)=y_2+O=y_2.
+$$
+By associativity and commutativity:
+$$
+y_2+(x+y_1)=(y_2+x)+y_1=O+y_1=y_1.
+$$
+Hence $y_1=y_2$. The unique negative of $x$ is $(-1)x$.
+
+> **Notation:** The negative of $x$ is denoted $-x$. The **difference** $y-x$ is defined as $y+(-x)$.
+
+### 1.4.2 Theorem 1.3 — Algebraic Properties
+
+In any linear space, for arbitrary elements $x,y$ and scalars $a,b$:
+
+| Property | Formula |
+|----------|---------|
+| (a) | $0x=O$ |
+| (b) | $aO=O$ |
+| (c) | $(-a)x=-(ax)=a(-x)$ |
+| (d) | If $ax=O$, then $a=0$ or $x=O$ |
+| (e) | If $ax=ay$ and $a\neq 0$, then $x=y$ |
+| (f) | If $ax=bx$ and $x\neq O$, then $a=b$ |
+| (g) | $-(x+y)=(-x)+(-y)=-x-y$ |
+| (h) | $x+x=2x$, and in general $\sum_{i=1}^n x=nx$ |
+
+**Proof sketch:**
+- **(a)** Let $z=0x$. Then $z+z=0x+0x=(0+0)x=0x=z$. Adding $-z$ gives $z=O$.
+- **(b)** Let $z=aO$. Then $z+z=aO+aO=a(O+O)=aO=z$. Hence $z=O$.
+- **(c)** Let $z=(-a)x$. Then $z+ax=(-a)x+ax=(-a+a)x=0x=O$, so $z=-(ax)$. Similarly $a(-x)=-(ax)$.
+- **(d)** If $a\neq 0$, multiply $ax=O$ by $a^{-1}$: $x=a^{-1}O=O$.
+- **(e)** $ax=ay$ implies $a(x-y)=O$. By (d), since $a\neq 0$, we get $x-y=O$, so $x=y$.
+- **(f)** $ax=bx$ implies $(a-b)x=O$. By (d), since $x\neq O$, we get $a-b=0$.
+- **(g)** $(-x)+(-y)$ added to $x+y$ gives $(-x+x)+(-y+y)=O+O=O$.
+- **(h)** By definition, $2x=x+x$, $3x=x+x+x$, etc.
