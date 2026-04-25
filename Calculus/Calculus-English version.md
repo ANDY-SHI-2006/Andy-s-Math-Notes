@@ -10954,3 +10954,74 @@ $$
 A^0=I,\qquad A^n=AA^{n-1}\quad (n\ge 1).
 $$
 
+## 16.13 Systems of Linear Equations
+
+### 16.13.1 Formulation
+
+A **system of $m$ linear equations in $n$ unknowns** has the form:
+$$
+\sum_{k=1}^n a_{ik}x_k=c_i \quad\text{for }i=1,2,\dots,m. \tag{16.23}
+$$
+
+- $A=(a_{ij})$ is the **coefficient matrix**.
+- A **solution** is an $n$-tuple $(x_1,\dots,x_n)$ satisfying all equations.
+
+In terms of the linear transformation $T:V_n\to V_m$ defined by $y_i=\sum_k a_{ik}x_k$, the system becomes:
+$$
+T(x)=c,\quad\text{where }c=(c_1,\dots,c_m).
+$$
+
+| Condition | Meaning |
+|-----------|---------|
+| Has a solution | $c\in T(V)$ (range of $T$) |
+| Exactly one solution | $T$ is one-to-one |
+| More than one solution | $\dim N(T)\ge 1$ |
+
+**Examples:**
+- **No solution:** $x+y=1$, $x+y=2$.
+- **Exactly one solution:** $x+y=1$, $x-y=0$ $\Rightarrow$ $(x,y)=(\tfrac12,\tfrac12)$.
+- **More than one solution:** $x+y=1$ (one equation, two unknowns).
+
+### 16.13.2 Homogeneous and Nonhomogeneous Systems
+
+The system obtained by setting all $c_i=0$:
+$$
+\sum_{k=1}^n a_{ik}x_k=0 \quad (i=1,\dots,m)
+$$
+is called the **homogeneous system** corresponding to (16.23). Its solution set is exactly the **null space** $N(T)$.
+
+A system with $c\neq O$ is called **nonhomogeneous**.
+
+### 16.13.3 Theorem 16.18 — Relation Between Solutions
+
+Assume the nonhomogeneous system $T(x)=c$ has a particular solution $b$.
+
+**(a)** If $x$ is any solution of the nonhomogeneous system, then $v=x-b$ is a solution of the homogeneous system.
+
+**(b)** If $v$ is any solution of the homogeneous system, then $x=v+b$ is a solution of the nonhomogeneous system.
+
+**Proof:** $T(v)=T(x-b)=T(x)-T(b)=c-c=O$.
+
+> Thus, finding all solutions of a nonhomogeneous system splits into:
+> 1. Find one particular solution $b$.
+> 2. Find all solutions of the homogeneous system (the null space $N(T)$).
+
+### 16.13.4 General Solution
+
+Let $k=\dim N(T)$ (the nullity of $T$). If $v_1,\dots,v_k$ is a basis for $N(T)$, then:
+
+- **General solution of the homogeneous system:**
+  $$
+  v=t_1v_1+\dots+t_kv_k,\quad t_i\text{ arbitrary scalars}.
+  $$
+
+- **General solution of the nonhomogeneous system:**
+  $$
+  x=b+t_1v_1+\dots+t_kv_k.
+  $$
+
+**Example:** The system $x+y=2$.
+- Homogeneous: $x+y=0$, null space = $\{(t,-t)\}=\operatorname{span}\{(1,-1)\}$.
+- Particular solution: $b=(0,2)$.
+- General solution: $(x,y)=(0,2)+t(1,-1)$, or $x=t$, $y=2-t$.
+
