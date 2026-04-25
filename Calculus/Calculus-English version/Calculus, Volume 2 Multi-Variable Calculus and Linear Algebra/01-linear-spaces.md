@@ -177,3 +177,61 @@ Different sets may span the same subspace.
 | All polynomials | $\{1,t,t^2,\dots\}$ (infinite set) |
 
 > These examples lead naturally to the concepts of **dependence**, **independence**, **bases**, and **dimension** — the subject of the next sections.
+
+## 1.7 Dependent and Independent Sets in a Linear Space
+
+### 1.7.1 Definitions
+
+**Definition.** A set $S$ in a linear space $V$ is called **dependent** if there exist distinct elements $x_1,\dots,x_k\in S$ and scalars $c_1,\dots,c_k$, **not all zero**, such that
+$$
+\sum_{i=1}^k c_i x_i = O.
+$$
+An equation $\sum c_i x_i = O$ with not all $c_i=0$ is called a **nontrivial representation** of $O$.
+
+The set $S$ is called **independent** if it is **not** dependent; equivalently,
+$$
+\sum_{i=1}^k c_i x_i = O \quad\text{implies}\quad c_1=c_2=\dots=c_k=0
+$$
+for every finite choice of distinct elements $x_i\in S$ and scalars $c_i$.
+
+> These terms also apply to the elements themselves: elements of an independent set are called **independent elements**.
+
+### 1.7.2 Elementary Properties
+
+| Example | Statement |
+|---------|-----------|
+| 1 | If $T\subseteq S$ and $T$ is dependent, then $S$ is dependent. (Equivalently: every subset of an independent set is independent.) |
+| 2 | If one element of $S$ is a scalar multiple of another, then $S$ is dependent. |
+| 3 | If $O\in S$, then $S$ is dependent. |
+| 4 | The **empty set** is independent. |
+
+### 1.7.3 Examples in Function Spaces
+
+**Example 5:** $u_1(t)=\cos^2 t$, $u_2(t)=\sin^2 t$, $u_3(t)=1$.
+- Since $u_1+u_2-u_3=O$, these three functions are dependent.
+
+**Example 6:** $u_k(t)=t^k$ ($k=0,1,2,\dots$).
+- The set $\{u_0,u_1,u_2,\dots\}$ is **independent**.
+- Proof: $\sum_{k=0}^n c_k t^k=0$ for all $t$ implies each $c_k=0$ (evaluate at $t=0$, differentiate repeatedly).
+  (Equation 1.1)
+
+**Example 7:** Exponential functions $u_k(x)=e^{a_k x}$ with distinct $a_k$.
+- **Independent.** Proof by induction on $n$:
+  1. Assume $\sum_{k=1}^n c_k e^{a_k x}=0$. (Equation 1.2)
+  2. Let $a_M$ be the largest $a_k$. Multiply by $e^{-a_M x}$:
+     $$
+     \sum_{k=1}^n c_k e^{(a_k-a_M)x}=0.
+     $$
+     (Equation 1.3)
+  3. As $x\to+\infty$, terms with $k\neq M$ tend to 0, so $c_M=0$.
+  4. Apply induction hypothesis to remaining $n-1$ terms.
+
+### 1.7.4 Theorem 1.5 — Dependence in Spanned Subspaces
+
+Let $S$ be an independent set of $k$ elements in $V$, and let $L(S)$ be its span. Then **every set of $k+1$ elements in $L(S)$ is dependent**.
+
+**Proof sketch:**
+- When $k=1$, $S=\{x_1\}$ with $x_1\neq O$. Any two elements in $L(S)$ are $y_1=c_1 x_1$ and $y_2=c_2 x_1$. Then $c_2 y_1-c_1 y_2=O$ is a nontrivial relation, so $\{y_1,y_2\}$ is dependent.
+- Induction step: assume true for $k-1$. Let $T=\{y_1,\dots,y_{k+1}\}\subseteq L(S)$, and write $y_i=\sum_{j=1}^k a_{ij}x_j$ (Equation 1.4).
+  - **Case 1:** All $a_{i1}=0$. Then each $y_i\in L(S')$ where $S'=\{x_2,\dots,x_k\}$ has $k-1$ independent elements. By induction, $T$ is dependent.
+  - **Case 2:** Some $a_{i1}\neq 0$; assume $a_{11}\neq 0$. Set $c_i=a_{i1}/a_{11}$. Then each $c_i y_1-y_i$ is a linear combination of $x_2,\dots,x_k$. By the induction hypothesis applied to these $k$ elements in the span of $k-1$ independent elements, they are dependent. Hence there exist scalars $t_i$, not all zero, with $\sum_{i=2}^{k+1} t_i(c_i y_1-y_i)=O$, which is a nontrivial relation among $y_1,\dots,y_{k+1}$. Therefore $T$ is dependent.
