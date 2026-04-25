@@ -10880,3 +10880,77 @@ so $m$ is **one-to-one** on $\mathscr{L}(V,W)$.
   $$
 - **Identity matrix:** If $V=W$ and the same basis is used, the matrix of the identity transformation $I:V\to V$ is the $n\times n$ diagonal matrix with 1s on the diagonal. This is called the **identity** (or **unit**) matrix, denoted $I$ or $I_n$.
 
+## 16.12 Multiplication of Matrices
+
+### 16.12.1 Definition
+
+Let $A=(a_{ij})$ be $m\times p$ and $B=(b_{ij})$ be $p\times n$. The **product** $AB=C$ is the $m\times n$ matrix with entries:
+$$
+c_{ij}=\sum_{k=1}^p a_{ik}b_{kj}. \tag{16.22}
+$$
+
+- $AB$ is defined **only when** the number of columns of $A$ equals the number of rows of $B$.
+- **Row–column interpretation:** $c_{ij}=A_i\cdot B^j$, the dot product of the $i$th row of $A$ with the $j$th column of $B$.
+
+**Example 1:**
+$$
+A=\begin{bmatrix}3&1&2\\-1&1&0\end{bmatrix}\;(2\times 3),\quad B=\begin{bmatrix}4&6\\5&-1\\0&2\end{bmatrix}\;(3\times 2)
+\quad\Rightarrow\quad AB=\begin{bmatrix}17&21\\1&-7\end{bmatrix}.
+$$
+
+**Example 2:**
+$$
+A=\begin{bmatrix}2&1&-3\\1&2&4\end{bmatrix},\quad B=\begin{bmatrix}-2\\1\\2\end{bmatrix}
+\quad\Rightarrow\quad AB=\begin{bmatrix}-9\\8\end{bmatrix}.
+$$
+
+**Example 3 (noncommutativity):**
+$$
+A=\begin{bmatrix}1&2\\-1&1\end{bmatrix},\quad B=\begin{bmatrix}3&4\\5&2\end{bmatrix}
+\quad\Rightarrow\quad AB=\begin{bmatrix}13&8\\2&-2\end{bmatrix},\quad BA=\begin{bmatrix}-1&10\\3&12\end{bmatrix}.
+$$
+In general $AB\neq BA$. If $AB=BA$, we say $A$ and $B$ **commute**.
+
+**Example 4 (identity matrix):**
+$$
+I_3\begin{bmatrix}2\\3\\4\end{bmatrix}=\begin{bmatrix}2\\3\\4\end{bmatrix},\qquad
+\begin{bmatrix}1&2&3\\4&5&6\end{bmatrix}I_3=\begin{bmatrix}1&2&3\\4&5&6\end{bmatrix}.
+$$
+
+### 16.12.2 Theorem 16.16 — Matrix of a Composition
+
+Let $T:U\to V$ and $S:V\to W$ be linear transformations. For fixed bases,
+$$
+m(ST)=m(S)\,m(T).
+$$
+
+**Proof sketch:** Let $m(S)=(s_{ik})$ and $m(T)=(t_{kj})$. Then
+$$
+ST(u_j)=S[T(u_j)]=S\Bigl(\sum_k t_{kj}v_k\Bigr)=\sum_k t_{kj}S(v_k)=\sum_k t_{kj}\sum_i s_{ik}w_i=\sum_i\Bigl(\sum_k s_{ik}t_{kj}\Bigr)w_i.
+$$
+Hence the $ij$-entry of $m(ST)$ is $\sum_k s_{ik}t_{kj}$, which is exactly the $ij$-entry of $m(S)m(T)$.
+
+### 16.12.3 Theorem 16.17 — Algebraic Laws
+
+**(a) Associative law:** If $A(BC)$ and $(AB)C$ are meaningful,
+$$
+A(BC)=(AB)C.
+$$
+
+**(b) Distributive laws:** If $A,B$ have the same size and the products are meaningful,
+$$
+(A+B)C=AC+BC \quad\text{(right distributive)},
+$$
+$$
+C(A+B)=CA+CB \quad\text{(left distributive)}.
+$$
+
+**Proof sketch:** Introduce linear transformations $R,S,T$ with $A=m(R)$, $B=m(S)$, $C=m(T)$. The matrix laws follow from the corresponding laws for composition of transformations (Theorems 16.5 and 16.7), using Theorem 16.16.
+
+### 16.12.4 Powers of a Square Matrix
+
+For a square matrix $A$:
+$$
+A^0=I,\qquad A^n=AA^{n-1}\quad (n\ge 1).
+$$
+
