@@ -10789,3 +10789,53 @@ Let $D$ map polynomials of degree $\le 3$ (space $V$, $\dim V=4$) to polynomials
   \begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\end{bmatrix}.
   $$
 
+## 16.10 Linear Spaces of Matrices
+
+### 16.10.1 Definition and Notation
+
+An $m\times n$ **matrix** is a function $A$ whose domain is the set of pairs $I_{m,n}=\{(i,j):1\le i\le m,\;1\le j\le n\}$. The value $A(i,j)$ is called the **$ij$-entry** (or $ij$-element) and is denoted $a_{ij}$.
+
+| Type | Condition |
+|------|-----------|
+| **Square matrix** | $m=n$ |
+| **Row matrix** | $m=1$ |
+| **Column matrix** | $n=1$ |
+
+Compact notation: $A=(a_{ij})$ or $A=(a_{ij})_{i,j=1}^{m,n}$.
+
+Two matrices are **equal** iff they have the same size and $a_{ij}=b_{ij}$ for all $(i,j)$.
+
+### 16.10.2 Addition and Scalar Multiplication
+
+**Definition.** For $m\times n$ matrices $A=(a_{ij})$ and $B=(b_{ij})$, and scalar $c$:
+$$
+A+B=(a_{ij}+b_{ij}),\qquad cA=(ca_{ij}).
+$$
+Addition is defined **only** when $A$ and $B$ have the same size.
+
+**Example:**
+$$
+A=\begin{bmatrix}1&2&-3\\-1&0&4\end{bmatrix},\quad B=\begin{bmatrix}5&0&1\\1&-2&3\end{bmatrix}
+$$
+gives
+$$
+A+B=\begin{bmatrix}6&2&-2\\0&-2&7\end{bmatrix},\quad 2A=\begin{bmatrix}2&4&-6\\-2&0&8\end{bmatrix},\quad (-1)B=\begin{bmatrix}-5&0&-1\\-1&2&-3\end{bmatrix}.
+$$
+
+### 16.10.3 The Space $M_{m,n}$
+
+The collection of all $m\times n$ matrices (with real or complex entries) is a **linear space**, denoted $M_{m,n}$.
+
+- The **zero matrix** $O$ has all entries equal to 0.
+- **Dimension:** $\dim M_{m,n}=mn$.
+- **Basis:** The $mn$ matrices $E_{ij}$ having 1 in position $(i,j)$ and 0 elsewhere.
+  - Example: a basis for $2\times 3$ matrices consists of the six matrices:
+    $$
+    \begin{bmatrix}1&0&0\\0&0&0\end{bmatrix},\;
+    \begin{bmatrix}0&1&0\\0&0&0\end{bmatrix},\;
+    \begin{bmatrix}0&0&1\\0&0&0\end{bmatrix},\;
+    \begin{bmatrix}0&0&0\\1&0&0\end{bmatrix},\;
+    \begin{bmatrix}0&0&0\\0&1&0\end{bmatrix},\;
+    \begin{bmatrix}0&0&0\\0&0&1\end{bmatrix}.
+    $$
+
