@@ -9797,3 +9797,41 @@ Let $V$ be a nonempty set of objects called **elements**. $V$ is a **linear spac
 - Unless specified otherwise, "linear space" may refer to either real or complex.
 
 
+## 15.3 Examples of Linear Spaces
+
+### 15.3.1 Basic Number Spaces
+
+**Example 1 — Real numbers:**
+- $V=\mathbb{R}$, with ordinary addition and multiplication.
+
+**Example 2 — Complex numbers:**
+- $V=\mathbb{C}$, with ordinary complex addition and multiplication by **real** scalars.
+- This is a **real** linear space (scalars are real, even though elements are complex).
+
+**Example 3 — $n$-space:**
+- $V=V_n$, the vector space of all $n$-tuples of real numbers, with component-wise operations.
+
+**Example 4 — Orthogonal complement:**
+- $V=$ set of all vectors in $V_n$ orthogonal to a given nonzero vector $N$.
+- $n=2$: a line through $O$ with normal $N$.
+- $n=3$: a plane through $O$ with normal $N$.
+
+### 15.3.2 Function Spaces
+
+The following are called **function spaces**. Addition and scalar multiplication are defined pointwise:
+$$(f+g)(x)=f(x)+g(x),\qquad(af)(x)=af(x).$$
+The zero element is the function identically zero.
+
+| Example | Set $V$ | Notes |
+|---------|---------|-------|
+| **5** | All functions on a given interval | |
+| **6** | All polynomials | |
+| **7** | Polynomials of degree $\le n$ (fixed $n$) | Zero polynomial included. Degree $=n$ alone is **not** a linear space (closure fails) |
+| **8** | Continuous functions on $[a,b]$ | Denoted $C(a,b)$ |
+| **9** | Differentiable functions at a point | |
+| **10** | Integrable functions on an interval | |
+| **11** | Functions with $f(1)=0$ | The value $0$ is essential; replacing with $c\neq0$ violates closure |
+| **12** | Solutions of $y''+ay'+by=0$ | Homogeneous linear ODE. Nonhomogeneous case fails closure |
+
+> These examples show how the linear space concept unifies algebra, geometry, and analysis. A theorem proved from the axioms applies to **all** concrete examples at once.
+
