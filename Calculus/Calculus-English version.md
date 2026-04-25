@@ -10357,3 +10357,54 @@ Let $V=C(-1,1)$ with $(f,g)=\int_{-1}^1 f(x)g(x)\,dx$, and let $S$ be spanned by
   $$
 - Since $(f,\varphi_2)=0$, this is also the best **quadratic** approximation.
 
+# 16. Linear Transformations and Matrices
+
+## 16.1 Linear Transformations
+
+### 16.1.1 Definition
+
+Let $V$ and $W$ be linear spaces over the same scalars. A function $T:V\to W$ is a **linear transformation** if:
+
+| Property | Formula | Name |
+|----------|---------|------|
+| (a) | $T(x+y)=T(x)+T(y)$ | Additivity |
+| (b) | $T(cx)=cT(x)$ | Homogeneity |
+
+- Combined form: $T(ax+by)=aT(x)+bT(y)$ for all $x,y\in V$ and scalars $a,b$.
+- Generalization by induction:
+  $$
+  T\Bigl(\sum_{i=1}^n a_i x_i\Bigr)=\sum_{i=1}^n a_i T(x_i).
+  $$
+
+**Terminology:**
+- $T(x)$ is the **image** of $x$ under $T$.
+- $T$ **maps** $x$ onto $T(x)$.
+- For $A\subseteq V$, $T(A)=\{T(x):x\in A\}$ is the **image of $A$ under $T$**.
+- $T(V)$ is the **range** of $T$.
+
+### 16.1.2 Examples
+
+**Example 1 — Identity transformation.** $T:V\to V$, $T(x)=x$ for all $x$. Denoted by $I$ or $I_V$.
+
+**Example 2 — Zero transformation.** $T:V\to V$, $T(x)=O$ for all $x$. Denoted by $O$.
+
+**Example 3 — Multiplication by a fixed scalar $c$.** $T:V\to V$, $T(x)=cx$.
+- $c=1$: identity; $c=0$: zero transformation.
+
+**Example 4 — Linear equations.** $T:V_n\to V_m$ defined by:
+$$
+y_i=\sum_{k=1}^n a_{ik}x_k \quad (i=1,2,\dots,m).
+$$
+Given $mn$ scalars $a_{ik}$, this maps $x=(x_1,\dots,x_n)$ to $y=(y_1,\dots,y_m)$.
+
+**Example 5 — Inner product with a fixed element.** Let $V$ be a real Euclidean space and $z\in V$ fixed. Define $T:V\to\mathbb{R}$ by $T(x)=(x,z)$.
+
+**Example 6 — Projection on a subspace.** Let $S$ be a finite-dimensional subspace of a Euclidean space $V$. Define $T:V\to S$ by $T(x)=$ projection of $x$ on $S$.
+
+**Example 7 — Differentiation operator.** Let $V$ be the space of all real functions differentiable on $(a,b)$. Define $D:V\to W$ by $D(f)=f'$, where $W$ is the space of all derivatives.
+
+**Example 8 — Integration operator.** Let $V=C[a,b]$. Define $T:V\to V$ by:
+$$
+g(x)=T(f)(x)=\int_a^x f(t)\,dt \quad\text{for }a\le x\le b.
+$$
+
