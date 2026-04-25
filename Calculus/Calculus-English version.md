@@ -9759,3 +9759,46 @@ The zero element is the function identically zero.
 | **12** | Solutions of $y''+ay'+by=0$ | Homogeneous linear ODE. Nonhomogeneous case fails closure |
 
 > These examples show how the linear space concept unifies algebra, geometry, and analysis. A theorem proved from the axioms applies to **all** concrete examples at once.
+
+
+## 15.4 Elementary Consequences of the Axioms
+
+### 15.4.1 Uniqueness Theorems
+
+**Theorem 15.1 — Uniqueness of the zero element.**
+- In any linear space there is **one and only one** zero element.
+
+**Proof sketch:** Suppose $O_1$ and $O_2$ are both zero. Then $O_1+O_2=O_1$ (taking $x=O_1$, $O=O_2$) and $O_2+O_1=O_2$ (taking $x=O_2$, $O=O_1$). By commutativity, $O_1=O_2$.
+
+**Theorem 15.2 — Uniqueness of negative elements.**
+- Every element $x$ has exactly one negative $y$ such that $x+y=O$.
+
+**Proof sketch:** Suppose $y_1$ and $y_2$ are both negatives of $x$. Then:
+$$
+y_2+(x+y_1)=y_2+O=y_2,\qquad (y_2+x)+y_1=O+y_1=y_1.
+$$
+By associativity, $y_1=y_2$. The unique negative is $(-1)x$.
+
+> **Notation:** The negative of $x$ is $-x$. The difference $y-x$ means $y+(-x)$.
+
+### 15.4.2 Theorem 15.3 — Basic Algebraic Properties
+
+In any linear space, for arbitrary elements $x,y$ and scalars $a,b$:
+
+| Property | Statement |
+|----------|-----------|
+| **(a)** | $0x=O$ |
+| **(b)** | $aO=O$ |
+| **(c)** | $(-a)x=-(ax)=a(-x)$ |
+| **(d)** | If $ax=O$, then either $a=0$ or $x=O$ |
+| **(e)** | If $ax=ay$ and $a\neq0$, then $x=y$ |
+| **(f)** | If $ax=bx$ and $x\neq O$, then $a=b$ |
+| **(g)** | $-(x+y)=(-x)+(-y)=-x-y$ |
+| **(h)** | $\underbrace{x+x+\cdots+x}_{n\text{ times}}=nx$ |
+
+**Proof of (a):** Let $z=0x$. Then $z+z=0x+0x=(0+0)x=0x=z$. Adding $-z$ gives $z=O$.
+
+**Proof of (b):** Let $z=aO$. Then $z+z=aO+aO=a(O+O)=aO=z$. Hence $z=O$.
+
+**Proof of (c):** Let $z=(-a)x$. Then $z+ax=(-a+a)x=0x=O$, so $z=-(ax)$. Similarly $a(-x)=-(ax)$.
+
