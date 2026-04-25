@@ -10547,3 +10547,50 @@ $$
 R(S+T)=RS+RT,\qquad R(cS)=c(RS).
 $$
 
+## 16.5 Inverses
+
+### 16.5.1 Left and Right Inverses
+
+**Definition.** Let $T:V\to W$.
+
+| Type | Condition | Formula |
+|------|-----------|---------|
+| **Left inverse** $S$ | $S:T(V)\to V$ and $S[T(x)]=x$ for all $x\in V$ | $ST=I_V$ |
+| **Right inverse** $R$ | $R:T(V)\to V$ and $T[R(y)]=y$ for all $y\in T(V)$ | $TR=I_{T(V)}$ |
+
+**Example (no left inverse, two right inverses).** Let $V=\{1,2\}$, $W=\{0\}$, and $T(1)=T(2)=0$.
+- Two right inverses: $R(0)=1$ and $R'(0)=2$.
+- No left inverse exists, since $S[T(1)]=S(0)=1$ and $S[T(2)]=S(0)=2$ would require $1=2$.
+
+- Every function has **at least one right inverse** (choose any preimage for each $y\in T(V)$).
+- Right inverses need not be unique (when some $y$ has multiple preimages).
+
+### 16.5.2 Theorem 16.8 — Uniqueness of the Left Inverse
+
+A function $T:V\to W$ has **at most one** left inverse. If $T$ has a left inverse $S$, then $S$ is also a right inverse.
+
+**Proof sketch:**
+- **Uniqueness:** Suppose $S$ and $S'$ are left inverses. For any $y\in T(V)$, write $y=T(x)$. Then $S(y)=S[T(x)]=x$ and $S'(y)=S'[T(x)]=x$, so $S(y)=S'(y)$.
+- **Left implies right:** For $y\in T(V)$, write $y=T(x)$. Then $T[S(y)]=T[S[T(x)]]=T(x)=y$, so $S$ is a right inverse.
+
+### 16.5.3 Theorem 16.9 — Existence of a Left Inverse
+
+A function $T:V\to W$ has a left inverse **if and only if** $T$ is **one-to-one** on $V$; that is,
+$$
+x\neq y \quad\text{implies}\quad T(x)\neq T(y). \tag{16.5}
+$$
+Equivalently:
+$$
+T(x)=T(y) \quad\text{implies}\quad x=y. \tag{16.6}
+$$
+
+**Proof sketch:**
+- ($\Rightarrow$) If $ST=I_V$ and $T(x)=T(y)$, apply $S$: $x=S[T(x)]=S[T(y)]=y$.
+- ($\Leftarrow$) If $T$ is one-to-one, each $y\in T(V)$ has exactly one preimage $x$. Define $S(y)=x$ where $T(x)=y$. Then $S[T(x)]=x$, so $ST=I_V$.
+
+### 16.5.4 Invertible Transformations
+
+**Definition.** Let $T:V\to W$ be one-to-one. The **unique** left inverse of $T$ (which is also a right inverse) is denoted $T^{-1}$. We say $T$ is **invertible**, and call $T^{-1}$ the **inverse** of $T$.
+
+- These results apply to arbitrary functions. The next sections specialize to linear transformations.
+
