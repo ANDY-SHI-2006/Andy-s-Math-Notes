@@ -9517,3 +9517,78 @@ $$
 
 > **Practical note**: Computing $\boldsymbol{v}$ and $\boldsymbol{a}$ by differentiating $\boldsymbol{r}$ is usually easier than using the definition of curvature directly.
 
+
+## 14.11 Velocity and Acceleration in Polar Coordinates
+
+### 14.11.1 Polar Unit Vectors
+
+- Position vector: $\boldsymbol{r}=x\,\boldsymbol{i}+y\,\boldsymbol{j}=r\cos\theta\,\boldsymbol{i}+r\sin\theta\,\boldsymbol{j}=r\boldsymbol{u}_r$.
+- **Radial unit vector**:
+  $$
+  \boldsymbol{u}_r=\cos\theta\,\boldsymbol{i}+\sin\theta\,\boldsymbol{j}.
+  $$
+- **Transverse unit vector** (perpendicular to $\boldsymbol{u}_r$):
+  $$
+  \boldsymbol{u}_\theta=\frac{d\boldsymbol{u}_r}{d\theta}=-\sin\theta\,\boldsymbol{i}+\cos\theta\,\boldsymbol{j}.
+  $$
+- Key derivatives:
+  $$
+  \frac{d\boldsymbol{u}_\theta}{d\theta}=-\cos\theta\,\boldsymbol{i}-\sin\theta\,\boldsymbol{j}=-\boldsymbol{u}_r.
+  $$
+
+### 14.11.2 Velocity in Polar Coordinates
+
+Let $r=f(t)$ and $\theta=g(t)$. Then $\boldsymbol{r}=r\boldsymbol{u}_r$ and:
+
+$$
+\boldsymbol{v}=\frac{d\boldsymbol{r}}{dt}=\frac{dr}{dt}\boldsymbol{u}_r+r\frac{d\boldsymbol{u}_r}{dt}.
+$$
+
+Using the chain rule:
+
+$$
+\frac{d\boldsymbol{u}_r}{dt}=\frac{d\theta}{dt}\frac{d\boldsymbol{u}_r}{d\theta}=\frac{d\theta}{dt}\boldsymbol{u}_\theta.
+$$
+(Equation 14.24)
+
+Hence:
+
+$$
+\boxed{\boldsymbol{v}=\frac{dr}{dt}\boldsymbol{u}_r+r\frac{d\theta}{dt}\boldsymbol{u}_\theta}
+$$
+(Equation 14.25)
+
+- $\dfrac{dr}{dt}$: **radial component** of velocity.
+- $r\dfrac{d\theta}{dt}$: **transverse component** of velocity.
+
+**Speed:**
+
+$$
+v=\sqrt{\left(\frac{dr}{dt}\right)^2+\left(r\frac{d\theta}{dt}\right)^2}.
+$$
+
+### 14.11.3 Acceleration in Polar Coordinates
+
+Differentiating (14.25) and using $d\boldsymbol{u}_\theta/dt=-(d\theta/dt)\boldsymbol{u}_r$:
+
+$$
+\boxed{\boldsymbol{a}=\left(\frac{d^2r}{dt^2}-r\left(\frac{d\theta}{dt}\right)^2\right)\boldsymbol{u}_r+\left(r\frac{d^2\theta}{dt^2}+2\frac{dr}{dt}\frac{d\theta}{dt}\right)\boldsymbol{u}_\theta}
+$$
+(Equation 14.26)
+
+- **Radial component**: $\dfrac{d^2r}{dt^2}-r\left(\dfrac{d\theta}{dt}\right)^2$.
+- **Transverse component**: $r\dfrac{d^2\theta}{dt^2}+2\dfrac{dr}{dt}\dfrac{d\theta}{dt}$.
+
+### 14.11.4 Special Case — Polar Equation $r=f(\theta)$
+
+When $\theta=t$, the curve is given by $r=f(\theta)$. Formulas simplify to:
+
+$$
+\boldsymbol{v}=\frac{dr}{d\theta}\boldsymbol{u}_r+r\boldsymbol{u}_\theta,\qquad v=\sqrt{\left(\frac{dr}{d\theta}\right)^2+r^2},
+$$
+
+$$
+\boldsymbol{a}=\left(\frac{d^2r}{d\theta^2}-r\right)\boldsymbol{u}_r+2\frac{dr}{d\theta}\boldsymbol{u}_\theta.
+$$
+
+
