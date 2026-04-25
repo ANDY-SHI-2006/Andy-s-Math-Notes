@@ -9845,3 +9845,56 @@ Let $S$ be a nonempty subset of a linear space $V$. Then $S$ is a subspace **if 
 - These concepts extend the ideas from Chapter 12 ($V_n$) to general linear spaces.
 
 
+## 15.6 Dependent and Independent Sets in a Linear Space
+
+### 15.6.1 Definition
+
+- A set $S$ in a linear space $V$ is **dependent** if there exist distinct $x_1,\dots,x_k\in S$ and scalars $c_1,\dots,c_k$, not all zero, such that:
+  $$
+  \sum_{i=1}^k c_i x_i = O.
+  $$
+- $S$ is **independent** if it is not dependent; equivalently:
+  $$
+  \sum_{i=1}^k c_i x_i = O \quad\Longrightarrow\quad c_1=c_2=\cdots=c_k=0.
+  $$
+- The definition applies to **infinite sets** as well as finite sets.
+
+### 15.6.2 Elementary Examples
+
+| Example | Statement |
+|---------|-----------|
+| **1** | If $T\subseteq S$ and $T$ is dependent, then $S$ is dependent. (Equivalently: every subset of an independent set is independent.) |
+| **2** | If one element is a scalar multiple of another, $S$ is dependent. |
+| **3** | If $O\in S$, then $S$ is dependent. |
+| **4** | The empty set is independent. |
+
+### 15.6.3 Examples in Function Spaces
+
+**Example 5:** $u_1(t)=\cos^2 t$, $u_2(t)=\sin^2 t$, $u_3(t)=1$.
+- Since $u_1+u_2-u_3=O$, these three functions are dependent.
+
+**Example 6:** $u_k(t)=t^k$ ($k=0,1,2,\dots$).
+- The set $\{u_0,u_1,u_2,\dots\}$ is **independent**.
+- Proof: $\sum_{k=0}^n c_k t^k=0$ for all $t$ implies each $c_k=0$ (evaluate at $t=0$, differentiate repeatedly).
+  (Equation 15.1)
+
+**Example 7:** Exponential functions $u_k(x)=e^{a_k x}$ with distinct $a_k$.
+- **Independent.** Proof by induction on $n$:
+  1. Assume $\sum_{k=1}^n c_k e^{a_k x}=0$. (Equation 15.2)
+  2. Let $a_M$ be the largest $a_k$. Multiply by $e^{-a_M x}$:
+     $$
+     \sum_{k=1}^n c_k e^{(a_k-a_M)x}=0.
+     $$
+     (Equation 15.3)
+  3. As $x\to+\infty$, terms with $k\neq M$ tend to 0, so $c_M=0$.
+  4. Apply induction hypothesis to remaining $n-1$ terms.
+
+### 15.6.4 Theorem 15.5 — Dependence in Spanned Subspaces
+
+Let $S$ be an independent set of $k$ elements in $V$, and let $L(S)$ be its span. Then **every set of $k+1$ elements in $L(S)$ is dependent**.
+
+**Proof:**
+- When $V=V_n$, this is Theorem 12.8.
+- The proof of Theorem 12.8 uses only the fact that $V_n$ is a linear space, not any special property of $V_n$.
+- Hence the same proof is valid for **any** linear space $V$.
+
