@@ -10298,3 +10298,62 @@ is called the **projection of $x$ on the subspace $S$**.
 - This projection is the unique element in $S$ that solves the approximation problem (minimizing $\|x-s\|$).
 - The proof of this optimality property follows from the orthogonal decomposition theorem.
 
+## 15.12 Best Approximation in a Finite-Dimensional Subspace
+
+### 15.12.1 Theorem 15.16 — Approximation Theorem
+
+Let $S$ be a finite-dimensional subspace of a Euclidean space $V$, and let $x\in V$. Then the **projection** $s$ of $x$ on $S$ is nearer to $x$ than any other element of $S$:
+$$
+\|x-s\| \le \|x-t\| \quad\text{for all }t\in S,
+$$
+with equality if and only if $t=s$.
+
+**Proof:**
+- By Theorem 15.15, $x=s+s^\perp$ with $s\in S$ and $s^\perp\in S^\perp$.
+- For any $t\in S$: $x-t=(x-s)+(s-t)$.
+- Since $s-t\in S$ and $x-s=s^\perp\in S^\perp$, this is an orthogonal decomposition.
+- By the Pythagorean formula:
+  $$
+  \|x-t\|^2 = \|x-s\|^2 + \|s-t\|^2 \ge \|x-s\|^2.
+  $$
+- Equality holds iff $\|s-t\|=0$, i.e., $t=s$.
+
+### 15.12.2 Example — Trigonometric Polynomial Approximation
+
+Let $V=C(0,2\pi)$ with $(f,g)=\int_0^{2\pi}f(x)g(x)\,dx$, and let $S$ be the subspace spanned by the orthonormal set:
+$$
+\varphi_0(x)=\frac{1}{\sqrt{2\pi}},\quad \varphi_{2k-1}(x)=\frac{\cos kx}{\sqrt{\pi}},\quad \varphi_{2k}(x)=\frac{\sin kx}{\sqrt{\pi}} \quad (k\ge 1). \tag{15.20}
+$$
+
+- The $2n+1$ elements $\varphi_0,\dots,\varphi_{2n}$ span a subspace of dimension $2n+1$.
+- Elements of $S$ are called **trigonometric polynomials**.
+- For $f\in C(0,2\pi)$, the projection of $f$ on $S$ is:
+  $$
+  f_n = \sum_{k=0}^{2n}(f,\varphi_k)\varphi_k, \quad\text{where }(f,\varphi_k)=\int_0^{2\pi}f(x)\varphi_k(x)\,dx. \tag{15.21}
+  $$
+- The numbers $(f,\varphi_k)$ are the **Fourier coefficients** of $f$.
+- Rewriting (15.21) in standard form:
+  $$
+  f_n(x) = \tfrac{1}{2}a_0 + \sum_{k=1}^n\bigl(a_k\cos kx + b_k\sin kx\bigr), \tag{15.22}
+  $$
+  where
+  $$
+  a_k = \frac{1}{\pi}\int_0^{2\pi}f(x)\cos kx\,dx, \qquad b_k = \frac{1}{\pi}\int_0^{2\pi}f(x)\sin kx\,dx.
+  $$
+
+### 15.12.3 Example — Polynomial Approximation with Legendre Polynomials
+
+Let $V=C(-1,1)$ with $(f,g)=\int_{-1}^1 f(x)g(x)\,dx$, and let $S$ be spanned by the normalized Legendre polynomials $\varphi_0,\dots,\varphi_n$ (dimension $n+1$).
+
+- The projection of $f$ on $S$ is $f_n=\sum_{k=0}^n(f,\varphi_k)\varphi_k$.
+- This is the polynomial of degree $\le n$ minimizing $\|f-f_n\|$.
+
+**Example:** $f(x)=\sin\pi x$.
+- $(f,\varphi_0)=0$ (odd function).
+- $(f,\varphi_1)=\int_{-1}^1\sqrt{\frac{3}{2}}t\sin\pi t\,dt=\sqrt{\frac{3}{2}}\frac{2}{\pi}$.
+- The best linear approximation:
+  $$
+  f_1(t) = \sqrt{\frac{3}{2}}\frac{2}{\pi}\,\varphi_1(t) = \frac{3}{\pi}t.
+  $$
+- Since $(f,\varphi_2)=0$, this is also the best **quadratic** approximation.
+
