@@ -10408,3 +10408,41 @@ $$
 g(x)=T(f)(x)=\int_a^x f(t)\,dt \quad\text{for }a\le x\le b.
 $$
 
+## 16.2 Null Space and Range
+
+Throughout this section, $T:V\to W$ denotes a linear transformation.
+
+### 16.2.1 The Range
+
+**Theorem 16.1.** The range $T(V)$ is a **subspace** of $W$. Moreover, $T$ maps the zero element of $V$ onto the zero element of $W$.
+
+**Proof sketch:**
+- If $T(x),T(y)\in T(V)$, then $T(x)+T(y)=T(x+y)\in T(V)$.
+- If $c$ is a scalar, $cT(x)=T(cx)\in T(V)$.
+- Taking $c=0$ in $T(cx)=cT(x)$ gives $T(O)=O$.
+
+### 16.2.2 The Null Space (Kernel)
+
+**Definition.** The set of all elements in $V$ that $T$ maps onto $O$ is called the **null space** of $T$, denoted $N(T)$:
+$$
+N(T)=\{x\in V \mid T(x)=O\}.
+$$
+The null space is also called the **kernel** of $T$.
+
+**Theorem 16.2.** The null space $N(T)$ is a **subspace** of $V$.
+
+**Proof:** If $x,y\in N(T)$, then $T(x+y)=T(x)+T(y)=O+O=O$ and $T(cx)=cT(x)=cO=O$.
+
+### 16.2.3 Null Spaces of the Examples in 16.1
+
+| Example | Transformation | Null Space $N(T)$ |
+|---------|---------------|-------------------|
+| 1 | Identity $I$ | $\{O\}$ |
+| 2 | Zero $O$ | $V$ |
+| 3 | Multiplication by $c$ | $\{O\}$ if $c\neq 0$; $V$ if $c=0$ |
+| 4 | Linear equations $y_i=\sum_k a_{ik}x_k$ | Solution space of $\sum_k a_{ik}x_k=0$ ($i=1,\dots,m$) |
+| 5 | Inner product $(x,z)$ | $\{x\in V:(x,z)=0\}$ (orthogonal complement of $\operatorname{span}\{z\}$) |
+| 6 | Projection on $S$ | $S^\perp$ (orthogonal complement of $S$) |
+| 7 | Differentiation $D(f)=f'$ | All constant functions on $(a,b)$ |
+| 8 | Integration $T(f)(x)=\int_a^x f(t)\,dt$ | $\{0\}$ (only the zero function) |
+
