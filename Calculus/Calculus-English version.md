@@ -10446,3 +10446,45 @@ The null space is also called the **kernel** of $T$.
 | 7 | Differentiation $D(f)=f'$ | All constant functions on $(a,b)$ |
 | 8 | Integration $T(f)(x)=\int_a^x f(t)\,dt$ | $\{0\}$ (only the zero function) |
 
+## 16.3 Nullity and Rank
+
+### 16.3.1 Definitions
+
+Let $T:V\to W$ be a linear transformation with $V$ finite-dimensional.
+
+| Term | Symbol | Definition |
+|------|--------|------------|
+| **Nullity** of $T$ | $\operatorname{nullity}(T)$ | $\dim N(T)$ |
+| **Rank** of $T$ | $\operatorname{rank}(T)$ | $\dim T(V)$ |
+
+Since $N(T)$ is a subspace of the finite-dimensional space $V$, the nullity is well defined. The next theorem shows the rank is also finite.
+
+### 16.3.2 Theorem 16.3 — Nullity Plus Rank
+
+If $V$ is finite-dimensional, then $T(V)$ is finite-dimensional and:
+$$
+\dim N(T) + \dim T(V) = \dim V. \tag{16.1}
+$$
+
+In words: **nullity + rank = dimension of the domain**.
+
+**Proof sketch:**
+- Let $n=\dim V$ and let $\{e_1,\dots,e_k\}$ be a basis for $N(T)$, so $k=\dim N(T)$.
+- By Theorem 15.7(a), extend to a basis of $V$:
+  $$
+  e_1,\dots,e_k,e_{k+1},\dots,e_{k+r}, \tag{16.2}
+  $$
+  where $k+r=n$.
+- **Claim:** The $r$ elements $T(e_{k+1}),\dots,T(e_{k+r})$ form a basis for $T(V)$. \tag{16.3}
+
+**Spanning:** If $y\in T(V)$, then $y=T(x)$ for some $x=\sum_{i=1}^{k+r}c_i e_i$. Since $T(e_1)=\dots=T(e_k)=O$,
+$$
+y=T(x)=\sum_{i=k+1}^{k+r}c_i T(e_i).
+$$
+
+**Independence:** Suppose $\sum_{i=k+1}^{k+r}c_i T(e_i)=O$. Then $T(\sum_{i=k+1}^{k+r}c_i e_i)=O$, so $\sum_{i=k+1}^{k+r}c_i e_i\in N(T)$. Hence it equals $\sum_{i=1}^k c_i e_i$ for some scalars. But the full set (16.2) is independent, so all $c_i=0$.
+
+- Therefore $\dim T(V)=r$, and $k+r=n$ gives (16.1).
+
+> **Note:** If $V$ is infinite-dimensional, then at least one of $N(T)$ or $T(V)$ is infinite-dimensional.
+
