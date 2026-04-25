@@ -9745,4 +9745,55 @@ Assume a fixed sun of mass $M$ and a planet of mass $m$.
   Thus $T^2$ is proportional to $a^3$.
 
 
+# 15. Linear Spaces
+
+## 15.1 Introduction
+
+- Throughout calculus we encounter objects that can be **added** and **multiplied by real numbers**:
+  - Real numbers themselves
+  - Real-valued functions
+  - Complex numbers
+  - Infinite series
+  - Vectors in $n$-space
+  - Vector-valued functions
+- This chapter introduces the general concept of a **linear space** (or **vector space**) that unifies all these examples.
+- A linear space is a set of elements with two operations (addition and scalar multiplication) satisfying certain axioms.
+
+## 15.2 The Definition of a Linear Space
+
+Let $V$ be a nonempty set of objects called **elements**. $V$ is a **linear space** if it satisfies the following ten axioms.
+
+### 15.2.1 Closure Axioms
+
+| Axiom | Statement |
+|-------|-----------|
+| **1. Closure under addition** | For every $x,y\in V$, there is a unique $x+y\in V$ |
+| **2. Closure under multiplication by real numbers** | For every $x\in V$ and real $a$, there is $ax\in V$ |
+
+### 15.2.2 Axioms for Addition
+
+| Axiom | Statement |
+|-------|-----------|
+| **3. Commutative law** | $x+y=y+x$ for all $x,y\in V$ |
+| **4. Associative law** | $(x+y)+z=x+(y+z)$ for all $x,y,z\in V$ |
+| **5. Existence of zero element** | $\exists\,O\in V$ such that $x+O=x$ for all $x\in V$ |
+| **6. Existence of negatives** | For every $x\in V$, $(-1)x$ satisfies $x+(-1)x=O$ |
+
+### 15.2.3 Axioms for Multiplication by Numbers
+
+| Axiom | Statement |
+|-------|-----------|
+| **7. Associative law** | $a(bx)=(ab)x$ for all $x\in V$ and real $a,b$ |
+| **8. Distributive law for addition in $V$** | $a(x+y)=ax+ay$ for all $x,y\in V$ and real $a$ |
+| **9. Distributive law for addition of numbers** | $(a+b)x=ax+bx$ for all $x\in V$ and real $a,b$ |
+| **10. Existence of identity** | $1x=x$ for all $x\in V$ |
+
+### 15.2.4 Terminology
+
+- **Real linear space**: scalars are real numbers.
+- **Complex linear space**: scalars are complex numbers (Axioms 2, 7–10 use complex numbers).
+- Also called **linear vector space** or simply **vector space**.
+- The multipliers are called **scalars**.
+- Unless specified otherwise, "linear space" may refer to either real or complex.
+
 
