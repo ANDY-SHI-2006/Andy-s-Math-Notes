@@ -494,3 +494,98 @@ $$
 **Proof sketch:** Expand $x$ and $y$ using (1.11) and apply linearity of the inner product; orthonormality yields the sum.
 
 > Equation (1.12) is named after M. A. Parseval (circa 1776–1836). Equation (1.13) generalizes the Pythagorean theorem.
+
+## 1.12 The Gram–Schmidt Process
+
+### 1.12.1 Orthogonalization Theorem
+
+Every finite-dimensional Euclidean space has an orthogonal basis. This follows from:
+
+**Theorem 1.13 (Orthogonalization theorem).** Let $x_1,x_2,\dots$ be a finite or infinite sequence in a Euclidean space $V$, and let $L(x_1,\dots,x_k)$ denote the subspace spanned by the first $k$ elements. Then there exists a sequence $y_1,y_2,\dots$ in $V$ such that for each $k$:
+
+| Property | Statement |
+|----------|-----------|
+| (a) | $y_k$ is orthogonal to every element in $L(y_1,\dots,y_{k-1})$ |
+| (b) | $L(y_1,\dots,y_k)=L(x_1,\dots,x_k)$ |
+| (c) | The sequence is **unique up to scalar factors**: if $y'_1,y'_2,\dots$ also satisfies (a) and (b), then $y'_k=c_k y_k$ for some scalar $c_k$ |
+
+**Proof sketch (Gram–Schmidt construction):**
+- Start with $y_1=x_1$.
+- Assume $y_1,\dots,y_r$ constructed satisfying (a) and (b).
+- Define:
+  $$
+  y_{r+1}=x_{r+1}-\sum_{i=1}^r a_i y_i, \tag{1.14}
+  $$
+  where $a_i$ are chosen to make $y_{r+1}$ orthogonal to each $y_j$ ($j\le r$).
+- Taking inner product with $y_j$:
+  $$
+  (y_{r+1},y_j)=(x_{r+1},y_j)-a_j(y_j,y_j).
+  $$
+- If $y_j\neq O$, set:
+  $$
+  a_j=\frac{(x_{r+1},y_j)}{(y_j,y_j)}. \tag{1.15}
+  $$
+- If $y_j=O$, choose $a_j=0$.
+- Then $y_{r+1}$ is orthogonal to $L(y_1,\dots,y_r)$, proving (a).
+- Since $x_{r+1}$ and each $y_i$ lie in $L(x_1,\dots,x_{r+1})$, and conversely $x_{r+1}$ is a linear combination of $y_1,\dots,y_{r+1}$, we get (b).
+- Uniqueness (c): any alternative $y'_{r+1}$ must lie in $L(y_1,\dots,y_{r+1})$ and be orthogonal to $L(y_1,\dots,y_r)$, hence is a scalar multiple of $y_{r+1}$.
+
+### 1.12.2 The Gram–Schmidt Formulas
+
+For an independent set $\{x_1,\dots,x_k\}$, the corresponding orthogonal set $\{y_1,\dots,y_k\}$ is given by:
+$$
+y_1=x_1,\qquad y_{r+1}=x_{r+1}-\sum_{i=1}^r\frac{(x_{r+1},y_i)}{(y_i,y_i)}y_i \quad (r=1,2,\dots,k-1). \tag{1.16}
+$$
+
+- If some $y_{r+1}=O$, then $x_{r+1}$ is a linear combination of $x_1,\dots,x_r$, so the original set is dependent.
+- If $\{x_1,\dots,x_k\}$ is independent, then all $y_i$ are nonzero, and $\{y_1,\dots,y_k\}$ is an orthogonal basis for the same subspace.
+- An **orthonormal basis** is obtained by normalizing: $e_i=y_i/\|y_i\|$.
+
+**Corollary (Theorem 1.14).** Every finite-dimensional Euclidean space has an **orthonormal basis**.
+
+**Projection.** For $y\neq O$, the element $\frac{(x,y)}{(y,y)}y$ is called the **projection of $x$ along $y$**. The Gram–Schmidt process constructs $y_{r+1}$ by subtracting from $x_{r+1}$ its projection along each earlier $y_i$.
+
+### 1.12.3 Example in $V_4$
+
+Find an orthonormal basis for the span of:
+$$
+x_1=(1,-1,1,-1),\quad x_2=(5,1,1,1),\quad x_3=(-3,-3,1,-3).
+$$
+
+**Step 1:** $y_1=x_1=(1,-1,1,-1)$.
+
+**Step 2:**
+$$
+y_2=x_2-\frac{(x_2,y_1)}{(y_1,y_1)}y_1 = x_2-y_1 = (4,2,0,2).
+$$
+
+**Step 3:**
+$$
+y_3=x_3-\frac{(x_3,y_1)}{(y_1,y_1)}y_1-\frac{(x_3,y_2)}{(y_2,y_2)}y_2 = x_3-y_1+y_2 = (0,0,0,0).
+$$
+
+- Since $y_3=O$, the vectors $x_1,x_2,x_3$ are dependent; $y_1,y_2$ are independent, so the subspace has dimension 2.
+- **Orthonormal basis:**
+  $$
+  e_1=\frac{y_1}{\|y_1\|}=\frac{1}{2}(1,-1,1,-1),\qquad e_2=\frac{y_2}{\|y_2\|}=\frac{1}{\sqrt{6}}(2,1,0,1).
+  $$
+
+### 1.12.4 Example — Legendre Polynomials
+
+In the space of all real polynomials with inner product $(x,y)=\int_{-1}^1 x(t)y(t)\,dt$, apply Gram–Schmidt to $x_n(t)=t^n$:
+
+| $n$ | $y_n(t)$ | $P_n(t)$ (standard Legendre) |
+|-----|----------|------------------------------|
+| 0 | $1$ | $1$ |
+| 1 | $t$ | $t$ |
+| 2 | $t^2-\frac{1}{3}$ | $\frac{1}{2}(3t^2-1)$ |
+| 3 | $t^3-\frac{3}{5}t$ | $\frac{1}{2}(5t^3-3t)$ |
+| 4 | $t^4-\frac{6}{7}t^2+\frac{3}{35}$ | $\frac{1}{8}(35t^4-30t^2+3)$ |
+| 5 | $t^5-\frac{10}{9}t^3+\frac{5}{21}t$ | $\frac{1}{8}(63t^5-70t^3+15t)$ |
+
+**Rodrigues formula:**
+$$
+y_n(t)=\frac{n!}{(2n)!}\frac{d^n}{dt^n}(t^2-1)^n,\qquad P_n(t)=\frac{1}{2^n n!}\frac{d^n}{dt^n}(t^2-1)^n.
+$$
+
+- The **normalized Legendre polynomials** are $\varphi_n=y_n/\|y_n\|$.
