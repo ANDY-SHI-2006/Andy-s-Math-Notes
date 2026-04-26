@@ -215,3 +215,33 @@ $$\det\begin{bmatrix}A&O\\O&B\end{bmatrix}=(\det A)(\det B).$$
   By the product formula,
   $$\det C=\det\begin{bmatrix}A&O\\O&I_m\end{bmatrix}\det\begin{bmatrix}I_n&O\\O&B\end{bmatrix}.$$
   Regard $\det\begin{bmatrix}A&O\\O&I_m\end{bmatrix}$ as a function of the $n$ rows of $A$. Because of the zero block in the upper right, this function satisfies all four determinant axioms of order $n$; by uniqueness it equals $\det A$. Similarly the second factor equals $\det B$. Multiplying gives the result. $\square$
+
+
+### 3.12 Expansion Formulas, Minors, and Cofactors
+
+Since $A_1=\sum_{j=1}^n a_{1j}I_j$, linearity in the first row gives
+
+$$d(A_1,\dots,A_n)=\sum_{j=1}^n a_{1j}\,d(I_j,A_2,\dots,A_n).$$
+
+Let $A_{kj}'$ denote the matrix obtained from $A$ by replacing row $k$ with the unit vector $I_j$. Then $d(I_j,A_2,\dots,A_n)=\det A_{1j}'$, and we obtain the **expansion formula**
+
+$$\det A=\sum_{j=1}^n a_{kj}\det A_{kj}'\qquad\text{(expansion along the $k$th row).}$$
+
+The number $\det A_{kj}'$ is called the **cofactor** of the entry $a_{kj}$.
+
+---
+
+**Minors.** The $(k,j)$ **minor** $A_{kj}$ is the $(n-1)\times(n-1)$ matrix obtained from $A$ by deleting row $k$ and column $j$.
+
+**Theorem 3.9** (Expansion by $k$th-row minors). For $n\ge2$,
+
+$$\det A_{kj}'=(-1)^{k+j}\det A_{kj},$$
+
+and therefore
+
+$$\det A=\sum_{j=1}^n(-1)^{k+j}a_{kj}\det A_{kj}.$$
+
+- **Proof sketch.**
+  - *Case $k=j=1$.* Use type-(3) row operations to clear the first column below the 1, obtaining a block-diagonal matrix; Theorem 3.7 gives $\det A_{11}'=\det A_{11}$.
+  - *Case $k=1$, $j$ arbitrary.* After similar row operations, regard the result as a function $f(A_{1j})$ of the $n-1$ rows of the minor. By uniqueness, $f(A_{1j})=f(J)\det A_{1j}$. Here $f(J)=\det C$, where $C$ is the $n\times n$ matrix with a 1 in position $(1,j)$ and 1s on the diagonal elsewhere. Moving row 1 down to row $j$ requires $j-1$ adjacent swaps, so $f(J)=(-1)^{j-1}$.
+  - *General $k,j$.* Move row $k$ to the top by $k-1$ adjacent swaps; each swap changes the sign of the determinant. Combining with the previous case yields the factor $(-1)^{k+j}$. $\square$
