@@ -268,3 +268,16 @@ Then $f$ satisfies all four axioms for a determinant function of order $n$. Ther
 > The same proof works with expansion along any column $k$:
 > $$\det A=\sum_{j=1}^n(-1)^{j+k}a_{jk}\det A_{jk}.$$
 > By uniqueness, all expansion formulas (by any row or column) give the same value.
+
+
+### 3.14 The Determinant of a Transpose
+
+**Definition.** The **transpose** of an $m\times n$ matrix $A=(a_{ij})$ is the $n\times m$ matrix $A^t$ whose $(i,j)$-entry is $a_{ji}$. The rows of $A^t$ are the columns of $A$.
+
+**Theorem 3.11.** For any $n\times n$ matrix $A$,
+
+$$\det A=\det A^t.$$
+
+- **Proof sketch** (induction on $n$). The cases $n=1,2$ are immediate. Assume the theorem holds for order $n-1$, let $B=A^t=(b_{ij})$, and expand:
+  $$\det A=\sum_{j=1}^n(-1)^{j+1}a_{j1}\det A_{j1},\qquad \det B=\sum_{j=1}^n(-1)^{j+1}b_{1j}\det B_{1j}.$$
+  By definition of transpose, $b_{1j}=a_{j1}$ and $B_{1j}=(A_{j1})^t$. The induction hypothesis gives $\det B_{1j}=\det A_{j1}$. Hence the two sums are equal term by term, so $\det A=\det B$. $\square$
