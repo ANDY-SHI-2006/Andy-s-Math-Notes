@@ -177,3 +177,41 @@ Direct expansion of $\det(\lambda I-A)$ also shows $c_{n-1}=-(a_{11}+\cdots+a_{n
 $$\operatorname{tr}A=\sum_{i=1}^n a_{ii}.$$
 
 > The trace equals the sum of the diagonal entries and provides a convenient numerical check for eigenvalue calculations.
+
+
+### 4.9 Matrices Representing the Same Linear Transformation. Similar Matrices
+
+Let $T\colon V\to V$ be represented by $A$ relative to a basis $E=[e_1,\dots,e_n]$ and by $B$ relative to another basis $U=[u_1,\dots,u_n]$. If $C$ is the nonsingular matrix relating the bases by $U=EC$, then
+
+$$B=C^{-1}AC.$$
+
+**Theorem 4.6.** Two $n\times n$ matrices represent the same linear transformation $T$ if and only if there exists a nonsingular $C$ with $B=C^{-1}AC$.
+
+**Definition.** Two $n\times n$ matrices $A$ and $B$ are **similar** if $B=C^{-1}AC$ for some nonsingular $C$.
+
+**Theorem 4.8.** Two $n\times n$ matrices are similar if and only if they represent the same linear transformation.
+
+---
+
+**Properties of similar matrices.**
+
+- Same determinant:
+  $$\det(C^{-1}AC)=\det(C^{-1})(\det A)(\det C)=\det A.$$
+
+**Theorem 4.9.** Similar matrices have the same characteristic polynomial and therefore the same eigenvalues.
+
+- **Proof sketch.** $\lambda I-B=\lambda I-C^{-1}AC=C^{-1}(\lambda I-A)C$, so $\det(\lambda I-B)=\det(\lambda I-A)$. $\square$
+
+> Hence all matrix representations of a given $T$ share the same characteristic polynomial; this is called the **characteristic polynomial of $T$**.
+
+---
+
+**Theorem 4.10.** Let $T\colon V\to V$ with $\dim V=n$ and scalars in $F$. If the characteristic polynomial of $T$ has $n$ distinct roots $\lambda_1,\dots,\lambda_n$ in $F$, then:
+
+- **(a)** The corresponding eigenvectors $u_1,\dots,u_n$ form a basis for $V$.
+- **(b)** The matrix of $T$ relative to $U=[u_1,\dots,u_n]$ is $\Lambda=\operatorname{diag}(\lambda_1,\dots,\lambda_n)$.
+- **(c)** If $A$ is the matrix of $T$ relative to another basis $E$, then $\Lambda=C^{-1}AC$ where $U=EC$.
+
+> The matrix $C$ is called a **diagonalizing matrix**; its $k$th column consists of the components of $u_k$ relative to $E$.
+>
+> If the eigenvalues are not distinct, $A$ may still be similar to a diagonal matrix provided there are enough independent eigenvectors (one for each algebraic multiplicity).
