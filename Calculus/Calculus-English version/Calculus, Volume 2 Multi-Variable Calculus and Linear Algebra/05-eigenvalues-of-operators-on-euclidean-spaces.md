@@ -160,3 +160,32 @@ where $C$ is a nonsingular matrix whose inverse is its adjoint: $C^{-1}=C^*$.
 
 **Example.** The real Hermitian matrix $A=\begin{pmatrix}2&2\\2&5\end{pmatrix}$ has eigenvalues $1$ and $6$ with orthonormal eigenvectors $u_1=\frac1{\sqrt5}(2,-1)$ and $u_2=\frac1{\sqrt5}(1,2)$. Hence
 $$C=\frac1{\sqrt5}\begin{pmatrix}2&1\\-1&2\end{pmatrix},\qquad C^{\!t}AC=\begin{pmatrix}1&0\\0&6\end{pmatrix}.$$
+
+
+### 5.10 Unitary Matrices. Orthogonal Matrices
+
+**Definition.** A square matrix $A$ is **unitary** if $AA^*=I$. It is **orthogonal** if $AA^t=I$.
+
+> Every real unitary matrix is orthogonal (since $A^*=A^t$). By Theorem 5.7, Hermitian and skew-Hermitian matrices are diagonalized by unitary matrices; real Hermitian matrices are diagonalized by real orthogonal matrices.
+
+**Definition.** A matrix $A$ is **symmetric** if $A=A^t$; it is **skew-symmetric** if $A=-A^t$.
+
+| Property | Hermitian | skew-Hermitian | symmetric | skew-symmetric |
+|----------|-----------|----------------|-----------|----------------|
+| Diagonal entries | real | pure imaginary | arbitrary | $0$ |
+| Real case | $A=A^t$ | $A=-A^t$ | $A=A^t$ | $A=-A^t$ |
+
+**Examples.**
+
+1. If $A$ is real, $A^*=A^t$. Thus every real Hermitian matrix is symmetric, but a symmetric matrix with complex entries need not be Hermitian.
+2. $A=\begin{pmatrix}1+i&2\\3-i&4i\end{pmatrix}$ gives $\bar A=\begin{pmatrix}1-i&2\\3+i&-4i\end{pmatrix}$, $A^t=\begin{pmatrix}1+i&3-i\\2&4i\end{pmatrix}$, $A^*=\begin{pmatrix}1-i&3+i\\2&-4i\end{pmatrix}$.
+3. Both $\begin{pmatrix}1&2\\2&3\end{pmatrix}$ and $\begin{pmatrix}1&2+i\\2-i&3\end{pmatrix}$ are Hermitian; the first is symmetric, the second is not.
+4. Both $\begin{pmatrix}0&-2\\2&0\end{pmatrix}$ and $\begin{pmatrix}i&-2\\2&3i\end{pmatrix}$ are skew-Hermitian; the first is skew-symmetric, the second is not.
+
+---
+
+**Decompositions.** Every square matrix $A$ can be written uniquely as
+- $A=B+C$ where $B=\tfrac12(A+A^*)$ is Hermitian and $C=\tfrac12(A-A^*)$ is skew-Hermitian.
+- $A=S+K$ where $S=\tfrac12(A+A^t)$ is symmetric and $K=\tfrac12(A-A^t)$ is skew-symmetric.
+
+**Example.** If $A$ is orthogonal, then $1=\det(AA^t)=(\det A)^2$, so $\det A=\pm1$.
