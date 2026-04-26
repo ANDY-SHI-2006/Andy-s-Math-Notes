@@ -133,3 +133,26 @@ Then $T^mT^n=T^{m+n}$ for all nonnegative integers $m,n$.
   $$(S+T)R=SR+TR,\qquad (cS)R=c(SR).$$
 - **(b)** For any linear $R\colon W\to U$:
   $$R(S+T)=RS+RT,\qquad R(cS)=c(RS).$$
+
+
+### 2.6 Inverses
+
+**Definitions.** Let $T\colon V\to W$ be a function.
+- A function $S\colon T(V)\to V$ is a **left inverse** of $T$ if $S[T(x)]=x$ for all $x\in V$, i.e. $ST=I_V$.
+- A function $R\colon T(V)\to V$ is a **right inverse** of $T$ if $T[R(y)]=y$ for all $y\in T(V)$, i.e. $TR=I_{T(V)}$.
+
+> Every function has at least one right inverse (by the axiom of choice). Right inverses need not be unique if some $y\in T(V)$ has more than one pre-image.
+
+**Example.** Let $V=\{1,2\}$, $W=\{0\}$, $T(1)=T(2)=0$. Then $R(0)=1$ and $R'(0)=2$ are two distinct right inverses, but no left inverse exists (it would require $1=S(0)=2$).
+
+**Theorem 2.8.** A function $T\colon V\to W$ can have at most one left inverse. If $T$ has a left inverse $S$, then $S$ is also a right inverse (hence the unique two-sided inverse).
+
+- **Proof sketch.** If $S,S'$ are left inverses and $y=T(x)$, then $S(y)=S[T(x)]=x=S'[T(x)]=S'(y)$, so $S=S'$. Also $T[S(y)]=T[S[T(x)]]=T(x)=y$, so $S$ is a right inverse. $\square$
+
+**Theorem 2.9.** $T$ has a left inverse if and only if $T$ is **one-to-one** (injective) on $V$; that is,
+
+$$x\neq y\implies T(x)\neq T(y)\quad\text{equivalently}\quad T(x)=T(y)\implies x=y.$$
+
+- **Proof sketch.** $(\Rightarrow)$ If $T(x)=T(y)$, apply a left inverse $S$: $x=S[T(x)]=S[T(y)]=y$. $(\Leftarrow)$ If $T$ is injective, each $y\in T(V)$ equals $T(x)$ for a unique $x$; define $S(y)=x$. Then $S[T(x)]=x$, so $ST=I_V$. $\square$
+
+**Definition.** If $T\colon V\to W$ is one-to-one, its unique left inverse (which is also its right inverse) is denoted $T^{-1}$. We say $T$ is **invertible** and call $T^{-1}$ the **inverse** of $T$.
