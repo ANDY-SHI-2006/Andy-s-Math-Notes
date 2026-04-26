@@ -89,3 +89,47 @@ In other words, $\text{nullity}+\text{rank}=\dim V$.
   Since the full basis is independent, all $c_i=0$. Therefore $\{T(e_{k+1}),\dots,T(e_{k+r})\}$ is a basis for $T(V)$, and $\dim T(V)=r=n-k$. $\square$
 
 > **Note.** If $V$ is infinite-dimensional, then at least one of $N(T)$ or $T(V)$ is infinite-dimensional.
+
+
+### 2.5 Algebraic Operations on Linear Transformations
+
+**Definition.** Let $S,T\colon V\to W$ and let $c$ be a scalar. Define **sum** and **scalar product** pointwise:
+
+$$(S+T)(x)=S(x)+T(x),\qquad (cT)(x)=c\,T(x)\quad\text{for all }x\in V.$$
+
+Denote by $\mathscr L(V,W)$ the set of all linear transformations from $V$ into $W$.
+
+**Theorem 2.4.** The set $\mathscr L(V,W)$, with the above operations, is a linear space. The zero transformation is the zero element, and $(-1)T$ is the negative of $T$.
+
+---
+
+**Composition (multiplication) of transformations**
+
+Let $T\colon U\to V$ and $S\colon V\to W$. The **composition** $ST\colon U\to W$ is defined by
+
+$$(ST)(x)=S[T(x)]\quad\text{for all }x\in U.$$
+
+- Diagram: $U\xrightarrow{\,T\,}V\xrightarrow{\,S\,}W$.
+
+**Theorem 2.5** (Associativity). If $T\colon U\to V$, $S\colon V\to W$, $R\colon W\to X$, then
+
+$$R(ST)=(RS)T.$$
+
+- **Proof sketch.** For every $x\in U$: $[R(ST)](x)=R[S[T(x)]]=[(RS)T](x)$. $\square$
+
+**Powers.** For $T\colon V\to V$, define inductively
+
+$$T^0=I,\qquad T^n=T\,T^{n-1}\quad(n\ge1).$$
+
+Then $T^mT^n=T^{m+n}$ for all nonnegative integers $m,n$.
+
+**Theorem 2.6.** The composition of linear transformations is linear. If $T\colon U\to V$ and $S\colon V\to W$ are linear, so is $ST\colon U\to W$.
+
+- **Proof sketch.** $(ST)(ax+by)=S[T(ax+by)]=S[aT(x)+bT(y)]=aS[T(x)]+bS[T(y)]=a(ST)(x)+b(ST)(y)$. $\square$
+
+**Theorem 2.7** (Distributive laws). Let $S,T\in\mathscr L(V,W)$ and $c$ a scalar.
+
+- **(a)** For any $R$ with values in $V$:
+  $$(S+T)R=SR+TR,\qquad (cS)R=c(SR).$$
+- **(b)** For any linear $R\colon W\to U$:
+  $$R(S+T)=RS+RT,\qquad R(cS)=c(RS).$$
