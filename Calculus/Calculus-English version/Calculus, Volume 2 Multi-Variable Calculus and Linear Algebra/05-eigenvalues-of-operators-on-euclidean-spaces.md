@@ -104,3 +104,26 @@ Hence:
     $$(T(x),u_1)=(x,T(u_1))=(x,\lambda_1u_1)=\lambda_1(x,u_1)=0,$$
     so $T(x)\in S^\perp$. (A similar calculation holds for skew-Hermitian $T$.)
   - Apply the induction hypothesis on $S^\perp$ to obtain $n-1$ orthonormal eigenvectors $u_2,\dots,u_n$. Then $(u_1,\dots,u_n)$ is an orthonormal basis for $V$. $\square$
+
+
+### 5.7 Matrix Representations for Hermitian and Skew-Hermitian Operators
+
+**Theorem 5.5.** Let $(e_1,\dots,e_n)$ be any basis for $V$ and $T\colon V\to V$ linear.
+
+- **(a)** $T$ is Hermitian $\iff$ $(T(e_j),e_i)=(e_j,T(e_i))$ for all $i,j$.
+- **(b)** $T$ is skew-Hermitian $\iff$ $(T(e_j),e_i)=-(e_j,T(e_i))$ for all $i,j$.
+
+- **Proof sketch.** Write $x=\sum x_je_j$ and $y=\sum y_ie_i$. Then
+  $$(T(x),y)=\sum_{j,i}x_j\bar y_i(T(e_j),e_i),\qquad(x,T(y))=\sum_{j,i}x_j\bar y_i(e_j,T(e_i)).$$
+  Comparing coefficients gives the result. $\square$
+
+---
+
+**Theorem 5.6.** Let $(e_1,\dots,e_n)$ be an **orthonormal** basis and let $A=(a_{ij})$ be the matrix of $T$ relative to this basis.
+
+- **(a)** $T$ is Hermitian $\iff$ $a_{ij}=\bar a_{ji}$ for all $i,j$.
+- **(b)** $T$ is skew-Hermitian $\iff$ $a_{ij}=-\bar a_{ji}$ for all $i,j$.
+
+- **Proof sketch.** Since $T(e_j)=\sum_k a_{kj}e_k$, taking the inner product with $e_i$ gives
+  $$(T(e_j),e_i)=\sum_k a_{kj}(e_k,e_i)=a_{ij}.$$
+  Conjugating and interchanging indices: $\bar a_{ji}=(e_j,T(e_i))$. Apply Theorem 5.5. $\square$
