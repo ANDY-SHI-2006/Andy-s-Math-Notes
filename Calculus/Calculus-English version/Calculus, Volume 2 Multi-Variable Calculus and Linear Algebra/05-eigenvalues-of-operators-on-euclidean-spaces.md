@@ -127,3 +127,36 @@ Hence:
 - **Proof sketch.** Since $T(e_j)=\sum_k a_{kj}e_k$, taking the inner product with $e_i$ gives
   $$(T(e_j),e_i)=\sum_k a_{kj}(e_k,e_i)=a_{ij}.$$
   Conjugating and interchanging indices: $\bar a_{ji}=(e_j,T(e_i))$. Apply Theorem 5.5. $\square$
+
+
+### 5.8 Hermitian and Skew-Hermitian Matrices. The Adjoint of a Matrix
+
+**Definition.** A square matrix $A=(a_{ij})$ is **Hermitian** if $a_{ij}=\bar a_{ji}$ for all $i,j$; it is **skew-Hermitian** if $a_{ij}=-\bar a_{ji}$.
+
+Let $\bar A$ denote the entrywise conjugate of $A$. Then
+- $A$ is Hermitian $\iff$ $A=\bar A^{\,t}$.
+- $A$ is skew-Hermitian $\iff$ $A=-\bar A^{\,t}$.
+
+**Definition.** For any matrix $A$, the **adjoint** $A^*$ is the transpose of the conjugate:
+
+$$A^*=\bar A^{\,t}.$$
+
+Thus $A$ is Hermitian $\iff$ $A=A^*$ (also called **self-adjoint**), and skew-Hermitian $\iff$ $A=-A^*$.
+
+
+### 5.9 Diagonalization of a Hermitian or Skew-Hermitian Matrix
+
+**Theorem 5.7.** Every $n\times n$ Hermitian or skew-Hermitian matrix $A$ is similar to the diagonal matrix $\Lambda=\operatorname{diag}(\lambda_1,\dots,\lambda_n)$ of its eigenvalues. Moreover,
+
+$$\Lambda=C^{-1}AC,$$
+
+where $C$ is a nonsingular matrix whose inverse is its adjoint: $C^{-1}=C^*$.
+
+- **Proof sketch.** Let $T$ be the transformation represented by $A$ relative to the standard orthonormal basis. By Theorem 5.4, $V$ has an orthonormal basis of eigenvectors $(u_1,\dots,u_n)$. The matrix $C$ relating the two bases satisfies $[u_1,\dots,u_n]=[e_1,\dots,e_n]C$. Since $(u_j,u_i)=\delta_{ji}$,
+  $$(u_j,u_i)=\sum_k c_{kj}\bar c_{ki},$$
+  which means $CC^*=I$. Hence $C^{-1}=C^*$. $\square$
+
+> The $j$th column of $C$ consists of the components of the eigenvector $u_j$ (normalized) relative to the standard basis.
+
+**Example.** The real Hermitian matrix $A=\begin{pmatrix}2&2\\2&5\end{pmatrix}$ has eigenvalues $1$ and $6$ with orthonormal eigenvectors $u_1=\frac1{\sqrt5}(2,-1)$ and $u_2=\frac1{\sqrt5}(1,2)$. Hence
+$$C=\frac1{\sqrt5}\begin{pmatrix}2&1\\-1&2\end{pmatrix},\qquad C^{\!t}AC=\begin{pmatrix}1&0\\0&6\end{pmatrix}.$$
