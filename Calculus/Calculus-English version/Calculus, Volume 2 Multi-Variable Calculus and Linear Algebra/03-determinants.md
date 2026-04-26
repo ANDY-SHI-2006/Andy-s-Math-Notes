@@ -245,3 +245,26 @@ $$\det A=\sum_{j=1}^n(-1)^{k+j}a_{kj}\det A_{kj}.$$
   - *Case $k=j=1$.* Use type-(3) row operations to clear the first column below the 1, obtaining a block-diagonal matrix; Theorem 3.7 gives $\det A_{11}'=\det A_{11}$.
   - *Case $k=1$, $j$ arbitrary.* After similar row operations, regard the result as a function $f(A_{1j})$ of the $n-1$ rows of the minor. By uniqueness, $f(A_{1j})=f(J)\det A_{1j}$. Here $f(J)=\det C$, where $C$ is the $n\times n$ matrix with a 1 in position $(1,j)$ and 1s on the diagonal elsewhere. Moving row 1 down to row $j$ requires $j-1$ adjacent swaps, so $f(J)=(-1)^{j-1}$.
   - *General $k,j$.* Move row $k$ to the top by $k-1$ adjacent swaps; each swap changes the sign of the determinant. Combining with the previous case yields the factor $(-1)^{k+j}$. $\square$
+
+
+### 3.13 Existence of the Determinant Function
+
+**Theorem 3.10.** Assume determinants of order $n-1$ exist. For any $n\times n$ matrix $A=(a_{jk})$ define
+
+$$f(A_1,\dots,A_n)=\sum_{j=1}^n(-1)^{j+1}a_{j1}\det A_{j1}.$$
+
+Then $f$ satisfies all four axioms for a determinant function of order $n$. Therefore, by induction, determinants of every order exist.
+
+- **Proof sketch.** Write $f=\sum_j f_j$ where $f_j=(-1)^{j+1}a_{j1}\det A_{j1}$.
+
+  - *Axioms 1 and 2.* If row 1 is multiplied by $t$, then $a_{11}$ is multiplied by $t$ (for $j=1$) or the first row of $A_{j1}$ is multiplied by $t$ (for $j>1$); in either case $f_j$ is multiplied by $t$. If row $k$ ($k>1$) is multiplied by $t$, the same reasoning applies. A similar argument gives additivity.
+
+  - *Axiom 3$'$.* Suppose $A_k=A_{k+1}$. For $j\neq k,k+1$, the minor $A_{j1}$ still contains two equal rows, so $\det A_{j1}=0$. The sum reduces to the two terms $j=k$ and $j=k+1$:
+    $$f=(-1)^{k+1}a_{k1}\det A_{k1}+(-1)^{k+2}a_{k+1,1}\det A_{k+1,1}.$$
+    Since $A_k=A_{k+1}$ we have $a_{k1}=a_{k+1,1}$ and $A_{k1}=A_{k+1,1}$; the two terms cancel.
+
+  - *Axiom 4.* For $A=I$ we have $a_{11}=1$, $a_{j1}=0$ ($j>1$), and $A_{11}=I_{n-1}$. Hence $f(I_1,\dots,I_n)=1\cdot\det I_{n-1}=1$. $\square$
+
+> The same proof works with expansion along any column $k$:
+> $$\det A=\sum_{j=1}^n(-1)^{j+k}a_{jk}\det A_{jk}.$$
+> By uniqueness, all expansion formulas (by any row or column) give the same value.
