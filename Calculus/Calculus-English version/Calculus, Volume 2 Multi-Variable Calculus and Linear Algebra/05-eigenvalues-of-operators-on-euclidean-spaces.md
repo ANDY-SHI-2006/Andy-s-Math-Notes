@@ -226,3 +226,26 @@ $$XBX^t=x_1^2-4x_1x_2+5x_2^2.$$
 $$XAX^t=XBX^t,\quad B=\tfrac12(A+A^t).$$
 
 - *Proof sketch:* $(XAX^t)^t=XA^tX^t$, so $XAX^t=\frac12XAX^t+\frac12XA^tX^t=XBX^t$.
+
+### 5.13 Reduction of a Real Quadratic Form to a Diagonal Form
+
+A real symmetric matrix $A$ is Hermitian, so by Theorem 5.7 it is similar to $\Lambda=\operatorname{diag}(\lambda_1,\dots,\lambda_n)$ and $\Lambda=C^tAC$ with $C$ orthogonal. This $C$ converts $XAX^t$ to a diagonal form.
+
+**Theorem 5.11.** Let $XAX^t$ be the quadratic form of a real symmetric matrix $A$, and let $C$ be orthogonal with $\Lambda=C^tAC$. Then
+$$XAX^t=Y\Lambda Y^t=\sum_{i=1}^n\lambda_i y_i^2,$$
+where $Y=XC$ and $\lambda_1,\dots,\lambda_n$ are the eigenvalues of $A$.
+
+- *Proof sketch:* $C^{-1}=C^t$, so $Y=XC\Rightarrow X=YC^t$. Then $XAX^t=(YC^t)A(YC^t)^t=Y(C^tAC)Y^t=Y\Lambda Y^t$.
+
+- The transformation $Y=XC$ **reduces** the quadratic form to diagonal form.
+
+**Example 1.** For the identity matrix, $XIX^t=\sum x_i^2=\|X\|^2$. Under $Y=XC$ with $C$ orthogonal, $\Lambda=CIC^t=I$, so $\|X\|^2=\|Y\|^2$. A linear transformation preserving every vector length is called an **isometry**.
+
+**Example 2.** Reduce $Q(x)=2x_1^2+4x_1x_2+5x_2^2$.
+
+- $A=\begin{bmatrix}2&2\\2&5\end{bmatrix}$; eigenvalues $\lambda_1=1$, $\lambda_2=6$.
+- Orthonormal eigenvectors: $u_1=\frac1{\sqrt5}(2,-1)$, $u_2=\frac1{\sqrt5}(1,2)$.
+- Orthogonal $C=\frac1{\sqrt5}\begin{bmatrix}2&1\\-1&2\end{bmatrix}$.
+- Diagonal form: $Y\Lambda Y^t=y_1^2+6y_2^2$.
+
+**Geometric interpretation.** The transformation $Y=XC$ rotates the basis $\{i,j\}$ onto $\{u_1,u_2\}$. The set $XAX^t=c$ is the same ellipse as $Y\Lambda Y^t=c$, i.e. $y_1^2+6y_2^2=c$ ($c>0$). In the original coordinates this is $2x_1^2+4x_1x_2+5x_2^2=c$.
