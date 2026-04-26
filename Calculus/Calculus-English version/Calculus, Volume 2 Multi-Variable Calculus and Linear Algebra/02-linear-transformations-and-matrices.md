@@ -341,3 +341,52 @@ Hence $m$ is a one-to-one linear transformation from $\mathscr L(V,W)$ onto $M_{
 > The map $m$ is called an **isomorphism**; the spaces $\mathscr L(V,W)$ and $M_{m,n}$ are **isomorphic**. Consequently, $\dim\mathscr L(V,W)=\dim M_{m,n}=mn$.
 
 **Identity matrix.** If $V=W$ and the same basis is used, the matrix of the identity transformation $I\colon V\to V$ is the $n\times n$ diagonal matrix with every diagonal entry $1$ and all others $0$. This is called the **identity** (or **unit**) matrix, denoted $I$ or $I_n$.
+
+
+### 2.15 Multiplication of Matrices
+
+**Definition.** Let $A=(a_{ij})$ be $m\times p$ and $B=(b_{ij})$ be $p\times n$. Their **product** $AB=C$ is the $m\times n$ matrix with entries
+
+$$c_{ij}=\sum_{k=1}^p a_{ik}\,b_{kj}\qquad(1\le i\le m,\;1\le j\le n).$$
+
+- $AB$ is defined only when the number of columns of $A$ equals the number of rows of $B$.
+- In dot-product form: $c_{ij}=A_i\cdot B^{j}$, the dot product of the $i$th row of $A$ with the $j$th column of $B$.
+
+**Examples.**
+
+1. $A=\begin{pmatrix}3&1&2\\-1&1&0\end{pmatrix}$ ($2\times3$), $B=\begin{pmatrix}4&6\\5&-1\\0&2\end{pmatrix}$ ($3\times2$):
+   $$AB=\begin{pmatrix}17&21\\1&-7\end{pmatrix}.$$
+
+2. $A=\begin{pmatrix}2&1&-3\\1&2&4\end{pmatrix}$ ($2\times3$), $B=\begin{pmatrix}-2\\1\\2\end{pmatrix}$ ($3\times1$):
+   $$AB=\begin{pmatrix}-9\\8\end{pmatrix}.$$
+
+3. Square matrices need not commute:
+   $$A=\begin{pmatrix}1&2\\-1&1\end{pmatrix},\;B=\begin{pmatrix}3&4\\5&2\end{pmatrix}\implies AB=\begin{pmatrix}13&8\\2&-2\end{pmatrix},\;BA=\begin{pmatrix}-1&10\\3&12\end{pmatrix}.$$
+   If $AB=BA$, we say $A$ and $B$ **commute**.
+
+4. The identity matrix acts as a multiplicative identity:
+   $$I_pA=A\quad(p\times n),\qquad BI_p=B\quad(m\times p).$$
+
+---
+
+**Theorem 2.16.** Let $T\colon U\to V$ and $S\colon V\to W$ be linear transformations (finite-dimensional). For fixed bases,
+
+$$m(ST)=m(S)\,m(T).$$
+
+- **Proof sketch.** With $\dim U=n$, $\dim V=p$, $\dim W=m$ and bases $(u_j),(v_k),(w_i)$, write
+  $$S(v_k)=\sum_{i=1}^m s_{ik}w_i,\qquad T(u_j)=\sum_{k=1}^p t_{kj}v_k.$$
+  Then
+  $$ST(u_j)=S[T(u_j)]=\sum_{k=1}^p t_{kj}S(v_k)=\sum_{i=1}^m\Bigl(\sum_{k=1}^p s_{ik}t_{kj}\Bigr)w_i,$$
+  so the $(i,j)$-entry of $m(ST)$ is $\sum_{k=1}^p s_{ik}t_{kj}$, which is exactly the $(i,j)$-entry of $m(S)m(T)$. $\square$
+
+**Theorem 2.17** (Associative and distributive laws). Whenever the indicated products are defined:
+
+- **(a)** $A(BC)=(AB)C$ &nbsp;(associative law)
+- **(b)** $(A+B)C=AC+BC$ &nbsp;(right distributive law)
+- **(c)** $C(A+B)=CA+CB$ &nbsp;(left distributive law)
+
+- **Proof sketch.** Choose linear transformations $R,S,T$ whose matrices are $A,B,C$. The corresponding laws for transformations (Theorems 2.5 and 2.7) transfer to matrices via Theorem 2.16. $\square$
+
+**Powers of a square matrix.** Define inductively
+
+$$A^0=I,\qquad A^n=AA^{n-1}\quad(n\ge1).$$
