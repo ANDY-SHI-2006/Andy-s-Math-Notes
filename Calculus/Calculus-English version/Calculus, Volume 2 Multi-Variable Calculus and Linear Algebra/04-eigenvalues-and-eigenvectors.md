@@ -59,3 +59,22 @@ The element $x$ is an **eigenvector** belonging to $\lambda$. (By definition the
    Every nonzero element of $L(x)$ is also an eigenvector for $\lambda$.
 
 **Definition.** A subspace $U\subseteq S$ is **invariant under $T$** if $T$ maps every element of $U$ into $U$. The subspace spanned by an eigenvector is invariant.
+
+
+### 4.3 Linear Independence of Eigenvectors Corresponding to Distinct Eigenvalues
+
+**Theorem 4.2.** Let $u_1,\dots,u_k$ be eigenvectors of $T\colon S\to V$ with distinct eigenvalues $\lambda_1,\dots,\lambda_k$. Then $u_1,\dots,u_k$ are independent.
+
+- **Proof sketch** (induction on $k$). Assume $\sum_{i=1}^k c_iu_i=O$. Applying $T$ gives $\sum_{i=1}^k c_i\lambda_i u_i=O$. Subtracting $\lambda_k$ times the first equation yields
+  $$\sum_{i=1}^{k-1}c_i(\lambda_i-\lambda_k)u_i=O.$$
+  By the induction hypothesis $c_i(\lambda_i-\lambda_k)=0$ for $i<k$; since the eigenvalues are distinct, $c_i=0$ for $i<k$. Hence $c_k=0$ as well. $\square$
+
+> **Warning.** The converse is false: independent eigenvectors need not have distinct eigenvalues (e.g. the identity transformation has only $\lambda=1$).
+
+---
+
+**Theorem 4.3.** If $\dim V=n$, every $T\colon V\to V$ has at most $n$ distinct eigenvalues. If $T$ has exactly $n$ distinct eigenvalues, the corresponding eigenvectors form a basis for $V$, and the matrix of $T$ relative to this basis is diagonal.
+
+- **Proof sketch.** $n+1$ distinct eigenvalues would give $n+1$ independent vectors in an $n$-dimensional space, a contradiction. The second statement follows from Theorems 4.1 and 4.2. $\square$
+
+> **Note.** $n$ distinct eigenvalues is a **sufficient** but not **necessary** condition for diagonalizability. The necessary and sufficient condition (Theorem 4.1) is the existence of $n$ independent eigenvectors.
