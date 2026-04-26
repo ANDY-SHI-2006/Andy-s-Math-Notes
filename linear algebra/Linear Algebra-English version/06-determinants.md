@@ -304,7 +304,6 @@ $$
 
 **Proof.** (a) $\iff$ (b) was proved in Chapter IV, Theorem 2.2. By Proposition 5.1 and Theorem 5.2, we may assume $A$ is triangular. Then $\operatorname{Det}(A)$ is the product of the diagonal elements, which is $0$ iff some diagonal element is $0$, equivalently the columns are dependent.
 
-
 ## 6.6 Permutations
 
 ### 6.6.1 Definition
@@ -428,7 +427,6 @@ $$
 
 > **Example 4.** The permutation in Example 2 is **even** (product of 2 transpositions). The permutation in Example 3 is **odd** (product of 3 transpositions).
 
-
 ## 6.7 Expansion Formula and Uniqueness of Determinants
 
 ### 6.7.1 Expansion Formula
@@ -548,7 +546,6 @@ $$
 
 which is precisely the expansion for $\operatorname{Det}({}^tA)$.
 
-
 ## 6.8 Inverse of a Matrix
 
 ### 6.8.1 The 2 × 2 Case
@@ -618,7 +615,6 @@ A^{-1}={}^t\!\left(\frac{(-1)^{i+j}\det(A_{ij})}{\det(A)}\right).
 $$
 
 > In words: form the **cofactor matrix** $C=(c_{ij})$ with $c_{ij}=(-1)^{i+j}\det(A_{ij})$, take its transpose (the **adjugate**), and divide by $\det(A)$.
-
 
 ## 6.9 The Rank of a Matrix and Subdeterminants
 

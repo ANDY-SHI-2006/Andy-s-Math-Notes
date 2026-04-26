@@ -71,7 +71,6 @@ $$
 
 Hence ${}^t(AB) = {}^tB {}^tA$. The other formulas follow similarly.
 
-
 ## 7.2 Hermitian Operators
 
 Throughout this section, $V$ is a finite dimensional vector space over $\mathbf{C}$, with a fixed positive definite hermitian product $\langle v, w \rangle$.
@@ -159,7 +158,6 @@ $$
   \langle Av, v \rangle = \overline{\langle Av, v \rangle} = \langle v, Av \rangle = \langle A^*v, v \rangle.
   $$
   Hence $\langle (A-A^*)v, v \rangle = 0$ for all $v$. By Theorem 2.4, $A - A^* = O$.
-
 
 ## 7.3 Unitary Operators
 

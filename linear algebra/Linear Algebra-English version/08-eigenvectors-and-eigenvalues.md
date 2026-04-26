@@ -94,7 +94,6 @@ A linear map $L$ (or an $n \times n$ matrix $A$) can be **diagonalized** if ther
 
 > Later in this chapter we show that if $A$ is a symmetric matrix, then $L_A: \mathbf{R}^n \to \mathbf{R}^n$ can be diagonalized.
 
-
 ## 8.2 The Characteristic Polynomial
 
 ### 8.2.1 Eigenvalues and Invertibility
@@ -174,7 +173,6 @@ Eigenvalues: $1, 1\pm i$. Eigenspace bases: $X^1 = \begin{pmatrix}0\\1\\1\end{pm
 **Proof.** $\det(tI - A) = \det(B^{-1}(tI-A)B) = \det(tI - B^{-1}AB)$.
 
 Hence the characteristic polynomial of a linear operator $L: V \to V$ is well-defined (independent of the choice of basis). Theorem 2.3 also holds for operators: any linear operator on a finite dimensional complex vector space ($\dim > 0$) has a non-zero eigenvector and eigenvalue.
-
 
 ## 8.3 Eigenvalues and Eigenvectors of Symmetric Matrices
 
@@ -271,7 +269,6 @@ Unit eigenvectors: $P(\lambda) = X(\lambda)/\|X(\lambda)\|$.
 | **Maximum** of $f$ on unit circle | $\frac{3+\sqrt{10}}{2}$ |
 | **Minimum** of $f$ on unit circle | $\frac{3-\sqrt{10}}{2}$ |
 
-
 ## 8.4 Diagonalization of a Symmetric Linear Map
 
 Throughout this section, $V$ is a vector space of dimension $n$ over $\mathbf{R}$, with a positive definite scalar product.
@@ -335,7 +332,6 @@ is a diagonal matrix.
 
 **Remark.** Every real symmetric matrix $A$ can be written as ${}^tU B U$ where $B$ is diagonal and $U$ is real unitary.
 
-
 ## 8.5 The Hermitian Case
 
 Throughout this section, $V$ is a finite dimensional vector space over $\mathbf{C}$ with a positive definite hermitian product.
@@ -380,7 +376,6 @@ $$
 is a diagonal matrix.
 
 *(Proof like that of Theorem 4.4.)*
-
 
 ## 8.6 Unitary Operators
 

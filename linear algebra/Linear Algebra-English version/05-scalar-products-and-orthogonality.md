@@ -154,7 +154,6 @@ $$
 \|v\|^2 = \left\|v - \sum c_i v_i\right\|^2 + \left\|\sum c_i v_i\right\|^2 \ge \sum c_i^2.
 $$
 
-
 ## 5.2 Orthogonal Bases, Positive Definite Case
 
 ### 5.2.1 Orthogonal and Orthonormal Bases
@@ -272,7 +271,6 @@ $$
 **Theorem 2.6.** $\dim W + \dim W^\perp = \dim V$ (real or complex case).
 
 **Theorem 2.7.** $V = W \oplus W^\perp$ (real or complex case).
-
 
 ## 5.3 Application to Linear Equations; The Rank
 
@@ -447,7 +445,6 @@ $$
 This proves $c_{kl} = 0$ for all $k, l$, so $A = B$.
 
 > The second statement (isomorphism) is left as an exercise.
-
 
 ## 5.5 General Orthogonal Bases
 

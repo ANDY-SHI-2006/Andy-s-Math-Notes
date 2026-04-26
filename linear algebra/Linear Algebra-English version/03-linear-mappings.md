@@ -106,7 +106,6 @@ $$
 - $T_{u_1 + u_2} = T_{u_1} \circ T_{u_2}$
 - Inverse of $T_u$ is $T_{-u}$
 
-
 ## 3.2 Linear Mappings
 
 ### 3.2.1 Definition
@@ -207,7 +206,6 @@ $$
   F(x_1 v_1 + \cdots + x_n v_n) = x_1 w_1 + \cdots + x_n w_n = T(v).
   $$
 
-
 ## 3.3 The Kernel and Image of a Linear Map
 
 ### 3.3.1 Kernel
@@ -289,7 +287,6 @@ $$
 **Proof:**
 - If $\operatorname{Ker} L = \{O\}$: by Theorem 3.2, $\dim \operatorname{Im} L = \dim W$. By Corollary 3.5 (Chapter I), $\operatorname{Im} L = W$, so $L$ is surjective. Also injective since kernel is trivial.
 - If $\operatorname{Im} L = W$: by Theorem 3.2, $\dim \operatorname{Ker} L = 0$, so $\operatorname{Ker} L = \{O\}$. Hence $L$ is injective and surjective.
-
 
 ## 3.4 Composition and Inverse of Linear Mappings
 
@@ -382,7 +379,6 @@ $$
 But $FG \neq GF$ in general. If $F$ and $G$ commute, then arithmetic of linear maps works like arithmetic of numbers.
 
 > Powers $I, F, F^2, F^3, \dots$ commute with each other.
-
 
 ## 3.5 Geometric Applications
 

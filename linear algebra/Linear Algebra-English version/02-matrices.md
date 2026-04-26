@@ -130,7 +130,6 @@ $$
 I_n = \begin{pmatrix} 1 & 0 & \cdots & 0 \\ 0 & 1 & \cdots & 0 \\ \vdots & \vdots & & \vdots \\ 0 & 0 & \cdots & 1 \end{pmatrix}
 $$
 
-
 ## 2.2 Linear Equations
 
 ### 2.2.1 Systems of Linear Equations
@@ -196,7 +195,6 @@ B = x_1 A^1 + \cdots + x_n A^n
 $$
 
 with $x_i \in K$. Thus $X = (x_1, \dots, x_n)$ is the unique solution.
-
 
 ## 2.3 Multiplication of Matrices
 

@@ -40,7 +40,6 @@ $$
 \text{Set of solutions} = \operatorname{Ker} L_A.
 $$
 
-
 ## 4.2 The Matrix Associated with a Linear Map
 
 ### 4.2.1 Special Case — $K^n \to K$
@@ -130,7 +129,6 @@ $$
 **Proof:**
 - ($\impliedby$) If $A^1, \dots, A^n$ are independent, they form a basis of $K^n$. There exists $B$ such that $BA^j = E^j$ for all $j$, i.e. $BA = I$.
 - ($\implies$) If $A$ is invertible, $\operatorname{Ker} L_A = \{O\}$ (since $AX = O \implies X = O$). Thus $A^1, \dots, A^n$ are independent.
-
 
 ## 4.3 Bases, Matrices, and Linear Maps
 

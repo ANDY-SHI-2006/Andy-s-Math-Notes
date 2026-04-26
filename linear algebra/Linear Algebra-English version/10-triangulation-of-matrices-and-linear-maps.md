@@ -82,7 +82,6 @@ Using the existence of eigenvectors over the complex numbers, we prove that any 
 
 **Proof.** This is the standard interpretation of the change of matrices when we change bases, applied to Corollary 1.3. ∎
 
-
 ## 10.2 Theorem of Hamilton-Cayley
 
 Let $V$ be a finite dimensional vector space over a field $K$, and let $A: V \to V$ be a linear map.

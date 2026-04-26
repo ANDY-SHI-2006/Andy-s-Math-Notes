@@ -76,7 +76,6 @@ $$
 
 with integers $m_1, \dots, m_r > 0$, uniquely determined. The integer $m_i$ is called the **multiplicity** of $\alpha_i$ in $f$.
 
-
 ## 9.2 Polynomials of Matrices and Linear Maps
 
 The set of polynomials with coefficients in $K$ is denoted $K[t]$.
