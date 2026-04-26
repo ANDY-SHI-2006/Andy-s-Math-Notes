@@ -137,3 +137,22 @@ Reduce $A$ to an upper triangular matrix $U$. If $p$ interchanges and scalars $c
 $$\det A=(-1)^p(c_1c_2\cdots c_q)^{-1}\det U.$$
 
 > This formula follows from Axioms 1–3 alone; Axiom 4 is not needed for its proof.
+
+
+### 3.5 The Uniqueness Theorem
+
+From Example 3 of §3.4 and formula (3.8), for every $n\times n$ matrix $A$ there is a scalar $c$ (depending on $A$) such that
+
+$$d(A_1,\dots,A_n)=c\,d(I_1,\dots,I_n).$$
+
+This consequence uses only Axioms 1, 2, and 3.
+
+**Theorem 3.2** (Uniqueness theorem for determinants). Let $d$ be a function satisfying all four axioms for a determinant of order $n$, and let $f$ be another function satisfying Axioms 1, 2, and 3. Then for every choice of vectors $A_1,\dots,A_n$,
+
+$$f(A_1,\dots,A_n)=d(A_1,\dots,A_n)\,f(I_1,\dots,I_n).$$
+
+In particular, if $f$ also satisfies Axiom 4, then $f=d$.
+
+- **Proof sketch.** Define $g=f-d\,f(I_1,\dots,I_n)$. Both $d$ and $f$ satisfy Axioms 1–3, so $g$ does too. Hence $g(A_1,\dots,A_n)=c\,g(I_1,\dots,I_n)$ for some scalar $c$. Taking $A=I$ and using $d(I_1,\dots,I_n)=1$ (Axiom 4) gives
+  $$g(I_1,\dots,I_n)=f(I_1,\dots,I_n)-f(I_1,\dots,I_n)=0.$$
+  Therefore $g(A_1,\dots,A_n)=0$ for all $A_1,\dots,A_n$, which yields the desired relation. $\square$
