@@ -499,3 +499,42 @@ The last row states $0=31$, a contradiction; the system is inconsistent.
 ---
 
 **More equations than unknowns.** If an additional equation is also satisfied by the solution, elimination adds a row of zeros. If it is not satisfied, the bottom row becomes $[0\;\cdots\;0\mid a]$ with $a\neq0$, indicating no solution.
+
+
+### 2.19 Inverses of Square Matrices
+
+**Definition.** A square $n\times n$ matrix $A$ is **nonsingular** if there exists an $n\times n$ matrix $B$ such that $BA=I$. Such a $B$ is called a **left inverse** of $A$.
+
+**Theorem 2.20.** $A$ is nonsingular if and only if the linear transformation $T$ with matrix $m(T)=A$ is invertible. Moreover, if $BA=I$ then $B=m(T^{-1})$.
+
+- **Proof sketch.** If $BA=I$ and $T(x)=O$, let $X$ be the column of components of $x$. Then $AX=O$, so $B(AX)=O$. But $B(AX)=(BA)X=IX=X$, hence $X=O$ and $T$ is one-to-one (therefore invertible). From $TT^{-1}=I$ we get $m(T)m(T^{-1})=I$; left-multiplying by $B$ gives $m(T^{-1})=B$. The converse is immediate. $\square$
+
+**Properties.** All properties of invertible transformations carry over:
+- Left inverses are unique and are also right inverses: if $BA=I$ then $AB=I$.
+- The unique two-sided inverse is denoted $A^{-1}$; $(A^{-1})^{-1}=A$.
+
+---
+
+**Computing $A^{-1}$ by Gauss–Jordan elimination.** The equation $AA^{-1}=I$ gives, for $A^{-1}=(b_{ij})$,
+
+$$\sum_{k=1}^n a_{ik}\,b_{kj}=\delta_{ij},$$
+
+where $\delta_{ij}$ is the Kronecker delta. For each fixed $j$ this is a linear system with coefficient matrix $A$ and right-hand side the $j$th column of $I$. All $n$ systems share the same coefficient matrix, so they can be solved simultaneously by reducing the **enlarged matrix** $[A\mid I]$:
+
+$$\left[\begin{array}{ccc|ccc}a_{11}&a_{12}&a_{13}&1&0&0\\a_{21}&a_{22}&a_{23}&0&1&0\\a_{31}&a_{32}&a_{33}&0&0&1\end{array}\right]
+\longrightarrow
+\left[\begin{array}{ccc|ccc}1&0&0&b_{11}&b_{12}&b_{13}\\0&1&0&b_{21}&b_{22}&b_{23}\\0&0&1&b_{31}&b_{32}&b_{33}\end{array}\right].$$
+
+The right block is $A^{-1}$; the left block becomes $I$.
+
+> If $A$ is **singular**, the Gauss–Jordan process will produce a zero on the diagonal before $A$ can be transformed to $I$.
+
+---
+
+**Matrix form of a linear system.** A system of $n$ equations in $n$ unknowns can be written compactly as
+
+$$AX=C,$$
+
+where $X$ and $C$ are column matrices. If $A$ is nonsingular, the unique solution is
+
+$$X=A^{-1}C.$$
