@@ -28,3 +28,33 @@ for any $n$ elements $x_1,\dots,x_n\in V$ and scalars $a_1,\dots,a_n$.
 | 6 | **Projection on a subspace** $S$ | Euclidean $V\to S$ | $T(x)=$ projection of $x$ on $S$ |
 | 7 | **Differentiation operator** $D$ | differentiable functions on $(a,b)$ | $D(f)=f'$ |
 | 8 | **Integration operator** | continuous functions on $[a,b]$ | $g(x)=\int_a^x f(t)\,dt$ |
+
+
+### 2.2 Null Space and Range
+
+**Theorem 2.1.** Let $T\colon V\to W$ be a linear transformation. Then the range $T(V)$ is a subspace of $W$. Moreover, $T$ maps the zero element of $V$ onto the zero element of $W$.
+
+- **Proof sketch.** Closure under addition: $T(x)+T(y)=T(x+y)\in T(V)$. Closure under scalar multiplication: $cT(x)=T(cx)\in T(V)$. Taking $c=0$ gives $T(O)=O$. $\square$
+
+**Definition.** The set of all elements in $V$ that $T$ maps onto $O$ is called the **null space** (or **kernel**) of $T$, denoted $N(T)$:
+
+$$N(T)=\{x\in V\mid T(x)=O\}.$$
+
+**Theorem 2.2.** The null space of $T$ is a subspace of $V$.
+
+- **Proof sketch.** If $x,y\in N(T)$, then $T(x+y)=T(x)+T(y)=O$ and $T(cx)=cT(x)=O$, so $x+y$ and $cx$ belong to $N(T)$. $\square$
+
+---
+
+**Null spaces of the examples in Section 2.1**
+
+| # | Transformation | Null space $N(T)$ |
+|---|----------------|-------------------|
+| 1 | Identity $I_V$ | $\{O\}$ |
+| 2 | Zero transformation | $V$ |
+| 3 | Multiplication by $c$ | $\{O\}$ if $c\neq0$; $V$ if $c=0$ |
+| 4 | Linear equations $y_i=\sum_k a_{ik}x_k$ | Solution set of $\sum_k a_{ik}x_k=0$ for all $i$ |
+| 5 | Inner product with fixed $z$ | Set of all elements orthogonal to $z$ |
+| 6 | Projection on $S$ | $S^\perp$ (the orthogonal complement of $S$) |
+| 7 | Differentiation $D$ | All constant functions on $(a,b)$ |
+| 8 | Integration | $\{0\}$ (only the zero function) |
