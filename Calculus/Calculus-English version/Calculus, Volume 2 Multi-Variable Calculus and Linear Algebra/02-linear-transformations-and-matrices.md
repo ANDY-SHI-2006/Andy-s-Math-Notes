@@ -279,3 +279,36 @@ Hence the matrix of $T$ relative to these bases has $t_{11}=\cdots=t_{rr}=1$ and
 
 Matrix representation:
 $$\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\end{pmatrix}.$$
+
+
+### 2.13 Linear Spaces of Matrices
+
+**Definition.** An $m\times n$ **matrix** $A=(a_{ij})$ is a function on the index set $I_{m,n}=\{(i,j)\mid1\le i\le m,\;1\le j\le n\}$; the value $a_{ij}=A(i,j)$ is the $ij$**-entry**.
+
+| Term | Condition |
+|------|-----------|
+| **Square matrix** | $m=n$ |
+| **Row matrix** | $1\times n$ |
+| **Column matrix** | $m\times1$ |
+
+Two matrices are **equal** iff they have the same size and $a_{ij}=b_{ij}$ for all $(i,j)$.
+
+---
+
+**Algebraic operations on matrices**
+
+For $A=(a_{ij})$ and $B=(b_{ij})$ of the same size, and any scalar $c$:
+
+$$A+B=(a_{ij}+b_{ij}),\qquad cA=(ca_{ij}).$$
+
+**Example.**
+$$A=\begin{pmatrix}1&2&-3\\-1&0&4\end{pmatrix},\quad B=\begin{pmatrix}5&0&1\\1&-2&3\end{pmatrix}$$
+$$A+B=\begin{pmatrix}6&2&-2\\0&-2&7\end{pmatrix},\quad 2A=\begin{pmatrix}2&4&-6\\-2&0&8\end{pmatrix},\quad (-1)B=\begin{pmatrix}-5&0&-1\\-1&2&-3\end{pmatrix}.$$
+
+---
+
+**The space $M_{m,n}$.** The set of all $m\times n$ matrices (with real or complex entries) is a linear space denoted $M_{m,n}$.
+
+- **Dimension:** $\dim M_{m,n}=mn$.
+- **Standard basis:** the $mn$ matrices having a single entry $1$ and all others $0$. For $2\times3$ matrices the six basis matrices are
+  $$\begin{pmatrix}1&0&0\\0&0&0\end{pmatrix},\;\begin{pmatrix}0&1&0\\0&0&0\end{pmatrix},\;\begin{pmatrix}0&0&1\\0&0&0\end{pmatrix},\;\begin{pmatrix}0&0&0\\1&0&0\end{pmatrix},\;\begin{pmatrix}0&0&0\\0&1&0\end{pmatrix},\;\begin{pmatrix}0&0&0\\0&0&1\end{pmatrix}.$$
