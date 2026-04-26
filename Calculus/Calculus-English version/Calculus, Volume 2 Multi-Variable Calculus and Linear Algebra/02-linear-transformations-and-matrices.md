@@ -156,3 +156,33 @@ $$x\neq y\implies T(x)\neq T(y)\quad\text{equivalently}\quad T(x)=T(y)\implies x
 - **Proof sketch.** $(\Rightarrow)$ If $T(x)=T(y)$, apply a left inverse $S$: $x=S[T(x)]=S[T(y)]=y$. $(\Leftarrow)$ If $T$ is injective, each $y\in T(V)$ equals $T(x)$ for a unique $x$; define $S(y)=x$. Then $S[T(x)]=x$, so $ST=I_V$. $\square$
 
 **Definition.** If $T\colon V\to W$ is one-to-one, its unique left inverse (which is also its right inverse) is denoted $T^{-1}$. We say $T$ is **invertible** and call $T^{-1}$ the **inverse** of $T$.
+
+
+### 2.7 One-to-One Linear Transformations
+
+**Theorem 2.10.** Let $T\colon V\to W$ be a linear transformation in $\mathscr L(V,W)$. The following are equivalent:
+
+- **(a)** $T$ is one-to-one on $V$.
+- **(b)** $T$ is invertible and its inverse $T^{-1}\colon T(V)\to V$ is linear.
+- **(c)** $N(T)=\{O\}$; that is, $T(x)=O$ implies $x=O$.
+
+- **Proof sketch.**
+  - (a)$\Rightarrow$(b): If $T$ is injective, $T^{-1}$ exists (Theorem 2.9). For $u=T(x),v=T(y)\in T(V)$,
+    $$T^{-1}(au+bv)=T^{-1}\bigl(aT(x)+bT(y)\bigr)=T^{-1}\bigl(T(ax+by)\bigr)=ax+by=aT^{-1}(u)+bT^{-1}(v).$$
+  - (b)$\Rightarrow$(c): If $T(x)=O$, then $x=T^{-1}(O)=O$ since $T^{-1}$ is linear.
+  - (c)$\Rightarrow$(a): If $T(u)=T(v)$, then $T(u-v)=O$, so $u-v=O$ by (c), hence $u=v$. $\square$
+
+---
+
+**Theorem 2.11** (Finite-dimensional case; $\dim V=n$). Let $T\in\mathscr L(V,W)$. The following are equivalent:
+
+- **(a)** $T$ is one-to-one on $V$.
+- **(b)** Independence is preserved: if $e_1,\dots,e_p$ are independent in $V$, then $T(e_1),\dots,T(e_p)$ are independent in $T(V)$.
+- **(c)** $\dim T(V)=n$ (rank equals $\dim V$).
+- **(d)** Bases are mapped to bases: if $\{e_1,\dots,e_n\}$ is a basis for $V$, then $\{T(e_1),\dots,T(e_n)\}$ is a basis for $T(V)$.
+
+- **Proof sketch.**
+  - (a)$\Rightarrow$(b): $\sum c_i T(e_i)=O\implies T(\sum c_i e_i)=O\implies\sum c_i e_i=O\implies c_i=0$.
+  - (b)$\Rightarrow$(c): Take a basis $\{e_1,\dots,e_n\}$ for $V$. By (b), $\{T(e_i)\}$ are independent, so $\dim T(V)\ge n$. By Theorem 2.3, $\dim T(V)\le n$. Hence $\dim T(V)=n$.
+  - (c)$\Rightarrow$(d): $\{T(e_i)\}$ spans $T(V)$ because $T(x)=T(\sum c_i e_i)=\sum c_i T(e_i)$. Since $\dim T(V)=n$, it is a basis.
+  - (d)$\Rightarrow$(a): If $T(x)=O$ with $x=\sum c_i e_i$, then $\sum c_i T(e_i)=O$. By (d) the $T(e_i)$ are independent, so all $c_i=0$, hence $x=O$. $\square$
