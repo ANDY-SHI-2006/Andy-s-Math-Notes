@@ -252,3 +252,30 @@ With $V$ basis $(1,\,1+x,\,1+x+x^2,\,1+x+x^2+x^3)$ and $W$ basis $(1,x,x^2)$:
 $$D(1)=0,\;D(1+x)=1,\;D(1+x+x^2)=1+2x,\;D(1+x+x^2+x^3)=1+2x+3x^2,$$
 giving matrix
 $$\begin{pmatrix}0&1&1&1\\0&0&2&2\\0&0&0&3\end{pmatrix}.$$
+
+
+### 2.11 Construction of a Matrix Representation in Diagonal Form
+
+**Theorem 2.14.** Let $V$ and $W$ be finite-dimensional, $\dim V=n$, $\dim W=m$. Let $T\in\mathscr L(V,W)$ and let $r=\dim T(V)$ be its rank. Then there exist a basis $(e_1,\dots,e_n)$ for $V$ and a basis $(w_1,\dots,w_m)$ for $W$ such that
+
+$$T(e_i)=w_i\quad\text{for }i=1,\dots,r,\qquad T(e_i)=O\quad\text{for }i=r+1,\dots,n.$$
+
+Hence the matrix of $T$ relative to these bases has $t_{11}=\cdots=t_{rr}=1$ and all other entries zero.
+
+- **Proof sketch.**
+  1. *Basis for $W$.* Since $\dim T(V)=r$, pick a basis $w_1,\dots,w_r$ for $T(V)$ and extend it to a basis $(w_1,\dots,w_m)$ for $W$.
+  2. *First $r$ basis vectors of $V$.* For each $w_i$ ($i\le r$) choose $e_i\in V$ with $T(e_i)=w_i$.
+  3. *Remaining basis vectors of $V$.* Let $k=\dim N(T)=n-r$ (Theorem 2.3). Choose a basis $e_{r+1},\dots,e_{r+k}$ for $N(T)$.
+  4. *Independence.* Suppose $\sum_{i=1}^{r+k}c_i e_i=O$. Applying $T$ gives $\sum_{i=1}^r c_i w_i=O$, so $c_1=\cdots=c_r=0$. Then $\sum_{i=r+1}^{r+k}c_i e_i=O$, and since these form a basis for $N(T)$, the remaining $c_i$ are also zero. Thus $(e_1,\dots,e_{r+k})$ is a basis for $V$. $\square$
+
+**Example.** The differentiation operator $D\colon V\to W$ (polynomials of degree $\le3$ to degree $\le2$). Here $T(V)=W$, so $r=3$.
+
+| Construction | Choice |
+|-------------|--------|
+| Basis for $W$ | $(1,\;x,\;x^2)$ |
+| Pre-images in $V$ | $D(x)=1,\;D(\tfrac12x^2)=x,\;D(\tfrac13x^3)=x^2$ |
+| Basis for $N(D)$ | $(1)$ (constants) |
+| Basis for $V$ | $\bigl(x,\;\tfrac12x^2,\;\tfrac13x^3,\;1\bigr)$ |
+
+Matrix representation:
+$$\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\end{pmatrix}.$$
