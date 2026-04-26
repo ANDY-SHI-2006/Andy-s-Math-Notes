@@ -178,3 +178,23 @@ $$\det(AB)=(\det A)(\det B).$$
   One verifies that $f$ satisfies Axioms 1, 2, and 3 (multilinearity and vanishing on equal rows follow directly from the corresponding properties of $d$). By the uniqueness theorem (Theorem 3.2),
   $$f(A_1,\dots,A_n)=d(A_1,\dots,A_n)\,f(I_1,\dots,I_n),$$
   which is exactly the desired formula. $\square$
+
+
+### 3.8 The Determinant of the Inverse of a Nonsingular Matrix
+
+**Theorem 3.5.** If $A$ is nonsingular, then $\det A\neq0$ and
+
+$$\det A^{-1}=\frac1{\det A}.$$
+
+- **Proof.** From the product formula, $(\det A)(\det A^{-1})=\det(AA^{-1})=\det I=1$. Hence $\det A\neq0$ and the formula follows. $\square$
+
+> Theorem 3.5 shows that $\det A\neq0$ is a **necessary** condition for $A$ to be nonsingular. Later we prove it is also **sufficient**.
+
+
+### 3.9 Determinants and Independence of Vectors
+
+**Theorem 3.6.** A set of $n$ vectors $A_1,\dots,A_n$ in $n$-space is independent if and only if $d(A_1,\dots,A_n)\neq0$.
+
+- **Proof sketch.**
+  - ($\Rightarrow$) If the vectors are dependent, Theorem 3.1(e) gives $d=0$.
+  - ($\Leftarrow$) Assume $A_1,\dots,A_n$ are independent. Since there are $n$ independent vectors in an $n$-dimensional space, they form a basis for $V_n$. By Theorem 2.12 there is a linear transformation $T\colon V_n\to V_n$ with $T(A_k)=I_k$ ($k=1,\dots,n$). Let $B$ be the matrix of $T$. Then $A_kB=I_k$. By Lemma 3.3, $A_kB=(AB)_k$, so $AB=I$. Thus $A$ is nonsingular and $\det A\neq0$ by Theorem 3.5. $\square$
