@@ -93,3 +93,47 @@ where $I_k$ is the $k$th unit coordinate vector.
   - (e) If $A_1=\sum_{k=2}^n t_k A_k$, then by linearity in the first row
     $$d(A_1,\dots,A_n)=\sum_{k=2}^n t_k\,d(A_k,A_2,\dots,A_n)=0,$$
     since each summand has two equal rows. $\square$
+
+
+### 3.4 Computation of Determinants
+
+**Example 1** — $2\times2$ determinant. Using multilinearity and Axioms 3$'$ and 4:
+
+$$\det\begin{bmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix}=a_{11}a_{22}-a_{12}a_{21}.$$
+
+This argument also shows that a determinant function of order 2 exists and is unique.
+
+---
+
+**Example 2** — Diagonal matrix. If $A=\operatorname{diag}(a_{11},\dots,a_{nn})$, then $A_k=a_{kk}I_k$. By repeated homogeneity,
+
+$$\det A=d(a_{11}I_1,\dots,a_{nn}I_n)=a_{11}\cdots a_{nn}\,d(I_1,\dots,I_n)=a_{11}\cdots a_{nn}.$$
+
+---
+
+**Example 3** — Upper triangular matrix. Let
+
+$$U=\begin{bmatrix}u_{11}&u_{12}&\cdots&u_{1n}\\0&u_{22}&\cdots&u_{2n}\\\vdots&&\ddots&\vdots\\0&0&\cdots&u_{nn}\end{bmatrix}.$$
+
+- *Zero diagonal entry.* If some $u_{ii}=0$, the rows are dependent (the last $n-i+1$ rows have nonzero entries only in at most $n-i$ columns), so $\det U=0$ by Theorem 3.1(e).
+- *General case.* Decompose $U_1=V_1+V_1'$ with $V_1=[u_{11},0,\dots,0]$ and $V_1'=[0,u_{12},\dots,u_{1n}]$. Then
+  $$\det U=\det(V_1,U_2,\dots,U_n)+\det(V_1',U_2,\dots,U_n).$$
+  The second term is an upper triangular matrix with a zero on the diagonal, hence zero. Repeating for each row yields a diagonal matrix with the same diagonal entries, so
+
+  $$\det U=u_{11}u_{22}\cdots u_{nn}.$$
+
+---
+
+**Example 4** — Gauss–Jordan process. The three elementary row operations affect $\det A$ as follows:
+
+| Operation | Effect on determinant |
+|-----------|----------------------|
+| (1) Interchange two rows | Changes sign |
+| (2) Multiply a row by $c\neq0$ | Multiplied by $c$ |
+| (3) Add a multiple of one row to another | Unchanged |
+
+Reduce $A$ to an upper triangular matrix $U$. If $p$ interchanges and scalars $c_1,\dots,c_q$ were used in (2), then
+
+$$\det A=(-1)^p(c_1c_2\cdots c_q)^{-1}\det U.$$
+
+> This formula follows from Axioms 1–3 alone; Axiom 4 is not needed for its proof.
