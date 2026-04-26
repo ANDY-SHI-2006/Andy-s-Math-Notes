@@ -78,3 +78,35 @@ The element $x$ is an **eigenvector** belonging to $\lambda$. (By definition the
 - **Proof sketch.** $n+1$ distinct eigenvalues would give $n+1$ independent vectors in an $n$-dimensional space, a contradiction. The second statement follows from Theorems 4.1 and 4.2. $\square$
 
 > **Note.** $n$ distinct eigenvalues is a **sufficient** but not **necessary** condition for diagonalizability. The necessary and sufficient condition (Theorem 4.1) is the existence of $n$ independent eigenvectors.
+
+
+### 4.5 The Finite-Dimensional Case. Characteristic Polynomials
+
+If $\dim V=n$, the eigenvalue problem for $T\colon V\to V$ can be solved with determinants. The equation $T(x)=\lambda x$ is equivalent to
+
+$$(\lambda I-T)(x)=O.$$
+
+Let $T_\lambda=\lambda I-T$. Then $\lambda$ is an eigenvalue $\iff$ $T_\lambda$ is not invertible $\iff$ the matrix $\lambda I-A$ is singular, where $A$ is any matrix representation of $T$. By Theorem 3.13,
+
+$$\lambda\text{ is an eigenvalue}\iff\det(\lambda I-A)=0.$$
+
+---
+
+**Theorem 4.4.** For any $n\times n$ matrix $A$, the function
+
+$$f(\lambda)=\det(\lambda I-A)$$
+
+is a polynomial in $\lambda$ of degree $n$. Its leading term is $\lambda^n$ and its constant term is $f(0)=\det(-A)=(-1)^n\det A$.
+
+- **Verification.**
+  - $n=1$: $f(\lambda)=\lambda-a_{11}$.
+  - $n=2$: $f(\lambda)=(\lambda-a_{11})(\lambda-a_{22})-a_{12}a_{21}=\lambda^2-(\operatorname{tr}A)\lambda+\det A$.
+  - $n=3$: expansion shows the highest-degree term is $\lambda^3$.
+
+**Definition.** The polynomial $f(\lambda)=\det(\lambda I-A)$ is called the **characteristic polynomial** of $A$.
+
+---
+
+**Theorem 4.5.** Let $T\colon V\to V$ with $\dim V=n$, and let $A$ be a matrix representation of $T$ relative to some basis. Then the set of eigenvalues of $T$ consists of those roots of the characteristic polynomial of $A$ that lie in the scalar field $F$ ( $\mathbb R$ or $\mathbb C$).
+
+> Although $A$ depends on the basis, the set of eigenvalues of $T$ does not. Hence the roots of the characteristic polynomial are basis-independent. In fact, the characteristic polynomial itself is independent of the basis (proved later).
