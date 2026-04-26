@@ -442,3 +442,60 @@ with arbitrary scalars $t_1,\dots,t_k$.
 - Homogeneous equation $x+y=0$ has null space spanned by $(1,-1)$.
 - Particular solution: $(0,2)$.
 - General solution: $(x,y)=(0,2)+t(1,-1)$, i.e. $x=t,\;y=2-t$.
+
+
+### 2.18 Computation Techniques (Gauss–Jordan Elimination)
+
+The **Gauss–Jordan elimination method** solves a linear system by performing three **elementary row operations** on its **augmented matrix** $[A\mid c]$:
+
+1. Interchange two rows.
+2. Multiply a row by a nonzero scalar.
+3. Add a multiple of one row to another.
+
+Each operation produces an **equivalent** system (same solution set). The goal is to reduce the augmented matrix to a form from which the solution can be read off directly.
+
+---
+
+**Example 1 — Unique solution.**
+
+$$\begin{cases}2x-5y+4z=-3\\x-2y+\phantom{1}z=\phantom{-}5\\x-4y+6z=10\end{cases}$$
+
+Augmented matrix and reduction steps:
+
+$$\left[\begin{array}{rrr|r}2&-5&4&-3\\1&-2&1&5\\1&-4&6&10\end{array}\right]
+\longrightarrow
+\left[\begin{array}{rrr|r}1&-2&1&5\\0&-1&2&-13\\0&-2&5&5\end{array}\right]
+\longrightarrow
+\left[\begin{array}{rrr|r}1&-2&1&5\\0&1&-2&13\\0&0&1&31\end{array}\right]
+\longrightarrow
+\left[\begin{array}{rrr|r}1&0&0&124\\0&1&0&75\\0&0&1&31\end{array}\right].$$
+
+Solution: $x=124,\;y=75,\;z=31$.
+
+---
+
+**Example 2 — Infinitely many solutions.** The same coefficients with two additional unknowns $u,v$:
+
+$$\left[\begin{array}{rrrrr|r}1&0&0&-16&19&124\\0&1&0&-9&11&75\\0&0&1&-3&4&31\end{array}\right]$$
+
+Solving for the leading variables:
+
+$$\begin{aligned}x&=124+16u-19v,\\y&=\phantom{1}75+9u-11v,\\z&=\phantom{1}31+3u-4v.\end{aligned}$$
+
+With free parameters $u=t_1$, $v=t_2$:
+
+$$(x,y,z,u,v)=(124,75,31,0,0)+t_1(16,9,3,1,0)+t_2(-19,-11,-4,0,1).$$
+
+The first vector is a particular solution; the last two form a basis for the homogeneous solution space.
+
+---
+
+**Example 3 — No solution.** Same as Example 1 except the $(3,3)$ entry is changed from $6$ to $5$:
+
+$$\left[\begin{array}{rrr|r}1&-2&1&5\\0&1&-2&13\\0&0&0&31\end{array}\right].$$
+
+The last row states $0=31$, a contradiction; the system is inconsistent.
+
+---
+
+**More equations than unknowns.** If an additional equation is also satisfied by the solution, elimination adds a row of zeros. If it is not satisfied, the bottom row becomes $[0\;\cdots\;0\mid a]$ with $a\neq0$, indicating no solution.
