@@ -154,3 +154,26 @@ $$A=\begin{bmatrix}2&1&1\\2&3&2\\3&3&4\end{bmatrix},\qquad f(\lambda)=(\lambda-1
 | $1$ (double) | $a(1,0,-1)+b(0,1,-1)$, $a,b$ not both $0$ | $2$ |
 
 Here there are three independent eigenvectors despite only two distinct eigenvalues.
+
+
+### 4.7 Trace of a Matrix
+
+Let $f(\lambda)=\det(\lambda I-A)$ have roots $\lambda_1,\dots,\lambda_n$ (with multiplicities). Then
+
+$$f(\lambda)=(\lambda-\lambda_1)\cdots(\lambda-\lambda_n)=\lambda^n+c_{n-1}\lambda^{n-1}+\cdots+c_1\lambda+c_0.$$
+
+Comparing the two forms:
+
+- Constant term: $c_0=(-1)^n\lambda_1\cdots\lambda_n=(-1)^n\det A$, so
+  $$\lambda_1\cdots\lambda_n=\det A.$$
+- Coefficient of $\lambda^{n-1}$: $c_{n-1}=-(\lambda_1+\cdots+\lambda_n)$.
+
+**Definition.** The **trace** of $A$ is the sum of the eigenvalues:
+
+$$\operatorname{tr}A=\sum_{i=1}^n\lambda_i.$$
+
+Direct expansion of $\det(\lambda I-A)$ also shows $c_{n-1}=-(a_{11}+\cdots+a_{nn})$. Hence
+
+$$\operatorname{tr}A=\sum_{i=1}^n a_{ii}.$$
+
+> The trace equals the sum of the diagonal entries and provides a convenient numerical check for eigenvalue calculations.
