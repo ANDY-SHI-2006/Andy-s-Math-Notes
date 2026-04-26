@@ -647,3 +647,59 @@ is called the **projection of $x$ on the subspace $S$**.
 
 - This projection is the unique element in $S$ that solves the approximation problem (minimizing $\|x-s\|$).
 - The proof of this optimality property follows from the orthogonal decomposition theorem.
+
+
+### 1.14 Best Approximation by Finite-Dimensional Subspaces (textbook 1.16)
+
+**Theorem 1.16** (Approximation theorem). Let $S$ be a finite-dimensional subspace of a Euclidean space $V$, and let $x$ be any element of $V$. Then the projection of $x$ on $S$ is nearer to $x$ than any other element of $S$; that is, if $s$ is the projection of $x$ on $S$,
+
+$$\|x-s\|\le\|x-t\|\quad\text{for all }t\in S,$$
+
+with equality if and only if $t=s$.
+
+- **Proof sketch.** By Theorem 1.15 write $x=s+s^\perp$ with $s\in S$, $s^\perp\in S^\perp$. For any $t\in S$,
+
+  $$x-t=(x-s)+(s-t).$$
+
+  Since $s-t\in S$ and $x-s=s^\perp\in S^\perp$, this is an orthogonal decomposition, so the Pythagorean theorem gives
+
+  $$\|x-t\|^2=\|x-s\|^2+\|s-t\|^2\ge\|x-s\|^2,$$
+
+  with equality iff $s=t$. $\square$
+
+---
+
+**Example 1.** Approximation of continuous functions on $[0,2\pi]$ by trigonometric polynomials.
+
+Let $V=C(0,2\pi)$ with inner product $(f,g)=\int_0^{2\pi}f(x)g(x)\,dx$. The orthonormal set
+
+$$\varphi_0(x)=\frac1{\sqrt{2\pi}},\qquad\varphi_{2k-1}(x)=\frac{\cos kx}{\sqrt\pi},\qquad\varphi_{2k}(x)=\frac{\sin kx}{\sqrt\pi},\quad k\ge1$$
+
+(Equation 1.21) spans a subspace $S$ of dimension $2n+1$. Its elements are **trigonometric polynomials**.
+
+| Quantity | Formula |
+|----------|---------|
+| Projection of $f$ onto $S$ | $f_n=\displaystyle\sum_{k=0}^{2n}(f,\varphi_k)\,\varphi_k$ |
+| Fourier coefficients | $(f,\varphi_k)=\displaystyle\int_0^{2\pi}f(x)\varphi_k(x)\,dx$ |
+| Equivalent trigonometric form (1.23) | $f_n(x)=\dfrac12a_0+\displaystyle\sum_{k=1}^n\bigl(a_k\cos kx+b_k\sin kx\bigr)$ |
+| Coefficients | $a_k=\dfrac1\pi\displaystyle\int_0^{2\pi}f(x)\cos kx\,dx,\quad b_k=\dfrac1\pi\displaystyle\int_0^{2\pi}f(x)\sin kx\,dx$ |
+
+- The theorem guarantees that this $f_n$ is the best trigonometric approximation to $f$ in the $L^2$ sense (minimizing $\|f-f_n\|$).
+
+---
+
+**Example 2.** Approximation of continuous functions on $[-1,1]$ by polynomials of degree $\le n$.
+
+Let $V=C(-1,1)$ with $(f,g)=\int_{-1}^1 f(x)g(x)\,dx$. The $n+1$ normalized Legendre polynomials $\{\varphi_0,\dots,\varphi_n\}$ span a subspace $S$ of dimension $n+1$.
+
+- The projection of $f$ onto $S$ is
+
+  $$f_n=\sum_{k=0}^n(f,\varphi_k)\,\varphi_k,\qquad (f,\varphi_k)=\int_{-1}^1 f(t)\varphi_k(t)\,dt.$$
+
+- This polynomial minimizes $\|f-f_n\|$ among all polynomials of degree $\le n$.
+
+- **Specific illustration:** for $f(x)=\sin\pi x$,
+
+  $$f_1(t)=\sqrt{\frac32}\,\frac2\pi\,\varphi_1(t)=\frac3\pi\,t.$$
+
+  Since $(f,\varphi_2)=0$, this linear polynomial is also the nearest quadratic approximation.
