@@ -390,3 +390,55 @@ $$m(ST)=m(S)\,m(T).$$
 **Powers of a square matrix.** Define inductively
 
 $$A^0=I,\qquad A^n=AA^{n-1}\quad(n\ge1).$$
+
+
+### 2.17 Systems of Linear Equations
+
+A **system of $m$ linear equations in $n$ unknowns** has the form
+
+$$\sum_{k=1}^n a_{ik}\,x_k=c_i\qquad(i=1,\dots,m),$$
+
+where $A=(a_{ij})$ is the **coefficient matrix**. In matrix form,
+
+$$T(x)=c,$$
+
+with $T\colon V_n\to V_m$ the linear transformation determined by $A$ and $c=(c_1,\dots,c_m)\in V_m$.
+
+| Situation | Condition |
+|-----------|-----------|
+| No solution | $c\notin T(V)$ |
+| Exactly one solution | Exactly one $x$ maps to $c$ |
+| More than one solution | More than one $x$ maps to $c$ |
+
+**Examples.**
+
+1. **No solution:** $x+y=1,\;x+y=2$.
+2. **Unique solution:** $x+y=1,\;x-y=0\implies(x,y)=(\tfrac12,\tfrac12)$.
+3. **Infinitely many solutions:** $x+y=1$ (one equation, two unknowns).
+
+---
+
+**Homogeneous vs. nonhomogeneous systems**
+
+- **Homogeneous:** $T(x)=O$. Always has the trivial solution $x=O$; its solution set is the null space $N(T)$.
+- **Nonhomogeneous:** $T(x)=c$ with $c\neq O$.
+
+**Theorem 2.18.** Suppose the nonhomogeneous system $T(x)=c$ has a particular solution $b$.
+
+- **(a)** If $x$ solves $T(x)=c$, then $v=x-b$ solves $T(v)=O$.
+- **(b)** If $v$ solves $T(v)=O$, then $x=v+b$ solves $T(x)=c$.
+
+- **Proof sketch.** $T(v)=T(x-b)=T(x)-T(b)=c-c=O$, and conversely $T(v+b)=T(v)+T(b)=O+c=c$. $\square$
+
+**General solution structure.** Let $k=\dim N(T)$ (the nullity) and let $v_1,\dots,v_k$ be a basis for $N(T)$. If $b$ is one particular solution of $T(x)=c$, then every solution has the form
+
+$$x=b+t_1v_1+\cdots+t_kv_k,$$
+
+with arbitrary scalars $t_1,\dots,t_k$.
+
+**Theorem 2.19** restates this: the general solution of a nonhomogeneous system is a particular solution plus the general solution of the associated homogeneous system.
+
+**Example.** For $x+y=2$:
+- Homogeneous equation $x+y=0$ has null space spanned by $(1,-1)$.
+- Particular solution: $(0,2)$.
+- General solution: $(x,y)=(0,2)+t(1,-1)$, i.e. $x=t,\;y=2-t$.
