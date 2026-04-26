@@ -148,7 +148,7 @@ $$
 - $n$ = number of **unknowns**; $m$ = number of **equations**.
 - $(a_{ij})$ = **matrix of coefficients**.
 
-The **homogeneous system** associated with (*):
+The **homogeneous system** associated with (\*):
 
 $$
 \begin{cases}
@@ -158,11 +158,11 @@ a_{m1}x_1 + \cdots + a_{mn}x_n = 0
 \end{cases} \tag{**}
 $$
 
-The system (**) always has the **trivial solution** $x_1 = \cdots = x_n = 0$. A solution with some $x_i \neq 0$ is **non-trivial**.
+The system (\*\*) always has the **trivial solution** $x_1 = \cdots = x_n = 0$. A solution with some $x_i \neq 0$ is **non-trivial**.
 
 ### 2.2.2 Column Vector Interpretation
 
-The homogeneous system (**) can be rewritten using column vectors $A^1, \dots, A^n$ of $A$:
+The homogeneous system (\*\*) can be rewritten using column vectors $A^1, \dots, A^n$ of $A$:
 
 $$
 x_1 A^1 + \cdots + x_n A^n = O.
@@ -178,7 +178,7 @@ A non-trivial solution is an $n$-tuple $X \neq O$ giving a linear dependence rel
 
 ### 2.2.4 The Non-Homogeneous System
 
-Let $B = \begin{pmatrix} b_1 \\ \vdots \\ b_m \end{pmatrix}$. The system (*) can be written as:
+Let $B = \begin{pmatrix} b_1 \\ \vdots \\ b_m \end{pmatrix}$. The system (\*) can be written as:
 
 $$
 x_1 A^1 + \cdots + x_n A^n = B.
@@ -186,7 +186,7 @@ $$
 
 ### 2.2.5 Theorem 2.2 — Uniqueness of Solution
 
-**Theorem 2.2.** Assume $m = n$ in (*) and that $A^1, \dots, A^n$ are linearly independent. Then (*) has a **unique solution** in $K$.
+**Theorem 2.2.** Assume $m = n$ in (\*) and that $A^1, \dots, A^n$ are linearly independent. Then (\*) has a **unique solution** in $K$.
 
 **Proof:** Since $A^1, \dots, A^n$ are linearly independent and $\dim K^n = n$, they form a basis of $K^n$. Hence any vector $B$ has a unique expression:
 
