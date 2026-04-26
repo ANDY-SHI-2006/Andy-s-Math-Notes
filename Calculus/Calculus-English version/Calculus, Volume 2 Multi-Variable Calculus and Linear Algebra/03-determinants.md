@@ -198,3 +198,20 @@ $$\det A^{-1}=\frac1{\det A}.$$
 - **Proof sketch.**
   - ($\Rightarrow$) If the vectors are dependent, Theorem 3.1(e) gives $d=0$.
   - ($\Leftarrow$) Assume $A_1,\dots,A_n$ are independent. Since there are $n$ independent vectors in an $n$-dimensional space, they form a basis for $V_n$. By Theorem 2.12 there is a linear transformation $T\colon V_n\to V_n$ with $T(A_k)=I_k$ ($k=1,\dots,n$). Let $B$ be the matrix of $T$. Then $A_kB=I_k$. By Lemma 3.3, $A_kB=(AB)_k$, so $AB=I$. Thus $A$ is nonsingular and $\det A\neq0$ by Theorem 3.5. $\square$
+
+
+### 3.10 The Determinant of a Block-Diagonal Matrix
+
+A **block-diagonal matrix** with diagonal blocks $A$ and $B$ has the form
+
+$$C=\begin{bmatrix}A&O\\O&B\end{bmatrix}.$$
+
+**Theorem 3.7.** For any square matrices $A$ ($n\times n$) and $B$ ($m\times m$),
+
+$$\det\begin{bmatrix}A&O\\O&B\end{bmatrix}=(\det A)(\det B).$$
+
+- **Proof sketch.** Factor the block-diagonal matrix:
+  $$\begin{bmatrix}A&O\\O&B\end{bmatrix}=\begin{bmatrix}A&O\\O&I_m\end{bmatrix}\begin{bmatrix}I_n&O\\O&B\end{bmatrix}.$$
+  By the product formula,
+  $$\det C=\det\begin{bmatrix}A&O\\O&I_m\end{bmatrix}\det\begin{bmatrix}I_n&O\\O&B\end{bmatrix}.$$
+  Regard $\det\begin{bmatrix}A&O\\O&I_m\end{bmatrix}$ as a function of the $n$ rows of $A$. Because of the zero block in the upper right, this function satisfies all four determinant axioms of order $n$; by uniqueness it equals $\det A$. Similarly the second factor equals $\det B$. Multiplying gives the result. $\square$
