@@ -58,3 +58,34 @@ $$N(T)=\{x\in V\mid T(x)=O\}.$$
 | 6 | Projection on $S$ | $S^\perp$ (the orthogonal complement of $S$) |
 | 7 | Differentiation $D$ | All constant functions on $(a,b)$ |
 | 8 | Integration | $\{0\}$ (only the zero function) |
+
+
+### 2.3 Nullity and Rank
+
+**Definitions.** For a linear transformation $T\colon V\to W$:
+- The **nullity** of $T$ is $\dim N(T)$.
+- The **rank** of $T$ is $\dim T(V)$.
+
+**Theorem 2.3** (Nullity plus rank theorem). If $V$ is finite-dimensional, then $T(V)$ is also finite-dimensional, and
+
+$$\dim N(T)+\dim T(V)=\dim V.$$
+
+In other words, $\text{nullity}+\text{rank}=\dim V$.
+
+- **Proof sketch.** Let $n=\dim V$ and let $\{e_1,\dots,e_k\}$ be a basis for $N(T)$, so $k=\dim N(T)$. Extend it to a basis for $V$:
+
+  $$e_1,\dots,e_k,\;e_{k+1},\dots,e_{k+r},\qquad k+r=n.$$
+
+  **Spanning.** For any $y=T(x)\in T(V)$, write $x=\sum_{i=1}^{k+r}c_i e_i$. Then
+
+  $$y=T(x)=\sum_{i=1}^{k+r}c_i T(e_i)=\sum_{i=k+1}^{k+r}c_i T(e_i),$$
+
+  since $T(e_1)=\cdots=T(e_k)=O$. Thus $\{T(e_{k+1}),\dots,T(e_{k+r})\}$ spans $T(V)$.
+
+  **Independence.** Suppose $\sum_{i=k+1}^{k+r}c_i T(e_i)=O$. Then $T\bigl(\sum_{i=k+1}^{k+r}c_i e_i\bigr)=O$, so $\sum_{i=k+1}^{k+r}c_i e_i\in N(T)$. Hence it can be written as $\sum_{i=1}^k c_i e_i$, giving
+
+  $$\sum_{i=1}^k c_i e_i-\sum_{i=k+1}^{k+r}c_i e_i=O.$$
+
+  Since the full basis is independent, all $c_i=0$. Therefore $\{T(e_{k+1}),\dots,T(e_{k+r})\}$ is a basis for $T(V)$, and $\dim T(V)=r=n-k$. $\square$
+
+> **Note.** If $V$ is infinite-dimensional, then at least one of $N(T)$ or $T(V)$ is infinite-dimensional.
