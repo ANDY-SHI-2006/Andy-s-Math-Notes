@@ -186,3 +186,26 @@ $$x\neq y\implies T(x)\neq T(y)\quad\text{equivalently}\quad T(x)=T(y)\implies x
   - (b)$\Rightarrow$(c): Take a basis $\{e_1,\dots,e_n\}$ for $V$. By (b), $\{T(e_i)\}$ are independent, so $\dim T(V)\ge n$. By Theorem 2.3, $\dim T(V)\le n$. Hence $\dim T(V)=n$.
   - (c)$\Rightarrow$(d): $\{T(e_i)\}$ spans $T(V)$ because $T(x)=T(\sum c_i e_i)=\sum c_i T(e_i)$. Since $\dim T(V)=n$, it is a basis.
   - (d)$\Rightarrow$(a): If $T(x)=O$ with $x=\sum c_i e_i$, then $\sum c_i T(e_i)=O$. By (d) the $T(e_i)$ are independent, so all $c_i=0$, hence $x=O$. $\square$
+
+
+### 2.9 Linear Transformations with Prescribed Values
+
+**Theorem 2.12.** Let $\{e_1,\dots,e_n\}$ be a basis for an $n$-dimensional linear space $V$, and let $u_1,\dots,u_n$ be arbitrary elements in a linear space $W$. Then there exists one and only one linear transformation $T\colon V\to W$ such that
+
+$$T(e_k)=u_k\qquad\text{for }k=1,2,\dots,n.$$
+
+Moreover, if $x=\sum_{k=1}^n x_k e_k$, then
+
+$$T(x)=\sum_{k=1}^n x_k u_k.$$
+
+- **Proof sketch.**
+  - *Existence:* Define $T$ by the formula above; linearity follows directly. For $x=e_k$, all $x_j=0$ except $x_k=1$, so $T(e_k)=u_k$.
+  - *Uniqueness:* If $T'$ also satisfies $T'(e_k)=u_k$, then for any $x=\sum x_k e_k$,
+    $$T'(x)=\sum_{k=1}^n x_k T'(e_k)=\sum_{k=1}^n x_k u_k=T(x).$$
+    Hence $T'=T$. $\square$
+
+**Example.** Determine $T\colon V_2\to V_2$ such that $T(\boldsymbol i)=\boldsymbol i+\boldsymbol j$ and $T(\boldsymbol j)=2\boldsymbol i-\boldsymbol j$.
+
+If $x=x_1\boldsymbol i+x_2\boldsymbol j$, then by linearity
+
+$$T(x)=x_1T(\boldsymbol i)+x_2T(\boldsymbol j)=x_1(\boldsymbol i+\boldsymbol j)+x_2(2\boldsymbol i-\boldsymbol j)=(x_1+2x_2)\boldsymbol i+(x_1-x_2)\boldsymbol j.$$
