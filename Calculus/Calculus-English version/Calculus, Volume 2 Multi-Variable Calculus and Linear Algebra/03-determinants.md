@@ -156,3 +156,25 @@ In particular, if $f$ also satisfies Axiom 4, then $f=d$.
 - **Proof sketch.** Define $g=f-d\,f(I_1,\dots,I_n)$. Both $d$ and $f$ satisfy Axioms 1–3, so $g$ does too. Hence $g(A_1,\dots,A_n)=c\,g(I_1,\dots,I_n)$ for some scalar $c$. Taking $A=I$ and using $d(I_1,\dots,I_n)=1$ (Axiom 4) gives
   $$g(I_1,\dots,I_n)=f(I_1,\dots,I_n)-f(I_1,\dots,I_n)=0.$$
   Therefore $g(A_1,\dots,A_n)=0$ for all $A_1,\dots,A_n$, which yields the desired relation. $\square$
+
+
+### 3.7 The Product Formula for Determinants
+
+**Lemma 3.3.** If $A$ is $m\times n$ and $B$ is $n\times p$, then the $i$th row of the product $AB$ is the product of the $i$th row of $A$ with $B$:
+
+$$(AB)_i=A_iB.$$
+
+- **Proof sketch.** The $(i,j)$-entry of $AB$ is $c_{ij}=A_i\cdot B^j$, the dot product of the $i$th row of $A$ with the $j$th column of $B$. Hence
+  $$C_i=[A_i\cdot B^1,\dots,A_i\cdot B^p]=A_iB.\quad\square$$
+
+**Theorem 3.4** (Product formula for determinants). For any $n\times n$ matrices $A$ and $B$,
+
+$$\det(AB)=(\det A)(\det B).$$
+
+- **Proof sketch.** By Lemma 3.3 we must show
+  $$d(A_1B,\dots,A_nB)=d(A_1,\dots,A_n)\,d(B_1,\dots,B_n).$$
+  Since $B_i=(IB)_i=I_iB$, the right-hand side equals $d(A_1,\dots,A_n)\,d(I_1B,\dots,I_nB)$. Fix $B$ and define
+  $$f(A_1,\dots,A_n)=d(A_1B,\dots,A_nB).$$
+  One verifies that $f$ satisfies Axioms 1, 2, and 3 (multilinearity and vanishing on equal rows follow directly from the corresponding properties of $d$). By the uniqueness theorem (Theorem 3.2),
+  $$f(A_1,\dots,A_n)=d(A_1,\dots,A_n)\,f(I_1,\dots,I_n),$$
+  which is exactly the desired formula. $\square$
