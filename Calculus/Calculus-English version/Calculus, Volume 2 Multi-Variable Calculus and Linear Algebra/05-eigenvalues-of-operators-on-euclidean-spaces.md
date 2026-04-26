@@ -189,3 +189,40 @@ $$C=\frac1{\sqrt5}\begin{pmatrix}2&1\\-1&2\end{pmatrix},\qquad C^{\!t}AC=\begin{
 - $A=S+K$ where $S=\tfrac12(A+A^t)$ is symmetric and $K=\tfrac12(A-A^t)$ is skew-symmetric.
 
 **Example.** If $A$ is orthogonal, then $1=\det(AA^t)=(\det A)^2$, so $\det A=\pm1$.
+
+### 5.12 Quadratic Forms
+
+Let $V$ be a **real** Euclidean space and let $T:V\to V$ be a symmetric operator ($(T(x),y)=(x,T(y))$). The real-valued function
+$$Q(x)=(T(x),x)$$
+is called the **quadratic form associated with $T$**.
+
+**Theorem 5.8.** Let $(e_1,\dots,e_n)$ be an orthonormal basis for $V$, $T$ symmetric with matrix $A=(a_{ij})$. Then
+$$Q(x)=\sum_{i=1}^n\sum_{j=1}^n a_{ij}x_i x_j \quad\text{if } x=\sum_{i=1}^n x_i e_i.\tag{5.7}$$
+
+- *Proof sketch:* $T(x)=\sum x_i T(e_i)$; then $(T(x),x)=\sum_{i,j}x_i x_j(T(e_i),e_j)=\sum_{i,j}a_{ij}x_i x_j$ since $a_{ij}=(T(e_i),e_j)$.
+
+**Definition.** Given any orthonormal basis and any $n\times n$ matrix $A=(a_{ij})$, the function
+$$Q(x)=\sum_{i=1}^n\sum_{j=1}^n a_{ij}x_i x_j\tag{5.8}$$
+is the **quadratic form associated with $A$**.
+
+- If $A$ is diagonal, $Q(x)=\sum_{i=1}^n a_{ii}x_i^2$, called a **diagonal form**.
+
+**Theorem 5.9.** Let $X=[x_1,\dots,x_n]$ be a $1\times n$ row matrix. Then $XAX^t$ is a $1\times 1$ matrix with entry
+$$\sum_{i=1}^n\sum_{j=1}^n a_{ij}x_i x_j.\tag{5.9}$$
+
+- *Proof sketch:* $XA=[y_1,\dots,y_n]$ with $y_j=\sum_i x_i a_{ij}$; then $XAX^t=\sum_j y_j x_j=\sum_{i,j}a_{ij}x_i x_j$.
+
+It is customary to identify the $1\times 1$ matrix with its entry and write simply $Q(x)=XAX^t$.
+
+**Example 1.** $A=\begin{bmatrix}1&-1\\-3&5\end{bmatrix}$, $X=[x_1,x_2]$.
+$$XAX^t=x_1^2-4x_1x_2+5x_2^2.$$
+
+**Example 2.** $B=\begin{bmatrix}1&-2\\-2&5\end{bmatrix}$, $X=[x_1,x_2]$.
+$$XBX^t=x_1^2-4x_1x_2+5x_2^2.$$
+
+- Different matrices can yield the same quadratic form; only the symmetric part matters.
+
+**Theorem 5.10.** For any $n\times n$ matrix $A$ and row $X$,
+$$XAX^t=XBX^t,\quad B=\tfrac12(A+A^t).$$
+
+- *Proof sketch:* $(XAX^t)^t=XA^tX^t$, so $XAX^t=\frac12XAX^t+\frac12XA^tX^t=XBX^t$.
