@@ -659,6 +659,7 @@ $$
 $$
 
 so the first two rows are linearly independent. Hence $\operatorname{rank} C = 2$. (Indeed, row 3 = row 1 + row 2.)
+
 ---
 
 [<- Previous: 5. Scalar Products and Orthogonality](05-scalar-products-and-orthogonality.md) | [Next: 7. Symmetric, Hermitian, and Unitary Operators ->](07-symmetric-hermitian-and-unitary-operators.md)

@@ -403,6 +403,7 @@ V &= V' \oplus U_{j_1} \oplus \cdots \oplus U_{j_l} \\
 $$
 
 giving the desired expression of $V$ as a direct sum of cyclic subspaces. ∎
+
 ---
 
 [<- Previous: 10. Triangulation of Matrices and Linear Maps](10-triangulation-of-matrices-and-linear-maps.md) | [Next: 12. Convex Sets ->](12-convex-sets.md)

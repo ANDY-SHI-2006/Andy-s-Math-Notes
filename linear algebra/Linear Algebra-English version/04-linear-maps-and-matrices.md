@@ -237,6 +237,7 @@ Two matrices $M, M'$ are **similar** (over $K$) if there exists invertible $N$ s
 $$
 M' = N^{-1} M N.
 $$
+
 ---
 
 [<- Previous: 3. Linear Mappings](03-linear-mappings.md) | [Next: 5. Scalar Products and Orthogonality ->](05-scalar-products-and-orthogonality.md)

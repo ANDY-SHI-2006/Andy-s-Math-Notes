@@ -239,6 +239,7 @@ For $V = \mathbf{C}^n$ with the standard hermitian form, a complex matrix $A$ is
 | **(b)** | If $\{w_1, \dots, w_n\}$ is another orthonormal basis and $Av_i = w_i$ for all $i$, then $A$ is unitary. |
 
 **Proof.** Immediate from the definitions.
+
 ---
 
 [<- Previous: 6. Determinants](06-determinants.md) | [Next: 8. Eigenvectors and Eigenvalues ->](08-eigenvectors-and-eigenvalues.md)
