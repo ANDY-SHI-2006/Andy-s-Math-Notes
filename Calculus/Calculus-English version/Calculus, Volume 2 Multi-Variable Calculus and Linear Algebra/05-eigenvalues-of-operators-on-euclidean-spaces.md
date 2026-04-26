@@ -90,3 +90,17 @@ Hence:
 
 **Example.** For the Sturm–Liouville equation $(pf')'+qf=\lambda f$ with boundary conditions $p(a)f(a)=p(b)f(b)=0$, any two eigenfunctions belonging to distinct eigenvalues are orthogonal. In particular, for $f''+k^2f=0$ on $[0,\pi]$ with $f(0)=f(\pi)=0$, the nonzero solutions are $f(t)=\sin nt$ ($n=\pm1,\pm2,\dots$). Theorem 5.3 yields the familiar orthogonality relation
   $$\int_0^\pi\sin nt\,\sin mt\,dt=0\qquad(m\neq n).$$
+
+
+### 5.6 Existence of an Orthonormal Set of Eigenvectors
+
+**Theorem 5.4.** Let $\dim V=n$ and let $T\colon V\to V$ be Hermitian or skew-Hermitian. Then there exist $n$ eigenvectors $u_1,\dots,u_n$ of $T$ which form an **orthonormal basis** for $V$. Hence the matrix of $T$ relative to this basis is the diagonal matrix $\Lambda=\operatorname{diag}(\lambda_1,\dots,\lambda_n)$.
+
+- **Proof sketch** (induction on $n$).
+  - $n=1$: any eigenvector of norm 1 is an orthonormal basis.
+  - Assume the theorem holds for dimension $n-1$. Choose an eigenvalue $\lambda_1$ of $T$ and a corresponding eigenvector $u_1$ of norm 1. Let $S^\perp=\{x\in V\mid(x,u_1)=0\}$.
+  - *Dimension.* Extend $u_1$ to a basis and orthonormalize; then $S^\perp$ is spanned by the remaining $n-1$ vectors, so $\dim S^\perp=n-1$.
+  - *Invariance.* If $x\in S^\perp$ and $T$ is Hermitian,
+    $$(T(x),u_1)=(x,T(u_1))=(x,\lambda_1u_1)=\lambda_1(x,u_1)=0,$$
+    so $T(x)\in S^\perp$. (A similar calculation holds for skew-Hermitian $T$.)
+  - Apply the induction hypothesis on $S^\perp$ to obtain $n-1$ orthonormal eigenvectors $u_2,\dots,u_n$. Then $(u_1,\dots,u_n)$ is an orthonormal basis for $V$. $\square$
