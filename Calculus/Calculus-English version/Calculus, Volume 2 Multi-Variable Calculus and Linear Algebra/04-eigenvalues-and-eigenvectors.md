@@ -110,3 +110,47 @@ is a polynomial in $\lambda$ of degree $n$. Its leading term is $\lambda^n$ and 
 **Theorem 4.5.** Let $T\colon V\to V$ with $\dim V=n$, and let $A$ be a matrix representation of $T$ relative to some basis. Then the set of eigenvalues of $T$ consists of those roots of the characteristic polynomial of $A$ that lie in the scalar field $F$ ( $\mathbb R$ or $\mathbb C$).
 
 > Although $A$ depends on the basis, the set of eigenvalues of $T$ does not. Hence the roots of the characteristic polynomial are basis-independent. In fact, the characteristic polynomial itself is independent of the basis (proved later).
+
+
+### 4.6 Calculation of Eigenvalues and Eigenvectors in the Finite-Dimensional Case
+
+Eigenvalues are the roots of $f(\lambda)=\det(\lambda I-A)$. For each eigenvalue $\lambda$, the eigenvectors are the nonzero solutions of
+
+$$AX=\lambda X\qquad\text{or}\qquad(\lambda I-A)X=O.$$
+
+---
+
+**Example 1** — Distinct eigenvalues.
+$$A=\begin{bmatrix}2&1&1\\2&3&4\\-1&-1&-2\end{bmatrix},\qquad f(\lambda)=(\lambda-1)(\lambda+1)(\lambda-3).$$
+
+| $\lambda$ | Eigenvectors | $\dim E(\lambda)$ |
+|-----------|-------------|-------------------|
+| $1$ | $t(1,-1,0)$, $t\neq0$ | $1$ |
+| $-1$ | $t(0,1,-1)$, $t\neq0$ | $1$ |
+| $3$ | $t(2,3,-1)$, $t\neq0$ | $1$ |
+
+The three eigenvectors are independent (Theorem 4.2).
+
+---
+
+**Example 2** — Repeated eigenvalue, one-dimensional eigenspace.
+$$A=\begin{bmatrix}2&-1&1\\0&3&-1\\2&1&3\end{bmatrix},\qquad f(\lambda)=(\lambda-2)^2(\lambda-4).$$
+
+| $\lambda$ | Eigenvectors | $\dim E(\lambda)$ |
+|-----------|-------------|-------------------|
+| $2$ (double) | $t(-1,1,1)$, $t\neq0$ | $1$ |
+| $4$ | $t(1,-1,1)$, $t\neq0$ | $1$ |
+
+Even though $\lambda=2$ is a double root, its eigenspace is only one-dimensional.
+
+---
+
+**Example 3** — Repeated eigenvalue, two-dimensional eigenspace.
+$$A=\begin{bmatrix}2&1&1\\2&3&2\\3&3&4\end{bmatrix},\qquad f(\lambda)=(\lambda-1)^2(\lambda-7).$$
+
+| $\lambda$ | Eigenvectors | $\dim E(\lambda)$ |
+|-----------|-------------|-------------------|
+| $7$ | $t(1,2,3)$, $t\neq0$ | $1$ |
+| $1$ (double) | $a(1,0,-1)+b(0,1,-1)$, $a,b$ not both $0$ | $2$ |
+
+Here there are three independent eigenvectors despite only two distinct eigenvalues.
