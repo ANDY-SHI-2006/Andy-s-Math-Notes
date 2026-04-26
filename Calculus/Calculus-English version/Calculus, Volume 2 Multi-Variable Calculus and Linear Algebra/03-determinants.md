@@ -281,3 +281,41 @@ $$\det A=\det A^t.$$
 - **Proof sketch** (induction on $n$). The cases $n=1,2$ are immediate. Assume the theorem holds for order $n-1$, let $B=A^t=(b_{ij})$, and expand:
   $$\det A=\sum_{j=1}^n(-1)^{j+1}a_{j1}\det A_{j1},\qquad \det B=\sum_{j=1}^n(-1)^{j+1}b_{1j}\det B_{1j}.$$
   By definition of transpose, $b_{1j}=a_{j1}$ and $B_{1j}=(A_{j1})^t$. The induction hypothesis gives $\det B_{1j}=\det A_{j1}$. Hence the two sums are equal term by term, so $\det A=\det B$. $\square$
+
+
+### 3.15 The Cofactor Matrix
+
+Recall the **cofactor** of $a_{ij}$:
+
+$$\operatorname{cof}a_{ij}=(-1)^{i+j}\det A_{ij}.$$
+
+**Definition.** The **cofactor matrix** $\operatorname{cof}A$ is the matrix whose $(i,j)$-entry is $\operatorname{cof}a_{ij}$. (Its transpose is often called the **adjugate** of $A$.)
+
+**Theorem 3.12.** For any $n\times n$ matrix $A$ ($n\ge2$),
+
+$$A(\operatorname{cof}A)^t=(\det A)I.$$
+
+In particular, if $\det A\neq0$,
+
+$$A^{-1}=\frac1{\det A}(\operatorname{cof}A)^t.$$
+
+- **Proof sketch.** Expanding $\det A$ along row $k$ gives $\det A=\sum_j a_{kj}\operatorname{cof}a_{kj}$. If $i\neq k$, let $B$ be $A$ with row $i$ replaced by row $k$; then $\det B=0$ and expanding along row $i$ yields $\sum_j a_{kj}\operatorname{cof}a_{ij}=0$. Hence
+  $$\sum_{j=1}^n a_{kj}\operatorname{cof}a_{ij}=\begin{cases}\det A&i=k,\\0&i\neq k,\end{cases}$$
+  which is exactly the $(k,i)$-entry of $A(\operatorname{cof}A)^t$. $\square$
+
+**Theorem 3.13.** A square matrix $A$ is nonsingular if and only if $\det A\neq0$.
+
+
+### 3.16 Cramer's Rule
+
+**Theorem 3.14** (Cramer's rule). If the system $\sum_{j=1}^n a_{ij}x_j=b_i$ ($i=1,\dots,n$) has a nonsingular coefficient matrix $A$, its unique solution is
+
+$$x_j=\frac1{\det A}\sum_{k=1}^n b_k\operatorname{cof}a_{kj}\qquad(j=1,\dots,n).$$
+
+Equivalently,
+
+$$x_j=\frac{\det C_j}{\det A},$$
+
+where $C_j$ is the matrix obtained from $A$ by replacing column $j$ with the column vector $B=(b_1,\dots,b_n)$.
+
+- **Proof sketch.** In matrix form $AX=B$, so $X=A^{-1}B=\frac1{\det A}(\operatorname{cof}A)^tB$. The $j$th component of this vector is the formula above. $\square$
