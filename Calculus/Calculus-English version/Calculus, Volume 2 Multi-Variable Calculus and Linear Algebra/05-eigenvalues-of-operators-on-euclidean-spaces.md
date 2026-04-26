@@ -64,3 +64,29 @@ Hence:
    Then $T$ is symmetric on $V$. Its eigenfunctions are the nonzero solutions of
    $$(pf')'+qf=\lambda f$$
    satisfying the above boundary conditions.
+
+
+### 5.3 Eigenvalues and Eigenvectors of Hermitian and Skew-Hermitian Operators
+
+**Theorem 5.2.** Assume $T$ has an eigenvalue $\lambda$.
+
+- **(a)** If $T$ is Hermitian, $\lambda$ is real: $\lambda=\bar\lambda$.
+- **(b)** If $T$ is skew-Hermitian, $\lambda$ is pure imaginary: $\lambda=-\bar\lambda$.
+
+- **Proof.** From Theorem 5.1,
+  $$\lambda=\frac{(T(x),x)}{(x,x)},\qquad\bar\lambda=\frac{(x,T(x))}{(x,x)}.$$
+  For Hermitian $T$ we have $(T(x),x)=(x,T(x))$, so $\lambda=\bar\lambda$. For skew-Hermitian $T$ we have $(T(x),x)=-(x,T(x))$, so $\lambda=-\bar\lambda$. $\square$
+
+> In the real case, a symmetric operator has real eigenvalues (no new restriction). A real skew-symmetric operator must have eigenvalues that are both real and pure imaginary, hence all its eigenvalues are $0$ (if any exist).
+
+
+### 5.4 Orthogonality of Eigenvectors Corresponding to Distinct Eigenvalues
+
+**Theorem 5.3.** Let $T$ be Hermitian or skew-Hermitian, and let $\lambda,\mu$ be distinct eigenvalues with eigenvectors $x,y$. Then $x$ and $y$ are orthogonal: $(x,y)=0$.
+
+- **Proof.** We have
+  $$(T(x),y)=(\lambda x,y)=\lambda(x,y),\qquad(x,T(y))=(x,\mu y)=\bar\mu(x,y).$$
+  If $T$ is Hermitian, $\lambda(x,y)=\bar\mu(x,y)=\mu(x,y)$; since $\lambda\neq\mu$, $(x,y)=0$. If $T$ is skew-Hermitian, $\lambda(x,y)=-\bar\mu(x,y)=\mu(x,y)$, and again $(x,y)=0$. $\square$
+
+**Example.** For the Sturm–Liouville equation $(pf')'+qf=\lambda f$ with boundary conditions $p(a)f(a)=p(b)f(b)=0$, any two eigenfunctions belonging to distinct eigenvalues are orthogonal. In particular, for $f''+k^2f=0$ on $[0,\pi]$ with $f(0)=f(\pi)=0$, the nonzero solutions are $f(t)=\sin nt$ ($n=\pm1,\pm2,\dots$). Theorem 5.3 yields the familiar orthogonality relation
+  $$\int_0^\pi\sin nt\,\sin mt\,dt=0\qquad(m\neq n).$$
