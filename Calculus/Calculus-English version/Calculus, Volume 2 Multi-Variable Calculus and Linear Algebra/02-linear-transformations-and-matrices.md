@@ -312,3 +312,32 @@ $$A+B=\begin{pmatrix}6&2&-2\\0&-2&7\end{pmatrix},\quad 2A=\begin{pmatrix}2&4&-6\
 - **Dimension:** $\dim M_{m,n}=mn$.
 - **Standard basis:** the $mn$ matrices having a single entry $1$ and all others $0$. For $2\times3$ matrices the six basis matrices are
   $$\begin{pmatrix}1&0&0\\0&0&0\end{pmatrix},\;\begin{pmatrix}0&1&0\\0&0&0\end{pmatrix},\;\begin{pmatrix}0&0&1\\0&0&0\end{pmatrix},\;\begin{pmatrix}0&0&0\\1&0&0\end{pmatrix},\;\begin{pmatrix}0&0&0\\0&1&0\end{pmatrix},\;\begin{pmatrix}0&0&0\\0&0&1\end{pmatrix}.$$
+
+
+### 2.14 Isomorphism between Linear Transformations and Matrices
+
+Fix bases $(e_1,\dots,e_n)$ for $V$ and $(w_1,\dots,w_m)$ for $W$. For $T\in\mathscr L(V,W)$ write
+
+$$T(e_k)=\sum_{i=1}^m t_{ik}\,w_i\qquad(k=1,\dots,n)$$
+
+and define $m(T)=(t_{ik})$, the $m\times n$ matrix representation of $T$ relative to these bases. This defines a map
+
+$$m\colon\mathscr L(V,W)\to M_{m,n}.$$
+
+**Theorem 2.15** (Isomorphism theorem). For all $S,T\in\mathscr L(V,W)$ and all scalars $c$:
+
+$$m(S+T)=m(S)+m(T),\qquad m(cT)=c\,m(T),$$
+
+and
+
+$$m(S)=m(T)\implies S=T.$$
+
+Hence $m$ is a one-to-one linear transformation from $\mathscr L(V,W)$ onto $M_{m,n}$.
+
+- **Proof sketch.** If $S(e_k)=\sum_i s_{ik}w_i$ and $T(e_k)=\sum_i t_{ik}w_i$, then
+  $$(S+T)(e_k)=\sum_i(s_{ik}+t_{ik})w_i,\qquad (cT)(e_k)=\sum_i(ct_{ik})w_i,$$
+  so the entries of $m(S+T)$ and $m(cT)$ are exactly $s_{ik}+t_{ik}$ and $ct_{ik}$. If $m(S)=m(T)$, then $S(e_k)=T(e_k)$ for every basis element, so $S=T$. Since every $m\times n$ matrix defines a unique linear transformation (Theorem 2.12), $m$ is onto. $\square$
+
+> The map $m$ is called an **isomorphism**; the spaces $\mathscr L(V,W)$ and $M_{m,n}$ are **isomorphic**. Consequently, $\dim\mathscr L(V,W)=\dim M_{m,n}=mn$.
+
+**Identity matrix.** If $V=W$ and the same basis is used, the matrix of the identity transformation $I\colon V\to V$ is the $n\times n$ diagonal matrix with every diagonal entry $1$ and all others $0$. This is called the **identity** (or **unit**) matrix, denoted $I$ or $I_n$.
