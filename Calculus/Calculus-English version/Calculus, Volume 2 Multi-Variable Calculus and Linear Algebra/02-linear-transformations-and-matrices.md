@@ -209,3 +209,46 @@ $$T(x)=\sum_{k=1}^n x_k u_k.$$
 If $x=x_1\boldsymbol i+x_2\boldsymbol j$, then by linearity
 
 $$T(x)=x_1T(\boldsymbol i)+x_2T(\boldsymbol j)=x_1(\boldsymbol i+\boldsymbol j)+x_2(2\boldsymbol i-\boldsymbol j)=(x_1+2x_2)\boldsymbol i+(x_1-x_2)\boldsymbol j.$$
+
+
+### 2.10 Matrix Representations of Linear Transformations
+
+Let $T\in\mathscr L(V,W)$ with $\dim V=n$ and $\dim W=m$. Choose ordered bases $(e_1,\dots,e_n)$ for $V$ and $(w_1,\dots,w_m)$ for $W$. Each $T(e_k)$ can be written uniquely as
+
+$$T(e_k)=\sum_{i=1}^m t_{ik}\,w_i\qquad(k=1,\dots,n).$$
+
+The scalars $t_{ik}$ form an $m\times n$ **matrix** $(t_{ik})$ whose $k$th column contains the components of $T(e_k)$ relative to $(w_1,\dots,w_m)$. This is the **matrix representation of $T$** relative to the given bases.
+
+**Theorem 2.13.** Let $x=\sum_{k=1}^n x_k e_k$ have components $(x_1,\dots,x_n)$ and let $T(x)=\sum_{i=1}^m y_i w_i$ have components $(y_1,\dots,y_m)$. Then
+
+$$y_i=\sum_{k=1}^n t_{ik}\,x_k\qquad(i=1,\dots,m).$$
+
+- **Proof sketch.** $T(x)=\sum_k x_k T(e_k)=\sum_k x_k\sum_i t_{ik}w_i=\sum_i\bigl(\sum_k t_{ik}x_k\bigr)w_i$. Comparing coefficients of $w_i$ yields the formula. $\square$
+
+> **Correspondence.** Once bases are fixed, every linear transformation $T\colon V\to W$ determines a unique $m\times n$ matrix, and conversely every $m\times n$ matrix determines a unique linear transformation via (2.10) and Theorem 2.12.
+
+---
+
+**Example 1.** From a given $2\times3$ matrix $\begin{pmatrix}3&1&-2\\1&0&4\end{pmatrix}$ (usual bases for $V_3$ and $V_2$):
+
+$$y_1=3x_1+x_2-2x_3,\qquad y_2=x_1+4x_3.$$
+
+**Example 2.** Differentiation $D\colon V\to W$, where $V=\{\text{polynomials of degree }\le3\}$ (basis $1,x,x^2,x^3$) and $W=\{\text{polynomials of degree }\le2\}$ (basis $1,x,x^2$).
+
+| $D$ applied to basis of $V$ | Result in basis of $W$ |
+|----------------------------|------------------------|
+| $D(1)=0$ | $(0,0,0)$ |
+| $D(x)=1$ | $(1,0,0)$ |
+| $D(x^2)=2x$ | $(0,2,0)$ |
+| $D(x^3)=3x^2$ | $(0,0,3)$ |
+
+Matrix (columns as above):
+$$\begin{pmatrix}0&1&0&0\\0&0&2&0\\0&0&0&3\end{pmatrix}.$$
+
+If the basis of $W$ is reordered to $(x^2,x,1)$, the matrix becomes
+$$\begin{pmatrix}0&0&0&3\\0&0&2&0\\0&1&0&0\end{pmatrix}.$$
+
+With $V$ basis $(1,\,1+x,\,1+x+x^2,\,1+x+x^2+x^3)$ and $W$ basis $(1,x,x^2)$:
+$$D(1)=0,\;D(1+x)=1,\;D(1+x+x^2)=1+2x,\;D(1+x+x^2+x^3)=1+2x+3x^2,$$
+giving matrix
+$$\begin{pmatrix}0&1&1&1\\0&0&2&2\\0&0&0&3\end{pmatrix}.$$
