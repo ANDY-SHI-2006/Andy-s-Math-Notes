@@ -446,6 +446,7 @@ $$
 $$
 
 is the set of $n$-tuples $(w_1, \dots, w_n)$ with $w_i \in W_i$. Addition and scalar multiplication are defined componentwise.
+
 ---
 
 [Next: 2. Matrices ->](02-matrices.md)
