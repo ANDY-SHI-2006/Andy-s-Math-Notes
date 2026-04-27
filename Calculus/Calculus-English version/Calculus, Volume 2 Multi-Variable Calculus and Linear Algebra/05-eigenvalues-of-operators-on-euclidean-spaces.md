@@ -359,3 +359,47 @@ By Theorem 5.14, $\lambda_1=\min_{\|x\|=1}Q(x)$ and $\lambda_n=\max_{\|x\|=1}Q(x
 The resulting eigenvectors $u_1,\dots,u_n$ form an orthonormal basis for $V$.
 
 - *Note:* In infinite dimensions $Q$ need not attain an extremum on the unit sphere (e.g. when $T$ has no eigenvalues). In finite dimensions existence follows from continuity.
+
+### 5.19 Unitary Transformations
+
+**Definition.** Let $E$ be a Euclidean space and $V$ a subspace of $E$. A linear transformation $T:V\to E$ is **unitary** on $V$ if
+$$(T(x),T(y))=(x,y)\quad\text{for all }x,y\in V.\tag{5.17}$$
+When $E$ is real, a unitary transformation is also called an **orthogonal transformation**.
+
+**Theorem 5.15.** If $T:V\to E$ is unitary on $V$, then for all $x,y\in V$:
+
+| Property | Statement | Meaning |
+|---|---|---|
+| (a) | $(x,y)=0\Rightarrow(T(x),T(y))=0$ | preserves orthogonality |
+| (b) | $\|T(x)\|=\|x\|$ | preserves norms |
+| (c) | $\|T(x)-T(y)\|=\|x-y\|$ | preserves distances |
+| (d) | $T$ is invertible; $T^{-1}$ is unitary on $T(V)$ | |
+
+- *Proof sketch:* (a) is immediate from (5.17); (b) sets $y=x$; (c) uses $T(x)-T(y)=T(x-y)$ and (b). For (d), $T(x)=O\Rightarrow x=O$, so $T$ is invertible. If $x=T(u), y=T(v)$, then $(T^{-1}(x),T^{-1}(y))=(u,v)=(T(u),T(v))=(x,y)$.
+
+**Theorem 5.16.** Let $T:V\to E$ be unitary on $V$.
+
+- (a) If $T$ has an eigenvalue $\lambda$, then $|\lambda|=1$.
+- (b) Eigenvectors belonging to distinct eigenvalues are orthogonal.
+- (c) If $V=E$, $\dim V=n$, and $V$ is complex, there exists an orthonormal basis of eigenvectors; the matrix of $T$ is $\Lambda=\operatorname{diag}(\lambda_1,\dots,\lambda_n)$.
+
+- *Proof sketch:* (a) $(\lambda x,\lambda x)=(x,x)\Rightarrow|\lambda|^2(x,x)=(x,x)\Rightarrow|\lambda|=1$.
+- (b) $(T(x),T(y))=(x,y)$ and also $(\lambda x,\mu y)=\lambda\bar\mu(x,y)$. If $(x,y)\neq0$ then $\lambda\bar\mu=1$; but $|\lambda|=|\mu|=1$ forces $\lambda=\mu$, contradiction.
+- (c) Induction on $n$. The key step: if $u_1$ is an eigenvector for $\lambda_1$, then $T$ maps $S^{\perp}=\{x\mid(x,u_1)=0\}$ into itself because
+  $$(T(x),u_1)=(T(x),\bar\lambda_1 T(u_1))=\lambda_1(x,u_1)=0.$$
+
+**Theorem 5.17.** Let $\dim V=n$ and $E=(e_1,\dots,e_n)$ be a fixed basis. Then $T:V\to V$ is unitary iff
+$$(T(e_i),T(e_j))=(e_i,e_j)\quad\text{for all }i,j.\tag{5.18}$$
+If $E$ is orthonormal, $T$ is unitary iff $T$ maps $E$ onto an orthonormal basis.
+
+**Theorem 5.18.** Let $(e_1,\dots,e_n)$ be an orthonormal basis and $A=(a_{ij})$ the matrix of $T$. Then $T$ is unitary iff $A$ is unitary, i.e.
+$$A^{*}A=I.\tag{5.19}$$
+
+- *Proof sketch:* $(e_i,e_j)=\sum_k\bar a_{ki}a_{kj}$ from $A^{*}A=I$. Compute $(T(e_i),T(e_j))=\sum_k a_{ki}\bar a_{kj}$ and compare.
+
+**Theorem 5.19.** Every unitary matrix $A$ satisfies:
+
+- (a) $A$ is nonsingular and $A^{-1}=A^{*}$.
+- (b) $A^{t}$, $\bar A$, $A^{*}$ are unitary.
+- (c) Eigenvalues of $A$ are complex numbers of absolute value $1$.
+- (d) $|\det A|=1$; if $A$ is real, $\det A=\pm1$.
