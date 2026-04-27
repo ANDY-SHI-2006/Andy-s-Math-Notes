@@ -53,3 +53,34 @@ $$r_1=\frac{-a+\sqrt d}{2},\qquad r_2=\frac{-a-\sqrt d}{2}.$$
   $$f_1(x)=e^{r_1x}=e^{-ax/2}(\cos kx+i\sin kx),$$
   $$f_2(x)=e^{r_2x}=e^{-ax/2}(\cos kx-i\sin kx)$$
   are complex solutions; their real and imaginary parts yield the real basis $\{e^{-ax/2}\cos kx,\;e^{-ax/2}\sin kx\}$.
+
+
+### 6.4 Linear Differential Equations of Order $n$
+
+A linear differential equation of order $n$ has the form
+$$P_0(x)y^{(n)}+P_1(x)y^{(n-1)}+\cdots+P_n(x)y=R(x).\tag{6.6}$$
+
+The functions $P_0,\dots,P_n$ are the **coefficients**; they are assumed continuous on an interval $J$ (bounded or unbounded).
+
+**Singular points.** Points where $P_0(x)=0$ are called **singular points** and may introduce complications. To avoid them we assume $P_0$ is never zero on $J$; dividing by $P_0$ gives the standard form with leading coefficient $1$:
+$$y^{(n)}+P_1(x)y^{(n-1)}+\cdots+P_n(x)y=R(x).\tag{6.7}$$
+
+**Operator notation.** Let $\mathscr C(J)$ be the linear space of all real-valued functions continuous on $J$, and $\mathscr C^n(J)$ the subspace of functions whose first $n$ derivatives exist and are continuous on $J$. Define the **linear differential operator of order $n$**
+$$L=D^n+P_1D^{n-1}+\cdots+P_n,$$
+so that
+$$L(f)=f^{(n)}+P_1f^{(n-1)}+\cdots+P_nf.$$
+
+Equation (6.7) is written compactly as
+$$L(y)=R.\tag{6.8}$$
+
+- $L$ is linear: $L(y_1+y_2)=L(y_1)+L(y_2)$ and $L(cy)=cL(y)$.
+
+**Homogeneous and non-homogeneous equations.**
+- $L(y)=0$ is the **homogeneous equation** corresponding to $L(y)=R$.
+- If $R\not\equiv0$, $L(y)=R$ is a **non-homogeneous equation**.
+- The non-homogeneous equation can always be solved once the corresponding homogeneous equation is solved.
+
+**Solution space.** The set of solutions of $L(y)=0$ is the null space $N(L)$ of $L$, also called the **solution space**. Although $\mathscr C^n(J)$ is infinite-dimensional, the solution space is always finite-dimensional. In fact,
+$$\dim N(L)=n.\tag{6.9}$$
+
+Equation (6.9) is the **dimensionality theorem** for linear differential operators; it will be deduced from an existence–uniqueness theorem.
