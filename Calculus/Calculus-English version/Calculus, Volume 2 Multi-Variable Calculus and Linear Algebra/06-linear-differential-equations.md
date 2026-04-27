@@ -111,3 +111,48 @@ $$f(x)=\sum_{k=1}^n c_k u_k(x).\tag{6.11}$$
 
 - The linear combination (6.11) with arbitrary constants $c_1,\dots,c_n$ is called the **general solution**.
 - The dimensionality theorem guarantees a basis of $n$ solutions always exists, but gives no general method for finding it. Special methods exist for special equations, notably **constant-coefficient** equations.
+
+
+### 6.7 The Algebra of Constant-Coefficient Operators
+
+A **constant-coefficient operator** $A$ has the form
+$$A=a_0D^n+a_1D^{n-1}+\cdots+a_{n-1}D+a_n,\tag{6.12}$$
+where $D$ is the derivative operator and $a_0,\dots,a_n$ are real constants. If $a_0\neq0$, $A$ has **order $n$**.
+
+- Applied to $y$:
+  $$A(y)=a_0y^{(n)}+a_1y^{(n-1)}+\cdots+a_{n-1}y'+a_ny.$$
+- We work on $(-\infty,+\infty)$ with $\mathscr C^\infty$ (infinitely differentiable functions); $y\in\mathscr C^\infty$ implies $A(y)\in\mathscr C^\infty$.
+
+**Algebraic properties.**
+- Constant-coefficient operators form a linear space closed under addition, scalar multiplication, and composition (multiplication).
+- They **commute**: $D^rD^s=D^sD^r$ for all $r,s$, hence $AB=BA$ for any two such operators.
+
+**Characteristic polynomial.** With each $A$ associate the polynomial
+$$p_A(r)=a_0r^n+a_1r^{n-1}+\cdots+a_n.$$
+Conversely, every real polynomial corresponds to a unique constant-coefficient operator.
+
+**Theorem 6.6.** Let $A,B$ have characteristic polynomials $p_A,p_B$ and let $\lambda\in\mathbb R$. Then
+
+- (a) $A=B$ iff $p_A=p_B$.
+- (b) $p_{A+B}=p_A+p_B$.
+- (c) $p_{AB}=p_A\cdot p_B$.
+- (d) $p_{\lambda A}=\lambda\,p_A$.
+
+- *Proof sketch:* If $p_A=p_B$ they have the same coefficients, so $A=B$. Conversely, if $A=B$, apply both to $y=e^{rx}$; since $y^{(k)}=r^ke^{rx}$, we get $A(y)=p_A(r)e^{rx}$ and $B(y)=p_B(r)e^{rx}$, hence $p_A(r)=p_B(r)$ for all $r$. Parts (b)–(d) follow from the definition.
+
+**Operator factorization.** By Theorem 6.6, factorizations of $p_A$ yield factorizations of $A$:
+- If $p_A(r)=p_B(r)p_C(r)$, then $A=BC$.
+- If
+  $$p_A(r)=a_0(r-r_1)(r-r_2)\cdots(r-r_n),\tag{6.13}$$
+  then
+  $$A=a_0(D-r_1)(D-r_2)\cdots(D-r_n).$$
+
+- The roots $r_1,\dots,r_n$ of $p_A(r)=0$ form the **characteristic equation** of $A$.
+- Complex roots occur in conjugate pairs $\alpha\pm i\beta$; each pair gives a real quadratic factor $r^2-2\alpha r+\alpha^2+\beta^2$.
+- Hence every $p_A$ factors into linear and quadratic polynomials with real coefficients, and $A$ factors into first- and second-order real constant-coefficient operators.
+
+**Example 1.** $A=D^2-5D+6$.
+$$p_A(r)=r^2-5r+6=(r-2)(r-3)\quad\Rightarrow\quad A=(D-2)(D-3).$$
+
+**Example 2.** $A=D^4-2D^3+2D^2-2D+1$.
+$$p_A(r)=(r-1)^2(r^2+1)\quad\Rightarrow\quad A=(D-1)(D-1)(D^2+1).$$
