@@ -369,3 +369,42 @@ has two independent solutions analytic on the same interval.
   - $u_2$: $a_0=0$, $a_1=1$ $\Rightarrow$ $u_2(x_0)=0$, $u_2'(x_0)=1$.
   
   These are independent (different initial-value vectors).
+
+
+### 6.18 The Legendre Equation
+
+The **Legendre equation**
+$$(1-x^2)y''-2xy'+\alpha(\alpha+1)y=0\tag{6.35}$$
+arises in problems with spherical symmetry (attraction, heat flow). When $\alpha$ is a positive integer the equation has polynomial solutions called **Legendre polynomials**.
+
+- Can be written as $[(x^2-1)y']'=\alpha(\alpha+1)y$, i.e. $T(y)=\lambda y$ with Sturm–Liouville operator $T(f)=(pf')'$, $p(x)=x^2-1$, $\lambda=\alpha(\alpha+1)$.
+- Since $p(1)=p(-1)=0$, $T$ is symmetric on $[-1,1]$ with inner product $(f,g)=\int_{-1}^1fg\,dx$.
+- Eigenfunctions for distinct eigenvalues are orthogonal (Theorem 5.3).
+
+**Power-series solution on $(-1,1)$.** Substitute $y=\sum a_nx^n$ into (6.35) to obtain the **recursion formula**
+$$a_{n+2}=-\frac{(\alpha-n)(\alpha+n+1)}{(n+1)(n+2)}a_n.\tag{6.36}$$
+
+- Even and odd coefficients decouple:
+  - $a_0$ determines $a_2,a_4,\dots$
+  - $a_1$ determines $a_3,a_5,\dots$
+
+**General solution:**
+$$y=a_0u_1(x)+a_1u_2(x),\tag{6.37}$$
+where $u_1$ (even) and $u_2$ (odd) are the series (6.38)–(6.39) with
+$$u_1(0)=1,\;u_1'(0)=0,\qquad u_2(0)=0,\;u_2'(0)=1.$$
+
+**Polynomial solutions.**
+- If $\alpha=2m$ (even), $u_1(x)$ becomes a polynomial of degree $2m$; $u_2$ remains an infinite series.
+- If $\alpha=2m+1$ (odd), $u_2(x)$ becomes a polynomial of degree $2m+1$; $u_1$ remains an infinite series.
+
+The first few Legendre polynomials:
+
+| $\alpha$ | Polynomial |
+|---|---|
+| $0$ | $1$ |
+| $1$ | $x$ |
+| $2$ | $1-3x^2$ |
+| $3$ | $x-\frac53x^3$ |
+| $4$ | $1-10x^2+\frac{35}{3}x^4$ |
+| $5$ | $x-\frac{14}{3}x^3+\frac{21}{5}x^5$ |
+| $6$ | $1-21x^2+63x^4-\frac{231}{5}x^6$ |
