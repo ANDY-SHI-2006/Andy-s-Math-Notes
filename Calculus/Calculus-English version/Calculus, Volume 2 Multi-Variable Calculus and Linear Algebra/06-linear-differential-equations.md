@@ -433,3 +433,25 @@ P_6(x)&=\tfrac1{16}(231x^6-315x^4+105x^2-5).\end{aligned}$$
 - By the uniqueness part of the orthogonalization theorem (Theorem 1.13), the Legendre polynomials coincide (up to scalar factors) with the polynomials obtained by Gram–Schmidt orthogonalization of $1,x,x^2,\dots$ on $[-1,1]$.
 - The leading coefficient of $P_n$ is
   $$c_n=\frac{(2n)!}{2^n(n!)^2}.$$
+
+
+### 6.20 Rodrigues' Formula
+
+From (6.42) we rewrite the sum using
+$$\frac{(2n-2r)!}{(n-2r)!}x^{n-2r}=\frac{d^n}{dx^n}x^{2n-2r},\qquad\frac{1}{r!(n-r)!}=\frac1{n!}\binom{n}{r}$$
+to obtain
+$$P_n(x)=\frac{1}{2^n n!}\frac{d^n}{dx^n}\sum_{r=0}^{n}(-1)^r\binom{n}{r}x^{2n-2r}.$$
+The sum is the binomial expansion of $(x^2-1)^n$, giving **Rodrigues' formula**:
+$$P_n(x)=\frac{1}{2^n n!}\frac{d^n}{dx^n}(x^2-1)^n.$$
+
+**Key properties** (proofs outlined in exercises):
+
+- **Normalization:** $P_n(1)=1$.
+- **Parity:** $P_n(-x)=(-1)^nP_n(x)$ (even/odd according to $n$).
+- **Orthogonality:**
+  $$\int_{-1}^1 P_n(x)P_m(x)\,dx=0\quad(m\neq n).$$
+- **Norm:**
+  $$\|P_n\|^2=\int_{-1}^1[P_n(x)]^2\,dx=\frac{2}{2n+1}.$$
+- **Expansion:** Every polynomial $f$ of degree $n$ can be written as
+  $$f(x)=\sum_{k=0}^n c_kP_k(x),\qquad c_k=\frac{2k+1}{2}\int_{-1}^1 f(x)P_k(x)\,dx.$$
+- **Zeros:** $P_n$ has $n$ distinct real zeros, all in $(-1,1)$.
