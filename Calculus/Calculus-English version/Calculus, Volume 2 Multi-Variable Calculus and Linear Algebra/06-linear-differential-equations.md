@@ -218,3 +218,17 @@ $$D^2-2\alpha D+\alpha^2+\beta^2.\tag{6.18}$$
 **Example 6.** $y^{(5)}-9y^{(4)}+34y'''-66y''+65y'-25y=0$.
 - Roots: $1$, $2\pm i$ (double).
 - General solution: $y=c_1e^x+e^{2x}\bigl[(c_2+c_3x)\cos x+(c_4+c_5x)\sin x\bigr]$.
+
+
+### 6.10 The Relation Between the Homogeneous and Nonhomogeneous Equations
+
+**Theorem 6.10.** Let $L:\mathscr C^n(J)\to\mathscr C(J)$ be of order $n$. Let $u_1,\dots,u_n$ be independent solutions of $L(y)=0$ and let $y_1$ be a particular solution of $L(y)=R$ ($R\in\mathscr C(J)$). Then every solution of the nonhomogeneous equation has the form
+$$f(x)=y_1(x)+\sum_{k=1}^n c_ku_k(x).\tag{6.19}$$
+
+- *Proof sketch:* $L(f-y_1)=L(f)-L(y_1)=R-R=0$, so $f-y_1$ lies in the solution space of $L(y)=0$; hence $f-y_1$ is a linear combination of $u_1,\dots,u_n$.
+
+- The right-hand side of (6.19) (with arbitrary constants) is the **general solution** of the nonhomogeneous equation.
+
+- **Geometric analogy:** The solution set of $L(y)=R$ is a "parallel plane" through a particular point $y_1$; the solution space of $L(y)=0$ is the parallel plane through the origin.
+
+- **Practical use:** Solve (1) the homogeneous equation $L(y)=0$, then (2) find one particular solution of $L(y)=R$. Section 6.11 shows (2) is always possible once (1) is solved.
