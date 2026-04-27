@@ -313,3 +313,23 @@ The number $4ac-b^2$ is the **discriminant** of the quadratic form $ax^2+bxy+cy^
 | $4ac-b^2=0$ | Parabola |
 
 (In Examples 1, 2, 3 the discriminant is $34$, $-24$, $0$ respectively.)
+
+### 5.16 Eigenvalues of a Symmetric Transformation Obtained as Values of Its Quadratic Form
+
+Drop the finite-dimensionality requirement on $V$. Let $x$ be an eigenvector of norm 1 belonging to $\lambda$. Then $T(x)=\lambda x$ and
+$$Q(x)=(T(x),x)=(\lambda x,x)=\lambda(x,x)=\lambda.\tag{5.13}$$
+The set $\{x\in V\mid(x,x)=1\}$ is the **unit sphere** in $V$.
+
+**Theorem 5.12.** Let $T:V\to V$ be symmetric on a real Euclidean space $V$, $Q(x)=(T(x),x)$. Then the eigenvalues of $T$ (if any exist) are found among the values that $Q$ takes on the unit sphere.
+
+**Example.** In $V_2(\mathbb R)$ let $T$ have matrix $A=\begin{bmatrix}4&0\\0&8\end{bmatrix}$. Then $Q(x)=4x_1^2+8x_2^2$ with eigenvalues $\lambda_1=4$, $\lambda_2=8$. On the unit circle $x_1^2+x_2^2=1$:
+$$Q(x)=4+4x_2^2,\qquad -1\le x_2\le 1,$$
+so $\min Q=4$ (at $x_2=0$) and $\max Q=8$ (at $x_2=\pm1$). The inner ellipse $Q(x)=4$ touches the unit circle at $(\pm1,0)$ (eigenvectors for $\lambda=4$); the outer ellipse $Q(x)=8$ meets it at $(0,\pm1)$ (eigenvectors for $\lambda=8$).
+
+- The smallest and largest eigenvalues are the minimum and maximum of $Q$ on the unit sphere.
+
+**Theorem 5.13.** Let $T$ be symmetric with $Q(x)=(T(x),x)$. Assume $Q$ does not change sign on $V$. If $Q(x)=0$ for some $x$, then $T(x)=O$. In other words, if $Q$ is semidefinite, it vanishes only on the null space of $T$.
+
+- *Proof sketch:* For any $y$ and real $t$,
+  $$Q(x+ty)=Q(x)+2t(T(x),y)+t^2Q(y)=at+bt^2$$
+  with $a=2(T(x),y)$, $b=Q(y)$. If $Q\ge0$, then $p(t)=at+bt^2\ge0$ for all $t$, so $p$ has a minimum at $t=0$; hence $p'(0)=a=0$, giving $(T(x),y)=0$ for all $y$, so $T(x)=O$. The case $Q\le0$ is analogous.
