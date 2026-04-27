@@ -15,3 +15,41 @@
   - Cauchy's work implies existence of a solution on $(-r,r)$ about the origin, provided $P,Q,R$ have power-series expansions.
 - **Liouville (1841)**: showed that in some cases the Riccati solution cannot be obtained by elementary means.
 - **Linear differential equations** are among the few types for which general results can be obtained. Simple cases (first order and second order with constant coefficients) were discussed in Volume I.
+
+
+### 6.2 Review of Results Concerning Linear Equations of First and Second Orders
+
+**First-order linear equation.**
+$$y'+P(x)y=Q(x).\tag{6.1}$$
+
+**Theorem 6.1 (Existence–Uniqueness).** Assume $P$ and $Q$ are continuous on an open interval $J$. For any $a\in J$ and any real $b$, there is exactly one function $y=f(x)$ satisfying (6.1) and $f(a)=b$, given by
+$$f(x)=be^{-A(x)}+e^{-A(x)}\int_a^x Q(t)e^{A(t)}\,dt,\tag{6.2}$$
+where $A(x)=\int_a^x P(t)\,dt$.
+
+**Second-order linear equation.**
+$$P_0(x)y''+P_1(x)y'+P_2(x)y=R(x).$$
+
+- If $P_0,P_1,P_2,R$ are continuous on $J$ and $P_0$ is never zero on $J$, solutions always exist on $J$ (Section 6.5).
+- No general explicit formula analogous to (6.2) exists for variable coefficients.
+- If the coefficients are **constants** and $R=0$, all solutions are explicit.
+
+**Theorem 6.2 (Constant coefficients, homogeneous).** Consider
+$$y''+ay'+by=0,\tag{6.3}$$
+with real constants $a,b$. Let $d=a^2-4b$ be the **discriminant** of the **characteristic equation**
+$$r^2+ar+b=0.\tag{6.5}$$
+Every solution on $(-\infty,+\infty)$ has the form
+$$y=e^{-ax/2}\bigl[c_1u_1(x)+c_2u_2(x)\bigr].\tag{6.4}$$
+
+| Case | Condition | $u_1(x)$ | $u_2(x)$ | General solution |
+|---|---|---|---|---|
+| (a) | $d=0$ | $1$ | $x$ | $y=e^{-ax/2}(c_1+c_2x)$ |
+| (b) | $d>0$ | $e^{kx}$ | $e^{-kx}$ | $y=c_1e^{r_1x}+c_2e^{r_2x}$ |
+| (c) | $d<0$ | $\cos kx$ | $\sin kx$ | $y=e^{-ax/2}(c_1\cos kx+c_2\sin kx)$ |
+
+where $k=\frac12\sqrt d$ (real) or $k=\frac12\sqrt{-d}$ (imaginary), and
+$$r_1=\frac{-a+\sqrt d}{2},\qquad r_2=\frac{-a-\sqrt d}{2}.$$
+
+- *Complex roots.* When $d<0$, write $r_1=-\frac a2+ik$, $r_2=-\frac a2-ik$. The complex exponentials
+  $$f_1(x)=e^{r_1x}=e^{-ax/2}(\cos kx+i\sin kx),$$
+  $$f_2(x)=e^{r_2x}=e^{-ax/2}(\cos kx-i\sin kx)$$
+  are complex solutions; their real and imaginary parts yield the real basis $\{e^{-ax/2}\cos kx,\;e^{-ax/2}\sin kx\}$.
