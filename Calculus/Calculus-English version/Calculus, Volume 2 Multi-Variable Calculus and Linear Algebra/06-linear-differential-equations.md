@@ -84,3 +84,30 @@ $$L(y)=R.\tag{6.8}$$
 $$\dim N(L)=n.\tag{6.9}$$
 
 Equation (6.9) is the **dimensionality theorem** for linear differential operators; it will be deduced from an existence–uniqueness theorem.
+
+
+### 6.5 The Existence–Uniqueness Theorem
+
+**Theorem 6.3 (Existence–Uniqueness for Linear Equations of Order $n$).** Let $P_1,\dots,P_n$ be continuous on an open interval $J$ and let
+$$L=D^n+P_1D^{n-1}+\cdots+P_n.$$
+If $x_0\in J$ and $k_0,\dots,k_{n-1}$ are given real numbers, then there exists **one and only one** function $y=f(x)$ satisfying the homogeneous equation $L(y)=0$ on $J$ and the initial conditions
+$$f(x_0)=k_0,\;f'(x_0)=k_1,\;\dots,\;f^{(n-1)}(x_0)=k_{n-1}.$$
+
+- The vector $(f(x_0),f'(x_0),\dots,f^{(n-1)}(x_0))$ in $n$-space is the **initial-value vector** of $f$ at $x_0$.
+- The theorem says: choose any point $x_0\in J$ and any vector in $n$-space; there is exactly one solution with that initial-value vector at $x_0$.
+- For $n=2$: prescribed $f(x_0)$ and $f'(x_0)$ determine a unique solution.
+- *Proof strategy:* obtained as a corollary of more general existence–uniqueness theorems in Chapter 7. An alternate proof for constant coefficients is given in Section 7.9.
+
+### 6.6 The Dimension of the Solution Space of a Homogeneous Linear Equation
+
+**Theorem 6.4 (Dimensionality Theorem).** Let $L:\mathscr C^n(J)\to\mathscr C(J)$ be a linear differential operator of order $n$,
+$$L=D^n+P_1D^{n-1}+\cdots+P_n.\tag{6.10}$$
+Then the solution space of $L(y)=0$ has dimension $n$.
+
+- *Proof sketch:* Define $T:N(L)\to V_n$ by $T(f)=(f(x_0),f'(x_0),\dots,f^{(n-1)}(x_0))$. By Theorem 6.3, $T(f)=0$ implies $f=0$, so $T$ is one-to-one on $N(L)$. Hence $T^{-1}$ is one-to-one and maps $V_n$ onto $N(L)$. By Theorem 2.11, $\dim N(L)=\dim V_n=n$.
+
+**Theorem 6.5.** Let $L$ be of order $n$. If $u_1,\dots,u_n$ are $n$ independent solutions of $L(y)=0$ on $J$, then every solution on $J$ has the form
+$$f(x)=\sum_{k=1}^n c_k u_k(x).\tag{6.11}$$
+
+- The linear combination (6.11) with arbitrary constants $c_1,\dots,c_n$ is called the **general solution**.
+- The dimensionality theorem guarantees a basis of $n$ solutions always exists, but gives no general method for finding it. Special methods exist for special equations, notably **constant-coefficient** equations.
