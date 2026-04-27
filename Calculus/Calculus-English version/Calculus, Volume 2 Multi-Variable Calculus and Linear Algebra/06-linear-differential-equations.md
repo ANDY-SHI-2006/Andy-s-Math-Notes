@@ -293,3 +293,51 @@ Moreover, $w(x)\neq0$ for all $x\in J$.
   - Adding gives $w'+P_1w=\det(u,u',\dots,u^{(n-2)},u^{(n)}+P_1u^{(n-1)})=0$, because $u$ satisfies (6.25) so the last row is a linear combination of the preceding rows.
   - Solving (6.26) yields Abel's formula.
 - To show $w(c)\neq0$ for some $c\in J$: suppose $w\equiv0$. Then at some $t_0$, $W(t_0)X=O$ has a nonzero solution $X=(c_1,\dots,c_n)$. Define $f=\sum c_ku_k$; then $L(f)=0$ and $f(t_0)=f'(t_0)=\cdots=f^{(n-1)}(t_0)=0$. By uniqueness, $f\equiv0$, forcing all $c_k=0$ — contradiction. Hence $w(c)\neq0$ for some $c$, and Abel's formula shows $w(x)\neq0$ for all $x\in J$.
+
+
+### 6.13 Reduction to a System of First-Order Equations
+
+For constant-coefficient equations, a particular solution can be found by solving a succession of first-order linear equations.
+
+**Example.** $(D-1)(D-2)y=xe^{x+x^2}$.
+
+- Let $u=(D-2)y$. Then $(D-1)u=xe^{x+x^2}$, a first-order equation.
+- Particular solution: $u=\frac12e^{x+x^2}$.
+- Then $(D-2)y=\frac12e^{x+x^2}$; solving gives $y_1(x)=\frac12e^{2x}\int_0^x e^{t^2-t}\,dt$.
+- General solution: $y=c_1e^x+c_2e^{2x}+\frac12e^{2x}\int_0^x e^{t^2-t}\,dt$.
+
+### 6.14 The Annihilator Method
+
+If $L(y)=R$ has constant coefficients and $R$ is annihilated by some constant-coefficient operator $A$ (i.e. $A(R)=0$), apply $A$ to both sides to obtain $AL(y)=0$. Solve the higher-order homogeneous equation, then select from its solution space a function satisfying $L(y_1)=R$.
+
+**Example 1.** $(D^4-16)y=x^4+x+1$.
+
+- $R$ is a degree-4 polynomial, annihilated by $D^5$.
+- Solve $D^5(D^4-16)y=0$. Roots: $0$ (mult. 5), $2$, $-2$, $\pm2i$.
+- Since $L=D^4-16$ annihilates $e^{\pm2x},\cos2x,\sin2x$, seek a polynomial particular solution.
+- Set $16y_1=ax^4+bx^3+cx^2+dx+e$; substitute into $L(y_1)=x^4+x+1$.
+- Coefficients: $a=-1$, $b=c=0$, $d=-1$, $e=-\frac52$.
+- Particular solution: $y_1=-\frac1{16}x^4-\frac1{16}x-\frac5{32}$.
+
+**Example 2.** $y''-5y'+6y=xe^x$.
+
+- $L=D^2-5D+6=(D-2)(D-3)$; homogeneous solutions $e^{2x},e^{3x}$.
+- $R=xe^x$ is annihilated by $(D-1)^2$.
+- Solve $(D-1)^2(D-2)(D-3)y=0$. Roots: $1,1,2,3$.
+- Try $y_1=ae^x+bxe^x$ (omit $e^{2x},e^{3x}$ terms).
+- Substitution gives $(2a-3b)e^x+2bxe^x=xe^x$; hence $a=\frac34$, $b=\frac12$.
+- General solution: $y=c_1e^{2x}+c_2e^{3x}+\frac34e^x+\frac12xe^x$.
+
+**Annihilators of common functions (Table 6.1).**
+
+| Function | Annihilator |
+|---|---|
+| $x^{m-1}$ | $D^m$ |
+| $e^{\alpha x}$ | $D-\alpha$ |
+| $x^{m-1}e^{\alpha x}$ | $(D-\alpha)^m$ |
+| $\cos\beta x$ or $\sin\beta x$ | $D^2+\beta^2$ |
+| $x^{m-1}\cos\beta x$ or $x^{m-1}\sin\beta x$ | $(D^2+\beta^2)^m$ |
+| $e^{\alpha x}\cos\beta x$ or $e^{\alpha x}\sin\beta x$ | $D^2-2\alpha D+(\alpha^2+\beta^2)$ |
+| $x^{m-1}e^{\alpha x}\cos\beta x$ or $x^{m-1}e^{\alpha x}\sin\beta x$ | $[D^2-2\alpha D+(\alpha^2+\beta^2)]^m$ |
+
+- The annihilator method is efficient when applicable, but limited to right-hand sides $R$ that have a constant-coefficient annihilator. For $e^{x^2},\log x,\tan x$, etc., use variation of parameters.
