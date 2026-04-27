@@ -232,3 +232,46 @@ $$f(x)=y_1(x)+\sum_{k=1}^n c_ku_k(x).\tag{6.19}$$
 - **Geometric analogy:** The solution set of $L(y)=R$ is a "parallel plane" through a particular point $y_1$; the solution space of $L(y)=0$ is the parallel plane through the origin.
 
 - **Practical use:** Solve (1) the homogeneous equation $L(y)=0$, then (2) find one particular solution of $L(y)=R$. Section 6.11 shows (2) is always possible once (1) is solved.
+
+
+### 6.11 Variation of Parameters
+
+A method to find a particular solution $y_1$ of $L(y)=R$ given $n$ independent solutions $u_1,\dots,u_n$ of $L(y)=0$.
+
+**Ansatz.** Seek $y_1$ in the form
+$$y_1=v_1u_1+\cdots+v_nu_n=(v,u),\tag{6.20}$$
+where $v=(v_1,\dots,v_n)$ and $u=(u_1,\dots,u_n)$.
+
+**Conditions on $v$.** Impose $n$ conditions so that derivatives of $y_1$ telescope:
+$$\begin{aligned}
+y_1'&=(v,u')&&\text{provided }(v',u)=0,\\
+y_1''&=(v,u'')&&\text{provided }(v',u')=0,\\
+&\;\vdots\\
+y_1^{(n-1)}&=(v,u^{(n-1)})&&\text{provided }(v',u^{(n-2)})=0,\\
+y_1^{(n)}&=(v,u^{(n)})+R(x)&&\text{provided }(v',u^{(n-1)})=R(x).\end{aligned}$$
+
+Then $L(y_1)=(v,L(u))+R(x)=R(x)$, so $y_1$ is a particular solution.
+
+**Matrix form.** The $n$ conditions on $v'$ are
+$$W(x)\,v'(x)=R(x)\begin{bmatrix}0\\\vdots\\0\\1\end{bmatrix},\tag{6.23}$$
+where $W(x)$ is the **Wronskian matrix**
+$$W(x)=\begin{bmatrix}u_1&u_2&\cdots&u_n\\u_1'&u_2'&\cdots&u_n'\\\vdots&\vdots&&\vdots\\u_1^{(n-1)}&u_2^{(n-1)}&\cdots&u_n^{(n-1)}\end{bmatrix}.$$
+
+- $W(x)$ is nonsingular (proved in Section 6.12).
+- Solving for $v'$ and integrating gives $v$; the term $(u,v(c))$ is a homogeneous solution and may be dropped.
+
+**Theorem 6.11.** A particular solution of $L(y)=R$ is
+$$y_1(x)=\sum_{k=1}^n u_k(x)v_k(x),$$
+where the entries $v_1,\dots,v_n$ are determined by
+$$v(x)=\int_c^x R(t)\,W(t)^{-1}\begin{bmatrix}0\\\vdots\\0\\1\end{bmatrix}dt.\tag{6.24}$$
+(The definite integral may be replaced by any indefinite integral.)
+
+**Example.** $y''-y=\dfrac{2}{1+e^x}$.
+
+- Homogeneous solutions: $u_1=e^x$, $u_2=e^{-x}$.
+- Wronskian: $W(x)=\begin{bmatrix}e^x&e^{-x}\\e^x&-e^{-x}\end{bmatrix}$, $\det W=-2$.
+- $W^{-1}\begin{bmatrix}0\\1\end{bmatrix}=\frac12\begin{bmatrix}e^{-x}\\-e^x\end{bmatrix}$.
+- $R(x)W^{-1}\begin{bmatrix}0\\1\end{bmatrix}=\begin{bmatrix}\frac{e^{-x}}{1+e^x}\\\frac{-e^x}{1+e^x}\end{bmatrix}$.
+- Integrating: $v_1=-e^{-x}-x+\log(1+e^x)$, $v_2=-\log(1+e^x)$.
+- General solution:
+  $$y=c_1e^x+c_2e^{-x}-1-xe^x+(e^x-e^{-x})\log(1+e^x).$$
