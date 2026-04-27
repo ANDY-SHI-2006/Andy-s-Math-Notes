@@ -333,3 +333,11 @@ so $\min Q=4$ (at $x_2=0$) and $\max Q=8$ (at $x_2=\pm1$). The inner ellipse $Q(
 - *Proof sketch:* For any $y$ and real $t$,
   $$Q(x+ty)=Q(x)+2t(T(x),y)+t^2Q(y)=at+bt^2$$
   with $a=2(T(x),y)$, $b=Q(y)$. If $Q\ge0$, then $p(t)=at+bt^2\ge0$ for all $t$, so $p$ has a minimum at $t=0$; hence $p'(0)=a=0$, giving $(T(x),y)=0$ for all $y$, so $T(x)=O$. The case $Q\le0$ is analogous.
+
+### 5.17 Extremal Properties of Eigenvalues of a Symmetric Transformation
+
+**Theorem 5.14.** Let $T:V\to V$ be symmetric on a real Euclidean space $V$, $Q(x)=(T(x),x)$. If $Q$ has an extremum (maximum or minimum) at a point $u$ with $(u,u)=1$, then $u$ is an eigenvector of $T$ and the corresponding eigenvalue is $\lambda=Q(u)$.
+
+- *Proof sketch (minimum case):* $Q(x)\ge Q(u)$ for all $\|x\|=1$. Set $\lambda=Q(u)$. Then $(T(x),x)\ge(\lambda x,x)$ for all $x$, i.e.
+  $$(S(x),x)\ge0,\qquad S=T-\lambda I.\tag{5.16}$$
+  At $x=u$ equality holds, so $Q_1(x)=(S(x),x)$ is nonnegative and $Q_1(u)=0$. By Theorem 5.13, $S(u)=O$, hence $T(u)=\lambda u$. The maximum case reverses all inequalities and applies Theorem 5.13 to the nonpositive form $Q_1$.
