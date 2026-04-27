@@ -341,3 +341,21 @@ so $\min Q=4$ (at $x_2=0$) and $\max Q=8$ (at $x_2=\pm1$). The inner ellipse $Q(
 - *Proof sketch (minimum case):* $Q(x)\ge Q(u)$ for all $\|x\|=1$. Set $\lambda=Q(u)$. Then $(T(x),x)\ge(\lambda x,x)$ for all $x$, i.e.
   $$(S(x),x)\ge0,\qquad S=T-\lambda I.\tag{5.16}$$
   At $x=u$ equality holds, so $Q_1(x)=(S(x),x)$ is nonnegative and $Q_1(u)=0$. By Theorem 5.13, $S(u)=O$, hence $T(u)=\lambda u$. The maximum case reverses all inequalities and applies Theorem 5.13 to the nonpositive form $Q_1$.
+
+### 5.18 The Finite-Dimensional Case
+
+Let $\dim V=n$. Then $T$ has $n$ real eigenvalues, ordered
+$$\lambda_1\le\lambda_2\le\cdots\le\lambda_n.$$
+
+By Theorem 5.14, $\lambda_1=\min_{\|x\|=1}Q(x)$ and $\lambda_n=\max_{\|x\|=1}Q(x)$. The intermediate eigenvalues are also extreme values of $Q$, but restricted to successively smaller subspaces.
+
+- Let $u_1$ minimize $Q$ on the unit sphere; then $\lambda_1=Q(u_1)$.
+- Every eigenvector for $\lambda\neq\lambda_1$ is orthogonal to $u_1$, so we search in $S^{\perp}$ where $S=\operatorname{span}\{u_1\}$.
+- $\dim S^{\perp}=n-1$ and $T$ maps $S^{\perp}$ into itself. Let $S_{n-1}$ be the unit sphere in $S^{\perp}$.
+- Applying Theorem 5.14 to $S^{\perp}$ gives $\lambda_2=Q(u_2)$ where $u_2$ minimizes $Q$ on $S_{n-1}$.
+- Repeating: $\lambda_k$ is the minimum of $Q$ on the unit sphere $S_{n-k+1}$ in the subspace orthogonal to $u_1,\dots,u_{k-1}$.
+- The largest eigenvalue $\lambda_n$ is simultaneously the maximum of $Q$ on each of these nested spheres.
+
+The resulting eigenvectors $u_1,\dots,u_n$ form an orthonormal basis for $V$.
+
+- *Note:* In infinite dimensions $Q$ need not attain an extremum on the unit sphere (e.g. when $T$ has no eigenvalues). In finite dimensions existence follows from continuity.
