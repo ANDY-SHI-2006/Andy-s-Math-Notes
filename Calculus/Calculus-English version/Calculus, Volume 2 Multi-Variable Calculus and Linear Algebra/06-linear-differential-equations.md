@@ -156,3 +156,65 @@ $$p_A(r)=r^2-5r+6=(r-2)(r-3)\quad\Rightarrow\quad A=(D-2)(D-3).$$
 
 **Example 2.** $A=D^4-2D^3+2D^2-2D+1$.
 $$p_A(r)=(r-1)^2(r^2+1)\quad\Rightarrow\quad A=(D-1)(D-1)(D^2+1).$$
+
+
+### 6.8 Determination of a Basis of Solutions by Factorization
+
+**Theorem 6.7.** If $L=A_1A_2\cdots A_k$ is a product of constant-coefficient operators, then
+$$N(A_i)\subseteq N(L)\quad\text{for each }i.\tag{6.14}$$
+
+- *Proof sketch:* If $A_k(u)=0$, then $L(u)=(A_1\cdots A_{k-1})(0)=0$. Since the factors commute, any factor can be placed last.
+- If $L(u)=0$ we say $L$ **annihilates** $u$.
+
+#### Case I — Real Distinct Roots
+
+**Theorem 6.8.** If $p_L(r)=0$ has $n$ distinct real roots $r_1,\dots,r_n$, the general solution of $L(y)=0$ is
+$$y=\sum_{k=1}^n c_ke^{r_kx}.\tag{6.16}$$
+
+- *Basis:* $u_k(x)=e^{r_kx}$ for $k=1,\dots,n$.
+
+**Example 1.** $(D^3-7D+6)y=0$.
+- $L=(D-1)(D-2)(D+3)$.
+- Basis: $e^x$, $e^{2x}$, $e^{-3x}$.
+- General solution: $y=c_1e^x+c_2e^{2x}+c_3e^{-3x}$.
+
+#### Case II — Repeated Real Roots
+
+**Theorem 6.9.** For a root $r$ of multiplicity $m$, the $m$ functions
+$$e^{rx},\;xe^{rx},\;\dots,\;x^{m-1}e^{rx}$$
+are independent and are annihilated by $(D-r)^m$.
+
+- *Proof sketch:* Induction on $m$. The key step:
+  $$(D-r)(x^{m-1}e^{rx})=(m-1)x^{m-2}e^{rx}=(m-1)u_{m-1}(x),$$
+  and $(D-r)^{m-1}$ annihilates $u_{m-1}$.
+
+**Example 2.** $L(y)=0$ with $L=D^3-D^2-8D+12=(D-2)^2(D+3)$.
+- From $(D-2)^2$: $e^{2x}$, $xe^{2x}$.
+- From $(D+3)$: $e^{-3x}$.
+- General solution: $y=c_1e^{2x}+c_2xe^{2x}+c_3e^{-3x}$.
+
+**Example 3.** $(D^6+2D^5-2D^3-D^2)y=0$.
+- $L=D^2(D-1)(D+1)^3$.
+- Basis: $1$, $x$ (from $D^2$); $e^x$ (from $D-1$); $e^{-x}$, $xe^{-x}$, $x^2e^{-x}$ (from $(D+1)^3$).
+- General solution: $y=c_1+c_2x+c_3e^x+(c_4+c_5x+c_6x^2)e^{-x}$.
+
+#### Case III — Complex Roots
+
+Each conjugate pair $\alpha\pm i\beta$ corresponds to a real quadratic factor
+$$D^2-2\alpha D+\alpha^2+\beta^2.\tag{6.18}$$
+
+- Null space contains $e^{\alpha x}\cos\beta x$ and $e^{\alpha x}\sin\beta x$.
+- If the pair has multiplicity $m$, the basis functions are
+  $$x^{q-1}e^{\alpha x}\cos\beta x,\qquad x^{q-1}e^{\alpha x}\sin\beta x,\qquad q=1,\dots,m.$$
+
+**Example 4.** $y'''-4y''+13y'=0$.
+- Roots: $0$, $2\pm3i$.
+- General solution: $y=c_1+e^{2x}(c_2\cos3x+c_3\sin3x)$.
+
+**Example 5.** $y'''-2y''+4y'-8y=0$.
+- Roots: $2$, $\pm2i$.
+- General solution: $y=c_1e^{2x}+c_2\cos2x+c_3\sin2x$.
+
+**Example 6.** $y^{(5)}-9y^{(4)}+34y'''-66y''+65y'-25y=0$.
+- Roots: $1$, $2\pm i$ (double).
+- General solution: $y=c_1e^x+e^{2x}\bigl[(c_2+c_3x)\cos x+(c_4+c_5x)\sin x\bigr]$.
