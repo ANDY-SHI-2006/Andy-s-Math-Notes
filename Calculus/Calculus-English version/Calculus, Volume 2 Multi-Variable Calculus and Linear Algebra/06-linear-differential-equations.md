@@ -455,3 +455,23 @@ $$P_n(x)=\frac{1}{2^n n!}\frac{d^n}{dx^n}(x^2-1)^n.$$
 - **Expansion:** Every polynomial $f$ of degree $n$ can be written as
   $$f(x)=\sum_{k=0}^n c_kP_k(x),\qquad c_k=\frac{2k+1}{2}\int_{-1}^1 f(x)P_k(x)\,dx.$$
 - **Zeros:** $P_n$ has $n$ distinct real zeros, all in $(-1,1)$.
+
+
+### 6.22 The Method of Frobenius
+
+When $P_1$ or $P_2$ in $y''+P_1y'+P_2y=0$ is **not** analytic at $x_0$, ordinary power-series solutions may fail. For equations with a **regular singular point** at $x_0$, i.e. equations of the form
+$$(x-x_0)^2y''+(x-x_0)P(x)y'+Q(x)y=0,\tag{6.45}$$
+where $P,Q$ are analytic near $x_0$, Frobenius (1873) developed the following method.
+
+**Indicial equation.** The quadratic
+$$t(t-1)+P(x_0)t+Q(x_0)=0\tag{6.46}$$
+is called the **indicial equation**; its roots $\alpha_1,\alpha_2$ determine the form of the solutions.
+
+**Theorem 6.14 (Roots not differing by an integer).** If $\alpha_1-\alpha_2$ is **not** an integer, there are two independent solutions
+$$u_1(x)=|x-x_0|^{\alpha_1}\sum_{n=0}^\infty a_n(x-x_0)^n,\quad a_0=1,\tag{6.47}$$
+$$u_2(x)=|x-x_0|^{\alpha_2}\sum_{n=0}^\infty b_n(x-x_0)^n,\quad b_0=1.\tag{6.48}$$
+Both series converge for $|x-x_0|<r$.
+
+**Theorem 6.15 (Roots differing by an integer).** If $\alpha_1-\alpha_2=N\in\mathbb Z_{\ge0}$, there is a solution $u_1$ of the form (6.47) and a second independent solution
+$$u_2(x)=|x-x_0|^{\alpha_2}\sum_{n=0}^\infty b_n(x-x_0)^n+C\,u_1(x)\log|x-x_0|,\tag{6.49}$$
+with $b_0=1$. The constant $C$ is nonzero when $N=0$; it may or may not be zero when $N>0$.
