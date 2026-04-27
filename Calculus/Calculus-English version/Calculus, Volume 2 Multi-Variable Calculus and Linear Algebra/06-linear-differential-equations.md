@@ -341,3 +341,31 @@ If $L(y)=R$ has constant coefficients and $R$ is annihilated by some constant-co
 | $x^{m-1}e^{\alpha x}\cos\beta x$ or $x^{m-1}e^{\alpha x}\sin\beta x$ | $[D^2-2\alpha D+(\alpha^2+\beta^2)]^m$ |
 
 - The annihilator method is efficient when applicable, but limited to right-hand sides $R$ that have a constant-coefficient annihilator. For $e^{x^2},\log x,\tan x$, etc., use variation of parameters.
+
+
+### 6.17 Linear Equations of Second Order with Analytic Coefficients
+
+A function $f$ is **analytic** on $(x_0-r,x_0+r)$ if it has a convergent power-series expansion there. If the coefficients of a homogeneous linear equation are analytic on such an interval, then $n$ independent analytic solutions exist. We prove this for second-order equations.
+
+**Theorem 6.13.** Let $P_1$ and $P_2$ be analytic on $(x_0-r,x_0+r)$,
+$$P_1(x)=\sum_{n=0}^\infty b_n(x-x_0)^n,\qquad P_2(x)=\sum_{n=0}^\infty c_n(x-x_0)^n.$$
+Then
+$$y''+P_1(x)y'+P_2(x)y=0\tag{6.31}$$
+has two independent solutions analytic on the same interval.
+
+- *Proof sketch (power-series method):* Seek
+  $$y=\sum_{n=0}^\infty a_n(x-x_0)^n.\tag{6.32}$$
+  Substituting the series for $y$, $y'$, $y''$, $P_1$, $P_2$ into (6.31) and equating coefficients yields the **recursion formula**
+  $$(n+2)(n+1)a_{n+2}=-\sum_{k=0}^n\bigl[(k+1)a_{k+1}b_{n-k}+a_kc_{n-k}\bigr].\tag{6.33}$$
+  - $a_{n+2}$ is expressed in terms of $a_0,\dots,a_{n+1}$ and the coefficients of $P_1,P_2$.
+  - Choose arbitrary $a_0,a_1$; the recursion defines all remaining coefficients.
+
+- *Convergence:* Fix $x_1\neq x_0$ in the interval, $t=|x_1-x_0|$. Since $P_1,P_2$ converge absolutely at $x_1$, the terms are bounded: $|b_k|t^k\le M_1$, $|c_k|t^k\le M_2$. Define a dominating sequence $A_n$ by
+  $$(n+2)(n+1)A_{n+2}=\frac{M}{t^{n+1}}\sum_{k=0}^{n+1}(k+1)A_kt^k.\tag{6.34}$$
+  Then $|a_n|\le A_n$. The ratio test on $\sum A_n|x-x_0|^n$ gives limit $|x-x_0|/t$; hence convergence for $|x-x_0|<t$. Since $x_1$ is arbitrary in $(x_0-r,x_0+r)$, the series converges on the whole interval.
+
+- *Independent solutions:* Choose initial data
+  - $u_1$: $a_0=1$, $a_1=0$ $\Rightarrow$ $u_1(x_0)=1$, $u_1'(x_0)=0$.
+  - $u_2$: $a_0=0$, $a_1=1$ $\Rightarrow$ $u_2(x_0)=0$, $u_2'(x_0)=1$.
+  
+  These are independent (different initial-value vectors).
