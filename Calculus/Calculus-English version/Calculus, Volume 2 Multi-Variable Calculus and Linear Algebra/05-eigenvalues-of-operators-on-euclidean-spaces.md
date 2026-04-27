@@ -249,3 +249,67 @@ where $Y=XC$ and $\lambda_1,\dots,\lambda_n$ are the eigenvalues of $A$.
 - Diagonal form: $Y\Lambda Y^t=y_1^2+6y_2^2$.
 
 **Geometric interpretation.** The transformation $Y=XC$ rotates the basis $\{i,j\}$ onto $\{u_1,u_2\}$. The set $XAX^t=c$ is the same ellipse as $Y\Lambda Y^t=c$, i.e. $y_1^2+6y_2^2=c$ ($c>0$). In the original coordinates this is $2x_1^2+4x_1x_2+5x_2^2=c$.
+
+### 5.14 Applications to Analytic Geometry
+
+Reduction of a quadratic form to diagonal form identifies the set of points $(x,y)$ satisfying a Cartesian equation
+$$ax^2+bxy+cy^2+dx+ey+f=0.\tag{5.10}$$
+This set is always a **conic section** (ellipse, hyperbola, parabola, or a degenerate case). The type is governed by the second-degree terms, i.e. by the quadratic form $ax^2+bxy+cy^2$.
+
+Writing $x_1=x$, $x_2=y$ and
+$$XAX^t=ax_1^2+bx_1x_2+cx_2^2,\qquad A=\begin{bmatrix}a&b/2\\b/2&c\end{bmatrix},$$
+a rotation $Y=XC$ reduces this to $\lambda_1y_1^2+\lambda_2y_2^2$, where $\lambda_1,\lambda_2$ are the eigenvalues of $A$. Relative to the new axes determined by orthonormal eigenvectors $u_1,u_2$, Equation (5.10) becomes
+$$\lambda_1y_1^2+\lambda_2y_2^2+d'y_1+e'y_2+f=0.\tag{5.11}$$
+
+- No mixed term $y_1y_2$ appears; the conic type is read off from $\lambda_1,\lambda_2$:
+  - **Ellipse**: $\lambda_1,\lambda_2$ have the same sign ($\lambda_1\lambda_2>0$)
+  - **Hyperbola**: $\lambda_1,\lambda_2$ have opposite signs ($\lambda_1\lambda_2<0$)
+  - **Parabola**: either $\lambda_1$ or $\lambda_2$ is zero ($\lambda_1\lambda_2=0$)
+
+**Example 1.** $2x^2+4xy+5y^2+4x+13y-\tfrac14=0$.
+
+- Matrix $A=\begin{bmatrix}2&2\\2&5\end{bmatrix}$; eigenvalues $\lambda_1=1$, $\lambda_2=6$.
+- Orthogonal $C=\frac1{\sqrt5}\begin{bmatrix}2&1\\-1&2\end{bmatrix}$.
+- Rotation $X=YC^t$ gives $x_1=\frac1{\sqrt5}(2y_1+y_2)$, $x_2=\frac1{\sqrt5}(-y_1+2y_2)$.
+- Linear part becomes $-\sqrt5\,y_1+6\sqrt5\,y_2$.
+- Transformed equation: $y_1^2+6y_2^2-\sqrt5\,y_1+6\sqrt5\,y_2-\frac14=0$.
+- Completing squares: $\bigl(y_1-\frac12\sqrt5\bigr)^2+6\bigl(y_2+\frac12\sqrt5\bigr)^2=9$.
+- This is an **ellipse** with centre $\bigl(\frac12\sqrt5,-\frac12\sqrt5\bigr)$ in the $y_1y_2$-system.
+- Translation $z_1=y_1-\frac12\sqrt5$, $z_2=y_2+\frac12\sqrt5$ yields standard form
+  $$\frac{z_1^2}{9}+\frac{z_2^2}{3/2}=1.$$
+
+**Example 2.** $2x^2-4xy-y^2-4x+10y-13=0$.
+
+- Matrix $A=\begin{bmatrix}2&-2\\-2&-1\end{bmatrix}$; eigenvalues $\lambda_1=3$, $\lambda_2=-2$.
+- Same eigenvectors; rotation as above gives
+  $$3y_1^2-2y_2^2-\frac{18}{\sqrt5}y_1+\frac{16}{\sqrt5}y_2-13=0.$$
+- Completing squares: $3\bigl(y_1-\frac35\sqrt5\bigr)^2-2\bigl(y_2-\frac45\sqrt5\bigr)^2=12$.
+- This is a **hyperbola**; in translated $z_1z_2$-coordinates:
+  $$\frac{z_1^2}{4}-\frac{z_2^2}{6}=1.$$
+
+**Example 3.** $9x^2+24xy+16y^2-20x+15y=0$.
+
+- Matrix $A=\begin{bmatrix}9&12\\12&16\end{bmatrix}$; eigenvalues $\lambda_1=25$, $\lambda_2=0$.
+- Orthogonal $C=\frac15\begin{bmatrix}3&-4\\4&3\end{bmatrix}$.
+- Transformed equation simplifies to $y_1^2+y_2=0$, a **parabola** with vertex at the origin.
+
+**Example 4. Degenerate cases.** Eigenvalues alone do not reveal degeneracy.
+
+- $x^2+2y^2=1$ (ellipse), $x^2+2y^2=0$ (single point), $x^2+2y^2=-1$ (empty set) all have the same eigenvalues.
+- $y^2=0$ ($x$-axis) and $y^2-1=0$ (two parallel lines) are degenerate parabolas.
+- $x^2-4y^2=0$ (two intersecting lines) is a degenerate hyperbola.
+
+For a **nondegenerate** conic the type is determined by the sign of the product $\lambda_1\lambda_2$. The characteristic polynomial of $A$ is
+$$\det\begin{bmatrix}\lambda-a&-b/2\\-b/2&\lambda-c\end{bmatrix}=\lambda^2-(a+c)\lambda+\Bigl(ac-\frac14b^2\Bigr).$$
+Hence
+$$\lambda_1\lambda_2=ac-\frac14b^2=\frac14(4ac-b^2).$$
+
+The number $4ac-b^2$ is the **discriminant** of the quadratic form $ax^2+bxy+cy^2$:
+
+| Discriminant | Conic type |
+|---|---|
+| $4ac-b^2>0$ | Ellipse |
+| $4ac-b^2<0$ | Hyperbola |
+| $4ac-b^2=0$ | Parabola |
+
+(In Examples 1, 2, 3 the discriminant is $34$, $-24$, $0$ respectively.)
