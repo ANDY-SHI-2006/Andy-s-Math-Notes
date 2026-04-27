@@ -275,3 +275,21 @@ $$v(x)=\int_c^x R(t)\,W(t)^{-1}\begin{bmatrix}0\\\vdots\\0\\1\end{bmatrix}dt.\ta
 - Integrating: $v_1=-e^{-x}-x+\log(1+e^x)$, $v_2=-\log(1+e^x)$.
 - General solution:
   $$y=c_1e^x+c_2e^{-x}-1-xe^x+(e^x-e^{-x})\log(1+e^x).$$
+
+
+### 6.12 Nonsingularity of the Wronskian Matrix
+
+**Theorem 6.12.** Let $u_1,\dots,u_n$ be independent solutions of $L(y)=0$ on $J$, where
+$$L(y)=y^{(n)}+P_1(x)y^{(n-1)}+\cdots+P_n(x)y.\tag{6.25}$$
+Let $w(x)=\det W(x)$. Then the Wronskian determinant satisfies
+$$w'+P_1(x)w=0\tag{6.26}$$
+on $J$, and
+$$w(x)=w(c)\exp\!\left[-\int_c^x P_1(t)\,dt\right]\quad\text{(Abel's formula).}\tag{6.27}$$
+Moreover, $w(x)\neq0$ for all $x\in J$.
+
+- *Proof sketch:* Write $w=\det(u,u',\dots,u^{(n-1)})$ with $u=(u_1,\dots,u_n)$.
+  - Differentiate the last row: $w'=\det(u,u',\dots,u^{(n-2)},u^{(n)})$.
+  - Multiply the last row of $w$ by $P_1$: $P_1w=\det(u,u',\dots,u^{(n-2)},P_1u^{(n-1)})$.
+  - Adding gives $w'+P_1w=\det(u,u',\dots,u^{(n-2)},u^{(n)}+P_1u^{(n-1)})=0$, because $u$ satisfies (6.25) so the last row is a linear combination of the preceding rows.
+  - Solving (6.26) yields Abel's formula.
+- To show $w(c)\neq0$ for some $c\in J$: suppose $w\equiv0$. Then at some $t_0$, $W(t_0)X=O$ has a nonzero solution $X=(c_1,\dots,c_n)$. Define $f=\sum c_ku_k$; then $L(f)=0$ and $f(t_0)=f'(t_0)=\cdots=f^{(n-1)}(t_0)=0$. By uniqueness, $f\equiv0$, forcing all $c_k=0$ — contradiction. Hence $w(c)\neq0$ for some $c$, and Abel's formula shows $w(x)\neq0$ for all $x\in J$.
