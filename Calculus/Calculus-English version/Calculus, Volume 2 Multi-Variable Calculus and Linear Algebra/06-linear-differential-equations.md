@@ -408,3 +408,28 @@ The first few Legendre polynomials:
 | $4$ | $1-10x^2+\frac{35}{3}x^4$ |
 | $5$ | $x-\frac{14}{3}x^3+\frac{21}{5}x^5$ |
 | $6$ | $1-21x^2+63x^4-\frac{231}{5}x^6$ |
+
+
+### 6.19 The Legendre Polynomials
+
+A unified formula for the Legendre polynomials (standard normalization):
+$$P_n(x)=\frac{1}{2^n}\sum_{r=0}^{[n/2]}\frac{(-1)^r(2n-2r)!}{r!(n-r)!(n-2r)!}x^{n-2r}.\tag{6.42}$$
+
+- When $n$ is even, $P_n$ is a constant multiple of $u_1$ in (6.40); when odd, a multiple of $u_2$ in (6.41).
+- The first seven polynomials in this normalization:
+
+$$\begin{aligned}
+P_0(x)&=1,\\
+P_1(x)&=x,\\
+P_2(x)&=\tfrac12(3x^2-1),\\
+P_3(x)&=\tfrac12(5x^3-3x),\\
+P_4(x)&=\tfrac18(35x^4-30x^2+3),\\
+P_5(x)&=\tfrac18(63x^5-70x^3+15x),\\
+P_6(x)&=\tfrac1{16}(231x^6-315x^4+105x^2-5).\end{aligned}$$
+
+**Connection to Gram–Schmidt.**
+- $P_n$ and $P_m$ are orthogonal for $m\neq n$ (eigenfunctions of a symmetric operator with distinct eigenvalues).
+- $\{P_0,\dots,P_n\}$ spans the same subspace as $\{1,x,\dots,x^n\}$.
+- By the uniqueness part of the orthogonalization theorem (Theorem 1.13), the Legendre polynomials coincide (up to scalar factors) with the polynomials obtained by Gram–Schmidt orthogonalization of $1,x,x^2,\dots$ on $[-1,1]$.
+- The leading coefficient of $P_n$ is
+  $$c_n=\frac{(2n)!}{2^n(n!)^2}.$$
