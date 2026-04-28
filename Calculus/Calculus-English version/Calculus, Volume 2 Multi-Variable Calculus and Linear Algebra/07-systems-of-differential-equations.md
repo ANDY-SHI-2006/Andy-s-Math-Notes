@@ -203,3 +203,34 @@ r_{k+1}'(t)=\lambda_{k+1}r_{k+1}(t)+r_k(t), & r_{k+1}(0)=0,\quad k=1,\dots,n-1.
 
 **Complex conjugate pair** $\lambda=\alpha+i\beta$, $\mu=\alpha-i\beta$ ($\beta\neq0$). From (7.34) the imaginary parts cancel, giving a real formula:
 $$e^{tA}=\frac{e^{\alpha t}}{\beta}\bigl[(\beta\cos\beta t-\alpha\sin\beta t)\,I+\sin\beta t\,A\bigr].\tag{7.35}$$
+
+
+### 7.14 Alternate Methods for Calculating $e^{tA}$ in Special Cases
+
+**Theorem 7.10** (all eigenvalues equal to $\lambda$).
+$$e^{tA}=e^{\lambda t}\sum_{k=0}^{n-1}\frac{t^k}{k!}(A-\lambda I)^k.\tag{7.36}$$
+- *Proof sketch:* $e^{tA}=e^{\lambda tI}e^{t(A-\lambda I)}$. The series for $e^{t(A-\lambda I)}$ truncates at $k=n-1$ because $(A-\lambda I)^n=O$ by Cayley–Hamilton.
+
+**Theorem 7.11** ($n$ distinct eigenvalues $\lambda_1,\dots,\lambda_n$).
+$$e^{tA}=\sum_{k=1}^{n}e^{t\lambda_k}L_k(A),\qquad
+L_k(A)=\prod_{\substack{j=1\\j\neq k}}^{n}\frac{A-\lambda_j I}{\lambda_k-\lambda_j}.$$
+- The $L_k(A)$ are **Lagrange interpolation coefficients**.
+- *Proof sketch:* Define $F(t)$ by the RHS; verify $F'=AF$ using $(A-\lambda_k I)L_k(A)=O$, and $F(0)=I$ via $\sum_k L_k(A)=I$.
+
+**Theorem 7.12** (two distinct eigenvalues, $\lambda$ mult. $n-1$, $\mu$ mult. $1$, $n\ge 3$).
+$$e^{tA}=e^{\lambda t}\sum_{k=0}^{n-2}\frac{t^k}{k!}(A-\lambda I)^k
++\left\{\frac{e^{\mu t}}{(\mu-\lambda)^{n-1}}-\frac{e^{\lambda t}}{(\mu-\lambda)^{n-1}}\sum_{k=0}^{n-2}\frac{t^k}{k!}(\mu-\lambda)^k\right\}(A-\lambda I)^{n-1}.$$
+- *Proof sketch:* Expand $e^{t(A-\lambda I)}$; for $k\ge n-1$ use $(A-\lambda I)^{n-1+r}=(\mu-\lambda)^r(A-\lambda I)^{n-1}$ (from Cayley–Hamilton) and sum the remaining exponential series.
+
+**Formulas for $3\times3$ matrices.**
+
+| Case | Eigenvalues | Formula |
+|------|-------------|---------|
+| 1 | $\lambda,\lambda,\lambda$ | $e^{tA}=e^{\lambda t}\bigl[I+t(A-\lambda I)+\tfrac12t^2(A-\lambda I)^2\bigr]$ |
+| 2 | $\lambda,\mu,\nu$ (distinct) | $e^{tA}=\sum e^{\lambda_i t}\dfrac{\prod_{j\neq i}(A-\lambda_j I)}{\prod_{j\neq i}(\lambda_i-\lambda_j)}$ |
+| 3 | $\lambda,\lambda,\mu$ | $e^{tA}=e^{\lambda t}[I+t(A-\lambda I)]+\dfrac{e^{\mu t}-e^{\lambda t}}{(\mu-\lambda)^2}(A-\lambda I)^2-\dfrac{te^{\lambda t}}{\mu-\lambda}(A-\lambda I)^2$ |
+
+**Example.** $A=\begin{bmatrix}0&1&0\\0&0&1\\2&-5&4\end{bmatrix}$ has eigenvalues $1,1,2$ (Case 3).
+$$e^{tA}=e^t\{I+t(A-I)\}+(e^{2t}-e^t)(A-I)^2-te^t(A-I)^2.\tag{7.39}$$
+Collecting powers of $A$:
+$$e^{tA}=(-2te^t+e^{2t})I+\{(3t+2)e^t-2e^{2t}\}A-\{(t+1)e^t-e^{2t}\}A^2.\tag{7.40}$$
