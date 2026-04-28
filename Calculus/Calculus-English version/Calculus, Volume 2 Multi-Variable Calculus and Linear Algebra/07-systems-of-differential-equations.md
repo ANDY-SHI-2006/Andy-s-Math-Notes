@@ -171,3 +171,35 @@ $$A^n+c_{n-1}A^{n-1}+\cdots+c_1A+c_0I=O.\tag{7.20}$$
 **Example.** $A=\begin{bmatrix}5&4&0\\1&2&0\\1&2&2\end{bmatrix}$ has $f(\lambda)=\lambda^3-9\lambda^2+20\lambda-12$.
 - Hence $A^3=9A^2-20A+12I$, $A^4=61A^2-168A+108I$, etc.
 - Inverse: $A^{-1}=\frac1{12}(A^2-9A+20I)$.
+
+
+### 7.13 Putzer's Method for Calculating $e^{tA}$
+
+By Cayley–Hamilton, every power $A^k$ ($k\ge n$) is a linear combination of $I,A,\dots,A^{n-1}$. Hence $e^{tA}$ can be written as a polynomial in $A$:
+$$e^{tA}=\sum_{k=0}^{n-1}q_k(t)A^k.\tag{7.27}$$
+
+**Theorem 7.9 (Putzer).** Let $\lambda_1,\dots,\lambda_n$ be the eigenvalues of $A$. Define
+$$P_0(A)=I,\qquad P_k(A)=\prod_{m=1}^{k}(A-\lambda_m I),\quad k=1,\dots,n.\tag{7.28}$$
+Then
+$$e^{tA}=\sum_{k=0}^{n-1}r_{k+1}(t)P_k(A),\tag{7.29}$$
+where the scalar functions $r_1,\dots,r_n$ satisfy the triangular linear system
+$$\begin{cases}
+r_1'(t)=\lambda_1 r_1(t), & r_1(0)=1,\\[4pt]
+r_{k+1}'(t)=\lambda_{k+1}r_{k+1}(t)+r_k(t), & r_{k+1}(0)=0,\quad k=1,\dots,n-1.
+\end{cases}\tag{7.30}$$
+
+- The system (7.30) is triangular, so it is solved in succession.
+- The polynomials $P_k(A)$ are easy to compute once eigenvalues are known.
+- *Proof sketch:* Define $F(t)$ by the RHS of (7.29). Show $F(0)=I$ and $F'(t)=AF(t)$ using the recursion (7.28) and $P_n(A)=O$ (Cayley–Hamilton). Uniqueness gives $F(t)=e^{tA}$.
+
+**Example 1** ($2\times2$, repeated eigenvalue $\lambda$). Solve (7.30):
+- $r_1(t)=e^{\lambda t}$, $r_2(t)=te^{\lambda t}$.
+- $P_0=I$, $P_1=A-\lambda I$.
+- $$e^{tA}=e^{\lambda t}I+te^{\lambda t}(A-\lambda I)=e^{\lambda t}(1-\lambda t)I+te^{\lambda t}A.\tag{7.33}$$
+
+**Example 2** ($2\times2$, distinct eigenvalues $\lambda\neq\mu$). Solve (7.30):
+- $r_1(t)=e^{\lambda t}$, $r_2(t)=\dfrac{e^{\lambda t}-e^{\mu t}}{\lambda-\mu}$.
+- $$e^{tA}=\frac{\lambda e^{\mu t}-\mu e^{\lambda t}}{\lambda-\mu}\,I+\frac{e^{\lambda t}-e^{\mu t}}{\lambda-\mu}\,A.\tag{7.34}$$
+
+**Complex conjugate pair** $\lambda=\alpha+i\beta$, $\mu=\alpha-i\beta$ ($\beta\neq0$). From (7.34) the imaginary parts cancel, giving a real formula:
+$$e^{tA}=\frac{e^{\alpha t}}{\beta}\bigl[(\beta\cos\beta t-\alpha\sin\beta t)\,I+\sin\beta t\,A\bigr].\tag{7.35}$$
