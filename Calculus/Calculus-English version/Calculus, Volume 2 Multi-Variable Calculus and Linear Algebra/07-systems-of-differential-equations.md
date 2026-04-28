@@ -264,3 +264,35 @@ $$A-2I=\begin{bmatrix}0&-1&1\\0&1&-1\\2&1&1\end{bmatrix},\qquad (A-2I)^2=\begin{
 the result is
 $$Y(x)=e^{2x}\begin{bmatrix}\frac38e^{2x}-\frac38+\frac14x-\frac34x^2\\[4pt]-\frac38e^{2x}+\frac38+\frac34x+\frac34x^2\\[4pt]\frac38e^{2x}-\frac38-\frac34x+\frac34x^2\end{bmatrix}.$$
 The rows are $y_1,y_2,y_3$.
+
+
+### 7.18 The General Linear System $Y'(t)=P(t)Y(t)+Q(t)$
+
+We now allow $P(t)$ to be non-constant. The system is
+$$Y'(t)=P(t)Y(t)+Q(t),\qquad Y(a)=B.\tag{7.45}$$
+
+**Scalar case ($n=1$).** Let $A(x)=\int_a^x P(t)\,dt$; multiply by $e^{-A(t)}$:
+$$\frac{d}{dt}\bigl[e^{-A(t)}Y(t)\bigr]=e^{-A(t)}Q(t).$$
+Integrate and multiply by $e^{A(x)}$:
+$$Y(x)=e^{A(x)}e^{-A(a)}Y(a)+e^{A(x)}\int_a^x e^{-A(t)}Q(t)\,dt.\tag{7.47}$$
+
+**Matrix difficulty.** The formula $\frac{d}{dt}e^{A(t)}=A'(t)e^{A(t)}$ is **not** always valid for matrix functions (e.g. $A(t)=\begin{smallmatrix}1&t\\0&0\end{smallmatrix}$). So (7.47) does not generalise directly.
+
+**Modified argument.** Multiply (7.45) by an unknown matrix $F(t)$ and add $F'(t)Y(t)$:
+$$\{F(t)Y(t)\}'=\{F'(t)+F(t)P(t)\}Y(t)+F(t)Q(t).$$
+Choose $F$ so that $F'(t)+F(t)P(t)=O$, i.e.
+$$F'(t)=-F(t)P(t).\tag{7.49}$$
+Then $\{F(t)Y(t)\}'=F(t)Q(t)$, and if $F$ is nonsingular,
+$$Y(x)=F(x)^{-1}F(a)Y(a)+F(x)^{-1}\int_a^x F(t)Q(t)\,dt.\tag{7.48}$$
+
+**Theorem 7.14** (existence for homogeneous systems). If $A(t)$ is continuous on an open interval $J$, then $Y'=A(t)Y$, $Y(a)=B$ has a solution on $J$. (Proof deferred to §7.21.)
+
+**Theorem 7.15.** Given $P$ continuous on $J$ and $a\in J$, there exists a nonsingular matrix function $F$ satisfying (7.49) with $F(a)=I$.
+- *Proof sketch:* Solve $Y_k'=-P(x)^tY_k$, $Y_k(a)=I_k$ for each column $k$; let $G$ be the matrix with columns $Y_k$. Then $G'=-P^tG$, $G(a)=I$. Set $F=G^t$; then $F'=-FP$ and $F(a)=I$. Nonsingularity follows by constructing $H$ with $H'=PH$, $H(a)=I$; then $(FH)'=O$, so $FH=I$.
+
+**Theorem 7.16.** Given $P$, $Q$ continuous on an open interval $J$, the solution of (7.51) is
+$$Y(x)=F(x)^{-1}Y(a)+F(x)^{-1}\int_a^x F(t)Q(t)\,dt,\tag{7.52}$$
+where $F(x)$ is the transpose of the matrix whose $k$th column solves
+$$Y'(x)=-P(x)^tY(x),\qquad Y(a)=I_k.\tag{7.53}$$
+
+- Note: finding $F$ requires solving $n$ homogeneous linear systems, so the formula is mainly of theoretical value.
