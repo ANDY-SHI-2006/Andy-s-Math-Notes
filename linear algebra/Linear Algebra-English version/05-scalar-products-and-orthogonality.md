@@ -294,7 +294,7 @@ Equivalently: column rank = max number of linearly independent columns; row rank
 
 **Theorem 3.1.** Let $W$ be a subspace of $K^n$. Then $\dim W + \dim W^\perp = n$.
 
-**Theorem 3.2.** Let $A$ be an $m \times n$ matrix. Then row rank = column rank = $r$, and $n - r$ = dimension of the solution space of (**).
+**Theorem 3.2.** Let $A$ be an $m \times n$ matrix. Then row rank = column rank = $r$, and $n - r$ = dimension of the solution space of (\*\*).
 
 > This common value is called the **rank** of $A$.
 
@@ -346,8 +346,8 @@ Then $\{B', C'\}$ is a basis for the solution space.
 
 Let $U, V, W$ be vector spaces over $K$. A map $g: U \times V \to W$ is **bilinear** if:
 
-| Condition | Statement |
-|-----------|-----------|
+| Condition                                     | Statement                      |
+| --------------------------------------------- | ------------------------------ |
 | **(i)** Linear in second argument (fixed $u$) | $v \mapsto g(u, v)$ is linear. |
 | **(ii)** Linear in first argument (fixed $v$) | $u \mapsto g(u, v)$ is linear. |
 

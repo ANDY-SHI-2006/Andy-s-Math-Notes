@@ -86,7 +86,7 @@ $$
 
 3. **Normalization:** $D(I) = 1$.
 
-> In the $3 \times 3$ case, these are proved by direct computation using the definition (*).
+> In the $3 \times 3$ case, these are proved by direct computation using the definition (\*).
 
 ### 6.2.3 Expansion by Any Row or Column
 
