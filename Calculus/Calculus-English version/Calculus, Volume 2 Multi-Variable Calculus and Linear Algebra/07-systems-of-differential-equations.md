@@ -32,3 +32,35 @@ $$Y'=P(t)Y+Q(t).\tag{7.6}$$
   $$Y(x)=e^{A(x)}Y(a)+e^{A(x)}\int_a^x e^{-A(t)}Q(t)\,dt,\tag{7.7}$$
   where $A(x)=\int_a^x P(t)\,dt$.
 - This formula will be generalized to matrix-valued $P$ and $Q$; we first need the calculus of matrix functions.
+
+
+### 7.2 Calculus of Matrix Functions
+
+Integration and differentiation of a matrix function are performed entrywise:
+$$\int_a^b P(t)\,dt=\Bigl[\int_a^b p_{ij}(t)\,dt\Bigr],\qquad P'(t)=[p_{ij}'(t)].$$
+
+- $P$ is continuous/differentiable at $t$ iff every entry is.
+- Basic rules generalize:
+  - $(P+Q)'=P'+Q'$
+  - $(PQ)'=PQ'+P'Q$ (when defined)
+  - Chain rule: if $F(t)=P[g(t)]$, then $F'(t)=g'(t)P'[g(t)]$.
+- The zero-derivative theorem and the fundamental theorems of calculus also hold for matrix functions.
+
+### 7.3 Infinite Series of Matrices and Norms
+
+**Matrix exponential.** We require $e^{tA}e^{sA}=e^{(t+s)A}$ and $e^O=I$. Entrywise exponentiation $[e^{a_{ij}}]$ fails both, so we use the power series
+$$e^A=\sum_{k=0}^\infty\frac{A^k}{k!}.$$
+
+**Convergent series of matrices.** The series $\sum C_k$ converges iff every entry series $\sum c_{ij}^{(k)}$ converges; the sum is the matrix of entrywise sums.
+
+**Matrix norm.** For $A=[a_{ij}]$,
+$$\|A\|=\sum_{i=1}^m\sum_{j=1}^n|a_{ij}|.\tag{7.11}$$
+
+**Theorem 7.1 (Fundamental properties).** For compatible matrices and scalars $c$:
+$$\|A+B\|\le\|A\|+\|B\|,\qquad\|AB\|\le\|A\|\|B\|,\qquad\|cA\|=|c|\,\|A\|.$$
+
+- By induction: $\|A^k\|\le\|A\|^k$ for $k=1,2,\dots$
+
+**Theorem 7.2 (Convergence test).** If $\sum_{k=1}^\infty\|C_k\|$ converges, then the matrix series $\sum_{k=1}^\infty C_k$ converges.
+
+- *Proof sketch:* $|c_{ij}^{(k)}|\le\|C_k\|$; convergence of $\sum\|C_k\|$ implies absolute (hence ordinary) convergence of every entry series.
