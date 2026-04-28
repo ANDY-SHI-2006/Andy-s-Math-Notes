@@ -109,3 +109,27 @@ $$F(t)=e^{tA}B.\tag{7.15}$$
 - *Proof sketch:* Set $G(t)=e^{-tA}F(t)$. Then $G'(t)=e^{-tA}AF(t)-Ae^{-tA}F(t)=O$, so $G(t)\equiv G(0)=B$. Multiplying by $e^{tA}$ gives $F(t)=e^{tA}B$.
 
 - Similarly, $F(t)=Be^{tA}$ is the unique solution of $F'(t)=F(t)A$, $F(0)=B$.
+
+
+### 7.8 The Law of Exponents for Exponential Matrices
+
+$e^{A+B}=e^Ae^B$ is **not** always true for matrices (counterexample in Exercise 13, Section 7.12). It does hold when $A$ and $B$ commute.
+
+**Theorem 7.6.** If $AB=BA$, then
+$$e^{A+B}=e^Ae^B.\tag{7.16}$$
+
+- *Proof sketch:* Commutativity implies $B$ commutes with every power of $A$, hence with $e^{tA}$. Set $F(t)=e^{t(A+B)}-e^{tA}e^{tB}$. Then
+  $$F'(t)=(A+B)e^{t(A+B)}-Ae^{tA}e^{tB}-e^{tA}Be^{tB}=(A+B)F(t).$$
+  By uniqueness, $F(t)=e^{t(A+B)}F(0)=O$, so $e^{t(A+B)}=e^{tA}e^{tB}$. Set $t=1$.
+
+- **Example.** $e^{sA}e^{tA}=e^{(s+t)A}$ for all scalars $s,t$.
+
+### 7.9 Existence and Uniqueness for Homogeneous Linear Systems with Constant Coefficients
+
+**Theorem 7.7.** Let $A$ be a constant $n\times n$ matrix and $B$ a given $n$-dimensional vector. The initial-value problem
+$$Y'(t)=AY(t),\qquad Y(0)=B\tag{7.17}$$
+has a unique solution on $(-\infty,+\infty)$, given by
+$$Y(t)=e^{tA}B.\tag{7.18}$$
+
+- More generally, $Y(a)=B$ gives $Y(t)=e^{(t-a)A}B$.
+- *Proof sketch:* Differentiation gives $Y'=Ae^{tA}B=AY$. For uniqueness, let $Z$ be another solution and set $G(t)=e^{-tA}Z(t)$; then $G'=O$, so $G(t)\equiv B$, hence $Z(t)=e^{tA}B=Y(t)$.
