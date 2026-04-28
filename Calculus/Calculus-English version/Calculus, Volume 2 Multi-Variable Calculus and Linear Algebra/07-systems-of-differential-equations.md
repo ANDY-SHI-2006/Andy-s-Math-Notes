@@ -349,3 +349,25 @@ Since $J_1$ is arbitrary, the solution exists on all of $J$.
 - *Proof sketch:* For two solutions $Y,Z$, set $W=Z-Y$. Then $W(x)=\int_a^x A(t)W(t)\,dt$, whence $\|W(x)\|\le M\bigl|\int_a^x\|W(t)\|\,dt\bigr|$. Iterating gives $\|W(x)\|\le M^mM_1|x-a|^m/m!\to0$.
 
 **Theorem 7.18 (Existence–Uniqueness).** If $A$ is continuous on an open interval $J$, then for every $a\in J$ and every vector $B$, the system $Y'=AY$, $Y(a)=B$ has **exactly one** solution on $J$.
+
+
+### 7.22 Successive Approximations for First-Order Nonlinear Systems
+
+The method extends to nonlinear systems
+$$Y'=F(t,Y),\qquad Y(a)=B.\tag{7.66}$$
+Define the Picard iterates by
+$$Y_0(x)=B,\qquad Y_{k+1}(x)=B+\int_a^x F\bigl[t,Y_k(t)\bigr]\,dt\quad(k=0,1,2,\dots).\tag{7.67}$$
+Under suitable conditions on $F$, the sequence converges to a solution.
+
+**Example 1.** $y'=x^2+y^2$, $y(0)=0$.
+- $Y_0=0$,
+- $Y_1=x^3/3$,
+- $Y_2=x^3/3+x^7/63$,
+- $Y_3=x^3/3+x^7/63+2x^{11}/2076+x^{15}/59535$.
+- Degrees grow rapidly ($Y_4$ has degree 31, $Y_5$ has degree 63).
+
+**Example 2.** $y'=2x+e^y$, $y(0)=0$.
+- $Y_1=x^2+x$,
+- $Y_2=x^2+\int_0^x e^{t^2+t}\,dt$ — the integral is not elementary.
+
+- The practical value of successive approximations is mainly **theoretical** (proving existence); explicit computation is often intractable.
