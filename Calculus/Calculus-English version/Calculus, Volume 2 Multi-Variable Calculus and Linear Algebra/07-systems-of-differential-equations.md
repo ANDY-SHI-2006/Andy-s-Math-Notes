@@ -234,3 +234,33 @@ $$e^{tA}=e^{\lambda t}\sum_{k=0}^{n-2}\frac{t^k}{k!}(A-\lambda I)^k
 $$e^{tA}=e^t\{I+t(A-I)\}+(e^{2t}-e^t)(A-I)^2-te^t(A-I)^2.\tag{7.39}$$
 Collecting powers of $A$:
 $$e^{tA}=(-2te^t+e^{2t})I+\{(3t+2)e^t-2e^{2t}\}A-\{(t+1)e^t-e^{2t}\}A^2.\tag{7.40}$$
+
+
+### 7.16 Nonhomogeneous Linear Systems with Constant Coefficients
+
+Consider the nonhomogeneous initial-value problem
+$$Y'(t)=AY(t)+Q(t),\qquad Y(a)=B.\tag{7.41}$$
+
+Multiply (7.41) by $e^{-tA}$; the left side becomes $\dfrac{d}{dt}[e^{-tA}Y(t)]$:
+$$\frac{d}{dt}\bigl[e^{-tA}Y(t)\bigr]=e^{-tA}Q(t).\tag{7.42}$$
+Integrate from $a$ to $x$ and multiply by $e^{xA}$.
+
+**Theorem 7.13.** Let $A$ be constant and $Q$ continuous on an interval $J$. Then (7.41) has the unique solution on $J$:
+$$Y(x)=e^{(x-a)A}B+e^{xA}\int_a^x e^{-tA}Q(t)\,dt.\tag{7.43}$$
+
+- First term: solution of the homogeneous problem $Y'=AY$, $Y(a)=B$.
+- Second term: particular solution of the nonhomogeneous problem with $Y(a)=O$.
+
+**Example.** Solve $Y'=AY+Q(t)$, $Y(0)=O$ on $(-\infty,+\infty)$ with
+$$A=\begin{bmatrix}2&-1&1\\0&3&-1\\2&1&3\end{bmatrix},\quad Q(t)=\begin{bmatrix}e^{2t}\\0\\te^{2t}\end{bmatrix}.$$
+
+Since $B=O$, (7.43) gives $Y(x)=\displaystyle\int_0^x e^{(x-t)A}Q(t)\,dt$.
+
+Eigenvalues of $A$ are $2,2,4$ (Case 3 of §7.14):
+$$e^{xA}=e^{2x}\Bigl\{I+x(A-2I)+\tfrac14(e^{2x}-2x-1)(A-2I)^2\Bigr\}.$$
+
+After computing $e^{(x-t)A}Q(t)$, integrating term by term, and substituting
+$$A-2I=\begin{bmatrix}0&-1&1\\0&1&-1\\2&1&1\end{bmatrix},\qquad (A-2I)^2=\begin{bmatrix}2&0&2\\-2&0&-2\\2&0&2\end{bmatrix},$$
+the result is
+$$Y(x)=e^{2x}\begin{bmatrix}\frac38e^{2x}-\frac38+\frac14x-\frac34x^2\\[4pt]-\frac38e^{2x}+\frac38+\frac34x+\frac34x^2\\[4pt]\frac38e^{2x}-\frac38-\frac34x+\frac34x^2\end{bmatrix}.$$
+The rows are $y_1,y_2,y_3$.
