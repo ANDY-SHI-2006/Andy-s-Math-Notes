@@ -64,3 +64,28 @@ $$\|A+B\|\le\|A\|+\|B\|,\qquad\|AB\|\le\|A\|\|B\|,\qquad\|cA\|=|c|\,\|A\|.$$
 **Theorem 7.2 (Convergence test).** If $\sum_{k=1}^\infty\|C_k\|$ converges, then the matrix series $\sum_{k=1}^\infty C_k$ converges.
 
 - *Proof sketch:* $|c_{ij}^{(k)}|\le\|C_k\|$; convergence of $\sum\|C_k\|$ implies absolute (hence ordinary) convergence of every entry series.
+
+
+### 7.5 The Exponential Matrix
+
+Using Theorem 7.2, the series
+$$\sum_{k=0}^\infty\frac{A^k}{k!}\tag{7.12}$$
+converges for every square matrix $A$ because $\|A^k/k!\|\le\|A\|^k/k!$ and $\sum a^k/k!$ converges for all real $a$.
+
+**Definition.** For any $n\times n$ matrix $A$,
+$$e^A=\sum_{k=0}^\infty\frac{A^k}{k!}.$$
+
+- $e^O=I$.
+
+### 7.6 The Differential Equation Satisfied by $e^{tA}$
+
+Let $E(t)=e^{tA}$.
+
+**Theorem 7.3.** For every real $t$,
+$$E'(t)=E(t)A=AE(t).$$
+
+- *Proof sketch:* $E(t)=\sum_{k=0}^\infty t^kA^k/k!$. Differentiating term by term (valid since each entry is a power series convergent for all $t$) gives
+  $$E'(t)=\sum_{k=0}^\infty\frac{t^kA^{k+1}}{k!}=\Bigl(\sum_{k=0}^\infty\frac{t^kA^k}{k!}\Bigr)A=E(t)A.$$
+  Since $A$ commutes with $A^k$, we also have $E'(t)=AE(t)$.
+
+- **Key consequence:** $A$ commutes with $e^{tA}$.
