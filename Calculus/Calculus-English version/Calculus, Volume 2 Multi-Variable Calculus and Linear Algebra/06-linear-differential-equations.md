@@ -475,3 +475,36 @@ Both series converge for $|x-x_0|<r$.
 **Theorem 6.15 (Roots differing by an integer).** If $\alpha_1-\alpha_2=N\in\mathbb Z_{\ge0}$, there is a solution $u_1$ of the form (6.47) and a second independent solution
 $$u_2(x)=|x-x_0|^{\alpha_2}\sum_{n=0}^\infty b_n(x-x_0)^n+C\,u_1(x)\log|x-x_0|,\tag{6.49}$$
 with $b_0=1$. The constant $C$ is nonzero when $N=0$; it may or may not be zero when $N>0$.
+
+
+### 6.23 The Bessel Equation
+
+The **Bessel equation**
+$$x^2y''+xy'+(x^2-\alpha^2)y=0$$
+arises in cylindrical problems (vibrations, heat flow, currents). It has the regular singular point $x_0=0$ with $P(x)=1$, $Q(x)=x^2-\alpha^2$.
+
+**Frobenius ansatz:** $y=|x|^t\sum_{n=0}^\infty a_nx^n$.
+
+**Indicial equation:** $t^2-\alpha^2=0$, roots $t=\pm\alpha$.
+
+**First solution ($t=\alpha$).** The recursion gives $a_1=0$, $a_{2n+1}=0$, and
+$$a_{2n}=\frac{(-1)^na_0}{2^{2n}n!(1+\alpha)(2+\alpha)\cdots(n+\alpha)}.$$
+Choosing $a_0=2^{-\alpha}/\Gamma(1+\alpha)$ yields the **Bessel function of the first kind**:
+$$J_\alpha(x)=\Bigl(\frac{x}{2}\Bigr)^\alpha\sum_{n=0}^\infty\frac{(-1)^n}{n!\,\Gamma(n+1+\alpha)}\Bigl(\frac{x}{2}\Bigr)^{2n}.\tag{6.59}$$
+
+- For integer order $p=0,1,2,\dots$:
+  $$J_p(x)=\sum_{n=0}^\infty\frac{(-1)^n}{n!(n+p)!}\Bigl(\frac{x}{2}\Bigr)^{2n+p}.$$
+
+**Second solution when $\alpha$ is not an integer.** Replace $\alpha$ by $-\alpha$ in (6.59) to get $J_{-\alpha}(x)$. Then $J_\alpha$ and $J_{-\alpha}$ are independent, and the general solution for $x>0$ is
+$$y=c_1J_\alpha(x)+c_2J_{-\alpha}(x).$$
+
+**Gamma function review.**
+$$\Gamma(s)=\int_0^\infty t^{s-1}e^{-t}\,dt\quad(s>0),\qquad\Gamma(s+1)=s\Gamma(s),\qquad\Gamma(n+1)=n!.$$
+By (6.58), $\Gamma$ extends to all non-integer real $s$.
+
+**Second solution when $\alpha=p$ is a nonnegative integer.** A second independent solution involves a logarithmic term (Frobenius second case). It can be written as the **Bessel function of the second kind** $K_p(x)$:
+$$K_p(x)=J_p(x)\log x+x^{-p}\sum_{n=0}^\infty C_nx^n,$$
+with explicit coefficients involving harmonic numbers $h_n=1+\frac12+\cdots+\frac1n$.
+
+- General solution for integer order $p$:
+  $$y=c_1J_p(x)+c_2K_p(x).$$
