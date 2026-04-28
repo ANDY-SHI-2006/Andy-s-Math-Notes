@@ -296,3 +296,26 @@ where $F(x)$ is the transpose of the matrix whose $k$th column solves
 $$Y'(x)=-P(x)^tY(x),\qquad Y(a)=I_k.\tag{7.53}$$
 
 - Note: finding $F$ requires solving $n$ homogeneous linear systems, so the formula is mainly of theoretical value.
+
+
+### 7.19 A Power-Series Method for Solving Homogeneous Linear Systems
+
+Consider the homogeneous system
+$$Y'(x)=A(x)Y(x),\qquad Y(0)=B,\tag{7.54}$$
+where $A(x)$ has a power-series expansion convergent for $|x|<r_1$:
+$$A(x)=A_0+xA_1+x^2A_2+\cdots+x^kA_k+\cdots.$$
+
+Seek a solution of the same form:
+$$Y(x)=B_0+xB_1+x^2B_2+\cdots+x^kB_k+\cdots.$$
+
+Equating coefficients of like powers of $x$ gives the recursion
+$$B_1=A_0B,\qquad (k+1)B_{k+1}=\sum_{r=0}^{k}A_rB_{k-r}\quad(k=1,2,\dots).\tag{7.55}$$
+
+- The vectors $B_1,B_2,\dots$ are determined in succession.
+- If the resulting series converges for $|x|<r_2$, it solves (7.54) for $|x|<r$ where $r=\min\{r_1,r_2\}$.
+
+**Constant-coefficient case.** If $A(x)=A$ (constant), then $A_0=A$ and $A_k=O$ for $k\ge 1$. The recursion reduces to
+$$B_1=AB,\qquad (k+1)B_{k+1}=AB_k\quad(k\ge 1),$$
+giving $B_k=\dfrac{1}{k!}A^kB$. Hence
+$$Y(x)=B+\sum_{k=1}^{\infty}\frac{x^k}{k!}A^kB=e^{xA}B,$$
+which agrees with the earlier result for constant-coefficient systems.
