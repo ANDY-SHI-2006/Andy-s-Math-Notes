@@ -319,3 +319,33 @@ $$B_1=AB,\qquad (k+1)B_{k+1}=AB_k\quad(k\ge 1),$$
 giving $B_k=\dfrac{1}{k!}A^kB$. Hence
 $$Y(x)=B+\sum_{k=1}^{\infty}\frac{x^k}{k!}A^kB=e^{xA}B,$$
 which agrees with the earlier result for constant-coefficient systems.
+
+
+### 7.21 Proof of the Existence Theorem by Successive Approximations
+
+Consider the homogeneous system
+$$Y'(t)=A(t)Y(t),\qquad Y(a)=B,\tag{7.56}$$
+with $A(t)$ continuous on an open interval $J$.
+
+**Method of successive approximations (Picard).** Define
+$$Y_0(x)=B,\qquad Y_{k+1}(x)=B+\int_a^x A(t)Y_k(t)\,dt\quad(k=0,1,2,\dots).\tag{7.58}$$
+
+**Example (constant $A$).** $Y_k(x)=\bigl(\sum_{r=0}^k (xA)^r/r!\bigr)B$, so $Y_k\to e^{xA}B$.
+
+**Convergence.** Write $Y_k$ as a telescoping sum:
+$$Y_k(x)=Y_0(x)+\sum_{m=0}^{k-1}\{Y_{m+1}(x)-Y_m(x)\}.\tag{7.59}$$
+On any closed bounded subinterval $J_1\subset J$ containing $a$, let $M$ bound $\|A(t)\|$ and $L$ be the length of $J_1$. By induction,
+$$\|Y_{m+1}(x)-Y_m(x)\|\le\|B\|\frac{M^{m+1}|x-a|^{m+1}}{(m+1)!}\le\|B\|\frac{(ML)^{m+1}}{(m+1)!}.$$
+Hence $\sum_m\|Y_{m+1}-Y_m\|$ is dominated by $\|B\|(e^{ML}-1)$ and converges **uniformly** on $J_1$.
+
+**Properties of the limit $Y(x)=\lim_{k\to\infty}Y_k(x)$:**
+- (a) $Y$ is continuous on $J_1$ (uniform limit of continuous functions).
+- (b) $Y(x)=B+\int_a^x A(t)Y(t)\,dt$ (interchange limit and integral).
+- (c) $Y(a)=B$ and $Y'(x)=A(x)Y(x)$ on $J_1$ (Fundamental Theorem of Calculus).
+
+Since $J_1$ is arbitrary, the solution exists on all of $J$.
+
+**Theorem 7.17 (Uniqueness).** If $A(t)$ is continuous on $J$, the system $Y'=AY$ has at most one solution with $Y(a)=B$.
+- *Proof sketch:* For two solutions $Y,Z$, set $W=Z-Y$. Then $W(x)=\int_a^x A(t)W(t)\,dt$, whence $\|W(x)\|\le M\bigl|\int_a^x\|W(t)\|\,dt\bigr|$. Iterating gives $\|W(x)\|\le M^mM_1|x-a|^m/m!\to0$.
+
+**Theorem 7.18 (Existence–Uniqueness).** If $A$ is continuous on an open interval $J$, then for every $a\in J$ and every vector $B$, the system $Y'=AY$, $Y(a)=B$ has **exactly one** solution on $J$.
