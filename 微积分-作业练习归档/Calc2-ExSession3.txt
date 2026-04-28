@@ -1,0 +1,182 @@
+Westlake-MATH1005-1069
+Calculus II Track A
+Spring 2026
+Copyright © 2026 by Yabin Zhang
+Week 4 Exercise Session
+Spring 2026, MATH 1005-1069
+Calculus II: Week 4 Exercise Session
+Series and Improper Integrals
+Exercise 1. For each part, determine convergence or divergence of the given series. In case of conver-
+gence, determine whether the series converges absolutely or conditionally.
+(a).
+∞
+X
+n=1
+(−1)n log n
+n
+(b).
+∞
+X
+n=1
+(−1)n+1
+√n
+(c).
+∞
+X
+n=1
+(−1)n
+√n
+n + 100
+(d).
+∞
+X
+n=1
+(−1)n
+1 · 3 · 5 · · · (2n −1)
+2 · 4 · 6 · · · (2n)
+3
+(e).
+∞
+X
+n=1
+(−1)n(n−1)/2
+2n
+(f).
+∞
+X
+n=1
+(−1)n
+2n + 100
+3n + 1
+n
+(g).
+∞
+X
+n=2
+(−1)n
+√n + (−1)n
+(h).
+∞
+X
+n=1
+(−1)n
+n√n
+(i).
+∞
+X
+n=1
+(−1)n
+log (en + e−n)
+(j).
+∞
+X
+n=1
+(−1)n
+log(1 + 1/n)
+(k).
+∞
+X
+n=1
+an,
+where
+an =
+(
+1/n
+if n is a square,
+1/n2
+otherwise.
+(l).
+∞
+X
+n=1
+an,
+where
+an =
+(
+1/n2
+if n is odd ,
+−1/n
+if n is even .
+Exercise 2. In each part, test the improper integral for convergence.
+(a).
+Z ∞
+0
+sin xdx
+(b).
+Z ∞
+0
+x
+√
+x4 + 1
+dx
+(c).
+Z 1
+0+
+log x
+√x dx
+(d).
+Z ∞
+−∞
+e−x2dx
+(e).
+Z 1−
+0+
+log x
+1 −xdx
+(f).
+Z ∞
+0
+1
+√
+x3 + 1
+dx
+(g).
+Z ∞
+−∞
+x
+cosh xdx
+(h).
+Z ∞
+0
+1
+√
+ex dx
+(i).
+Z 1−
+0+
+dx
+√x log x
+Exercise 3. In each part, the given integral converges for a certain real number C. Determine C and
+evaluate the integral.
+(a).
+Z ∞
+2
+
+Cx
+x2 + 1 −
+1
+2x + 1
+
+dx
+(b).
+Z ∞
+1
+
+x
+2x2 + 2C −
+C
+x + 1
+
+dx
+(c).
+Z ∞
+0
+
+1
+√
+1 + 2x2 −
+C
+x + 1
+
+dx
+Page 1

@@ -1,0 +1,248 @@
+Westlake-MATH1005-1069
+Calculus II Track A
+Spring 2026
+Copyright © 2026 by Yabin Zhang
+Homework 4
+Spring 2026, MATH 1005-1069
+Calculus II: Homework 4
+Due: 11:59pm, April 3, 2026 (Friday)
+Exercise 1. Prove the Abel’s test: If P an converges and {bn} is monotonic and convergent, then
+P anbn converges.
+Exercise 2. Let {an} be a sequence defined by
+a1 = 1,
+a2 =
+Z 2
+1
+dx
+x ,
+a3 = 1
+2,
+a4 =
+Z 3
+2
+dx
+x ,
+. . . ,
+where, in general,
+a2n−1 = 1
+n
+and
+a2n =
+Z n+1
+n
+dx
+x
+for
+n = 1, 2, 3, . . . .
+(a). Verify that an →0 as n →∞and an ↘. Note that then by Leibniz’s rule, the series
+∞
+X
+n=1
+(−1)n−1an
+converges. For the rest of this exercise, we will denote the sum of this series by S and denote the
+partial sums by sn.
+(b). Show that
+lim
+n→∞1 + 1
+2 + · · · + 1
+n −log n = S
+and
+n
+X
+k=1
+1
+k = log n + S + o(1)
+as
+n →∞
+Hint: consider s2n−1. Remark: this number S is often referred to as the Euler’s constant and the
+above limit formula is often used as a definition of the Euler’s constant.
+(c). Now also consider the partial sum of the alternating harmonic series: tm =
+m
+X
+k=1
+(−1)k−1/k.
+In
+lecture, we showed that tm converges. Show that tm →log 2 as m →∞.
+Hint: consider t2n and use the result in part (b).
+(d). From part (c), we have
+1 −1
+2 + 1
+3 −1
+4 + 1
+5 −1
+6 + −· · · = log 2
+Now, consider the following series obtained by rearranging the terms in the above series
+1 + 1
+3 −1
+2 + 1
+5 + 1
+7 −1
+4 + 1
+8 + 1
+11 −1
+6 + + −· · ·
+Let pn denote the partial sum of this rearranged series. Verify that
+p3m =
+4m
+X
+k=1
+1
+k −1
+2
+2m
+X
+k=1
+1
+k −1
+2
+m
+X
+k=1
+1
+k
+and then deduce that pm →3
+2 log 2 as m →∞.
+Remark: This example shows that rearrangement of the terms of a convergent series may alter its
+sum. We shall investigate this phenomenon in more detail in the next three exercises.
+Exercise 3. Recall (from linear algebra) that, suppose n is a positive integrer, we call a bijection
+σ : {1, 2, . . . , n} →{1, 2, . . . , n} a permutation of {1, 2, . . . , n}. Suppose P an and P bn are two series
+such that for every n ≥1 we have
+bn = aσ(n)
+for some permutation σ of {1, 2, . . . , n}. Then we say that P bn is a rearrangement of P an.
+Page 1
+Westlake-MATH1005-1069
+Calculus II Track A
+Spring 2026
+Copyright © 2026 by Yabin Zhang
+Homework 4
+Spring 2026, MATH 1005-1069
+(a). Let P an denote the series 1 −1
+2 + 1
+3 −1
+4 + 1
+5 −1
+6 + −· · · , and let P bn denote the rearranged
+series 1 + 1
+3 −1
+2 + 1
+5 + 1
+7 −1
+4 + 1
+8 + 1
+11 −1
+6 + + −· · · . Find the permutation σ such that bn = aσ(n)
+for every n ≥1.
+(b). Let P an be an absolutely convergent series having sum S. Show that every rearrangement of P an
+also converges absolutely and has sum S.
+Remark: this is a very important result. It says that if a series converges absolutely, then rearrange-
+ment of its terms does not alter its sum.
+Exercise 4. Given a series P an of real terms, we can separate its terms by sign and define
+a+
+n = an + |an|
+2
+,
+a−
+n = an −|an|
+2
+.
+Then the new series P a+
+n and P a−
+n can be regarded as series summing over the positive terms and
+negative terms of P an, respectively. Prove the following statements:
+(a). If P an is conditionally convergent, both P a+
+n and P a−
+n diverge.
+(b). If P an is absolutely convergent, both P a+
+n and P a−
+n converge, and we have
+∞
+X
+n=1
+an =
+∞
+X
+n=1
+a+
+n +
+∞
+X
+n=1
+a−
+n .
+Exercise 5. Let P an be a conditionally convergent series of real numbers, and let S be a given real
+number. Prove that there is a rearrangement P bn of P an which converges to the sum S.
+Hint: exercise 4. Remark: note that this result not only tells us that rearrangement of a conditionally
+convergent series may alter its sum, but also tells us that we can rearrange the terms of a conditionally
+convergent series to make it converge to any given real number! This result is often referred to as the
+Riemann’s rearrangement theorem.
+Exercise 6. Recall the following three convergence tests for improper integrals of the form
+R ∞
+a f(x)dx
+from lecture:
+Theorem 4.6.1. Assume that the proper integral
+R b
+a f(x)dx exists for each b ≥a and suppose that
+f(x) ≥0 for all x ≥a. Then
+R ∞
+a f(x)dx converges if and only if there is a constant M > 0 such that
+Z b
+a
+f(x)dx ≤M
+for every b ≥a.
+Theorem 4.6.2. Assume the proper integral
+R b
+a f(x)dx exists for each b ≥a and suppose that there is a
+c > 0 such that 0 ≤f(x) ≤cg(x) for all x ≥a. If
+R ∞
+a g(x)dx converges, then
+R ∞
+a f(x)dx also converges.
+Theorem 4.6.3. Assume both proper integrals
+R b
+a f(x)dx and
+R b
+a g(x)dx exist for each b ≥a, where
+f(x) > 0 and g(x) > 0 for all x ≥a. If
+lim
+x→+∞
+f(x)
+g(x) = c,
+where c > 0
+then both integrals
+R ∞
+a f(x)dx and
+R ∞
+a g(x)dx converge or both diverge.
+(a). Prove Theorem 4.6.1, Theorem 4.6.2 and Theorem 4.6.3.
+(b). Modify the three theorems to handle the convergence of improper integrals of the form
+R b
+a+ f(x)dx.
+Prove your new theorems.
+Exercise 7. (a). Show that for each real number s, the integral
+Z ∞
+1
+e−xxsdx converges.
+(b). Show that for each positive real number s > 0, the integral
+Z 1
+0+
+e−xxs−1dx converges. Use this and
+part (a) to show that for each positive real number s > 0, the integral
+Z ∞
+0+
+e−xxs−1dx converges.
+Page 2
+Westlake-MATH1005-1069
+Calculus II Track A
+Spring 2026
+Copyright © 2026 by Yabin Zhang
+Homework 4
+Spring 2026, MATH 1005-1069
+(c). We define the Gamma function Γ(s) for each positive real number s by
+Γ(s) =
+Z ∞
+0+
+e−xxs−1dx.
+Use integration by parts to show that Γ(s + 1) = sΓ(s) for each s > 0.
+(d). Use part (c) to show that Γ(n + 1) = n! for each positive integer n.
+Hint: induction.
+Page 3

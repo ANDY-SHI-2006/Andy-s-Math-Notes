@@ -1,0 +1,65 @@
+Westlake-MATH1005-1069
+Calculus II Track A
+Spring 2026
+Copyright © 2026 by Yabin Zhang
+Homework 6
+Spring 2026, MATH 1005-1069
+Calculus II: Homework 6
+Due: 11:59pm, April 26, 2026 (Sunday)
+Exercise 1. (a). Prove that two lines L(P; A) and L(Q; B) in Rn intersect if and only if P −Q is in
+the linear span of A and B.
+(b). Determine whether or not the following two lines in R3 intersect:
+L = {(1, 1, −1) + t(−2, 1, 3)},
+L′ = {(3, −4, 1) + t(−1, 5, 2)}.
+(c). Given two lines L(P; A) and L(Q; B) in Rn which are not parallel. Prove that the intersection is
+either empty or consists of exactly one point.
+Exercise 2. Recall the following theorems for planes from lecture:
+Theorem 6.1.1. Two planes M = {P + sA + tB} and M ′ = {P + sC + tD} through the same point P
+are equal if and only if the (linear) span of A and B is equal to the (linear) span of C and D.
+Theorem 6.1.2. Two planes M = {P + sA + tB} and M ′ = {Q + sA + tB} spanned by the same
+vectors A and B are equal if and only if Q is on M.
+Theorem 6.1.3. Given a plane M and a point Q not on M, there is one and only one plane M ′ which
+contains Q and is parallel to M.
+Theorem 6.1.4. If P, Q, and R are three points not on the same line, then there is one and only one
+plane M containing these three points. It can be described as the set
+M = {P + s(Q −P) + t(R −P)}
+Prove the above four theorems.
+Exercise 3. A point moves in space in such a way that at time t its position is given by the vector
+X(t) = (1 −t)i + (2 −3t)j + (2t −1)k.
+(a). Prove that the point moves along a line. (Call it L.)
+(b). Find a vector N parallel to L.
+(c). At what time does the point strike the plane given by 2x + 3y + 2z + 1 = 0 ?
+(d). Find a Cartesian equation for that plane parallel to the one in part (c) which contains the point
+X(3).
+(e). Find a Cartesian equation for that plane perpendicular to L which contains the point X(2).
+Exercise 4. A differential equation of the form Y ′(x)+p(x)Y (x) = Q(x), where p is a given real-valued
+function, Q a given vector-valued function, and Y an unknown vector-valued function, is called a first-
+order linear vector differential equation. Prove that if p and Q are continuous on an interval I,
+then for each a in I and each vector B there is one and only one solution Y which satisfies the initial
+condition Y (a) = B, and that this solution is given by the formula
+Y (t) = Be−q(t) + e−q(t)
+Z t
+a
+Q(x)eq(x)dx
+where q(x) =
+R x
+a p(t)dt.
+Exercise 5. Consider the helix described by the vector equation r(t) = a cos ωti + a sin ωtj + bωtk,
+where ω is a positive constant. 1
+(a). Prove that the tangent line makes a constant angle with the z-axis and that the cosine of this angle
+is b/
+√
+a2 + b2.
+(b). Prove that the velocity v and acceleration a are vectors of constant length, and that
+∥v × a∥
+∥v∥3
+=
+a
+a2 + b2 .
+(c). Let u(t) denote the unit vector u(t) = sin ωti −cos ωtj. Prove that there are two constants A and
+B such that v × a = Au(t) + Bk, and express A and B in terms of a, b, and ω.
+1In the (hand-written) lecture notes, we use the notation ⃗r(t), ⃗v(t) and ⃗a(t) to denote the position, velocity and
+acceleration vectors, respectively.
+Here, in printing, we use r(t), v(t) and a(t) to denote the position, velocity and
+acceleration vectors, respectively.
+Page 1

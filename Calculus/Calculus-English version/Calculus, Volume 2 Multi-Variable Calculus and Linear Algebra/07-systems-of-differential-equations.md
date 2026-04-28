@@ -153,3 +153,21 @@ $$e^{tA}=Ce^{tD}C^{-1}.$$
 - Solution: $y_1=4e^{6t}-2e^t$, $y_2=e^{6t}+2e^t$.
 
 **When $A$ is not diagonalizable.** Most methods are complicated. A practical method valid for **all** matrices (due to E. J. Putzer, 1966) is based on the **Cayley–Hamilton theorem** — every square matrix satisfies its own characteristic equation. This will be discussed in later sections.
+
+
+### 7.11 The Cayley–Hamilton Theorem
+
+**Theorem 7.8.** Let $A$ be $n\times n$ and let
+$$f(\lambda)=\det(\lambda I-A)=\lambda^n+c_{n-1}\lambda^{n-1}+\cdots+c_1\lambda+c_0\tag{7.19}$$
+be its characteristic polynomial. Then $f(A)=O$; i.e.
+$$A^n+c_{n-1}A^{n-1}+\cdots+c_1A+c_0I=O.\tag{7.20}$$
+
+- *Proof sketch:* From $(\lambda I-A)\{\operatorname{cof}(\lambda I-A)\}^t=f(\lambda)I$ and the fact that $\{\operatorname{cof}(\lambda I-A)\}^t=\sum_{k=0}^{n-1}\lambda^kB_k$, equate coefficients of like powers of $\lambda$ to obtain the system (7.25). Multiply these equations by $A^n,A^{n-1},\dots,I$ and add; all terms on the left cancel, leaving $O=f(A)$.
+
+- **Application:** Every power $A^m$ ($m\ge n$) can be expressed as a polynomial in $A$ of degree $<n$.
+- If $c_0\neq0$ (i.e. $A$ is invertible), $A^{-1}$ is also a polynomial in $A$:
+  $$A^{-1}=-\frac1{c_0}(A^{n-1}+c_{n-1}A^{n-2}+\cdots+c_1I).$$
+
+**Example.** $A=\begin{bmatrix}5&4&0\\1&2&0\\1&2&2\end{bmatrix}$ has $f(\lambda)=\lambda^3-9\lambda^2+20\lambda-12$.
+- Hence $A^3=9A^2-20A+12I$, $A^4=61A^2-168A+108I$, etc.
+- Inverse: $A^{-1}=\frac1{12}(A^2-9A+20I)$.

@@ -1,0 +1,53 @@
+Westlake-MATH1005-1069
+Calculus II Track A
+Spring 2026
+Copyright © 2026 by Yabin Zhang
+Week 7 Exercise Session
+Spring 2026, MATH 1005-1069
+Calculus II: Week 7 Exercise Session
+Cross product and scalar triple product
+Exercise 1. Prove the following identities of the cross product: For all vectors A, B, C in R3 and for all
+real k we have:
+(1). A × B = −(B × A) (skew symmetry),
+(2). A × (B + C) = (A × B) + (A × C) (distributive law),
+(3). k(A × B) = (kA) × B,
+(4). A · (A × B) = 0 (orthogonality to A ),
+(5). B · (A × B) = 0 (orthogonality to B ),
+(6). ∥A × B∥2 = ∥A∥2∥B∥2 −(A · B)2 (Lagrange’s identity),
+(7). A × B = O
+if and only if A and B are linearly dependent.
+Exercise 2. Let A = −i + 2k, B = 2i + j −k, C = i + 2j + 2k. Compute each of the following vectors
+in terms of i, j, k :
+(a). A × B;
+(b). A × (C × A);
+(c). (A × C) × B;
+(d). B × C;
+(e). (A × B) × C;
+(f). (A + B) × (A −C);
+(g). C × A;
+(h). A × (B × C);
+(i). (A × B) × (A × C).
+Exercise 3. Given two linearly independent vectors A and B in R3. Let C = (B × A) −B.
+(a). Prove that A is orthogonal to B + C.
+(b). Prove that the angle θ between B and C satisfies 1
+2π < θ < π.
+(c). If ∥B∥= 1 and ∥B × A∥= 2, compute the length of C.
+Exercise 4. Prove the following identities of the scalar triple product: For all vectors A, B, C in R3
+(a). A × B · C = B × C · A = C × A · B (cyclic symmetry),
+(b). A × B · C = A · B × C.
+Exercise 5. By Exercise 4(b), we know it does not matter where we put the × and · in the expression
+of the scalar triple product A × B · C as long as the order of A, B, C is not changed. So we may simply
+write [ABC] to denote the scalar triple product. Consider a linear system with three equations and three
+unknowns:
+a1x + b1y + c1z = d1,
+a2x + b2y + c2z = d2,
+a3x + b3y + c3z = d3.
+Let A = (a1, a2, a3), B = (b1, b2, b3), C = (c1, c2, c3), and D = (d1, d2, d3). Show that if [ABC] ̸= 0, then
+the system has a unique solution given by
+x = [DBC]
+[ABC] ,
+y = [ADC]
+[ABC],
+z = [ABD]
+[ABC] .
+Page 1

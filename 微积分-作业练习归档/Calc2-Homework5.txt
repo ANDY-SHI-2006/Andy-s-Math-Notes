@@ -1,0 +1,191 @@
+Westlake-MATH1005-1069
+Calculus II Track A
+Spring 2026
+Copyright © 2026 by Yabin Zhang
+Homework 5
+Spring 2026, MATH 1005-1069
+Calculus II: Homework 5
+Due: 11:59pm, April 12, 2026 (Sunday)
+Exercise 1. If fn(x) = nxe−nx2 for n = 1, 2, . . . and x real, show that
+lim
+n→∞
+∫1
+0
+fn(x)dx ̸=
+∫1
+0
+lim
+n→∞fn(x)dx
+Exercise 2. Show that the series
+∞
+∑
+n=1
+(sin nx)/n2 converges for every real x, and denote its sum by f(x).
+Prove that f is continuous on [0, π] and that
+∫π
+0
+f(x)dx = 2
+∞
+∑
+n=1
+1
+(2n −1)3
+Exercise 3. For each of the power series given below, determine the set of all real x for which the series
+converges and compute the sum of the series.
+(a).
+∞
+∑
+n=0
+nxn
+(b).
+∞
+∑
+n=0
+(−1)nnxn
+(c).
+∞
+∑
+n=1
+2nxn
+n
+(d).
+∞
+∑
+n=0
+xn
+(n + 3)!
+Exercise 4. We call an equation involving at least one of the derivatives of an unknown function
+a differential equation.
+And a solution of a differential equation is a function that satisfies the
+equation.
+For example, the equation y′′ + y = 0 is a differential equation where y is treated as an
+unknown function of x, and the function y = sin x is a solution of this equation.
+(a). Verify that, for any constant c, the function f(x) = cex is a solution of the differential equation
+f ′(x) = f(x).
+(b). Given a fixed constant c, prove that there is one and only one function f that satisfies the
+differential equation f ′(x) = f(x) as well as the condition f(0) = c. Here, the condition f(0) = c
+is called an initial condition as it specifies the value of the solution at a particular point. And
+we often call the problem of finding a solution to a differential equation that satisfies a given initial
+condition an initial-value problem.
+Hint: To prove existence, use part (a). To prove uniqueness, you may assume there is another
+function g satisfying g′(x) = g(x) and g(0) = c. Then, you may prove that g(x)e−x = c (and hence
+g(x) = cex) by showing that the derivative of h(x) = g(x)e−x is zero and h(0) = c.
+(c). A differential equation of the form
+y′ + P(x)y = Q(x),
+where P and Q are given functions, is called a first-order linear differential equation. 1 The
+functions P and Q are assumed to be continuous on some open interval I. We are interested in
+seeking all solutions y defined on I.
+Prove the following theorem on the existence and uniqueness of solutions to first-order linear dif-
+ferential equations for the particular case where Q(x) = 0 for all x ∈I (i.e., the equation is of the
+form y′ + P(x)y = 0).
+Theorem 5.4.1. Assume P is continuous on an open interval I. Choose any point a in I and
+let b be any real number. Then there is one and only one function y = f(x) which satisfies the
+initial-value problem
+y′ + P(x)y = 0,
+with
+f(a) = b,
+on the interval I. This function is given by the formula
+f(x) = be−A(x),
+where
+A(x) =
+∫x
+a
+P(t)dt
+1The name “first-order” means that the highest order of the derivatives involved is one, and the name “linear” means
+that the unknown function y and its derivative y′ appear in a linear way.
+Page 1
+Westlake-MATH1005-1069
+Calculus II Track A
+Spring 2026
+Copyright © 2026 by Yabin Zhang
+Homework 5
+Spring 2026, MATH 1005-1069
+(d). Prove the following theorem on the existence and uniqueness of solutions to general first-order linear
+differential equations.
+Theorem 5.4.2. Assume P and Q are continuous on an open interval I. Choose any point a in I
+and let b be any real number. Then there is one and only one function y = f(x) which satisfies the
+initial-value problem
+y′ + P(x)y = Q(x),
+with f(a) = b,
+on the interval I. This function is given by the formula
+f(x) = be−A(x) + e−A(x)
+∫x
+a
+Q(t)eA(t)dt,
+where A(x) =
+∫x
+a
+P(t)dt.
+Exercise 5. (a). Prove that for any nonnegative integer α, we have
+(1 + x)α =
+∞
+∑
+n=0
+(α
+n
+)
+xn where
+(α
+n
+)
+= α(α −1) · · · (α −n + 1)
+n!
+are called binomial coeﬀicients
+Hint: note that only a finite number of the binomial coeﬀicients
+(α
+n
+)
+are nonzero, so the right-hand
+side is a polynomial.
+Remark: This result is known as the binomial theorem.
+(b). In this part, we will use exercise 4 (on differential equations) to show that the result in the binomial
+theorem also holds for any real number α, which is sometimes called the generalized binomial
+theorem.
+Suppose α ∈R. Find the interval of convergence (−r, r) for the series
+∞
+∑
+n=0
+(α
+n
+)
+xn and then verify
+that the sum function f(x) =
+∞
+∑
+n=0
+(α
+n
+)
+xn satisfies the differential equation y′ −
+α
+x + 1y = 0 as well
+as the initial condition y(0) = 1 on the interval (−r, r).
+Remark: Then by the uniqueness result in exercise 4 and the fact that y = (1 + x)α also satisfies
+the same differential equation and initial condition, we can conclude that f(x) = (1 + x)α for all
+x ∈(−r, r), which is the desired result.
+Hint: From the definition of the binomial coeﬀicients, you may deduce that (n + 1)
+(
+α
+n + 1
+)
+=
+(α −n)
+(α
+n
+)
+and also (n + 1)
+(
+α
+n + 1
+)
++ n
+(α
+n
+)
+= α
+(α
+n
+)
+for every real α and every integer n ≥0.
+These identities can be used to simplify the power series for (1 + x)f ′(x).
+Page 2
