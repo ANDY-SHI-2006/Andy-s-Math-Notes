@@ -133,3 +133,23 @@ $$Y(t)=e^{tA}B.\tag{7.18}$$
 
 - More generally, $Y(a)=B$ gives $Y(t)=e^{(t-a)A}B$.
 - *Proof sketch:* Differentiation gives $Y'=Ae^{tA}B=AY$. For uniqueness, let $Z$ be another solution and set $G(t)=e^{-tA}Z(t)$; then $G'=O$, so $G(t)\equiv B$, hence $Z(t)=e^{tA}B=Y(t)$.
+
+
+### 7.10 The Problem of Calculating $e^{tA}$
+
+**Diagonal case.** If $A=\operatorname{diag}(\lambda_1,\dots,\lambda_n)$, then
+$$e^{tA}=\operatorname{diag}(e^{t\lambda_1},\dots,e^{t\lambda_n}).$$
+
+**Diagonalizable case.** If $C^{-1}AC=D$ with $D$ diagonal, then $A^k=CD^kC^{-1}$ and
+$$e^{tA}=Ce^{tD}C^{-1}.$$
+
+**Example 1.** $A=\begin{bmatrix}5&4\\1&2\end{bmatrix}$.
+- Eigenvalues $\lambda_1=6$, $\lambda_2=1$.
+- $C=\begin{bmatrix}4&-1\\1&1\end{bmatrix}$, $C^{-1}=\frac15\begin{bmatrix}1&1\\-1&4\end{bmatrix}$.
+- $$e^{tA}=\frac15\begin{bmatrix}4e^{6t}+e^t&4e^{6t}-4e^t\\e^{6t}-e^t&e^{6t}+4e^t\end{bmatrix}.$$
+
+**Example 2.** Solve $Y'=AY$ with $A=\begin{bmatrix}5&4\\1&2\end{bmatrix}$ and $Y(0)=\begin{bmatrix}2\\3\end{bmatrix}$.
+- By Theorem 7.7, $Y(t)=e^{tA}Y(0)$.
+- Solution: $y_1=4e^{6t}-2e^t$, $y_2=e^{6t}+2e^t$.
+
+**When $A$ is not diagonalizable.** Most methods are complicated. A practical method valid for **all** matrices (due to E. J. Putzer, 1966) is based on the **Cayley–Hamilton theorem** — every square matrix satisfies its own characteristic equation. This will be discussed in later sections.
