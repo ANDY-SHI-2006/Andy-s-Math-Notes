@@ -89,3 +89,23 @@ $$E'(t)=E(t)A=AE(t).$$
   Since $A$ commutes with $A^k$, we also have $E'(t)=AE(t)$.
 
 - **Key consequence:** $A$ commutes with $e^{tA}$.
+
+
+### 7.7 Uniqueness Theorem for $F'(t)=AF(t)$
+
+**Theorem 7.4 (Nonsingularity).** For any $n\times n$ matrix $A$ and any scalar $t$,
+$$e^{tA}e^{-tA}=I.\tag{7.14}$$
+Hence $e^{tA}$ is nonsingular with inverse $e^{-tA}$.
+
+- *Proof sketch:* Let $F(t)=e^{tA}e^{-tA}$. Then
+  $$F'(t)=e^{tA}(-Ae^{-tA})+Ae^{tA}e^{-tA}=O,$$
+  since $A$ commutes with $e^{tA}$. Thus $F$ is constant; $F(0)=I$, so $F(t)\equiv I$.
+
+**Theorem 7.5 (Uniqueness).** Let $A$ and $B$ be constant $n\times n$ matrices. The only solution of
+$$F'(t)=AF(t),\qquad F(0)=B$$
+is
+$$F(t)=e^{tA}B.\tag{7.15}$$
+
+- *Proof sketch:* Set $G(t)=e^{-tA}F(t)$. Then $G'(t)=e^{-tA}AF(t)-Ae^{-tA}F(t)=O$, so $G(t)\equiv G(0)=B$. Multiplying by $e^{tA}$ gives $F(t)=e^{tA}B$.
+
+- Similarly, $F(t)=Be^{tA}$ is the unique solution of $F'(t)=F(t)A$, $F(0)=B$.
