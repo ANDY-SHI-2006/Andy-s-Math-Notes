@@ -443,3 +443,17 @@ The constant $\alpha$ is called a **contraction constant**.
 - Let $L(J)$ be the length of $J$. Then
   $$|T(\varphi)(x)-T(\psi)(x)|\le K\|\varphi-\psi\|\,|x-c|\le KL(J)\|\varphi-\psi\|.$$
 - If $KL(J)<1$, then $T$ is a contraction with constant $\alpha=KL(J)$.
+
+
+### 7.28 Fixed-Point Theorem for Contraction Operators (Banach)
+
+**Theorem 7.20.** Let $T:C(J)\to C(J)$ be a contraction with constant $\alpha<1$. Then $T$ has **exactly one** fixed point $\varphi\in C(J)$:
+$$T(\varphi)=\varphi.\tag{7.71}$$
+
+- *Proof sketch:* Pick any $\varphi_0\in C(J)$ and iterate $\varphi_{n+1}=T(\varphi_n)$. Write
+  $$\varphi_n(x)=\varphi_0(x)+\sum_{k=0}^{n-1}\{\varphi_{k+1}(x)-\varphi_k(x)\}.\tag{7.72}$$
+- By induction, $\|\varphi_{k+1}-\varphi_k\|\le M\alpha^k$ where $M=\|\varphi_0\|+\|\varphi_1\|$. Hence the series converges uniformly on $J$; its sum
+  $$\varphi(x)=\lim_{n\to\infty}\varphi_n(x)\tag{7.76}$$
+  is continuous.
+- To see $\varphi$ is a fixed point: $|T(\varphi)(x)-\varphi_{n+1}(x)|\le\alpha|\varphi(x)-\varphi_n(x)|\to0$.
+- **Uniqueness:** If $T(\psi)=\psi$ also, then $\|\varphi-\psi\|=\|T(\varphi)-T(\psi)\|\le\alpha\|\varphi-\psi\|$, so $(1-\alpha)\|\varphi-\psi\|\le0$, forcing $\varphi=\psi$.
