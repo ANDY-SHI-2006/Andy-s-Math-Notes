@@ -393,3 +393,16 @@ $$Y'(x)=F(x,Y(x))\quad\text{for each }x\in I.$$
   $$\|Y_{m+1}(x)-Y_m(x)\|\le\frac{MA^m|x-a|^{m+1}}{(m+1)!}\le\frac{MA^mc^{m+1}}{(m+1)!}.$$
 - Hence $\sum\|Y_{m+1}-Y_m\|$ converges uniformly on $I$; the limit $Y$ satisfies the integral equation $Y(x)=B+\int_a^x F[t,Y(t)]\,dt$.
 - Uniqueness follows by the same Gronwall-type argument as in the linear case.
+
+
+### 7.25 Successive Approximations and Fixed Points of Operators
+
+The Picard iterates for $Y'=AY$, $Y(a)=B$ can be written as
+$$Y_{k+1}(x)=B+\int_a^x AY_k(t)\,dt.$$
+Define the **operator** $T$ by
+$$T(Y)(x)=B+\int_a^x AY(t)\,dt.$$
+Then $Y_{k+1}=T(Y_k)$, and the solution $Y$ of the initial-value problem satisfies the integral equation $Y=T(Y)$.
+
+- A function $Y$ with $Y=T(Y)$ is called a **fixed point** of the operator $T$.
+- Many problems in analysis reduce to finding fixed points of suitably defined operators.
+- The rest of the chapter develops this viewpoint systematically (normed linear spaces, contraction mappings, Banach fixed-point theorem).
