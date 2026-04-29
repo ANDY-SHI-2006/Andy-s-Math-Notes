@@ -406,3 +406,20 @@ Then $Y_{k+1}=T(Y_k)$, and the solution $Y$ of the initial-value problem satisfi
 - A function $Y$ with $Y=T(Y)$ is called a **fixed point** of the operator $T$.
 - Many problems in analysis reduce to finding fixed points of suitably defined operators.
 - The rest of the chapter develops this viewpoint systematically (normed linear spaces, contraction mappings, Banach fixed-point theorem).
+
+
+### 7.26 Normed Linear Spaces
+
+**Definition.** A **norm** on a linear space $S$ is a real-valued function $N$ (written $\|x\|$) satisfying:
+- (a) $\|x\|\ge 0$ for all $x\in S$.
+- (b) $\|cx\|=|c|\,\|x\|$ for all scalars $c$.
+- (c) $\|x+y\|\le\|x\|+\|y\|$ (triangle inequality).
+- (d) $\|x\|=0\implies x=O$.
+
+A linear space with a norm is called a **normed linear space**. The quantity $\|x-y\|$ is the **distance** from $x$ to $y$.
+
+**Example (max norm).** On $C(J)$, the space of continuous real-valued functions on a closed bounded interval $J$,
+$$\|\varphi\|=\max_{x\in J}|\varphi(x)|.$$
+This norm does **not** arise from an inner product. For instance, with $x(t)=t$ and $y(t)=1-t$ on $[0,1]$,
+$$\|x\|=\|y\|=\|x+y\|=\|x-y\|=1,$$
+which violates the parallelogram law $\|x+y\|^2+\|x-y\|^2=2\|x\|^2+2\|y\|^2$ required of all inner-product norms.
