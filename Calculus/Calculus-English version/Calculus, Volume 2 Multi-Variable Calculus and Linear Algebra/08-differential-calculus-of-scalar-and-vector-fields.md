@@ -77,3 +77,26 @@ In particular, $g'(0)=f'(a;y)$.
 **Theorem 8.4 (Mean-value theorem for scalar fields).** If $f'(a+ty;y)$ exists for all $t\in[0,1]$, then for some $\theta\in(0,1)$,
 $$f(a+y)-f(a)=f'(z;y),\qquad z=a+\theta y.$$
 - *Proof:* Apply the 1-D MVT to $g(t)=f(a+ty)$ on $[0,1]$.
+
+
+### 8.7 Directional Derivatives and Partial Derivatives
+
+When $y$ is a **unit vector** ($\|y\|=1$), $f'(a;y)$ is called the **directional derivative** of $f$ at $a$ in the direction of $y$.
+
+- **Partial derivative** with respect to $e_k$ (the $k$th unit coordinate vector):
+  $$D_kf(a)=f'(a;e_k).$$
+- Alternative notations:
+  $$D_kf(a_1,\dots,a_n),\quad \frac{\partial f}{\partial x_k}(a_1,\dots,a_n),\quad f_{x_k}(a_1,\dots,a_n),\quad f_k.$$
+- In $\mathbb{R}^2$: $\dfrac{\partial f}{\partial x}$, $\dfrac{\partial f}{\partial y}$.
+- In $\mathbb{R}^3$: $\dfrac{\partial f}{\partial x}$, $\dfrac{\partial f}{\partial y}$, $\dfrac{\partial f}{\partial z}$.
+
+### 8.8 Partial Derivatives of Higher Order
+
+The partial derivatives of $D_1f,\dots,D_nf$ are **second-order partial derivatives**:
+$$D_i(D_jf)=\frac{\partial^2f}{\partial x_i\,\partial x_j}=D_{i,j}f.$$
+
+For $n=2$:
+$$\frac{\partial^2f}{\partial x^2},\quad \frac{\partial^2f}{\partial x\,\partial y},\quad \frac{\partial^2f}{\partial y\,\partial x},\quad \frac{\partial^2f}{\partial y^2}.$$
+
+- The two **mixed partials** $\dfrac{\partial^2f}{\partial x\,\partial y}$ and $\dfrac{\partial^2f}{\partial y\,\partial x}$ may or may not be equal.
+- **Equality of mixed partials** (§8.23): $D_{1,2}f=D_{2,1}f$ at a point if one of them is continuous in a neighborhood of that point.
