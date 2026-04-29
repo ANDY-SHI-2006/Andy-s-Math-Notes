@@ -57,3 +57,23 @@ $$\lim_{x\to a}f(x)=b\quad\Longleftrightarrow\quad\lim_{\|x-a\|\to0}\|f(x)-b\|=0
 **Theorem 8.2 (Composition).** If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$, then $f\circ g$ is continuous at $a$.
 
 **Example of discontinuity.** $f(x,y)=\dfrac{xy}{x^2+y^2}$ ($f(0,0)=0$) is continuous in each variable separately at $(0,0)$, but **not** continuous there as a function of two variables (along $y=x$, $f=\frac12\neq0$).
+
+
+### 8.6 The Derivative of a Scalar Field with Respect to a Vector
+
+Let $f$ be a scalar field on $S\subseteq\mathbb{R}^n$ and let $a$ be an interior point of $S$. The **derivative of $f$ at $a$ with respect to $y$** is
+$$f'(a;y)=\lim_{h\to0}\frac{f(a+hy)-f(a)}{h},\tag{8.4}$$
+when the limit exists.
+
+- $f'(a;O)=0$ always.
+- If $f$ is **linear**, $f'(a;y)=f(y)$ for all $a,y$.
+
+**Theorem 8.3.** Let $g(t)=f(a+ty)$. If either $g'(t)$ or $f'(a+ty;y)$ exists, so does the other, and
+$$g'(t)=f'(a+ty;y).\tag{8.5}$$
+In particular, $g'(0)=f'(a;y)$.
+
+**Example.** $f(x)=\|x\|^2$. Then $g(t)=(a+ty)\cdot(a+ty)$, so $g'(t)=2a\cdot y+2ty\cdot y$ and $f'(a;y)=2a\cdot y$.
+
+**Theorem 8.4 (Mean-value theorem for scalar fields).** If $f'(a+ty;y)$ exists for all $t\in[0,1]$, then for some $\theta\in(0,1)$,
+$$f(a+y)-f(a)=f'(z;y),\qquad z=a+\theta y.$$
+- *Proof:* Apply the 1-D MVT to $g(t)=f(a+ty)$ on $[0,1]$.
