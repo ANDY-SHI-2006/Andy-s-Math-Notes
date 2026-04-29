@@ -371,3 +371,25 @@ Under suitable conditions on $F$, the sequence converges to a solution.
 - $Y_2=x^2+\int_0^x e^{t^2+t}\,dt$ — the integral is not elementary.
 
 - The practical value of successive approximations is mainly **theoretical** (proving existence); explicit computation is often intractable.
+
+
+### 7.23 Existence–Uniqueness Theorem for First-Order Nonlinear Systems
+
+Consider the nonlinear system
+$$Y'=F(x,Y),\qquad Y(a)=B.$$
+
+**Assumptions on $F$ in a set** $S=\{(x,Y):|x-a|\le h,\;\|Y-B\|\le k\}$:
+1. **Boundedness:** $\|F(x,Y)\|\le M$ for all $(x,Y)\in S$.
+2. **Continuity:** $G(x)=F(x,Y(x))$ is continuous whenever $Y$ is continuous and $(x,Y(x))\in S$.
+3. **Lipschitz condition:** $\|F(x,Y)-F(x,Z)\|\le A\|Y-Z\|$ for all $(x,Y),(x,Z)\in S$.
+
+**Theorem 7.19 (Picard–Lindelöf).** Let $c=\min\{h,k/M\}$ and $I=(a-c,a+c)$. Then there is **exactly one** function $Y$ on $I$ with $Y(a)=B$, $(x,Y(x))\in S$, and
+$$Y'(x)=F(x,Y(x))\quad\text{for each }x\in I.$$
+
+- *Proof sketch:* Define Picard iterates $Y_0=B$,
+  $$Y_{m+1}(x)=B+\int_a^x F\bigl[t,Y_m(t)\bigr]\,dt.\tag{7.69}$$
+- Induction shows $(x,Y_m(x))\in S$ for all $m$ and $x\in I$.
+- Using the Lipschitz condition, one proves by induction
+  $$\|Y_{m+1}(x)-Y_m(x)\|\le\frac{MA^m|x-a|^{m+1}}{(m+1)!}\le\frac{MA^mc^{m+1}}{(m+1)!}.$$
+- Hence $\sum\|Y_{m+1}-Y_m\|$ converges uniformly on $I$; the limit $Y$ satisfies the integral equation $Y(x)=B+\int_a^x F[t,Y(t)]\,dt$.
+- Uniqueness follows by the same Gronwall-type argument as in the linear case.
