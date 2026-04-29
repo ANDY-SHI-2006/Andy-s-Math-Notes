@@ -100,3 +100,19 @@ $$\frac{\partial^2f}{\partial x^2},\quad \frac{\partial^2f}{\partial x\,\partial
 
 - The two **mixed partials** $\dfrac{\partial^2f}{\partial x\,\partial y}$ and $\dfrac{\partial^2f}{\partial y\,\partial x}$ may or may not be equal.
 - **Equality of mixed partials** (§8.23): $D_{1,2}f=D_{2,1}f$ at a point if one of them is continuous in a neighborhood of that point.
+
+
+### 8.10 Directional Derivatives and Continuity
+
+In one dimension, existence of $f'(a)$ implies continuity at $a$. For scalar fields, existence of $f'(a;y)$ for a given $y$ implies
+$$\lim_{h\to0}f(a+hy)=f(a),$$
+i.e. $f(x)\to f(a)$ along the line through $a$ in direction $y$.
+
+- If $f'(a;y)$ exists for **every** direction $y$, then $f(x)\to f(a)$ along **every** line through $a$. One might expect $f$ to be continuous at $a$ — but this is **false**.
+
+**Counter-example.** $f(x,y)=\dfrac{xy^2}{x^2+y^4}$ ($x\neq0$), $f(0,y)=0$.
+- At $(0,0)$: $f'(O;y)$ exists for **all** directions $y$.
+- Along every straight line through the origin, $f(x)\to0$.
+- Yet on the parabola $x=y^2$, $f=\frac12$; since such points are arbitrarily close to $O$ and $f(O)=0$, $f$ is **not continuous** at $O$.
+
+- Conclusion: existence of all directional derivatives is **not sufficient** for continuity. A better generalization is the **total derivative** (§8.11+).
