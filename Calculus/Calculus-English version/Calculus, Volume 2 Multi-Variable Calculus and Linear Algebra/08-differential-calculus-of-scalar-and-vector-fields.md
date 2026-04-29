@@ -116,3 +116,22 @@ i.e. $f(x)\to f(a)$ along the line through $a$ in direction $y$.
 - Yet on the parabola $x=y^2$, $f=\frac12$; since such points are arbitrarily close to $O$ and $f(O)=0$, $f$ is **not continuous** at $O$.
 
 - Conclusion: existence of all directional derivatives is **not sufficient** for continuity. A better generalization is the **total derivative** (§8.11+).
+
+
+### 8.11 The Total Derivative
+
+Recall the 1-D first-order Taylor formula:
+$$f(a+h)=f(a)+f'(a)h+hE(a,h),\qquad E(a,h)\to0\text{ as }h\to0.$$
+
+**Definition.** A scalar field $f:S\to\mathbb{R}$ is **differentiable at $a$** if there exists a linear transformation $T_a:\mathbb{R}^n\to\mathbb{R}$ and a scalar function $E(a,v)$ such that
+$$f(a+v)=f(a)+T_a(v)+\|v\|E(a,v)\tag{8.7}$$
+for $\|v\|<r$, with $E(a,v)\to0$ as $\|v\|\to0$.
+
+- $T_a$ is called the **total derivative** of $f$ at $a$ (introduced by W. H. Young, 1908; M. Fréchet, 1911).
+- The error $\|v\|E(a,v)$ is $o(\|v\|)$.
+
+**Theorem 8.5.** If $f$ is differentiable at $a$ with total derivative $T_a$, then:
+- (i) $f'(a;y)$ exists for every $y\in\mathbb{R}^n$ and $T_a(y)=f'(a;y)$.
+- (ii) $f'(a;y)$ is linear in $y$:
+  $$f'(a;y)=\sum_{k=1}^n D_kf(a)\,y_k.\tag{8.9}$$
+- *Proof sketch:* Set $v=hy$ in (8.7); divide by $h$ and let $h\to0$ to get $T_a(y)=f'(a;y)$. Then use linearity: $T_a(y)=\sum y_kT_a(e_k)=\sum y_kD_kf(a)$.
