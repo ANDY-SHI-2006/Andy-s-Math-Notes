@@ -457,3 +457,25 @@ $$T(\varphi)=\varphi.\tag{7.71}$$
   is continuous.
 - To see $\varphi$ is a fixed point: $|T(\varphi)(x)-\varphi_{n+1}(x)|\le\alpha|\varphi(x)-\varphi_n(x)|\to0$.
 - **Uniqueness:** If $T(\psi)=\psi$ also, then $\|\varphi-\psi\|=\|T(\varphi)-T(\psi)\|\le\alpha\|\varphi-\psi\|$, so $(1-\alpha)\|\varphi-\psi\|\le0$, forcing $\varphi=\psi$.
+
+
+### 7.29 Applications of the Fixed-Point Theorem
+
+**Theorem 7.21 (Implicit-function theorem).** Let $f$ be defined on the strip $R=\{(x,y):a\le x\le b,\,-\infty<y<+\infty\}$. Assume $D_2f$ exists and satisfies
+$$0<m\le D_2f(x,y)\le M\tag{7.78}$$
+on $R$, and that $g(x)=f[x,\varphi(x)]$ is continuous on $[a,b]$ for every continuous $\varphi$. Then there exists a **unique** continuous $Y$ on $[a,b]$ such that
+$$f[x,Y(x)]=0\quad\text{for all }x\in[a,b].\tag{7.79}$$
+
+- *Proof sketch:* Define $T:C[a,b]\to C[a,b]$ by $T(\varphi)(x)=\varphi(x)-\frac1M f[x,\varphi(x)]$. By the mean-value theorem,
+  $$T(\varphi)(x)-T(\psi)(x)=[\varphi(x)-\psi(x)]\Bigl(1-\frac{D_2f[x,z(x)]}{M}\Bigr).$$
+  Since $0\le 1-D_2f/M\le 1-m/M=\alpha<1$, $T$ is a contraction; its unique fixed point satisfies (7.79).
+
+**Theorem 7.22 (Existence for Fredholm integral equations).** Consider
+$$\varphi(x)=\psi(x)+\lambda\int_a^b K(x,t)\varphi(t)\,dt,\tag{7.83}$$
+where $\psi\in C[a,b]$, $K$ is bounded on $S=[a,b]\times[a,b]$, and $|K(x,y)|\le M$. If
+$$|\lambda|<\frac{1}{M(b-a)},\tag{7.85}$$
+then (7.83) has a **unique** solution $\varphi\in C[a,b]$.
+
+- *Proof sketch:* The operator $T(\varphi)(x)=\psi(x)+\lambda\int_a^b K(x,t)\varphi(t)\,dt$ satisfies
+  $$\|T(\varphi_1)-T(\varphi_2)\|\le|\lambda|M(b-a)\|\varphi_1-\varphi_2\|=\alpha\|\varphi_1-\varphi_2\|$$
+  with $\alpha<1$ by (7.85). Hence $T$ is a contraction and has a unique fixed point.
