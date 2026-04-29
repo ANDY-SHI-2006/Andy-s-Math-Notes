@@ -423,3 +423,23 @@ $$\|\varphi\|=\max_{x\in J}|\varphi(x)|.$$
 This norm does **not** arise from an inner product. For instance, with $x(t)=t$ and $y(t)=1-t$ on $[0,1]$,
 $$\|x\|=\|y\|=\|x+y\|=\|x-y\|=1,$$
 which violates the parallelogram law $\|x+y\|^2+\|x-y\|^2=2\|x\|^2+2\|y\|^2$ required of all inner-product norms.
+
+
+### 7.27 Contraction Operators
+
+Work in $C(J)$ with the **max norm** $\|\varphi\|=\max_{x\in J}|\varphi(x)|$.
+
+**Definition.** An operator $T:C(J)\to C(J)$ is a **contraction** if there exists $\alpha$ with $0\le\alpha<1$ such that
+$$\|T(\varphi)-T(\psi)\|\le\alpha\|\varphi-\psi\|\quad\text{for all }\varphi,\psi\in C(J).\tag{7.70}$$
+The constant $\alpha$ is called a **contraction constant**.
+
+- Note: (7.70) holds iff $|T(\varphi)(x)-T(\psi)(x)|\le\alpha\|\varphi-\psi\|$ for every $x\in J$.
+
+**Example 1.** $T(\varphi)(x)=\lambda\varphi(x)$.
+- $\|T(\varphi)-T(\psi)\|=|\lambda|\,\|\varphi-\psi\|$.
+- Contraction iff $|\lambda|<1$; contraction constant $|\lambda|$.
+
+**Example 2.** $T(\varphi)(x)=b+\int_c^x f[t,\varphi(t)]\,dt$ with $f$ Lipschitz: $|f(x,y)-f(x,z)|\le K|y-z|$.
+- Let $L(J)$ be the length of $J$. Then
+  $$|T(\varphi)(x)-T(\psi)(x)|\le K\|\varphi-\psi\|\,|x-c|\le KL(J)\|\varphi-\psi\|.$$
+- If $KL(J)<1$, then $T$ is a contraction with constant $\alpha=KL(J)$.
