@@ -30,3 +30,30 @@
 - $x$ is **exterior** to $S$ if some $B(x)$ contains no points of $S$; the set of such points is $\operatorname{ext}S$.
 - A **boundary point** is neither interior nor exterior; the set of all boundary points is $\partial S$.
 - Example: for $B(O;1)$, the exterior is $\|x\|>1$ and the boundary is $\|x\|=1$.
+
+
+### 8.4 Limits and Continuity
+
+For $f:S\to\mathbb{R}^m$ with $S\subseteq\mathbb{R}^n$:
+$$\lim_{x\to a}f(x)=b\quad\Longleftrightarrow\quad\lim_{\|x-a\|\to0}\|f(x)-b\|=0.\tag{8.1–8.2}$$
+
+- **Continuity at $a$:** $f$ is defined at $a$ and $\displaystyle\lim_{x\to a}f(x)=f(a)$.
+- **Continuity on $S$:** continuous at each point of $S$.
+
+**Theorem 8.1 (Limit laws).** If $\lim_{x\to a}f(x)=b$ and $\lim_{x\to a}g(x)=c$, then:
+- (a) $\lim\,[f+g]=b+c$.
+- (b) $\lim\,\lambda f=\lambda b$.
+- (c) $\lim\,f\cdot g=b\cdot c$.
+- (d) $\lim\,\|f\|=\|b\|$.
+
+**Component-wise continuity.** $f=(f_1,\dots,f_m)$ is continuous at $a$ **iff** each component $f_k$ is continuous at $a$ (since $f_k(x)=f(x)\cdot e_k$ and $f(x)=\sum f_k(x)e_k$).
+
+**Examples of continuous fields.**
+- Identity function $f(x)=x$; its components $f_k(x)=x_k$.
+- Every linear transformation $f:\mathbb{R}^n\to\mathbb{R}^m$.
+- Polynomials in $n$ variables (finite sums/products of continuous scalar fields).
+- Rational functions $P/Q$ (where defined, i.e. $Q(x)\neq0$).
+
+**Theorem 8.2 (Composition).** If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$, then $f\circ g$ is continuous at $a$.
+
+**Example of discontinuity.** $f(x,y)=\dfrac{xy}{x^2+y^2}$ ($f(0,0)=0$) is continuous in each variable separately at $(0,0)$, but **not** continuous there as a function of two variables (along $y=x$, $f=\frac12\neq0$).
