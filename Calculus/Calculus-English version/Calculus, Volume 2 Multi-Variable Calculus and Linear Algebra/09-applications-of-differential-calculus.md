@@ -172,3 +172,39 @@ $$
 $$
 and $E_{2}(a,\mathbf{0})=0$. Continuity of $D_{ij}f$ at $a$ implies $E_{2}(a,y)\to0$.
 
+
+### 9.11 The Nature of a Stationary Point Determined by the Eigenvalues of the Hessian Matrix
+
+At a stationary point $\nabla f(a)=\mathbf{0}$, so (9.35) becomes
+$$
+f(a+y)-f(a)=\frac{1}{2}\,yH(a)y^{t}+\|y\|^{2}E_{2}(a,y).
+$$
+Since $\|y\|^{2}E_{2}(a,y)=o(\|y\|^{2})$, the sign of $f(a+y)-f(a)$ for small $y$ is the same as that of the quadratic form $yH(a)y^{t}$.
+
+**Theorem 9.5 (Sign of a quadratic form).** Let $A=[a_{ij}]$ be an $n\times n$ real symmetric matrix and let
+$$
+Q(y)=yAy^{t}=\sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}y_iy_j.
+$$
+Then:
+- (a) $Q(y)>0$ for all $y\neq\mathbf{0}$ $\iff$ all eigenvalues of $A$ are positive (**positive definite**).
+- (b) $Q(y)<0$ for all $y\neq\mathbf{0}$ $\iff$ all eigenvalues of $A$ are negative (**negative definite**).
+
+*Proof sketch.* By Theorem 5.11 there is an orthogonal matrix $C$ diagonalizing $A$:
+$$
+Q(y)=yAy^{t}=\sum_{i=1}^{n}\lambda_i x_i^{2},\tag{9.38}
+$$
+where $x=yC$ and $\lambda_1,\dots,\lambda_n$ are the (real) eigenvalues of $A$. If all $\lambda_i>0$ then $Q(y)>0$ for all $y\neq\mathbf{0}$. Conversely, choosing $y$ so that $x=yC=e_k$ gives $Q(y)=\lambda_k$, hence each $\lambda_k>0$. Part (b) is analogous.
+
+**Theorem 9.6 (Classification of stationary points).** Let $f$ have continuous second-order partials in an $n$-ball $B(a)$ and let $H(a)$ be the Hessian at a stationary point $a$. Then:
+- (a) All eigenvalues of $H(a)$ positive $\implies$ $f$ has a **relative minimum** at $a$.
+- (b) All eigenvalues of $H(a)$ negative $\implies$ $f$ has a **relative maximum** at $a$.
+- (c) $H(a)$ has both positive and negative eigenvalues $\implies$ $f$ has a **saddle point** at $a$.
+
+*Proof sketch.* Write $Q(y)=yH(a)y^{t}$. From (9.35),
+$$
+f(a+y)-f(a)=\tfrac{1}{2}Q(y)+\|y\|^{2}E_{2}(a,y).\tag{9.39}
+$$
+For (a), let $h>0$ be the smallest eigenvalue. Then $Q(y)>\frac{1}{2}h\|y\|^{2}$. Choose $r$ so that $|E_{2}(a,y)|<\frac{1}{4}h$ for $0<\|y\|<r$; then $f(a+y)-f(a)>0$. For (b) apply (a) to $-f$. For (c), if $\lambda_1>0$ and $\lambda_2<0$, the quadratic form takes both signs in every neighborhood of $\mathbf{0}$, so $f(a+y)-f(a)$ does too, giving a saddle point.
+
+*Note:* If all eigenvalues of $H(a)$ are zero, Theorem 9.6 gives no information; higher-order derivatives would be needed.
+
