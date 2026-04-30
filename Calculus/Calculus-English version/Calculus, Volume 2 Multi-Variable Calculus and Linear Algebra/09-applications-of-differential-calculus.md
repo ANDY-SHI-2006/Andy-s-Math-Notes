@@ -301,3 +301,18 @@ $$
 
 *Proof sketch.* It suffices to show $f$ attains its supremum $M=\sup f$. Suppose $f(\mathbf{x})\neq M$ for all $\mathbf{x}\in[\mathbf{a},\mathbf{b}]$. Then $g(\mathbf{x})=M-f(\mathbf{x})>0$ is continuous, so $1/g$ is continuous and bounded (Theorem 9.8): $1/g(\mathbf{x})<C$. Hence $f(\mathbf{x})<M-1/C$ for all $\mathbf{x}$, contradicting that $M$ is the least upper bound. Therefore $f(\mathbf{c})=M$ for some $\mathbf{c}$. Apply to $-f$ for the infimum.
 
+
+### 9.17 The Small-Span Theorem for Continuous Scalar Fields (Uniform Continuity)
+
+Let $f$ be continuous on a closed bounded interval $[\mathbf{a},\mathbf{b}]$ in $\mathbb{R}^{n}$. Let $M(f)$ and $m(f)$ denote the maximum and minimum of $f$ on $[\mathbf{a},\mathbf{b}]$. The difference
+$$
+\operatorname{span}(f)=M(f)-m(f)
+$$
+is called the **span** of $f$ on $[\mathbf{a},\mathbf{b}]$.
+
+A **partition** $P$ of $[\mathbf{a},\mathbf{b}]$ is a Cartesian product $P=P_1\times\cdots\times P_n$, where each $P_k$ is a partition of $[a_k,b_k]$.
+
+**Theorem 9.10 (Small-span theorem / Uniform continuity).** Let $f$ be continuous on a closed interval $[\mathbf{a},\mathbf{b}]$ in $\mathbb{R}^{n}$. Then for every $\varepsilon>0$ there is a partition of $[\mathbf{a},\mathbf{b}]$ into a finite number of subintervals such that the span of $f$ in every subinterval is less than $\varepsilon$.
+
+*Proof sketch (successive bisection, by contradiction).* Assume the theorem is false for some $\varepsilon_0>0$. Then $[\mathbf{a},\mathbf{b}]$ cannot be partitioned so that every subinterval has span $<\varepsilon_0$. By repeated bisection we obtain a nested sequence of subintervals $I^{(1)}\supseteq I^{(2)}\supseteq\cdots$, each with span $\ge\varepsilon_0$. These shrink to a point $\mathbf{t}\in[\mathbf{a},\mathbf{b}]$. By continuity at $\mathbf{t}$, $f$ has span $<	frac{1}{2}\varepsilon_0$ on some ball $B(\mathbf{t};r)\cap[\mathbf{a},\mathbf{b}]$. For $m$ large enough, $I^{(m)}\subseteq B(\mathbf{t};r)\cap[\mathbf{a},\mathbf{b}]$, so the span on $I^{(m)}$ is $<\tfrac{1}{2}\varepsilon_0$, contradicting span $\ge\varepsilon_0$.
+
