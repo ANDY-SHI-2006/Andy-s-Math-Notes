@@ -161,3 +161,43 @@ $$
 
 **Flow and circulation.** When $f$ is a velocity field, $f\cdot T$ is the tangential component of velocity. The integral $\int_C f\cdot T\,ds$ is called the **flow integral** of $f$ along $C$; when $C$ is closed it is called the **circulation** of $f$ along $C$. These terms are standard in fluid-flow theory.
 
+
+### 10.8 Further Applications of Line Integrals
+
+**Mass and center of mass.** A curve $C$ in 3-space can represent a wire with density $\varphi(x,y,z)$ (mass per unit length). The total mass is
+$$
+M = \int_C \varphi(x,y,z)\,ds.
+$$
+The **center of mass** $(\bar{x},\bar{y},\bar{z})$ is defined by
+$$
+\bar{x}M = \int_C x\varphi\,ds,\qquad
+\bar{y}M = \int_C y\varphi\,ds,\qquad
+\bar{z}M = \int_C z\varphi\,ds.
+$$
+A wire of constant density is called **uniform**; its center of mass is also called the **centroid**.
+
+**Example 1.** Helix $\alpha(t)=a\cos t\,\mathbf{i}+a\sin t\,\mathbf{j}+bt\,\mathbf{k}$, $0\le t\le2\pi$, with density $\varphi=x^{2}+y^{2}+z^{2}$.
+- $s'(t)=\|\alpha'(t)\|=\sqrt{a^{2}+b^{2}}$.
+- Mass:
+  $$
+  M=\sqrt{a^{2}+b^{2}}\int_0^{2\pi}(a^{2}+b^{2}t^{2})\,dt
+  =\sqrt{a^{2}+b^{2}}\Bigl(2\pi a^{2}+\tfrac{8}{3}\pi^{3}b^{2}\Bigr).
+  $$
+- $\bar{z}$ coordinate:
+  $$
+  \bar{z}M = \sqrt{a^{2}+b^{2}}\int_0^{2\pi}bt(a^{2}+b^{2}t^{2})\,dt
+  = b\sqrt{a^{2}+b^{2}}\bigl(2\pi^{2}a^{2}+4\pi^{4}b^{2}\bigr).
+  $$
+
+**Moment of inertia.** If $\delta(x,y,z)$ is the perpendicular distance from $(x,y,z)$ on $C$ to an axis $L$, the moment of inertia about $L$ is
+$$
+I_L = \int_C \delta^{2}(x,y,z)\,\varphi(x,y,z)\,ds.
+$$
+The moments about the coordinate axes are denoted $I_x,I_y,I_z$.
+
+**Example 2.** For the helix of Example 1, $I_z$ about the $z$-axis: $\delta^{2}=x^{2}+y^{2}=a^{2}$, so
+$$
+I_z = \int_C (x^{2}+y^{2})(x^{2}+y^{2}+z^{2})\,ds
+= a^{2}\int_C (x^{2}+y^{2}+z^{2})\,ds = Ma^{2}.
+$$
+
