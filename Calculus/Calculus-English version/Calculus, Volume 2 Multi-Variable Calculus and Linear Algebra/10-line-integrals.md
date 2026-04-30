@@ -212,3 +212,33 @@ $$
 
 > Which vector fields have line integrals independent of the path? To answer this we extend the first and second fundamental theorems of calculus to line integrals.
 
+
+### 10.11 The Second Fundamental Theorem of Calculus for Line Integrals
+
+**Theorem 10.2.** Let $\varphi$ be continuous on $[a,b]$ and assume $\int_a^{b}\varphi'(t)\,dt$ exists. If $\varphi'$ is continuous on $(a,b)$, then
+$$
+\int_a^{b}\varphi'(t)\,dt = \varphi(b)-\varphi(a).
+$$
+
+*Proof sketch.* Define $f(x)=\int_a^{x}\varphi'(t)\,dt$. Then $f$ is continuous on $[a,b]$, differentiable on $(a,b)$ with $f'(x)=\varphi'(x)$. By the zero-derivative theorem, $f-\varphi$ is constant on $(a,b)$, hence on $[a,b]$. Since $f(a)=0$, we get $f(b)=\varphi(b)-\varphi(a)$.
+
+**Theorem 10.3 (Second fundamental theorem for line integrals).** Let $\varphi$ be a differentiable scalar field with a continuous gradient $\nabla\varphi$ on an open connected set $S$ in $\mathbb{R}^{n}$. Then for any two points $a$ and $b$ joined by a piecewise smooth path $\alpha$ in $S$,
+$$
+\int_a^{b} \nabla\varphi\cdot d\alpha = \varphi(b)-\varphi(a).
+$$
+
+*Proof sketch.* For a smooth path, by the chain rule
+$$
+\nabla\varphi[\alpha(t)]\cdot\alpha'(t) = g'(t),\qquad g(t)=\varphi[\alpha(t)].
+$$
+Since $g'$ is continuous on $(a,b)$, Theorem 10.2 gives
+$$
+\int_a^{b}\nabla\varphi\cdot d\alpha = \int_a^{b}g'(t)\,dt = g(b)-g(a) = \varphi(b)-\varphi(a).
+$$
+For piecewise smooth paths, partition $[a,b]$ into subintervals where $\alpha$ is smooth; the intermediate values telescope, leaving $\varphi(b)-\varphi(a)$.
+
+**Consequences.**
+- The line integral of a gradient is **independent of the path** in any open connected set where the gradient is continuous.
+- For a closed path ($b=a$): $\displaystyle\oint\nabla\varphi\cdot d\alpha = 0$.
+- (Theorem 10.4, Section 10.14) Gradients are the **only** continuous vector fields with this property.
+
