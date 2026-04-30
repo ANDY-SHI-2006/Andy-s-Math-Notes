@@ -208,3 +208,27 @@ For (a), let $h>0$ be the smallest eigenvalue. Then $Q(y)>\frac{1}{2}h\|y\|^{2}$
 
 *Note:* If all eigenvalues of $H(a)$ are zero, Theorem 9.6 gives no information; higher-order derivatives would be needed.
 
+
+### 9.12 Second-Derivative Test for Extrema of Functions of Two Variables
+
+For $n=2$ the classification can be determined from $D_{1,1}f(a)$ and $\det H(a)$.
+
+**Theorem 9.7.** Let $a$ be a stationary point of $f(x_1,x_2)$ with continuous second-order partials in a 2-ball $B(a)$. Set
+$$
+A=D_{1,1}f(a),\quad B=D_{1,2}f(a),\quad C=D_{2,2}f(a),\quad
+\Delta=\det H(a)=\det\begin{bmatrix}A&B\\B&C\end{bmatrix}=AC-B^{2}.
+$$
+Then:
+- (a) $\Delta<0$ $\implies$ **saddle point** at $a$.
+- (b) $\Delta>0$ and $A>0$ $\implies$ **relative minimum** at $a$.
+- (c) $\Delta>0$ and $A<0$ $\implies$ **relative maximum** at $a$.
+- (d) $\Delta=0$ $\implies$ test is **inconclusive**.
+
+*Proof sketch.* The characteristic equation is $\lambda^{2}-(A+C)\lambda+\Delta=0$, so
+$$
+\lambda_1+\lambda_2=A+C,\qquad \lambda_1\lambda_2=\Delta.
+$$
+If $\Delta<0$, the eigenvalues have opposite signs $\to$ saddle point. If $\Delta>0$, they have the same sign; since $AC>B^{2}\ge0$, $A$ and $C$ share the same sign, which must be the sign of both eigenvalues. For (d), see Examples 4 and 5 of Section 9.9 (both have $\Delta=0$ at the origin, but one is a saddle point and the other a relative minimum).
+
+*Alternative approach:* Even when Theorem 9.7 applies, rewriting the function as a sum of squares may be simpler. Example: $f(x,y)=e^{1/g(x,y)}$ with $g(x,y)=x^{2}+2+\cos^{2}y-2\cos y$ can be rewritten as $g(x,y)=1+x^{2}+(1-\cos y)^{2}$, showing relative maxima at $(0,2n\pi)$ for any integer $n$.
+
