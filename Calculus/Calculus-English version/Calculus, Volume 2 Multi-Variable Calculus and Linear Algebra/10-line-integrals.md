@@ -104,3 +104,32 @@ $$
 $$
 with $+$ when $u(c)=a,\;u(d)=b$ (same direction) and $-$ when $u(c)=b,\;u(d)=a$ (opposite direction). Extend to piecewise smooth paths by additivity.
 
+
+### 10.6 The Concept of Work as a Line Integral
+
+A particle moving along a curve under a force field $f$ does work defined by the line integral $\int f\cdot d\alpha$.
+
+**Example 1. Work done by a constant force.** If $f=c$ (constant), the work in moving a particle from $a$ to $b$ along any piecewise smooth path is
+$$
+\int f\cdot d\alpha = c\cdot(b-a),
+$$
+the dot product of the force and the displacement vector. For $\alpha$ joining $a$ and $b$ with $\alpha'$ continuous,
+$$
+\int f\cdot d\alpha = \sum_{k=1}^{n} c_k\int_a^{b}\alpha_k'(t)\,dt
+= \sum_{k=1}^{n} c_k\bigl[\alpha_k(b)-\alpha_k(a)\bigr]
+= c\cdot\bigl[\alpha(b)-\alpha(a)\bigr] = c\cdot(b-a).
+$$
+Here the work depends only on the endpoints, not on the curve. Force fields with this property are called **conservative**. (The example on p.\ 325 is nonconservative.)
+
+**Example 2. Principle of work and energy.** A particle of mass $m$ moves under $f$ with speed $v(t)$; kinetic energy is $\tfrac{1}{2}mv^{2}(t)$. Then
+$$
+\int_{r(a)}^{r(b)} f\cdot d\mathbf{r} = \tfrac{1}{2}mv^{2}(b)-\tfrac{1}{2}mv^{2}(a).
+$$
+*Proof.* By Newton's second law, $f[r(t)]=m\mathbf{r}''(t)=m\mathbf{v}'(t)$. Hence
+$$
+f[r(t)]\cdot\mathbf{r}'(t) = m\mathbf{v}'(t)\cdot\mathbf{v}(t)
+= \tfrac{1}{2}m\frac{d}{dt}\bigl(\mathbf{v}(t)\cdot\mathbf{v}(t)\bigr)
+= \tfrac{1}{2}m\frac{d}{dt}\bigl(v^{2}(t)\bigr).
+$$
+Integrating from $a$ to $b$ gives the result.
+
