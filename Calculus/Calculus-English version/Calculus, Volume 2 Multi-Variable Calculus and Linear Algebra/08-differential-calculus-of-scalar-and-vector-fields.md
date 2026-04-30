@@ -280,3 +280,20 @@ $$\frac{\partial\varphi}{\partial r}=\frac{\partial f}{\partial x}\cos\theta+\fr
 \frac{\partial\varphi}{\partial\theta}=-r\frac{\partial f}{\partial x}\sin\theta+r\frac{\partial f}{\partial y}\cos\theta.\tag{8.28}$$
 
 **Second-order partials** (e.g. $\partial^2\varphi/\partial\theta^2$) are obtained by differentiating (8.28) and applying the chain rule again to $\partial f/\partial x$ and $\partial f/\partial y$.
+
+
+### 8.23 Sufficient Conditions for Equality of Mixed Partial Derivatives
+
+Mixed partials need not be equal. Example:
+$$f(x,y)=xy\frac{x^2-y^2}{x^2+y^2}\;(x,y)\neq(0,0),\quad f(0,0)=0$$
+gives $D_{2,1}f(0,0)=-1$ and $D_{1,2}f(0,0)=1$.
+
+**Theorem 8.12.** If $D_1f, D_2f, D_{1,2}f, D_{2,1}f$ exist on an open set $S$ and both mixed partials are **continuous** at $(a,b)\in S$, then
+$$D_{1,2}f(a,b)=D_{2,1}f(a,b).\tag{8.31}$$
+
+- *Proof sketch:* Define
+  $$\Delta(h,k)=f(a+h,b+k)-f(a+h,b)-f(a,b+k)+f(a,b).$$
+  Apply the 1-D MVT twice (first to $G(x)=f(x,b+k)-f(x,b)$, then to $D_1f$) to get $\Delta(h,k)=hkD_{2,1}f(x_1,y_1)$. By symmetry, $\Delta(h,k)=hkD_{1,2}f(x_2,y_2)$. Cancelling $hk$ and letting $(h,k)\to(0,0)$ gives (8.31) by continuity.
+
+**Theorem 8.13 (Stronger version).** If $D_1f, D_2f, D_{2,1}f$ exist on an open set $S$ containing $(a,b)$, and $D_{2,1}f$ is continuous on $S$, then $D_{1,2}f(a,b)$ exists and equals $D_{2,1}f(a,b)$.
+- *Proof sketch:* Use (8.36) and the definition of $D_{1,2}f$ as a limit of difference quotients of $D_2f$; continuity of $D_{2,1}f$ forces the limit to equal $D_{2,1}f(a,b)$.
