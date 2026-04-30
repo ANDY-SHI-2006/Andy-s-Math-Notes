@@ -65,3 +65,42 @@ The two values differ: the integral **depends on the path**.
 
 Using a different parametrization of the same curve, e.g. $\beta(t)=t\mathbf{i}+t^{3/2}\mathbf{j}$, yields the same value $59/42$. The integral is independent of the **parametrization** used to describe the curve (proved in the next section).
 
+
+### 10.4 Basic Properties of Line Integrals
+
+**Linearity** (with respect to the integrand):
+$$
+\int (af+bg)\cdot d\alpha = a\int f\cdot d\alpha + b\int g\cdot d\alpha.
+$$
+
+**Additivity** (with respect to the path): if $C=C_1\cup C_2$ traced by $\alpha$ on $[a,c]$ and $[c,b]$ respectively ($a<c<b$),
+$$
+\int_C f\cdot d\alpha = \int_{C_1} f\cdot d\alpha + \int_{C_2} f\cdot d\alpha.
+$$
+
+**Change of parameter.** Let $\alpha$ be defined on $[a,b]$ and let $u:[c,d]\to[a,b]$ be differentiable with $u'\neq0$ everywhere. Then
+$$
+\beta(t)=\alpha[u(t)]
+$$
+is an **equivalent** path with the same graph. If $u'>0$ on $[c,d]$, $\alpha$ and $\beta$ trace the curve in the **same direction** ($u$ is **orientation-preserving**). If $u'<0$, they trace it in **opposite directions** ($u$ is **orientation-reversing**).
+
+**Theorem 10.1 (Invariance under change of parameter).** Let $\alpha$ and $\beta$ be equivalent piecewise smooth paths. Then
+$$
+\int_C f\cdot d\alpha = \int_C f\cdot d\beta
+$$
+if $\alpha$ and $\beta$ trace $C$ in the same direction; and
+$$
+\int_C f\cdot d\alpha = -\int_C f\cdot d\beta
+$$
+if they trace $C$ in opposite directions.
+
+*Proof sketch.* For smooth paths, $\beta'(t)=\alpha'[u(t)]\,u'(t)$ by the chain rule. Then
+$$
+\int_C f\cdot d\beta = \int_c^{d} f(\alpha[u(t)])\cdot\alpha'[u(t)]\,u'(t)\,dt.
+$$
+Substitute $v=u(t)$, $dv=u'(t)\,dt$:
+$$
+\int_C f\cdot d\beta = \int_{u(c)}^{u(d)} f(\alpha(v))\cdot\alpha'(v)\,dv = \pm\int_a^{b} f(\alpha(v))\cdot\alpha'(v)\,dv = \pm\int_C f\cdot d\alpha,
+$$
+with $+$ when $u(c)=a,\;u(d)=b$ (same direction) and $-$ when $u(c)=b,\;u(d)=a$ (opposite direction). Extend to piecewise smooth paths by additivity.
+
