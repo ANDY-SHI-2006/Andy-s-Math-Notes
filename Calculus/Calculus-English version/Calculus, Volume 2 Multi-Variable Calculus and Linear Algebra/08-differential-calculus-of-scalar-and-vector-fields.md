@@ -213,3 +213,28 @@ $$\nabla f\cdot T=\frac{\partial f}{\partial x}\cos\alpha+\frac{\partial f}{\par
 **Tangent line to a level curve** ($\mathbb{R}^2$).
 - At $a=(x_1,y_1)$:
   $$D_1f(a)(x-x_1)+D_2f(a)(y-y_1)=0.$$
+
+
+### 8.18 Derivatives of Vector Fields
+
+For $f:S\to\mathbb{R}^m$ and $a$ an interior point of $S\subseteq\mathbb{R}^n$:
+$$f'(a;y)=\lim_{h\to0}\frac{f(a+hy)-f(a)}{h}\quad\text{(a vector in }\mathbb{R}^m\text{)}.$$
+
+- $f'(a;y)$ exists iff each component derivative $f_k'(a;y)$ exists, and
+  $$f'(a;y)=\sum_{k=1}^m f_k'(a;y)e_k.$$
+
+**Differentiability.** $f$ is differentiable at $a$ if there exists a linear transformation $T_a:\mathbb{R}^n\to\mathbb{R}^m$ such that
+$$f(a+v)=f(a)+T_a(v)+\|v\|E(a,v),\tag{8.16}$$
+with $E(a,v)\to O$ as $v\to O$.
+
+**Theorem 8.9.** If $f$ is differentiable at $a$, then $f'(a;y)$ exists for every $y$ and
+$$T_a(y)=f'(a;y)=\sum_{k=1}^m\bigl(\nabla f_k(a)\cdot y\bigr)e_k.\tag{8.17–8.18}$$
+
+**Jacobian matrix.** Writing $T_a(y)=Df(a)\,y$ as a matrix product, $Df(a)$ is the $m\times n$ **Jacobian matrix** whose $kj$-entry is $D_jf_k(a)$:
+$$Df(a)=\begin{bmatrix}
+D_1f_1(a)&\cdots&D_nf_1(a)\\
+\vdots&&\vdots\\
+D_1f_m(a)&\cdots&D_nf_m(a)
+\end{bmatrix}.$$
+
+- First-order Taylor formula: $f(a+v)=f(a)+f'(a)(v)+\|v\|E(a,v)$.
