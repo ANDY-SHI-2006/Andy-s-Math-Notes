@@ -133,3 +133,31 @@ f[r(t)]\cdot\mathbf{r}'(t) = m\mathbf{v}'(t)\cdot\mathbf{v}(t)
 $$
 Integrating from $a$ to $b$ gives the result.
 
+
+### 10.7 Line Integrals with Respect to Arc Length
+
+Let $\alpha$ be a path with $\alpha'$ continuous on $[a,b]$. The arc-length function is
+$$
+s(t)=\int_a^{t}\|\alpha'(u)\|\,du,\qquad s'(t)=\|\alpha'(t)\|.
+$$
+
+**Definition.** Let $\varphi$ be a scalar field defined and bounded on $C$ (the graph of $\alpha$). The **line integral of $\varphi$ with respect to arc length** along $C$ is
+$$
+\int_C \varphi\,ds = \int_a^{b} \varphi[\alpha(t)]\,s'(t)\,dt,
+$$
+whenever the integral on the right exists.
+
+**Relation to vector line integrals.** If $\varphi[\alpha(t)] = f[\alpha(t)]\cdot T(t)$, where $T(t)=d\alpha/ds$ is the unit tangent vector, then
+$$
+\int_C \varphi\,ds = \int_C f\cdot d\alpha,
+$$
+because
+$$
+f[\alpha(t)]\cdot\alpha'(t)
+= f[\alpha(t)]\cdot\frac{d\alpha}{ds}\,\frac{ds}{dt}
+= f[\alpha(t)]\cdot T(t)\,s'(t)
+= \varphi[\alpha(t)]\,s'(t).
+$$
+
+**Flow and circulation.** When $f$ is a velocity field, $f\cdot T$ is the tangential component of velocity. The integral $\int_C f\cdot T\,ds$ is called the **flow integral** of $f$ along $C$; when $C$ is closed it is called the **circulation** of $f$ along $C$. These terms are standard in fluid-flow theory.
+
