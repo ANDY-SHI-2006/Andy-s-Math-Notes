@@ -260,3 +260,23 @@ the composition of the linear transformations.
   Substituting and using the bound $\|v\|/\|y\|\le M_g(a)+\|E_g(a,y)\|$ (from (8.20)), one shows the combined error term tends to $O$.
 
 - In **Jacobian matrix** form: $Dh(a)=Df(b)\,Dg(a)$ (matrix product).
+
+
+### 8.21 Matrix Form of the Chain Rule
+
+For $h=f\circ g$ with $g$ differentiable at $a$ and $f$ differentiable at $b=g(a)$:
+$$Dh(a)=Df(b)\,Dg(a).\tag{8.26}$$
+
+- $Dh(a)$ is $m\times p$, $Df(b)$ is $m\times n$, $Dg(a)$ is $n\times p$.
+- Component form:
+  $$D_jh_i(a)=\sum_{k=1}^n D_kf_i(b)\,D_jg_k(a).$$
+
+**Two variables case ($p=n=2$).** With $a=(s,t)$, $b=(x,y)$, $x=g_1(s,t)$, $y=g_2(s,t)$:
+$$\frac{\partial h}{\partial s}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial s}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial s},\qquad
+\frac{\partial h}{\partial t}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial t}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial t}.\tag{8.27}$$
+
+**Example: Polar coordinates.** $\varphi(r,\theta)=f(r\cos\theta,r\sin\theta)$.
+$$\frac{\partial\varphi}{\partial r}=\frac{\partial f}{\partial x}\cos\theta+\frac{\partial f}{\partial y}\sin\theta,\qquad
+\frac{\partial\varphi}{\partial\theta}=-r\frac{\partial f}{\partial x}\sin\theta+r\frac{\partial f}{\partial y}\cos\theta.\tag{8.28}$$
+
+**Second-order partials** (e.g. $\partial^2\varphi/\partial\theta^2$) are obtained by differentiating (8.28) and applying the chain rule again to $\partial f/\partial x$ and $\partial f/\partial y$.
