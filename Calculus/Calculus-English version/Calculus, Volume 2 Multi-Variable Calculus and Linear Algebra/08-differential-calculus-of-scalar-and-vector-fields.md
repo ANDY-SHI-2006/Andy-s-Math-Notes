@@ -158,3 +158,19 @@ $$f'(a;y)=\nabla f(a)\cdot y=\|\nabla f(a)\|\cos\theta.$$
 **Coordinate forms.**
 - In $\mathbb{R}^2$: $\nabla f=\dfrac{\partial f}{\partial x}i+\dfrac{\partial f}{\partial y}j$.
 - In $\mathbb{R}^3$: $\nabla f=\dfrac{\partial f}{\partial x}i+\dfrac{\partial f}{\partial y}j+\dfrac{\partial f}{\partial z}k$.
+
+
+### 8.13 A Sufficient Condition for Differentiability
+
+Existence of all partials does **not** imply differentiability (e.g. $f(x,y)=\dfrac{xy^2}{x^2+y^4}$ from §8.10 has $D_1f(O)$ and $D_2f(O)$ but is not differentiable at $O$).
+
+**Theorem 8.7.** If $D_1f,\dots,D_nf$ exist in some ball $B(a)$ and are **continuous** at $a$, then $f$ is differentiable at $a$.
+- A field satisfying this is called **continuously differentiable** at $a$.
+
+- *Proof sketch:* Write $v=\lambda u$ with $\|u\|=1$ and telescope:
+  $$f(a+v)-f(a)=\sum_{k=1}^n\bigl[f(b_k+\lambda u_ke_k)-f(b_k)\bigr],\quad b_k=a+\lambda v_{k-1}.$$
+  Apply the 1-D MVT to each term:
+  $$f(b_k+\lambda u_ke_k)-f(b_k)=\lambda u_kD_kf(c_k).$$
+  Hence
+  $$f(a+v)-f(a)-\nabla f(a)\cdot v=\lambda\sum_{k=1}^n\bigl[D_kf(c_k)-D_kf(a)\bigr]u_k=\|v\|E(a,v).$$
+  As $\|v\|\to0$, $c_k\to a$; continuity of $D_kf$ gives $E(a,v)\to0$.
