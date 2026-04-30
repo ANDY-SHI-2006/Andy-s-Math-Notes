@@ -174,3 +174,19 @@ Existence of all partials does **not** imply differentiability (e.g. $f(x,y)=\df
   Hence
   $$f(a+v)-f(a)-\nabla f(a)\cdot v=\lambda\sum_{k=1}^n\bigl[D_kf(c_k)-D_kf(a)\bigr]u_k=\|v\|E(a,v).$$
   As $\|v\|\to0$, $c_k\to a$; continuity of $D_kf$ gives $E(a,v)\to0$.
+
+
+### 8.15 A Chain Rule for Derivatives of Scalar Fields
+
+**Theorem 8.8 (Chain rule).** Let $f$ be a scalar field on an open set $S\subseteq\mathbb{R}^n$ and let $r:J\to S$ be a vector-valued function ($J\subseteq\mathbb{R}$). Define $g=f\circ r$ by $g(t)=f[r(t)]$. If $r'(t)$ exists and $f$ is differentiable at $a=r(t)$, then
+$$g'(t)=\nabla f(a)\cdot r'(t).\tag{8.15}$$
+- *Proof sketch:* Set $y=r(t+h)-r(t)$. By Taylor's formula,
+  $$\frac{g(t+h)-g(t)}{h}=\nabla f(a)\cdot\frac{r(t+h)-r(t)}{h}+\frac{\|y\|}{h}E(a,y)\to\nabla f(a)\cdot r'(t).$$
+
+**Directional derivative along a curve.** If $r$ describes a curve $C$ and $T(t)=r'(t)/\|r'(t)\|$ is the unit tangent, then $\nabla f[r(t)]\cdot T(t)$ is the directional derivative of $f$ along $C$. For a plane curve with $T=\cos\alpha\,i+\cos\beta\,j$:
+$$\nabla f\cdot T=\frac{\partial f}{\partial x}\cos\alpha+\frac{\partial f}{\partial y}\cos\beta.$$
+
+**Level curves.** If $f(x,y)=c$ describes a curve $C$ and $g(t)=f[r(t)]=c$, then $g'(t)=\nabla f\cdot r'=0$, so:
+- $\nabla f$ is **normal** to $C$.
+- Directional derivative of $f$ along $C$ is $0$.
+- Maximum directional derivative occurs in the direction **normal** to $C$.
