@@ -201,3 +201,14 @@ I_z = \int_C (x^{2}+y^{2})(x^{2}+y^{2}+z^{2})\,ds
 = a^{2}\int_C (x^{2}+y^{2}+z^{2})\,ds = Ma^{2}.
 $$
 
+
+### 10.10 Open Connected Sets. Independence of the Path
+
+**Connected open set.** An open set $S\subseteq\mathbb{R}^{n}$ is **connected** if every pair of points in $S$ can be joined by a piecewise smooth path whose graph lies in $S$. That is, for every $a,b\in S$ there exists a piecewise smooth path $\alpha$ on $[a,b]$ with $\alpha(t)\in S$ for all $t$, $\alpha(a)=a$, and $\alpha(b)=b$.
+
+**Disconnected open set.** An open set $S$ is **disconnected** if it is the union of two or more disjoint non-empty open sets. The class of open connected sets is identical with the class of open sets that are not disconnected.
+
+**Path independence.** Let $f$ be a continuous vector field on an open connected set $S$. The line integral of $f$ from $a$ to $b$ along a piecewise smooth path in $S$ generally depends on the path. If the integral depends only on the endpoints $a$ and $b$ and not on the joining path, we say the integral is **independent of the path from $a$ to $b$**. The line integral of $f$ is **independent of the path in $S$** if this holds for every pair of points in $S$.
+
+> Which vector fields have line integrals independent of the path? To answer this we extend the first and second fundamental theorems of calculus to line integrals.
+
