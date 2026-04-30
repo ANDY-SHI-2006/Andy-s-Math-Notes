@@ -74,3 +74,27 @@ $$X'(z)=\frac{\partial(F,G)/\partial(y,z)}{\partial(F,G)/\partial(x,y)},\qquad Y
 
 - **Jacobian notation:**
   $$\frac{\partial(f_1,\dots,f_n)}{\partial(x_1,\dots,x_n)}=\det\bigl[D_jf_i\bigr].$$
+
+
+### 9.7 Worked Examples
+
+**Example 1.** $g(x,y)=0$ defines $y=Y(x)$. Then
+$$Y'(x)=-\frac{\partial g/\partial x}{\partial g/\partial y}.\tag{9.26}$$
+
+**Example 2.** Eliminate $y$ from $z=f(x,y)$ and $g(x,y)=0$ to get $z=h(x)$. Then
+$$h'(x)=\frac{\partial(f,g)/\partial(x,y)}{\partial g/\partial y}=\frac{g_yf_x-f_yg_x}{g_y}.$$
+
+**Example 3.** $2x=v^2-u^2$, $y=uv$ define $u,v$ as functions of $x,y$.
+$$\frac{\partial u}{\partial x}=-\frac{u}{u^2+v^2},\quad \frac{\partial v}{\partial x}=\frac{v}{u^2+v^2},\quad
+\frac{\partial u}{\partial y}=\frac{v}{u^2+v^2},\quad \frac{\partial v}{\partial y}=\frac{u}{u^2+v^2}.$$
+
+**Example 4.** $u=F(x+u,yu)$. With $u=g(x,y)$:
+$$\frac{\partial u}{\partial x}=\frac{-D_1F}{D_1F+yD_2F-1},\qquad
+\frac{\partial u}{\partial y}=\frac{-g(x,y)D_2F}{D_1F+yD_2F-1}.$$
+
+**Example 5.** Eliminate $u$ from $x=u+v$, $y=uv^2$ to get $F(x,y,v)=xv^2-v^3-y=0$, defining $v=h(x,y)$.
+$$\frac{\partial h}{\partial x}=\frac{h}{3h-2x},\qquad \frac{\partial h}{\partial y}=\frac{1}{2xh-3h^2}.$$
+
+**Example 6.** $F(x,y,z)=0$ defines $z=f(x,y)$. The second derivative:
+$$\frac{\partial^2f}{\partial x^2}=-\frac{F_{zz}(F_x)^2-2F_{xz}F_zF_x+(F_z)^2F_{xx}}{(F_z)^3}.\tag{9.30}$$
+- Derived by differentiating $\partial f/\partial x=-F_x/F_z$ via the quotient rule and chain rule.
