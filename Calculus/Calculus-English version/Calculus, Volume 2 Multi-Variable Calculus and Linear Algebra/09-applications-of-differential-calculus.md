@@ -53,3 +53,24 @@ $$f(x,t)=\frac{F(x+ct)+F(x-ct)}{2}+\frac{1}{2c}\int_{x-ct}^{x+ct}G(s)\,ds.\tag{9
 - Use (9.13) to determine $\varphi_1,\varphi_2$; integrating yields (9.11).
 
 **Interpretation.** The solution is a superposition of two waves traveling with speed $c$, one to the right ($F(x-ct)$) and one to the left ($F(x+ct)$).
+
+
+### 9.6 Derivatives of Functions Defined Implicitly
+
+A surface $F(x,y,z)=0$ may define $z$ implicitly as $z=f(x,y)$.
+
+**Implicit differentiation.** Set $g(x,y)=F[x,y,f(x,y)]=0$. By the chain rule:
+$$\frac{\partial g}{\partial x}=D_1F+D_3F\frac{\partial f}{\partial x}=0,\qquad \frac{\partial g}{\partial y}=D_2F+D_3F\frac{\partial f}{\partial y}=0.$$
+Hence, where $D_3F\neq0$:
+$$\frac{\partial f}{\partial x}=-\frac{D_1F}{D_3F},\qquad \frac{\partial f}{\partial y}=-\frac{D_2F}{D_3F}.\tag{9.20–9.21}$$
+Or more compactly:
+$$\frac{\partial f}{\partial x}=-\frac{\partial F/\partial x}{\partial F/\partial z},\qquad \frac{\partial f}{\partial y}=-\frac{\partial F/\partial y}{\partial F/\partial z}.$$
+
+**Theorem 9.3.** If $F(x_1,\dots,x_n)=0$ defines $x_n=f(x_1,\dots,x_{n-1})$ and $D_nF\neq0$, then
+$$D_kf=-\frac{D_kF}{D_nF}.\tag{9.22}$$
+
+**Two constraints, one parameter.** If $F(x,y,z)=0$ and $G(x,y,z)=0$ define a curve $x=X(z)$, $y=Y(z)$, differentiate both with respect to $z$ and solve the linear system for $X'(z),Y'(z)$. By Cramer's rule (using **Jacobian determinants**):
+$$X'(z)=\frac{\partial(F,G)/\partial(y,z)}{\partial(F,G)/\partial(x,y)},\qquad Y'(z)=\frac{\partial(F,G)/\partial(z,x)}{\partial(F,G)/\partial(x,y)}.\tag{9.25}$$
+
+- **Jacobian notation:**
+  $$\frac{\partial(f_1,\dots,f_n)}{\partial(x_1,\dots,x_n)}=\det\bigl[D_jf_i\bigr].$$
