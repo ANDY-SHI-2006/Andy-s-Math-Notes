@@ -33,3 +33,23 @@ $$a\frac{\partial f}{\partial x}+b\frac{\partial f}{\partial y}=0\tag{9.10}$$
 is
 $$f(x,y)=g(bx-ay),\tag{9.9}$$
 where $g$ is any differentiable function on $\mathbb{R}^1$.
+
+
+### 9.4 The One-Dimensional Wave Equation
+
+The displacement $y=f(x,t)$ of a vibrating string satisfies
+$$\frac{\partial^2f}{\partial t^2}=c^2\frac{\partial^2f}{\partial x^2},\tag{9.12}$$
+with initial conditions
+$$f(x,0)=F(x),\qquad D_2f(x,0)=G(x).\tag{9.13}$$
+
+**Theorem 9.2 (d'Alembert's solution).** If $G$ is differentiable and $F$ is twice differentiable on $\mathbb{R}^1$, then
+$$f(x,t)=\frac{F(x+ct)+F(x-ct)}{2}+\frac{1}{2c}\int_{x-ct}^{x+ct}G(s)\,ds.\tag{9.11}$$
+
+- *Derivation sketch:* Factor the wave operator:
+  $$L_1L_2f=0,\qquad L_1=\frac{\partial}{\partial t}-c\frac{\partial}{\partial x},\quad L_2=\frac{\partial}{\partial t}+c\frac{\partial}{\partial x}.$$
+- Set $u=L_2f$; then $L_1u=0$, so $u(x,t)=\varphi(x+ct)$ by Theorem 9.1.
+- Find $v$ with $L_2v=u$; then $L_2(f-v)=0$, so $f-v=\psi(x-ct)$.
+- Hence $f(x,t)=\varphi_1(x+ct)+\varphi_2(x-ct)$.
+- Use (9.13) to determine $\varphi_1,\varphi_2$; integrating yields (9.11).
+
+**Interpretation.** The solution is a superposition of two waves traveling with speed $c$, one to the right ($F(x-ct)$) and one to the left ($F(x+ct)$).
