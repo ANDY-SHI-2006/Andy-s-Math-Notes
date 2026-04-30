@@ -190,3 +190,26 @@ $$\nabla f\cdot T=\frac{\partial f}{\partial x}\cos\alpha+\frac{\partial f}{\par
 - $\nabla f$ is **normal** to $C$.
 - Directional derivative of $f$ along $C$ is $0$.
 - Maximum directional derivative occurs in the direction **normal** to $C$.
+
+
+### 8.16 Applications to Geometry: Level Sets and Tangent Planes
+
+- **Level set:** $L(c)=\{x\in S:f(x)=c\}$.
+  - In $\mathbb{R}^2$: **level curve**; in $\mathbb{R}^3$: **level surface**.
+  - Example: isothermals ($f(x,y)=$ temperature) and lines of flow (orthogonal trajectories).
+
+**Gradient is normal to level sets.**
+- Let $\Gamma$ be any curve on $L(c)$ through $a$, parametrized by $r(t)$. Since $f[r(t)]=c$ is constant,
+  $$g'(t)=\nabla f[r(t)]\cdot r'(t)=0.$$
+- Hence $\nabla f(a)$ is perpendicular to every tangent vector of $L(c)$ at $a$.
+
+**Tangent plane to a level surface** ($\mathbb{R}^3$).
+- If $\nabla f(a)\neq O$, the tangent vectors span a plane with normal $\nabla f(a)$.
+- Point-normal form:
+  $$\nabla f(a)\cdot(x-a)=0.$$
+- Cartesian form (with $a=(x_1,y_1,z_1)$):
+  $$D_1f(a)(x-x_1)+D_2f(a)(y-y_1)+D_3f(a)(z-z_1)=0.$$
+
+**Tangent line to a level curve** ($\mathbb{R}^2$).
+- At $a=(x_1,y_1)$:
+  $$D_1f(a)(x-x_1)+D_2f(a)(y-y_1)=0.$$
