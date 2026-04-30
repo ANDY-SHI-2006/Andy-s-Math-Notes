@@ -238,3 +238,25 @@ D_1f_m(a)&\cdots&D_nf_m(a)
 \end{bmatrix}.$$
 
 - First-order Taylor formula: $f(a+v)=f(a)+f'(a)(v)+\|v\|E(a,v)$.
+
+
+### 8.19 Differentiability Implies Continuity
+
+**Theorem 8.10.** If a vector field $f$ is differentiable at $a$, then $f$ is continuous at $a$.
+- *Proof:* In (8.19), as $v\to O$, $\|v\|E(a,v)\to O$ and $f'(a)(v)\to O$ (linear transformations are continuous).
+
+**Norm bound (used in §8.20).**
+$$\|f'(a)(v)\|\le M_f(a)\,\|v\|,\qquad M_f(a)=\sum_{k=1}^m\|\nabla f_k(a)\|.\tag{8.20}$$
+
+### 8.20 The Chain Rule for Derivatives of Vector Fields
+
+**Theorem 8.11 (Chain rule).** Let $h=f\circ g$ where $g$ is differentiable at $a$ (with total derivative $g'(a)$) and $f$ is differentiable at $b=g(a)$ (with total derivative $f'(b)$). Then $h$ is differentiable at $a$ and
+$$h'(a)=f'(b)\circ g'(a),$$
+the composition of the linear transformations.
+
+- *Proof sketch:* Set $v=g(a+y)-g(a)$. By Taylor's formula for $g$ and $f$:
+  $$v=g'(a)(y)+\|y\|E_g(a,y),$$
+  $$f(b+v)-f(b)=f'(b)(v)+\|v\|E_f(b,v).$$
+  Substituting and using the bound $\|v\|/\|y\|\le M_g(a)+\|E_g(a,y)\|$ (from (8.20)), one shows the combined error term tends to $O$.
+
+- In **Jacobian matrix** form: $Dh(a)=Df(b)\,Dg(a)$ (matrix product).
