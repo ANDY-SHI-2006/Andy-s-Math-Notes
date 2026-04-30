@@ -232,3 +232,40 @@ If $\Delta<0$, the eigenvalues have opposite signs $\to$ saddle point. If $\Delt
 
 *Alternative approach:* Even when Theorem 9.7 applies, rewriting the function as a sum of squares may be simpler. Example: $f(x,y)=e^{1/g(x,y)}$ with $g(x,y)=x^{2}+2+\cos^{2}y-2\cos y$ can be rewritten as $g(x,y)=1+x^{2}+(1-\cos y)^{2}$, showing relative maxima at $(0,2n\pi)$ for any integer $n$.
 
+
+### 9.14 Extrema with Constraints: Lagrange's Multipliers
+
+**Problem.** Determine extreme values of a scalar field $f(\mathbf{x})$ when $\mathbf{x}$ is restricted to a subset of the domain of $f$.
+
+- **Example 1.** Minimize distance to the origin on a surface $S$: $f(x,y,z)=(x^{2}+y^{2}+z^{2})^{1/2}$, constraint $S$.
+- **Example 2.** Find max/min temperature on a curve $C$ in 3-space.
+
+**The method of Lagrange's multipliers.** If $f(x_1,\dots,x_n)$ has a relative extremum subject to $m$ constraints
+$$
+g_1(x_1,\dots,x_n)=0,\quad\dots,\quad g_m(x_1,\dots,x_n)=0,\tag{9.40}
+$$
+with $m<n$, then there exist scalars $\lambda_1,\dots,\lambda_m$ such that
+$$
+\nabla f=\lambda_1\nabla g_1+\cdots+\lambda_m\nabla g_m\tag{9.41}
+$$
+at each extremum point. The scalars $\lambda_i$ are **Lagrange's multipliers**.
+
+*Practical use:* Solve the system of $n+m$ equations consisting of the $m$ constraints (9.40) and the $n$ scalar equations from (9.41) for the $n+m$ unknowns $x_1,\dots,x_n,\lambda_1,\dots,\lambda_m$.
+
+The method is valid when:
+- $f$ and $g_1,\dots,g_m$ are differentiable.
+- The number of constraints $m$ is less than the number of variables $n$.
+- Not all Jacobian determinants of the constraint functions with respect to $m$ of the variables are zero at the extremum.
+
+**Geometric argument for Example 1.** As $r$ increases, the level surface $f=r$ first touches $S$ at the nearest point(s). At a contact point the tangent planes coincide, so $\nabla f$ and $\nabla g$ are parallel: $\nabla f=\lambda\nabla g$.
+
+**Geometric argument for Example 2.** Let $C$ be the intersection of $g_1=0$ and $g_2=0$. Parameterize $C$ by $\alpha(t)$ and set $\varphi(t)=f[\alpha(t)]$. At an interior extremum $t_1$, $\varphi'(t_1)=\nabla f[\alpha(t_1)]\cdot\alpha'(t_1)=0$, so $\nabla f$ is normal to $C$. Since $\nabla g_1$ and $\nabla g_2$ are also normal to $C$, if they are independent then $\nabla f$ lies in their span:
+$$
+\nabla f=\lambda_1\nabla g_1+\lambda_2\nabla g_2.
+$$
+Independence of $\nabla g_1,\nabla g_2$ $\iff$ their cross product is nonzero, i.e. not all Jacobian determinants
+$$
+\frac{\partial(g_1,g_2)}{\partial(y,z)},\quad \frac{\partial(g_1,g_2)}{\partial(z,x)},\quad \frac{\partial(g_1,g_2)}{\partial(x,y)}
+$$
+are zero. If $\nabla g_1$ and $\nabla g_2$ are dependent, the method may fail (e.g. $g_1=z$, $g_2=z^{2}-(y-1)^{3}$ at $(0,1,0)$ where $\nabla g_2=\mathbf{0}$).
+
