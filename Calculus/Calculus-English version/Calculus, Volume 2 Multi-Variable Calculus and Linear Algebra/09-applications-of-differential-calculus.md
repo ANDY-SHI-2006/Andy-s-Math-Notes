@@ -98,3 +98,38 @@ $$\frac{\partial h}{\partial x}=\frac{h}{3h-2x},\qquad \frac{\partial h}{\partia
 **Example 6.** $F(x,y,z)=0$ defines $z=f(x,y)$. The second derivative:
 $$\frac{\partial^2f}{\partial x^2}=-\frac{F_{zz}(F_x)^2-2F_{xz}F_zF_x+(F_z)^2F_{xx}}{(F_z)^3}.\tag{9.30}$$
 - Derived by differentiating $\partial f/\partial x=-F_x/F_z$ via the quotient rule and chain rule.
+
+
+### 9.9 Maxima, Minima, and Saddle Points
+
+A surface $z=f(x,y)$ is a level surface of $F(x,y,z)=f(x,y)-z$. If $f$ is differentiable,
+$$
+\nabla F = \frac{\partial f}{\partial x}\mathbf{i}+\frac{\partial f}{\partial y}\mathbf{j}-\mathbf{k}.
+$$
+The tangent plane at $P_1=(x_1,y_1,z_1)$ is $z-z_1=A(x-x_1)+B(y-y_1)$, where $A=D_1f(x_1,y_1)$ and $B=D_2f(x_1,y_1)$.
+
+When $A=B=0$, $P_1$ is a **stationary point** of the surface and $(x_1,y_1)$ is a **stationary (critical) point** of $f$; the tangent plane is horizontal. Stationary points fall into three categories: **maxima, minima, and saddle points**.
+
+**Definitions.**
+
+- **Absolute maximum** at $a$ in $S$: $f(x)\le f(a)$ for all $x\in S$.
+- **Relative (local) maximum** at $a$: the inequality holds on some $n$-ball $B(a)\subseteq S$.
+- **Absolute/relative minimum** defined with the opposite inequality.
+- **Extremum**: a number that is either a relative maximum or a relative minimum.
+
+**First-order necessary condition.** If $f$ has an extremum at an interior point $a$ and is differentiable there, then $\nabla f(a)=\mathbf{0}$. (Proof sketch: hold each component fixed and reduce to the 1D case.)
+
+- For $n=2$: $\partial f/\partial x=\partial f/\partial y=0$ gives a horizontal tangent plane at $(a,f(a))$.
+- However, $\nabla f(a)=\mathbf{0}$ does **not** guarantee an extremum — this occurs at **saddle points**.
+
+**Definition (Saddle point).** Let $f$ be differentiable at $a$. If $\nabla f(a)=\mathbf{0}$ then $a$ is a stationary point. It is a **saddle point** if every $n$-ball $B(a)$ contains points $x$ with $f(x)<f(a)$ and other points with $f(x)>f(a)$.
+
+| Example | $f(x,y)$ | Type at origin | Notes |
+|---------|----------|----------------|-------|
+| 1 | $2-x^2-y^2$ | Relative (and absolute) maximum | Paraboloid of revolution |
+| 2 | $x^2+y^2$ | Relative (and absolute) minimum | Paraboloid of revolution |
+| 3 | $xy$ | Saddle point | Hyperbolic paraboloid; $\partial f/\partial x=\partial f/\partial y=0$ at origin, but $f>0$ in quadrants I, III and $f<0$ in II, IV |
+| 4 | $x^3-3xy^2$ | Saddle point ("monkey saddle") | Three peaks near origin |
+| 5 | $x^2y^2$ | Relative (and absolute) minimum | Valley surrounded by four mountains; $f\ge 0$ everywhere |
+| 6 | $1-x^2$ | Relative (and absolute) maximum | Cylinder with generators parallel to $y$-axis |
+
