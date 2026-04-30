@@ -133,3 +133,42 @@ When $A=B=0$, $P_1$ is a **stationary point** of the surface and $(x_1,y_1)$ is 
 | 5 | $x^2y^2$ | Relative (and absolute) minimum | Valley surrounded by four mountains; $f\ge 0$ everywhere |
 | 6 | $1-x^2$ | Relative (and absolute) maximum | Cylinder with generators parallel to $y$-axis |
 
+
+### 9.10 Second-Order Taylor Formula for Scalar Fields
+
+For a differentiable scalar field $f$ with a stationary point at $a$, write $x=a+y$. The first-order Taylor formula is
+$$
+f(a+y)-f(a)=\nabla f(a)\cdot y+\|y\|\,E(a,y),\quad E(a,y)\to\mathbf{0}\text{ as }y\to\mathbf{0}.
+$$
+At a stationary point $\nabla f(a)=\mathbf{0}$, so $f(a+y)-f(a)=\|y\|\,E(a,y)$.
+
+To determine the sign of $f(a+y)-f(a)$ we need the quadratic form given by continuous second-order partials.
+
+**Hessian matrix.**
+$$
+H(x)=\bigl[D_{ij}f(x)\bigr]_{i,j=1}^{n},
+\qquad
+\sum_{i=1}^{n}\sum_{j=1}^{n}D_{ij}f(a)y_iy_j = yH(a)y^{t}.
+$$
+When the partials are continuous, $D_{ij}f=D_{ji}f$ and $H(a)$ is symmetric.
+
+**Theorem 9.4 (Second-order Taylor formula).** Let $f$ have continuous second-order partials $D_{ij}f$ in an $n$-ball $B(a)$. Then for all $y$ with $a+y\in B(a)$,
+$$
+f(a+y)-f(a)=\nabla f(a)\cdot y+\frac{1}{2!}\,yH(a+cy)y^{t},\qquad 0<c<1.\tag{9.34}
+$$
+Equivalently,
+$$
+f(a+y)-f(a)=\nabla f(a)\cdot y+\frac{1}{2!}\,yH(a)y^{t}+\|y\|^{2}E_{2}(a,y),\tag{9.35}
+$$
+where $E_{2}(a,y)\to 0$ as $y\to\mathbf{0}$.
+
+**Proof sketch.** Define $g(u)=f(a+uy)$ for $u\in[-1,1]$. Apply the 1D second-order Taylor formula to $g$ on $[0,1]$:
+$$
+g(1)-g(0)=g'(0)+\tfrac{1}{2}g''(c),\quad 0<c<1.
+$$
+By the chain rule, $g'(u)=\nabla f(a+uy)\cdot y$ and $g''(u)=yH(a+uy)y^{t}$. Hence $g''(c)=yH(a+cy)y^{t}$, giving (9.34). For (9.35), define $E_2$ via
+$$
+\|y\|^{2}E_{2}(a,y)=\tfrac{1}{2}y\bigl[H(a+cy)-H(a)\bigr]y^{t}\quad(y\neq\mathbf{0}),
+$$
+and $E_{2}(a,\mathbf{0})=0$. Continuity of $D_{ij}f$ at $a$ implies $E_{2}(a,y)\to0$.
+
