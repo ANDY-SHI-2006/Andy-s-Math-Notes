@@ -135,3 +135,26 @@ for $\|v\|<r$, with $E(a,v)\to0$ as $\|v\|\to0$.
 - (ii) $f'(a;y)$ is linear in $y$:
   $$f'(a;y)=\sum_{k=1}^n D_kf(a)\,y_k.\tag{8.9}$$
 - *Proof sketch:* Set $v=hy$ in (8.7); divide by $h$ and let $h\to0$ to get $T_a(y)=f'(a;y)$. Then use linearity: $T_a(y)=\sum y_kT_a(e_k)=\sum y_kD_kf(a)$.
+
+
+### 8.12 The Gradient of a Scalar Field
+
+From (8.9), the total derivative can be written as a dot product:
+$$f'(a;y)=\sum_{k=1}^n D_kf(a)\,y_k=\nabla f(a)\cdot y,$$
+where the **gradient** of $f$ at $a$ is the vector of partial derivatives:
+$$\nabla f(a)=\bigl(D_1f(a),\dots,D_nf(a)\bigr)=\operatorname{grad}f(a).$$
+
+- First-order Taylor formula in gradient form:
+  $$f(a+v)=f(a)+\nabla f(a)\cdot v+\|v\|E(a,v).\tag{8.12}$$
+
+**Theorem 8.6.** If $f$ is differentiable at $a$, then $f$ is continuous at $a$.
+- *Proof:* $|f(a+v)-f(a)|\le\|\nabla f(a)\|\|v\|+\|v\||E(a,v)|\to0$.
+
+**Geometric interpretation.** For a unit vector $y$, let $\theta$ be the angle between $y$ and $\nabla f(a)$. Then
+$$f'(a;y)=\nabla f(a)\cdot y=\|\nabla f(a)\|\cos\theta.$$
+- Maximum rate of change: $\|\nabla f(a)\|$, achieved when $y$ points in the direction of $\nabla f(a)$.
+- Directional derivative is $0$ when $y$ is orthogonal to $\nabla f(a)$.
+
+**Coordinate forms.**
+- In $\mathbb{R}^2$: $\nabla f=\dfrac{\partial f}{\partial x}i+\dfrac{\partial f}{\partial y}j$.
+- In $\mathbb{R}^3$: $\nabla f=\dfrac{\partial f}{\partial x}i+\dfrac{\partial f}{\partial y}j+\dfrac{\partial f}{\partial z}k$.
