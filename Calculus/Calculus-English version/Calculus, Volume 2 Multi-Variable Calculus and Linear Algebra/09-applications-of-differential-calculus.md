@@ -269,3 +269,35 @@ $$
 $$
 are zero. If $\nabla g_1$ and $\nabla g_2$ are dependent, the method may fail (e.g. $g_1=z$, $g_2=z^{2}-(y-1)^{3}$ at $(0,1,0)$ where $\nabla g_2=\mathbf{0}$).
 
+
+### 9.16 The Extreme-Value Theorem for Continuous Scalar Fields
+
+A **closed $n$-dimensional interval** is the Cartesian product of $n$ one-dimensional closed intervals:
+$$
+[\mathbf{a},\mathbf{b}]=[a_1,b_1]\times\cdots\times[a_n,b_n]
+=\{(x_1,\dots,x_n):x_k\in[a_k,b_k]\text{ for all }k\}.
+$$
+For $n=2$ this is a rectangle.
+
+**Theorem 9.8 (Boundedness theorem).** If $f$ is a scalar field continuous at each point of a closed interval $[\mathbf{a},\mathbf{b}]$ in $\mathbb{R}^{n}$, then $f$ is bounded on $[\mathbf{a},\mathbf{b}]$; i.e. there exists $C\ge0$ such that $|f(\mathbf{x})|\le C$ for all $\mathbf{x}\in[\mathbf{a},\mathbf{b}]$.
+
+*Proof sketch (successive bisection).* Assume $f$ is unbounded on $[\mathbf{a},\mathbf{b}]$. Divide each coordinate interval in half; this yields $2^{n}$ subintervals. At least one subinterval $I^{(2)}\subseteq I^{(1)}=[\mathbf{a},\mathbf{b}]$ has $f$ unbounded on it. Repeat to obtain a nested sequence
+$$
+I^{(1)}\supseteq I^{(2)}\supseteq\cdots,\qquad
+I^{(m)}=I_1^{(m)}\times\cdots\times I_n^{(m)},
+$$
+with side lengths $b_k^{(m)}-a_k^{(m)}=(b_k-a_k)/2^{m-1}$. The intervals shrink to a point $\mathbf{t}\in[\mathbf{a},\mathbf{b}]$. By continuity at $\mathbf{t}$, $f$ is bounded on some ball $B(\mathbf{t};r)\cap[\mathbf{a},\mathbf{b}]$, which contains $I^{(m)}$ for $m$ large enough — contradicting unboundedness on $I^{(m)}$.
+
+If $f$ is bounded on $[\mathbf{a},\mathbf{b}]$, define
+$$
+\sup f=\sup\{f(\mathbf{x}):\mathbf{x}\in[\mathbf{a},\mathbf{b}]\},\qquad
+\inf f=\inf\{f(\mathbf{x}):\mathbf{x}\in[\mathbf{a},\mathbf{b}]\}.
+$$
+
+**Theorem 9.9 (Extreme-value theorem).** If $f$ is continuous on a closed interval $[\mathbf{a},\mathbf{b}]$ in $\mathbb{R}^{n}$, then there exist points $\mathbf{c},\mathbf{d}\in[\mathbf{a},\mathbf{b}]$ such that
+$$
+f(\mathbf{c})=\sup f\quad\text{and}\quad f(\mathbf{d})=\inf f.
+$$
+
+*Proof sketch.* It suffices to show $f$ attains its supremum $M=\sup f$. Suppose $f(\mathbf{x})\neq M$ for all $\mathbf{x}\in[\mathbf{a},\mathbf{b}]$. Then $g(\mathbf{x})=M-f(\mathbf{x})>0$ is continuous, so $1/g$ is continuous and bounded (Theorem 9.8): $1/g(\mathbf{x})<C$. Hence $f(\mathbf{x})<M-1/C$ for all $\mathbf{x}$, contradicting that $M$ is the least upper bound. Therefore $f(\mathbf{c})=M$ for some $\mathbf{c}$. Apply to $-f$ for the infimum.
+
