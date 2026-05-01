@@ -240,3 +240,24 @@ $$
    $$
    By uniform continuity of $f$ on $Q$, the right side $\to0$ as $y\to y_1$. Hence $A$ is continuous, so $\int_c^{d}A(y)\,dy$ exists and equals $\iint_Q f$ by Theorem 11.5. The reverse order is analogous.
 
+
+### 11.11 Integrability of Bounded Functions with Discontinuities
+
+**Definition (Set of content zero).** A bounded subset $A$ of the plane is said to have **content zero** if for every $\varepsilon>0$ there is a finite set of rectangles whose union contains $A$ and the sum of whose areas does not exceed $\varepsilon$.
+
+In other words, a bounded set of content zero can be enclosed in a union of rectangles of arbitrarily small total area.
+
+**Properties of content-zero sets:**
+- (a) Any finite set of points has content zero.
+- (b) The union of finitely many bounded sets of content zero also has content zero.
+- (c) Every subset of a set of content zero has content zero.
+- (d) Every line segment has content zero.
+
+**Theorem 11.7.** Let $f$ be defined and bounded on a rectangle $Q=[a,b]\times[c,d]$. If the set of discontinuities of $f$ in $Q$ is a set of content zero, then the double integral $\displaystyle\iint_Q f$ exists.
+
+*Proof sketch.* Let $|f|\le M$ on $Q$ and let $D$ be the discontinuity set. Given $\delta>0$, choose a partition $P$ of $Q$ such that the sum of areas of subrectangles containing points of $D$ is $<\delta$ (possible since $D$ has content zero). On these subrectangles set $s=-M$, $t=M$; on the remaining subrectangles define $s,t$ as in Theorem 11.6. Then $s\le f\le t$ on $Q$ and
+$$
+\iint_Q t - \iint_Q s \le \varepsilon\,a(Q) + 2M\delta.\tag{11.9}
+$$
+The first term comes from continuous subrectangles (span $<\varepsilon$); the second from subrectangles meeting $D$ (area $<\delta$, height $2M$). Hence $0\le\bar{I}(f)-\underline{I}(f)\le\varepsilon\,a(Q)+2M\delta$. Let $\varepsilon\to0$ to get $\bar{I}(f)-\underline{I}(f)\le2M\delta$; since $\delta$ is arbitrary, $\bar{I}(f)=\underline{I}(f)$.
+
