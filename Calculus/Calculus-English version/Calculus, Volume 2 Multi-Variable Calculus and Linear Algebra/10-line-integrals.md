@@ -308,3 +308,26 @@ $$
 $$
 where $g(t)=\int_0^{t}f_k(x+ue_k)\,du$. By the 1D first fundamental theorem, $g'(t)=f_k(x+te_k)$, so $g'(0)=f_k(x)$. Letting $h\to0$ gives $D_k\varphi(x)=f_k(x)$.
 
+
+### 10.15 Necessary and Sufficient Conditions for a Vector Field to Be a Gradient
+
+**Theorem 10.5.** Let $f$ be a vector field continuous on an open connected set $S$ in $\mathbb{R}^{n}$. The following are equivalent:
+- (a) $f$ is the gradient of some potential function in $S$.
+- (b) The line integral of $f$ is independent of the path in $S$.
+- (c) The line integral of $f$ is zero around every piecewise smooth closed path in $S$.
+
+*Proof sketch.*
+- **(b) $\Rightarrow$ (a):** First fundamental theorem (Theorem 10.4).
+- **(a) $\Rightarrow$ (c):** Second fundamental theorem (Theorem 10.3); for a closed path $b=a$, so $\varphi(b)-\varphi(a)=0$.
+- **(c) $\Rightarrow$ (b):** Let $C_1,C_2$ be two piecewise smooth curves in $S$ with the same endpoints, traced by $\alpha$ on $[a,b]$ and $\beta$ on $[c,d]$. Define a closed path $\gamma$ by
+  $$
+  \gamma(t)=\begin{cases}\alpha(t),&a\le t\le b,\\\beta(b+d-t),&b\le t\le b+d-c.\end{cases}
+  $$
+  Then
+  $$
+  \oint_C f\cdot d\gamma = \int_{C_1}f\cdot d\alpha - \int_{C_2}f\cdot d\beta.
+  $$
+  By (c) the left side is $0$, so the two integrals are equal; hence the integral is path-independent.
+
+*Note:* $\oint_C f\neq0$ for some closed $C$ $\Rightarrow$ $f$ is **not** a gradient. However, $\oint_C f=0$ for one (or even infinitely many) closed curves does **not** guarantee $f$ is a gradient. Example: $f(x,y)=x\,\mathbf{i}+xy\,\mathbf{j}$ has zero line integral around every circle centered at the origin, yet $f$ is not a gradient.
+
