@@ -20,3 +20,21 @@ As in the 1D case, the symbols $dx$ and $dy$ play no role in the definition, but
 4. Applications to area, volume, mass, center of mass, etc.
 5. Extension to $n$-space.
 
+
+### 11.2 Partitions of Rectangles. Step Functions
+
+A **rectangle** $Q$ is the Cartesian product of two closed intervals:
+$$
+Q=[a,b]\times[c,d]=\{(x,y):x\in[a,b],\;y\in[c,d]\}.
+$$
+
+**Partition of $Q$.** Let $P_1=\{x_0,\dots,x_n\}$ be a partition of $[a,b]$ and $P_2=\{y_0,\dots,y_m\}$ a partition of $[c,d]$. The Cartesian product $P=P_1\times P_2$ is a **partition of $Q$**, decomposing $Q$ into $mn$ subrectangles. A partition $P'$ is **finer** than $P$ if $P\subseteq P'$.
+
+The Cartesian product of two open subintervals is an **open subrectangle** (edges missing).
+
+**Definition (Step function).** A function $f$ on a rectangle $Q$ is a **step function** if there exists a partition $P$ of $Q$ such that $f$ is constant on each open subrectangle of $P$.
+
+- The graph consists of horizontal rectangular patches (Figure 11.3).
+- Values on boundary points are well-defined but irrelevant to integration theory.
+- Step functions on $Q$ form a **linear space**: if $f,g$ are step functions with partitions $P,P'$, then $c_1f+c_2g$ is constant on the open subrectangles of the common refinement $P\cup P'$.
+
