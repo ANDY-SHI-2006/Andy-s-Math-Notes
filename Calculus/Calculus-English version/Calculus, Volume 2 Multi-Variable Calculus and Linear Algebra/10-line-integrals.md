@@ -242,3 +242,34 @@ For piecewise smooth paths, partition $[a,b]$ into subintervals where $\alpha$ i
 - For a closed path ($b=a$): $\displaystyle\oint\nabla\varphi\cdot d\alpha = 0$.
 - (Theorem 10.4, Section 10.14) Gradients are the **only** continuous vector fields with this property.
 
+
+### 10.12 Applications to Mechanics
+
+If $f=\nabla\varphi$, then $\varphi$ is a **potential function** for $f$. The level sets of $\varphi$ are called **equipotential surfaces** (3D) or **equipotential lines** (2D).
+
+**Example 1.** Let $\varphi(x,y,z)=r^{n}$ with $r=(x^{2}+y^{2}+z^{2})^{1/2}$. Then
+$$
+\nabla(r^{n}) = nr^{n-2}\mathbf{r},\qquad \mathbf{r}=x\mathbf{i}+y\mathbf{j}+z\mathbf{k}.
+$$
+So $\varphi$ is a potential for $f(x,y,z)=nr^{n-2}\mathbf{r}$. The equipotential surfaces are concentric spheres.
+
+**Example 2 (Newtonian potential).** Newton's law: $f=-GmMr^{-3}\mathbf{r}$. Taking $n=-1$ in Example 1,
+$$
+\varphi(x,y,z)=GmMr^{-1}
+$$
+is the **Newtonian potential**, and $f=\nabla\varphi$. Work done moving $m$ from $r_1$ to $r_2$:
+$$
+\varphi(\mathbf{x}_1)-\varphi(\mathbf{x}_2)=GmM\Bigl(\frac{1}{r_1}-\frac{1}{r_2}\Bigr).
+$$
+If both points lie on the same equipotential surface, no work is done.
+
+**Example 3 (Conservation of mechanical energy).** Let $f$ be a continuous force field with potential $\varphi$ on an open connected set $S$. By Theorem 10.3, work done moving from $a$ to $x$ equals $\varphi(x)-\varphi(a)$. From Section 10.6 (Example 2) this work also equals the change in kinetic energy $k(x)-k(a)$. Hence
+$$
+k(x)-k(a)=\varphi(x)-\varphi(a)\quad\Longrightarrow\quad k(x)-\varphi(x)=k(a)-\varphi(a).\tag{10.3}
+$$
+The scalar $-\varphi(x)$ is the **potential energy**.
+
+- If a force field is a gradient, the **sum of kinetic and potential energies is constant** — the **principle of conservation of (mechanical) energy**.
+- A force field with a potential is called **conservative**; no net work is done around a closed curve.
+- Friction or viscosity makes a field nonconservative (mechanical energy converts to heat).
+
