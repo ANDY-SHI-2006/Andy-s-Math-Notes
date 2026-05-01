@@ -84,3 +84,48 @@ This holds for step functions by summing over subrectangles.
   $$
   In particular, $t\ge0$ on $Q$ $\Rightarrow$ $\displaystyle\iint_Q t\,dx\,dy\ge0$.
 
+
+### 11.4 The Definition of the Double Integral of a Function Defined and Bounded on a Rectangle
+
+Let $f$ be bounded on a rectangle $Q$, say $|f(x,y)|\le M$ for $(x,y)\in Q$. Then $f$ is bounded below and above by constant step functions $s=-M$ and $t=M$.
+
+Consider any two step functions $s,t$ on $Q$ satisfying
+$$
+s(x,y)\le f(x,y)\le t(x,y)\quad\text{for every }(x,y)\in Q.\tag{11.4}
+$$
+
+**Definition.** If there is one and only one number $I$ such that
+$$
+\iint_Q s\le I\le\iint_Q t\tag{11.5}
+$$
+for every pair of step functions satisfying (11.4), this number $I$ is called the **double integral of $f$ over $Q$**:
+$$
+\iint_Q f \qquad\text{or}\qquad \iint_Q f(x,y)\,dx\,dy.
+$$
+When such an $I$ exists, $f$ is said to be **integrable** on $Q$.
+
+### 11.5 Upper and Lower Double Integrals
+
+Let $S=\{\iint_Q s : s\le f,\;s\text{ step}\}$ and $T=\{\iint_Q t : f\le t,\;t\text{ step}\}$. Both are nonempty and every element of $S$ is $\le$ every element of $T$. Hence $S$ has a supremum and $T$ has an infimum, with
+$$
+\iint_Q s\le\sup S\le\inf T\le\iint_Q t
+$$
+for all $s\le f\le t$. Therefore $f$ is integrable on $Q$ **iff** $\sup S=\inf T$, in which case
+$$
+\iint_Q f=\sup S=\inf T.
+$$
+
+**Lower and upper integrals.**
+$$
+\underline{I}(f)=\sup\Bigl\{\iint_Q s : s\le f\Bigr\},\qquad
+\bar{I}(f)=\inf\Bigl\{\iint_Q t : f\le t\Bigr\}.
+$$
+
+**Theorem 11.4.** Every function bounded on a rectangle $Q$ has lower and upper integrals satisfying
+$$
+\iint_Q s\le\underline{I}(f)\le\bar{I}(f)\le\iint_Q t
+$$
+for all step functions $s\le f\le t$. Moreover, $f$ is integrable on $Q$ **iff** $\underline{I}(f)=\bar{I}(f)$, and then $\displaystyle\iint_Q f=\underline{I}(f)=\bar{I}(f)$.
+
+*The linearity, additivity, and comparison theorems of Section 11.3 extend from step functions to general integrable functions.*
+
