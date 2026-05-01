@@ -129,3 +129,27 @@ for all step functions $s\le f\le t$. Moreover, $f$ is integrable on $Q$ **iff**
 
 *The linearity, additivity, and comparison theorems of Section 11.3 extend from step functions to general integrable functions.*
 
+
+### 11.6 Evaluation of a Double Integral by Repeated One-Dimensional Integration
+
+**Theorem 11.5 (Fubini's theorem for rectangles).** Let $f$ be defined and bounded on a rectangle $Q=[a,b]\times[c,d]$, and assume $f$ is integrable on $Q$. For each fixed $y\in[c,d]$, assume the one-dimensional integral $\int_a^{b}f(x,y)\,dx$ exists and denote its value by $A(y)$. If $\int_c^{d}A(y)\,dy$ exists, then it equals the double integral:
+$$
+\iint_Q f(x,y)\,dx\,dy = \int_c^{d}\Bigl[\int_a^{b}f(x,y)\,dx\Bigr]dy.\tag{11.6}
+$$
+
+*Proof sketch.* For step functions $s\le f\le t$ on $Q$,
+$$
+\int_a^{b}s(x,y)\,dx \le A(y) \le \int_a^{b}t(x,y)\,dx.
+$$
+Integrating with respect to $y$ over $[c,d]$ and using (11.3),
+$$
+\iint_Q s \le \int_c^{d}A(y)\,dy \le \iint_Q t.
+$$
+Since $f$ is integrable on $Q$, the only number between all such lower and upper sums is $\iint_Q f$.
+
+**Interchanging the order of integration:**
+$$
+\iint_Q f(x,y)\,dx\,dy = \int_a^{b}\Bigl[\int_c^{d}f(x,y)\,dy\Bigr]dx,\tag{11.7}
+$$
+provided $\int_c^{d}f(x,y)\,dy$ exists for each fixed $x\in[a,b]$ and is integrable on $[a,b]$.
+
