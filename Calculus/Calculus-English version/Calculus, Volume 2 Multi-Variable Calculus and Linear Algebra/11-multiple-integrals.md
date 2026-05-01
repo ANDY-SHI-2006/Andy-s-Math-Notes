@@ -218,3 +218,25 @@ $$
 \iint_Q \sqrt{|y-x^{2}|}\,dx\,dy = \frac{4}{3} + \frac{\pi}{2}.
 $$
 
+
+### 11.10 Integrability of Continuous Functions
+
+**Theorem 11.6.** If $f$ is continuous on a rectangle $Q=[a,b]\times[c,d]$, then $f$ is integrable on $Q$. Moreover, the value can be obtained by iterated integration:
+$$
+\iint_Q f = \int_c^{d}\Bigl[\int_a^{b}f(x,y)\,dx\Bigr]dy
+= \int_a^{b}\Bigl[\int_c^{d}f(x,y)\,dy\Bigr]dx.\tag{11.8}
+$$
+
+*Proof sketch.*
+1. **Integrability.** By Theorem 9.8, $f$ is bounded on $Q$. Choose $\varepsilon>0$. By the small-span theorem (Theorem 9.10), there is a partition of $Q$ into subrectangles $Q_1,\dots,Q_n$ such that the span of $f$ in each $Q_k$ is $<\varepsilon$. Let $m_k,M_k$ be the min and max of $f$ on $Q_k$. Define step functions $s(x)=m_k$, $t(x)=M_k$ on $\operatorname{int}Q_k$. Then $s\le f\le t$ and
+   $$
+   \iint_Q t - \iint_Q s = \sum_{k=1}^{n}(M_k-m_k)\,a(Q_k) < \varepsilon\,a(Q).
+   $$
+   Since $\iint_Q s\le\underline{I}(f)\le\bar{I}(f)\le\iint_Q t$, we get $0\le\bar{I}(f)-\underline{I}(f)\le\varepsilon\,a(Q)$. Letting $\varepsilon\to0$ gives $\underline{I}(f)=\bar{I}(f)$.
+
+2. **Equality with iterated integral.** For fixed $y\in[c,d]$, $A(y)=\int_a^{b}f(x,y)\,dx$ exists by continuity. To show $A$ is continuous on $[c,d]$:
+   $$
+   |A(y)-A(y_1)|\le(b-a)\max_{x\in[a,b]}|f(x,y)-f(x,y_1)|.
+   $$
+   By uniform continuity of $f$ on $Q$, the right side $\to0$ as $y\to y_1$. Hence $A$ is continuous, so $\int_c^{d}A(y)\,dy$ exists and equals $\iint_Q f$ by Theorem 11.5. The reverse order is analogous.
+
