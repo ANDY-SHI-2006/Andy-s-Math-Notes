@@ -428,3 +428,50 @@ y^{2}\,dx+2xy\,dy=0,
 $$
 which is exact with potential $\varphi(x,y)=xy^{2}$. Solutions: $xy^{2}=C$. (Another integrating factor is $\mu=2xy^{3}$.)
 
+
+### 10.21 Potential Functions on Convex Sets
+
+**Theorem 10.8 (Differentiation under the integral sign).** Let $S$ be a closed interval in $\mathbb{R}^{n}$ with nonempty interior and let $J=[a,b]$ be a closed interval in $\mathbb{R}^{1}$. Let $J_{n+1}=S\times J$ in $\mathbb{R}^{n+1}$. Assume $\psi$ is a scalar field on $J_{n+1}$ such that $D_k\psi$ is continuous on $J_{n+1}$ for some $k\in\{1,\dots,n\}$. Define
+$$
+\varphi(x)=\int_a^{b}\psi(x,t)\,dt.
+$$
+Then $D_k\varphi$ exists at each interior point of $S$ and
+$$
+D_k\varphi(x)=\int_a^{b}D_k\psi(x,t)\,dt.
+$$
+
+*Proof sketch.* For $x\in\operatorname{int}S$ and small $h$,
+$$
+\frac{\varphi(x+he_k)-\varphi(x)}{h}=\int_a^{b}D_k\psi(z,t)\,dt,
+$$
+where $z$ lies on the segment from $x$ to $x+he_k$. By uniform continuity of $D_k\psi$ on $S\times J$,
+$$
+\biggl|\frac{\varphi(x+he_k)-\varphi(x)}{h}-\int_a^{b}D_k\psi(x,t)\,dt\biggr|<\varepsilon
+$$
+for $|h|$ small enough. Hence $D_k\varphi(x)=\int_a^{b}D_k\psi(x,t)\,dt$.
+
+**Theorem 10.9 (Sufficient condition on a convex set).** Let $f=(f_1,\dots,f_n)$ be continuously differentiable on an open convex set $S$ in $\mathbb{R}^{n}$. Then $f$ is a gradient on $S$ **if and only if**
+$$
+D_kf_j(x)=D_jf_k(x)\tag{10.18}
+$$
+for all $x\in S$ and all $k,j=1,\dots,n$.
+
+*Proof sketch.* Necessity is Theorem 10.6. For sufficiency, assume $S$ contains the origin and define
+$$
+\varphi(x)=\int_0^{1}f(tx)\cdot x\,dt=\int_0^{1}\psi(x,t)\,dt,
+\qquad \psi(x,t)=f(tx)\cdot x.
+$$
+By Theorem 10.8, differentiate under the integral sign:
+$$
+D_k\varphi(x)=\int_0^{1}D_k\psi(x,t)\,dt.
+$$
+Compute $D_k\psi(x,t)$ using the product rule and (10.18):
+$$
+D_k\psi(x,t)=f_k(tx)+t\,\nabla f_k(tx)\cdot x.
+$$
+Set $g(t)=f_k(tx)$; then $g'(t)=\nabla f_k(tx)\cdot x$, so $D_k\psi=g(t)+tg'(t)$. Integrating,
+$$
+D_k\varphi(x)=\int_0^{1}g(t)\,dt+\int_0^{1}tg'(t)\,dt.
+$$
+Integration by parts on the second term gives $g(1)-\int_0^{1}g(t)\,dt$. Hence $D_k\varphi(x)=g(1)=f_k(x)$, so $\nabla\varphi=f$ on $S$.
+
