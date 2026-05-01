@@ -387,3 +387,44 @@ $$
 \varphi(x)=\int_0^{1}f(tx)\cdot x\,dt.\tag{10.10}
 $$
 
+
+### 10.19 Applications to Exact Differential Equations of First Order
+
+A first-order ODE $y'=f(x,y)$ can be written in differential form by multiplying by a nonzero factor $Q(x,y)$:
+$$
+P(x,y)\,dx+Q(x,y)\,dy=0,\tag{10.11}
+$$
+where $P=-fQ$. Associate the vector field $V(x,y)=P(x,y)\,\mathbf{i}+Q(x,y)\,\mathbf{j}$.
+
+The equation (10.11) is **exact** in $S$ if $V$ is a gradient, i.e. $V=\nabla\varphi$ for some scalar field $\varphi$ on $S$. Then $\partial\varphi/\partial x=P$ and $\partial\varphi/\partial y=Q$, so (10.11) becomes
+$$
+\frac{\partial\varphi}{\partial x}\,dx+\frac{\partial\varphi}{\partial y}\,dy=0.
+$$
+
+**Theorem 10.7.** Assume (10.11) is exact in an open connected set $S$, and let $\varphi$ satisfy $\partial\varphi/\partial x=P$, $\partial\varphi/\partial y=Q$ in $S$. Then every solution $y=Y(x)$ of (10.11) with graph in $S$ satisfies
+$$
+\varphi[x,Y(x)]=C
+$$
+for some constant $C$. Conversely, if $\varphi(x,y)=C$ defines $y$ implicitly as a differentiable function of $x$, that function is a solution.
+
+*Proof sketch.* Set $g(x)=\varphi[x,Y(x)]$. By the chain rule,
+$$
+g'(x)=D_1\varphi[x,Y(x)]+D_2\varphi[x,Y(x)]\,Y'(x)=P(x,y)+Q(x,y)\,y'.\tag{10.12}
+$$
+If $y$ satisfies (10.11), then $g'(x)=0$, so $g$ is constant and $\varphi(x,y)=C$. The converse follows by reversing the argument.
+
+**Method.** Construct a potential $\varphi$; the solutions are the level curves $\varphi(x,y)=C$.
+
+**Example 1.** $\displaystyle\frac{dy}{dx}=-\frac{3x^{2}+6xy^{2}}{6x^{2}y+4y^{3}}$
+- Rewrite: $(3x^{2}+6xy^{2})\,dx+(6x^{2}y+4y^{3})\,dy=0$.
+- Potential: $\varphi(x,y)=x^{3}+3x^{2}y^{2}+y^{4}$.
+- Solutions: $x^{3}+3x^{2}y^{2}+y^{4}=C$.
+
+**Integrating factors.** If (10.11) is not exact, a nonzero multiplier $\mu(x,y)$ producing an exact equation is called an **integrating factor**.
+
+**Example 2.** $y\,dx+2x\,dy=0$ is not exact ($\partial P/\partial y=1\neq2=\partial Q/\partial x$). Multiplying by $y$:
+$$
+y^{2}\,dx+2xy\,dy=0,
+$$
+which is exact with potential $\varphi(x,y)=xy^{2}$. Solutions: $xy^{2}=C$. (Another integrating factor is $\mu=2xy^{3}$.)
+
