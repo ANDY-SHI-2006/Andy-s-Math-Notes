@@ -273,3 +273,38 @@ The scalar $-\varphi(x)$ is the **potential energy**.
 - A force field with a potential is called **conservative**; no net work is done around a closed curve.
 - Friction or viscosity makes a field nonconservative (mechanical energy converts to heat).
 
+
+### 10.14 The First Fundamental Theorem of Calculus for Line Integrals
+
+Recall the 1D first fundamental theorem: if $\varphi(x)=\int_a^{x}f(t)\,dt$, then $\varphi'(x)=f(x)$ at points of continuity.
+
+To extend this to line integrals, let $f$ be continuous on an open connected set $S$. Fix $a\in S$ and define
+$$
+\varphi(x) = \int_a^{x} f\cdot d\alpha,
+$$
+where $\alpha$ is any piecewise smooth path in $S$ from $a$ to $x$. For $\varphi$ to be well-defined, the integral must be independent of the path.
+
+**Theorem 10.4 (First fundamental theorem for line integrals).** Let $f$ be continuous on an open connected set $S$ in $\mathbb{R}^{n}$, and assume the line integral of $f$ is independent of the path in $S$. Fix $a\in S$ and define
+$$
+\varphi(x)=\int_a^{x} f\cdot d\alpha.
+$$
+Then $\nabla\varphi$ exists and equals $f$:
+$$
+\nabla\varphi(x)=f(x)\quad\text{for every }x\in S.
+$$
+
+*Proof sketch.* We show $D_k\varphi(x)=f_k(x)$. For $B(x;r)\subseteq S$ and unit vector $y$, by additivity
+$$
+\frac{\varphi(x+hy)-\varphi(x)}{h}=\frac{1}{h}\int_x^{x+hy}f\cdot d\alpha.
+$$
+Take the line segment $\alpha(t)=x+thy$ ($0\le t\le1$), so $\alpha'(t)=hy$:
+$$
+\frac{\varphi(x+hy)-\varphi(x)}{h}=\int_0^{1}f(x+thy)\cdot y\,dt.\tag{10.4}
+$$
+Set $y=e_k$ and substitute $u=ht$, $du=h\,dt$:
+$$
+\frac{\varphi(x+he_k)-\varphi(x)}{h}=\frac{1}{h}\int_0^{h}f_k(x+ue_k)\,du
+=\frac{g(h)-g(0)}{h},\tag{10.5}
+$$
+where $g(t)=\int_0^{t}f_k(x+ue_k)\,du$. By the 1D first fundamental theorem, $g'(t)=f_k(x+te_k)$, so $g'(0)=f_k(x)$. Letting $h\to0$ gives $D_k\varphi(x)=f_k(x)$.
+
