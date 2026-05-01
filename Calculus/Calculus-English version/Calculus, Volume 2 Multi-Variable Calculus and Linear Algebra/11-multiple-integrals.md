@@ -174,3 +174,47 @@ Thus for nonnegative integrands, the double integral equals the volume of the or
 
 Equation (11.7) gives another way to compute the volume: integrate cross-sectional areas cut by planes parallel to the $yz$-plane.
 
+
+### 11.8 Worked Examples
+
+**Example 1.** Evaluate $\displaystyle\iint_Q (x\sin y - ye^{x})\,dx\,dy$ for $Q=[-1,1]\times[0,\pi/2]$.
+
+Integrate first with respect to $x$:
+$$
+A(y)=\int_{-1}^{1}(x\sin y - ye^{x})\,dx
+= \Bigl(\tfrac{x^{2}}{2}\sin y - ye^{x}\Bigr)\Big|_{-1}^{1}
+= -ey + y/e.
+$$
+Then
+$$
+\iint_Q (x\sin y - ye^{x})\,dx\,dy
+= \int_0^{\pi/2}(-ey+y/e)\,dy
+= (1/e - e)\,\frac{\pi^{2}}{8}.
+$$
+
+*Check (integrate first with respect to $y$):*
+$$
+\int_{-1}^{1}\Bigl[-x\cos y - \tfrac{1}{2}y^{2}e^{x}\Bigr]_{0}^{\pi/2}dx
+= \int_{-1}^{1}\bigl(-\tfrac{\pi^{2}}{8}e^{x}+x\bigr)\,dx
+= (1/e-e)\,\frac{\pi^{2}}{8}.
+$$
+
+**Example 2.** Evaluate $\displaystyle\iint_Q \sqrt{|y-x^{2}|}\,dx\,dy$ for $Q=[-1,1]\times[0,2]$.
+
+Split at $y=x^{2}$:
+$$
+H(x)=\int_0^{2}\sqrt{|y-x^{2}|}\,dy
+= \int_0^{x^{2}}\sqrt{x^{2}-y}\,dy + \int_{x^{2}}^{2}\sqrt{y-x^{2}}\,dy
+= \tfrac{2}{3}x^{3} + \tfrac{2}{3}(2-x^{2})^{3/2}.
+$$
+Then
+$$
+\iint_Q \sqrt{|y-x^{2}|}\,dx\,dy
+= \int_{-1}^{1}\Bigl[\tfrac{2}{3}x^{3}+\tfrac{2}{3}(2-x^{2})^{3/2}\Bigr]dx
+= \tfrac{4}{3}\int_0^{1}(2-x^{2})^{3/2}\,dx.
+$$
+Using $\displaystyle\int(2-x^{2})^{3/2}\,dx = \tfrac{1}{3}\bigl[x(2-x^{2})^{3/2}+3x\sqrt{2-x^{2}}+6\arcsin(x/\sqrt{2})\bigr]$,
+$$
+\iint_Q \sqrt{|y-x^{2}|}\,dx\,dy = \frac{4}{3} + \frac{\pi}{2}.
+$$
+
