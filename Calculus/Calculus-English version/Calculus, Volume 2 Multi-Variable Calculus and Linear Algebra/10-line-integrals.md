@@ -331,3 +331,59 @@ where $g(t)=\int_0^{t}f_k(x+ue_k)\,du$. By the 1D first fundamental theorem, $g'
 
 *Note:* $\oint_C f\neq0$ for some closed $C$ $\Rightarrow$ $f$ is **not** a gradient. However, $\oint_C f=0$ for one (or even infinitely many) closed curves does **not** guarantee $f$ is a gradient. Example: $f(x,y)=x\,\mathbf{i}+xy\,\mathbf{j}$ has zero line integral around every circle centered at the origin, yet $f$ is not a gradient.
 
+
+### 10.16 Necessary Conditions for a Vector Field to Be a Gradient
+
+**Theorem 10.6.** Let $f=(f_1,\dots,f_n)$ be a continuously differentiable vector field on an open set $S$ in $\mathbb{R}^{n}$. If $f$ is a gradient on $S$, then
+$$
+D_if_j(x)=D_jf_i(x)\tag{10.6}
+$$
+for all $i,j=1,\dots,n$ and every $x\in S$.
+
+*Proof sketch.* If $f=\nabla\varphi$, then $f_j=D_j\varphi$. Differentiating, $D_if_j=D_iD_j\varphi$ and $D_jf_i=D_jD_i\varphi$. Equality of mixed partials gives (10.6).
+
+**Example 1.** $f(x,y)=3x^{2}y\,\mathbf{i}+x^{3}y\,\mathbf{j}$.
+- $D_2f_1=3x^{2}$, $D_1f_2=3x^{2}y$.
+- Since $D_2f_1\neq D_1f_2$ except on $x=0$ or $y=1$, $f$ is **not** a gradient on any open subset of $\mathbb{R}^{2}$.
+
+**Example 2.** $f(x,y)=\dfrac{-y}{x^{2}+y^{2}}\,\mathbf{i}+\dfrac{x}{x^{2}+y^{2}}\,\mathbf{j}$ on $S=\mathbb{R}^{2}\setminus\{(0,0)\}$.
+- $D_1f_2=D_2f_1$ everywhere on $S$.
+- But $\displaystyle\oint_{\text{unit circle}} f\cdot d\alpha=\int_0^{2\pi}(\sin^{2}t+\cos^{2}t)\,dt=2\pi\neq0$.
+- Hence $f$ is **not** a gradient on $S$. (The conditions of Theorem 10.6 are necessary but not always sufficient.)
+
+*Note:* Theorem 10.6 is also sufficient on an open **convex** set (Theorem 10.9).
+
+### 10.17 Special Methods for Constructing Potential Functions
+
+**Method 1: Polygonal paths on a rectangle.** If $f$ is a continuous gradient on an open rectangle, integrate along segments parallel to the axes. For $f=f_1\,\mathbf{i}+f_2\,\mathbf{j}$:
+$$
+\varphi(x,y)=\int_a^{x}f_1(t,b)\,dt+\int_b^{y}f_2(x,t)\,dt,\tag{10.7}
+$$
+or equivalently
+$$
+\varphi(x,y)=\int_b^{y}f_2(a,t)\,dt+\int_a^{x}f_1(t,y)\,dt.\tag{10.8}
+$$
+Both give the same value because the line integral of a gradient is path-independent.
+
+**Method 2: Indefinite integrals.** If $f=(f_1,f_2,f_3)=\nabla\varphi$, integrate each component:
+$$
+\varphi=\int f_1\,dx+A(y,z)=\int f_2\,dy+B(x,z)=\int f_3\,dz+C(x,y).
+$$
+Determine $A,B,C$ by inspection so all three expressions agree.
+
+**Example 3.** $f=(2xyz+z^{2}-2y^{2}+1)\,\mathbf{i}+(x^{2}z-4xy)\,\mathbf{j}+(x^{2}y+2xz-2)\,\mathbf{k}$.
+- From $f_1$: $\varphi=x^{2}yz+xz^{2}-2xy^{2}+x+A(y,z)$.
+- From $f_2$: $\varphi=x^{2}yz-2xy^{2}+B(x,z)$.
+- From $f_3$: $\varphi=x^{2}yz+xz^{2}-2z+C(x,y)$.
+- Matching: $A(y,z)=-2z$, $B(x,z)=xz^{2}+x-2z$, $C(x,y)=x-2xy^{2}$.
+- Result: $\displaystyle\varphi(x,y,z)=x^{2}yz+xz^{2}-2xy^{2}+x-2z$.
+
+**Method 3: Line segment on a convex set.** A set $S$ is **convex** if every pair of points can be joined by a line segment lying in $S$. If $f$ is a continuous gradient on an open convex set, use $\alpha(t)=a+t(x-a)$ ($0\le t\le1$):
+$$
+\varphi(x)=\int_0^{1}f\bigl(a+t(x-a)\bigr)\cdot(x-a)\,dt.\tag{10.9}
+$$
+If $S$ contains the origin, take $a=O$:
+$$
+\varphi(x)=\int_0^{1}f(tx)\cdot x\,dt.\tag{10.10}
+$$
+
