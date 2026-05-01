@@ -153,3 +153,24 @@ $$
 $$
 provided $\int_c^{d}f(x,y)\,dy$ exists for each fixed $x\in[a,b]$ and is integrable on $[a,b]$.
 
+
+### 11.7 Geometric Interpretation of the Double Integral as a Volume
+
+If $f\ge0$ on $Q$, the set
+$$
+S=\{(x,y,z):(x,y)\in Q,\;0\le z\le f(x,y)\}
+$$
+is called the **ordinate set** of $f$ over $Q$. It consists of the points between the rectangle $Q$ and the surface $z=f(x,y)$.
+
+For each $y\in[c,d]$, the cross-sectional area cut by a plane parallel to the $xz$-plane is
+$$
+A(y)=\int_a^{b}f(x,y)\,dx.
+$$
+Since $A(y)$ is integrable on $[c,d]$, the volume of $S$ is
+$$
+v(S)=\int_c^{d}A(y)\,dy=\iint_Q f(x,y)\,dx\,dy.
+$$
+Thus for nonnegative integrands, the double integral equals the volume of the ordinate set.
+
+Equation (11.7) gives another way to compute the volume: integrate cross-sectional areas cut by planes parallel to the $yz$-plane.
+
