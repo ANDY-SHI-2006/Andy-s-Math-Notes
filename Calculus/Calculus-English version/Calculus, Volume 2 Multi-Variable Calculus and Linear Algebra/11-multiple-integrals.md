@@ -38,3 +38,49 @@ The Cartesian product of two open subintervals is an **open subrectangle** (edge
 - Values on boundary points are well-defined but irrelevant to integration theory.
 - Step functions on $Q$ form a **linear space**: if $f,g$ are step functions with partitions $P,P'$, then $c_1f+c_2g$ is constant on the open subrectangles of the common refinement $P\cup P'$.
 
+
+### 11.3 The Double Integral of a Step Function
+
+Let $P=P_1\times P_2$ partition a rectangle $Q$ into $mn$ subrectangles $Q_{ij}$, and let $f$ be a step function constant with value $c_{ij}$ on the interior of $Q_{ij}$.
+
+**Definition.** The **double integral** of $f$ over $Q$ is
+$$
+\iint_Q f = \sum_{i=1}^{n}\sum_{j=1}^{m} c_{ij}\,(x_i-x_{i-1})(y_j-y_{j-1}).\tag{11.1}
+$$
+The value is independent of the partition, provided $f$ is constant on the open subrectangles.
+
+Using $\Delta x_i=x_i-x_{i-1}$ and $\Delta y_j=y_j-y_{j-1}$:
+$$
+\iint_Q f = \sum_{i=1}^{n}\sum_{j=1}^{m} c_{ij}\,\Delta x_i\,\Delta y_j.
+$$
+Alternative notation: $\displaystyle\iint_Q f(x,y)\,dx\,dy$.
+
+If $f(x,y)=k$ on the interior of $Q$,
+$$
+\iint_Q f = k(b-a)(d-c).\tag{11.2}
+$$
+
+**Repeated (iterated) integration.** Since $b-a=\int_a^{b}dx$ and $d-c=\int_c^{d}dy$,
+$$
+\iint_Q f = \int_c^{d}\Bigl[\int_a^{b}f(x,y)\,dx\Bigr]dy
+= \int_a^{b}\Bigl[\int_c^{d}f(x,y)\,dy\Bigr]dx.\tag{11.3}
+$$
+This holds for step functions by summing over subrectangles.
+
+**Properties** (for step functions $s,t$ on a nondegenerate rectangle $Q$):
+
+- **Theorem 11.1 (Linearity).**
+  $$
+  \iint_Q\bigl[c_1s+c_2t\bigr]\,dx\,dy
+  = c_1\iint_Q s\,dx\,dy + c_2\iint_Q t\,dx\,dy.
+  $$
+- **Theorem 11.2 (Additivity).** If $Q=Q_1\cup Q_2$ (two rectangles),
+  $$
+  \iint_Q s\,dx\,dy = \iint_{Q_1}s\,dx\,dy + \iint_{Q_2}s\,dx\,dy.
+  $$
+- **Theorem 11.3 (Comparison).** If $s\le t$ on $Q$,
+  $$
+  \iint_Q s\,dx\,dy \le \iint_Q t\,dx\,dy.
+  $$
+  In particular, $t\ge0$ on $Q$ $\Rightarrow$ $\displaystyle\iint_Q t\,dx\,dy\ge0$.
+
