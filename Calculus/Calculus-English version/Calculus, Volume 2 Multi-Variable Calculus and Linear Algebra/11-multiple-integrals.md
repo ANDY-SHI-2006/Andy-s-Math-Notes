@@ -612,3 +612,24 @@ $$
 - $T$ is the triangle $0<v<2$, $-v<u<v$.
 - Result: $\displaystyle\frac{1}{2}\int_0^{2}\!\int_{-v}^{v}e^{u/v}\,du\,dv = e-\frac{1}{e}$.
 
+
+### 11.29 Proof of the Transformation Formula in a Special Case
+
+The general formula (11.35) follows from the special case $S$ = rectangle and $f\equiv1$:
+$$
+\iint_R dx\,dy = \iint_{R^*}|J(u,v)|\,du\,dv.\tag{11.36}
+$$
+
+**Proof sketch.** Assume $J>0$ on $R^*$. Apply Green’s theorem to each side:
+- **LHS.** $\displaystyle\iint_R dx\,dy = \int_C x\,dy$, where $C=\partial R$.
+- **RHS.** Write $J(u,v)=\frac{\partial}{\partial u}\!\left(X\frac{\partial Y}{\partial v}\right)-\frac{\partial}{\partial v}\!\left(X\frac{\partial Y}{\partial u}\right)$, so by Green’s theorem
+  $$
+  \iint_{R^*}J\,du\,dv = \int_{C^*}\!\left(X\frac{\partial Y}{\partial u}\,du + X\frac{\partial Y}{\partial v}\,dv\right).
+  $$
+
+Parametrize $C^*$ by $\boldsymbol{\alpha}(t)=U(t)\mathbf{i}+V(t)\mathbf{j}$, $t\in[a,b]$; then $C$ is traced by $\boldsymbol{\beta}(t)=X(U,V)\mathbf{i}+Y(U,V)\mathbf{j}$. By the chain rule,
+$$
+\int_C x\,dy = \int_a^b X[U,V]\left(\frac{\partial Y}{\partial u}U'+\frac{\partial Y}{\partial v}V'\right)dt,
+$$
+which equals the line integral over $C^*$ above. Hence (11.36) holds.
+
