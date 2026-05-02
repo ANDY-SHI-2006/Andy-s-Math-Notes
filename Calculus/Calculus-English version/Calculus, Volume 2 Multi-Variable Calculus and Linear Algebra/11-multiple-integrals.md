@@ -714,3 +714,38 @@ $$
 $$
 Thus $|J|$ is the local volume magnification factor.
 
+
+### 11.33 Worked Examples
+
+**Example 1. Cylindrical coordinates.** $x=r\cos\theta$, $y=r\sin\theta$, $z=z$.
+$$
+J(r,\theta,z)=r,\qquad
+\iiint_S f\,dx\,dy\,dz = \iiint_T f(r\cos\theta,r\sin\theta,z)\,r\,dr\,d\theta\,dz.
+$$
+
+**Example 2. Spherical coordinates.** $x=\rho\cos\theta\sin\varphi$, $y=\rho\sin\theta\sin\varphi$, $z=\rho\cos\varphi$.
+$$
+J=-\rho^2\sin\varphi,\quad |J|=\rho^2\sin\varphi,\qquad
+\iiint_S f\,dx\,dy\,dz = \iiint_T F(\rho,\theta,\varphi)\,\rho^2\sin\varphi\,d\rho\,d\theta\,d\varphi.
+$$
+
+**Example 3. Volume of an $n$-dimensional interval.**
+$v([a_1,b_1]\times\cdots\times[a_n,b_n])=\prod_{k=1}^n(b_k-a_k)$.
+
+**Example 4. Volume of an $n$-dimensional sphere.** $S_n(a)=\{\boldsymbol x\mid\|\boldsymbol x\|\le a\}$.
+$$
+V_n(a)=\idotsint_{S_n(a)}d\boldsymbol x = \frac{\pi^{n/2}}{\Gamma(\frac{n}{2}+1)}\,a^n.\tag{11.50}
+$$
+
+*Proof sketch.*
+1. Scaling: $V_n(a)=a^nV_n(1)$ via $\boldsymbol x=a\boldsymbol u$.
+2. Iterate the last two variables:
+   $$
+   V_n(1)=V_{n-2}(1)\iint_{x^2+y^2\le1}(1-x^2-y^2)^{n/2-1}\,dx\,dy.
+   $$
+3. Polar coordinates give
+   $$
+   V_n(1)=V_{n-2}(1)\frac{2\pi}{n}\quad(n\ge3).\tag{recursion}
+   $$
+4. The function $f(n)=\pi^{n/2}/\Gamma(\frac{n}{2}+1)$ satisfies the same recursion (since $\Gamma(s+1)=s\Gamma(s)$), and $f(1)=2=V_1(1)$, $f(2)=\pi=V_2(1)$. Hence $V_n(1)=f(n)$ for all $n\ge1$.
+
