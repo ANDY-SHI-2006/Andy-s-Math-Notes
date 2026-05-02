@@ -188,3 +188,33 @@ $$
  P(A\mid B)=\frac{P(A\cap B)}{P(B)}=\frac{1/2}{3/4}=\frac23.
 $$
 
+
+### 13.13 Independence
+
+**Definition (two events).** $A$ and $B$ are *independent* iff
+$$
+ P(A\cap B)=P(A)P(B).\tag{13.9}
+$$
+Then $P(A\mid B)=P(A)$ (when $P(B)\neq0$); knowing $B$ does not affect the probability of $A$.
+
+**Example 1.** Drawing one card: $A=$ "ace", $B=$ "heart".  
+$P(A)=\tfrac1{13}$, $P(B)=\tfrac14$, $P(A\cap B)=\tfrac1{52}=P(A)P(B)$; independent.
+
+**Example 2.** Three dice; $A=$ "sum is 6", $B=$ "all digits different".  
+$|A|=10$, $|B|=120$, $|A\cap B|=6$, $|S|=6^3$. Since $6\neq10\cdot120/6^3$, $A$ and $B$ are **not** independent.
+
+**Definition (several events).** A finite collection $\{A_1,\dots,A_n\}$ is *independent* if for **every** subcollection,
+$$
+ P\Bigl(\bigcap_{k=1}^m A_{i_k}\Bigr)=\prod_{k=1}^m P(A_{i_k}).\tag{13.10}
+$$
+
+**Three events.** Independence of $A,B,C$ requires the four equations (13.11) and (13.12):
+$$
+ P(A\cap B)=P(A)P(B),\; P(A\cap C)=P(A)P(C),\; P(B\cap C)=P(B)P(C),
+$$
+$$
+ P(A\cap B\cap C)=P(A)P(B)P(C).
+$$
+*Caution:* Pairwise independence (the first three) does **not** imply mutual independence.  
+*Counter-example:* $S=\{a,b,c,abc\}$ with $A=\{a,abc\}$, $B=\{b,abc\}$, $C=\{c,abc\}$. Pairwise (13.11) holds but $P(A\cap B\cap C)=\tfrac14\neq\tfrac18=P(A)P(B)P(C)$.
+
