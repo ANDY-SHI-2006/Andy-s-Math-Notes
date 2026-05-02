@@ -247,3 +247,25 @@ $$
 $$
 When all experiments share the same probability space, $E$ is called **independent repeated trials under identical conditions**.
 
+
+### 13.16 Bernoulli Trials
+
+A **Bernoulli sequence** is a sequence of repeated independent trials with two outcomes: “success” (probability $p$) and “failure” (probability $q=1-p$).
+
+**Theorem 13.3 (Bernoulli’s formula).** The probability of exactly $k$ successes in $n$ trials is
+$$
+ \binom{n}{k}p^{k}q^{n-k}.\tag{13.20}
+$$
+*Proof.* Each particular $n$-tuple with $k$ successes and $n-k$ failures has probability $p^{k}q^{n-k}$; there are $\binom{n}{k}$ such $n$-tuples.
+
+**Example 1.** An unbiased coin tossed 50 times; probability of exactly 25 heads:
+$$
+ \binom{50}{25}\Bigl(\tfrac12\Bigr)^{50}\approx0.112.
+$$
+
+**Example 2.** Probability of *at least* $r$ successes in $n$ trials:
+$$
+ P(E)=\sum_{k=r}^{n}\binom{n}{k}p^{k}q^{n-k},
+ \qquad P(E')=\sum_{k=0}^{r-1}\binom{n}{k}p^{k}q^{n-k}=1-P(E).
+$$
+
