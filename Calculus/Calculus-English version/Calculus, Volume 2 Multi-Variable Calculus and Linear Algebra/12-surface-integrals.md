@@ -154,3 +154,26 @@ $$
  \iint_S \mathbf F\cdot\mathbf n\,dS.
 $$
 
+
+### 12.8 Change of Parametric Representation
+
+Let $\boldsymbol G(s,t)=U(s,t)\mathbf i+V(s,t)\mathbf j$ map $B$ in the $st$-plane one-to-one onto $A$ in the $uv$-plane, and define
+$$
+ \boldsymbol R(s,t)=\boldsymbol r[\boldsymbol G(s,t)].\tag{12.17}
+$$
+Then $\boldsymbol r$ and $\boldsymbol R$ are **smoothly equivalent**; they describe the same surface.
+
+**Theorem 12.1.** The fundamental vector products are related by the Jacobian of $G$:
+$$
+ \frac{\partial\boldsymbol R}{\partial s}\times\frac{\partial\boldsymbol R}{\partial t}
+ =\Bigl(\frac{\partial\boldsymbol r}{\partial u}\times\frac{\partial\boldsymbol r}{\partial v}\Bigr)\,
+ \frac{\partial(U,V)}{\partial(s,t)}.\tag{12.18}
+$$
+*Proof sketch.* Apply the chain rule to $\partial\boldsymbol R/\partial s$ and $\partial\boldsymbol R/\partial t$, then cross-multiply; the mixed terms cancel and the Jacobian factor appears.
+
+**Theorem 12.2 (Invariance of surface integrals).** If $\boldsymbol r$ and $\boldsymbol R$ are smoothly equivalent,
+$$
+ \iint_{\boldsymbol r(A)} f\,dS = \iint_{\boldsymbol R(B)} f\,dS.
+$$
+*Proof sketch.* Substitute (12.18) into the definition; the absolute value of the Jacobian factor is exactly what is needed for the change-of-variables formula in the double integral, so the two surface-integral expressions coincide.
+
