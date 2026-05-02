@@ -166,3 +166,25 @@ $$
   $$
 - **Total number of subsets of an $n$-element set:** $\displaystyle\sum_{k=0}^n\binom{n}{k}=2^n$.
 
+
+### 13.12 Conditional Probability
+
+**Definition.** For a probability space $(S,\mathscr B,P)$ and an event $B$ with $P(B)\neq0$,
+$$
+ P(A\mid B)=\frac{P(A\cap B)}{P(B)}.
+$$
+$P(A\mid B)$ is undefined if $P(B)=0$.
+
+**Example 1.** A die is thrown and the result is known to be even.  
+$B=\{2,4,6\}$, $A=\{3,6\}$ (divisible by 3). Then
+$$
+ P(A\mid B)=\frac{P(A\cap B)}{P(B)}=\frac{1/6}{3/6}=\frac13.
+$$
+
+**Example 2.** Among $4n$ families with two children each ($n$ families have 2 boys, $2n$ have 1 boy and 1 girl, $n$ have 2 girls), let  
+$A=$ "the child is a boy", $B=$ "the child comes from a family with at least one boy".  
+Then $P(A)=\tfrac12$, $P(B)=\tfrac34$, and
+$$
+ P(A\mid B)=\frac{P(A\cap B)}{P(B)}=\frac{1/2}{3/4}=\frac23.
+$$
+
