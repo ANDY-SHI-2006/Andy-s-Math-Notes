@@ -681,3 +681,36 @@ For $n=3$: $\displaystyle\iiint_S f(x,y,z)\,dx\,dy\,dz$.
   \idotsint_{Q\times R} f = \idotsint_Q\left[\idotsint_R f\,dx_1\cdots dx_m\right]dx_{m+1}\cdots dx_{m+k}.
   $$
 
+
+### 11.32 Change of Variables in an $n$-Fold Integral
+
+Mapping $\boldsymbol X:T\to S$, $\boldsymbol x=\boldsymbol X(\boldsymbol u)$, one-to-one and $C^1$.
+$$
+\int_S f(\boldsymbol x)\,d\boldsymbol x = \int_T f[\boldsymbol X(\boldsymbol u)]\,|\det D\boldsymbol X(\boldsymbol u)|\,d\boldsymbol u.\tag{11.47}
+$$
+The Jacobian matrix is $D\boldsymbol X(\boldsymbol u)=[D_jX_k(\boldsymbol u)]$. Validity extends to sets of $n$-dimensional content zero where $J=0$ or $\boldsymbol X$ is not one-to-one.
+
+**Triple integrals ($n=3$).** With $(x,y,z)=(X,Y,Z)$ and $(u,v,w)$:
+$$
+\iiint_S f(x,y,z)\,dx\,dy\,dz = \iiint_T f[X,Y,Z]\,|J|\,du\,dv\,dw,\tag{11.48}
+$$
+$$
+J(u,v,w)=\det\begin{bmatrix}
+\partial_uX&\partial_uY&\partial_uZ\\
+\partial_vX&\partial_vY&\partial_vZ\\
+\partial_wX&\partial_wY&\partial_wZ
+\end{bmatrix}.
+$$
+
+**Geometric meaning.** For $\boldsymbol r(u,v,w)=X\mathbf i+Y\mathbf j+Z\mathbf k$, set
+$$
+\mathbf V_1=\frac{\partial\boldsymbol r}{\partial u},\quad
+\mathbf V_2=\frac{\partial\boldsymbol r}{\partial v},\quad
+\mathbf V_3=\frac{\partial\boldsymbol r}{\partial w}.
+$$
+A rectangular box of volume $\Delta u\,\Delta v\,\Delta w$ maps to a curvilinear parallelepiped of volume
+$$
+|\mathbf V_1\cdot(\mathbf V_2\times\mathbf V_3)|\,\Delta u\,\Delta v\,\Delta w = |J|\,\Delta u\,\Delta v\,\Delta w.
+$$
+Thus $|J|$ is the local volume magnification factor.
+
