@@ -241,3 +241,35 @@ The orientation of $C$ is inherited from the positive (counterclockwise) orienta
 3. Apply Green’s theorem in the $uv$-plane to obtain a line integral over $\Gamma$, then change variables to show it equals $\int_C P\,dx$.
 4. The $Q\,dy$ and $R\,dz$ identities are proved similarly; adding the three gives (12.27).
 
+
+### 12.12 The Curl and Divergence of a Vector Field
+
+For $\mathbf F=P\mathbf i+Q\mathbf j+R\mathbf k$:
+
+**Curl.** $\operatorname{curl}\mathbf F$ is the vector field
+$$
+ \operatorname{curl}\mathbf F
+ =\Bigl(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\Bigr)\mathbf i
+ +\Bigl(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\Bigr)\mathbf j
+ +\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)\mathbf k.\tag{12.31}
+$$
+Mnemonic: $\nabla\times\mathbf F=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\\partial_x&\partial_y&\partial_z\\P&Q&R\end{vmatrix}$.
+
+**Stokes’ theorem in vector form.**
+$$
+ \iint_S (\operatorname{curl}\mathbf F)\cdot\mathbf n\,dS = \int_C \mathbf F\cdot d\boldsymbol\alpha.
+$$
+When $S$ lies in the $xy$-plane and $\mathbf n=\mathbf k$ this reduces to Green’s theorem.
+
+**Divergence.** The scalar field
+$$
+ \operatorname{div}\mathbf F=\nabla\cdot\mathbf F
+ =\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}.\tag{12.32}
+$$
+
+**Theorem 12.4 (Gradient criterion in 3-space).** On an open convex set $S$, a continuously differentiable vector field $\mathbf F$ is a gradient on $S$ iff
+$$
+ \operatorname{curl}\mathbf F=\mathbf 0\quad\text{on }S.\tag{12.34}
+$$
+*Proof.* In 3D the relations $D_kF_j=D_jF_k$ (Theorem 10.9) are equivalent to $\operatorname{curl}\mathbf F=\mathbf 0$.
+
