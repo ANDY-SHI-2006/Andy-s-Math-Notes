@@ -583,3 +583,32 @@ $$
 
 **Singular points.** If $J(u,v)=0$, the vectors $V_1,V_2$ are parallel and the parallelogram degenerates. The transformation formula remains valid provided singular points form a set of content zero.
 
+
+### 11.27 Special Cases of the Transformation Formula
+
+**Example 1. Polar coordinates.** $x=r\cos\theta$, $y=r\sin\theta$.
+$$
+J(r,\theta)=\det\begin{bmatrix}\cos\theta&\sin\theta\\-r\sin\theta&r\cos\theta\end{bmatrix}=r.
+$$
+Hence
+$$
+\iint_S f(x,y)\,dx\,dy = \iint_T f(r\cos\theta,r\sin\theta)\,r\,dr\,d\theta.
+$$
+*Example:* Volume of one octant of a sphere of radius $a$:
+$$
+\iint_S \sqrt{a^{2}-x^{2}-y^{2}}\,dx\,dy
+= \int_0^{\pi/2}\!\int_0^{a}\!\sqrt{a^{2}-r^{2}}\,r\,dr\,d\theta
+= \frac{\pi a^{3}}{6}.
+$$
+
+**Example 2. Linear transformations.** $x=Au+Bv$, $y=Cu+Dv$.
+$$
+J(u,v)=AD-BC,\qquad
+\iint_S f(x,y)\,dx\,dy = |AD-BC|\iint_T f(Au+Bv,Cu+Dv)\,du\,dv.
+$$
+*Example:* $\displaystyle\iint_S e^{(y-x)/(y+x)}\,dx\,dy$ over the triangle $S$ bounded by $x+y=2$ and the axes.
+- Substitute $u=y-x$, $v=y+x$; then $x=(v-u)/2$, $y=(v+u)/2$.
+- $J=-\tfrac{1}{2}$, so $|J|=\tfrac{1}{2}$.
+- $T$ is the triangle $0<v<2$, $-v<u<v$.
+- Result: $\displaystyle\frac{1}{2}\int_0^{2}\!\int_{-v}^{v}e^{u/v}\,du\,dv = e-\frac{1}{e}$.
+
