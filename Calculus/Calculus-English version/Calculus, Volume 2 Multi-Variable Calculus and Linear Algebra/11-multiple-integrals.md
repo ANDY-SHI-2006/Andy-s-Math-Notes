@@ -633,3 +633,23 @@ $$
 $$
 which equals the line integral over $C^*$ above. Hence (11.36) holds.
 
+
+### 11.30 Proof of the Transformation Formula in the General Case
+
+Deduce the general formula (11.38) from the special case (11.39) for a rectangle $R$:
+$$
+\iint_R dx\,dy = \iint_{R^*}|J|\,du\,dv.\tag{11.39}
+$$
+
+**Step 1 – Step functions.** Partition $R$ into subrectangles $R_{ij}$. Applying (11.39) to each $R_{ij}$ and summing gives (11.40) for any step function $s$:
+$$
+\iint_R s(x,y)\,dx\,dy = \iint_{R^*}s[X,Y]\,|J|\,du\,dv.\tag{11.40}
+$$
+
+**Step 2 – Integrable functions.** For integrable $f$, choose step functions $s\le f\le t$. Then $s[X,Y]\le f[X,Y]\le t[X,Y]$ on $R^*$. Multiply by $|J|$ and integrate; by (11.40) the middle integral is squeezed between $\iint_R s$ and $\iint_R t$, hence equals $\iint_R f$. Thus (11.38) holds for rectangles.
+
+**Step 3 – General regions.** Enclose $S$ in a rectangle $R$ and extend $f$ to $\tilde f$ (zero outside $S$). Then
+$$
+\iint_S f = \iint_R \tilde f = \iint_{R^*}\tilde f[X,Y]\,|J|\,du\,dv = \iint_T f[X,Y]\,|J|\,du\,dv.
+$$
+
