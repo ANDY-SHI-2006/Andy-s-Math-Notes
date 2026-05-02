@@ -424,3 +424,35 @@ C = \frac{m(A)C_A+m(B)C_B}{m(A)+m(B)}.\tag{11.16}
 $$
 This is a **convex combination** of $C_A$ and $C_B$; hence $C$ lies on the line segment joining $C_A$ and $C_B$.
 
+
+### 11.19 Green's Theorem in the Plane
+
+**Theorem 11.10 (Green's theorem).** Let $P$ and $Q$ be continuously differentiable scalar fields on an open set $S$ in the $xy$-plane. Let $C$ be a piecewise smooth Jordan curve, and let $R$ denote the union of $C$ and its interior, with $R\subseteq S$. Then
+$$
+\iint_R \Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)\,dx\,dy
+= \oint_C P\,dx+Q\,dy,\tag{11.18}
+$$
+where the line integral is taken around $C$ in the **counterclockwise** direction.
+
+The identity (11.18) is equivalent to the two formulas:
+$$
+\iint_R \frac{\partial Q}{\partial x}\,dx\,dy = \oint_C Q\,dy,\tag{11.19}
+\qquad
+-\iint_R \frac{\partial P}{\partial y}\,dx\,dy = \oint_C P\,dx.\tag{11.20}
+$$
+
+*Proof sketch for special regions.*
+- **For (11.20) on a Type I region** $R=\{(x,y):a\le x\le b,\;f(x)\le y\le g(x)\}$:
+  $$
+  -\iint_R \frac{\partial P}{\partial y}\,dx\,dy
+  = \int_a^{b}\Bigl[\int_{g(x)}^{f(x)}\frac{\partial P}{\partial y}\,dy\Bigr]dx
+  = \int_a^{b}P[x,f(x)]\,dx - \int_a^{b}P[x,g(x)]\,dx.
+  $$
+  The line integral $\oint_C P\,dx$ splits into $\int_{C_1}P\,dx+\int_{C_2}P\,dx$ (vertical segments contribute $0$). With $\alpha(t)=t\mathbf{i}+f(t)\mathbf{j}$ on $C_1$ and $\alpha(t)=t\mathbf{i}+g(t)\mathbf{j}$ on $C_2$ (reversed),
+  $$
+  \oint_C P\,dx = \int_a^{b}P[t,f(t)]\,dt - \int_a^{b}P[t,g(t)]\,dt.
+  $$
+  Matching gives (11.20).
+- **For (11.19)** a similar argument works on Type II regions.
+- For general regions, decompose into finitely many regions of both types; "crosscuts" are introduced (Figure 11.15). The line integrals along crosscuts cancel in pairs, and the sum over subregions equals the integral along the boundary of $R$.
+
