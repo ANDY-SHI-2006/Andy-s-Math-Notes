@@ -382,3 +382,28 @@ $$
 - The two expressions match. The same argument works for $xz$- and $yz$-projectable solids; convex solids are projectable in all three directions.
 - **Extension to non-convex solids** (e.g. a solid torus): cut the solid into projectable pieces, apply the theorem to each piece, and observe that the surface integrals over interior cut faces cancel (opposite outward normals).
 
+
+### 12.20 Applications of the Divergence Theorem
+
+**Coordinate-free definitions.**
+
+**Theorem 12.7 (Divergence as a limit).** Let $V(t)$ be a solid of diameter $t$ shrinking to $\mathbf a$, with boundary $S(t)$ and outer normal $\mathbf n$. Then
+$$
+ \operatorname{div}\mathbf F(\mathbf a)
+ =\lim_{t\to0}\frac{1}{|V(t)|}\iint_{S(t)}\mathbf F\cdot\mathbf n\,dS.\tag{12.59}
+$$
+*Proof sketch.* Write $\varphi=\operatorname{div}\mathbf F$. By continuity, $|\varphi(\mathbf x)-\varphi(\mathbf a)|<\varepsilon/2$ near $\mathbf a$. Integrate over $V(t)$, apply the divergence theorem to $\iiint\varphi$, and bound the remainder by $\varepsilon|V(t)|$.
+
+**Physical interpretation.** If $\mathbf F$ is a flux density, the quotient in (12.59) is mass per unit volume flowing outward per unit time; its limit is the divergence at $\mathbf a$.
+
+**Curl formulas.** Analogous limits give coordinate-free definitions of curl:
+$$
+ \operatorname{curl}\mathbf F(\mathbf a)
+ =\lim_{t\to0}\frac{1}{|V(t)|}\iint_{S(t)}\mathbf n\times\mathbf F\,dS,\tag{12.61}
+$$
+$$
+ \mathbf n\cdot\operatorname{curl}\mathbf F(\mathbf a)
+ =\lim_{t\to0}\frac{1}{|S(t)|}\oint_{C(t)}\mathbf F\cdot d\boldsymbol\alpha.\tag{12.62}
+$$
+Here $S(t)$ is a circular disk of radius $t$ centred at $\mathbf a$, with unit normal $\mathbf n$, and $C(t)=\partial S(t)$ traversed counterclockwise when viewed from the tip of $\mathbf n$. The scalar limit (12.62) is the **circulation per unit area** of $\mathbf F$ at $\mathbf a$ about the plane perpendicular to $\mathbf n$.
+
