@@ -333,3 +333,31 @@ We need $(n+1)p=4$, i.e. $n+1=24$, giving $n=23$.
 - **6.** The open interval $(0,1)$ is uncountable.  
   *Proof (diagonal).* List decimals $x_n=0.a_{n1}a_{n2}\dots$ and form $y=0.y_1y_2\dots$ with $y_n=1$ if $a_{nn}\neq1$, $y_n=2$ if $a_{nn}=1$. Then $y\neq x_n$ for every $n$.
 
+
+### 13.21 The Definition of Probability for Countably Infinite Sample Spaces
+
+**Countable additivity.** For a probability measure $P$ on a Boolean $\sigma$-algebra $\mathscr B$ of subsets of a countably infinite set $S$,
+$$
+ P\Bigl(\bigcup_{k=1}^{\infty}A_k\Bigr)=\sum_{k=1}^{\infty}P(A_k)
+ \quad\text{whenever }A_i\cap A_j=\varnothing\text{ for }i\neq j.\tag{13.25}
+$$
+
+**Probability measure.** A nonnegative, countably additive set function on $\mathscr B$ with $P(S)=1$.
+
+**Point probabilities.** When $\mathscr B$ is the power set of $S$, $P$ is determined by its values on singletons:
+$$
+ P(A)=\sum_{x\in A}P(x)\qquad(A\subseteq S),
+$$
+a finite sum or an absolutely convergent series.
+
+**Example.** Toss a coin repeatedly until the first outcome occurs a second time. The sample space is $A\cup B$ where
+$$
+ A=\{TT,THT,THHT,\dots\},\qquad B=\{HH,HTH,HTTH,\dots\}.
+$$
+Writing $a_n,b_n$ for the $n$th elements, a natural assignment with $P(H)=p$, $P(T)=q=1-p$ is
+$$
+ P(a_n)=q^2p^n,\qquad P(b_n)=p^2q^n.\tag{13.26}
+$$
+Then $\sum P(a_n)+\sum P(b_n)=q^2/(1-p)+p^2/(1-q)=q+p=1$.  
+The probability that the game ends after exactly $n+2$ tosses is $q^2p^n+p^2q^n$, and the probability it ends in at most $n+2$ tosses is $1-qp^{n+1}-pq^{n+1}$.
+
