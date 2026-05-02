@@ -273,3 +273,33 @@ $$
 $$
 *Proof.* In 3D the relations $D_kF_j=D_jF_k$ (Theorem 10.9) are equivalent to $\operatorname{curl}\mathbf F=\mathbf 0$.
 
+
+### 12.14 Further Properties of the Curl and Divergence
+
+**Jacobian viewpoint.** For $\mathbf F=P\mathbf i+Q\mathbf j+R\mathbf k$,
+$$
+ D\mathbf F=\begin{bmatrix}\partial_xP&\partial_yP&\partial_zP\\\partial_xQ&\partial_yQ&\partial_zQ\\\partial_xR&\partial_yR&\partial_zR\end{bmatrix}.
+$$
+- $\operatorname{tr}(D\mathbf F)=\operatorname{div}\mathbf F$.
+- The skew-symmetric part $\tfrac12(D\mathbf F-D\mathbf F^t)$ has entries $\pm(\operatorname{curl}\mathbf F)_i$; if $D\mathbf F$ is symmetric then $\operatorname{curl}\mathbf F=\mathbf 0$.
+
+**Key identities (assuming continuous second derivatives).**
+- **Gradient:** $\operatorname{curl}(\nabla\varphi)=\mathbf 0$; $\operatorname{div}(\nabla\varphi)=\nabla^2\varphi$.
+- **Curl:** $\operatorname{div}(\operatorname{curl}\mathbf F)=0$;
+  $$
+  \operatorname{curl}(\operatorname{curl}\mathbf F)=\nabla(\operatorname{div}\mathbf F)-\nabla^2\mathbf F.\tag{12.38}
+  $$
+- **Laplacian:** $\nabla^2=\partial_{xx}+\partial_{yy}+\partial_{zz}$; applied to $\mathbf F$ component-wise.
+
+**Algebraic properties.** For constants $a,b$ and scalar field $\varphi$:
+$$
+ \operatorname{div}(a\mathbf F+b\mathbf G)=a\operatorname{div}\mathbf F+b\operatorname{div}\mathbf G,\qquad
+ \operatorname{curl}(a\mathbf F+b\mathbf G)=a\operatorname{curl}\mathbf F+b\operatorname{curl}\mathbf G,\tag{12.39--12.40}
+$$
+$$
+ \operatorname{div}(\varphi\mathbf F)=\varphi\operatorname{div}\mathbf F+\nabla\varphi\cdot\mathbf F,\qquad
+ \operatorname{curl}(\varphi\mathbf F)=\varphi\operatorname{curl}\mathbf F+\nabla\varphi\times\mathbf F.\tag{12.41--12.42}
+$$
+
+**Example.** $\mathbf F=-\dfrac{y}{x^2+y^2}\mathbf i+\dfrac{x}{x^2+y^2}\mathbf j$ on $\mathbb R^2\setminus\{0\}$ has $\operatorname{div}\mathbf F=0$ and $\operatorname{curl}\mathbf F=\mathbf 0$, yet is *not* a gradient on the punctured plane (see Section 10.16).
+
