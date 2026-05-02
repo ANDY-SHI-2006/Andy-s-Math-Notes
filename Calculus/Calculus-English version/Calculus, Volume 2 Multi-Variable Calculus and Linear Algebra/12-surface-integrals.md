@@ -216,3 +216,28 @@ $$
 $$
 The sign depends on the choice of normal ($\mathbf n_1$ or $\mathbf n_2$).
 
+
+### 12.11 Stokes' Theorem
+
+**Theorem 12.3 (Stokes).** Let $S=\boldsymbol r(T)$ be a smooth simple parametric surface, where $T$ is bounded by a piecewise smooth Jordan curve $\Gamma$, and let $C=\boldsymbol r(\Gamma)$. If $P,Q,R$ are continuously differentiable on $S$, then
+$$
+ \iint_S\Bigl(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\Bigr)dy\wedge dz
+ +\Bigl(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\Bigr)dz\wedge dx
+ +\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)dx\wedge dy
+ =\int_C P\,dx+Q\,dy+R\,dz.\tag{12.27}
+$$
+The orientation of $C$ is inherited from the positive (counterclockwise) orientation of $\Gamma$.
+
+**Proof sketch.** It suffices to prove the three component identities (12.28). For the $P\,dx$ part:
+1. Write the surface integral as a double integral over $T$:
+   $$
+   \iint_S\Bigl(-\frac{\partial P}{\partial y}\,dx\wedge dy+\frac{\partial P}{\partial z}\,dz\wedge dx\Bigr)
+   =\iint_T\Bigl\{-P_y\,\frac{\partial(X,Y)}{\partial(u,v)}+P_z\,\frac{\partial(Z,X)}{\partial(u,v)}\Bigr\}du\,dv.
+   $$
+2. Set $p(u,v)=P[X(u,v),Y(u,v),Z(u,v)]$; the integrand simplifies to
+   $$
+   \frac{\partial}{\partial u}\!\Bigl(p\frac{\partial X}{\partial v}\Bigr)-\frac{\partial}{\partial v}\!\Bigl(p\frac{\partial X}{\partial u}\Bigr).\tag{12.29}
+   $$
+3. Apply Green’s theorem in the $uv$-plane to obtain a line integral over $\Gamma$, then change variables to show it equals $\int_C P\,dx$.
+4. The $Q\,dy$ and $R\,dz$ identities are proved similarly; adding the three gives (12.27).
+
