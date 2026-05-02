@@ -303,3 +303,52 @@ $$
 
 **Example.** $\mathbf F=-\dfrac{y}{x^2+y^2}\mathbf i+\dfrac{x}{x^2+y^2}\mathbf j$ on $\mathbb R^2\setminus\{0\}$ has $\operatorname{div}\mathbf F=0$ and $\operatorname{curl}\mathbf F=\mathbf 0$, yet is *not* a gradient on the punctured plane (see Section 10.16).
 
+
+### 12.16 Reconstruction of a Vector Field from Its Curl
+
+Given $\mathbf F=P\mathbf i+Q\mathbf j+R\mathbf k$, seek $\mathbf G=L\mathbf i+M\mathbf j+N\mathbf k$ with $\operatorname{curl}\mathbf G=\mathbf F$; i.e.
+$$
+ \frac{\partial N}{\partial y}-\frac{\partial M}{\partial z}=P,\quad
+ \frac{\partial L}{\partial z}-\frac{\partial N}{\partial x}=Q,\quad
+ \frac{\partial M}{\partial x}-\frac{\partial L}{\partial y}=R.\tag{12.43}
+$$
+
+Since $\operatorname{div}(\operatorname{curl}\mathbf G)=0$, a necessary condition is
+$$
+ \operatorname{div}\mathbf F=0.\tag{12.44}
+$$
+
+**Theorem 12.5.** On an open 3D interval $S$, a continuously differentiable $\mathbf F$ is a curl iff $\operatorname{div}\mathbf F=0$ on $S$.
+
+*Proof sketch.* Set $L=0$. Then $N_x=-Q$, $M_x=R$, giving
+$$
+ M=\int_{x_0}^x R\,dt+g(y,z),\qquad N=-\int_{x_0}^x Q\,dt+f(y,z).
+$$
+Choose $f=0$ and $g(y,z)=-\int_{z_0}^z P(x_0,y,u)\,du$; using $\operatorname{div}\mathbf F=0$ one verifies the first equation of (12.43). The solution is not unique: any two solutions differ by a gradient.
+
+*Non-example.* $\mathbf V=\boldsymbol r/r^3$ on the spherical shell $a<r<b$ has $\operatorname{div}\mathbf V=0$ but is **not** a curl on the whole shell (Stokes’ theorem yields a contradiction on a sphere minus a polar cap).
+
+### 12.18 Extensions of Stokes' Theorem
+
+**Multiply connected surfaces.** If $T$ has holes, Stokes’ theorem generalises to a sum over all boundary curves:
+$$
+ \iint_S (\operatorname{curl}\mathbf F)\cdot\mathbf n\,dS
+ =\oint_C \mathbf F\cdot d\boldsymbol\rho
+ +\oint_{C_1}\mathbf F\cdot d\boldsymbol\rho_1
+ +\oint_{C_2}\mathbf F\cdot d\boldsymbol\rho_2+\cdots
+$$
+with orientations inherited from $T$.
+
+**Piecewise smooth surfaces (cylinder).** Applying Stokes’ theorem to each smooth piece and adding, the interior boundary line integrals cancel (opposite orientations), leaving (12.52):
+$$
+ \iint_{S_1\cup S_2}(\operatorname{curl}\mathbf F)\cdot\mathbf n\,dS
+ =\int_{C_1'}\mathbf F\cdot d\boldsymbol\rho_1+\int_{C_2'}\mathbf F\cdot d\boldsymbol\rho_2.
+$$
+
+**Möbius band — non-orientable.** On a Möbius band the two local normals cannot be chosen consistently on the overlap, and the boundary orientations do not cancel. Hence **Stokes’ theorem does not extend to non-orientable surfaces**.
+
+**Closed orientable surfaces.** For a sphere (or any closed orientable surface) the boundary curves cancel completely, giving
+$$
+ \iint_{S}(\operatorname{curl}\mathbf F)\cdot\mathbf n\,dS=0.
+$$
+
