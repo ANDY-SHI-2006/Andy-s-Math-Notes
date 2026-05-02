@@ -352,3 +352,33 @@ $$
  \iint_{S}(\operatorname{curl}\mathbf F)\cdot\mathbf n\,dS=0.
 $$
 
+
+### 12.19 The Divergence Theorem (Gauss' Theorem)
+
+**Theorem 12.6 (Divergence theorem).** Let $V$ be a solid in 3-space bounded by an orientable closed surface $S$, with outer unit normal $\mathbf n$. For a continuously differentiable vector field $\mathbf F$ on $V$,
+$$
+ \iiint_V (\operatorname{div}\mathbf F)\,dx\,dy\,dz = \iint_S \mathbf F\cdot\mathbf n\,dS.\tag{12.53}
+$$
+In components ($\mathbf F=P\mathbf i+Q\mathbf j+R\mathbf k$, $\mathbf n=(\cos\alpha,\cos\beta,\cos\gamma)$):
+$$
+ \iiint_V\Bigl(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\Bigr)dx\,dy\,dz
+ =\iint_S (P\cos\alpha+Q\cos\beta+R\cos\gamma)\,dS.\tag{12.54}
+$$
+
+**Proof sketch.** It suffices to prove
+$$
+ \iiint_V\frac{\partial R}{\partial z}\,dx\,dy\,dz=\iint_S R\cos\gamma\,dS
+$$
+(and the analogous formulas for $P$ and $Q$).
+- For an **$xy$-projectable** solid $g(x,y)\le z\le f(x,y)$, $(x,y)\in T$:
+  - Triple integral: by the second fundamental theorem,
+    $$
+    \iiint_V R_z\,dx\,dy\,dz=\iint_T\bigl[R(x,y,f)-R(x,y,g)\bigr]\,dx\,dy.\tag{12.55}
+    $$
+  - Surface integral: on the top $S_1$ ($z=f$) and bottom $S_2$ ($z=g$) the normals point outward; the side wall $S_3$ contributes $0$ since $\cos\gamma=0$. Hence
+    $$
+    \iint_S R\cos\gamma\,dS=\iint_T\bigl[R(x,y,f)-R(x,y,g)\bigr]\,dx\,dy.\tag{12.56}
+    $$
+- The two expressions match. The same argument works for $xz$- and $yz$-projectable solids; convex solids are projectable in all three directions.
+- **Extension to non-convex solids** (e.g. a solid torus): cut the solid into projectable pieces, apply the theorem to each piece, and observe that the surface integrals over interior cut faces cancel (opposite outward normals).
+
