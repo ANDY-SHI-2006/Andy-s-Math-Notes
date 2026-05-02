@@ -301,3 +301,35 @@ If rolled 29 times, $(n+1)p=5\in\mathbb Z$ and the maximum occurs at $k=4$ and $
 **Example 2.** Smallest $n$ for which exactly four sevens is a most probable outcome ($p=\tfrac16$).  
 We need $(n+1)p=4$, i.e. $n+1=24$, giving $n=23$.
 
+
+### 13.19 Countable and Uncountable Sets
+
+**Equivalence.** $A\sim B$ means there is a one-to-one function $f:A\to B$. Properties:
+- Reflexive: $A\sim A$.
+- Symmetric: $A\sim B\implies B\sim A$.\tag{13.22}
+- Transitive: $A\sim B$ and $B\sim C\implies A\sim C$.\tag{13.23}
+
+**Definitions.**
+- **Finite:** $S\sim\{1,\dots,n\}$ for some $n$.
+- **Countably infinite:** $S\sim\{1,2,3,\dots\}$.\tag{13.24}
+- **Countable:** finite or countably infinite.
+- **Uncountable:** not countable.
+
+**Closure properties of countable sets.**
+- (a) Every subset of a countable set is countable.
+- (b) Any intersection of countable sets is countable.
+- (c) A countable union of countable sets is countable.
+- (d) A finite Cartesian product of countable sets is countable.
+
+**Examples.**
+- **1.** The set of all integers is countable ($f(n)=2n$ for $n>0$, $f(n)=2|n|+1$ for $n\le0$).
+- **2.** The set of rationals is countable (union over $n$ of $S_n=\{x/n\mid x\in\mathbb Z\}$).
+- **3.** The family $\mathscr F_n$ of $n$-element subsets of a countably infinite set is countable (inject into $A^n$).
+- **4.** The collection of *all finite* subsets of a countable set is countable (union of the families in Example 3).
+
+**Uncountable sets.**
+- **5.** The power set of a countably infinite set is uncountable.  
+  *Proof (Cantor).* Assume $\mathscr A\sim A$ via $f:A\to\mathscr A$. Set $B=\{a\mid a\notin f(a)\}$. Then $B\in\mathscr A$, so $B=f(b)$ for some $b$. But $b\in B\iff b\notin f(b)=B$, a contradiction.
+- **6.** The open interval $(0,1)$ is uncountable.  
+  *Proof (diagonal).* List decimals $x_n=0.a_{n1}a_{n2}\dots$ and form $y=0.y_1y_2\dots$ with $y_n=1$ if $a_{nn}\neq1$, $y_n=2$ if $a_{nn}=1$. Then $y\neq x_n$ for every $n$.
+
