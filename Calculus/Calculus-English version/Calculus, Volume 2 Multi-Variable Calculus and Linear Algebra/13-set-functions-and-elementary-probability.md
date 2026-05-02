@@ -269,3 +269,35 @@ $$
  \qquad P(E')=\sum_{k=0}^{r-1}\binom{n}{k}p^{k}q^{n-k}=1-P(E).
 $$
 
+
+### 13.17 The Most Probable Number of Successes in $n$ Bernoulli Trials
+
+**Theorem 13.4.** Let $f(k)=\binom{n}{k}p^{k}(1-p)^{n-k}$, $k=0,1,\dots,n$, with $0<p<1$.
+
+Consider the ratio
+$$
+ r(k)=\frac{f(k)}{f(k+1)}=\frac{k+1}{n-k}\cdot\frac{1-p}{p},
+ \qquad 0\le k\le n-1,
+$$
+which is strictly increasing. Then:
+- **(a)** If $(n+1)p$ is **not** an integer, $f(k)$ has a unique maximum at
+  $$
+  k=[(n+1)p].
+  $$
+- **(b)** If $(n+1)p$ **is** an integer, $f(k)$ attains its maximum at the two consecutive values
+  $$
+  k=(n+1)p\quad\text{and}\quad k=(n+1)p-1.
+  $$
+
+*Proof sketch.* Examine the six possible orderings of $r(0)$ and $r(n-1)$ relative to $1$. When $r(k)$ crosses $1$ at a non-integer $s$, $f$ increases up to $[s]$ and then decreases (unique maximum). When $r(s-1)=1$, $f(s-1)=f(s)$ (tied maximum).
+
+**Example 1.** A pair of dice rolled 28 times ($n=28$, $p=\tfrac16$).  
+$(n+1)p=\tfrac{29}{6}\notin\mathbb Z$, so the most probable number of sevens is
+$$
+ k=\bigl[\tfrac{29}{6}\bigr]=4.
+$$
+If rolled 29 times, $(n+1)p=5\in\mathbb Z$ and the maximum occurs at $k=4$ and $k=5$.
+
+**Example 2.** Smallest $n$ for which exactly four sevens is a most probable outcome ($p=\tfrac16$).  
+We need $(n+1)p=4$, i.e. $n+1=24$, giving $n=23$.
+
