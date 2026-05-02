@@ -261,3 +261,37 @@ $$
 $$
 The first term comes from continuous subrectangles (span $<\varepsilon$); the second from subrectangles meeting $D$ (area $<\delta$, height $2M$). Hence $0\le\bar{I}(f)-\underline{I}(f)\le\varepsilon\,a(Q)+2M\delta$. Let $\varepsilon\to0$ to get $\bar{I}(f)-\underline{I}(f)\le2M\delta$; since $\delta$ is arbitrary, $\bar{I}(f)=\underline{I}(f)$.
 
+
+### 11.12 Double Integrals Extended over More General Regions
+
+To integrate over a bounded region $S$, enclose $S$ in a rectangle $Q$ and extend $f$ to $Q$ by
+$$
+\tilde{f}(x,y)=\begin{cases}f(x,y)&(x,y)\in S,\\0&(x,y)\in Q-S.\end{cases}\tag{11.10}
+$$
+If $\tilde{f}$ is integrable on $Q$, we say $f$ is **integrable on $S$** and define
+$$
+\iint_S f = \iint_Q \tilde{f}.
+$$
+
+**Type I and Type II regions.**
+- **Type I:** $S=\{(x,y):a\le x\le b,\;\varphi_1(x)\le y\le\varphi_2(x)\}$, where $\varphi_1,\varphi_2$ are continuous on $[a,b]$ with $\varphi_1\le\varphi_2$.
+- **Type II:** $T=\{(x,y):c\le y\le d,\;\psi_1(y)\le x\le\psi_2(y)\}$, where $\psi_1,\psi_2$ are continuous on $[c,d]$ with $\psi_1\le\psi_2$.
+
+**Theorem 11.8.** The graph of a continuous function on an interval has content zero.
+
+*Proof sketch.* By the small-span theorem, partition the interval so that the span of $\varphi$ on each subinterval is $<\varepsilon/(b-a)$. The graph then lies in a finite union of rectangles of total area $\varepsilon$.
+
+**Theorem 11.9 (Type I).** Let $S$ be a Type I region between the graphs of $\varphi_1$ and $\varphi_2$. If $f$ is bounded on $S$ and continuous on $\operatorname{int}S$, then
+$$
+\iint_S f(x,y)\,dx\,dy = \int_a^{b}\Bigl[\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)\,dy\Bigr]dx.\tag{11.11}
+$$
+
+*Proof sketch.* The boundary of $S$ has content zero, so $\tilde{f}$ is integrable on $Q$. For fixed $x$, $\int_c^{d}\tilde{f}(x,y)\,dy$ exists and equals $\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)\,dy$; apply Theorem 11.5.
+
+**Type II analogue:**
+$$
+\iint_T f(x,y)\,dx\,dy = \int_c^{d}\Bigl[\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)\,dx\Bigr]dy.\tag{11.13}
+$$
+
+Some regions are both Type I and Type II (e.g. circles, ellipses); the order of integration is immaterial. It is often worthwhile to examine both orders before evaluating.
+
