@@ -83,3 +83,45 @@ is **normal to the surface** $\boldsymbol r(T)$.
 
 At a regular point $P$ this vector is nonzero; the plane through $P$ with this normal is the **tangent plane** to the surface at $P$.
 
+
+### 12.5 Area of a Parametric Surface
+
+**Definition.** For $S=\boldsymbol r(T)$,
+$$
+ a(S)=\iint_T\Bigl\|\frac{\partial\boldsymbol r}{\partial u}\times\frac{\partial\boldsymbol r}{\partial v}\Bigr\|\,du\,dv.\tag{12.7}
+$$
+In Jacobian form:
+$$
+ a(S)=\iint_T\sqrt{\Bigl(\frac{\partial(Y,Z)}{\partial(u,v)}\Bigr)^2+\Bigl(\frac{\partial(Z,X)}{\partial(u,v)}\Bigr)^2+\Bigl(\frac{\partial(X,Y)}{\partial(u,v)}\Bigr)^2}\,du\,dv.\tag{12.8}
+$$
+
+**Explicit surface** $z=f(x,y)$, with $T$ the projection on the $xy$-plane:
+$$
+ a(S)=\iint_T\sqrt{1+\Bigl(\frac{\partial f}{\partial x}\Bigr)^2+\Bigl(\frac{\partial f}{\partial y}\Bigr)^2}\,dx\,dy.\tag{12.9}
+$$
+If $\gamma$ is the angle between the normal and $\mathbf k$, then $\|\partial\boldsymbol r/\partial x\times\partial\boldsymbol r/\partial y\|=1/\cos\gamma$, giving the **area cosine principle**:
+$$
+ a(T)=a(S)\cos\gamma.\tag{12.11}
+$$
+
+**Implicit surface** $F(x,y,z)=0$ (with $F_z\neq0$):
+$$
+ a(S)=\iint_T\frac{\sqrt{F_x^2+F_y^2+F_z^2}}{|F_z|}\,dx\,dy.\tag{12.12}
+$$
+
+**Example 1. Hemisphere of radius $a$.** Using the parametric representation (12.13),
+$$
+ \Bigl\|\frac{\partial\boldsymbol r}{\partial u}\times\frac{\partial\boldsymbol r}{\partial v}\Bigr\|=a^2\cos v,
+ \qquad a(S)=a^2\int_0^{2\pi}\!\int_0^{\pi/2}\!\cos v\,dv\,du=2\pi a^2.
+$$
+
+**Example 2. Pappus theorem for surface area.** A curve of length $L$ in the $xz$-plane, $z=f(x)$, $a\le x\le b$, rotated about the $z$-axis generates a surface of revolution
+$$
+ \boldsymbol r(u,v)=u\cos v\,\mathbf i+u\sin v\,\mathbf j+f(u)\,\mathbf k.
+$$
+Then
+$$
+ a(S)=2\pi\int_a^b u\sqrt{1+[f'(u)]^2}\,du=2\pi\bar x L,
+$$
+where $\bar x$ is the $x$-coordinate of the centroid of $C$.
+
