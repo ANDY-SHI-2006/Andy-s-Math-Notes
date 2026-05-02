@@ -456,3 +456,35 @@ $$
 - **For (11.19)** a similar argument works on Type II regions.
 - For general regions, decompose into finitely many regions of both types; "crosscuts" are introduced (Figure 11.15). The line integrals along crosscuts cancel in pairs, and the sum over subregions equals the integral along the boundary of $R$.
 
+
+### 11.20 Some Applications of Green's Theorem
+
+**Example 1.** Work done by $f(x,y)=(y+3x)\,\mathbf{i}+(2y-x)\,\mathbf{j}$ around the ellipse $4x^{2}+y^{2}=4$ (counterclockwise).
+- $P=y+3x$, $Q=2y-x$, so $\partial Q/\partial x-\partial P/\partial y=-2$.
+- By Green's theorem: $\displaystyle\oint_C P\,dx+Q\,dy=\iint_R(-2)\,dx\,dy=-2\,a(R)=-4\pi$ (since $a(R)=\pi ab=2\pi$).
+
+**Example 2.** $\displaystyle\oint_C(5-xy-y^{2})\,dx-(2xy-x^{2})\,dy$ around the unit square.
+- $P=5-xy-y^{2}$, $Q=x^{2}-2xy$, so $\partial Q/\partial x-\partial P/\partial y=3x$.
+- $\displaystyle\oint_C=3\iint_R x\,dx\,dy=3\bar{x}=3\cdot\tfrac{1}{2}=\tfrac{3}{2}$.
+
+**Example 3. Area as a line integral.** Taking $Q=\tfrac{1}{2}x$, $P=-\tfrac{1}{2}y$ (so $\partial Q/\partial x-\partial P/\partial y=1$):
+$$
+a(R)=\frac{1}{2}\oint_C -y\,dx+x\,dy
+=\frac{1}{2}\int_a^{b}\begin{vmatrix}X(t)&Y(t)\\X'(t)&Y'(t)\end{vmatrix}dt.
+$$
+
+### 11.21 A Necessary and Sufficient Condition for a 2D Vector Field to Be a Gradient
+
+**Definition (Simply connected).** An open connected set $S$ in the plane is **simply connected** if for every Jordan curve $C$ lying in $S$, the inner region of $C$ is also a subset of $S$. Intuitively, $S$ has no "holes." An open connected set that is not simply connected is called **multiply connected**.
+
+**Theorem 11.11.** Let $f(x,y)=P(x,y)\,\mathbf{i}+Q(x,y)\,\mathbf{j}$ be continuously differentiable on an open simply connected set $S$. Then $f$ is a gradient on $S$ **if and only if**
+$$
+\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}\quad\text{everywhere on }S.\tag{11.23}
+$$
+
+*Proof sketch.* Necessity is clear. For sufficiency: in any open connected plane set, two points can be joined by a simple step-polygon. Let $C_1,C_2$ be two such polygons joining $a$ to $x$ in $S$. Their difference forms finitely many polygonal regions $R_1,\dots,R_m\subseteq S$ (since $S$ is simply connected). By Green's theorem,
+$$
+\int_{\Gamma_k}P\,dx+Q\,dy=\pm\iint_{R_k}\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)dx\,dy=0,
+$$
+so the line integrals along $C_1$ and $C_2$ are equal. Path independence implies $f$ is a gradient (as in Theorem 10.4).
+
