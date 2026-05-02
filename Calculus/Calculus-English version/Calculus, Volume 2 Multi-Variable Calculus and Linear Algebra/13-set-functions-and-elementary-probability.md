@@ -38,3 +38,18 @@ $$
 $$
 *Proof.* (13.2) follows from (13.1) because $A$ and $B-A$ are disjoint with union $A\cup B$. For (13.3), write $A\cup B=(A\cap B')\cup B$ and $A=(A\cap B')\cup(A\cap B)$, apply (13.1) to both, and subtract.
 
+
+### 13.3 Finitely Additive Measures
+
+A **finitely additive measure** (or simply a **measure**) is a nonnegative finitely additive set function $f:\mathscr A\to\mathbb R$.
+
+**Theorem 13.2 (Properties of measures).** Let $f$ be a finitely additive measure on a Boolean algebra $\mathscr A$. Then for all $A,B\in\mathscr A$:
+- **(a)** $f(A\cup B)\le f(A)+f(B)$.  
+- **(b)** $f(B-A)=f(B)-f(A)$ if $A\subseteq B$.  
+- **(c)** $f(A)\le f(B)$ if $A\subseteq B$ *(monotone property)*.  
+- **(d)** $f(\varnothing)=0$.
+
+*Proof.* (a) follows from (13.3); (b) from (13.2); (c) from (b); (d) by taking $A=B=\varnothing$ in (b).
+
+**Example.** *Counting measure.* Let $S=\{a_1,\dots,a_n\}$ and let $\nu(A)$ be the number of elements in $A$. Then $\nu$ is a finitely additive measure on the power set of $S$.
+
