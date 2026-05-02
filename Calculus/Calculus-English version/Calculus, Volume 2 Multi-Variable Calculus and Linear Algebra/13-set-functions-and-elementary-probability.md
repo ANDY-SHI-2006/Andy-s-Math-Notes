@@ -137,3 +137,32 @@ $$
  P(A\cup B)=P(A)+P(B)-P(A\cap B)=\frac36+\frac26-\frac16=\frac46=\frac23.
 $$
 
+
+### 13.10 Some Basic Principles of Combinatorial Analysis
+
+**Binomial coefficient.** The number of $k$-element subsets of an $n$-element set:
+$$
+ \binom{n}{k}=\frac{n!}{k!(n-k)!}.\tag{13.7}
+$$
+
+**Counting measure.** Let $\nu(A)$ denote the number of elements in a finite set $A$ (with $\nu(\varnothing)=0$). Then $\nu$ is finitely additive:
+$$
+ \nu\Bigl(\bigcup_{i=1}^n S_i\Bigr)=\sum_{i=1}^n\nu(S_i)\quad\text{for disjoint finite sets }S_i.\tag{13.8}
+$$
+
+**Cartesian product.**
+$$
+ \nu(A_1\times\cdots\times A_n)=\nu(A_1)\cdots\nu(A_n).
+$$
+
+**Principle of sequential counting.** If the $r$th component of an $n$-tuple has $k_r$ possible choices (given earlier choices), then the number of $n$-tuples is $k_1k_2\cdots k_n$.
+
+**Examples.**
+- **Sampling with replacement:** $n^k$ ordered $k$-tuples from an $n$-element set.
+- **Sampling without replacement:** $\displaystyle\frac{n!}{(n-k)!}$ ordered $k$-tuples ($k\le n$).
+- **$k$-element subsets:** each subset gives $k!$ ordered $k$-tuples, so
+  $$
+  r=\frac{n!/ (n-k)!}{k!}=\binom{n}{k}.
+  $$
+- **Total number of subsets of an $n$-element set:** $\displaystyle\sum_{k=0}^n\binom{n}{k}=2^n$.
+
