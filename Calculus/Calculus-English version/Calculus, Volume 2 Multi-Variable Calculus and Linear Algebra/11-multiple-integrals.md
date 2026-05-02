@@ -320,3 +320,38 @@ $$
 $$
 equals the volume of the solid lying between the graphs of $g$ and $f$. (Analogous for Type II regions.)
 
+
+### 11.14 Worked Examples
+
+**Example 1. Volume of an ellipsoid.** $\displaystyle\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}+\frac{z^{2}}{c^{2}}=1$.
+
+The solid lies between $g(x,y)=c\sqrt{1-x^{2}/a^{2}-y^{2}/b^{2}}$ and $f=-g$ over the elliptical region $S=\{(x,y):x^{2}/a^{2}+y^{2}/b^{2}\le1\}$. By symmetry,
+$$
+V = \iint_S (g-f) = 2\iint_S g
+= 8c\int_0^{a}\Bigl[\int_0^{b\sqrt{1-x^{2}/a^{2}}}\sqrt{1-\tfrac{x^{2}}{a^{2}}-\tfrac{y^{2}}{b^{2}}}\,dy\Bigr]dx.
+$$
+With $A=\sqrt{1-x^{2}/a^{2}}$ and $y=Ab\sin t$, the inner integral becomes $\tfrac{\pi b}{4}(1-x^{2}/a^{2})$. Hence
+$$
+V = 8c\int_0^{a}\frac{\pi b}{4}\Bigl(1-\frac{x^{2}}{a^{2}}\Bigr)dx = \frac{4}{3}\pi abc.
+$$
+For $a=b=c$ (sphere): $V=\tfrac{4}{3}\pi a^{3}$.
+
+**Example 2. Changing the order of integration.** Given
+$$
+\int_0^{1}\Bigl[\int_{x^{2}}^{x}f(x,y)\,dy\Bigr]dx,
+$$
+the region is Type I between $y=x^{2}$ and $y=x$ for $0\le x\le1$ (Figure 11.11). As Type II:
+$$
+\int_0^{1}\Bigl[\int_{y}^{\sqrt{y}}f(x,y)\,dx\Bigr]dy.
+$$
+
+**Example 3. Changing the order of integration.** Given
+$$
+\int_0^{3}\Bigl[\int_{4y/3}^{\sqrt{25-y^{2}}}f(x,y)\,dx\Bigr]dy,
+$$
+the region is Type II between $x=4y/3$ and $x=\sqrt{25-y^{2}}$ for $0\le y\le3$ (a circular sector, Figure 11.12). Reversing the order splits it into two Type I regions:
+$$
+\int_0^{4}\Bigl[\int_0^{3x/4}f(x,y)\,dy\Bigr]dx
++ \int_4^{5}\Bigl[\int_0^{\sqrt{25-x^{2}}}f(x,y)\,dy\Bigr]dx.
+$$
+
