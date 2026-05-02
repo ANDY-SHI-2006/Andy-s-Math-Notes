@@ -218,3 +218,32 @@ $$
 *Caution:* Pairwise independence (the first three) does **not** imply mutual independence.  
 *Counter-example:* $S=\{a,b,c,abc\}$ with $A=\{a,abc\}$, $B=\{b,abc\}$, $C=\{c,abc\}$. Pairwise (13.11) holds but $P(A\cap B\cap C)=\tfrac14\neq\tfrac18=P(A)P(B)P(C)$.
 
+
+### 13.15 Compound Experiments
+
+**de Méré’s problem.** In $n$ throws of a pair of dice, the probability of at least one double six is
+$$
+ P(A)=1-P(A')=1-\Bigl(\frac{35}{36}\Bigr)^n.
+$$
+Since $n\ge\dfrac{\log2}{\log36-\log35}\approx24.6$, we have $P(A)<\tfrac12$ for $n=24$ and $P(A)>\tfrac12$ for $n\ge25$.
+
+**Product probability space.** For two independent experiments with spaces $(S_1,\mathscr B_1,P_1)$ and $(S_2,\mathscr B_2,P_2)$, the compound experiment has sample space $S=S_1\times S_2$ and point probabilities
+$$
+ P(x,y)=P_1(x)P_2(y).\tag{13.14}
+$$
+This implies
+$$
+ P(U\times V)=P_1(U)P_2(V)\qquad(U\in\mathscr B_1,\;V\in\mathscr B_2).\tag{13.16}
+$$
+
+**Events determined by one experiment.**
+- $A=C_1\times S_2$ is *determined by $E_1$*; $P(A)=P_1(C_1)$.
+- $B=S_1\times C_2$ is *determined by $E_2$*; $P(B)=P_2(C_2)$.
+- Such events are **independent**: $P(A\cap B)=P(A)P(B)$.\tag{13.17}
+
+**Generalisation to $n$ experiments.**
+$$
+ P(x_1,\dots,x_n)=P_1(x_1)P_2(x_2)\cdots P_n(x_n).\tag{13.19}
+$$
+When all experiments share the same probability space, $E$ is called **independent repeated trials under identical conditions**.
+
