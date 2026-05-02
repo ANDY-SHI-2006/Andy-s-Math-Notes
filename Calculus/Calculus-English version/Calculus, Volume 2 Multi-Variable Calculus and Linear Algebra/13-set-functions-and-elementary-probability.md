@@ -104,3 +104,36 @@ Here $P(a_i)$ is shorthand for $P(\{a_i\})$.
 | $A$ implies $B$ | $A\subseteq B$ |
 | $A$ and $B$ are mutually exclusive | $A\cap B=\varnothing$ |
 
+
+### 13.8 Worked Examples
+
+**Example 1.** Toss a coin twice; $S=\{hh,ht,th,tt\}$.  
+Event $A=$ "at least one head" $=\{hh,ht,th\}$. With equally likely outcomes,
+$$
+ P(A)=3\cdot\tfrac14=\tfrac34.
+$$
+
+**Example 2.** Draw one card from each of two decks; $S$ has $52^2$ ordered pairs.  
+Event $A=$ "at least one ace of hearts" has $52+51$ elements, so
+$$
+ P(A)=\frac{52+51}{52^2}=\frac1{26}-\frac1{52^2}.
+$$
+
+**Example 3.** Draw two cards from one deck (ordered); $|S|=52\cdot51$.  
+Event $A=$ "one is the ace of hearts" has $2\cdot51$ elements, so
+$$
+ P(A)=\frac{2\cdot51}{52\cdot51}=\frac1{26}.
+$$
+
+**Example 4.** Throw three dice; $|S|=6^3$. Let $A_n$ be the set of triples with sum $n$.  
+For $3\le a+b+c\le6$ we have $|A_3|=1$, $|A_4|=3$, $|A_5|=6$, $|A_6|=10$, hence
+$$
+ P(A)=\frac{1+3+6+10}{6^3}=\frac{20}{216}=\frac5{54}.
+$$
+
+**Example 5.** Throw one die; $S=\{1,\dots,6\}$.  
+$A=\{2,4,6\}$ (even), $B=\{3,6\}$ (multiple of 3). Then $A\cup B=\{2,3,4,6\}$ and
+$$
+ P(A\cup B)=P(A)+P(B)-P(A\cap B)=\frac36+\frac26-\frac16=\frac46=\frac23.
+$$
+
