@@ -539,3 +539,47 @@ $$
 
 *Proof sketch for Jordan curves.* Let $S=\mathbb{R}^{2}\setminus\{(x_0,y_0)\}$. The integrand in (11.28) satisfies $\partial P/\partial y=\partial Q/\partial x$ on $S$. By Theorem 11.13, $C$ can be replaced by a circle centered at $(x_0,y_0)$ without changing the integral. For a positively oriented circle, $X(t)=a\cos t+x_0$, $Y(t)=a\sin t+y_0$, the integrand in (11.27) is identically $1$, so $W=\frac{1}{2\pi}\int_0^{2\pi}1\,dt=1$. For negative orientation, $W=-1$.
 
+
+### 11.26 Change of Variables in a Double Integral
+
+Recall the 1D substitution formula:
+$$
+\int_a^{b}f(x)\,dx = \int_c^{d}f[g(t)]\,g'(t)\,dt,\tag{11.29}
+$$
+where $a=g(c)$, $b=g(d)$.
+
+**2D analogue.** A mapping from the $uv$-plane to the $xy$-plane is given by
+$$
+x=X(u,v),\qquad y=Y(u,v),\tag{11.30}
+$$
+or in vector form
+$$
+\mathbf{r}(u,v)=X(u,v)\,\mathbf{i}+Y(u,v)\,\mathbf{j},\qquad (u,v)\in T.\tag{11.31}
+$$
+If the mapping is one-to-one and $X,Y$ have continuous partials, then
+$$
+\iint_S f(x,y)\,dx\,dy = \iint_T f[X(u,v),Y(u,v)]\,|J(u,v)|\,du\,dv,\tag{11.32}
+$$
+where the **Jacobian determinant** is
+$$
+J(u,v)=\det\begin{bmatrix}\dfrac{\partial X}{\partial u}&\dfrac{\partial X}{\partial v}\\[6pt]\dfrac{\partial Y}{\partial u}&\dfrac{\partial Y}{\partial v}\end{bmatrix}
+=\frac{\partial(X,Y)}{\partial(u,v)}.
+$$
+
+The formula also holds if the mapping fails to be one-to-one or $J=0$ on a set of content zero.
+
+**Geometric motivation.** For a small rectangle in the $uv$-plane with sides $\Delta u,\Delta v$, define
+$$
+V_1=\frac{\partial\mathbf{r}}{\partial u},\qquad V_2=\frac{\partial\mathbf{r}}{\partial v}.
+$$
+The image is approximately a parallelogram with sides $V_1\Delta u$ and $V_2\Delta v$, whose area is
+$$
+\|(V_1\Delta u)\times(V_2\Delta v)\|=\|V_1\times V_2\|\,\Delta u\,\Delta v = |J(u,v)|\,\Delta u\,\Delta v.
+$$
+Thus $|J|$ acts as a local **magnification factor** for area. When $f\equiv1$,
+$$
+\iint_S dx\,dy = \iint_T |J(u,v)|\,du\,dv.\tag{11.33}
+$$
+
+**Singular points.** If $J(u,v)=0$, the vectors $V_1,V_2$ are parallel and the parallelogram degenerates. The transformation formula remains valid provided singular points form a set of content zero.
+
