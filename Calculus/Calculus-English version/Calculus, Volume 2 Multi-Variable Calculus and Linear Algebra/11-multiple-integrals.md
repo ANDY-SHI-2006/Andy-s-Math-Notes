@@ -295,3 +295,28 @@ $$
 
 Some regions are both Type I and Type II (e.g. circles, ellipses); the order of integration is immaterial. It is often worthwhile to examine both orders before evaluating.
 
+
+### 11.13 Applications to Area and Volume
+
+**Area.** For a Type I region $S=\{(x,y):a\le x\le b,\;\varphi_1(x)\le y\le\varphi_2(x)\}$,
+$$
+\iint_S dx\,dy = \int_a^{b}\bigl[\varphi_2(x)-\varphi_1(x)\bigr]\,dx,
+$$
+which equals the area of $S$ (Theorem 2.1 of Volume I).
+
+**Volume of an ordinate set.** If $f\ge0$ on $S$, the set
+$$
+\{(x,y,z):(x,y)\in S,\;0\le z\le f(x,y)\}
+$$
+is the ordinate set of $f$ over $S$. Its volume is
+$$
+V = \iint_S f(x,y)\,dx\,dy = \int_a^{b}\Bigl[\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)\,dy\Bigr]dx.
+$$
+The inner integral is the area of a cross section cut by a plane parallel to the $yz$-plane; the double integral integrates these cross-sectional areas.
+
+**Volume between two surfaces.** If $f\le g$ are continuous on $S$, then
+$$
+\iint_S \bigl[g(x,y)-f(x,y)\bigr]\,dx\,dy
+$$
+equals the volume of the solid lying between the graphs of $g$ and $f$. (Analogous for Type II regions.)
+
