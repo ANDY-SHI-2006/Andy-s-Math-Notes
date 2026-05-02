@@ -514,3 +514,28 @@ both traversed in the same direction.
 
 *Interpretation:* If $\partial P/\partial y=\partial Q/\partial x$ in $S$, the value of a line integral around a simple closed curve in $S$ is unchanged when the path is deformed to another such curve, provided all intermediate curves remain in $S$. The set $S$ need not be simply connected.
 
+
+### 11.24 The Winding Number
+
+To define "counterclockwise" analytically for arbitrary closed curves, we introduce the **winding number**.
+
+Let $C$ be a piecewise smooth closed curve described by $\alpha(t)=X(t)\,\mathbf{i}+Y(t)\,\mathbf{j}$ on $[a,b]$. Let $P_0=(x_0,y_0)$ be a point not on $C$. The **winding number** of $\alpha$ with respect to $P_0$ is
+$$
+W(\alpha;P_0)=\frac{1}{2\pi}\int_a^{b}
+\frac{[X(t)-x_0]Y'(t)-[Y(t)-y_0]X'(t)}{[X(t)-x_0]^{2}+[Y(t)-y_0]^{2}}\,dt.\tag{11.27}
+$$
+Equivalently,
+$$
+W(\alpha;P_0)=\frac{1}{2\pi}\oint_C
+\frac{-(y-y_0)\,dx+(x-x_0)\,dy}{(x-x_0)^{2}+(y-y_0)^{2}}.\tag{11.28}
+$$
+
+**Properties.**
+- The value is always an **integer** (positive, negative, or zero).
+- If $C$ is a Jordan curve: $W=0$ when $P_0$ is **outside** $C$; $W=+1$ or $-1$ when $P_0$ is **inside** $C$.
+- The value is the same ($+1$ or $-1$) for **every** point inside $C$.
+
+**Orientation.** If $W(\alpha;P_0)=+1$ for every $P_0$ inside $C$, $\alpha$ traces $C$ in the **positive (counterclockwise)** direction. If $W=-1$, it traces $C$ in the **negative (clockwise)** direction.
+
+*Proof sketch for Jordan curves.* Let $S=\mathbb{R}^{2}\setminus\{(x_0,y_0)\}$. The integrand in (11.28) satisfies $\partial P/\partial y=\partial Q/\partial x$ on $S$. By Theorem 11.13, $C$ can be replaced by a circle centered at $(x_0,y_0)$ without changing the integral. For a positively oriented circle, $X(t)=a\cos t+x_0$, $Y(t)=a\sin t+y_0$, the integrand in (11.27) is identically $1$, so $W=\frac{1}{2\pi}\int_0^{2\pi}1\,dt=1$. For negative orientation, $W=-1$.
+
