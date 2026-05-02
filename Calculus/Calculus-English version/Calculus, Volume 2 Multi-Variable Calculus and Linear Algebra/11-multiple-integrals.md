@@ -355,3 +355,45 @@ $$
 + \int_4^{5}\Bigl[\int_0^{\sqrt{25-x^{2}}}f(x,y)\,dy\Bigr]dx.
 $$
 
+
+### 11.16 Further Applications of Double Integrals
+
+For a thin plate with density $f(x,y)$ (mass per unit area) over a region $S$:
+
+- **Total mass:** $\displaystyle m(S)=\iint_S f(x,y)\,dx\,dy$
+- **Average density:** $\displaystyle\frac{\iint_S f}{\iint_S dx\,dy}$
+- **Center of mass:**
+  $$
+  \bar{x}\,m(S)=\iint_S xf(x,y)\,dx\,dy,\qquad
+  \bar{y}\,m(S)=\iint_S yf(x,y)\,dx\,dy.\tag{11.14}
+  $$
+- **Centroid** (constant density $f=c$): $\bar{x}\,a(S)=\iint_S x\,dx\,dy$, $\bar{y}\,a(S)=\iint_S y\,dx\,dy$
+- **Moment of inertia** about line $L$:
+  $$
+  I_L=\iint_S \delta^{2}(x,y)\,f(x,y)\,dx\,dy,
+  $$
+  where $\delta$ is the perpendicular distance to $L$.
+- About coordinate axes:
+  $$
+  I_x=\iint_S y^{2}f\,dx\,dy,\qquad I_y=\iint_S x^{2}f\,dx\,dy.
+  $$
+- **Polar moment of inertia** about the origin:
+  $$
+  I_0=I_x+I_y=\iint_S (x^{2}+y^{2})f\,dx\,dy.
+  $$
+
+**Example 1.** Annulus $S=\{(x,y):b^{2}\le x^{2}+y^{2}\le a^{2}\}$ with constant density $c$.
+$$
+I_0=c\iint_S (x^{2}+y^{2})\,dx\,dy
+=\frac{\pi c}{2}(a^{4}-b^{4})
+= m\,\frac{a^{2}+b^{2}}{2},\qquad m=\pi c(a^{2}-b^{2}).
+$$
+
+**Example 2.** Centroid of the region bounded by $y=\sin x$ and $0\le x\le\pi$.
+By symmetry $\bar{x}=\pi/2$.
+$$
+\bar{y}=\frac{\iint_S y\,dx\,dy}{\iint_S dx\,dy}
+=\frac{\int_0^{\pi}\frac{1}{2}\sin^{2}x\,dx}{2}
+=\frac{\pi}{8}.
+$$
+
