@@ -53,3 +53,26 @@ A **finitely additive measure** (or simply a **measure**) is a nonnegative finit
 
 **Example.** *Counting measure.* Let $S=\{a_1,\dots,a_n\}$ and let $\nu(A)$ be the number of elements in $A$. Then $\nu$ is a finitely additive measure on the power set of $S$.
 
+
+### 13.5 The Definition of Probability for Finite Sample Spaces
+
+A **probability measure** $P$ on a Boolean algebra $\mathscr B$ of subsets of a sample space $S$ is a set function satisfying
+- **(a)** finite additivity,
+- **(b)** nonnegativity,
+- **(c)** $P(S)=1$.
+
+In other words, probability is a measure that assigns the value $1$ to the whole space.
+
+**Probability space.** The triple $(S,\mathscr B,P)$ is called a *probability space*. In elementary applications $\mathscr B$ is usually the collection of *all* subsets of $S$.
+
+**Example.** Tossing a coin once: $S=\{h,t\}$, $\mathscr B=\{\varnothing,S,\{h\},\{t\}\}$.  
+Finite additivity and $P(S)=1$ give $P(\{h\})+P(\{t\})=1$.  
+- Unbiased coin: $P(\{h\})=P(\{t\})=\tfrac12$.  
+- Loaded coin: any $p\in[0,1]$ with $P(\{h\})=p$, $P(\{t\})=1-p$.
+
+**Point probabilities.** If $S=\{a_1,\dots,a_n\}$, $P$ is completely determined by its values on singletons:
+$$
+ P(A)=\sum_{a_i\in A}P(a_i)\qquad\text{for every }A\subseteq S.
+$$
+Here $P(a_i)$ is shorthand for $P(\{a_i\})$.
+
