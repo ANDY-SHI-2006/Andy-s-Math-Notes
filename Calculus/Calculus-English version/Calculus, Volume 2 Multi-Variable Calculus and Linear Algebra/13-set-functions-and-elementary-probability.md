@@ -10,3 +10,31 @@
 
 This chapter presents the basic notions of modern elementary probability and its connections to measure theory.
 
+
+### 13.2 Finitely Additive Set Functions
+
+A **set function** $f:\mathscr A\to\mathbb R$ assigns a real number to each set in a class $\mathscr A$.
+
+**Finite additivity.** $f$ is *finitely additive* if
+$$
+ f(A\cup B)=f(A)+f(B)\quad\text{whenever }A,B\in\mathscr A\text{ are disjoint and }A\cup B\in\mathscr A.\tag{13.1}
+$$
+*Examples:* area, length, mass.
+
+**Boolean algebra.** A nonempty class $\mathscr A$ of subsets of a universal set $S$ is a *Boolean algebra* if it is closed under finite unions and complements:
+$$
+ A\cup B\in\mathscr A\quad\text{and}\quad A'\in\mathscr A.
+$$
+Then it is also closed under intersections and differences: $A\cap B=(A'\cup B')'$, $A-B=A\cap B'$.
+- Smallest Boolean algebra: $\mathscr A_0=\{\varnothing,S\}$.
+- Largest Boolean algebra: $\mathscr A_1=$ all subsets of $S$.
+
+**Theorem 13.1.** If $f$ is finitely additive on a Boolean algebra $\mathscr A$, then for all $A,B\in\mathscr A$:
+$$
+ f(A\cup B)=f(A)+f(B-A),\tag{13.2}
+$$
+$$
+ f(A\cup B)=f(A)+f(B)-f(A\cap B).\tag{13.3}
+$$
+*Proof.* (13.2) follows from (13.1) because $A$ and $B-A$ are disjoint with union $A\cup B$. For (13.3), write $A\cup B=(A\cap B')\cup B$ and $A=(A\cap B')\cup(A\cap B)$, apply (13.1) to both, and subtract.
+
