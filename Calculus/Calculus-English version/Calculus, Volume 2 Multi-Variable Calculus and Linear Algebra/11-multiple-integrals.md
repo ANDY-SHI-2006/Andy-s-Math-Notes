@@ -488,3 +488,29 @@ $$
 $$
 so the line integrals along $C_1$ and $C_2$ are equal. Path independence implies $f$ is a gradient (as in Theorem 10.4).
 
+
+### 11.23 Green's Theorem for Multiply Connected Regions
+
+**Theorem 11.12.** Let $C_1,\dots,C_n$ be $n$ piecewise smooth Jordan curves such that:
+- (a) No two curves intersect.
+- (b) $C_2,\dots,C_n$ all lie in the interior of $C_1$.
+- (c) For $i\neq j$ with $i,j>1$, $C_i$ lies in the exterior of $C_j$.
+
+Let $R$ be the region consisting of the union of $C_1$ with that portion of the interior of $C_1$ not inside any of $C_2,\dots,C_n$. If $P,Q$ are continuously differentiable on an open set containing $R$, then
+$$
+\iint_R \Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)dx\,dy
+= \oint_{C_1}(P\,dx+Q\,dy) - \sum_{k=2}^{n}\oint_{C_k}(P\,dx+Q\,dy).\tag{11.24}
+$$
+
+*Proof sketch.* Introduce crosscuts to decompose $R$ into simply connected regions; apply Green's theorem to each and add. The line integrals along crosscuts cancel (traversed once in each direction).
+
+**Theorem 11.13 (Invariance under deformation).** Let $P,Q$ be continuously differentiable on an open connected set $S$ with $\partial P/\partial y=\partial Q/\partial x$ on $S$. Let $C_1,C_2$ be piecewise smooth Jordan curves in $S$ with $C_2$ in the interior of $C_1$, and assume the points inside $C_1$ but outside $C_2$ lie in $S$. Then
+$$
+\oint_{C_1}P\,dx+Q\,dy = \oint_{C_2}P\,dx+Q\,dy,\tag{11.25}
+$$
+both traversed in the same direction.
+
+*Proof.* Apply (11.24) with $n=2$. Since $\partial Q/\partial x-\partial P/\partial y=0$ on $S$, the double integral vanishes, giving (11.25).
+
+*Interpretation:* If $\partial P/\partial y=\partial Q/\partial x$ in $S$, the value of a line integral around a simple closed curve in $S$ is unchanged when the path is deformed to another such curve, provided all intermediate curves remain in $S$. The set $S$ need not be simply connected.
+
