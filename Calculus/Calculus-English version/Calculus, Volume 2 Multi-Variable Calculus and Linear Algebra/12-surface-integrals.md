@@ -177,3 +177,42 @@ $$
 $$
 *Proof sketch.* Substitute (12.18) into the definition; the absolute value of the Jacobian factor is exactly what is needed for the change-of-variables formula in the double integral, so the two surface-integral expressions coincide.
 
+
+### 12.9 Other Notations for Surface Integrals
+
+At each regular point there are two unit normals:
+$$
+ \mathbf n_1=\frac{\mathbf N}{\|\mathbf N\|},\qquad \mathbf n_2=-\mathbf n_1.
+$$
+For a vector field $\mathbf F=P\mathbf i+Q\mathbf j+R\mathbf k$,
+$$
+ \iint_S \mathbf F\cdot\mathbf n\,dS
+ =\pm\iint_T \mathbf F[\boldsymbol r(u,v)]\cdot\Bigl(\frac{\partial\boldsymbol r}{\partial u}\times\frac{\partial\boldsymbol r}{\partial v}\Bigr)\,du\,dv,\tag{12.19}
+$$
+$+$ for $\mathbf n=\mathbf n_1$, $-$ for $\mathbf n=\mathbf n_2$.
+
+In components this becomes
+$$
+ \iint_S \mathbf F\cdot\mathbf n\,dS
+ =\iint_T\!P\,\frac{\partial(Y,Z)}{\partial(u,v)}\,du\,dv
+ +\iint_T\!Q\,\frac{\partial(Z,X)}{\partial(u,v)}\,du\,dv
+ +\iint_T\!R\,\frac{\partial(X,Y)}{\partial(u,v)}\,du\,dv.\tag{12.20}
+$$
+
+**Differential-form notation.** The right-hand side is abbreviated as
+$$
+ \iint_S P\,dy\wedge dz + Q\,dz\wedge dx + R\,dx\wedge dy,\tag{12.22}
+$$
+with
+$$
+ \iint_S P\,dy\wedge dz = \iint_T P[\boldsymbol r(u,v)]\,\frac{\partial(Y,Z)}{\partial(u,v)}\,du\,dv.\tag{12.23}
+$$
+Order matters: $dy\wedge dz=-dz\wedge dy$.
+
+**Direction-cosine form.** If $\mathbf n=(\cos\alpha,\cos\beta,\cos\gamma)$, then
+$$
+ \iint_S \mathbf F\cdot\mathbf n\,dS
+ =\iint_S (P\cos\alpha+Q\cos\beta+R\cos\gamma)\,dS.\tag{12.25--12.26}
+$$
+The sign depends on the choice of normal ($\mathbf n_1$ or $\mathbf n_2$).
+
