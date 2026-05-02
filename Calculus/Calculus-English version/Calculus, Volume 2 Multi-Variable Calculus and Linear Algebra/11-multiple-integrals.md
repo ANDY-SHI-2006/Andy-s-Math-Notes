@@ -653,3 +653,31 @@ $$
 \iint_S f = \iint_R \tilde f = \iint_{R^*}\tilde f[X,Y]\,|J|\,du\,dv = \iint_T f[X,Y]\,|J|\,du\,dv.
 $$
 
+
+### 11.31 Extensions to Higher Dimensions
+
+An **$n$-fold integral** over a set $S$ in $n$-space:
+$$
+\idotsint_S f(x_1,\dots,x_n)\,dx_1\cdots dx_n\quad\text{or simply}\quad\int_S f(x)\,dx.
+$$
+For $n=3$: $\displaystyle\iiint_S f(x,y,z)\,dx\,dy\,dz$.
+
+**Definitions (analogous to 2D).**
+- $n$-dimensional interval $[\boldsymbol a,\boldsymbol b]$: Cartesian product of $[a_k,b_k]$; volume $=\prod_{k=1}^n(b_k-a_k)$.
+- Step functions, partitions, upper/lower integrals, integrability: same procedure as in 2D.
+- $f$ continuous on $[\boldsymbol a,\boldsymbol b]$ $\Rightarrow$ integrable. Also integrable if discontinuities have $n$-dimensional content 0.
+
+**Iteration formulas.**
+- **Type 1 solid** in 3-space (projection $Q$ in $xy$-plane):
+  $$
+  S=\{(x,y,z)\mid(x,y)\in Q,\;\varphi_1(x,y)\le z\le\varphi_2(x,y)\}.\tag{11.45}
+  $$
+  $$
+  \iiint_S f\,dx\,dy\,dz = \iint_Q\left[\int_{\varphi_1(x,y)}^{\varphi_2(x,y)} f\,dz\right]dx\,dy.\tag{11.46}
+  $$
+- Analogous types with projections in $yz$- or $xz$-planes.
+- For $n>3$: if $Q\times R$ is a product of a $k$-dim and an $m$-dim interval,
+  $$
+  \idotsint_{Q\times R} f = \idotsint_Q\left[\idotsint_R f\,dx_1\cdots dx_m\right]dx_{m+1}\cdots dx_{m+k}.
+  $$
+
