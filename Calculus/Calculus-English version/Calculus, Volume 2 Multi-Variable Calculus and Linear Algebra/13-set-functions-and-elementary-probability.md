@@ -76,3 +76,31 @@ $$
 $$
 Here $P(a_i)$ is shorthand for $P(\{a_i\})$.
 
+
+### 13.6 Special Terminology Peculiar to Probability Theory
+
+**Basic terms.**
+- **Outcome (sample):** an element $x$ of the sample space $S$.
+- **Event:** a subset $A\in\mathscr B$ of $S$.
+- **$A$ occurs:** the outcome $x$ belongs to $A$.
+- **Impossible event:** $\varnothing$ (never occurs).
+- **Certain event:** $S$ (always occurs).
+
+**Likelihood.**
+- *Equally likely:* $P(A)=P(B)$.
+- *More likely:* $P(A)>P(B)$.
+- *At least as likely:* $P(A)\ge P(B)$.
+
+**Glossary (Table 13.1).**
+
+| Statement | Set-theoretic meaning |
+|---|---|
+| At least one of $A$ or $B$ occurs | $x\in A\cup B$ |
+| Both $A$ and $B$ occur | $x\in A\cap B$ |
+| Neither $A$ nor $B$ occurs | $x\in A'\cap B'$ |
+| $A$ occurs and $B$ does not | $x\in A\cap B'$ |
+| Exactly one of $A$ or $B$ occurs | $x\in(A\cap B')\cup(A'\cap B)$ |
+| Not more than one occurs | $x\in(A\cap B)'$ |
+| $A$ implies $B$ | $A\subseteq B$ |
+| $A$ and $B$ are mutually exclusive | $A\cap B=\varnothing$ |
+
