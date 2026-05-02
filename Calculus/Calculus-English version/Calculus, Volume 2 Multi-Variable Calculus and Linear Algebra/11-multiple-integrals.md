@@ -397,3 +397,30 @@ $$
 =\frac{\pi}{8}.
 $$
 
+
+### 11.17 Two Theorems of Pappus
+
+**First theorem (Volume of a solid of revolution).** Let $Q$ be a plane region lying between the graphs of two continuous functions $f$ and $g$ over $[a,b]$ ($0\le g\le f$). Let $S$ be the solid obtained by rotating $Q$ about the $x$-axis. Then
+$$
+v(S) = 2\pi\bar{y}\,a(Q),\tag{11.15}
+$$
+where $\bar{y}$ is the $y$-coordinate of the centroid of $Q$ and $a(Q)$ is its area.
+
+*Proof sketch.* $v(S)=\pi\int_a^{b}[f^{2}(x)-g^{2}(x)]\,dx$ and $\bar{y}\,a(Q)=\int_a^{b}\frac{1}{2}[f^{2}(x)-g^{2}(x)]\,dx$; comparing gives (11.15).
+
+**Example 1. Volume of a torus.** A disk of radius $R$ with center at distance $b>R$ from the axis:
+$$
+v(S)=2\pi b\,(\pi R^{2})=2\pi^{2}R^{2}b.
+$$
+
+**Example 2. Centroid of a semicircular disk.** $Q=\{(x,y):x^{2}+y^{2}\le R^{2},\;y\ge0\}$. Rotating about the $x$-axis gives a sphere of volume $\frac{4}{3}\pi R^{3}$. Hence
+$$
+\tfrac{4}{3}\pi R^{3}=2\pi\bar{y}\,(\tfrac{1}{2}\pi R^{2})\quad\Longrightarrow\quad\bar{y}=\frac{4R}{3\pi}.
+$$
+
+**Second theorem (Centroid of a union).** Let $A$ and $B$ be thin plates (disjoint or intersecting in a set of content zero) with masses $m(A),m(B)$ and centroids $C_A,C_B$. Then the centroid of $A\cup B$ is
+$$
+C = \frac{m(A)C_A+m(B)C_B}{m(A)+m(B)}.\tag{11.16}
+$$
+This is a **convex combination** of $C_A$ and $C_B$; hence $C$ lies on the line segment joining $C_A$ and $C_B$.
+
