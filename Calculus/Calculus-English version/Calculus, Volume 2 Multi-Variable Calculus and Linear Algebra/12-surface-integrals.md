@@ -64,3 +64,22 @@ $$
 $$
 Singular when $\cos v=0$ (the North Pole).
 
+
+### 12.3 The Fundamental Vector Product as a Normal to the Surface
+
+Let $C^*$ be a smooth curve in $T$, described by $\boldsymbol\alpha(t)=U(t)\mathbf i+V(t)\mathbf j$, and let $C=\boldsymbol r(C^*)$ be its image on the surface. The composite function
+$$
+\boldsymbol\rho(t)=\boldsymbol r[\boldsymbol\alpha(t)]
+$$
+has derivative (by the chain rule)
+$$
+\boldsymbol\rho'(t)=\frac{\partial\boldsymbol r}{\partial u}\,U'(t)+\frac{\partial\boldsymbol r}{\partial v}\,V'(t).\tag{12.6}
+$$
+Since both $\partial\boldsymbol r/\partial u$ and $\partial\boldsymbol r/\partial v$ are perpendicular to their cross product, so is $\boldsymbol\rho'(t)$. Hence at each point of $C$ the vector
+$$
+\frac{\partial\boldsymbol r}{\partial u}\times\frac{\partial\boldsymbol r}{\partial v}
+$$
+is **normal to the surface** $\boldsymbol r(T)$.
+
+At a regular point $P$ this vector is nonzero; the plane through $P$ with this normal is the **tangent plane** to the surface at $P$.
+
