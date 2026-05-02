@@ -125,3 +125,32 @@ $$
 $$
 where $\bar x$ is the $x$-coordinate of the centroid of $C$.
 
+
+### 12.7 Surface Integrals
+
+**Definition.** For a scalar field $f$ on $S=\boldsymbol r(T)$,
+$$
+ \iint_{\boldsymbol r(T)} f\,dS
+ = \iint_T f[\boldsymbol r(u,v)]\,\Bigl\|\frac{\partial\boldsymbol r}{\partial u}\times\frac{\partial\boldsymbol r}{\partial v}\Bigr\|\,du\,dv.\tag{12.14}
+$$
+
+**Applications.**
+- **Surface area:** $f=1$ gives $a(S)=\iint_S dS$.
+- **Mass and center of mass:** $m=\iint_S\rho\,dS$, and
+  $$
+  \bar x m=\iint_S x\rho\,dS,\quad
+  \bar y m=\iint_S y\rho\,dS,\quad
+  \bar z m=\iint_S z\rho\,dS.
+  $$
+- **Moment of inertia:** $I_L=\iint_S\delta^2\rho\,dS$, where $\delta$ is the distance to axis $L$.
+- *Example:* Uniform hemisphere of radius $a$ has $\bar z=a/2$ (by symmetry $\bar x=\bar y=0$).
+
+**Fluid flow.** Let $\mathbf F=\rho\mathbf V$ be the **flux density**. The unit normal
+$$
+ \mathbf n=\frac{\partial\boldsymbol r/\partial u\times\partial\boldsymbol r/\partial v}{\|\partial\boldsymbol r/\partial u\times\partial\boldsymbol r/\partial v\|}\tag{12.15}
+$$
+gives the mass of fluid crossing $S$ per unit time in direction $\mathbf n$:
+$$
+ \iint_S \mathbf F\cdot\mathbf n\,dS.
+$$
+
