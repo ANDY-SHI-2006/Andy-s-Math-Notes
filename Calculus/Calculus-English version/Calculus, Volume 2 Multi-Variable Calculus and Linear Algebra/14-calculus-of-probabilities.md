@@ -323,3 +323,22 @@ $$
  f_{Y}(t)=\frac{f_{X}(\sqrt{t})+f_{X}(-\sqrt{t})}{2\sqrt{t}}\qquad(t>0).
 $$
 
+
+### 14.19 Distributions of Two-Dimensional Random Variables
+
+For random variables $X,Y$ on a common sample space, the pair $(X,Y)$ is a **two-dimensional random variable**.
+
+**Definition (Joint distribution function).**
+$$
+ F(a,b)=P(X\le a,\;Y\le b),\qquad\forall a,b\in\mathbb R.
+$$
+
+**Theorem 14.10.** If $a<b$ and $c<d$,
+$$
+ P(a<X\le b,\;c<Y\le d)=F(b,d)-F(a,d)-F(b,c)+F(a,c).\tag{14.28}
+$$
+
+*Proof sketch.* Decompose the rectangle $(-\infty,b]\times(-\infty,d]$ into four disjoint pieces (see Figure 14.13); adding their probabilities yields the formula. ∎
+
+**Mass analogy.** Total mass $1$ is spread over the plane.  The discrete case concentrates mass at a finite or countable set of points; the continuous case smears it with a density.
+
