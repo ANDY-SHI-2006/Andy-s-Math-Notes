@@ -283,3 +283,46 @@ $$
 $$
 by an appropriate choice of the nodes $x_{0},\dots,x_{n}$.  This problem was first solved by Chebyshev and leads to the **Chebyshev polynomials**.
 
+
+### 15.15 Chebyshev Polynomials
+
+**Definition.** The **Chebyshev polynomial of the first kind** $T_{n}(x)$ is defined by
+$$
+ T_{n}(x)=\sum_{k=0}^{\lfloor n/2\rfloor}\binom{n}{2k}x^{n-2k}(x^{2}-1)^{k}.
+$$
+It arises from the real part of $(\cos\theta+i\sin\theta)^{n}$ after setting $x=\cos\theta$.
+
+**Theorem 15.7.** For $-1\le x\le1$,
+$$
+ T_{n}(x)=\cos(n\arccos x).
+$$
+
+**Theorem 15.8 (Recursion).** $T_{0}(x)=1$, $T_{1}(x)=x$, and
+$$
+ T_{n+1}(x)=2x\,T_{n}(x)-T_{n-1}(x)\qquad(n\ge1).
+$$
+*Proof sketch.*  Set $x=\cos\theta$ in $\cos(n+1)\theta+\cos(n-1)\theta=2\cos\theta\cos n\theta$; equality of polynomials extends it to all $x$. ∎
+
+The first few:
+$$
+ \begin{aligned}
+ T_{2}&=2x^{2}-1, & T_{3}&=4x^{3}-3x, & T_{4}&=8x^{4}-8x^{2}+1,\\
+ T_{5}&=16x^{5}-20x^{3}+5x, & T_{6}&=32x^{6}-48x^{4}+18x^{2}-1.
+ \end{aligned}
+$$
+All coefficients are integers; the leading coefficient of $T_{n}$ is $2^{n-1}$.
+
+**Theorem 15.9 (Zeros).** $T_{n}$ has $n$ simple zeros in $(-1,1)$:
+$$
+ x_{k}=\cos\frac{(2k+1)\pi}{2n},\qquad k=0,\dots,n-1.
+$$
+Hence
+$$
+ T_{n}(x)=2^{n-1}\prod_{k=0}^{n-1}\Bigl(x-\cos\tfrac{(2k+1)\pi}{2n}\Bigr).
+$$
+
+**Theorem 15.10 (Extrema).** On $[-1,1]$ the extreme values of $T_{n}$ are $\pm1$, taken alternately at the $n+1$ points
+$$
+ t_{k}=\cos\frac{k\pi}{n},\qquad k=0,\dots,n.\tag{15.30}
+$$
+
