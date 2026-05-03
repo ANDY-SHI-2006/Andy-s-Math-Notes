@@ -296,3 +296,30 @@ where $F_{1}$ is discrete, $F_{2}$ is continuous, $0<c_{1},c_{2}<1$, and $c_{1}+
 
 A unified theoretical treatment of all three cases is provided by the **Riemann–Stieltjes integral**; for the most general distributions one needs the **Lebesgue–Stieltjes integral**.
 
+
+### 14.17 Distributions of Functions of Random Variables
+
+Let $Y=\varphi(X)$.  If $\varphi$ is continuous and strictly increasing on $\mathbb R$ with inverse $\psi$, then
+$$
+ F_{Y}(t)=P\bigl(\varphi(X)\le t\bigr)=P\bigl(X\le\psi(t)\bigr)=F_{X}\bigl[\psi(t)\bigr].\tag{14.27}
+$$
+Differentiating gives the density relation
+$$
+ f_{Y}(t)=f_{X}\bigl[\psi(t)\bigr]\,\psi'(t).
+$$
+
+**Example 1 (Linear change).** $Y=aX+b$ ($a>0$):
+$$
+ F_{Y}(t)=F_{X}\!\left(\frac{t-b}{a}\right),\qquad
+ f_{Y}(t)=\frac1a\,f_{X}\!\left(\frac{t-b}{a}\right).
+$$
+
+**Example 2 ($Y=X^{2}$).** For $t<0$, $F_{Y}(t)=0$.  For $t>0$,
+$$
+ F_{Y}(t)=P(-\sqrt{t}\le X\le\sqrt{t})=F_{X}(\sqrt{t})-F_{X}(-\sqrt{t})
+$$
+(continuous case), and
+$$
+ f_{Y}(t)=\frac{f_{X}(\sqrt{t})+f_{X}(-\sqrt{t})}{2\sqrt{t}}\qquad(t>0).
+$$
+
