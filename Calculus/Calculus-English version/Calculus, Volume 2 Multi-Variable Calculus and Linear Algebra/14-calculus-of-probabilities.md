@@ -136,3 +136,69 @@ $$
  F_X(t)=e^{-\lambda}\sum_{0\le k\le t}\frac{\lambda^{k}}{k!}.
 $$
 
+
+### 14.9 Continuous Distributions — Density Functions
+
+If $P(X=t)=0$ for every real $t$, then $F$ is continuous everywhere; $F$ is called a **continuous distribution** and $X$ a **continuous random variable**.
+
+If $F'$ exists and is continuous on $[a,t]$,
+$$
+ F(t)-F(a)=\int_a^t f(u)\,du\qquad(f=F').\tag{14.13}
+$$
+
+**Definition.** A nonnegative integrable function $f$ is a **probability density function (pdf)** of $X$ (or of $F$) provided
+$$
+ F(t)-F(a)=\int_a^t f(u)\,du\quad\text{for all }[a,t].\tag{14.14}
+$$
+Consequences:
+- $F(t)=\displaystyle\int_{-\infty}^t f(u)\,du$, $\;\;\forall t$.\tag{14.15}
+- $\displaystyle\int_{-\infty}^{+\infty}f(u)\,du=1$.\tag{14.16}
+- For any interval,
+  $$
+  P(a\le X\le b)=P(a<X<b)=P(a<X\le b)=P(a\le X<b)=\int_a^b f(u)\,du.
+  $$
+
+**Note.** A distribution may have many densities (finite-point changes do not alter the integral). If $f$ is continuous at $t$, then $f(t)=F'(t)$ and the density is uniquely determined there.
+
+---
+
+### 14.10 Uniform Distribution over an Interval
+
+$X$ has a **uniform distribution** on $[a,b]$ iff
+$$
+ F(t)=\begin{cases}
+ 0 & t\le a,\\[4pt]
+ \dfrac{t-a}{\,b-a\,} & a<t<b,\\[8pt]
+ 1 & t\ge b.
+ \end{cases}
+$$
+Its density is
+$$
+ f(t)=\begin{cases}
+ \dfrac{1}{b-a} & a<t<b,\\[6pt]
+ 0 & \text{otherwise}.
+ \end{cases}
+$$
+
+**Theorem 14.7.** Let $X$ take values only in $[a,b]$. Then $F$ is uniform on $[a,b]$ **iff**
+$$
+ P(X\in I)=P(X\in J)\tag{14.17}
+$$
+for every pair of subintervals $I,J\subseteq[a,b]$ of the same length; in that case $P(X\in I)=h/(b-a)$ where $h=|I|$.
+
+*Proof sketch.* If $F$ is uniform, $P(c\le X\le c+h)=F(c+h)-F(c)=h/(b-a)$.  
+Conversely, set $g(u)=P(a<X\le a+u)$ for $0<u\le b-a$.  Property (14.17) gives $g(u+v)=g(u)+g(v)$, so by Theorem 14.8 below, $g(u)=u/(b-a)$; hence $F(t)-F(a)=(t-a)/(b-a)$ and $F$ is uniform. ∎
+
+**Theorem 14.8 (Solution of Cauchy’s functional equation).** Let $g$ be real-valued on $(0,c]$, nonnegative, and satisfy $g(u+v)=g(u)+g(v)$ whenever $u,v,u+v\in(0,c]$. Then
+$$
+ g(u)=\frac{u}{c}\,g(c)\qquad(0<u\le c).
+$$
+
+*Proof sketch.* Scale to $G(x)=g(cx)$ on $(0,1]$. Then $G(x+y)=G(x)+G(y)$. By induction $G(x)=nG(x/n)$ and $G(rx)=rG(x)$ for positive rationals $r$. Monotonicity (from nonnegativity) and rational approximation give $G(x)=xG(1)$ for all $x\in(0,1]$. Rescaling yields the formula. ∎
+
+**Example.** A segment $[0,1]$ is broken at a uniformly chosen point; $X$ is the ratio of the left piece to the right piece. With $Y(\omega)=\omega$ uniform on $[0,1]$ and $X(\omega)=\omega/(1-\omega)$,
+$$
+ F_X(t)=P\!\left(Y\le\frac{t}{1+t}\right)=\frac{t}{1+t}\qquad(t\ge0).
+$$
+(For $t<0$, $F_X(t)=0$.)  Particular values: $P(X\le\tfrac12)=\tfrac13$, $P(X\ge2)=\tfrac13$.
+
