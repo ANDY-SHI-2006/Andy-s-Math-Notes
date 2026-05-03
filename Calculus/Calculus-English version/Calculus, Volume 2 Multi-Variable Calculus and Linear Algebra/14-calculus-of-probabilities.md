@@ -281,3 +281,18 @@ $$
 $$
 The symbol $\sim$ means the ratio of the two sides $\to1$ as $n\to\infty$; this is a special case of the **central limit theorem**.  In practice the sum is replaced by the integral of the normal density over $[a-\tfrac12,\,b+\tfrac12]$.
 
+
+### 14.15 Remarks on More General Distributions
+
+A distribution function $F$ is called **mixed** if it is a convex combination of a discrete and a continuous distribution:
+$$
+ F(t)=c_{1}F_{1}(t)+c_{2}F_{2}(t),\tag{14.26}
+$$
+where $F_{1}$ is discrete, $F_{2}$ is continuous, $0<c_{1},c_{2}<1$, and $c_{1}+c_{2}=1$.
+
+- Discrete case $\to$ summation of the pmf.
+- Continuous case $\to$ integration of the pdf.
+- Mixed case $\to$ use linearity (14.26).
+
+A unified theoretical treatment of all three cases is provided by the **Riemann–Stieltjes integral**; for the most general distributions one needs the **Lebesgue–Stieltjes integral**.
+
