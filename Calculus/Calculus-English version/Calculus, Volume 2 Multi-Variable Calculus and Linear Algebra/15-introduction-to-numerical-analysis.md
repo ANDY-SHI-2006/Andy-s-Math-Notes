@@ -414,3 +414,36 @@ $$
  \int_{a}^{b}f(x)\,dx=\frac{b-a}{6n}\Bigl(f(a)+4\sum_{k=1}^{n}f_{2k-1}+2\sum_{k=1}^{n-1}f_{2k}+f(b)\Bigr)-\frac{(b-a)^{5}}{2880n^{4}}\,f^{(4)}(\bar c).
 $$
 
+
+### 15.22 The Euler Summation Formula
+
+**Theorem 15.16.** If $f'$ is continuous on $[0,n]$,
+$$
+ \sum_{k=0}^{n}f(k)=\int_{0}^{n}f(x)\,dx+\frac{f(0)+f(n)}{2}+\int_{0}^{n}\!\Bigl(x-[x]-\tfrac12\Bigr)f'(x)\,dx.\tag{15.46}
+$$
+
+*Proof sketch.*  Write $\int_{0}^{n}(x-\tfrac12)f'\,dx$ by parts and subtract $\int_{0}^{n}[x]f'\,dx$, which telescopes to $-\sum f(k)+f(0)+nf(n)$. ∎
+
+Define the periodic sawtooth $\varphi_{1}(x)=x-[x]-\tfrac12$ (zero at integers) and its integral $\varphi_{2}(x)=\int_{0}^{x}\varphi_{1}$.  One finds $\varphi_{2}$ is also period-$1$, with $-\tfrac18\le\varphi_{2}(x)\le0$ and $\varphi_{2}(x)=x(x-1)/2$ on $[0,1]$.
+
+**Theorem 15.17.** If $f''$ is continuous on $[0,n]$,
+$$
+ \sum_{k=0}^{n}f(k)=\int_{0}^{n}f(x)\,dx+\frac{f(0)+f(n)}{2}-\int_{0}^{n}\!\varphi_{2}(x)\,f''(x)\,dx.\tag{15.48}
+$$
+
+**Application: Stirling’s formula.** Taking $f(x)=\log x$ on $[1,n]$ gives
+$$
+ \log n!=\Bigl(n+\tfrac12\Bigr)\log n-n+C+E(n),\qquad0<E(n)<\tfrac1{8n},\tag{15.49}
+$$
+where $C=1+\int_{1}^{\infty}t^{-2}\varphi_{2}(t)\,dt$.
+
+**Theorem 15.19 (Stirling).** For every positive integer $n$,
+$$
+ \sqrt{2\pi}\,n^{n+1/2}e^{-n}<n!<\sqrt{2\pi}\,n^{n+1/2}e^{-n}\Bigl(1+\frac1{4n}\Bigr).
+$$
+*Proof sketch.*  Exponentiate (15.49) and use Wallis’ inequality
+$$
+ \pi n\le\Bigl(\frac{2^{2n}(n!)^{2}}{(2n)!}\Bigr)^{2}\le\frac{\pi(2n+1)}{2},\tag{15.52}
+$$
+which follows from the Wallis integrals $I_{n}=\int_{0}^{\pi/2}\sin^{n}t\,dt$ and the recursion $I_{n+2}=\frac{n+1}{n+2}I_{n}$.  One finds $e^{C}=\sqrt{2\pi}$. ∎
+
