@@ -523,3 +523,37 @@ For instance $k=3$ gives $\le\tfrac19\approx0.111$; for a normal distribution th
 
 **Example (Testing a coin for fairness).** $X=\text{heads in }10{,}000$ tosses of a fair coin; $X\sim\operatorname{Bin}(10{,}000,\tfrac12)$, $m=5{,}000$, $\sigma=50$.  Since $P(|X-m|>3\sigma)\approx0.003$, we declare the coin *unfair* if the observed number of heads lies outside $[4{,}850,\;5{,}150]$.
 
+
+### 14.29 Laws of Large Numbers
+
+**Law of large numbers for Bernoulli trials.** Let $X$ count successes in $n$ independent trials with $P(\text{success})=p$; then $E(X)=np$, $\operatorname{Var}(X)=npq$.  Chebyshev gives
+$$
+ P(|X-np|>c)\le\frac{npq}{c^{2}}.\tag{14.46}
+$$
+Dividing by $n$ and setting $c=\epsilon n$ yields
+$$
+ P\!\left(\left|\frac{X}{n}-p\right|>\epsilon\right)\le\frac{pq}{n\epsilon^{2}},
+$$
+whence
+$$
+ \lim_{n\to\infty}P\!\left(\left|\frac{X}{n}-p\right|>\epsilon\right)=0\qquad\forall\epsilon>0.\tag{14.48}
+$$
+
+**Theorem 14.12 (Weak law of large numbers).** Let $X_{1},\dots,X_{n}$ be independent with common mean $m$ and variance $\sigma^{2}$, and let
+$$
+ \bar{X}=\frac1n\sum_{k=1}^{n}X_{k}.
+$$
+Then
+$$
+ \lim_{n\to\infty}P\bigl(|\bar{X}-m|>\epsilon\bigr)=0\qquad\forall\epsilon>0.\tag{14.49}
+$$
+Equivalently, $\lim_{n\to\infty}P(|\bar{X}-m|\le\epsilon)=1$.
+
+*Proof sketch.*  $E(\bar{X})=m$, $\operatorname{Var}(\bar{X})=\sigma^{2}/n$; apply Chebyshev to $\bar{X}$. ∎
+
+**Strong law of large numbers.** Under the same hypotheses,
+$$
+ P\!\left(\lim_{n\to\infty}|\bar{X}-m|=0\right)=1.\tag{14.51}
+$$
+The strong law interchanges “limit” and “probability”; it implies the weak law but not conversely.
+
