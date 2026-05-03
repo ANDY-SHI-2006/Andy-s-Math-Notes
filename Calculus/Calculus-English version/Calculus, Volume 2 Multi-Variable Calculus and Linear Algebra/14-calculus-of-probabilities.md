@@ -443,3 +443,39 @@ $$
  f_{V}=f_{X}+f_{Y}-f_{X}F_{Y}-F_{X}f_{Y}.
 $$
 
+
+### 14.25 Expectation and Variance
+
+**Definitions.** Let $X$ be a one-dimensional random variable.
+
+| | Continuous (density $f_X$) | Discrete (mass points $x_k$, $p_k=P(X=x_k)$) |
+|---|---|---|
+| **Expectation** | $E(X)=\displaystyle\int_{-\infty}^{+\infty}t\,f_X(t)\,dt$ | $E(X)=\displaystyle\sum_{k}x_kp_k$ |
+| **Variance** | $\operatorname{Var}(X)=\displaystyle\int_{-\infty}^{+\infty}[t-E(X)]^{2}f_X(t)\,dt$ | $\operatorname{Var}(X)=\displaystyle\sum_{k}[x_k-E(X)]^{2}p_k$ |
+
+Existence requires absolute convergence.  The standard deviation is $\sigma=\sqrt{\operatorname{Var}(X)}$.
+
+**Example 1 (Uniform on $[a,b]$).**
+$$
+ E(X)=\frac{a+b}{2},\qquad \operatorname{Var}(X)=\frac{(b-a)^{2}}{12}.
+$$
+
+**Example 2 (Binomial, parameters $n,p$).**
+$$
+ E(X)=np,\qquad \operatorname{Var}(X)=npq\quad(q=1-p).
+$$
+*Derivation of $E(X)$.* From $(x+y)^{n}=\sum_{k}\binom{n}{k}x^{k}y^{n-k}$, differentiate w.r.t. $x$, multiply by $x$, and set $x=p$, $y=q$.
+
+**Example 3 (Normal, mean $m$, variance $\sigma^{2}$).**
+$$
+ E(X)=m,\qquad \operatorname{Var}(X)=\sigma^{2}.
+$$
+
+**Example 4 (Roulette — bet on a colour).** $P(X=-1)=\tfrac{19}{37}$, $P(X=+1)=\tfrac{18}{37}$; hence $E(X)=-\tfrac1{37}$ (unfavourable).
+
+**Example 5 (Coin-tossing game).** Toss until the first outcome reappears; payoff = number of opposite outcomes before stopping.  One finds $P(X=n)=p^{n}q^{2}+q^{n}p^{2}$ and, using $\sum nx^{n}=x/(1-x)^{2}$,
+$$
+ E(X)=q^{2}\frac{p}{(1-p)^{2}}+p^{2}\frac{q}{(1-q)^{2}}=p+q=1\qquad(0<p<1).
+$$
+Thus the game is fair at $\$1$ and $E(X)$ is independent of $p$ (though discontinuous at $p=0,1$).
+
