@@ -188,3 +188,32 @@ $$
 $$
 For sines/cosines ($M\le1$) with one‑degree tables ($h=\pi/180$), $h^{2}/8<0.00004$; hence linear interpolation is adequate in four‑place tables.
 
+
+### 15.10 Newton’s Interpolation Formula
+
+Lagrange’s formula for the interpolating polynomial $P_{n}$ of degree $\le n$ is
+$$
+ P_{n}(x)=\sum_{k=0}^{n}L_{k}(x)f(x_{k}),\qquad
+ L_{k}(x)=\prod_{\substack{j=0\\j\neq k}}^{n}\frac{x-x_{j}}{x_{k}-x_{j}}.\tag{15.19}
+$$
+Adding a new point $x_{n+1}$ with Lagrange requires recomputing *all* coefficients as degree-$n+1$ polynomials.
+
+**Theorem 15.4.** Given $x_{0},\dots,x_{n+1}$ distinct, let $P_{n}$ agree with $f$ at $x_{0},\dots,x_{n}$ and $P_{n+1}$ agree with $f$ at $x_{0},\dots,x_{n+1}$.  Then there is a unique constant $c_{n+1}$ such that
+$$
+ P_{n+1}(x)=P_{n}(x)+c_{n+1}(x-x_{0})\cdots(x-x_{n}).\tag{15.20}
+$$
+*Proof sketch.*  $Q(x)=P_{n}(x)+c(x-x_{0})\cdots(x-x_{n})$ already agrees with $f$ at $x_{0},\dots,x_{n}$; choose $c$ so that $Q(x_{n+1})=f(x_{n+1})$. ∎
+
+**Theorem 15.5 (Newton’s interpolation formula).** For distinct $x_{0},\dots,x_{n}$,
+$$
+ P_{n}(x)=f(x_{0})+\sum_{k=1}^{n}c_{k}(x-x_{0})\cdots(x-x_{k-1}).\tag{15.21}
+$$
+*Proof by induction using (15.20).*  The key advantage: $P_{n+1}$ is obtained from $P_{n}$ by adding one new term.
+
+**Theorem 15.6 (Coefficients).** The leading coefficient $c_{n}$ is
+$$
+ c_{n}=\sum_{k=0}^{n}\frac{f(x_{k})}{A_{k}(x_{k})},\qquad
+ A_{k}(x_{k})=\prod_{\substack{j=0\\j\neq k}}^{n}(x_{k}-x_{j}).\tag{15.22}
+$$
+*Proof.*  In Lagrange’s formula the coefficient of $x^{n}$ is $\sum f(x_{k})/A_{k}(x_{k})$; in Newton’s formula it is $c_{n}$. ∎
+
