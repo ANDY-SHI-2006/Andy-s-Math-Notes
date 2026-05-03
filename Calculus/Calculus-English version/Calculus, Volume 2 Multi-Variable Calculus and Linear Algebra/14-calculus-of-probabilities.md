@@ -342,3 +342,56 @@ $$
 
 **Mass analogy.** Total mass $1$ is spread over the plane.  The discrete case concentrates mass at a finite or countable set of points; the continuous case smears it with a density.
 
+
+### 14.20 Two-Dimensional Discrete Distributions
+
+**Joint pmf.** $p(x,y)=P(X=x,Y=y)$.  The set $T=\{(x,y)\mid p(x,y)>0\}$ is finite or countable.  $(X,Y)$ is *discrete* iff
+$$
+ \sum_{(x,y)\in T}p(x,y)=1.\tag{14.29}
+$$
+Writing $p_{ij}=P(X=x_i,Y=y_j)$,
+$$
+ P\bigl[(X,Y)\in E\bigr]=\sum_{\substack{x_i,y_j\\(x_i,y_j)\in E}}p_{ij},\qquad
+ F(x,y)=\sum_{x_i\le x}\sum_{y_j\le y}p_{ij}.\tag{14.30}
+$$
+
+**Marginal distributions.**
+$$
+ P(X=x_i)=\sum_{j=1}^{\infty}p_{ij},\qquad
+ P(Y=y_j)=\sum_{i=1}^{\infty}p_{ij}.\tag{14.31–14.32}
+$$
+
+---
+
+### 14.21 Two-Dimensional Continuous Distributions — Density Functions
+
+**Joint pdf.** A nonnegative integrable $f$ is a *joint density* of $(X,Y)$ if
+$$
+ P\bigl[(X,Y)\in Q\bigr]=\iint_{Q}f\qquad\text{for suitable regions }Q.\tag{14.33}
+$$
+For a rectangle $R=[a,b]\times[c,d]$,
+$$
+ P(a<X\le b,\;c<Y\le d)=\iint_{R}f(x,y)\,dx\,dy
+ =\int_{c}^{d}\!\int_{a}^{b}f\,dx\,dy.\tag{14.34}
+$$
+
+**Distribution function and normalization.**
+$$
+ F(b,d)=\int_{-\infty}^{d}\!\int_{-\infty}^{b}f(x,y)\,dx\,dy,\qquad
+ \int_{-\infty}^{+\infty}\!\int_{-\infty}^{+\infty}f(x,y)\,dx\,dy=1.\tag{14.35–14.36}
+$$
+At points of continuity, $f(x,y)=D_{1,2}F(x,y)=D_{2,1}F(x,y)$.
+
+**Marginal densities.**
+$$
+ f_{X}(x)=\int_{-\infty}^{+\infty}f(x,y)\,dy,\qquad
+ f_{Y}(y)=\int_{-\infty}^{+\infty}f(x,y)\,dx.
+$$
+
+**Independence.** $X$ and $Y$ are *independent* iff
+$$
+ F(x,y)=F_{X}(x)\,F_{Y}(y)\quad\forall x,y.
+$$
+
+**Example (Uniform on $[0,1]^{2}$).** $f=1$ on $R=[0,1]^{2}$, $0$ elsewhere.  Then $F(x,y)=xy$ on $R$, and $X,Y$ are independent.
+
