@@ -255,3 +255,29 @@ $$
 
 **Example 2 (Half-life).** If $g(t)$ tubes survive out of $g(0)$, the model $\frac{g(0)-g(t)}{g(0)}=1-e^{-\lambda t}$ gives $g(t)=g(0)e^{-\lambda t}$.  The half-life $t_1$ satisfies $\tfrac12=e^{-\lambda t_1}$, so $\lambda=\frac{\log2}{t_1}$.
 
+
+### 14.14 Normal Distributions
+
+$X$ is **normal** with mean $m$ and variance $\sigma^{2}$ ($\sigma>0$) if
+$$
+ f(t)=\frac{1}{\sigma\sqrt{2\pi}}\,e^{-[(t-m)/\sigma]^{2}/2},\qquad
+ F(t)=\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{t}e^{-[(u-m)/\sigma]^{2}/2}\,du.
+$$
+
+**Standard normal.** The case $m=0$, $\sigma=1$ is denoted $\Phi$:
+$$
+ \Phi(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{t}e^{-u^{2}/2}\,du.
+$$
+By the change of variable $v=(u-m)/\sigma$,
+$$
+ F(t)=\Phi\!\left(\frac{t-m}{\sigma}\right).
+$$
+
+**Normal approximation to the binomial (de Moivre–Laplace).** If $X\sim\operatorname{Bin}(n,p)$ and $q=1-p$,
+$$
+ \sum_{k=a}^{b}\binom{n}{k}p^{k}q^{n-k}
+ \sim\Phi\!\left(\frac{b-np+\tfrac12}{\sqrt{npq}}\right)
+ -\Phi\!\left(\frac{a-np-\tfrac12}{\sqrt{npq}}\right).\tag{14.25}
+$$
+The symbol $\sim$ means the ratio of the two sides $\to1$ as $n\to\infty$; this is a special case of the **central limit theorem**.  In practice the sum is replaced by the integral of the normal density over $[a-\tfrac12,\,b+\tfrac12]$.
+
