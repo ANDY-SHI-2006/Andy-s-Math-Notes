@@ -202,3 +202,21 @@ $$
 $$
 (For $t<0$, $F_X(t)=0$.)  Particular values: $P(X\le\tfrac12)=\tfrac13$, $P(X\ge2)=\tfrac13$.
 
+
+### 14.11 Cauchy’s Distribution
+
+$X$ has a **Cauchy distribution** iff
+$$
+ F(t)=\frac12+\frac1\pi\arctan t,\qquad\forall t\in\mathbb R.
+$$
+Its continuous density is
+$$
+ f(t)=\frac{1}{\pi(1+t^2)}.
+$$
+
+**Physical derivation.** A pointer pivoted at $(-1,0)$ is spun; the angle $\theta$ (uniform on $(-\tfrac12\pi,\tfrac12\pi]$) determines the line. The $y$‑intercept is $Y=\tan\theta$.  Let $a<t$, set $\alpha=\arctan a$, $\theta=\arctan t$.  Then
+$$
+ F_Y(t)-F_Y(a)=P(a<Y\le t)=P(\alpha<X\le\theta)=\int_\alpha^\theta\frac{du}{\pi}=\frac{\theta-\alpha}{\pi}.
+$$
+Letting $a\to-\infty$ ($\alpha\to-\tfrac12\pi$) gives $F_Y(t)=\dfrac{\theta+\tfrac12\pi}{\pi}=\dfrac12+\dfrac1\pi\arctan t$, confirming the Cauchy distribution.
+
