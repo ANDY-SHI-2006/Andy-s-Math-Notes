@@ -557,3 +557,27 @@ $$
 $$
 The strong law interchanges “limit” and “probability”; it implies the weak law but not conversely.
 
+
+### 14.30 The Central Limit Theorem
+
+Let $X_{1},X_{2},\dots$ have finite means $m_{k}$ and variances $\sigma_{k}^{2}$.  Set
+$$
+ S_{n}=\sum_{k=1}^{n}(X_{k}-m_{k}),\qquad
+ T_{n}=\frac{S_{n}}{\sqrt{\operatorname{Var}(S_{n})}}.\tag{14.52–14.53}
+$$
+If the $X_{k}$ are independent, $\operatorname{Var}(S_{n})=\sum_{k=1}^{n}\sigma_{k}^{2}$.
+
+**Central limit property.** The sequence $\{X_{k}\}$ satisfies the CLP if for all $a\le b$,
+$$
+ \lim_{n\to\infty}P(a\le T_{n}\le b)
+ =\frac{1}{\sqrt{2\pi}}\int_{a}^{b}e^{-u^{2}/2}\,du.\tag{14.55}
+$$
+Thus the distribution of the *standardized* sum $T_{n}$ approaches the standard normal.
+
+**Classical case (i.i.d.).** If the $X_{k}$ are independent with common mean $m$ and variance $\sigma^{2}$,
+$$
+ T_{n}=\frac{\sum_{k=1}^{n}X_{k}-nm}{\sigma\sqrt{n}}.
+$$
+
+**History.** Special case (Bernoulli trials) — de Moivre; general statement — Laplace; first complete proof (1901) — A. Lyapunov; i.i.d. generalization (1922) — J. W. Lindeberg, who introduced the **Lindeberg condition**.  In 1935 W. Feller proved this condition is *necessary and sufficient* for independent variables to satisfy the CLP.  The condition implies $\operatorname{Var}(S_{n})\to\infty$, and it is automatically met by most independent variables occurring in practice.
+
