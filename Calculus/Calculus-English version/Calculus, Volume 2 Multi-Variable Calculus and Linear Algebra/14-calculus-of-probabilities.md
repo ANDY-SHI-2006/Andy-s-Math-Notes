@@ -76,3 +76,27 @@ $$
 - **Uniform on $[0,1]$:** $F(t)=0$ ($t<0$), $F(t)=t$ ($0\le t\le1$), $F(t)=1$ ($t\ge1$).
 - **Cauchy:** $F(t)=\tfrac12+\tfrac1{\pi}\arctan t$.
 
+
+### 14.6 Discontinuities of Distribution Functions
+
+**Theorem 14.5 (One-sided limits).** For every real $a$,
+$$
+ \lim_{t\to a+}F(t)=F(a)\quad\text{(right-continuous)},\tag{14.2}
+$$
+$$
+ \lim_{t\to a-}F(t)=F(a)-P(X=a).\tag{14.3}
+$$
+Hence $F$ has a jump discontinuity at $a$ of size $P(X=a)$.
+
+*Proof sketch.* For $t>a$, $F(t)=F(a)+P(a<X\le t)$. For $t<a$, $F(t)=F(a)-P(t<X\le a)$. Set $p_n=P(a<X\le a+\frac1n)$ and $S_n=\{a+\frac1{n+1}<X\le a+\frac1n\}$. The $S_n$ are disjoint with union $\{a<X\le a+1\}$, so $\sum P(S_n)=p_1$. Since $p_n-p_{n+1}=P(S_n)$, the telescoping series gives $\lim p_n=0$, proving right continuity. A similar argument with $q_n=P(a-\frac1n<X<a)$ proves the left-limit formula.
+
+**General characterisation.** Any real-valued function $F$ satisfying
+- (a) monotone increasing,
+- (b) right-continuous at each point,
+- (c) $\displaystyle\lim_{t\to-\infty}F(t)=0$ and $\displaystyle\lim_{t\to+\infty}F(t)=1$,
+is a distribution function of some random variable.
+
+**Two main types.**
+- **Discrete:** mass concentrated at a finite or countably infinite set of points (jump discontinuities).
+- **Continuous:** mass smeared along an interval (no jumps, $P(X=a)=0$ for every $a$).
+
