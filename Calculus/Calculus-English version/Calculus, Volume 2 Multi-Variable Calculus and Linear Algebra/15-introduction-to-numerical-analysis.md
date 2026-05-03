@@ -368,3 +368,22 @@ $$
  |f(x)-P(x)|\le\frac{(b-a)^{n+1}}{2^{2n+1}(n+1)!}\,\bigl|f^{(n+1)}(c)\bigr|.
 $$
 
+
+### 15.19 Approximate Integration — The Trapezoidal Rule
+
+Partition $[a,b]$ into $n$ equal subintervals of length $h=(b-a)/n$; set $x_{k}=a+kh$.  On $[x_{k},x_{k+1}]$ approximate $f$ by the linear interpolant
+$$
+ P(x)=\frac{x_{k+1}-x}{h}\,f(x_{k})+\frac{x-x_{k}}{h}\,f(x_{k+1}).\tag{15.34}
+$$
+Integrating $P$ over $[x_{k},x_{k+1}]$ gives the trapezoid area $h\bigl[f(x_{k})+f(x_{k+1})\bigr]/2$; summing over all subintervals yields
+$$
+ \int_{a}^{b}P(x)\,dx=\frac{h}{2}\Bigl(f(a)+2\sum_{k=1}^{n-1}f(a+kh)+f(b)\Bigr).\tag{15.35}
+$$
+
+**Theorem 15.13 (Trapezoidal rule).** If $f\in C^{2}[a,b]$ and $h=(b-a)/n$, then for some $c\in[a,b]$,
+$$
+ \int_{a}^{b}f(x)\,dx=\frac{b-a}{2n}\Bigl(f(a)+2\sum_{k=1}^{n-1}f(a+kh)+f(b)\Bigr)-\frac{(b-a)^{3}}{12n^{2}}\,f''(c).\tag{15.36}
+$$
+
+*Proof sketch.*  On each subinterval Theorem 15.3 gives $f(x)-P(x)=(x-x_{k})(x-x_{k+1})f''(c_{k})/2$.  Since $(x-x_{k})(x_{k+1}-x)\ge0$ on $[x_{k},x_{k+1}]$, integrating and using the intermediate-value property of $f''$ produces the error term $-nh^{3}f''(c)/12=-(b-a)^{3}f''(c)/(12n^{2})$. ∎
+
