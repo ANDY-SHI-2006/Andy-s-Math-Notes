@@ -217,3 +217,37 @@ $$
 $$
 *Proof.*  In Lagrange’s formula the coefficient of $x^{n}$ is $\sum f(x_{k})/A_{k}(x_{k})$; in Newton’s formula it is $c_{n}$. ∎
 
+
+### 15.11 Equally Spaced Points — The Forward Difference Operator
+
+For $x_{k}=x_{0}+kh$ ($k=0,\dots,n$), Equation (15.12) gives
+$$
+ \frac1{A_{k}(x_{k})}=\frac{(-1)^{n-k}}{n!\,h^{n}}\binom{n}{k},
+$$
+so the Newton coefficient (15.23) becomes
+$$
+ c_{n}=\frac1{n!\,h^{n}}\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(x_{k}).\tag{15.23}
+$$
+
+**Definition (Forward difference).** For fixed $h$,
+$$
+ \Delta f(x)=f(x+h)-f(x),\qquad \Delta^{k+1}f=\Delta(\Delta^{k}f),\qquad \Delta^{0}f=f.
+$$
+In general,
+$$
+ \Delta^{n}f(x)=\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(x+kh).\tag{15.24}
+$$
+Hence, from (15.23)–(15.24),
+$$
+ c_{n}=\frac{\Delta^{n}f(x_{0})}{n!\,h^{n}}.
+$$
+
+**Newton’s formula with differences.** Equation (15.21) becomes
+$$
+ P_{n}(x)=f(x_{0})+\sum_{k=1}^{n}\frac{\Delta^{k}f(x_{0})}{k!\,h^{k}}\prod_{j=0}^{k-1}(x-x_{j}),\tag{15.25}
+$$
+and, with $t=(x-x_{0})/h$,
+$$
+ P_{n}(x)=f(x_{0})+\sum_{k=1}^{n}\frac{\Delta^{k}f(x_{0})}{k!}\prod_{j=0}^{k-1}(t-j).\tag{15.26}
+$$
+
