@@ -43,3 +43,36 @@ Henceforth, whenever $S\subseteq\mathbb R^n$ is used as a sample space, it is as
 
 **Example 2.** Dart on a circular target. Natural random variables: rectangular coordinates $(x,y)$, polar coordinates $(r,\theta)$, or a single coordinate such as $r$ or $\theta$. The event "lands in the first quadrant" is $\{\omega\mid0\le\theta(\omega)\le\tfrac12\pi\}$.
 
+
+### 14.5 Distribution Functions
+
+**Definition.** The *distribution function* of a one-dimensional random variable $X$ is
+$$
+ F(t)=P(X\le t),\qquad t\in\mathbb R.
+$$
+(Sometimes written $F_X$ to emphasise the variable.)
+
+If $X$ is bounded with range in $[a,b]$, then $F(t)=0$ for $t<a$ and $F(t)=1$ for $t\ge b$.
+
+**Theorem 14.2 (Basic properties).** For $a<b$:
+- **(a)** $0\le F(t)\le 1$ for all $t$.
+- **(b)** $P(a<X\le b)=F(b)-F(a)$.
+- **(c)** $F$ is monotone nondecreasing.
+
+**Theorem 14.3 (Other interval types).** For $a<b$:
+- $P(a\le X\le b)=F(b)-F(a)+P(X=a)$.
+- $P(a<X<b)=F(b)-F(a)-P(X=b)$.
+- $P(a\le X<b)=F(b)-F(a)+P(X=a)-P(X=b)$.
+
+All four intervals have the same probability iff $P(X=a)=P(X=b)=0$.
+
+**Theorem 14.4 (Limits at infinity).**
+$$
+ \lim_{t\to-\infty}F(t)=0,\qquad\lim_{t\to+\infty}F(t)=1.\tag{14.1}
+$$
+*Proof sketch.* Write $S$ as a countable disjoint union of intervals $(-n,-n+1]$ and $(n,n+1]$; the sums telescope to $P(S)=L_2-L_1$, where $L_1=\lim_{t\to-\infty}F(t)$ and $L_2=\lim_{t\to+\infty}F(t)$. Since $P(S)=1$ and $0\le L_1\le L_2\le1$, we get $L_1=0$, $L_2=1$.
+
+**Examples.**
+- **Uniform on $[0,1]$:** $F(t)=0$ ($t<0$), $F(t)=t$ ($0\le t\le1$), $F(t)=1$ ($t\ge1$).
+- **Cauchy:** $F(t)=\tfrac12+\tfrac1{\pi}\arctan t$.
+
