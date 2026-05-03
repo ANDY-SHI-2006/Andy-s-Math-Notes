@@ -326,3 +326,45 @@ $$
  t_{k}=\cos\frac{k\pi}{n},\qquad k=0,\dots,n.\tag{15.30}
 $$
 
+
+### 15.16 A Minimal Property of Chebyshev Polynomials
+
+**Theorem 15.11.** Let $p_{n}(x)=x^{n}+\cdots$ be any monic polynomial of degree $n\ge1$ and let $\|p_{n}\|=\max_{[-1,1]}|p_{n}|$.  Then
+$$
+ \|p_{n}\|\ge\|\tilde T_{n}\|,\qquad\tilde T_{n}(x)=\frac{T_{n}(x)}{2^{n-1}},\tag{15.31}
+$$
+with equality iff $p_{n}=\tilde T_{n}$.  (Thus $\|\tilde T_{n}\|=1/2^{n-1}$.)
+
+*Proof sketch.*  Assume $\|p_{n}\|<1/2^{n-1}$ and set $r=\tilde T_{n}-p_{n}$.  At the $n+1$ extreme points $t_{k}=\cos(k\pi/n)$ the values $r(t_{k})$ alternate in sign, so $r$ has at least $n$ zeros; but $\deg r\le n-1$, forcing $r\equiv0$, a contradiction. ∎
+
+**Theorem 15.12 (General interval).** For $q_{n}(x)=c_{n}x^{n}+\cdots$ on $[a,b]$,
+$$
+ \|q_{n}\|\ge|c_{n}|\,\frac{(b-a)^{n}}{2^{2n-1}},\tag{15.33}
+$$
+with equality for
+$$
+ q_{n}(x)=c_{n}\frac{(b-a)^{n}}{2^{2n-1}}\,T_{n}\!\Bigl(\frac{2x-a-b}{\,b-a\,}\Bigr).
+$$
+*Proof.*  Map $[a,b]$ to $[-1,1]$ by $t=(2x-a-b)/(b-a)$ and apply Theorem 15.11. ∎
+
+---
+
+### 15.17 Application to the Interpolation Error
+
+Choosing the nodes $x_{0},\dots,x_{n}$ as the zeros of $T_{n+1}$,
+$$
+ x_{k}=\cos\Bigl(\frac{2k+1}{n+1}\frac{\pi}{2}\Bigr)\quad(k=0,\dots,n),
+$$
+gives $A(x)=T_{n+1}(x)/2^{n}$ and the error formula (15.27) becomes
+$$
+ f(x)-P(x)=\frac{T_{n+1}(x)}{2^{n}(n+1)!}\,f^{(n+1)}(c).
+$$
+Since $|T_{n+1}(x)|\le1$ on $[-1,1]$,
+$$
+ |f(x)-P(x)|\le\frac{1}{2^{n}(n+1)!}\,\bigl|f^{(n+1)}(c)\bigr|.
+$$
+For a general interval $[a,b]$ with transformed nodes $y_{k}=\frac{b-a}{2}x_{k}+\frac{a+b}{2}$,
+$$
+ |f(x)-P(x)|\le\frac{(b-a)^{n+1}}{2^{2n+1}(n+1)!}\,\bigl|f^{(n+1)}(c)\bigr|.
+$$
+
