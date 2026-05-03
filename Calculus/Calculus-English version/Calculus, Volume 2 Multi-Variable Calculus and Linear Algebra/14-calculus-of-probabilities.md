@@ -479,3 +479,23 @@ $$
 $$
 Thus the game is fair at $\$1$ and $E(X)$ is independent of $p$ (though discontinuous at $p=0,1$).
 
+
+### 14.26 Expectation of a Function of a Random Variable
+
+If $Y=\varphi(X)$, its expectation can be computed directly from the density of $X$ without finding $f_{Y}$:
+$$
+ E(Y)=\int_{-\infty}^{+\infty}\varphi(t)\,f_{X}(t)\,dt.\tag{14.42}
+$$
+
+*Proof sketch (strictly increasing $\varphi$).*  From Section 14.17, $f_{Y}(t)=f_{X}[\psi(t)]\,\psi'(t)$ with $\psi=\varphi^{-1}$.  Substituting into $E(Y)=\int t f_{Y}(t)\,dt$ and changing variable $u=\psi(t)$ gives (14.42). ∎
+
+**Consequences.**
+- Variance is itself an expectation:
+  $$
+  \operatorname{Var}(X)=E\bigl[(X-m)^{2}\bigr]=\int_{-\infty}^{+\infty}(t-m)^{2}f_{X}(t)\,dt,\qquad m=E(X).
+  $$
+- For a two-dimensional variable with joint density $f$,
+  $$
+  E\bigl[\varphi(X,Y)\bigr]=\int_{-\infty}^{+\infty}\!\int_{-\infty}^{+\infty}\varphi(x,y)\,f(x,y)\,dx\,dy.
+  $$
+
