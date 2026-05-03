@@ -143,3 +143,48 @@ $$
 $$
 Then $P(x)=y_{0}L_{0}(x)+y_{1}L_{1}(x)+y_{2}L_{2}(x)+y_{3}L_{3}(x)$.
 
+
+### 15.7 Equally Spaced Interpolation Points
+
+Let $x_{j}=x_{0}+jh$ ($j=0,\dots,n$) with spacing $h>0$, and set $t=(x-x_{0})/h$.  The Lagrange coefficients (15.10) become
+$$
+ L_{k}(x)=\prod_{\substack{j=0\\j\neq k}}^{n}\frac{t-j}{\,k-j\,}.\tag{15.11}
+$$
+The product of the $t$‑independent factors simplifies to
+$$
+ \prod_{\substack{j=0\\j\neq k}}^{n}\frac1{k-j}
+ =\frac{(-1)^{n-k}}{n!}\binom{n}{k},\tag{15.12}
+$$
+so
+$$
+ L_{k}(x_{0}+th)=\frac{(-1)^{n-k}}{n!}\binom{n}{k}\prod_{\substack{j=0\\j\neq k}}^{n}(t-j).\tag{15.13}
+$$
+For tabulated values of $t$, $P(x_{0}+th)$ is obtained by multiplying the $f(x_{k})$ by the tabulated $L_{k}$ and adding.
+
+---
+
+### 15.8 Error Analysis in Polynomial Interpolation
+
+**Theorem 15.3.** Let $x_{0},\dots,x_{n}$ be distinct points in the domain of $f$, $P$ the interpolating polynomial of degree $\le n$, and $x$ any point.  If $f$ has an $(n+1)$st derivative on a closed interval $[\alpha,\beta]$ containing all $x_{k}$ and $x$, then for some $c\in(\alpha,\beta)$,
+$$
+ f(x)-P(x)=\frac{A(x)}{(n+1)!}\,f^{(n+1)}(c),\qquad
+ A(x)=\prod_{j=0}^{n}(x-x_{j}).\tag{15.14}
+$$
+
+*Proof sketch.*  Set $F(t)=A(x)[f(t)-P(t)]-A(t)[f(x)-P(x)]$.  Then $F$ vanishes at $x_{0},\dots,x_{n}$ and at $x$, giving $n+2$ zeros in $[\alpha,\beta]$.  Applying Rolle’s theorem $n+1$ times yields $c$ with $F^{(n+1)}(c)=0$; using $A^{(n+1)}=(n+1)!$ gives (15.14). ∎
+
+**Equally spaced case.** With $x_{j}=x_{0}+jh$ and $t=(x-x_{0})/h$,
+$$
+ f(x)-P(x)=\frac{f^{(n+1)}(c)}{(n+1)!}\,h^{n+1}\prod_{j=0}^{n}(t-j).\tag{15.17}
+$$
+
+**Example (Linear interpolation, $n=1$).**
+$$
+ f(x)-P(x)=\frac{f''(c)}{2}\,h^{2}t(t-1),\qquad t=\frac{x-x_{0}}{h}.\tag{15.18}
+$$
+For $x\in[x_{0},x_{0}+h]$ ($0<t<1$), $\max|t(t-1)|=\tfrac14$, so
+$$
+ |f(x)-P(x)|\le\frac{Mh^{2}}{8},\qquad M=\max_{[x_{0},x_{0}+h]}|f''|.
+$$
+For sines/cosines ($M\le1$) with one‑degree tables ($h=\pi/180$), $h^{2}/8<0.00004$; hence linear interpolation is adequate in four‑place tables.
+
