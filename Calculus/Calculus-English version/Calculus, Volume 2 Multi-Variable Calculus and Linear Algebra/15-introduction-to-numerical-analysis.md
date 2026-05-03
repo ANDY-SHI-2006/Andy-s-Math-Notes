@@ -251,3 +251,35 @@ $$
  P_{n}(x)=f(x_{0})+\sum_{k=1}^{n}\frac{\Delta^{k}f(x_{0})}{k!}\prod_{j=0}^{k-1}(t-j).\tag{15.26}
 $$
 
+
+### 15.12 Factorial Polynomials
+
+The product $t(t-1)\cdots(t-k+1)$ is the **factorial $k$th power**, denoted $t^{(k)}$:
+$$
+ t^{(k)}=\prod_{j=0}^{k-1}(t-j),\qquad t^{(0)}=1.
+$$
+With $h=1$, the forward difference operator satisfies
+$$
+ \Delta t^{(n)}=n\,t^{(n-1)}\qquad(n\ge1),
+$$
+analogous to $D(t^{n})=n t^{n-1}$.  Newton’s formula (15.26) becomes
+$$
+ P_{n}(x_{0}+th)=\sum_{k=0}^{n}\frac{\Delta^{k}f(x_{0})}{k!}\,t^{(k)}
+ =\sum_{k=0}^{n}\binom{t}{k}\,\Delta^{k}f(x_{0}).
+$$
+
+---
+
+### 15.14 A Minimum Problem Relative to the Max Norm
+
+From the interpolation error (Theorem 15.3),
+$$
+ f(x)-P(x)=\frac{A(x)}{(n+1)!}\,f^{(n+1)}(c),\qquad
+ A(x)=\prod_{j=0}^{n}(x-x_{j}).\tag{15.27}
+$$
+To minimize the error bound one wants to minimize
+$$
+ \|A\|_{\infty}=\max_{a\le x\le b}|A(x)|
+$$
+by an appropriate choice of the nodes $x_{0},\dots,x_{n}$.  This problem was first solved by Chebyshev and leads to the **Chebyshev polynomials**.
+
