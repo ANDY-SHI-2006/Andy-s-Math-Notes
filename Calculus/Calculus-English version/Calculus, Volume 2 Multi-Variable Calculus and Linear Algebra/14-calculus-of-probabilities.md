@@ -395,3 +395,51 @@ $$
 
 **Example (Uniform on $[0,1]^{2}$).** $f=1$ on $R=[0,1]^{2}$, $0$ elsewhere.  Then $F(x,y)=xy$ on $R$, and $X,Y$ are independent.
 
+
+### 14.23 Distributions of Functions of Two Random Variables
+
+Let $U=M(X,Y)$, $V=N(X,Y)$ with a one-to-one $C^{1}$ change of variables
+$$
+ u=M(x,y),\quad v=N(x,y),\qquad x=Q(u,v),\quad y=R(u,v).
+$$
+For any region $T$ in the $xy$‑plane with image $T'$ in the $uv$‑plane,
+$$
+ P\bigl[(U,V)\in T'\bigr]=P\bigl[(X,Y)\in T\bigr].\tag{14.37}
+$$
+Hence the joint density $g$ of $(U,V)$ is
+$$
+ g(u,v)=f\bigl[Q(u,v),R(u,v)\bigr]\,\biggl|\frac{\partial(Q,R)}{\partial(u,v)}\biggr|.\tag{14.39}
+$$
+Marginal densities are obtained by integrating $g$.
+
+**Example 1 (Sum and difference).** $U=X+Y$, $V=X-Y$; inverse $x=\tfrac{u+v}{2}$, $y=\tfrac{u-v}{2}$, Jacobian $-\tfrac12$.  Thus
+$$
+ f_{X+Y}(u)=\int_{-\infty}^{\infty}f(x,\,u-x)\,dx,\qquad
+ f_{X-Y}(v)=\int_{-\infty}^{\infty}f(x,\,x-v)\,dx.
+$$
+If $X,Y$ are independent ($f(x,y)=f_{X}(x)f_{Y}(y)$), these become the **convolution** formulas
+$$
+ f_{X+Y}(u)=\int_{-\infty}^{\infty}f_{X}(x)\,f_{Y}(u-x)\,dx.
+$$
+
+**Example 2 (Sum of two independent exponentials).** $f_{X}(t)=\lambda e^{-\lambda t}$, $f_{Y}(t)=\mu e^{-\mu t}$ ($t\ge0$).  For $u\ge0$,
+$$
+ f_{X+Y}(u)=\lambda\mu e^{-\mu u}\int_{0}^{u}e^{(\mu-\lambda)x}\,dx
+ =\begin{cases}
+ \lambda^{2}u\,e^{-\lambda u} & (\mu=\lambda),\\[6pt]
+ \displaystyle\lambda\mu\,\frac{e^{-\lambda u}-e^{-\mu u}}{\mu-\lambda} & (\mu\neq\lambda).
+ \end{cases}
+$$
+(For $u<0$, $f_{X+Y}(u)=0$.)
+
+**Example 3 (Max and min of independent variables).** $U=\max\{X,Y\}$, $V=\min\{X,Y\}$.  Then
+$$
+ F_{U}(t)=F_{X}(t)\,F_{Y}(t),\qquad
+ F_{V}(t)=F_{X}(t)+F_{Y}(t)-F_{X}(t)\,F_{Y}(t).
+$$
+Differentiating,
+$$
+ f_{U}=f_{X}F_{Y}+F_{X}f_{Y},\qquad
+ f_{V}=f_{X}+f_{Y}-f_{X}F_{Y}-F_{X}f_{Y}.
+$$
+
