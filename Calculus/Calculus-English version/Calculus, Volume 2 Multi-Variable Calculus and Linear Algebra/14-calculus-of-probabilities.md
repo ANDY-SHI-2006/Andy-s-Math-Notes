@@ -499,3 +499,27 @@ $$
   E\bigl[\varphi(X,Y)\bigr]=\int_{-\infty}^{+\infty}\!\int_{-\infty}^{+\infty}\varphi(x,y)\,f(x,y)\,dx\,dy.
   $$
 
+
+### 14.28 Chebyshev’s Inequality
+
+**Theorem 14.11.** Let $X$ have finite expectation $m=E(X)$ and variance $\sigma^{2}=\operatorname{Var}(X)$.  Then for every $c>0$,
+$$
+ P\bigl(|X-m|>c\bigr)\le\frac{\operatorname{Var}(X)}{c^{2}}.\tag{14.44}
+$$
+
+*Proof sketch (continuous case).*
+$$
+ \operatorname{Var}(X)=\int_{-\infty}^{+\infty}(t-m)^{2}f(t)\,dt
+ \ge c^{2}\!\left(\int_{-\infty}^{m-c}\!+\int_{m+c}^{+\infty}\right)f(t)\,dt
+ =c^{2}\,P(|X-m|>c).
+$$
+Divide by $c^{2}$. ∎
+
+**Standard-deviation form.** With $c=k\sigma$ ($k>0$),
+$$
+ P\bigl(|X-m|>k\sigma\bigr)\le\frac{1}{k^{2}}.
+$$
+For instance $k=3$ gives $\le\tfrac19\approx0.111$; for a normal distribution the true tail is much smaller ($\approx0.003$).
+
+**Example (Testing a coin for fairness).** $X=\text{heads in }10{,}000$ tosses of a fair coin; $X\sim\operatorname{Bin}(10{,}000,\tfrac12)$, $m=5{,}000$, $\sigma=50$.  Since $P(|X-m|>3\sigma)\approx0.003$, we declare the coin *unfair* if the observed number of heads lies outside $[4{,}850,\;5{,}150]$.
+
