@@ -100,3 +100,39 @@ is a distribution function of some random variable.
 - **Discrete:** mass concentrated at a finite or countably infinite set of points (jump discontinuities).
 - **Continuous:** mass smeared along an interval (no jumps, $P(X=a)=0$ for every $a$).
 
+
+### 14.7 Discrete Distributions — Probability Mass Functions
+
+**Probability mass function (pmf).** For a one-dimensional random variable $X$,
+$$
+ p(t)=P(X=t).
+$$
+The set of *mass points* $T=\{t\mid p(t)>0\}$ is finite or countable. $X$ is *discrete* iff $\sum_{t\in T}p(t)=1$.
+
+**Theorem 14.6.** For any Borel set $A\subseteq\mathbb R$,
+$$
+ P(X\in A)=\sum_{x\in A\cap T}p(x).\tag{14.11}
+$$
+In particular the distribution function is
+$$
+ F(t)=P(X\le t)=\sum_{x\le t}p(x).
+$$
+
+**Example 1. Binomial distribution.** $X$ takes values $0,1,\dots,n$:
+$$
+ P(X=k)=\binom{n}{k}p^{k}q^{n-k}\quad(k=0,\dots,n),\qquad q=1-p.
+$$
+Then $\sum_{k=0}^{n}P(X=k)=(p+q)^{n}=1$ and
+$$
+ F_X(t)=\sum_{0\le k\le t}\binom{n}{k}p^{k}q^{n-k}.
+$$
+
+**Example 2. Poisson distribution.** $\lambda>0$; $X$ takes values $0,1,2,\dots$:
+$$
+ P(X=k)=\frac{e^{-\lambda}\lambda^{k}}{k!}\qquad(k=0,1,2,\dots).
+$$
+Then $\sum_{k=0}^{\infty}P(X=k)=e^{-\lambda}e^{\lambda}=1$ and
+$$
+ F_X(t)=e^{-\lambda}\sum_{0\le k\le t}\frac{\lambda^{k}}{k!}.
+$$
+
