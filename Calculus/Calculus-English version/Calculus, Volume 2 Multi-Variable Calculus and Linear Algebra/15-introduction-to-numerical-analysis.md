@@ -387,3 +387,30 @@ $$
 
 *Proof sketch.*  On each subinterval Theorem 15.3 gives $f(x)-P(x)=(x-x_{k})(x-x_{k+1})f''(c_{k})/2$.  Since $(x-x_{k})(x_{k+1}-x)\ge0$ on $[x_{k},x_{k+1}]$, integrating and using the intermediate-value property of $f''$ produces the error term $-nh^{3}f''(c)/12=-(b-a)^{3}f''(c)/(12n^{2})$. ∎
 
+
+### 15.20 Simpson’s Rule
+
+Approximate $f$ on $[a,b]$ by the quadratic $P$ agreeing with $f$ at $a$, $m=(a+b)/2$, and $b$.  With the change of variable $t=(x-a)/(m-a)$ ($t=0,1,2$ at $a,m,b$) and Newton’s formula,
+$$
+ \int_{a}^{b}P(x)\,dx=\frac{b-a}{2}\int_{0}^{2}\!\varphi(t)\,dt
+ =\frac{b-a}{6}\bigl[P(a)+4P(m)+P(b)\bigr].\tag{15.39–15.40}
+$$
+
+**Key observation.** The error $R=\int_{a}^{b}[f(x)-P(x)]\,dx$ is *zero* not only for quadratics but also for **cubics**, because the odd integrand $t^{3}-h^{2}t$ integrates to $0$ over a symmetric interval.
+
+**Theorem 15.14 (Simpson’s rule).** If $f\in C^{4}[a,b]$ and $m=(a+b)/2$, then for some $c\in[a,b]$,
+$$
+ \int_{a}^{b}f(x)\,dx=\frac{b-a}{6}\bigl[f(a)+4f(m)+f(b)\bigr]-\frac{(b-a)^{5}}{2880}\,f^{(4)}(c).\tag{15.43}
+$$
+
+*Proof sketch.*  Enforce the extra condition $P'(m)=f'(m)$, which yields the error representation
+$$
+ f(x)-P(x)=(x-a)(x-m)^{2}(x-b)\,\frac{f^{(4)}(z)}{4!}\tag{15.42}
+$$
+for some $z\in(a,b)$.  Set $B(x)=-(x-a)(x-m)^{2}(x-b)/4!\;(\ge0)$, integrate (15.42), and use the intermediate-value property of $f^{(4)}$.  Since $\int_{a}^{b}B(x)\,dx=(b-a)^{5}/2880$, (15.43) follows. ∎
+
+**Theorem 15.15 (Extended Simpson’s rule).** With $h=(b-a)/(2n)$ and $f_{k}=f(a+kh)$,
+$$
+ \int_{a}^{b}f(x)\,dx=\frac{b-a}{6n}\Bigl(f(a)+4\sum_{k=1}^{n}f_{2k-1}+2\sum_{k=1}^{n-1}f_{2k}+f(b)\Bigr)-\frac{(b-a)^{5}}{2880n^{4}}\,f^{(4)}(\bar c).
+$$
+
