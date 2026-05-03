@@ -100,3 +100,46 @@ $$
 
 Interpolation seminorm → Section 15.6; max norm → later sections.
 
+
+### 15.6 Interpolating Polynomials
+
+Given $f$ at $n+1$ distinct points $x_{0},\dots,x_{n}$, find $P$ of degree $\le n$ with
+$$
+ P(x_{k})=f(x_{k})\qquad(k=0,\dots,n).\tag{15.4}
+$$
+Such a $P$ is the best approximation in the interpolation seminorm (distance $=0$).
+
+**Theorem 15.1 (Uniqueness).** If $P,Q$ have degree $\le n$ and agree at $n+1$ distinct points, then $P\equiv Q$.
+
+*Proof.* $R=P-Q$ is a polynomial of degree $\le n$ with $n+1$ distinct zeros, hence $R\equiv0$. ∎
+
+**Lagrange construction.** Set
+$$
+ A(x)=\prod_{j=0}^{n}(x-x_{j}),\qquad
+ A_{k}(x)=\prod_{\substack{j=0\\j\neq k}}^{n}(x-x_{j}).\tag{15.5–15.6}
+$$
+Then $A_{k}(x_{k})=\prod_{j\neq k}(x_{k}-x_{j})\neq0$.
+
+**Theorem 15.2 (Existence).** The unique interpolating polynomial is
+$$
+ P(x)=\sum_{k=0}^{n}\frac{f(x_{k})A_{k}(x)}{A_{k}(x_{k})}.\tag{15.8}
+$$
+
+**Lagrange interpolation formula.** Writing $L_{k}(x)=A_{k}(x)/A_{k}(x_{k})$,
+$$
+ P(x)=\sum_{k=0}^{n}f(x_{k})L_{k}(x),\qquad
+ L_{k}(x)=\prod_{\substack{j=0\\j\neq k}}^{n}\frac{x-x_{j}}{x_{k}-x_{j}}.\tag{15.9–15.10}
+$$
+Equivalently $L_{k}(x)=A_{k}(x)/A'(x_{k})$ because $A'(x_{k})=A_{k}(x_{k})$.
+
+**Example.** Interpolate values $y_{0},y_{1},y_{2},y_{3}$ at $-2,-1,1,2$:
+$$
+ \begin{aligned}
+ L_{0}&=-\tfrac1{12}(x+1)(x-1)(x-2), &
+ L_{1}&=\hphantom{-}\tfrac16(x+2)(x-1)(x-2),\\
+ L_{2}&=-\tfrac16(x+2)(x+1)(x-2), &
+ L_{3}&=\hphantom{-}\tfrac1{12}(x+2)(x+1)(x-1).
+ \end{aligned}
+$$
+Then $P(x)=y_{0}L_{0}(x)+y_{1}L_{1}(x)+y_{2}L_{2}(x)+y_{3}L_{3}(x)$.
+
