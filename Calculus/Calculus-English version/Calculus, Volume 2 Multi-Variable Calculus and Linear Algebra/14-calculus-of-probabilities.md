@@ -220,3 +220,38 @@ $$
 $$
 Letting $a\to-\infty$ ($\alpha\to-\tfrac12\pi$) gives $F_Y(t)=\dfrac{\theta+\tfrac12\pi}{\pi}=\dfrac12+\dfrac1\pi\arctan t$, confirming the Cauchy distribution.
 
+
+### 14.13 Exponential Distributions
+
+Let $\lambda>0$.  $X$ has an **exponential distribution** with parameter $\lambda$ if
+$$
+ F(t)=\begin{cases}
+ 1-e^{-\lambda t} & t\ge0,\\[4pt]
+ 0 & t<0,
+ \end{cases}\qquad
+ f(t)=\begin{cases}
+ \lambda e^{-\lambda t} & t\ge0,\\[4pt]
+ 0 & t<0.
+ \end{cases}
+$$
+
+**Memoryless (characteristic) property.** For $t,s>0$,
+$$
+ P(X>t+s\mid X>t)=\frac{P(X>t+s)}{P(X>t)}=\frac{e^{-\lambda(t+s)}}{e^{-\lambda t}}=e^{-\lambda s}=P(X>s).
+$$
+In terms of $F$,
+$$
+ \frac{1-F(t+s)}{1-F(t)}=1-F(s)\qquad(t,s>0).\tag{14.23}
+$$
+
+**Theorem 14.9.** If a distribution function $F$ satisfies (14.23) and $F(t)<1$ for all $t>0$, then $F(t)=1-e^{-\lambda t}$ for some $\lambda>0$.
+
+*Proof sketch.* Set $g(t)=-\log[1-F(t)]$ ($t>0$).  Then $g$ is nonnegative and satisfies Cauchy’s equation $g(t+s)=g(t)+g(s)$.  By Theorem 14.8, $g(t)=tg(1)$ on $(0,1]$; put $\lambda=g(1)>0$.  The function $G(t)=g(t)-\lambda t$ also satisfies Cauchy’s equation and has period $1$, so $G\equiv0$ on $(0,1]$ forces $G\equiv0$ for all $t>0$.  Hence $g(t)=\lambda t$ and $F(t)=1-e^{-\lambda t}$. ∎
+
+**Example 1 (Vacuum-tube lifetime).** $X$ exponential with $\lambda=0.001$.  Find $T$ with $P(X>T)=0.95$:
+$$
+ e^{-\lambda T}=0.95\quad\Longrightarrow\quad T=-\frac{\log0.95}{\lambda}\approx51.25\text{ hours}.
+$$
+
+**Example 2 (Half-life).** If $g(t)$ tubes survive out of $g(0)$, the model $\frac{g(0)-g(t)}{g(0)}=1-e^{-\lambda t}$ gives $g(t)=g(0)e^{-\lambda t}$.  The half-life $t_1$ satisfies $\tfrac12=e^{-\lambda t_1}$, so $\lambda=\frac{\log2}{t_1}$.
+
